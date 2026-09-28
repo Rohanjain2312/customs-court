@@ -1,0 +1,15 @@
+.env
+data/
+node_modules/
+.venv/
+__pycache__/
+*.log
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+demo/frontend/dist/
+.terraform/
+*.tfstate*
