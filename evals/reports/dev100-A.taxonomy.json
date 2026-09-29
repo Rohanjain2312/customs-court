@@ -1,0 +1,26 @@
+{
+  "run_id": "dev100-A",
+  "n_failures": 59,
+  "n_tagged": 59,
+  "by_level": {
+    "no_answer": 21,
+    "wrong_subheading": 13,
+    "wrong_chapter": 11,
+    "wrong_stat_suffix": 8,
+    "wrong_heading": 6
+  },
+  "by_cause": {
+    "gold_questionable": 18,
+    "should_have_abstained": 9,
+    "precedent_mismatch": 7,
+    "abstained_missing_fact": 6,
+    "fact_misread": 5,
+    "gri_misapplied": 5,
+    "stat_suffix_misnavigated": 2,
+    "note_missed": 2,
+    "over_abstained": 2,
+    "stale_ruling_relied_on": 1,
+    "retrieval_miss": 1,
+    "malformed_output": 1
+  }
+}

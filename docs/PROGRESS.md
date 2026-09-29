@@ -79,3 +79,48 @@ Tests passing
 - `tests/test_multi_agent_flow.py` (2): scripted fake model through the interactive and batched runners.
 
 Pilot (dev, 20 items, interactive): 10-digit 7/16, 6-digit 12/20, $0.036 per item, cache hit rate 70%, p50 11 s. Spend so far $0.88.
+
+## Model switch (2026-09-29)
+
+At Rohan's request the reasoner moved from Claude Sonnet 5.5 to Claude Sonnet 5. No Sonnet model is cheaper per token than Sonnet 5.5 (pricing page, checked 2026-09-29: Sonnet 5 and 5.5 are both $2/$10 per million tokens, Sonnet 4.6 and 4.5 are $3/$15), so Sonnet 5 is the cheapest option that is not Sonnet 5.5. Savings came from caching instead:
+- Batch cache pre-warm (`AnthropicProvider.prewarm`): requests inside one Message Batch run concurrently, so each paid its own 1-hour cache write of the 7.4k-token static prefix. One interactive call now writes it once. Round 1 of dev_100 cost $0.21 for 100 requests after the change; the same round before it cost about $1.50. `max_tokens=0` would be the natural pre-warm, but the API refuses it with structured output, and the output schema is part of the cached prefix (dropping it changed the prefix by about 1,100 tokens), so the pre-warm asks for one token.
+- The pilot (pilot-dev20-A) is the only run on Sonnet 5.5 and is labeled so.
+
+## Phase 4: Eval harness (2026-09-29, in progress)
+
+Built
+- Datasets: `atlas_test_200`, `dev_100`, `fresh_300` and a seeded `fresh_150` sample, `subset_80` (manifest with sha256 in `evals/datasets/manifest.json`).
+- Metrics, bootstrap CIs, reference-grounded judge with a second judge from another vendor, `eval judge`, `eval compare`, `eval taxonomy` commands.
+- Error analysis: all 59 failures of `dev100-A` read and tagged (`evals/taxonomy/dev100-A.jsonl`, distribution in `evals/reports/dev100-A.taxonomy.json`). The biggest group, 18 of 59, has a questionable gold: 14 of those are descriptions that list several different articles while the gold is one of them. 21 of 59 were abstentions. Four causes were added after reading.
+- Prompt v1.2 (dev only): best-guess code even when abstaining, first-named article for multi-article descriptions, navigate the 8-digit line before choosing the statistical suffix. On the same 40 dev items v1.2 matched v0 within noise (dev40-A-v1).
+
+Runs finished: `atlas200-Z`, `fresh150-Z` (zero-shot baselines), `dev100-A`, `dev40-A-v1`, `subset80-O` (OpenAI comparison, in progress).
+
+Blocked: the Anthropic account usage limit (see HANDOFF). Headline runs wait for it.
+
+## Phase 5: Multi-agent (2026-09-29, in progress)
+
+- Live check on 10 dev items (dev10-D): works end to end, $0.153 per item interactive. Advocates were 61% of that because each had its own system prefix. After moving the heading to the user turn (shared cache), three advocates of four turns, and no `get_ruling` for advocates: $0.101 per item interactive (dev10-D-v2).
+- Batched runs found a real bug the fake-model tests could not: parallel advocate ids contained `#`, which the Batch API rejects. Ids are now mapped to the allowed pattern (test added).
+
+## Phase 6: Deploy-ready packages (2026-09-29)
+
+Built and validated locally, nothing deployed. See `docs/ARCHITECTURE.md` (deployment sections, comparison table) and `docs/SECURITY.md`.
+- `make build-deploy-aws`: arm64 MCP and agent images, all 8 tools called over MCP against the container, redaction verified, agent `/invocations` with a scripted Bedrock model, `terraform validate` passes.
+- `make build-deploy-gcp`: amd64 image, Cloud Run spec with no public invoker, ADK agent run locally against the local MCP server with scripted models.
+- Deploy and destroy scripts print a cost estimate and refuse without `I_ACCEPT_CLOUD_COSTS=yes` (tested).
+- Unverified: anything that needs a cloud account (IAM, JWT and ID-token auth, cold starts, real cost).
+
+## Phase 7: Vertical depth (2026-09-29)
+
+- `agents/checks.py`: a checked final step on every answer, through the same tool backend. The code must be a current 10-digit line (lists the real lines when not), a parts provision must name the parts rule applied, cited rulings must exist, must not be flagged, and must not be revoked without saying so. One repair turn when a check fails (7 repairs in 37 finished dev40-A-v1 items).
+- `ruling_status` returns `replaced_by` for revoked and modified rulings (id, date, codes).
+- Documents that address an AI model are flagged (`injection_warning`, `contains_instructions_to_ai`). 0 of 44,139 real rulings trip it. Sonnet 5 had cited the planted test ruling as in force; the checker now blocks that and the poison test asserts it.
+- Ask-for-facts mode (`--ask-mode`), measured on the subset once the API is available.
+- Tests: `tests/test_checks.py` (9).
+
+## Phase 8: Customs Court demo (2026-09-29)
+
+- FastAPI backend with SSE replay (compressed timing) and a gated live mode ($2 per session cap), React, TypeScript, D3 and Tailwind frontend with all seven features.
+- 26 exhibits from real Sonnet 5 recordings, including 10 items with both a single-agent and a multi-agent hearing. The Objection exhibit is a labeled scripted placeholder until one live run is possible.
+- Tests: `tests/test_demo_backend.py` (16), Playwright UI (6 passed), video `docs/demo.webm` and `docs/demo.gif` (recorded before the exhibits were switched to Sonnet 5 runs; re-record at the end).
