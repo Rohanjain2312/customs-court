@@ -1,0 +1,146 @@
+{
+  "run_id": "fresh150-Z",
+  "dataset": "fresh_150",
+  "dataset_sha256": "9cb974c61e4b64dbbc1db66e0c069fe7ff3123aa385804229b5f0ed96ce455b0",
+  "arm": "Z",
+  "mode": "batch",
+  "n_items": 150,
+  "repeat": 0,
+  "git_sha": "f970d96",
+  "config_hash": "ee6080961227",
+  "seed": 13,
+  "models": {
+    "main": "claude-sonnet-5",
+    "friend": "",
+    "reasoner": "claude-sonnet-5",
+    "advocate": "claude-haiku-4-5"
+  },
+  "agent_config": {
+    "arm": "Z",
+    "model": "claude-sonnet-5",
+    "friend_model": "",
+    "max_turns": 1,
+    "token_budget": 120000,
+    "max_tokens_per_call": 4096,
+    "effort": "low",
+    "thinking": null,
+    "temperature": null,
+    "run_id": "fresh150-Z",
+    "cache_ttl": "1h",
+    "use_tools": false,
+    "checks": true,
+    "ask_mode": false,
+    "extra": {}
+  },
+  "redact_eval": true,
+  "started": "2026-09-29T04:49:59+00:00",
+  "finished": "2026-09-29T04:57:16+00:00",
+  "metrics": {
+    "n": 150,
+    "n_stale": 0,
+    "n_errors": 2,
+    "acc_10": 0.2,
+    "n_10": 150,
+    "acc_8": 0.3333,
+    "n_8": 150,
+    "acc_6": 0.48,
+    "n_6": 150,
+    "acc_4": 0.6933,
+    "n_4": 150,
+    "acc_2": 0.7933,
+    "n_2": 150,
+    "acc_10_nonstale": 0.2,
+    "acc_6_stale": null,
+    "abstain_rate": 0.0267,
+    "acc_when_answering": 0.2055,
+    "acc_deepest_all": 0.2,
+    "ece": 0.4237,
+    "coverage_curve": [
+      {
+        "coverage": 0.1,
+        "accuracy": 0.4667
+      },
+      {
+        "coverage": 0.2,
+        "accuracy": 0.4
+      },
+      {
+        "coverage": 0.3,
+        "accuracy": 0.3182
+      },
+      {
+        "coverage": 0.4,
+        "accuracy": 0.2542
+      },
+      {
+        "coverage": 0.5,
+        "accuracy": 0.2568
+      },
+      {
+        "coverage": 0.6,
+        "accuracy": 0.2247
+      },
+      {
+        "coverage": 0.7,
+        "accuracy": 0.2212
+      },
+      {
+        "coverage": 0.8,
+        "accuracy": 0.1949
+      },
+      {
+        "coverage": 0.9,
+        "accuracy": 0.188
+      },
+      {
+        "coverage": 1.0,
+        "accuracy": 0.2027
+      }
+    ],
+    "citations_total": 0,
+    "citation_valid_rate": null,
+    "citation_hallucinated": 0,
+    "citation_not_in_force": 0,
+    "items_with_citation": 0,
+    "usd_total": 0.8987,
+    "usd_per_item": 0.00599,
+    "tokens_per_item": 7309.8,
+    "tool_calls_per_item": 0.0,
+    "latency_p50_s": 436.85,
+    "latency_p95_s": 436.86,
+    "cache_hit_rate": 0.9476
+  },
+  "ci95": {
+    "exact_10": {
+      "mean": 0.2,
+      "lo": 0.1333,
+      "hi": 0.2667,
+      "n": 150
+    },
+    "exact_8": {
+      "mean": 0.3333,
+      "lo": 0.26,
+      "hi": 0.4067,
+      "n": 150
+    },
+    "exact_6": {
+      "mean": 0.48,
+      "lo": 0.4,
+      "hi": 0.56,
+      "n": 150
+    },
+    "exact_4": {
+      "mean": 0.6933,
+      "lo": 0.62,
+      "hi": 0.7667,
+      "n": 150
+    },
+    "exact_2": {
+      "mean": 0.7933,
+      "lo": 0.7267,
+      "hi": 0.8533,
+      "n": 150
+    }
+  },
+  "latency_note": "Batch runs have no meaningful per-item latency; see interactive runs for p50 and p95."
+}

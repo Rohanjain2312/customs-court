@@ -21,39 +21,23 @@ To use the tools in a new shell: `export PATH=~/.local/bin:~/.local/opt/lima/bin
 
 ## Open items for Rohan
 
-### 1. BLOCKER: Anthropic account usage limit (2026-09-29 00:53 UTC)
+### 1. Build status and resume point (updated 2026-09-29 22:45 UTC)
 
-Every Claude call now returns: `400 invalid_request_error: You have reached your specified API usage limits. You will regain access on 2026-10-01 at 00:00 UTC.`
+The Anthropic usage limit from 2026-09-29 00:53 UTC was lifted by Rohan. The reasoner moved from Claude Sonnet 5.5 to Claude Sonnet 5 at Rohan's request (same list price; no Sonnet is cheaper per token). Runs before that switch (pilot-dev20-A) used Sonnet 5.5 and are labeled so.
 
-This is a spend limit set on the Anthropic account (Console > Settings > Limits), not this project's budget. This project had spent $2.91 of its $40 cap when it hit. Other projects on the same key count toward the account limit.
+Done and pushed: phases 0 to 3, phase 7 code (checked final step, revoked-ruling replacements, injection flag, ask mode), phase 8 demo (two exhibits are labeled placeholders until real runs exist).
 
-Why it matters: the evaluation runs (baseline on dev_100, arms A and D on atlas_test_200, the fresh set, arms B and C) all need Claude.
+Finished runs (reports in `evals/reports/`):
+- `atlas200-Z` zero-shot, `fresh150-Z` zero-shot
+- `dev100-A` single-agent baseline with the v0 prompt (before the checked step existed)
 
-What to do (either one):
-- Raise the monthly limit at https://platform.claude.com/settings/limits, or
-- Wait until 2026-10-01 00:00 UTC, then resume with the commands in "Resume the eval runs" below.
-
-Everything is cached, so resuming re-uses every response already paid for.
-
-### 2. Where the build stopped (2026-09-29)
-
-Done and pushed: Phase 0 (data), Phase 1 (MCP server, stdio + HTTP, Claude Code check), Phase 2 (Agent Skill), Phase 3 (single-agent baseline code, adapters, batch runner, datasets: atlas_test_200, dev_100, fresh_300, subset_80). Eval harness, judge, taxonomy and multi-agent code are written and unit-tested with fakes.
-
-Not done yet:
-- Phase 4 results: dev_100 baseline (4 batch rounds were paid for and cached; rerun resumes), error analysis of 50+ failures, zero-shot baseline, headline runs. Needs the Anthropic limit fix above.
-- Phase 5 study runs (arms A, B, C, D). Code exists in `src/tariffagent/agents/`.
-- Phase 6 deploy packages and Phase 8 frontend: two background builders were started and then stopped when the session hit its own usage limit. Partial, unreviewed, uncommitted files may exist in `deploy/` and `demo/frontend/`. Review before use.
-- Phases 7 and 9 (vertical depth, README product page, case study, walkthrough).
-- The corpus was frozen after the text fetch finished (44,139 rulings with text); a background job re-embeds new rulings (`data/logs/embed2.log`).
-
-### Resume the eval runs
-
-```bash
-uv run tariffagent eval run --dataset dev_100 --arm A --mode batch --run-id dev100-A --phase baseline
-uv run tariffagent eval run --dataset atlas_test_200 --arm Z --mode batch --phase baseline
-uv run tariffagent eval run --dataset atlas_test_200 --arm A --mode batch --phase headline
-uv run tariffagent eval run --dataset atlas_test_200 --arm D --mode batch --phase headline
-```
+Next steps in order (each run resumes from the response cache, so nothing is paid twice):
+1. Error analysis of dev100-A failures, taxonomy tags in `evals/taxonomy/dev100-A.jsonl`.
+2. Re-record the test fixtures (`TARIFFAGENT_LIVE=1 TARIFFAGENT_RECORD=1 uv run pytest tests/test_agent_e2e.py -k "end_to_end or poisoned"`).
+3. Headline runs `atlas200-A`, `atlas200-D`, then `fresh150-A`, then the subset arms (see `scripts/eval_full.sh`).
+4. Phase 6 deploy packages: a builder stopped mid-way (session limit). Its files in `deploy/`, `docs/SECURITY.md`, `docs/diagrams/`, `docs/ARCHITECTURE.md` are unreviewed and uncommitted.
+5. Real multi-agent and Objection exhibits for the demo, then the video again.
+6. Phase 9 docs.
 
 ### Other handoff items
 - Making the GitHub repo public: only after a secrets scan. `gh repo edit Rohanjain2312/customs-court --visibility public --accept-visibility-change-consequences`
