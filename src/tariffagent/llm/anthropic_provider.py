@@ -50,7 +50,7 @@ def build_params(req: LLMRequest, for_batch: bool = False) -> dict:
 
     SDK 1.x dropped `temperature` from the method signature. Haiku 4.5 still honours
     it, so it goes through extra_body (or straight into a batch request's params).
-    Sonnet 5.5 rejects non-default values, so callers leave it unset there.
+    Sonnet 5 rejects non-default values, so callers leave it unset there.
     """
     cc = {"type": "ephemeral"} if req.cache_ttl == "5m" else {"type": "ephemeral", "ttl": req.cache_ttl}
     system = copy.deepcopy(req.system)
@@ -92,6 +92,39 @@ def build_params(req: LLMRequest, for_batch: bool = False) -> dict:
     if oc:
         params["output_config"] = oc
     return params
+
+
+def prefix_key(req: LLMRequest) -> str:
+    """Everything that decides whether two requests share the tools + system cache entry."""
+    return request_key(
+        {
+            "model": req.model,
+            "tools": [t.__dict__ for t in req.tools],
+            "system": req.system,
+            "tool_choice": req.tool_choice,
+            "thinking": req.thinking,
+            "effort": req.effort,
+            "schema": req.output_schema,
+            "ttl": req.cache_ttl,
+        }
+    )
+
+
+def prewarm_params(req: LLMRequest, max_tokens: int = 1) -> dict:
+    """A request that writes only the static prefix (tools + system) to the prompt cache.
+
+    Requests inside one Message Batch run concurrently, so without this every one of
+    them pays its own cache write for the same prefix. One interactive call first
+    writes it once, and the batch then reads it at 0.1x (on top of the batch discount).
+    max_tokens=0 would be the natural pre-warm, but the API refuses it together with
+    output_config.format, and the format is part of the cached prefix (checked live on
+    2026-09-29: dropping it changed the prefix by about 1,100 tokens). So the pre-warm
+    keeps every parameter and asks for a single output token.
+    """
+    p = build_params(req)
+    p["messages"] = [{"role": "user", "content": "Pre-warm the cache. No answer needed."}]
+    p["max_tokens"] = max_tokens
+    return p
 
 
 def normalize_content(blocks) -> list[dict]:
@@ -182,6 +215,28 @@ class AnthropicProvider:
         self._store(req, resp, batch=False)
         return resp
 
+    def prewarm(self, reqs: list[LLMRequest], min_group: int = 3) -> int:
+        """Write each shared static prefix once before a batch. Returns the number of pre-warm calls."""
+        groups: dict[str, list[LLMRequest]] = {}
+        for r in reqs:
+            if r.cache and r.system:
+                groups.setdefault(prefix_key(r), []).append(r)
+        n = 0
+        for rs in groups.values():
+            if len(rs) < min_group:
+                continue
+            req = rs[0]
+            m = self.client.messages.create(**prewarm_params(req))
+            record(
+                provider=self.name,
+                model=req.model,
+                usage=usage_from(m.usage),
+                run_id=req.run_id,
+                purpose="prewarm",
+            )
+            n += 1
+        return n
+
     # ---------- Message Batches ----------
     def complete_batch(
         self, items: list[tuple[str, LLMRequest]], poll_s: float = 20.0, max_wait_s: float = 6 * 3600
@@ -207,6 +262,7 @@ class AnthropicProvider:
             return out
         run_id = todo[0][1].run_id
         check_budget(run_id, sum(estimate_usd(r, batch=True) for _, r in todo))
+        self.prewarm([r for _, r in todo])
         by_id = dict(todo)
         batch = self.client.messages.batches.create(
             requests=[

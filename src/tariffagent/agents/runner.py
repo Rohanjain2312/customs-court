@@ -107,7 +107,7 @@ def run_batched(
         for fid, req in flat.items():
             by_provider.setdefault(type(provider_for(req.model)).__name__, []).append((fid, req))
         responses: dict[str, LLMResponse | Exception] = {}
-        for pname, reqs in by_provider.items():
+        for reqs in by_provider.values():
             prov = provider_for(reqs[0][1].model)
             if isinstance(prov, AnthropicProvider):
                 log(f"round {rnd}: batch of {len(reqs)} requests")

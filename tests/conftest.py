@@ -1,4 +1,5 @@
 import os
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -9,7 +10,10 @@ FIXTURE_DATA = Path(__file__).parent / "fixtures" / "data"
 os.environ["DATA_DIR"] = str(FIXTURE_DATA)
 os.environ["USE_VECTORS"] = "false"
 os.environ["OFFLINE"] = "true"
-os.environ.pop("ANTHROPIC_API_KEY", None) if os.environ.get("TARIFFAGENT_LIVE") != "1" else None
+if os.environ.get("TARIFFAGENT_LIVE") != "1":
+    os.environ.pop("ANTHROPIC_API_KEY", None)
+    # Mocked calls must never write rows into the real spend ledger.
+    os.environ["LEDGER_FILE"] = str(Path(tempfile.mkdtemp(prefix="ta-ledger-")) / "ledger.jsonl")
 
 
 @pytest.fixture(autouse=True)

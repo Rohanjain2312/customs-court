@@ -95,7 +95,7 @@ class AgentConfig:
 
 
 def model_kwargs(model: str, effort: str | None, temperature: float | None, thinking: dict | None) -> dict:
-    """Per-model request settings. Sonnet 5.5 rejects non-default temperature; Haiku 4.5 has no effort."""
+    """Per-model request settings. Sonnet 5 rejects non-default temperature; Haiku 4.5 has no effort."""
     if "haiku" in model:
         return {
             "temperature": 0.0 if temperature is None else temperature,

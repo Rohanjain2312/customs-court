@@ -15,7 +15,7 @@ ANTHROPIC_MSG = {
     "id": "msg_test",
     "type": "message",
     "role": "assistant",
-    "model": "claude-sonnet-5-5",
+    "model": "claude-sonnet-5",
     "content": [
         {"type": "text", "text": "Checking the heading."},
         {"type": "tool_use", "id": "toolu_1", "name": "hts_navigate", "input": {"code": "4202"}},
@@ -34,7 +34,7 @@ ANTHROPIC_MSG = {
 
 def _req(**kw) -> LLMRequest:
     return LLMRequest(
-        model="claude-sonnet-5-5",
+        model="claude-sonnet-5",
         system=[{"type": "text", "text": "static prefix"}],
         messages=[{"role": "user", "content": "classify a leather handbag"}],
         tools=[
@@ -51,8 +51,7 @@ def _req(**kw) -> LLMRequest:
             "required": ["hts10"],
             "additionalProperties": False,
         },
-        effort="low",
-        **kw,
+        **{"effort": "low", **kw},
     )
 
 
@@ -103,7 +102,7 @@ def test_bedrock_adapter_with_mocked_transport():
     )
     resp = BedrockProvider(client).complete(_req())
     sent = json.loads(cap.requests[0].content)
-    assert sent["model"] == "anthropic.claude-sonnet-5-5"
+    assert sent["model"] == "anthropic.claude-sonnet-5"
     assert sent["system"][-1]["cache_control"]["type"] == "ephemeral"
     assert sent["output_config"]["format"]["type"] == "json_schema"
     assert "bedrock" in str(cap.requests[0].url)
@@ -231,3 +230,31 @@ def test_openai_adapter_with_mocked_transport(monkeypatch, tmp_path):
     assert resp.stop_reason == "tool_use" and resp.tool_uses[0]["input"] == {"code": "4202"}
     assert resp.usage.cache_read_tokens == 800 and resp.usage.input_tokens == 200
     assert resp.usd > 0
+
+
+def test_prewarm_writes_prefix_once_per_shared_prefix():
+    from tariffagent.llm.anthropic_provider import AnthropicProvider, prewarm_params
+
+    p = prewarm_params(_req(cache_ttl="1h"))
+    assert p["max_tokens"] == 1
+    assert p["system"][-1]["cache_control"] == {"type": "ephemeral", "ttl": "1h"}
+    assert "cache_control" not in str(p["messages"])
+    # Same tools, system and schema as the real request, so the cache entry matches.
+    assert p["output_config"] == build_real(_req(cache_ttl="1h"))["output_config"]
+
+    cap = Capture(ANTHROPIC_MSG)
+    import anthropic
+
+    client = anthropic.Anthropic(
+        api_key="test", http_client=httpx2.Client(transport=httpx2.MockTransport(cap))
+    )
+    prov = AnthropicProvider(client)
+    reqs = [_req(cache_ttl="1h") for _ in range(4)] + [_req(cache_ttl="1h", effort="high") for _ in range(2)]
+    assert prov.prewarm(reqs) == 1  # the second group is below the minimum size
+    assert len(cap.requests) == 1
+
+
+def build_real(req):
+    from tariffagent.llm.anthropic_provider import build_params
+
+    return build_params(req)

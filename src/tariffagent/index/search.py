@@ -105,7 +105,7 @@ def build_embeddings(
             old_vecs = np.load(vp)
             old_ids = json.loads(ip.read_text())
             old_h = json.loads(hp.read_text())
-        old = {i: (k, h) for k, (i, h) in enumerate(zip(old_ids, old_h))}
+        old = {i: (k, h) for k, (i, h) in enumerate(zip(old_ids, old_h, strict=True))}
         docs = [ruling_doc(r["subject"], r["text"]) for r in rows]
         hashes = [hashlib.sha1(d.encode()).hexdigest()[:16] for d in docs]
         need = [k for k, r in enumerate(rows) if r["id"] not in old or old[r["id"]][1] != hashes[k]]

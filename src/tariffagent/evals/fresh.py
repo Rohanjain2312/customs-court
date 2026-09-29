@@ -1,8 +1,9 @@
 """Build the fresh evaluation set from CROSS rulings dated after the newest training cutoff.
 
-Newest cutoff among models in use: Claude Sonnet 5.5, training data through June
-2026 (models overview page, checked 2026-09-28). Haiku 4.5: July 2025. gpt-5-mini
-is older. So fresh = rulings dated 2026-07-01 or later.
+The split was fixed on 2026-09-28, when the reasoner was Claude Sonnet 5.5 (training
+data through June 2026). The reasoner is now Claude Sonnet 5 (training data through
+January 2026, model page checked 2026-09-29). Haiku 4.5: July 2025. gpt-5-mini is
+older. Fresh = rulings dated 2026-07-01 or later, so it is past every cutoff in use.
 
 The product description is cut from the ruling's own facts section with a fixed
 rule (no model involved): keep the sentences between the request and the holding,

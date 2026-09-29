@@ -30,6 +30,9 @@ class Price(BaseModel):
 # cache multipliers (pricing page, "Batch processing" section).
 # OpenAI prices checked 2026-09-28 against platform.openai.com/docs/pricing.
 PRICES: dict[str, Price] = {
+    # Main reasoner from 2026-09-29 on. Same list price as Sonnet 5.5 and the cheapest
+    # Sonnet per token (Sonnet 4.6 and 4.5 are $3/$15). Kept 5.5 for older ledger rows.
+    "claude-sonnet-5": Price(input=2.0, output=10.0, cache_write_5m=2.5, cache_write_1h=4.0, cache_read=0.2),
     "claude-sonnet-5-5": Price(
         input=2.0, output=10.0, cache_write_5m=2.5, cache_write_1h=4.0, cache_read=0.2
     ),
@@ -51,7 +54,7 @@ class Settings(BaseSettings):
     openai_api_key: str | None = None
     hf_token: str | None = None
 
-    reasoner_model: str = "claude-sonnet-5-5"
+    reasoner_model: str = "claude-sonnet-5"
     advocate_model: str = "claude-haiku-4-5"
     judge_model: str = "claude-haiku-4-5"
     openai_model: str = "gpt-5-mini"

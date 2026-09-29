@@ -30,7 +30,7 @@ class LLMRequest:
     thinking: dict | None = None
     effort: str | None = None
     output_schema: dict | None = None  # JSON schema for structured output
-    tool_choice: dict | None = None  # only "auto" or "none" (forced choice is a 400 on Sonnet 5.5)
+    tool_choice: dict | None = None  # "auto" or "none" by default (forced choice is a 400 on Sonnet 5.5)
     cache: bool = True  # add a cache breakpoint on the last message block
     cache_ttl: str = "5m"
     purpose: str = ""

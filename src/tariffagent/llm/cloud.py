@@ -16,10 +16,12 @@ from tariffagent.llm.anthropic_provider import build_params, normalize_content, 
 from tariffagent.llm.base import LLMRequest, LLMResponse
 
 BEDROCK_MODEL_IDS = {
+    "claude-sonnet-5": "anthropic.claude-sonnet-5",
     "claude-sonnet-5-5": "anthropic.claude-sonnet-5-5",
     "claude-haiku-4-5": "anthropic.claude-haiku-4-5",
 }
 VERTEX_MODEL_IDS = {
+    "claude-sonnet-5": "claude-sonnet-5",
     "claude-sonnet-5-5": "claude-sonnet-5-5",
     "claude-haiku-4-5": "claude-haiku-4-5@20251001",
 }
