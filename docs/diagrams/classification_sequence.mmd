@@ -1,0 +1,33 @@
+%% One classification with the single agent (arm A). Deploy-ready, not deployed.
+sequenceDiagram
+  autonumber
+  actor U as Caller
+  participant A as Agent (single_episode)
+  participant M as Claude (Sonnet 5)
+  participant T as MCP server
+  participant D as SQLite + vectors
+
+  U->>A: product description
+  A->>M: system = role + skill + GRI (cache breakpoint 1)<br/>user = description, tools = 8 MCP tools,<br/>output_config.format = Classification schema
+  M-->>A: tool_use hts_search
+  A->>T: hts_search(text)
+  T->>D: FTS5 + vector search, fused
+  D-->>T: candidate headings
+  T-->>A: hits (JSON)
+  A->>M: tool_result (cache breakpoint 2 on the latest turn)
+  M-->>A: tool_use hts_navigate, get_notes
+  A->>T: hts_navigate(code), get_notes(chapter)
+  T-->>A: node, children, notes as untrusted_corpus_text
+  A->>M: tool_results
+  M-->>A: tool_use cross_search
+  A->>T: cross_search(query)
+  T-->>A: rulings with status, snippets as untrusted_corpus_text
+  A->>M: tool_results
+  M-->>A: tool_use ruling_status(id)
+  A->>T: ruling_status(id)
+  T-->>A: in_force, modified or revoked, linked rulings
+  A->>M: tool_results
+  M-->>A: final JSON: hts10, gri_path, cited_rulings, rejected_alternatives, missing_facts, confidence, abstain
+  A->>A: parse and validate (pydantic), checks, emit events
+  A-->>U: Classification + usage (tokens, cache reads, cost)
+  Note over A,M: Hard caps: max_turns, token_budget, max_tokens per call.<br/>At the cap the agent forces a final answer with tools off.

@@ -1,0 +1,11 @@
+# Dependencies of the ADK agent (deploy/gcp/tariff_adk). Deploy-ready, not deployed.
+# Used twice: to build the isolated local venv (deploy/gcp/.venv, see build_and_validate.sh)
+# and as the `requirements` list sent to Agent Runtime by deploy_agent_runtime.py.
+# Versions are the ones validated locally on 2026-09-28.
+google-cloud-aiplatform[agent_engines,adk]==2.2.0
+google-adk==2.10.0
+# ADK's Claude model class serves Claude from Vertex AI through AnthropicVertex.
+anthropic[vertex]==1.9.0
+mcp==2.2.0
+google-auth==2.59.0
+cloudpickle==3.1.2

@@ -1,0 +1,25 @@
+# Runtime dependencies of the AgentCore agent image (deploy/aws/Dockerfile.agent).
+# Deploy-ready, not deployed. Kept here, not in the main pyproject.
+# The tariffagent package itself is installed with --no-deps on top of this list.
+# Versions match uv.lock where the package is also a project dependency.
+
+# Model access: Claude on Bedrock through the Anthropic SDK (pulls boto3 and botocore,
+# which also sign the MCP requests to the AgentCore Gateway).
+anthropic[bedrock]==1.9.0
+# MCP client over streamable HTTP.
+mcp==2.2.0
+httpx==0.28.1
+httpx2==2.13.1
+# HTTP server for /invocations and /ping.
+fastapi==0.141.1
+uvicorn==0.54.0
+# Imported by the shared agent code (tariffagent.agents, tariffagent.data, tariffagent.llm).
+pydantic==2.13.5
+pydantic-settings==2.15.0
+python-dotenv==1.2.3
+numpy==2.5.3
+beautifulsoup4==4.15.0
+pypdf==6.19.0
+openai==3.20.0
+# AgentCore Observability: ADOT auto-instrumentation (docs ask for >=0.18.0).
+aws-opentelemetry-distro==0.20.0

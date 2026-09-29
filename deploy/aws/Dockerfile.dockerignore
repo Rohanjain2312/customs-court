@@ -1,0 +1,10 @@
+# Build context is the repo root. Send only what the MCP image needs.
+*
+!pyproject.toml
+!uv.lock
+!README.md
+!LICENSE
+!src/
+!deploy/.build/data/
+**/__pycache__
+**/*.pyc

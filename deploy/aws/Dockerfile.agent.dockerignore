@@ -1,0 +1,13 @@
+# Build context is the repo root. Send only what the agent image needs.
+*
+!pyproject.toml
+!README.md
+!LICENSE
+!src/
+!skills/
+!deploy/aws/requirements.txt
+!deploy/aws/agentcore_agent/
+!deploy/aws/agent_start.sh
+!deploy/.build/agent_data/
+**/__pycache__
+**/*.pyc

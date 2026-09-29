@@ -1,0 +1,54 @@
+# Cloud Run service for the TariffAgent MCP server. Deploy-ready, not deployed.
+#
+# Apply with deploy/gcp/deploy.sh (it fills the ${...} placeholders and refuses to run
+# without I_ACCEPT_CLOUD_COSTS=yes). Auth: Cloud Run IAM invoker check with Google ID
+# tokens. No public access: deploy.sh grants roles/run.invoker to the agent's service
+# account only, never to all users. Requests denied by IAM are not billed
+# (cloud.google.com/run/pricing, checked 2026-09-28).
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ${SERVICE_NAME}
+  labels:
+    cloud.googleapis.com/location: ${REGION}
+    app: tariffagent
+  annotations:
+    # Reachable over the internet, but every request needs a valid ID token from an
+    # identity with roles/run.invoker. Agent Runtime calls from outside the VPC.
+    run.googleapis.com/ingress: all
+spec:
+  template:
+    metadata:
+      annotations:
+        # Scale to zero when idle; cap instances to bound cost.
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "3"
+        # Request-based billing: CPU only while a request is being handled.
+        run.googleapis.com/cpu-throttling: "true"
+        run.googleapis.com/startup-cpu-boost: "true"
+        run.googleapis.com/execution-environment: gen2
+    spec:
+      serviceAccountName: ${MCP_SERVICE_ACCOUNT}
+      containerConcurrency: 20
+      timeoutSeconds: 60
+      containers:
+        - image: ${IMAGE}
+          ports:
+            - name: http1
+              containerPort: 8080
+          env:
+            # Hide evaluation-set rulings so the endpoint cannot leak golden answers.
+            - name: REDACT_EVAL
+              value: "true"
+            - name: USE_VECTORS
+              value: "${USE_VECTORS}"
+          resources:
+            limits:
+              cpu: "1"
+              memory: 2Gi
+          startupProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 0
+            periodSeconds: 2
+            failureThreshold: 30

@@ -1,0 +1,24 @@
+%% GCP: Cloud Run + Vertex AI Agent Runtime. Deploy-ready, not deployed.
+flowchart LR
+  CALLER["Caller<br/>(backend or smoke_test.py)"]
+
+  subgraph gcp["Google Cloud project, one region (deploy/gcp/deploy.sh)"]
+    subgraph ar["Vertex AI Agent Runtime"]
+      ADK["ADK agent tree (tariff_adk)<br/>orchestrator -> advocates (parallel) -> adjudicator<br/>service account tariffagent-agent"]
+      SES["Sessions<br/>(managed by AdkApp)"]
+    end
+    CL["Claude on Vertex AI<br/>(ADK Claude model, cache breakpoints)"]
+    subgraph run["Cloud Run (request-based billing, min 0)"]
+      MCP["tariffagent-mcp :8080/mcp<br/>stateless streamable HTTP<br/>REDACT_EVAL=true"]
+    end
+    AR[("Artifact Registry<br/>amd64 image")]
+    LOG["Cloud Logging, Cloud Trace"]
+  end
+
+  CALLER -->|"Google OAuth (IAM on the agent)"| ADK
+  ADK --> SES
+  ADK -->|"roles/aiplatform.user"| CL
+  ADK -->|"MCP over HTTPS + Google ID token<br/>(audience = service URL)"| INV
+  INV{"Cloud Run IAM invoker check<br/>roles/run.invoker: agent SA only"} -->|"allowed"| MCP
+  AR -.->|"image pull"| MCP
+  ADK & MCP -.-> LOG

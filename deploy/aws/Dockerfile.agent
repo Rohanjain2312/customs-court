@@ -1,0 +1,49 @@
+# syntax=docker/dockerfile:1.7
+# TariffAgent agent image for Amazon Bedrock AgentCore Runtime (HTTP protocol).
+# Deploy-ready, not deployed.
+#
+# AgentCore HTTP contract (docs checked 2026-09-28, runtime-http-protocol-contract.html):
+# host 0.0.0.0, port 8080, POST /invocations, GET /ping, ARM64 image.
+# Build from the repo root after staging data (scripts/export_deploy_data.py):
+#   docker build --platform linux/arm64 -f deploy/aws/Dockerfile.agent -t tariffagent-agent:aws-local .
+# The agent reads only the GRI text and the current revision name from its small
+# database (deploy/.build/agent_data). All tariff and ruling data come from the MCP server.
+
+ARG PYTHON_IMAGE=python:3.12-slim-bookworm
+ARG UV_IMAGE=ghcr.io/astral-sh/uv:0.12.9
+
+FROM ${UV_IMAGE} AS uv
+
+FROM ${PYTHON_IMAGE} AS build
+COPY --from=uv /uv /uvx /bin/
+ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never
+WORKDIR /app
+COPY deploy/aws/requirements.txt /tmp/requirements.txt
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv venv /app/.venv && \
+    uv pip install --python /app/.venv/bin/python -r /tmp/requirements.txt
+COPY pyproject.toml README.md LICENSE ./
+COPY src ./src
+COPY skills ./skills
+# Editable install so tariffagent.config.ROOT resolves to /app and the skill loads
+# from /app/skills. --no-deps: the dependency list is requirements.txt.
+RUN uv pip install --python /app/.venv/bin/python --no-deps -e .
+COPY deploy/aws/agentcore_agent /app/agent/agentcore_agent
+COPY deploy/aws/agent_start.sh /app/agent/agent_start.sh
+
+FROM ${PYTHON_IMAGE} AS runtime
+RUN useradd --system --uid 10001 --home-dir /home/app --create-home app
+COPY --from=build /app /app
+COPY deploy/.build/agent_data /agent_data
+ENV PATH=/app/.venv/bin:$PATH \
+    PYTHONPATH=/app/agent \
+    PYTHONUNBUFFERED=1 \
+    DATA_DIR=/agent_data \
+    OFFLINE=false \
+    USE_VECTORS=false \
+    AGENT_MODEL_MODE=bedrock \
+    MCP_AUTH=sigv4
+USER app
+WORKDIR /home/app
+EXPOSE 8080
+CMD ["sh", "/app/agent/agent_start.sh"]

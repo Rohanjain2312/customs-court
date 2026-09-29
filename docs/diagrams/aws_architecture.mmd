@@ -1,0 +1,25 @@
+%% AWS: Amazon Bedrock AgentCore. Deploy-ready, not deployed.
+flowchart LR
+  CALLER["Caller<br/>(backend or smoke_test.py)"]
+
+  subgraph aws["AWS account, one region (Terraform: deploy/aws/terraform)"]
+    subgraph rt_agent["AgentCore Runtime: agent (HTTP, :8080)"]
+      AG["/invocations, /ping<br/>single agent, ADOT"]
+    end
+    GW["AgentCore Gateway<br/>MCP, inbound AWS_IAM"]
+    subgraph rt_mcp["AgentCore Runtime: MCP server (MCP, :8000/mcp)"]
+      MCP["tariffagent-mcp<br/>stateless streamable HTTP<br/>REDACT_EVAL=true"]
+    end
+    BR["Claude on Bedrock<br/>(Messages API)"]
+    ECR[("ECR: mcp and agent<br/>ARM64 images")]
+    CW["CloudWatch Logs, X-Ray spans<br/>(Observability)"]
+    ID["AgentCore Identity<br/>(workload identities, JWT check)"]
+  end
+
+  CALLER -->|"SigV4 (IAM) or JWT bearer"| AG
+  AG -->|"IAM role: bedrock-mantle:CreateInference"| BR
+  AG -->|"MCP over HTTPS, SigV4,<br/>tools named tariffagent-mcp___*"| GW
+  GW -->|"SigV4 with gateway role<br/>(only principal allowed by resource policy)"| MCP
+  ECR -.->|"image pull"| AG & MCP
+  AG & GW & MCP -.-> CW
+  ID -.-> AG & GW

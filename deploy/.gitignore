@@ -1,0 +1,17 @@
+# Staged data and build outputs (see scripts/export_deploy_data.py).
+.build/
+# Isolated Google ADK environment (deploy/gcp/.venv).
+gcp/.venv/
+# Terraform working files and state. Never commit state.
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+**/terraform/.terraform.lock.hcl.bak
+# Local run outputs.
+**/*.log
+**/__pycache__/
+# Generated prompt assets for the ADK package (deploy/gcp/build_assets.py).
+gcp/tariff_adk/_assets.json
+# Resource names written by deploy/gcp/deploy.sh for destroy.sh.
+gcp/.deployed.env

@@ -1,0 +1,43 @@
+%% Components and data flow. Deploy-ready, not deployed.
+flowchart LR
+  subgraph clients["Clients"]
+    CC["Claude Code / Claude Desktop<br/>(MCP over stdio or HTTP)"]
+    DEMO["Customs Court demo<br/>(FastAPI + SSE, replay by default)"]
+    EVAL["Eval harness<br/>(tariffagent eval)"]
+  end
+
+  subgraph agent["Agents (tariffagent.agents)"]
+    SINGLE["Single agent<br/>arms A, B, C, Z"]
+    MULTI["Multi-agent<br/>orchestrator, advocates, adjudicator"]
+    SKILL["gri-classification skill<br/>+ GRI text (cached prefix)"]
+    EVENTS["Typed events<br/>(agents/events.py)"]
+  end
+
+  subgraph llm["Model providers (tariffagent.llm)"]
+    ANTH["Anthropic API<br/>(used for evals)"]
+    BED["Bedrock adapter<br/>(mocked in tests)"]
+    VTX["Vertex adapters<br/>(mocked in tests)"]
+  end
+
+  subgraph mcp["MCP server (tariffagent-mcp)"]
+    TOOLS["8 read-only tools<br/>hts_search, cross_search, ..."]
+    UNTRUSTED["Corpus text wrapped as<br/>untrusted_corpus_text"]
+    REDACT["--redact-eval<br/>hides eval rulings"]
+  end
+
+  subgraph data["Data (public corpus)"]
+    DB[("SQLite: HTS tree, notes,<br/>CROSS rulings, status, FTS5")]
+    VEC[("Local vectors<br/>bge-small, numpy")]
+  end
+
+  CC --> TOOLS
+  DEMO --> SINGLE & MULTI
+  EVAL --> SINGLE & MULTI
+  SINGLE & MULTI --> SKILL
+  SINGLE & MULTI --> EVENTS
+  EVENTS --> DEMO
+  SINGLE & MULTI -->|"LLMRequest"| ANTH & BED & VTX
+  SINGLE & MULTI -->|"tool calls (in-process or MCP)"| TOOLS
+  TOOLS --> UNTRUSTED
+  TOOLS --> REDACT
+  TOOLS --> DB & VEC
