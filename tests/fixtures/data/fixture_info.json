@@ -1,0 +1,9 @@
+{
+ "revision": "2026HTSRev20",
+ "rulings": 79,
+ "goldens": [
+  "N108629",
+  "N251899"
+ ],
+ "poison_id": "N999001"
+}

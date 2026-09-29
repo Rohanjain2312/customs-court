@@ -1,0 +1,89 @@
+{
+  "heuristic_version": "v3 (meta, reverse links, HQ text with proposal and negation filters, short forms)",
+  "sets": {
+    "check_50": {
+      "n": 50,
+      "accuracy": 1.0,
+      "by_stratum": {
+        "meta_revoked": "15/15",
+        "meta_modified": "10/10",
+        "text": "10/10",
+        "reverse_link": "5/5",
+        "mentioned_in_force": "10/10"
+      },
+      "errors": [],
+      "note": "Stratified sample read before v2 and v3. The heuristic was fixed after reading it, so this score is in-sample."
+    },
+    "holdout_20": {
+      "n": 20,
+      "accuracy": 0.85,
+      "by_stratum": {
+        "holdout_text_v2": "13/15",
+        "holdout_dropped_by_v2": "4/5"
+      },
+      "errors": [
+        {
+          "id": "966188",
+          "label": "in_force",
+          "derived": "revoked",
+          "stratum": "holdout_text_v2"
+        },
+        {
+          "id": "J84482",
+          "label": "in_force",
+          "derived": "revoked",
+          "stratum": "holdout_text_v2"
+        },
+        {
+          "id": "957491",
+          "label": "modified",
+          "derived": "in_force",
+          "stratum": "holdout_dropped_by_v2"
+        }
+      ],
+      "note": "Drawn after v2: 15 text-derived cases plus 5 that v2 stopped flagging. v3 fixes came after, so partly in-sample."
+    },
+    "holdout_v3_10": {
+      "n": 10,
+      "accuracy": 0.7,
+      "by_stratum": {
+        "holdout_text_v3": "7/10"
+      },
+      "errors": [
+        {
+          "id": "H317289",
+          "label": "in_force",
+          "derived": "revoked",
+          "stratum": "holdout_text_v3"
+        },
+        {
+          "id": "G88233",
+          "label": "revoked",
+          "derived": "modified",
+          "stratum": "holdout_text_v3"
+        },
+        {
+          "id": "W968273",
+          "label": "in_force",
+          "derived": "revoked",
+          "stratum": "holdout_text_v3"
+        }
+      ],
+      "note": "Drawn after v3 was frozen: 10 text-derived cases. This is the honest out-of-sample number for text-derived status."
+    }
+  },
+  "v1_on_check_50": {
+    "accuracy": 0.96,
+    "errors": [
+      "H325434 (denied interim revocation)",
+      "964559 (not specifically revoked)"
+    ]
+  },
+  "population_by_method": {
+    "meta": 3049,
+    "meta_no_signal": 215600,
+    "no_meta": 759,
+    "reverse_link": 92,
+    "text": 117
+  }
+}
