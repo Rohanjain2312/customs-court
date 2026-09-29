@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # No live API calls in CI: no keys are provided and OFFLINE forces the recorded-response cache.
+      OFFLINE: "true"
+      USE_VECTORS: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: uv sync --extra cloud
+      - name: Lint
+        run: uv run ruff check src tests scripts
+      - name: Tests (recorded fixtures only)
+        run: uv run pytest -q -m "not live"
+      - name: Smoke eval (recorded responses only)
+        run: uv run tariffagent eval smoke

@@ -28,13 +28,23 @@ def provider_for(model: str):
     return _providers[key]
 
 
+def _call(req: LLMRequest, complete) -> LLMResponse:
+    return (complete or provider_for(req.model).complete)(req)
+
+
 def drive(episode, complete: Callable[[LLMRequest], LLMResponse] | None = None) -> dict:
-    """Run one episode to completion with interactive calls."""
+    """Run one episode to completion with interactive calls.
+
+    An episode may yield a list of requests (parallel sub-agents); they run concurrently.
+    """
     try:
         req = next(episode)
         while True:
-            fn = complete or provider_for(req.model).complete
-            resp = fn(req)
+            if isinstance(req, list):
+                with cf.ThreadPoolExecutor(max_workers=max(1, len(req))) as ex:
+                    resp = list(ex.map(lambda r: _call(r, complete), req))
+            else:
+                resp = _call(req, complete)
             req = episode.send(resp)
     except StopIteration as stop:
         return stop.value
@@ -57,6 +67,10 @@ def run_interactive(
                 "trace": traceback.format_exc()[-2000:],
             }
         res["events"] = [ev.model_dump() for ev in bus.events]
+        c = (res.get("classification") or {}).get("hts10")
+        print(
+            f"done {item['item_id']} -> {c} ${res.get('usd', 0):.4f} {res.get('error', '')[:120]}", flush=True
+        )
         return res
 
     with cf.ThreadPoolExecutor(max_workers=concurrency) as ex:
@@ -83,8 +97,15 @@ def run_batched(
     while pending and rnd < max_rounds:
         rnd += 1
         by_provider: dict[str, list[tuple[str, LLMRequest]]] = {}
+        flat: dict[str, LLMRequest] = {}
         for iid, req in pending.items():
-            by_provider.setdefault(type(provider_for(req.model)).__name__, []).append((iid, req))
+            if isinstance(req, list):
+                for j, r in enumerate(req):
+                    flat[f"{iid}#{j}"] = r
+            else:
+                flat[iid] = req
+        for fid, req in flat.items():
+            by_provider.setdefault(type(provider_for(req.model)).__name__, []).append((fid, req))
         responses: dict[str, LLMResponse | Exception] = {}
         for pname, reqs in by_provider.items():
             prov = provider_for(reqs[0][1].model)
@@ -98,17 +119,26 @@ def run_batched(
                     except Exception as e:  # noqa: BLE001
                         responses[iid] = e
         new_pending: dict[str, LLMRequest] = {}
-        for iid, resp in responses.items():
-            gen = live[iid]
+        # One interactive retry for requests the batch could not serve.
+        for fid, resp in list(responses.items()):
             if isinstance(resp, Exception):
-                # One interactive retry for items the batch could not serve.
                 try:
-                    resp = provider_for(pending[iid].model).complete(pending[iid])
+                    responses[fid] = provider_for(flat[fid].model).complete(flat[fid])
                 except Exception as e:  # noqa: BLE001
-                    buses[iid].emit(ErrorEvent(message=str(e)[:500]))
-                    done[iid] = {"item_id": iid, "error": f"{type(e).__name__}: {e}"}
-                    live.pop(iid)
-                    continue
+                    responses[fid] = e
+        for iid, req in pending.items():
+            gen = live[iid]
+            if isinstance(req, list):
+                resp = [responses[f"{iid}#{j}"] for j in range(len(req))]
+                failed = next((r for r in resp if isinstance(r, Exception)), None)
+            else:
+                resp = responses[iid]
+                failed = resp if isinstance(resp, Exception) else None
+            if failed is not None:
+                buses[iid].emit(ErrorEvent(message=str(failed)[:500]))
+                done[iid] = {"item_id": iid, "error": f"{type(failed).__name__}: {failed}"}
+                live.pop(iid)
+                continue
             try:
                 new_pending[iid] = gen.send(resp)
             except StopIteration as s:

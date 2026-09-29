@@ -198,15 +198,25 @@ def rrf(bm25: list, vec: list, k: int) -> list[Hit]:
 
 
 class HybridSearch:
-    """Search rulings and HTS lines. Thread safe for reads."""
+    """Search rulings and HTS lines. Calls are serialized with a lock: the SQLite
+    connection and the embedding model (MPS) are not safe to share across threads."""
 
     def __init__(self, con: sqlite3.Connection | None = None, use_vectors: bool = True):
         self.con = con or connect()
+        self._lock = threading.RLock()
         self.use_vectors = use_vectors
         self.rulings_vi = VectorIndex("rulings")
         self.hts_vi = VectorIndex("hts")
 
-    def search_rulings(
+    def search_rulings(self, *a, **kw) -> list[Hit]:
+        with self._lock:
+            return self._search_rulings(*a, **kw)
+
+    def search_hts(self, *a, **kw) -> list[Hit]:
+        with self._lock:
+            return self._search_hts(*a, **kw)
+
+    def _search_rulings(
         self,
         query: str,
         k: int = 10,
@@ -247,16 +257,31 @@ class HybridSearch:
             vec = [key for key, _ in self.rulings_vi.search(qv, pool, allow=allowed)]
         return rrf(bm, vec, k)
 
-    def search_hts(self, query: str, k: int = 10, pool: int = 60) -> list[Hit]:
+    def _special_idx(self) -> set[int]:
+        """Chapters 98 and 99 (special provisions, temporary and additional duties) are never the
+        product classification, and their long descriptions crowd out real headings in search."""
+        if not hasattr(self, "_special"):
+            rev = current_rev(self.con)
+            self._special = {
+                r[0]
+                for r in self.con.execute(
+                    "SELECT idx FROM hts_rows WHERE rev=? AND chapter IN ('98','99')", (rev,)
+                )
+            }
+        return self._special
+
+    def _search_hts(self, query: str, k: int = 10, pool: int = 60) -> list[Hit]:
+        special = self._special_idx()
         bm = [
             r["idx"]
             for r in self.con.execute(
                 "SELECT idx FROM hts_fts WHERE hts_fts MATCH ? ORDER BY bm25(hts_fts, 0, 1.0, 3.0, 1.0) LIMIT ?",
-                (fts_query(query), pool),
+                (fts_query(query), pool * 3),
             )
-        ]
+            if int(r["idx"]) not in special
+        ][:pool]
         vec = []
         if self.use_vectors:
             qv = embed([query], query=True)[0]
-            vec = [key for key, _ in self.hts_vi.search(qv, pool)]
+            vec = [key for key, _ in self.hts_vi.search(qv, pool, allow=lambda i: int(i) not in special)]
         return rrf(bm, vec, k)

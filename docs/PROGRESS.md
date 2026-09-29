@@ -62,3 +62,20 @@ Tests passing
 
 Unverified
 - Only one live e2e run was made; behavior on other products is measured in Phase 4.
+
+## Phase 3: Single-agent baseline (2026-09-29)
+
+Built
+- Provider adapters behind one interface (`src/tariffagent/llm/`): Anthropic (live), OpenAI Chat Completions (subset only), Bedrock (AnthropicBedrockMantle) and Vertex (Claude and Gemini) as mocked code paths that refuse to build a real client without `I_ACCEPT_CLOUD_COSTS=yes`.
+- Prompt caching: two breakpoints, one at the end of the static prefix (tools, role, skill body, GRI text) and one at the end of the conversation so each turn reads the previous one. Cache read and write tokens go to the ledger. Batch runs use the 1-hour TTL because rounds can be minutes apart.
+- Structured output `Classification` through `output_config.format` (hts10, facts, gri_path, deciding_gri, cited_rulings with status, rejected_alternatives, missing_facts, confidence, abstain, rationale).
+- Tool loop with hard caps on turns and tokens, a forced final answer when the cap is hit, typed events, and a jsonl trace per run.
+- One episode generator driven two ways: interactive threads, or lockstep rounds through the Message Batches API (50% off; the pricing page says the discount stacks with cache multipliers). Every request goes through the on-disk response cache, so re-runs are free.
+- Splits fixed before prompt work: `atlas_test_200`, `dev_100` (seeded sample of ATLAS validation), `fresh_300`, `subset_80` (see `evals/datasets/manifest.json`).
+- Model settings verified 2026-09-28: Sonnet 5.5 rejects non-default temperature (so it is left unset), forced tool choice returns 400 (not used), SDK 1.x dropped `temperature` from the method signature (Haiku gets temperature 0 through `extra_body`).
+
+Tests passing
+- `tests/test_providers_mocked.py` (7): cache breakpoints, structured output params, Haiku temperature path, Bedrock and Vertex Claude through mocked httpx2 transports, Gemini request translation and usage mapping, cloud opt-in guard, OpenAI translation and cached-token accounting.
+- `tests/test_multi_agent_flow.py` (2): scripted fake model through the interactive and batched runners.
+
+Pilot (dev, 20 items, interactive): 10-digit 7/16, 6-digit 12/20, $0.036 per item, cache hit rate 70%, p50 11 s. Spend so far $0.88.

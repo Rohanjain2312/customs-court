@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import random
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -86,3 +87,60 @@ def build_atlas() -> dict:
             },
         ),
     }
+
+
+def product_type(it: dict) -> str:
+    """Rule-based stratum from the description and the reference reasoning."""
+    d = it["description"].lower()
+    r = (it.get("reference_reasoning") or "").lower()
+    if re.search(r"\b(set|kit)s?\b", d) or "put up in sets" in r or "retail set" in r:
+        return "sets"
+    if re.search(r"\bpart(s)?\b|component|accessor|assembl(y|ies) for|replacement", d) or re.search(
+        r"parts (and accessories )?of", r
+    ):
+        return "parts_accessories"
+    if "essential character" in r or "composite" in r or "gri 3" in r or "gri 3" in d:
+        return "composites"
+    return "simple"
+
+
+def plausible_headings(it: dict) -> int:
+    """Distinct 4-digit headings named in the reference reasoning (gold plus alternatives CBP discussed)."""
+    r = it.get("reference_reasoning") or ""
+    heads = {m[:4] for m in re.findall(r"\b(\d{4})(?:\.\d{2})", r)} | {
+        m for m in re.findall(r"heading (\d{4})\b", r)
+    }
+    heads.add(it["gold_digits"][:4])
+    return len(heads)
+
+
+def build_subset(n: int = 80, seed: int = 13) -> dict:
+    """Stratified subset of atlas_test_200 in an order where any prefix stays balanced."""
+    items = load_dataset("atlas_test_200")
+    rng = random.Random(seed)
+    strata: dict[str, list[dict]] = {}
+    for it in items:
+        it = dict(it)
+        it["product_type"] = product_type(it)
+        it["n_headings"] = plausible_headings(it)
+        it["ambiguous"] = it["n_headings"] >= 2
+        strata.setdefault(f"{it['product_type']}|{'multi' if it['ambiguous'] else 'single'}", []).append(it)
+    for v in strata.values():
+        rng.shuffle(v)
+    order: list[dict] = []
+    keys = sorted(strata)
+    while len(order) < n and any(strata.values()):
+        for k in keys:
+            if strata[k] and len(order) < n:
+                order.append(strata[k].pop())
+    counts: dict[str, int] = {}
+    for it in order:
+        key = f"{it['product_type']}|{'multi' if it['ambiguous'] else 'single'}"
+        counts[key] = counts.get(key, 0) + 1
+    meta = {
+        "source": "atlas_test_200",
+        "split": f"stratified by product type and plausible headings, round-robin order, seed {seed}",
+        "strata": counts,
+        "use": "arms B and C and repeat runs",
+    }
+    return {f"subset_{len(order)}": write_dataset(f"subset_{len(order)}", order, meta)}

@@ -226,6 +226,7 @@ def single_episode(item: dict, cfg: AgentConfig, executor: ToolExecutor | None, 
             cache_ttl=cfg.cache_ttl,
             purpose=f"{agent}:{item['item_id']}:t{turn}",
             run_id=cfg.run_id,
+            cache_salt=str(cfg.extra.get("repeat", "")),
             **kw,
         )
         resp = yield req
@@ -268,6 +269,7 @@ def single_episode(item: dict, cfg: AgentConfig, executor: ToolExecutor | None, 
                     cache=False,
                     purpose=f"friend:{item['item_id']}",
                     run_id=cfg.run_id,
+                    cache_salt=str(cfg.extra.get("repeat", "")),
                     **model_kwargs(cfg.friend_model, "low", None, None),
                 )
                 fresp = yield freq

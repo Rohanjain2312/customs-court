@@ -22,6 +22,7 @@ from tariffagent.mcp_server.schemas import (
     NoteRef,
     NotesResult,
     RevisionDiffResult,
+    RulingCodeHint,
     RulingHit,
     RulingResult,
     RulingStatusResult,
@@ -86,7 +87,8 @@ class TariffTools:
         self.search = HybridSearch(
             self.con, use_vectors=s.use_vectors if use_vectors is None else use_vectors
         )
-        self._lock = threading.Lock()
+        self._lock = threading.RLock()
+        self.search._lock = self._lock  # one lock for the shared connection
         self.redacted: set[str] = set()
         if self.redact_eval:
             self.redacted = {r[0] for r in self.con.execute("SELECT DISTINCT ruling_id FROM eval_redactions")}
@@ -255,7 +257,27 @@ class TariffTools:
                     score=round(h.score, 5),
                 )
             )
-        return HtsSearchResult(revision=self.rev, query=text, hits=out)
+        return HtsSearchResult(
+            revision=self.rev, query=text, hits=out, codes_in_similar_rulings=self._ruling_code_hints(text)
+        )
+
+    def _ruling_code_hints(self, text: str, n_rulings: int = 12, top: int = 5) -> list[RulingCodeHint]:
+        """Plain-language products map poorly to terse tariff text; similar rulings bridge the gap."""
+        counts: dict[str, list[str]] = {}
+        for h in self.search.search_rulings(text, k=n_rulings, exclude=self.redacted):
+            row = self._q("SELECT tariffs FROM rulings WHERE id=?", h.key)
+            for c in json.loads(row[0]["tariffs"] or "[]") if row else []:
+                d = digits(c)
+                if len(d) >= 8 and not d.startswith(("98", "99")):
+                    counts.setdefault(d[:10], []).append(h.key)
+        ranked = sorted(counts.items(), key=lambda kv: -len(kv[1]))[:top]
+        out = []
+        for d, ids in ranked:
+            exists = bool(self._q("SELECT 1 FROM hts_rows WHERE rev=? AND digits=?", self.rev, d))
+            out.append(
+                RulingCodeHint(code=format_code(d), current=exists, n_rulings=len(ids), example_ruling=ids[0])
+            )
+        return out
 
     def get_notes(self, scope: str, id: str, offset: int = 0) -> NotesResult:
         scope = scope.lower().strip()

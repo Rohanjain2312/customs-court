@@ -16,5 +16,42 @@
     "source": "huggingface.co/datasets/Dayanand314Krishna/cross_rulings_hts_dataset_for_tariffs (mirror of flexifyai ATLAS)",
     "split": "validation (100 of 200, seed 13)",
     "use": "prompt work only, never reported"
+  },
+  "fresh_300": {
+    "candidates": 583,
+    "created": "2026-09-29T00:19:36+00:00",
+    "date_range": [
+      "2026-07-01",
+      "2026-09-11"
+    ],
+    "file": "evals/datasets/fresh_300.jsonl",
+    "sha256": "98125c7e160f6a6f221b0f339940c542258326fe53b20fe0558a81af2c3c1385",
+    "size": 300,
+    "skipped": {
+      "codes": 204,
+      "short_description": 3
+    },
+    "source": "CBP CROSS (rulings.cbp.gov) full text, fetched 2026-09-28",
+    "split": "rulings dated 2026-07-01 or later, one 10-digit code, description cut from the ruling facts by rule",
+    "use": "reported separately from ATLAS (post training cutoff)"
+  },
+  "subset_80": {
+    "created": "2026-09-29T00:19:53+00:00",
+    "file": "evals/datasets/subset_80.jsonl",
+    "sha256": "4fbb8e7047a8491e5befdd80c66fff651bc39880d687684abea7753dd9d7cf02",
+    "size": 80,
+    "source": "atlas_test_200",
+    "split": "stratified by product type and plausible headings, round-robin order, seed 13",
+    "strata": {
+      "composites|multi": 6,
+      "composites|single": 7,
+      "parts_accessories|multi": 12,
+      "parts_accessories|single": 10,
+      "sets|multi": 2,
+      "sets|single": 6,
+      "simple|multi": 19,
+      "simple|single": 18
+    },
+    "use": "arms B and C and repeat runs"
   }
 }

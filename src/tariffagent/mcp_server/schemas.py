@@ -63,10 +63,21 @@ class HtsSearchHit(BaseModel):
     score: float
 
 
+class RulingCodeHint(BaseModel):
+    code: str
+    current: bool = Field(description="The code exists in the current HTS revision")
+    n_rulings: int = Field(description="How many of the most similar rulings cite it")
+    example_ruling: str
+
+
 class HtsSearchResult(BaseModel):
     revision: str
     query: str
     hits: list[HtsSearchHit]
+    codes_in_similar_rulings: list[RulingCodeHint] = Field(
+        default_factory=list,
+        description="Codes cited by the rulings most similar to the query. A lead to check, not an answer.",
+    )
 
 
 class NotesResult(BaseModel):

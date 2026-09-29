@@ -6,7 +6,7 @@ UV := uv run
         deploy-aws deploy-gcp destroy-aws destroy-gcp mcp-stdio mcp-http fixture
 
 setup:
-	uv sync --extra embed
+	uv sync --extra embed --extra cloud
 	cd demo/frontend && npm ci
 
 # Full data pipeline. Every step caches raw responses on disk and resumes.

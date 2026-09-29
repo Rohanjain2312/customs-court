@@ -26,6 +26,7 @@ dependencies = [
 
 [project.optional-dependencies]
 embed = ["sentence-transformers>=3.0", "faiss-cpu>=1.8"]
+cloud = ["anthropic[bedrock,vertex]>=1.9"]
 
 [project.scripts]
 tariffagent = "tariffagent.cli:app"

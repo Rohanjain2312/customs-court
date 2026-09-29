@@ -75,6 +75,57 @@ def data_status(as_json: bool = False):
     console.print(t)
 
 
+eval_app = typer.Typer(no_args_is_help=True, help="Evaluation runs")
+app.add_typer(eval_app, name="eval")
+
+
+@eval_app.command("run")
+def eval_run(
+    dataset: str = typer.Option(..., help="dev_100, atlas_test_200, fresh_N, subset_N"),
+    arm: str = typer.Option(
+        "A", help="A single, B token-matched, C smart friend, D multi-agent, Z zero-shot"
+    ),
+    mode: str = typer.Option("batch", help="batch or interactive"),
+    n: int = typer.Option(0, help="first n items (0 = all)"),
+    run_id: str = typer.Option("", help="defaults to dataset-arm-timestamp"),
+    phase: str = typer.Option("eval", help="ledger phase label"),
+    concurrency: int = 4,
+    repeat: int = 0,
+    token_budget: int = 0,
+    max_turns: int = 0,
+):
+    """Run one arm on one dataset and write results, traces and a report."""
+    import os
+
+    os.environ["PHASE"] = phase
+    from tariffagent.evals.run import run_arm, summarize
+
+    kw = {}
+    if token_budget:
+        kw["token_budget"] = token_budget
+    if max_turns:
+        kw["max_turns"] = max_turns
+    rep = run_arm(
+        dataset,
+        arm,
+        mode=mode,
+        n=n or None,
+        run_id=run_id or None,
+        concurrency=concurrency,
+        repeat=repeat,
+        **kw,
+    )
+    console.print(summarize(rep))
+
+
+@eval_app.command("smoke")
+def eval_smoke():
+    """Score recorded runs offline (no network, no spend) and check the reports are reproducible."""
+    from tariffagent.evals.smoke import smoke
+
+    smoke()
+
+
 @app.command("cost")
 def cost():
     """Print API spend by phase and model from data/ledger.jsonl."""

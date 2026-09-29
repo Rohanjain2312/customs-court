@@ -35,6 +35,9 @@ class LLMRequest:
     cache_ttl: str = "5m"
     purpose: str = ""
     run_id: str = "adhoc"
+    # Only part of the response-cache key, never sent to the API. Repeat runs set it
+    # so they make fresh calls instead of replaying the first run.
+    cache_salt: str = ""
 
     def cache_payload(self, provider: str) -> dict[str, Any]:
         return {
@@ -49,6 +52,7 @@ class LLMRequest:
             "effort": self.effort,
             "output_schema": self.output_schema,
             "tool_choice": self.tool_choice,
+            **({"cache_salt": self.cache_salt} if self.cache_salt else {}),
         }
 
 
