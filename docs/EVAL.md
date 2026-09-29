@@ -30,18 +30,18 @@ This file records how the data was built, what each dataset is, how scoring work
 
 Derived in `src/tariffagent/data/status.py` from, in order: CROSS metadata on the ruling, reverse links from rulings that list it in `revokes` or `modifies`, and sentences in later HQ ruling texts ("NY N123456 is hereby revoked"). Proposed actions and negated or denied revocations are skipped.
 
-Distribution: 215,600 in force, 2,004 revoked, 1,254 modified, 759 unknown (mirror-only rulings with no CROSS metadata). Text-derived calls are only 117 of 219,617.
+Distribution after the text fetch finished and the corpus was frozen (2026-09-29): 215,556 in force, 2,030 revoked, 1,267 modified, 277 unknown (mirror-only rulings with no CROSS metadata). By method: 3,049 from CROSS metadata, 86 from reverse links, 162 from later ruling text, 215,556 with no signal (in force by default).
 
-Accuracy against hand labels (I read the linking ruling text for every case; labels in `evals/status_check/`, scores in `evals/reports/ruling_status_accuracy.json`):
+Accuracy against hand labels (I read the linking ruling text for every case; labels in `evals/status_check/`, scores in `evals/reports/ruling_status_accuracy.json`). The labeled sets were re-scored against the frozen corpus, where more HQ texts are present than when the heuristic was written:
 
 | Set | n | Accuracy | Notes |
 |---|---|---|---|
 | Check set, heuristic v1 | 50 | 96% | Stratified: 15 metadata revoked, 10 metadata modified, 10 text-derived, 5 reverse links, 10 in-force rulings cited by later HQ rulings. Both errors were text-derived. |
-| Check set, v3 | 50 | 100% | In-sample: v2 and v3 were fixed after reading these cases. |
-| Held-out after v2 | 20 | 85% | 13/15 text-derived, 4/5 correct drops. v3 came later, so partly in-sample. |
-| Held-out after v3 froze | 10 | 70% | Text-derived only. The honest number for text-derived status. |
+| Check set, v3, frozen corpus | 50 | 98% | In-sample: v2 and v3 were fixed after reading these cases. One text-derived miss (817268). |
+| Held-out after v2, frozen corpus | 20 | 90% | 14/15 text-derived, 4/5 correct drops. v3 came later, so partly in-sample. |
+| Held-out after v3 froze, frozen corpus | 10 | 80% | Text-derived only. The honest number for text-derived status. It was 70% before the rest of the texts arrived. |
 
-Plain summary: status from CROSS metadata and reverse links matched every sampled case (30/30), and in-force rulings that later rulings merely cite stayed in force (10/10). Status inferred from ruling text is right about 70 to 85% of the time. The main remaining error is direction: "NY K83213 was revoked by HQ W968273" can mark the revoking ruling as revoked. Tools say which method produced each status.
+Plain summary: status from CROSS metadata and reverse links matched every sampled case (30/30), and in-force rulings that later rulings merely cite stayed in force (10/10). Status inferred from ruling text is right about 80 to 90% of the time on held-out cases (n = 10 and 20, so the intervals are wide). The main remaining error is direction: "NY K83213 was revoked by HQ W968273" can mark the revoking ruling as revoked. Tools say which method produced each status.
 
 ## Datasets
 

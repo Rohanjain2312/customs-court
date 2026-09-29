@@ -18,6 +18,7 @@ import time
 from collections.abc import Generator
 from dataclasses import asdict, dataclass
 
+from tariffagent.agents.checks import repair_message, review
 from tariffagent.agents.events import (
     AdjudicatorChunk,
     AdvocateChunk,
@@ -32,6 +33,7 @@ from tariffagent.agents.single import (
     Tally,
     _tokens,
     emit_final,
+    make_checker,
     model_kwargs,
     parse_classification,
     system_blocks,
@@ -117,13 +119,18 @@ def tool_loop(
     tally: Tally,
     bus: EventBus,
     on_text=None,
+    checker=None,
 ) -> Generator[LLMRequest, object, str]:
-    """A small tool-using sub-agent. Yields requests, returns the final text."""
+    """A small tool-using sub-agent. Yields requests, returns the final text.
+
+    With a checker, the final answer goes through agents/checks.py and gets at most one repair turn.
+    """
     specs = [t for t in TOOL_SPECS if t.name in tools]
     messages: list[dict] = [{"role": "user", "content": prompt}]
     kw = model_kwargs(model, "low", None, None)
     forced = False
-    for turn in range(1, max_turns + 2):
+    repaired = False
+    for turn in range(1, max_turns + 3):
         req = LLMRequest(
             model=model,
             system=system,
@@ -144,6 +151,13 @@ def tool_loop(
             on_text(resp.text)
         messages = messages + [{"role": "assistant", "content": resp.content}]
         if not resp.tool_uses or forced:
+            if checker and not repaired:
+                problems = review(parse_classification(resp.text)[0], checker)
+                if problems:
+                    repaired = True
+                    tally.repairs += 1
+                    messages = messages + [{"role": "user", "content": repair_message(problems)}]
+                    continue
             return resp.text
         over = turn >= max_turns
         results = []
@@ -326,6 +340,7 @@ def multi_episode(item: dict, cfg: MultiConfig, tools: TariffTools, bus: EventBu
         tally=tally,
         bus=bus,
         on_text=lambda t: bus.emit(AdjudicatorChunk(agent="adjudicator", text=t[:3000])),
+        checker=make_checker(ex_a, bus),
     )
     tool_calls += ex_a.calls
     bus.emit(tally.cost_event())
@@ -340,6 +355,7 @@ def multi_episode(item: dict, cfg: MultiConfig, tools: TariffTools, bus: EventBu
         "memos": memos,
         "turns": tally.calls,
         "tool_calls": tool_calls,
+        "repairs": tally.repairs,
         "usage": asdict(tally.usage),
         "usage_by_model": {k: asdict(v) for k, v in tally.by_model.items()},
         "tokens": _tokens(tally.usage),

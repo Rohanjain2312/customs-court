@@ -93,6 +93,9 @@ def eval_run(
     repeat: int = 0,
     token_budget: int = 0,
     max_turns: int = 0,
+    ask_mode: bool = typer.Option(False, help="abstain with questions when a missing fact decides the code"),
+    checks: bool = typer.Option(True, help="checked final step with one repair turn"),
+    items_from: str = typer.Option("", help="restrict to the item ids of another dataset, e.g. subset_80"),
 ):
     """Run one arm on one dataset and write results, traces and a report."""
     import os
@@ -100,11 +103,16 @@ def eval_run(
     os.environ["PHASE"] = phase
     from tariffagent.evals.run import run_arm, summarize
 
-    kw = {}
+    kw: dict = {"ask_mode": ask_mode, "checks": checks}
     if token_budget:
         kw["token_budget"] = token_budget
     if max_turns:
         kw["max_turns"] = max_turns
+    item_ids = None
+    if items_from:
+        from tariffagent.evals.datasets import load_dataset
+
+        item_ids = [it["item_id"] for it in load_dataset(items_from)]
     rep = run_arm(
         dataset,
         arm,
@@ -113,9 +121,50 @@ def eval_run(
         run_id=run_id or None,
         concurrency=concurrency,
         repeat=repeat,
+        item_ids=item_ids,
         **kw,
     )
     console.print(summarize(rep))
+
+
+@eval_app.command("judge")
+def eval_judge(run_id: str, second_judge: bool = True, phase: str = "judge"):
+    """Reference-grounded reasoning judge on one run, validated by proxy and a second judge (kappa)."""
+    import os
+
+    os.environ["PHASE"] = phase
+    from tariffagent.evals.analysis import judge_and_validate
+
+    out = judge_and_validate(run_id, second=second_judge)
+    console.print({k: v for k, v in out.items() if k != "verdicts"})
+
+
+@eval_app.command("compare")
+def eval_compare(
+    dataset: str,
+    runs: str = typer.Option(..., help="label=run_id pairs, comma separated; the first is the base"),
+    name: str = typer.Option(..., help="report name, written to evals/reports/<name>.json"),
+):
+    """Paired bootstrap comparison of arms on one dataset, with slices. Offline."""
+    from tariffagent.evals.analysis import compare
+    from tariffagent.evals.run import REPORTS
+
+    pairs = dict(x.split("=", 1) for x in runs.split(","))
+    out = compare(pairs, dataset)
+    (REPORTS / f"{name}.json").write_text(json.dumps(out, indent=2))
+    console.print(json.dumps(out["arms"], indent=1)[:4000])
+
+
+@eval_app.command("taxonomy")
+def eval_taxonomy(run_id: str):
+    """Failure distribution by level and by tagged cause. Offline."""
+    from tariffagent.evals.run import REPORTS, load_run
+    from tariffagent.evals.taxonomy import distribution, load_tags
+
+    _, scored, _ = load_run(run_id)
+    out = {"run_id": run_id, **distribution(scored, load_tags(run_id))}
+    (REPORTS / f"{run_id}.taxonomy.json").write_text(json.dumps(out, indent=2))
+    console.print(out)
 
 
 @eval_app.command("smoke")

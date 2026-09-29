@@ -23,7 +23,7 @@ def _links(dataset: str) -> dict:
     return {}
 
 
-def judge_and_validate(run_id: str, second_model: str | None = None) -> dict:
+def judge_and_validate(run_id: str, second_model: str | None = None, second: bool = True) -> dict:
     """Primary judge (cheap Claude model) plus a second judge from another vendor for kappa."""
     results, scored, report = load_run(run_id)
     items = load_dataset(report["dataset"])
@@ -54,7 +54,7 @@ def judge_and_validate(run_id: str, second_model: str | None = None) -> dict:
     out["reference_sources"] = {
         k: sum(1 for v in j1.values() if v["reference"].startswith(k)) for k in ("ruling", "atlas_reasoning")
     }
-    if second_model or s.openai_api_key:
+    if second and (second_model or s.openai_api_key):
         m2 = second_model or s.openai_model
         j2 = run_judge(items, results, run_id=f"judge2-{run_id}", model=m2, links=links, batch=False)
         both = [i for i in j1 if j1[i]["verdict"] and j2.get(i, {}).get("verdict")]

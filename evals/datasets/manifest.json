@@ -17,6 +17,19 @@
     "split": "validation (100 of 200, seed 13)",
     "use": "prompt work only, never reported"
   },
+  "fresh_150": {
+    "created": "2026-09-29T04:32:12+00:00",
+    "date_range": [
+      "2026-07-01",
+      "2026-09-11"
+    ],
+    "file": "evals/datasets/fresh_150.jsonl",
+    "sha256": "9cb974c61e4b64dbbc1db66e0c069fe7ff3123aa385804229b5f0ed96ce455b0",
+    "size": 150,
+    "source": "fresh_300",
+    "split": "seeded random sample (seed 13) of 150 of the 300 fresh items, to fit the budget",
+    "use": "reported separately from ATLAS (post training cutoff)"
+  },
   "fresh_300": {
     "candidates": 583,
     "created": "2026-09-29T00:19:36+00:00",

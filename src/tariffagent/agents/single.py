@@ -15,6 +15,7 @@ from dataclasses import asdict, dataclass, field
 
 from pydantic import ValidationError
 
+from tariffagent.agents.checks import repair_message, review
 from tariffagent.agents.events import CostUpdate, EventBus, FactExtracted, RulingEvent, RunStart, TreeFocus
 from tariffagent.agents.schemas import CLASSIFICATION_SCHEMA, Classification
 from tariffagent.agents.skill import load_skill
@@ -57,7 +58,7 @@ FRIEND_TOOL = ToolSpec(
 
 @dataclass
 class AgentConfig:
-    arm: str = "A"  # A single, B single token-matched, C smart friend, Z zero-shot
+    arm: str = "A"  # A single, B single token-matched, C smart friend, O OpenAI single, Z zero-shot
     model: str = ""
     friend_model: str = ""
     max_turns: int = 10
@@ -69,6 +70,10 @@ class AgentConfig:
     run_id: str = "adhoc"
     cache_ttl: str = "5m"
     use_tools: bool = True
+    # Checked final step (agents/checks.py): one repair turn when the code, parts rules or citations fail.
+    checks: bool = True
+    # Ask-for-missing-facts mode: abstain with questions instead of guessing.
+    ask_mode: bool = False
     extra: dict = field(default_factory=dict)
 
     @classmethod
@@ -85,6 +90,9 @@ class AgentConfig:
                 effort=None,
                 temperature=0.0,
             )
+        elif arm == "O":
+            # Provider comparison: the same single agent, tools, skill and prompt on OpenAI.
+            c = cls(arm=arm, model=s.openai_model, run_id=run_id)
         elif arm == "Z":
             c = cls(arm=arm, model=s.reasoner_model, run_id=run_id, use_tools=False, max_turns=1)
         else:
@@ -130,11 +138,31 @@ def system_blocks(zero_shot: bool = False) -> list[dict]:
     return _system_cache[key]
 
 
-def user_prompt(description: str) -> str:
+ASK_MODE = (
+    "\n\nAsk-for-facts mode is on. If a fact missing from the description would change the code at the "
+    "6-digit level (for example the material, knit or woven, the fiber content, or the end use), do not "
+    "guess. Set abstain to true, leave hts10 empty, and put the questions for the importer in missing_facts."
+)
+
+
+def user_prompt(description: str, ask_mode: bool = False) -> str:
+    # Mode switches go in the user turn, not the system prompt, so every arm shares one cached prefix.
     return (
         "Classify this product for import into the United States. Give the 10-digit HTSUS code.\n\n"
-        f"<product_description>\n{description}\n</product_description>"
+        f"<product_description>\n{description}\n</product_description>" + (ASK_MODE if ask_mode else "")
     )
+
+
+def make_checker(executor: ToolExecutor | None, bus: EventBus):
+    """Tool runner for the final checks. Uses the agent's own backend, logged as the 'checker' agent."""
+    if executor is None:
+        return None
+    ex = ToolExecutor(executor.backend, bus, agent="checker")
+
+    def run(name: str, args: dict) -> str:
+        return ex.run(name, args)[0]
+
+    return run
 
 
 def parse_classification(text: str) -> tuple[Classification | None, str]:
@@ -157,6 +185,7 @@ class Tally:
         self.usage = Usage()
         self.usd = 0.0
         self.calls = 0
+        self.repairs = 0
         self.latency = 0.0
         self.by_model: dict[str, Usage] = {}
 
@@ -194,7 +223,7 @@ def emit_final(bus: EventBus, agent: str, cls: Classification | None) -> None:
 
 def single_episode(item: dict, cfg: AgentConfig, executor: ToolExecutor | None, bus: EventBus) -> Episode:
     """Arms A, B, C and Z. Yields requests, returns a result dict."""
-    agent = {"A": "single", "B": "single", "C": "smart-friend", "Z": "zero-shot"}[cfg.arm]
+    agent = {"A": "single", "B": "single", "C": "smart-friend", "O": "single", "Z": "zero-shot"}[cfg.arm]
     bus.emit(
         RunStart(
             agent=agent,
@@ -208,9 +237,11 @@ def single_episode(item: dict, cfg: AgentConfig, executor: ToolExecutor | None, 
     if cfg.arm == "C":
         tools = tools + [FRIEND_TOOL]
     system = system_blocks(zero_shot=not cfg.use_tools)
-    messages: list[dict] = [{"role": "user", "content": user_prompt(item["description"])}]
+    messages: list[dict] = [{"role": "user", "content": user_prompt(item["description"], cfg.ask_mode)}]
     kw = model_kwargs(cfg.model, cfg.effort, cfg.temperature, cfg.thinking)
     turn, tool_calls, forced = 0, 0, False
+    checker = make_checker(executor, bus) if (cfg.checks and cfg.use_tools) else None
+    repairs, problems_seen = 0, []
     final_text, stop = "", ""
     t_start = time.perf_counter()
     while True:
@@ -237,6 +268,13 @@ def single_episode(item: dict, cfg: AgentConfig, executor: ToolExecutor | None, 
         uses = resp.tool_uses
         if not uses or forced:
             final_text = resp.text
+            if checker and repairs < 1:
+                problems = review(parse_classification(final_text)[0], checker)
+                if problems:
+                    repairs += 1
+                    problems_seen += problems
+                    messages = messages + [{"role": "user", "content": repair_message(problems)}]
+                    continue
             break
         over = turn >= cfg.max_turns - 1 or _tokens(tally.usage) >= cfg.token_budget
         results = []
@@ -300,6 +338,8 @@ def single_episode(item: dict, cfg: AgentConfig, executor: ToolExecutor | None, 
         "stop_reason": stop,
         "turns": turn,
         "tool_calls": tool_calls,
+        "repairs": repairs,
+        "check_problems": problems_seen,
         "usage": asdict(tally.usage),
         "usage_by_model": {k: asdict(v) for k, v in tally.by_model.items()},
         "tokens": _tokens(tally.usage),

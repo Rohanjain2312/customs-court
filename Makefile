@@ -34,7 +34,7 @@ eval-smoke:
 
 # Spends money (Anthropic and OpenAI only), capped by BUDGET_USD_* in .env.
 eval-full:
-	$(UV) tariffagent eval full
+	bash scripts/eval_full.sh
 
 cost:
 	@$(UV) tariffagent cost
