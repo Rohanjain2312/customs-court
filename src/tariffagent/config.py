@@ -71,13 +71,18 @@ class Settings(BaseSettings):
     # Max characters of corpus text a tool returns in one call.
     tool_text_limit: int = 6000
 
+    # The ledger always lives in the main data dir so every dollar is counted,
+    # even when tests point DATA_DIR at fixture data.
+    ledger_file: Path = ROOT / "data" / "ledger.jsonl"
+    cache_dir_override: Path | None = None
+
     @property
     def ledger_path(self) -> Path:
-        return self.data_dir / "ledger.jsonl"
+        return self.ledger_file
 
     @property
     def cache_dir(self) -> Path:
-        return self.data_dir / "cache"
+        return self.cache_dir_override or (self.data_dir / "cache")
 
     @property
     def db_path(self) -> Path:

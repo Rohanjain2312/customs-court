@@ -112,6 +112,11 @@ class TariffTools:
             units=json.loads(r["units"] or "[]"),
         )
 
+    @staticmethod
+    def _slim(n: HtsNode) -> HtsNode:
+        """Child nodes: drop the repeated path and long special-rate text to keep outputs small."""
+        return n.model_copy(update={"path": "", "special_rate": ""})
+
     def _find_row(self, code: str, rev: str | None = None):
         d = digits(code)
         rows = self._q(
@@ -128,7 +133,7 @@ class TariffTools:
                 out.extend(self._numbered_children(rev, c["idx"]))
         return out
 
-    def _note_excerpt(self, scope: str, nid: str, n: int = 1500) -> NoteRef | None:
+    def _note_excerpt(self, scope: str, nid: str, n: int = 900) -> NoteRef | None:
         rows = self._q("SELECT title, text FROM notes WHERE rev=? AND scope=? AND id=?", self.rev, scope, nid)
         if not rows:
             return None
@@ -174,12 +179,35 @@ class TariffTools:
             return NavigateResult(
                 revision=self.rev,
                 found=True,
-                children=[self._row_to_node(h) for h in heads],
+                children=[self._slim(self._row_to_node(h)) for h in heads],
                 notes=notes,
                 message=f"Chapter {d} headings",
             )
         row = self._find_row(d)
         if not row:
+            under = self._q(
+                "SELECT * FROM hts_rows WHERE rev=? AND digits LIKE ? AND digits != '' ORDER BY idx LIMIT 40",
+                self.rev,
+                d + "%",
+            )
+            if under and len(d) >= 4:
+                first = under[0]
+                notes = [
+                    n
+                    for n in (
+                        self._note_excerpt("section", first["section"]),
+                        self._note_excerpt("chapter", first["chapter"]),
+                    )
+                    if n
+                ]
+                return NavigateResult(
+                    revision=self.rev,
+                    found=True,
+                    children=[self._slim(self._row_to_node(r)) for r in under],
+                    notes=notes,
+                    message=f"No separate line {format_code(d)}; these lines start with it. "
+                    f"Context: {first['path'][-400:]}",
+                )
             return NavigateResult(
                 revision=self.rev, found=False, message=f"{format_code(d)} is not in the {self.rev} HTS"
             )
@@ -188,10 +216,10 @@ class TariffTools:
         while p >= 0:
             pr = self._q("SELECT * FROM hts_rows WHERE rev=? AND idx=?", self.rev, p)[0]
             if pr["code"]:
-                parent = self._row_to_node(pr)
+                parent = self._slim(self._row_to_node(pr))
                 break
             p = pr["parent_idx"]
-        kids = [self._row_to_node(c) for c in self._numbered_children(self.rev, row["idx"])]
+        kids = [self._slim(self._row_to_node(c)) for c in self._numbered_children(self.rev, row["idx"])]
         notes = [
             n
             for n in (
@@ -222,7 +250,7 @@ class TariffTools:
                 HtsSearchHit(
                     code=r["code"],
                     description=r["description"],
-                    path=r["path"][-600:],
+                    path=r["path"][-320:],
                     level=_level(r["digits"]),
                     score=round(h.score, 5),
                 )
@@ -282,7 +310,9 @@ class TariffTools:
                     subject=(r["subject"] or "")[:300],
                     codes=json.loads(r["tariffs"] or "[]")[:10],
                     status=st["status"],
-                    snippet=wrap(f"CBP CROSS ruling {r['id']}", best_snippet(r["text"] or "", query), 600),
+                    snippet=wrap(
+                        f"CBP CROSS ruling {r['id']}", best_snippet(r["text"] or "", query, 420), 420
+                    ),
                     score=round(h.score, 5),
                 )
             )

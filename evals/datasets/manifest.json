@@ -1,0 +1,20 @@
+{
+  "atlas_test_200": {
+    "created": "2026-09-29T00:09:05+00:00",
+    "file": "evals/datasets/atlas_test_200.jsonl",
+    "sha256": "de42b0dd45f66a3ea81ebdb636cfe1757798520ff0ca5ea31c43dce9b2edfb68",
+    "size": 200,
+    "source": "huggingface.co/datasets/Dayanand314Krishna/cross_rulings_hts_dataset_for_tariffs (mirror of flexifyai ATLAS)",
+    "split": "test",
+    "use": "reported results"
+  },
+  "dev_100": {
+    "created": "2026-09-29T00:09:05+00:00",
+    "file": "evals/datasets/dev_100.jsonl",
+    "sha256": "6cfdaab62642bb1a607686907310f7bb7131f402875dd4a21a386a8fc51c93fb",
+    "size": 100,
+    "source": "huggingface.co/datasets/Dayanand314Krishna/cross_rulings_hts_dataset_for_tariffs (mirror of flexifyai ATLAS)",
+    "split": "validation (100 of 200, seed 13)",
+    "use": "prompt work only, never reported"
+  }
+}

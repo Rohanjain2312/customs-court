@@ -2,8 +2,8 @@
  "revision": "2026HTSRev20",
  "rulings": 79,
  "goldens": [
-  "N108629",
-  "N251899"
+  "N326421",
+  "N349801"
  ],
  "poison_id": "N999001"
 }
