@@ -258,3 +258,12 @@ def build_real(req):
     from tariffagent.llm.anthropic_provider import build_params
 
     return build_params(req)
+
+
+def test_batch_ids_are_valid_and_unique():
+    from tariffagent.llm.anthropic_provider import BATCH_ID_OK, safe_batch_ids
+
+    cids = ["atlas_test_00001#0", "atlas_test_00001#1", "x:y" * 40, "atlas_test_00002"]
+    ids = safe_batch_ids(cids)
+    assert all(BATCH_ID_OK.match(v) for v in ids.values())
+    assert len(set(ids.values())) == len(cids)

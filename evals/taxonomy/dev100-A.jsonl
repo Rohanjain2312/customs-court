@@ -1,0 +1,59 @@
+{"item_id": "atlas_validation_00000", "level": "wrong_subheading", "cause": "should_have_abstained", "note": "PET/PE weight share decides PET vs PE subheading; description omits it; guessed PE at 0.55", "multi_article": false}
+{"item_id": "atlas_validation_00005", "level": "wrong_stat_suffix", "cause": "stat_suffix_misnavigated", "note": "6109.90.10.25 vs .09: both labelled Boys' (638) under different parents", "multi_article": true}
+{"item_id": "atlas_validation_00025", "level": "wrong_stat_suffix", "cause": "precedent_mismatch", "note": "followed valve-body rulings (.9020) for a spool, which is 'other' parts (.9040)", "multi_article": false}
+{"item_id": "atlas_validation_00032", "level": "wrong_stat_suffix", "cause": "precedent_mismatch", "note": "followed H86188 (.8069 other) where CBP treats this hex bolt as a cap screw (.8066)", "multi_article": false}
+{"item_id": "atlas_validation_00034", "level": "no_answer", "cause": "gold_questionable", "note": "multi-article gift set; ruling split the watch and the manicure tools; gold is one component", "multi_article": true}
+{"item_id": "atlas_validation_00035", "level": "no_answer", "cause": "gold_questionable", "note": "ten different articles; gold is one of them", "multi_article": true}
+{"item_id": "atlas_validation_00044", "level": "wrong_chapter", "cause": "should_have_abstained", "note": "ruling says 1x1 rib knit; description omits knit vs woven; guessed woven at 0.85", "multi_article": false}
+{"item_id": "atlas_validation_00047", "level": "wrong_subheading", "cause": "should_have_abstained", "note": "one-handed vs two-handed shears decides 8201.50 vs .60; guessed two-handed", "multi_article": false}
+{"item_id": "atlas_validation_00049", "level": "wrong_heading", "cause": "precedent_mismatch", "note": "misread H290312 and chose floor coverings 3918; CBP held plain PE sheeting 3920", "multi_article": false}
+{"item_id": "atlas_validation_00054", "level": "wrong_stat_suffix", "cause": "precedent_mismatch", "note": "same as #3: H86188 led to .8069 instead of cap screw .8066", "multi_article": false}
+{"item_id": "atlas_validation_00056", "level": "wrong_heading", "cause": "gold_questionable", "note": "multi-component railroad fastening kit; gold 7304 is one component", "multi_article": true}
+{"item_id": "atlas_validation_00059", "level": "wrong_chapter", "cause": "gold_questionable", "note": "gold 8515 predates the 8486 semiconductor-machine note; current law points to 8486", "multi_article": false}
+{"item_id": "atlas_validation_00060", "level": "wrong_subheading", "cause": "fact_misread", "note": "description says machine screw; agent chose the hex-head bolt line 7318.15.80", "multi_article": false}
+{"item_id": "atlas_validation_00063", "level": "wrong_subheading", "cause": "precedent_mismatch", "note": "followed K80511 (door hinge) for door check parts; CBP chose other mountings 8302.30", "multi_article": false}
+{"item_id": "atlas_validation_00064", "level": "wrong_stat_suffix", "cause": "stale_ruling_relied_on", "note": "copied .69 from M80385, which predates the knit-to-shape statistical split (.67)", "multi_article": false}
+{"item_id": "atlas_validation_00065", "level": "wrong_stat_suffix", "cause": "should_have_abstained", "note": "stitch count / knit-to-shape decides the suffix; description omits it; conf 0.85", "multi_article": false}
+{"item_id": "atlas_validation_00066", "level": "wrong_heading", "cause": "retrieval_miss", "note": "8436 (forestry machinery) never surfaced; settled on 8433 harvesting machinery", "multi_article": false}
+{"item_id": "atlas_validation_00067", "level": "wrong_stat_suffix", "cause": "fact_misread", "note": "programmable timer implies a solenoid valve (.9005); chose other (.9050)", "multi_article": false}
+{"item_id": "atlas_validation_00074", "level": "wrong_heading", "cause": "gold_questionable", "note": "description does not mention the valve that CBP found decisive", "multi_article": false}
+{"item_id": "atlas_validation_00075", "level": "wrong_chapter", "cause": "note_missed", "note": "PVC-coated textile palm: missed the chapter 39 / chapter 62 note that sends plastic-coated gloves to 3926", "multi_article": false}
+{"item_id": "atlas_validation_00081", "level": "no_answer", "cause": "abstained_missing_fact", "note": "heading 7306 right; stainless grade decides the 8-digit line", "multi_article": false}
+{"item_id": "atlas_validation_00089", "level": "wrong_subheading", "cause": "fact_misread", "note": "brake proportioning valve is hydraulic (8481.20 oleohydraulic), chose 8481.80", "multi_article": false}
+{"item_id": "atlas_validation_00090", "level": "no_answer", "cause": "gold_questionable", "note": "gold 9018.12 (ultrasonic scanning) does not fit 'microscopes with cameras'", "multi_article": false}
+{"item_id": "atlas_validation_00092", "level": "wrong_stat_suffix", "cause": "stat_suffix_misnavigated", "note": "8423.10.00.60 vs .30: picked wrong statistical line for a mechanical bathroom scale", "multi_article": false}
+{"item_id": "atlas_validation_00094", "level": "wrong_subheading", "cause": "fact_misread", "note": "molded plastic case: chose the 4202.12.21 line instead of other (4202.12.29)", "multi_article": false}
+{"item_id": "atlas_validation_00095", "level": "no_answer", "cause": "gold_questionable", "note": "two different screw types; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00101", "level": "wrong_chapter", "cause": "gri_misapplied", "note": "essential character: CBP held the magnets decide (8505); agent weighted the steel board", "multi_article": false}
+{"item_id": "atlas_validation_00102", "level": "no_answer", "cause": "gold_questionable", "note": "electric and non-electric heaters; gold is the electric one", "multi_article": false}
+{"item_id": "atlas_validation_00107", "level": "wrong_chapter", "cause": "gri_misapplied", "note": "ornamental cast iron doorstop: CBP chose household article 7323 over the 8302 doorstop line", "multi_article": false}
+{"item_id": "atlas_validation_00109", "level": "no_answer", "cause": "abstained_missing_fact", "note": "infant vs girls' size decides 6111 vs 6110", "multi_article": false}
+{"item_id": "atlas_validation_00112", "level": "wrong_chapter", "cause": "precedent_mismatch", "note": "followed N324344 (projector) for a breathing light CBP put in 8543", "multi_article": false}
+{"item_id": "atlas_validation_00113", "level": "wrong_chapter", "cause": "gri_misapplied", "note": "cork/rubber composite: CBP gave rubber the essential character (4008)", "multi_article": false}
+{"item_id": "atlas_validation_00118", "level": "wrong_chapter", "cause": "gri_misapplied", "note": "dream catcher kit: CBP held leather gives essential character (4205); agent followed toy-kit rulings", "multi_article": false}
+{"item_id": "atlas_validation_00119", "level": "no_answer", "cause": "abstained_missing_fact", "note": "'resilient ring' with no material or function; ruling reveals a plain shaft bearing", "multi_article": false}
+{"item_id": "atlas_validation_00121", "level": "wrong_subheading", "cause": "should_have_abstained", "note": "radial vs bias OTR retread decides 4012.19.20/.40; guessed", "multi_article": false}
+{"item_id": "atlas_validation_00129", "level": "no_answer", "cause": "abstained_missing_fact", "note": "infant vs toddler size split", "multi_article": false}
+{"item_id": "atlas_validation_00131", "level": "no_answer", "cause": "gold_questionable", "note": "two different camping articles; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00132", "level": "no_answer", "cause": "malformed_output", "note": "final JSON cut off at max_tokens", "multi_article": false}
+{"item_id": "atlas_validation_00133", "level": "wrong_chapter", "cause": "note_missed", "note": "enzymes (3507) are not laboratory reagents of 3822 per the chapter 38 note; chose 3822", "multi_article": false}
+{"item_id": "atlas_validation_00134", "level": "wrong_chapter", "cause": "precedent_mismatch", "note": "followed N227479 (boiler part 8402) where the gold ruling classified the spools as tubes 7304", "multi_article": false}
+{"item_id": "atlas_validation_00136", "level": "wrong_subheading", "cause": "should_have_abstained", "note": "gold rests on the fiber-optic component, not in the description; guessed power cables", "multi_article": false}
+{"item_id": "atlas_validation_00137", "level": "no_answer", "cause": "gold_questionable", "note": "three different chemicals; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00140", "level": "no_answer", "cause": "abstained_missing_fact", "note": "apparent strip width decides chapter 39 vs 54", "multi_article": false}
+{"item_id": "atlas_validation_00141", "level": "wrong_subheading", "cause": "gold_questionable", "note": "ruling classified the jacket in 6104.23.0026 (the agent's answer); gold is another component", "multi_article": false}
+{"item_id": "atlas_validation_00148", "level": "no_answer", "cause": "gold_questionable", "note": "two different tapes; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00152", "level": "no_answer", "cause": "abstained_missing_fact", "note": "power source and vehicle use decide the 8527 subheading", "multi_article": false}
+{"item_id": "atlas_validation_00155", "level": "wrong_subheading", "cause": "should_have_abstained", "note": "jar/bottle vs box decides 3923.30 vs 3923.10; guessed bottles", "multi_article": false}
+{"item_id": "atlas_validation_00159", "level": "wrong_heading", "cause": "gold_questionable", "note": "five in-force rulings on the same product use the agent's code 8411.91.90.85", "multi_article": false}
+{"item_id": "atlas_validation_00160", "level": "no_answer", "cause": "gold_questionable", "note": "four different garments; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00164", "level": "wrong_heading", "cause": "gri_misapplied", "note": "PEVA tablecloth: CBP held plastic sheeting 3920; agent chose the 3924 table cover provision", "multi_article": false}
+{"item_id": "atlas_validation_00166", "level": "wrong_subheading", "cause": "fact_misread", "note": "galvanized stranded cable: wrong 8-digit line (7312.10.90 vs .30)", "multi_article": false}
+{"item_id": "atlas_validation_00172", "level": "no_answer", "cause": "gold_questionable", "note": "five different tools; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00177", "level": "no_answer", "cause": "over_abstained", "note": "valve body castings: 8481.90 valve bodies was reachable; abstained on the sensor part", "multi_article": false}
+{"item_id": "atlas_validation_00183", "level": "wrong_subheading", "cause": "should_have_abstained", "note": "width and construction decide 4010.12.50 vs .90; guessed", "multi_article": false}
+{"item_id": "atlas_validation_00184", "level": "wrong_chapter", "cause": "gold_questionable", "note": "six different parts split across headings; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00187", "level": "no_answer", "cause": "gold_questionable", "note": "four different valve parts; gold is one", "multi_article": true}
+{"item_id": "atlas_validation_00191", "level": "no_answer", "cause": "over_abstained", "note": "spacer ring for a pneumatic valve: 8481.90.90 other parts was reachable", "multi_article": false}
+{"item_id": "atlas_validation_00196", "level": "wrong_subheading", "cause": "should_have_abstained", "note": "petroleum-derived or not decides 2901.29.10 vs .50; guessed", "multi_article": false}
+{"item_id": "atlas_validation_00197", "level": "no_answer", "cause": "gold_questionable", "note": "two different appliances; gold is one", "multi_article": true}

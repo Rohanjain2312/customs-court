@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 import time
 
 from tariffagent.cache import ResponseCache, request_key
@@ -125,6 +126,18 @@ def prewarm_params(req: LLMRequest, max_tokens: int = 1) -> dict:
     p["messages"] = [{"role": "user", "content": "Pre-warm the cache. No answer needed."}]
     p["max_tokens"] = max_tokens
     return p
+
+
+BATCH_ID_OK = re.compile(r"^[a-zA-Z0-9_-]{1,64}$")
+
+
+def safe_batch_ids(cids: list[str]) -> dict[str, str]:
+    """Map caller ids to ids the Batch API accepts (^[a-zA-Z0-9_-]{1,64}$), keeping them unique."""
+    out: dict[str, str] = {}
+    for i, cid in enumerate(cids):
+        clean = re.sub(r"[^a-zA-Z0-9_-]", "_", cid)[:54]
+        out[cid] = f"r{i}_{clean}"[:64]
+    return out
 
 
 def normalize_content(blocks) -> list[dict]:
@@ -263,11 +276,14 @@ class AnthropicProvider:
         run_id = todo[0][1].run_id
         check_budget(run_id, sum(estimate_usd(r, batch=True) for _, r in todo))
         self.prewarm([r for _, r in todo])
-        by_id = dict(todo)
+        ids = safe_batch_ids([cid for cid, _ in todo])
+        back = {v: k for k, v in ids.items()}
+        by_id = {ids[cid]: r for cid, r in todo}
         batch = self.client.messages.batches.create(
             requests=[
                 Request(
-                    custom_id=cid, params=MessageCreateParamsNonStreaming(**build_params(r, for_batch=True))
+                    custom_id=ids[cid],
+                    params=MessageCreateParamsNonStreaming(**build_params(r, for_batch=True)),
                 )
                 for cid, r in todo
             ]
@@ -284,8 +300,9 @@ class AnthropicProvider:
         elapsed = time.time() - t0
         for res in self.client.messages.batches.results(batch.id):
             req = by_id[res.custom_id]
+            cid = back[res.custom_id]
             if res.result.type != "succeeded":
-                out[res.custom_id] = RuntimeError(
+                out[cid] = RuntimeError(
                     f"batch item {res.result.type}: {getattr(res.result, 'error', '')}"
                 )
                 continue
@@ -310,9 +327,9 @@ class AnthropicProvider:
                 usd=e.usd,
             )
             self._store(req, resp, batch=True)
-            out[res.custom_id] = resp
-        for cid in by_id:
-            out.setdefault(cid, RuntimeError("missing from batch results"))
+            out[cid] = resp
+        for sid in by_id:
+            out.setdefault(back[sid], RuntimeError("missing from batch results"))
         _ = elapsed
         return out
 

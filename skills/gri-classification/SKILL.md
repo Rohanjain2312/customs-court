@@ -5,7 +5,7 @@ license: MIT
 compatibility: Needs the tariffagent MCP server (stdio or Streamable HTTP) and Python 3 for scripts/validate_hts.py.
 metadata:
   author: Rohan Jain
-  version: "1.1"
+  version: "1.2"
 ---
 
 # GRI classification
@@ -32,6 +32,8 @@ Write down, from the description only:
 
 List the facts that are missing. If a missing fact would change the heading or the subheading (for example the fiber content of a garment, whether a bag's outer surface is leather or plastic, whether a machine part is suitable solely or principally for one machine), say so in `missing_facts`. When the gap makes the 6-digit subheading a guess, set `abstain` true and ask for the fact rather than guessing. When a reasonable default exists, state the assumption and continue.
 
+If the description names several different articles that are not a retail set or composite good under GRI 3(b) (for example "hammers, picks and axes"), classify the first-named article, and list the others in `missing_facts` as "classify separately: ...". Do not abstain only because several articles are named.
+
 ### 2. Find candidate headings
 
 - `hts_search(text)` with the key facts to find 2 to 4 candidate headings.
@@ -53,14 +55,14 @@ List the facts that are missing. If a missing fact would change the heading or t
   - **3(c)** otherwise the heading last in numerical order.
 - **GRI 4**: most akin goods (rare).
 - **GRI 5**: cases and packing.
-- **GRI 6**: pick the subheading by comparing subheadings at the same level only, then the 8-digit line and the 10-digit statistical suffix.
+- **GRI 6**: pick the subheading by comparing subheadings at the same level only, then the 8-digit line and the 10-digit statistical suffix. For the suffix, call `hts_navigate` on the 8-digit line and choose among its children: lines with the same label ("Boys'", "Other") often sit under different parents. Do not copy a suffix from an old ruling without checking it against the current tree.
 
 `get_gri()` returns the full legal text. Record each step you used in `gri_path` and the deciding rule in `deciding_gri`.
 
 ### 5. Find supporting rulings and check their status
 
 - `cross_search(query)` with the product and the candidate heading words. Prefer recent New York (N) and Headquarters (H) rulings on the same kind of good.
-- `get_ruling(id)` for the one or two best hits. Check that the facts match (material, construction, use).
+- `get_ruling(id)` for the one or two best hits. Check that the facts match (material, construction, use). A ruling on a different product, or on the same product with different facts, is not a precedent.
 - `ruling_status(id)` for every ruling you cite. If a precedent is `revoked`, say so, name the revoking ruling from `replaced_by` (it lists each later ruling with its date and codes), and follow the newest one instead. If `modified`, read the modifying ruling.
 - If the ruling cites a code that no longer exists, use `hts_revision_diff(code, <year>)` to find where the line moved.
 
@@ -93,7 +95,7 @@ Return one JSON object:
 }
 ```
 
-Confidence guide: 0.9 or more only when a heading note or an in-force ruling on the same good settles it; 0.6 to 0.8 when the heading is clear but the statistical suffix depends on an assumption; below 0.5 when two headings remain arguable. When `abstain` is true, leave `hts10` empty or give the best 6-digit guess padded with the most likely suffix, and fill `missing_facts` with direct questions.
+Confidence guide: 0.9 or more only when a heading note or an in-force ruling on the same good settles it; 0.6 to 0.8 when the heading is clear but the statistical suffix depends on an assumption; below 0.5 when two headings remain arguable. When `abstain` is true, still put your best-guess 10-digit code in `hts10` (the most likely line given typical goods of this kind), keep `confidence` low, and fill `missing_facts` with direct questions. `abstain` tells the user the code depends on those facts.
 
 ## Worked examples
 

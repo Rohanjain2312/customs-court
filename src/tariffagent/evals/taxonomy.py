@@ -36,6 +36,11 @@ CAUSES = {
     "retrieval_miss": "The relevant heading or precedent never surfaced in tool results.",
     "gold_questionable": "The gold code is doubtful given the description (ambiguous description, or tariff changed since).",
     "budget_exhausted": "Ran out of turns or tokens before settling the code.",
+    # Added after reading the dev100-A failures (2026-09-29):
+    "stat_suffix_misnavigated": "Right 8 digits, but picked a statistical line with the same label under the wrong parent, or one from an older revision.",
+    "abstained_missing_fact": "Abstained, correctly, because the description lacks a fact that decides the code (size, grade, power source).",
+    "over_abstained": "Abstained although the description and precedent were enough to answer.",
+    "malformed_output": "The final answer was not valid JSON (cut off at max_tokens or degenerate repetition).",
 }
 
 
