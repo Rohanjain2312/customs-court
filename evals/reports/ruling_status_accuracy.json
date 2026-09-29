@@ -3,33 +3,34 @@
   "sets": {
     "check_50": {
       "n": 50,
-      "accuracy": 1.0,
+      "accuracy": 0.98,
       "by_stratum": {
         "meta_revoked": "15/15",
         "meta_modified": "10/10",
-        "text": "10/10",
+        "text": "9/10",
         "reverse_link": "5/5",
         "mentioned_in_force": "10/10"
       },
-      "errors": [],
+      "errors": [
+        {
+          "id": "817268",
+          "label": "revoked",
+          "derived": "in_force",
+          "stratum": "text"
+        }
+      ],
       "note": "Stratified sample read before v2 and v3. The heuristic was fixed after reading it, so this score is in-sample."
     },
     "holdout_20": {
       "n": 20,
-      "accuracy": 0.85,
+      "accuracy": 0.9,
       "by_stratum": {
-        "holdout_text_v2": "13/15",
+        "holdout_text_v2": "14/15",
         "holdout_dropped_by_v2": "4/5"
       },
       "errors": [
         {
           "id": "966188",
-          "label": "in_force",
-          "derived": "revoked",
-          "stratum": "holdout_text_v2"
-        },
-        {
-          "id": "J84482",
           "label": "in_force",
           "derived": "revoked",
           "stratum": "holdout_text_v2"
@@ -45,17 +46,11 @@
     },
     "holdout_v3_10": {
       "n": 10,
-      "accuracy": 0.7,
+      "accuracy": 0.8,
       "by_stratum": {
-        "holdout_text_v3": "7/10"
+        "holdout_text_v3": "8/10"
       },
       "errors": [
-        {
-          "id": "H317289",
-          "label": "in_force",
-          "derived": "revoked",
-          "stratum": "holdout_text_v3"
-        },
         {
           "id": "G88233",
           "label": "revoked",
@@ -81,9 +76,9 @@
   },
   "population_by_method": {
     "meta": 3049,
-    "meta_no_signal": 215600,
-    "no_meta": 759,
-    "reverse_link": 92,
-    "text": 117
+    "meta_no_signal": 215556,
+    "no_meta": 277,
+    "reverse_link": 86,
+    "text": 162
   }
 }
