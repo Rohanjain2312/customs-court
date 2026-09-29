@@ -176,11 +176,16 @@ def eval_smoke():
 
 
 @app.command("cost")
-def cost():
+def cost(report: bool = typer.Option(False, help="also write evals/reports/cost_summary.json")):
     """Print API spend by phase and model from data/ledger.jsonl."""
-    from tariffagent.ledger import print_cost
+    from tariffagent.ledger import print_cost, savings_report
 
     print_cost()
+    if report:
+        from tariffagent.evals.run import REPORTS
+
+        (REPORTS / "cost_summary.json").write_text(json.dumps(savings_report(), indent=2))
+        console.print("wrote evals/reports/cost_summary.json")
 
 
 if __name__ == "__main__":

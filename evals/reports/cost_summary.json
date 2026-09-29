@@ -1,0 +1,84 @@
+{
+  "by_phase": {
+    "setup": {
+      "actual_usd": 0.0011,
+      "no_cache_same_mode_usd": 0.0011,
+      "no_cache_no_batch_usd": 0.0011,
+      "calls": 2,
+      "cache_read_tokens": 0,
+      "input_tokens_all": 464,
+      "cache_read_share": 0.0,
+      "saving_vs_no_cache_no_batch": 0.0
+    },
+    "pilot": {
+      "actual_usd": 0.7646,
+      "no_cache_same_mode_usd": 1.445,
+      "no_cache_no_batch_usd": 1.445,
+      "calls": 60,
+      "cache_read_tokens": 428622,
+      "input_tokens_all": 611071,
+      "cache_read_share": 0.7014,
+      "saving_vs_no_cache_no_batch": 0.4709
+    },
+    "tests": {
+      "actual_usd": 0.2305,
+      "no_cache_same_mode_usd": 0.4624,
+      "no_cache_no_batch_usd": 0.4624,
+      "calls": 19,
+      "cache_read_tokens": 143684,
+      "input_tokens_all": 197269,
+      "cache_read_share": 0.7284,
+      "saving_vs_no_cache_no_batch": 0.5015
+    },
+    "baseline": {
+      "actual_usd": 6.189,
+      "no_cache_same_mode_usd": 10.8342,
+      "no_cache_no_batch_usd": 21.5519,
+      "calls": 835,
+      "cache_read_tokens": 6939471,
+      "input_tokens_all": 8582941,
+      "cache_read_share": 0.8085,
+      "saving_vs_no_cache_no_batch": 0.7128
+    },
+    "dev": {
+      "actual_usd": 4.5918,
+      "no_cache_same_mode_usd": 11.2904,
+      "no_cache_no_batch_usd": 11.2904,
+      "calls": 543,
+      "cache_read_tokens": 5600856,
+      "input_tokens_all": 6943434,
+      "cache_read_share": 0.8066,
+      "saving_vs_no_cache_no_batch": 0.5933
+    },
+    "fresh": {
+      "actual_usd": 0.923,
+      "no_cache_same_mode_usd": 1.6755,
+      "no_cache_no_batch_usd": 3.3388,
+      "calls": 151,
+      "cache_read_tokens": 904778,
+      "input_tokens_all": 960861,
+      "cache_read_share": 0.9416,
+      "saving_vs_no_cache_no_batch": 0.7236
+    },
+    "provider": {
+      "actual_usd": 0.4836,
+      "no_cache_same_mode_usd": 1.2152,
+      "no_cache_no_batch_usd": 1.2152,
+      "calls": 489,
+      "cache_read_tokens": 3251456,
+      "input_tokens_all": 3938467,
+      "cache_read_share": 0.8256,
+      "saving_vs_no_cache_no_batch": 0.602
+    }
+  },
+  "total": {
+    "actual_usd": 13.1836,
+    "no_cache_same_mode_usd": 26.9237,
+    "no_cache_no_batch_usd": 39.3047,
+    "calls": 2099,
+    "cache_read_tokens": 17268867,
+    "input_tokens_all": 21234507,
+    "cache_read_share": 0.8132,
+    "saving_vs_no_cache_no_batch": 0.6646
+  }
+}

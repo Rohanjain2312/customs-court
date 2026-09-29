@@ -204,3 +204,42 @@ class Timer:
 
     def __exit__(self, *a):
         self.elapsed = time.perf_counter() - self.t0
+
+
+def savings_report() -> dict:
+    """Actual spend vs the same tokens at list price with no prompt caching and no batch discount.
+
+    Counterfactuals use the recorded token counts: every cached or cache-written token is
+    priced as plain input. This ignores that uncached calls could have been shaped differently,
+    so it measures the pricing effect of caching and batching on the calls that were made.
+    """
+    from tariffagent.config import price_for
+
+    out: dict = {"by_phase": {}, "total": {}}
+
+    def add(bucket: dict, e: dict) -> None:
+        u = e["usage"]
+        p = price_for(e["model"])
+        all_in = (
+            u["input_tokens"] + u["cache_read_tokens"] + u["cache_write_5m_tokens"] + u["cache_write_1h_tokens"]
+        )
+        list_usd = (all_in * p.input + u["output_tokens"] * p.output) / 1e6
+        disc = p.batch_discount if e.get("batch") else 1.0
+        b = bucket
+        b["actual_usd"] = b.get("actual_usd", 0.0) + e["usd"]
+        b["no_cache_same_mode_usd"] = b.get("no_cache_same_mode_usd", 0.0) + list_usd * disc
+        b["no_cache_no_batch_usd"] = b.get("no_cache_no_batch_usd", 0.0) + list_usd
+        b["calls"] = b.get("calls", 0) + 1
+        b["cache_read_tokens"] = b.get("cache_read_tokens", 0) + u["cache_read_tokens"]
+        b["input_tokens_all"] = b.get("input_tokens_all", 0) + all_in
+
+    for e in read_entries():
+        add(out["by_phase"].setdefault(e.get("phase", ""), {}), e)
+        add(out["total"], e)
+    for b in [out["total"], *out["by_phase"].values()]:
+        for k in list(b):
+            if k.endswith("_usd"):
+                b[k] = round(b[k], 4)
+        b["cache_read_share"] = round(b["cache_read_tokens"] / max(1, b["input_tokens_all"]), 4)
+        b["saving_vs_no_cache_no_batch"] = round(1 - b["actual_usd"] / max(1e-9, b["no_cache_no_batch_usd"]), 4)
+    return out
