@@ -19,7 +19,11 @@ class OfflineMiss(RuntimeError):
 
 def estimate_usd(req: LLMRequest, batch: bool = False) -> float:
     """Conservative upper estimate: all input uncached, full max_tokens output."""
-    chars = len(json.dumps(req.messages)) + len(json.dumps(req.system)) + len(json.dumps([t.__dict__ for t in req.tools]))
+    chars = (
+        len(json.dumps(req.messages))
+        + len(json.dumps(req.system))
+        + len(json.dumps([t.__dict__ for t in req.tools]))
+    )
     p = price_for(req.model)
     usd = (chars / 3.0) * p.input / 1e6 + req.max_tokens * p.output / 1e6
     return usd * (p.batch_discount if batch else 1.0)
@@ -163,7 +167,9 @@ class AnthropicProvider:
         m = self.client.messages.create(**build_params(req))
         dt = time.perf_counter() - t0
         u = usage_from(m.usage)
-        e = record(provider=self.name, model=req.model, usage=u, run_id=req.run_id, purpose=req.purpose, latency_s=dt)
+        e = record(
+            provider=self.name, model=req.model, usage=u, run_id=req.run_id, purpose=req.purpose, latency_s=dt
+        )
         resp = LLMResponse(
             content=normalize_content(m.content),
             stop_reason=m.stop_reason or "",
@@ -177,7 +183,9 @@ class AnthropicProvider:
         return resp
 
     # ---------- Message Batches ----------
-    def complete_batch(self, items: list[tuple[str, LLMRequest]], poll_s: float = 20.0, max_wait_s: float = 6 * 3600) -> dict[str, LLMResponse | Exception]:
+    def complete_batch(
+        self, items: list[tuple[str, LLMRequest]], poll_s: float = 20.0, max_wait_s: float = 6 * 3600
+    ) -> dict[str, LLMResponse | Exception]:
         """Run many independent requests through the Batch API (50% off). Cached ones are skipped."""
         from anthropic.types.message_create_params import MessageCreateParamsNonStreaming
         from anthropic.types.messages.batch_create_params import Request
@@ -201,7 +209,12 @@ class AnthropicProvider:
         check_budget(run_id, sum(estimate_usd(r, batch=True) for _, r in todo))
         by_id = dict(todo)
         batch = self.client.messages.batches.create(
-            requests=[Request(custom_id=cid, params=MessageCreateParamsNonStreaming(**build_params(r, for_batch=True))) for cid, r in todo]
+            requests=[
+                Request(
+                    custom_id=cid, params=MessageCreateParamsNonStreaming(**build_params(r, for_batch=True))
+                )
+                for cid, r in todo
+            ]
         )
         t0 = time.time()
         while True:
@@ -216,12 +229,19 @@ class AnthropicProvider:
         for res in self.client.messages.batches.results(batch.id):
             req = by_id[res.custom_id]
             if res.result.type != "succeeded":
-                out[res.custom_id] = RuntimeError(f"batch item {res.result.type}: {getattr(res.result, 'error', '')}")
+                out[res.custom_id] = RuntimeError(
+                    f"batch item {res.result.type}: {getattr(res.result, 'error', '')}"
+                )
                 continue
             m = res.result.message
             u = usage_from(m.usage)
             e = record(
-                provider=self.name, model=req.model, usage=u, run_id=req.run_id, purpose=req.purpose, batch=True,
+                provider=self.name,
+                model=req.model,
+                usage=u,
+                run_id=req.run_id,
+                purpose=req.purpose,
+                batch=True,
                 extra={"batch_id": batch.id},
             )
             resp = LLMResponse(

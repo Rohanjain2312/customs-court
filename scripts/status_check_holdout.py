@@ -12,14 +12,18 @@ from tariffagent.data.status import text_actions
 rng = random.Random(7)
 con = connect()
 labeled = {json.loads(line)["id"] for line in open("evals/status_check/labels.jsonl")}
-text_ids = [r[0] for r in con.execute("SELECT id FROM ruling_status WHERE method='text'") if r[0] not in labeled]
+text_ids = [
+    r[0] for r in con.execute("SELECT id FROM ruling_status WHERE method='text'") if r[0] not in labeled
+]
 rng.shuffle(text_ids)
 v2 = text_ids[:15]
 
 # Rebuild v1 text flags: rulings named in HQ text with a revoke/modify word, now in_force.
 v1_re = re.compile(r"(?:revok\w*|modif\w*)[^.;]{0,160}?(?:NY|HQ)?\s*([A-Z]?\d{5,6})", re.I)
 dropped = []
-hq = con.execute("SELECT id, text FROM rulings WHERE (collection='HQ' OR id LIKE 'H%') AND text != ''").fetchall()
+hq = con.execute(
+    "SELECT id, text FROM rulings WHERE (collection='HQ' OR id LIKE 'H%') AND text != ''"
+).fetchall()
 rng.shuffle(hq)
 for r in hq:
     now = text_actions(r["text"])
@@ -52,8 +56,14 @@ for rid in v2:
     out.append({"id": rid, "stratum": "holdout_text_v2", "derived_status": st["status"], "evidence": ev})
 for rid, src in dropped:
     sents = re.split(r"(?<=[.;])\s+", re.sub(r"\s+", " ", text_of(src)))
-    out.append({"id": rid, "stratum": "holdout_dropped_by_v2", "derived_status": "in_force",
-                "evidence": {src: [s[:400] for s in sents if rid in s][:4]}})
+    out.append(
+        {
+            "id": rid,
+            "stratum": "holdout_dropped_by_v2",
+            "derived_status": "in_force",
+            "evidence": {src: [s[:400] for s in sents if rid in s][:4]},
+        }
+    )
 json.dump(out, open("evals/status_check/holdout_evidence.json", "w"), indent=1)
 for i, x in enumerate(out):
     print(f"=== [{i}] {x['id']} {x['stratum']} derived={x['derived_status']}")

@@ -31,7 +31,12 @@ class Usage:
 
     @property
     def total_input(self) -> int:
-        return self.input_tokens + self.cache_read_tokens + self.cache_write_5m_tokens + self.cache_write_1h_tokens
+        return (
+            self.input_tokens
+            + self.cache_read_tokens
+            + self.cache_write_5m_tokens
+            + self.cache_write_1h_tokens
+        )
 
     def add(self, other: Usage) -> None:
         for k in asdict(self):
@@ -147,7 +152,9 @@ def record(
 def summary() -> dict:
     by_phase: dict[str, float] = defaultdict(float)
     by_model: dict[str, float] = defaultdict(float)
-    by_phase_model: dict[tuple[str, str], dict] = defaultdict(lambda: {"usd": 0.0, "calls": 0, "usage": Usage()})
+    by_phase_model: dict[tuple[str, str], dict] = defaultdict(
+        lambda: {"usd": 0.0, "calls": 0, "usage": Usage()}
+    )
     total = 0.0
     for e in read_entries():
         by_phase[e["phase"]] += e["usd"]

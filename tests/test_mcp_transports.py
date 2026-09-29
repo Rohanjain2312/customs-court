@@ -15,7 +15,14 @@ from tests.conftest import FIXTURE_DATA
 
 INFO = json.loads((FIXTURE_DATA / "fixture_info.json").read_text())
 EXPECTED = {
-    "hts_navigate", "hts_search", "get_notes", "get_gri", "cross_search", "get_ruling", "ruling_status", "hts_revision_diff",
+    "hts_navigate",
+    "hts_search",
+    "get_notes",
+    "get_gri",
+    "cross_search",
+    "get_ruling",
+    "ruling_status",
+    "hts_revision_diff",
 }
 CALLS = [
     ("hts_navigate", {"code": "4202.21"}, lambda d: d["found"] and d["node"]["code"].startswith("4202.21")),
@@ -23,7 +30,11 @@ CALLS = [
     ("get_notes", {"scope": "chapter", "id": "42"}, lambda d: d["found"]),
     ("get_gri", {}, lambda d: "summary" in d),
     ("cross_search", {"query": "footwear rubber sole", "limit": 3}, lambda d: "hits" in d),
-    ("get_ruling", {"id": INFO["poison_id"]}, lambda d: d["found"] and d["text"]["kind"] == "untrusted_corpus_text"),
+    (
+        "get_ruling",
+        {"id": INFO["poison_id"]},
+        lambda d: d["found"] and d["text"]["kind"] == "untrusted_corpus_text",
+    ),
     ("ruling_status", {"id": INFO["poison_id"]}, lambda d: d["status"] == "in_force"),
     ("hts_revision_diff", {"code": "8517.12.00.50", "rev_a": "2018"}, lambda d: d["change"] == "removed"),
 ]
@@ -57,7 +68,9 @@ async def exercise(client: Client, redact: bool = False) -> None:
 @pytest.mark.anyio
 @pytest.mark.parametrize("redact", [False, True])
 async def test_stdio_transport(redact):
-    args = ["-m", "tariffagent.mcp_server.server", "--transport", "stdio", "--no-vectors"] + (["--redact-eval"] if redact else [])
+    args = ["-m", "tariffagent.mcp_server.server", "--transport", "stdio", "--no-vectors"] + (
+        ["--redact-eval"] if redact else []
+    )
     params = StdioServerParameters(command=sys.executable, args=args, env=env())
     async with Client(params) as client:
         await exercise(client, redact)
@@ -75,9 +88,22 @@ def _free_port() -> int:
 def http_server():
     port = _free_port()
     proc = subprocess.Popen(
-        [sys.executable, "-m", "tariffagent.mcp_server.server", "--transport", "http", "--host", "127.0.0.1",
-         "--port", str(port), "--no-vectors", "--redact-eval"],
-        env=env(), stdout=subprocess.DEVNULL, stderr=subprocess.PIPE,
+        [
+            sys.executable,
+            "-m",
+            "tariffagent.mcp_server.server",
+            "--transport",
+            "http",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            str(port),
+            "--no-vectors",
+            "--redact-eval",
+        ],
+        env=env(),
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.PIPE,
     )
     for _ in range(100):
         try:

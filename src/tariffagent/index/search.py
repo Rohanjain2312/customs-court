@@ -37,9 +37,8 @@ def get_model():
     global _model
     with _model_lock:
         if _model is None:
-            from sentence_transformers import SentenceTransformer
-
             import torch
+            from sentence_transformers import SentenceTransformer
 
             device = "mps" if torch.backends.mps.is_available() else "cpu"
             _model = SentenceTransformer(EMBED_MODEL, device=device)
@@ -84,7 +83,9 @@ def build_fts(con: sqlite3.Connection | None = None) -> dict:
     return {"rulings_fts": n1, "hts_fts": n2}
 
 
-def build_embeddings(con: sqlite3.Connection | None = None, which: tuple[str, ...] = ("rulings", "hts")) -> dict:
+def build_embeddings(
+    con: sqlite3.Connection | None = None, which: tuple[str, ...] = ("rulings", "hts")
+) -> dict:
     con = con or connect()
     out = {}
     if "rulings" in which:
@@ -95,7 +96,11 @@ def build_embeddings(con: sqlite3.Connection | None = None, which: tuple[str, ..
         import hashlib
 
         old_vecs, old_ids, old_h = None, [], []
-        vp, ip, hp = index_dir() / "rulings.npy", index_dir() / "rulings_ids.json", index_dir() / "rulings_hash.json"
+        vp, ip, hp = (
+            index_dir() / "rulings.npy",
+            index_dir() / "rulings_ids.json",
+            index_dir() / "rulings_hash.json",
+        )
         if vp.exists() and ip.exists() and hp.exists():
             old_vecs = np.load(vp)
             old_ids = json.loads(ip.read_text())

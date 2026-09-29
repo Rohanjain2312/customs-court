@@ -43,10 +43,17 @@ def main() -> None:
     cols = [c[1] for c in src.execute("PRAGMA table_info(hts_rows)")]
     q = f"SELECT * FROM hts_rows WHERE (rev=? AND chapter IN ({','.join('?' * len(CHAPTERS))})) OR (rev='2018Basic' AND chapter='85')"
     rows = src.execute(q, (rev, *CHAPTERS)).fetchall()
-    dst.executemany(f"INSERT INTO hts_rows ({','.join(cols)}) VALUES ({','.join('?' * len(cols))})", [tuple(r) for r in rows])
+    dst.executemany(
+        f"INSERT INTO hts_rows ({','.join(cols)}) VALUES ({','.join('?' * len(cols))})",
+        [tuple(r) for r in rows],
+    )
     secs = {r["section"] for r in rows}
     for r in src.execute("SELECT * FROM notes WHERE rev=?", (rev,)):
-        if r["scope"] == "gri" or (r["scope"] == "chapter" and r["id"] in CHAPTERS) or (r["scope"] == "section" and r["id"] in secs):
+        if (
+            r["scope"] == "gri"
+            or (r["scope"] == "chapter" and r["id"] in CHAPTERS)
+            or (r["scope"] == "section" and r["id"] in secs)
+        ):
             dst.execute("INSERT INTO notes VALUES (?,?,?,?,?)", tuple(r))
 
     rng = random.Random(3)
@@ -55,7 +62,8 @@ def main() -> None:
         ids = [
             r["id"]
             for r in src.execute(
-                "SELECT id, tariffs FROM rulings WHERE text != '' AND has_meta=1 AND tariffs LIKE ? ORDER BY id", (f'%"{ch}%',)
+                "SELECT id, tariffs FROM rulings WHERE text != '' AND has_meta=1 AND tariffs LIKE ? ORDER BY id",
+                (f'%"{ch}%',),
             )
         ]
         rng.shuffle(ids)
@@ -72,28 +80,58 @@ def main() -> None:
     for rid in picked:
         r = src.execute("SELECT * FROM rulings WHERE id=?", (rid,)).fetchone()
         if r:
-            dst.execute(f"INSERT INTO rulings ({','.join(rcols)}) VALUES ({','.join('?' * len(rcols))})", tuple(r))
+            dst.execute(
+                f"INSERT INTO rulings ({','.join(rcols)}) VALUES ({','.join('?' * len(rcols))})", tuple(r)
+            )
             st = src.execute("SELECT * FROM ruling_status WHERE id=?", (rid,)).fetchone()
             if st:
                 dst.execute("INSERT INTO ruling_status VALUES (?,?,?,?,?)", tuple(st))
     dst.execute(
         "INSERT INTO rulings (id, collection, date, subject, text, tariffs, related, modified_by, modifies, revoked_by, revokes, "
         "operationally_revoked, categories, source, has_meta) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        (POISON_ID, "NY", "2026-01-15", "TEST FIXTURE: synthetic poisoned ruling, leather handbag", POISON_TEXT,
-         json.dumps(["4202.21.6000"]), "[]", "[]", "[]", "[]", "[]", 0, "Classification", "synthetic_test", 1),
+        (
+            POISON_ID,
+            "NY",
+            "2026-01-15",
+            "TEST FIXTURE: synthetic poisoned ruling, leather handbag",
+            POISON_TEXT,
+            json.dumps(["4202.21.6000"]),
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            "[]",
+            0,
+            "Classification",
+            "synthetic_test",
+            1,
+        ),
     )
-    dst.execute("INSERT INTO ruling_status VALUES (?,?,?,?,?)", (POISON_ID, "in_force", "[]", "meta_no_signal", ""))
+    dst.execute(
+        "INSERT INTO ruling_status VALUES (?,?,?,?,?)", (POISON_ID, "in_force", "[]", "meta_no_signal", "")
+    )
     # Fixture eval set: two real rulings act as goldens.
-    goldens = [p for p in picked if src.execute("SELECT 1 FROM rulings WHERE id=? AND tariffs LIKE '%\"64%'", (p,)).fetchone()][:2]
+    goldens = [
+        p
+        for p in picked
+        if src.execute("SELECT 1 FROM rulings WHERE id=? AND tariffs LIKE '%\"64%'", (p,)).fetchone()
+    ][:2]
     for g in goldens:
-        dst.execute("INSERT INTO eval_redactions VALUES (?,?,?,?,?)", (g, "fixture_eval", f"fx_{g}", 1.0, "fixture"))
+        dst.execute(
+            "INSERT INTO eval_redactions VALUES (?,?,?,?,?)", (g, "fixture_eval", f"fx_{g}", 1.0, "fixture")
+        )
     dst.commit()
     print(build_fts(dst))
     dst.execute("PRAGMA wal_checkpoint(TRUNCATE)")
     dst.execute("PRAGMA journal_mode=DELETE")
     dst.execute("VACUUM")
     dst.close()
-    (OUT.parent / "fixture_info.json").write_text(json.dumps({"revision": rev, "rulings": len(picked) + 1, "goldens": goldens, "poison_id": POISON_ID}, indent=1))
+    (OUT.parent / "fixture_info.json").write_text(
+        json.dumps(
+            {"revision": rev, "rulings": len(picked) + 1, "goldens": goldens, "poison_id": POISON_ID},
+            indent=1,
+        )
+    )
     print({"rulings": len(picked) + 1, "goldens": goldens, "size_mb": round(OUT.stat().st_size / 1e6, 2)})
 
 

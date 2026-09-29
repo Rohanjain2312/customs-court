@@ -120,7 +120,16 @@ _W = re.compile(r"[a-z]{4,}")
 
 
 def _words(s: str) -> set[str]:
-    return set(_W.findall((s or "").lower())) - {"classification", "tariff", "from", "with", "ruling", "letter", "country", "origin"}
+    return set(_W.findall((s or "").lower())) - {
+        "classification",
+        "tariff",
+        "from",
+        "with",
+        "ruling",
+        "letter",
+        "country",
+        "origin",
+    }
 
 
 def load_mirror() -> dict:
@@ -188,7 +197,15 @@ def load_mirror() -> dict:
         else:
             con.execute(
                 "INSERT INTO rulings (id, collection, date, subject, text, tariffs, source, has_meta) VALUES (?,?,?,?,?,?,?,0)",
-                (target, "", d, r.get("short_product_description") or "", text, json.dumps([code] if code else []), f"mirror:{how}"),
+                (
+                    target,
+                    "",
+                    d,
+                    r.get("short_product_description") or "",
+                    text,
+                    json.dumps([code] if code else []),
+                    f"mirror:{how}",
+                ),
             )
     # Drop mirror-only rows that ended up with no text.
     con.execute("DELETE FROM rulings WHERE has_meta=0 AND (text IS NULL OR text='')")
@@ -237,7 +254,10 @@ def ids_needing_text(since: str = "2025-07-01") -> list[str]:
 def verify_mirror_sample(n: int = 20, seed: int = 7) -> dict:
     """Compare mirror text against CROSS for a random sample. Returns match stats."""
     con = connect()
-    ids = [r["id"] for r in con.execute("SELECT id FROM rulings WHERE source LIKE 'mirror%' AND text != '' ORDER BY id")]
+    ids = [
+        r["id"]
+        for r in con.execute("SELECT id FROM rulings WHERE source LIKE 'mirror%' AND text != '' ORDER BY id")
+    ]
     random.Random(seed).shuffle(ids)
     http = _client("rulings")
     results = []

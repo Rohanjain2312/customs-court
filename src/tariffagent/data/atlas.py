@@ -24,7 +24,9 @@ from tariffagent.config import get_settings
 from tariffagent.data.db import connect
 from tariffagent.data.http import PoliteClient
 
-MIRROR = "https://huggingface.co/datasets/Dayanand314Krishna/cross_rulings_hts_dataset_for_tariffs/resolve/main"
+MIRROR = (
+    "https://huggingface.co/datasets/Dayanand314Krishna/cross_rulings_hts_dataset_for_tariffs/resolve/main"
+)
 SPLITS = {"train": "train.jsonl", "validation": "validation.jsonl", "test": "test.jsonl"}
 
 Q_RE = re.compile(r"^What is the HTS US Code for (.*?)\??$", re.S)
@@ -117,7 +119,10 @@ def link_to_rulings(items: list[dict], dataset: str) -> list[dict]:
         q = set(_toks(it["description"]))
         norm = sum(math.log(1 + n_docs / (1 + df[t])) for t in q) or 1.0
         scored = sorted(
-            ((sum(math.log(1 + n_docs / (1 + df[t])) for t in q & docs.get(cid, set())) / norm, cid) for cid in cands),
+            (
+                (sum(math.log(1 + n_docs / (1 + df[t])) for t in q & docs.get(cid, set())) / norm, cid)
+                for cid in cands
+            ),
             reverse=True,
         )
         top = scored[0] if scored else (0.0, None)

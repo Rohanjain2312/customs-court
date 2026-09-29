@@ -54,7 +54,10 @@ def test_parse_atlas_item():
     obj = {
         "messages": [
             {"role": "user", "content": "What is the HTS US Code for a leather wallet?"},
-            {"role": "assistant", "content": "HTS US Code -> 4202.31.6000\nReasoning -> Heading 4202 covers wallets."},
+            {
+                "role": "assistant",
+                "content": "HTS US Code -> 4202.31.6000\nReasoning -> Heading 4202 covers wallets.",
+            },
         ]
     }
     it = parse_item(obj, "test", 3)

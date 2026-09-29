@@ -17,9 +17,7 @@ class PoliteClient:
         self.raw_dir.mkdir(parents=True, exist_ok=True)
         self.min_interval_s = min_interval_s
         self._last = 0.0
-        self.client = httpx.Client(
-            headers={"User-Agent": USER_AGENT}, timeout=timeout, follow_redirects=True
-        )
+        self.client = httpx.Client(headers={"User-Agent": USER_AGENT}, timeout=timeout, follow_redirects=True)
         self.network_calls = 0
 
     def _wait(self) -> None:
@@ -33,7 +31,9 @@ class PoliteClient:
             return self.raw_dir / name
         return self.raw_dir / (hashlib.sha256(url.encode()).hexdigest()[:24] + ".bin")
 
-    def get_bytes(self, url: str, name: str | None = None, refresh: bool = False, retries: int = 4) -> bytes | None:
+    def get_bytes(
+        self, url: str, name: str | None = None, refresh: bool = False, retries: int = 4
+    ) -> bytes | None:
         """Return the body, reading from the raw cache when present. None on 404."""
         p = self.cache_path(url, name)
         if p.exists() and not refresh:

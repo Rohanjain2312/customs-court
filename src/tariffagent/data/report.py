@@ -16,25 +16,37 @@ def data_report() -> dict:
     rep: dict = {
         "hts_current_revision": rev,
         "hts_rows_current": revs.get(rev, 0),
-        "hts_10digit_lines_current": q("SELECT COUNT(*) FROM hts_rows WHERE rev=? AND length(digits)=10", rev),
+        "hts_10digit_lines_current": q(
+            "SELECT COUNT(*) FROM hts_rows WHERE rev=? AND length(digits)=10", rev
+        ),
         "hts_revisions_held": revs,
-        "notes": {r["scope"]: r["c"] for r in con.execute("SELECT scope, COUNT(*) c FROM notes GROUP BY scope")},
+        "notes": {
+            r["scope"]: r["c"] for r in con.execute("SELECT scope, COUNT(*) c FROM notes GROUP BY scope")
+        },
         "rulings_total": q("SELECT COUNT(*) FROM rulings"),
         "rulings_with_cross_meta": q("SELECT COUNT(*) FROM rulings WHERE has_meta=1"),
         "rulings_with_text": q("SELECT COUNT(*) FROM rulings WHERE text IS NOT NULL AND text != ''"),
         "rulings_by_collection": {
-            r["collection"] or "?": r["c"] for r in con.execute("SELECT collection, COUNT(*) c FROM rulings GROUP BY collection")
+            r["collection"] or "?": r["c"]
+            for r in con.execute("SELECT collection, COUNT(*) c FROM rulings GROUP BY collection")
         },
-        "rulings_date_range_all": list(con.execute("SELECT MIN(date), MAX(date) FROM rulings WHERE date != ''").fetchone()),
+        "rulings_date_range_all": list(
+            con.execute("SELECT MIN(date), MAX(date) FROM rulings WHERE date != ''").fetchone()
+        ),
         "rulings_date_range_with_text": list(
             con.execute("SELECT MIN(date), MAX(date) FROM rulings WHERE date != '' AND text != ''").fetchone()
         ),
-        "text_source": {r["source"]: r["c"] for r in con.execute("SELECT source, COUNT(*) c FROM rulings WHERE text != '' GROUP BY source")},
+        "text_source": {
+            r["source"]: r["c"]
+            for r in con.execute("SELECT source, COUNT(*) c FROM rulings WHERE text != '' GROUP BY source")
+        },
         "status_distribution": {
-            r["status"]: r["c"] for r in con.execute("SELECT status, COUNT(*) c FROM ruling_status GROUP BY status")
+            r["status"]: r["c"]
+            for r in con.execute("SELECT status, COUNT(*) c FROM ruling_status GROUP BY status")
         },
         "status_method": {
-            r["method"]: r["c"] for r in con.execute("SELECT method, COUNT(*) c FROM ruling_status GROUP BY method")
+            r["method"]: r["c"]
+            for r in con.execute("SELECT method, COUNT(*) c FROM ruling_status GROUP BY method")
         },
     }
     # Stale-code rate over codes cited by rulings that have text (the retrieval corpus).
@@ -51,7 +63,10 @@ def data_report() -> dict:
     rep["corpus_distinct_10digit_codes"] = len(codes)
     rep["corpus_stale_code_rate"] = round(stale / max(1, len(codes)), 4)
     rep["eval_redactions"] = {
-        r["dataset"]: r["c"] for r in con.execute("SELECT dataset, COUNT(DISTINCT ruling_id) c FROM eval_redactions GROUP BY dataset")
+        r["dataset"]: r["c"]
+        for r in con.execute(
+            "SELECT dataset, COUNT(DISTINCT ruling_id) c FROM eval_redactions GROUP BY dataset"
+        )
     }
     idx = con.execute("SELECT name FROM sqlite_master WHERE name IN ('rulings_fts','hts_fts')").fetchall()
     rep["fts_tables"] = [r["name"] for r in idx]

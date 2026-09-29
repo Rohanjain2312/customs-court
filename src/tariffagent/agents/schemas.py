@@ -29,7 +29,9 @@ class Classification(BaseModel):
     hts10: str = Field(description="10-digit HTS code formatted NNNN.NN.NN.NN, or empty when abstaining")
     facts: Facts = Facts()
     gri_path: list[str] = Field(description="GRI steps applied in order, one short line each")
-    deciding_gri: str = Field(description="The GRI that decided the heading, for example 'GRI 1' or 'GRI 3(b)'")
+    deciding_gri: str = Field(
+        description="The GRI that decided the heading, for example 'GRI 1' or 'GRI 3(b)'"
+    )
     cited_rulings: list[CitedRuling]
     rejected_alternatives: list[RejectedAlternative]
     missing_facts: list[str]

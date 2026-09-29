@@ -30,7 +30,9 @@ strata = {
     "reverse_link": pick("SELECT id FROM ruling_status WHERE method='reverse_link'", 5),
 }
 # Hard negatives: in_force rulings named in some later HQ ruling's text.
-hq = con.execute("SELECT id, text FROM rulings WHERE collection='HQ' AND text != '' AND date >= '2010-01-01'").fetchall()
+hq = con.execute(
+    "SELECT id, text FROM rulings WHERE collection='HQ' AND text != '' AND date >= '2010-01-01'"
+).fetchall()
 rng.shuffle(hq)
 mentioned = []
 for r in hq:
@@ -67,13 +69,27 @@ for stratum, ids in strata.items():
             "FROM rulings r JOIN ruling_status s USING(id) WHERE r.id=?",
             (rid,),
         ).fetchone()
-        linked = set(json.loads(row["linked"])) | set(json.loads(row["revoked_by"] or "[]")) | set(json.loads(row["modified_by"] or "[]"))
+        linked = (
+            set(json.loads(row["linked"]))
+            | set(json.loads(row["revoked_by"] or "[]"))
+            | set(json.loads(row["modified_by"] or "[]"))
+        )
         if stratum == "mentioned_in_force":
             linked |= {h["id"] for h in hq if rid in (h["text"] or "")}
         ev = {}
         for lid in sorted(linked)[:4]:
             ev[lid] = sentences_naming(text_of(lid), rid)
-        out.append({"id": rid, "stratum": stratum, "date": row["date"], "subject": row["subject"][:200],
-                    "derived_status": row["status"], "method": row["method"], "linked": sorted(linked), "evidence": ev})
+        out.append(
+            {
+                "id": rid,
+                "stratum": stratum,
+                "date": row["date"],
+                "subject": row["subject"][:200],
+                "derived_status": row["status"],
+                "method": row["method"],
+                "linked": sorted(linked),
+                "evidence": ev,
+            }
+        )
 json.dump(out, open("evals/status_check/evidence.json", "w"), indent=1)
 print(len(out), {k: len(v) for k, v in strata.items()}, file=sys.stderr)

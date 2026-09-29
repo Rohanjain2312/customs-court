@@ -27,7 +27,11 @@ TOOL_SPECS: list[ToolSpec] = [
     ToolSpec(
         "hts_search",
         "Find candidate HTS headings and subheadings for product words (keyword plus semantic search).",
-        _s("", {"text": {"type": "string"}, "limit": {"type": "integer", "description": "1 to 25, default 8"}}, ["text"]),
+        _s(
+            "",
+            {"text": {"type": "string"}, "limit": {"type": "integer", "description": "1 to 25, default 8"}},
+            ["text"],
+        ),
     ),
     ToolSpec(
         "hts_navigate",
@@ -37,7 +41,15 @@ TOOL_SPECS: list[ToolSpec] = [
     ToolSpec(
         "get_notes",
         "Full section or chapter notes, including exclusions. scope is 'section' or 'chapter'; id is like '42' or 'XVI'. Use offset to page.",
-        _s("", {"scope": {"type": "string", "enum": ["section", "chapter"]}, "id": {"type": "string"}, "offset": {"type": "integer"}}, ["scope", "id"]),
+        _s(
+            "",
+            {
+                "scope": {"type": "string", "enum": ["section", "chapter"]},
+                "id": {"type": "string"},
+                "offset": {"type": "integer"},
+            },
+            ["scope", "id"],
+        ),
     ),
     ToolSpec("get_gri", "The General Rules of Interpretation, full legal text.", _s("", {}, [])),
     ToolSpec(
@@ -67,7 +79,11 @@ TOOL_SPECS: list[ToolSpec] = [
     ToolSpec(
         "hts_revision_diff",
         "Compare one HTS line between an older revision (a year like '2019') and the current one.",
-        _s("", {"code": {"type": "string"}, "rev_a": {"type": "string"}, "rev_b": {"type": "string"}}, ["code", "rev_a"]),
+        _s(
+            "",
+            {"code": {"type": "string"}, "rev_a": {"type": "string"}, "rev_b": {"type": "string"}},
+            ["code", "rev_a"],
+        ),
     ),
 ]
 TOOL_NAMES = {t.name for t in TOOL_SPECS}
@@ -83,7 +99,13 @@ def compact(model: BaseModel) -> str:
 
 
 class ToolExecutor:
-    def __init__(self, tools: TariffTools, bus: EventBus | None = None, agent: str = "single", allowed: set[str] | None = None):
+    def __init__(
+        self,
+        tools: TariffTools,
+        bus: EventBus | None = None,
+        agent: str = "single",
+        allowed: set[str] | None = None,
+    ):
         self.tools = tools
         self.bus = bus
         self.agent = agent
@@ -101,13 +123,20 @@ class ToolExecutor:
             if name == "hts_search":
                 res = fn(args.get("text", ""), int(args.get("limit") or 8))
             elif name == "cross_search":
-                res = fn(args.get("query", ""), args.get("date_from"), args.get("date_to"), int(args.get("limit") or 6))
+                res = fn(
+                    args.get("query", ""),
+                    args.get("date_from"),
+                    args.get("date_to"),
+                    int(args.get("limit") or 6),
+                )
             elif name == "get_notes":
                 res = fn(args.get("scope", "chapter"), str(args.get("id", "")), int(args.get("offset") or 0))
             elif name == "get_ruling":
                 res = fn(str(args.get("id", "")), int(args.get("offset") or 0))
             elif name == "hts_revision_diff":
-                res = fn(str(args.get("code", "")), str(args.get("rev_a", "")), str(args.get("rev_b") or "current"))
+                res = fn(
+                    str(args.get("code", "")), str(args.get("rev_a", "")), str(args.get("rev_b") or "current")
+                )
             elif name == "get_gri":
                 res = fn()
             else:
@@ -122,6 +151,8 @@ class ToolExecutor:
             if code and re.sub(r"\D", "", code):
                 self.bus.emit(TreeFocus(agent=self.agent, code=code, state="visited"))
             if name == "hts_search" and not err:
-                for h in json.loads(out).get("hits", [])[:5] if out.startswith("{") and out.endswith("}") else []:
+                for h in (
+                    json.loads(out).get("hits", [])[:5] if out.startswith("{") and out.endswith("}") else []
+                ):
                     self.bus.emit(TreeFocus(agent=self.agent, code=h["code"], state="candidate"))
         return out, err

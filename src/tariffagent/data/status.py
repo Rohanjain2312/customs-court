@@ -21,13 +21,25 @@ from tariffagent.data.db import connect
 
 ID_PAT = r"(?:NY|HQ|N\.Y\.|H\.Q\.)?\s*([A-Z]?\d{5,6})"
 REVOKE_RE = re.compile(
-    r"(?:revok\w*|revocation of)\b[^.;]{0,160}?" + ID_PAT + r"|" + ID_PAT + r"[^.;]{0,120}?\b(?:is|are) (?:hereby )?revoked"
-    + r"|" + ID_PAT + r",?\s+(?:is\s+)?revoked\b",
+    r"(?:revok\w*|revocation of)\b[^.;]{0,160}?"
+    + ID_PAT
+    + r"|"
+    + ID_PAT
+    + r"[^.;]{0,120}?\b(?:is|are) (?:hereby )?revoked"
+    + r"|"
+    + ID_PAT
+    + r",?\s+(?:is\s+)?revoked\b",
     re.I,
 )
 MODIFY_RE = re.compile(
-    r"(?:modif\w*|modification of)\b[^.;]{0,160}?" + ID_PAT + r"|" + ID_PAT + r"[^.;]{0,120}?\b(?:is|are) (?:hereby )?modified"
-    + r"|" + ID_PAT + r",?\s+(?:is\s+)?modified\b",
+    r"(?:modif\w*|modification of)\b[^.;]{0,160}?"
+    + ID_PAT
+    + r"|"
+    + ID_PAT
+    + r"[^.;]{0,120}?\b(?:is|are) (?:hereby )?modified"
+    + r"|"
+    + ID_PAT
+    + r",?\s+(?:is\s+)?modified\b",
     re.I,
 )
 PROPOSED_RE = re.compile(r"\bpropos\w*", re.I)

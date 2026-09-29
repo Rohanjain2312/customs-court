@@ -31,7 +31,11 @@ def to_openai_messages(req: LLMRequest) -> list[dict]:
         if m["role"] == "assistant":
             text = "".join(b.get("text", "") for b in content if b["type"] == "text")
             calls = [
-                {"id": b["id"], "type": "function", "function": {"name": b["name"], "arguments": json.dumps(b["input"])}}
+                {
+                    "id": b["id"],
+                    "type": "function",
+                    "function": {"name": b["name"], "arguments": json.dumps(b["input"])},
+                }
                 for b in content
                 if b["type"] == "tool_use"
             ]
@@ -73,10 +77,17 @@ class OpenAIProvider:
         return self._client
 
     def build_params(self, req: LLMRequest) -> dict:
-        p: dict = {"model": req.model, "messages": to_openai_messages(req), "max_completion_tokens": req.max_tokens}
+        p: dict = {
+            "model": req.model,
+            "messages": to_openai_messages(req),
+            "max_completion_tokens": req.max_tokens,
+        }
         if req.tools:
             p["tools"] = [
-                {"type": "function", "function": {"name": t.name, "description": t.description, "parameters": t.input_schema}}
+                {
+                    "type": "function",
+                    "function": {"name": t.name, "description": t.description, "parameters": t.input_schema},
+                }
                 for t in req.tools
             ]
         if req.output_schema:
@@ -92,8 +103,14 @@ class OpenAIProvider:
         hit = self.cache.get(key)
         if hit:
             return LLMResponse(
-                content=hit["content"], stop_reason=hit["stop_reason"], usage=Usage(**hit["usage"]), model=hit["model"],
-                provider=self.name, latency_s=hit.get("latency_s", 0), from_cache=True, usd=hit.get("usd", 0.0),
+                content=hit["content"],
+                stop_reason=hit["stop_reason"],
+                usage=Usage(**hit["usage"]),
+                model=hit["model"],
+                provider=self.name,
+                latency_s=hit.get("latency_s", 0),
+                from_cache=True,
+                usd=hit.get("usd", 0.0),
             )
         if get_settings().offline:
             raise OfflineMiss(f"offline and uncached: {req.purpose}")
@@ -112,9 +129,35 @@ class OpenAIProvider:
                 args = {"_raw": tc.function.arguments}
             content.append({"type": "tool_use", "id": tc.id, "name": tc.function.name, "input": args})
         cached = (r.usage.prompt_tokens_details.cached_tokens or 0) if r.usage.prompt_tokens_details else 0
-        u = Usage(input_tokens=r.usage.prompt_tokens - cached, output_tokens=r.usage.completion_tokens, cache_read_tokens=cached)
-        e = record(provider=self.name, model=req.model, usage=u, run_id=req.run_id, purpose=req.purpose, latency_s=dt)
-        stop = {"tool_calls": "tool_use", "stop": "end_turn", "length": "max_tokens"}.get(ch.finish_reason, ch.finish_reason)
-        resp = LLMResponse(content=content, stop_reason=stop, usage=u, model=r.model, provider=self.name, latency_s=dt, usd=e.usd)
-        self.cache.put(key, {"content": content, "stop_reason": stop, "usage": u.__dict__, "model": r.model, "latency_s": dt, "usd": e.usd})
+        u = Usage(
+            input_tokens=r.usage.prompt_tokens - cached,
+            output_tokens=r.usage.completion_tokens,
+            cache_read_tokens=cached,
+        )
+        e = record(
+            provider=self.name, model=req.model, usage=u, run_id=req.run_id, purpose=req.purpose, latency_s=dt
+        )
+        stop = {"tool_calls": "tool_use", "stop": "end_turn", "length": "max_tokens"}.get(
+            ch.finish_reason, ch.finish_reason
+        )
+        resp = LLMResponse(
+            content=content,
+            stop_reason=stop,
+            usage=u,
+            model=r.model,
+            provider=self.name,
+            latency_s=dt,
+            usd=e.usd,
+        )
+        self.cache.put(
+            key,
+            {
+                "content": content,
+                "stop_reason": stop,
+                "usage": u.__dict__,
+                "model": r.model,
+                "latency_s": dt,
+                "usd": e.usd,
+            },
+        )
         return resp

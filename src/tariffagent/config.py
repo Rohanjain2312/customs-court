@@ -30,7 +30,9 @@ class Price(BaseModel):
 # cache multipliers (pricing page, "Batch processing" section).
 # OpenAI prices checked 2026-09-28 against platform.openai.com/docs/pricing.
 PRICES: dict[str, Price] = {
-    "claude-sonnet-5-5": Price(input=2.0, output=10.0, cache_write_5m=2.5, cache_write_1h=4.0, cache_read=0.2),
+    "claude-sonnet-5-5": Price(
+        input=2.0, output=10.0, cache_write_5m=2.5, cache_write_1h=4.0, cache_read=0.2
+    ),
     "claude-haiku-4-5": Price(input=1.0, output=5.0, cache_write_5m=1.25, cache_write_1h=2.0, cache_read=0.1),
     "claude-haiku-4-5-20251001": Price(
         input=1.0, output=5.0, cache_write_5m=1.25, cache_write_1h=2.0, cache_read=0.1

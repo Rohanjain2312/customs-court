@@ -175,7 +175,13 @@ def ingest(refresh: bool = False, past: bool = True) -> dict:
     con.execute("UPDATE revisions SET is_current=0")
     con.execute(
         "INSERT OR REPLACE INTO revisions VALUES (?,?,?,?,?,1)",
-        (cur_name, cur.get("title") or cur.get("description"), int(cur_name[:4]), cur.get("date"), "hts.usitc.gov exportList"),
+        (
+            cur_name,
+            cur.get("title") or cur.get("description"),
+            int(cur_name[:4]),
+            cur.get("date"),
+            "hts.usitc.gov exportList",
+        ),
     )
     raw = json.loads(
         http.get_bytes(
@@ -193,28 +199,49 @@ def ingest(refresh: bool = False, past: bool = True) -> dict:
                 continue
             con.execute(
                 "INSERT OR REPLACE INTO revisions VALUES (?,?,?,?,?,0)",
-                (name, f"{name[:4]} Basic Edition", int(name[:4]), f"{name[:4]}-01-01", f"usitc.gov archive {fname}"),
+                (
+                    name,
+                    f"{name[:4]} Basic Edition",
+                    int(name[:4]),
+                    f"{name[:4]}-01-01",
+                    f"usitc.gov archive {fname}",
+                ),
             )
             _store_rows(con, name, build_rows(name, json.loads(b)))
 
     # Notes for the current release.
-    chapters = sorted({r["chapter"] for r in con.execute("SELECT DISTINCT chapter FROM hts_rows WHERE rev=?", (cur_name,)) if r["chapter"]})
+    chapters = sorted(
+        {
+            r["chapter"]
+            for r in con.execute("SELECT DISTINCT chapter FROM hts_rows WHERE rev=?", (cur_name,))
+            if r["chapter"]
+        }
+    )
     for ch in chapters:
         b = http.get_bytes(f"{API}/getChapterNotes?doc={int(ch)}", f"notes/chapter_{ch}.html")
         if b:
             txt = html_to_text(b.decode("utf-8", "replace"))
-            con.execute("INSERT OR REPLACE INTO notes VALUES (?,?,?,?,?)", (cur_name, "chapter", ch, f"Chapter {int(ch)} notes", txt))
+            con.execute(
+                "INSERT OR REPLACE INTO notes VALUES (?,?,?,?,?)",
+                (cur_name, "chapter", ch, f"Chapter {int(ch)} notes", txt),
+            )
     for sec, a, _b, title in SECTIONS:
         b = http.get_bytes(f"{API}/getSectionNotes?doc={a}", f"notes/section_{sec}.html")
         if b:
             txt = html_to_text(b.decode("utf-8", "replace"))
-            con.execute("INSERT OR REPLACE INTO notes VALUES (?,?,?,?,?)", (cur_name, "section", sec, f"Section {sec}: {title}", txt))
+            con.execute(
+                "INSERT OR REPLACE INTO notes VALUES (?,?,?,?,?)",
+                (cur_name, "section", sec, f"Section {sec}: {title}", txt),
+            )
     gri_pdf = http.get_bytes(
         f"{API}/file?release=currentRelease&filename={quote('General Rules of Interpretation')}", "gri.pdf"
     )
     if gri_pdf:
         text = "\n".join((p.extract_text() or "") for p in PdfReader(io.BytesIO(gri_pdf)).pages)
-        con.execute("INSERT OR REPLACE INTO notes VALUES (?,?,?,?,?)", (cur_name, "gri", "GRI", "General Rules of Interpretation", text.strip()))
+        con.execute(
+            "INSERT OR REPLACE INTO notes VALUES (?,?,?,?,?)",
+            (cur_name, "gri", "GRI", "General Rules of Interpretation", text.strip()),
+        )
     con.commit()
     n = con.execute("SELECT rev, COUNT(*) c FROM hts_rows GROUP BY rev").fetchall()
     return {"current": cur_name, "rows": {r["rev"]: r["c"] for r in n}, "network_calls": http.network_calls}

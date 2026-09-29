@@ -89,7 +89,9 @@ class VertexClaudeProvider(_ClaudeCloudProvider):
         require_cloud_opt_in()
         from anthropic import AnthropicVertex
 
-        return cls(AnthropicVertex(project_id=project_id or os.environ["GOOGLE_CLOUD_PROJECT"], region=region))
+        return cls(
+            AnthropicVertex(project_id=project_id or os.environ["GOOGLE_CLOUD_PROJECT"], region=region)
+        )
 
 
 class VertexGeminiProvider:
@@ -101,7 +103,9 @@ class VertexGeminiProvider:
 
     name = "vertex-gemini"
 
-    def __init__(self, http, project: str, region: str = "global", model: str = "gemini-2.5-flash", token: str = ""):
+    def __init__(
+        self, http, project: str, region: str = "global", model: str = "gemini-2.5-flash", token: str = ""
+    ):
         self.http = http
         self.project = project
         self.region = region
@@ -119,7 +123,11 @@ class VertexGeminiProvider:
         return cls(httpx.Client(timeout=120), os.environ["GOOGLE_CLOUD_PROJECT"], model=model, token=token)
 
     def url(self) -> str:
-        host = "aiplatform.googleapis.com" if self.region == "global" else f"{self.region}-aiplatform.googleapis.com"
+        host = (
+            "aiplatform.googleapis.com"
+            if self.region == "global"
+            else f"{self.region}-aiplatform.googleapis.com"
+        )
         return (
             f"https://{host}/v1/projects/{self.project}/locations/{self.region}/publishers/google/models/"
             f"{self.model}:generateContent"
@@ -130,7 +138,9 @@ class VertexGeminiProvider:
         contents = []
         for m in req.messages:
             role = "model" if m["role"] == "assistant" else "user"
-            blocks = m["content"] if isinstance(m["content"], list) else [{"type": "text", "text": m["content"]}]
+            blocks = (
+                m["content"] if isinstance(m["content"], list) else [{"type": "text", "text": m["content"]}]
+            )
             parts = []
             for b in blocks:
                 if b["type"] == "text":
@@ -138,17 +148,31 @@ class VertexGeminiProvider:
                 elif b["type"] == "tool_use":
                     parts.append({"functionCall": {"name": b["name"], "args": b["input"]}})
                 elif b["type"] == "tool_result":
-                    c = b["content"] if isinstance(b["content"], str) else "".join(x.get("text", "") for x in b["content"])
-                    parts.append({"functionResponse": {"name": b.get("name", "tool"), "response": {"content": c}}})
+                    c = (
+                        b["content"]
+                        if isinstance(b["content"], str)
+                        else "".join(x.get("text", "") for x in b["content"])
+                    )
+                    parts.append(
+                        {"functionResponse": {"name": b.get("name", "tool"), "response": {"content": c}}}
+                    )
             if parts:
                 contents.append({"role": role, "parts": parts})
-        body: dict = {"contents": contents, "generationConfig": {"maxOutputTokens": req.max_tokens, "temperature": 0}}
+        body: dict = {
+            "contents": contents,
+            "generationConfig": {"maxOutputTokens": req.max_tokens, "temperature": 0},
+        }
         sys_text = "\n\n".join(b["text"] for b in req.system if b.get("type") == "text")
         if sys_text:
             body["systemInstruction"] = {"parts": [{"text": sys_text}]}
         if req.tools:
             body["tools"] = [
-                {"functionDeclarations": [{"name": t.name, "description": t.description, "parameters": t.input_schema} for t in req.tools]}
+                {
+                    "functionDeclarations": [
+                        {"name": t.name, "description": t.description, "parameters": t.input_schema}
+                        for t in req.tools
+                    ]
+                }
             ]
         if req.output_schema and not req.tools:
             body["generationConfig"]["responseMimeType"] = "application/json"
@@ -157,7 +181,9 @@ class VertexGeminiProvider:
 
     def complete(self, req: LLMRequest) -> LLMResponse:
         t0 = time.perf_counter()
-        r = self.http.post(self.url(), json=self.to_body(req), headers={"Authorization": f"Bearer {self.token}"})
+        r = self.http.post(
+            self.url(), json=self.to_body(req), headers={"Authorization": f"Bearer {self.token}"}
+        )
         r.raise_for_status()
         d = r.json()
         dt = time.perf_counter() - t0
@@ -168,7 +194,9 @@ class VertexGeminiProvider:
                 content.append({"type": "text", "text": p["text"]})
             elif "functionCall" in p:
                 fc = p["functionCall"]
-                content.append({"type": "tool_use", "id": f"call_{i}", "name": fc["name"], "input": fc.get("args", {})})
+                content.append(
+                    {"type": "tool_use", "id": f"call_{i}", "name": fc["name"], "input": fc.get("args", {})}
+                )
         um = d.get("usageMetadata", {})
         cached = um.get("cachedContentTokenCount", 0)
         u = Usage(
@@ -177,4 +205,6 @@ class VertexGeminiProvider:
             cache_read_tokens=cached,
         )
         stop = "tool_use" if any(b["type"] == "tool_use" for b in content) else "end_turn"
-        return LLMResponse(content=content, stop_reason=stop, usage=u, model=self.model, provider=self.name, latency_s=dt)
+        return LLMResponse(
+            content=content, stop_reason=stop, usage=u, model=self.model, provider=self.name, latency_s=dt
+        )

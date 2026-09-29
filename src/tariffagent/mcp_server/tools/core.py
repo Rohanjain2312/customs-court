@@ -72,13 +72,20 @@ def best_snippet(text: str, query: str, width: int = 500) -> str:
 class TariffTools:
     """Implements all MCP tools over the local SQLite store."""
 
-    def __init__(self, con: sqlite3.Connection | None = None, redact_eval: bool | None = None, use_vectors: bool | None = None):
+    def __init__(
+        self,
+        con: sqlite3.Connection | None = None,
+        redact_eval: bool | None = None,
+        use_vectors: bool | None = None,
+    ):
         s = get_settings()
         self.con = con or connect(readonly=True)
         self.limit = s.tool_text_limit
         self.rev = current_rev(self.con)
         self.redact_eval = s.redact_eval if redact_eval is None else redact_eval
-        self.search = HybridSearch(self.con, use_vectors=s.use_vectors if use_vectors is None else use_vectors)
+        self.search = HybridSearch(
+            self.con, use_vectors=s.use_vectors if use_vectors is None else use_vectors
+        )
         self._lock = threading.Lock()
         self.redacted: set[str] = set()
         if self.redact_eval:
@@ -107,7 +114,9 @@ class TariffTools:
 
     def _find_row(self, code: str, rev: str | None = None):
         d = digits(code)
-        rows = self._q("SELECT * FROM hts_rows WHERE rev=? AND digits=? ORDER BY idx LIMIT 1", rev or self.rev, d)
+        rows = self._q(
+            "SELECT * FROM hts_rows WHERE rev=? AND digits=? ORDER BY idx LIMIT 1", rev or self.rev, d
+        )
         return rows[0] if rows else None
 
     def _numbered_children(self, rev: str, idx: int) -> list:
@@ -123,7 +132,12 @@ class TariffTools:
         rows = self._q("SELECT title, text FROM notes WHERE rev=? AND scope=? AND id=?", self.rev, scope, nid)
         if not rows:
             return None
-        return NoteRef(scope=scope, id=nid, title=rows[0]["title"], excerpt=wrap(f"HTS {scope} {nid} notes", rows[0]["text"], n))
+        return NoteRef(
+            scope=scope,
+            id=nid,
+            title=rows[0]["title"],
+            excerpt=wrap(f"HTS {scope} {nid} notes", rows[0]["text"], n),
+        )
 
     def _visible(self, rid: str) -> bool:
         return rid not in self.redacted
@@ -146,7 +160,9 @@ class TariffTools:
         d = digits(code)
         if len(d) == 2:
             heads = self._q(
-                "SELECT * FROM hts_rows WHERE rev=? AND chapter=? AND indent=0 AND code != '' ORDER BY idx", self.rev, d
+                "SELECT * FROM hts_rows WHERE rev=? AND chapter=? AND indent=0 AND code != '' ORDER BY idx",
+                self.rev,
+                d,
             )
             if not heads:
                 return NavigateResult(revision=self.rev, found=False, message=f"Chapter {d} not found")
@@ -164,7 +180,9 @@ class TariffTools:
             )
         row = self._find_row(d)
         if not row:
-            return NavigateResult(revision=self.rev, found=False, message=f"{format_code(d)} is not in the {self.rev} HTS")
+            return NavigateResult(
+                revision=self.rev, found=False, message=f"{format_code(d)} is not in the {self.rev} HTS"
+            )
         parent = None
         p = row["parent_idx"]
         while p >= 0:
@@ -174,8 +192,22 @@ class TariffTools:
                 break
             p = pr["parent_idx"]
         kids = [self._row_to_node(c) for c in self._numbered_children(self.rev, row["idx"])]
-        notes = [n for n in (self._note_excerpt("section", row["section"]), self._note_excerpt("chapter", row["chapter"])) if n]
-        return NavigateResult(revision=self.rev, found=True, node=self._row_to_node(row), parent=parent, children=kids, notes=notes)
+        notes = [
+            n
+            for n in (
+                self._note_excerpt("section", row["section"]),
+                self._note_excerpt("chapter", row["chapter"]),
+            )
+            if n
+        ]
+        return NavigateResult(
+            revision=self.rev,
+            found=True,
+            node=self._row_to_node(row),
+            parent=parent,
+            children=kids,
+            notes=notes,
+        )
 
     def hts_search(self, text: str, limit: int = 10) -> HtsSearchResult:
         limit = max(1, min(limit, 25))
@@ -187,7 +219,13 @@ class TariffTools:
                 continue
             r = r[0]
             out.append(
-                HtsSearchHit(code=r["code"], description=r["description"], path=r["path"][-600:], level=_level(r["digits"]), score=round(h.score, 5))
+                HtsSearchHit(
+                    code=r["code"],
+                    description=r["description"],
+                    path=r["path"][-600:],
+                    level=_level(r["digits"]),
+                    score=round(h.score, 5),
+                )
             )
         return HtsSearchResult(revision=self.rev, query=text, hits=out)
 
@@ -217,11 +255,19 @@ class TariffTools:
     def get_gri(self) -> GriResult:
         rows = self._q("SELECT text FROM notes WHERE rev=? AND scope='gri'", self.rev)
         text = rows[0]["text"] if rows else ""
-        return GriResult(revision=self.rev, text=wrap("HTS General Rules of Interpretation", text, 20000), summary=GRI_SUMMARY)
+        return GriResult(
+            revision=self.rev,
+            text=wrap("HTS General Rules of Interpretation", text, 20000),
+            summary=GRI_SUMMARY,
+        )
 
-    def cross_search(self, query: str, date_from: str | None = None, date_to: str | None = None, limit: int = 8) -> CrossSearchResult:
+    def cross_search(
+        self, query: str, date_from: str | None = None, date_to: str | None = None, limit: int = 8
+    ) -> CrossSearchResult:
         limit = max(1, min(limit, 20))
-        hits = self.search.search_rulings(query, k=limit, date_from=date_from or None, date_to=date_to or None, exclude=self.redacted)
+        hits = self.search.search_rulings(
+            query, k=limit, date_from=date_from or None, date_to=date_to or None, exclude=self.redacted
+        )
         out = []
         for h in hits:
             r = self._ruling_row(h.key)
@@ -263,7 +309,9 @@ class TariffTools:
         if not r:
             return RulingStatusResult(id=id, status="unknown", method="not_in_corpus")
         st = self._status(r["id"])
-        return RulingStatusResult(id=r["id"], status=st["status"], linked_rulings=st["linked"], method=st["method"])
+        return RulingStatusResult(
+            id=r["id"], status=st["status"], linked_rulings=st["linked"], method=st["method"]
+        )
 
     def revisions(self) -> list[str]:
         return [r["name"] for r in self._q("SELECT name FROM revisions ORDER BY year, name")]
@@ -284,7 +332,14 @@ class TariffTools:
         ra, rb = self._resolve_rev(rev_a), self._resolve_rev(rev_b)
         avail = self.revisions()
         if not ra or not rb:
-            return RevisionDiffResult(code=code, rev_a=rev_a, rev_b=rev_b, change="not_found", details=["Unknown revision"], available_revisions=avail)
+            return RevisionDiffResult(
+                code=code,
+                rev_a=rev_a,
+                rev_b=rev_b,
+                change="not_found",
+                details=["Unknown revision"],
+                available_revisions=avail,
+            )
         a, b = self._find_row(code, ra), self._find_row(code, rb)
         na = self._row_to_node(a) if a else None
         nb = self._row_to_node(b) if b else None
@@ -299,7 +354,9 @@ class TariffTools:
             d = digits(code)
             for prefix in (d[:6], d[:4]):
                 near = self._q(
-                    "SELECT code, path FROM hts_rows WHERE rev=? AND digits LIKE ? AND length(digits)=10 LIMIT 8", rb, prefix + "%"
+                    "SELECT code, path FROM hts_rows WHERE rev=? AND digits LIKE ? AND length(digits)=10 LIMIT 8",
+                    rb,
+                    prefix + "%",
                 )
                 if near:
                     details = [f"now under {prefix}: {n['code']} {n['path'][-160:]}" for n in near]
@@ -312,7 +369,16 @@ class TariffTools:
             details = [f"{ra} general {na.general_rate}", f"{rb} general {nb.general_rate}"]
         else:
             change = "unchanged"
-        return RevisionDiffResult(code=format_code(digits(code)), rev_a=ra, rev_b=rb, change=change, node_a=na, node_b=nb, details=details, available_revisions=avail)
+        return RevisionDiffResult(
+            code=format_code(digits(code)),
+            rev_a=ra,
+            rev_b=rb,
+            change=change,
+            node_a=na,
+            node_b=nb,
+            details=details,
+            available_revisions=avail,
+        )
 
 
 _tools: TariffTools | None = None

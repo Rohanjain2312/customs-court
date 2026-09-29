@@ -118,7 +118,9 @@ class RulingResult(BaseModel):
 class RulingStatusResult(BaseModel):
     id: str
     status: RulingStatusName
-    linked_rulings: list[str] = Field(default_factory=list, description="Rulings that revoked or modified this one")
+    linked_rulings: list[str] = Field(
+        default_factory=list, description="Rulings that revoked or modified this one"
+    )
     method: str
     caveat: str = (
         "Status is derived from CROSS cross-reference fields and ruling text. It is a heuristic; "

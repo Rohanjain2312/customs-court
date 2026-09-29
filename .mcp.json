@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "tariffagent": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "tariffagent-mcp", "--transport", "stdio"],
+      "env": {}
+    }
+  }
+}

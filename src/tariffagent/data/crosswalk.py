@@ -28,7 +28,9 @@ class Crosswalk:
         self.cur_by8: dict[str, list[str]] = {}
         self.cur6_desc: dict[str, dict[str, list[str]]] = {}
         self.cur_any: set[str] = set()
-        for r in self.con.execute("SELECT digits, description FROM hts_rows WHERE rev=? AND digits!=''", (self.rev,)):
+        for r in self.con.execute(
+            "SELECT digits, description FROM hts_rows WHERE rev=? AND digits!=''", (self.rev,)
+        ):
             d = r["digits"]
             self.cur_any.add(d)
             if len(d) == 10:

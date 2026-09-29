@@ -88,7 +88,16 @@ class ErrorEvent(_E):
 
 
 Event = Annotated[
-    RunStart | FactExtracted | ToolCall | TreeFocus | AdvocateChunk | AdvocateDone | AdjudicatorChunk | RulingEvent | CostUpdate | ErrorEvent,
+    RunStart
+    | FactExtracted
+    | ToolCall
+    | TreeFocus
+    | AdvocateChunk
+    | AdvocateDone
+    | AdjudicatorChunk
+    | RulingEvent
+    | CostUpdate
+    | ErrorEvent,
     Field(discriminator="type"),
 ]
 EventAdapter: TypeAdapter = TypeAdapter(Event)
