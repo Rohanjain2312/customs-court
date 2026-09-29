@@ -63,7 +63,7 @@ class AgentConfig:
     friend_model: str = ""
     max_turns: int = 10
     token_budget: int = 120_000  # input (incl. cache) + output tokens across the episode
-    max_tokens_per_call: int = 3000
+    max_tokens_per_call: int = 4096  # 3000 truncated 2 of 200 zero-shot answers (thinking + JSON)
     effort: str | None = "low"
     thinking: dict | None = None
     temperature: float | None = None

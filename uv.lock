@@ -1464,6 +1464,10 @@ dependencies = [
 cloud = [
     { name = "anthropic", extra = ["bedrock", "vertex"] },
 ]
+demo = [
+    { name = "fastapi" },
+    { name = "uvicorn" },
+]
 embed = [
     { name = "faiss-cpu" },
     { name = "sentence-transformers" },
@@ -1483,6 +1487,7 @@ requires-dist = [
     { name = "beautifulsoup4", specifier = ">=4.15.0" },
     { name = "faiss-cpu", marker = "extra == 'embed'", specifier = ">=1.8" },
     { name = "fastapi", specifier = ">=0.115" },
+    { name = "fastapi", marker = "extra == 'demo'", specifier = ">=0.115" },
     { name = "httpx", specifier = ">=0.27" },
     { name = "mcp", specifier = ">=1.20" },
     { name = "numpy", specifier = ">=1.26" },
@@ -1496,8 +1501,9 @@ requires-dist = [
     { name = "sse-starlette", specifier = ">=2.1" },
     { name = "typer", specifier = ">=0.12" },
     { name = "uvicorn", specifier = ">=0.30" },
+    { name = "uvicorn", marker = "extra == 'demo'", specifier = ">=0.30" },
 ]
-provides-extras = ["embed", "cloud"]
+provides-extras = ["embed", "cloud", "demo"]
 
 [package.metadata.requires-dev]
 dev = [

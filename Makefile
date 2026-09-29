@@ -45,10 +45,24 @@ mcp-stdio:
 mcp-http:
 	$(UV) tariffagent-mcp --transport http --host 127.0.0.1 --port 8000
 
-demo:
-	$(UV) tariffagent demo --mode replay
+# Customs Court demo on http://127.0.0.1:8765. Builds the frontend first if needed.
+DEMO_PORT ?= 8765
+DEMO_FRONTEND := demo/frontend
+NODE_PATH_EXTRA := $(HOME)/.local/opt/node/bin
 
-replay: demo
+demo-frontend:
+	@if [ ! -f $(DEMO_FRONTEND)/dist/index.html ] || [ -n "$$(find $(DEMO_FRONTEND)/src $(DEMO_FRONTEND)/index.html -newer $(DEMO_FRONTEND)/dist/index.html 2>/dev/null | head -1)" ]; then \
+		export PATH=$(NODE_PATH_EXTRA):$$PATH; cd $(DEMO_FRONTEND) && ([ -d node_modules ] || npm ci) && npm run build; \
+	fi
+
+# Replay mode: recorded hearings only. No API key, no network, no spend.
+replay: demo-frontend
+	DEMO_MODE=replay OFFLINE=true $(UV) --extra demo python -m uvicorn demo.backend.app:app --host 127.0.0.1 --port $(DEMO_PORT)
+
+# Live-capable: new exhibits run the real agents when ANTHROPIC_API_KEY is set,
+# capped at DEMO_SESSION_CAP_USD (default 2) per browser session. Replays still work.
+demo: demo-frontend
+	DEMO_MODE=live $(UV) --extra demo python -m uvicorn demo.backend.app:app --host 127.0.0.1 --port $(DEMO_PORT)
 
 build-deploy-aws:
 	bash deploy/aws/build_and_validate.sh

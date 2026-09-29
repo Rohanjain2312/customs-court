@@ -80,6 +80,7 @@ class MultiConfig:
     adjudicator_turns: int = 3
     max_advocates: int = 4
     max_tokens_per_call: int = 2000
+    adjudicator_max_tokens: int = 4096  # Sonnet thinks before the JSON; same cap as the single agent
     cache_ttl: str = "5m"
     repeat: str = ""
 
@@ -136,7 +137,7 @@ def tool_loop(
             system=system,
             messages=messages,
             tools=specs,
-            max_tokens=cfg.max_tokens_per_call,
+            max_tokens=cfg.adjudicator_max_tokens if name == "adjudicator" else cfg.max_tokens_per_call,
             output_schema=schema,
             tool_choice={"type": "none"} if forced else None,
             cache_ttl=cfg.cache_ttl,

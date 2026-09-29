@@ -1,0 +1,140 @@
+{
+  "about": "Exhibit selection for scripts/make_replays.py. Order here is the docket order. See README.md in this folder.",
+  "exhibits": [
+    {
+      "exhibit_id": "handbag-leather",
+      "traces": "demo/replays/sources/fixture.traces.jsonl",
+      "item_id": "fixture_handbag",
+      "pair": "handbag-leather",
+      "title": "Leather handbag",
+      "blurb": "A cowhide handbag. Raise an objection to change the outer surface to PVC.",
+      "kind": "exhibit",
+      "gold_code": "4202.21.90.00",
+      "dataset": "tests/fixtures (hand-written test case, not a CBP ruling)",
+      "reference_excerpt": "Test fixture. The expected code for a leather handbag valued over $20 is 4202.21.90.00. This is not a CBP ruling.",
+      "note": "Recorded Claude Sonnet 5 responses, replayed from the test fixture's response cache against its small database (10 chapters, 79 rulings). That database holds a planted prompt-injection ruling (N999001) for the security tests; the agent did not follow it, and its answer mentions it.",
+      "run_id": "test fixture (tests/fixtures/data)"
+    },
+    {
+      "exhibit_id": "handbag-leather-multi",
+      "traces": "demo/replays/sources/fixture.traces.jsonl",
+      "item_id": "fixture_handbag_multi",
+      "pair": "handbag-leather",
+      "title": "Leather handbag (multi-agent)",
+      "kind": "exhibit",
+      "placeholder": true,
+      "placeholder_note": "Scripted stand-in model with real tool calls on the fixture database. Not a model run and no real cost. Replace with a recorded multi-agent run.",
+      "gold_code": "4202.21.90.00",
+      "dataset": "tests/fixtures (hand-written test case, not a CBP ruling)",
+      "run_id": "scripted placeholder"
+    },
+    {
+      "exhibit_id": "handbag-pvc-objection",
+      "traces": "demo/replays/sources/fixture.traces.jsonl",
+      "item_id": "fixture_handbag_pvc",
+      "title": "Objection: the outer surface is PVC",
+      "kind": "objection",
+      "objection_of": "handbag-leather",
+      "fact_change": "The outer surface is PVC plastic sheeting, not leather.",
+      "placeholder": true,
+      "placeholder_note": "Scripted stand-in model with real tool calls on the fixture database. Not a model run and no real cost. Replace with a recorded objection run.",
+      "gold_code": "4202.22.15.00",
+      "dataset": "tests/fixtures (hand-written test case, not a CBP ruling)",
+      "run_id": "scripted placeholder"
+    },
+    {
+      "exhibit_id": "vinyl-tiles",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00003",
+      "title": "Vinyl floor tiles",
+      "blurb": "The ruling's code, 3918.10.10.00, was split into new lines after it was issued. Open the time machine.",
+      "kind": "timemachine",
+      "timemachine": {
+        "code": "3918.10.10.00",
+        "rev_a": "2018",
+        "rev_b": "current"
+      }
+    },
+    {
+      "exhibit_id": "boys-tshirt",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00005",
+      "title": "Boys' jersey T-shirt",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "wool-coat",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00044",
+      "title": "Women's wool coat",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "beer-dispenser",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00007",
+      "title": "Home beer dispenser",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "pruning-shears",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00047",
+      "title": "Ratcheted pruning shears",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "hex-bolt",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00032",
+      "title": "Automotive hex bolt",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "pliers-pouch",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00051",
+      "title": "Pliers with a nylon pouch",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "manicure-set",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00034",
+      "title": "Watch and manicure gift set",
+      "blurb": "A retail set. The court must decide which item gives it its essential character."
+    },
+    {
+      "exhibit_id": "polivac-film",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00000",
+      "title": "PET and polyethylene film",
+      "blurb": "A laminate of two plastics. Which one gives the essential character?"
+    },
+    {
+      "exhibit_id": "womens-sweater",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00020",
+      "title": "Sweater with metallic yarn",
+      "blurb": "A blend of cotton, nylon and metallic yarn. The fiber that predominates by weight decides."
+    },
+    {
+      "exhibit_id": "dish-rack",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00045",
+      "title": "Coated wire dish rack"
+    },
+    {
+      "exhibit_id": "fiberglass-sheet",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00037",
+      "title": "Glass fiber reinforced plastic sheet"
+    },
+    {
+      "exhibit_id": "floor-mats",
+      "run_id": "pilot-dev20-A",
+      "item_id": "atlas_validation_00049",
+      "title": "Disposable polyethylene floor mats"
+    }
+  ]
+}

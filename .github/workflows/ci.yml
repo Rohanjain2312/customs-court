@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install
-        run: uv sync --extra cloud
+        run: uv sync --extra cloud --extra demo
       - name: Lint
         run: uv run ruff check src tests scripts
       - name: Tests (recorded fixtures only)

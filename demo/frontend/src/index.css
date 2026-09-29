@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brass: #e3b957;
+  --brass-dim: #9c772b;
+  --gold: #f6d36b;
+  --parchment: #f3ead6;
+  --parchment-dim: #a8997a;
+  --ink: #0d1320;
+  --red: #e8705f;
+  --green: #6cc792;
+  --amber: #e6a93f;
+  --gray: #8e94a0;
+}
+
+html {
+  /* Scales every rem-based size from laptop (1280) to projector (1920). */
+  font-size: clamp(14px, 1.02vw, 19px);
+  background: #080b13;
+}
+
+body {
+  @apply min-h-screen font-sans text-parchment-100 antialiased;
+  background-color: #0b0f19;
+  background-image:
+    radial-gradient(1200px 600px at 50% -200px, rgba(200, 155, 60, 0.12), transparent 70%),
+    radial-gradient(900px 500px at 100% 100%, rgba(74, 52, 36, 0.35), transparent 70%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0 2px, transparent 2px 120px);
+}
+
+::selection {
+  background: rgba(227, 185, 87, 0.35);
+}
+
+@layer components {
+  .panel {
+    @apply relative rounded-md border border-brass-700/60 bg-walnut-900/85 shadow-brass;
+    background-image: linear-gradient(180deg, rgba(255, 240, 210, 0.035), transparent 40%);
+  }
+  .panel::before {
+    /* Inner rule, like the border on a court filing. */
+    content: "";
+    @apply pointer-events-none absolute inset-[3px] rounded border border-brass-500/10;
+  }
+  .panel-title {
+    @apply font-display text-[1.35rem] font-semibold leading-none tracking-wide text-brass-300;
+  }
+  .kicker {
+    @apply font-sans text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-parchment-400;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded border px-3 py-1.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-45;
+  }
+  .btn-brass {
+    @apply btn border-brass-400 bg-brass-500 text-walnut-950 hover:bg-brass-400 disabled:hover:bg-brass-500;
+  }
+  .btn-ghost {
+    @apply btn border-brass-700 bg-walnut-800/70 text-parchment-100 hover:border-brass-500 hover:bg-walnut-700;
+  }
+  .field {
+    @apply w-full rounded border border-brass-700/80 bg-ink-900/80 px-3 py-2 text-parchment-100 placeholder:text-parchment-500 focus:border-brass-400;
+  }
+  .code {
+    @apply font-mono tracking-tight;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-sm border px-1.5 py-[1px] font-sans text-[0.68rem] font-semibold uppercase tracking-wider;
+  }
+  .tree-btn {
+    @apply flex h-8 w-12 items-center justify-center rounded border border-brass-700 bg-walnut-900/90 font-mono text-base text-parchment-200 hover:border-brass-400 hover:text-brass-200;
+  }
+  .state-chip {
+    @apply badge;
+  }
+}
+
+/* Focus that reads on a projector. */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.tree-node:focus-visible {
+  outline: none;
+}
+.tree-node:focus-visible .halo {
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-opacity: 1;
+}
+
+/* ---- HTS tree ---------------------------------------------------------- */
+
+.tree-svg {
+  background:
+    radial-gradient(circle at 30% 50%, rgba(29, 40, 64, 0.55), transparent 65%),
+    #0a0f1a;
+  touch-action: none;
+}
+
+.tree-link {
+  fill: none;
+  stroke: #62594a;
+  stroke-opacity: 0.45;
+  stroke-width: 1.1;
+  transition: stroke 0.4s, stroke-opacity 0.4s;
+}
+.tree-link.hot {
+  stroke: var(--brass);
+  stroke-opacity: 0.75;
+  stroke-width: 1.7;
+}
+
+.tree-node {
+  cursor: pointer;
+  outline: none;
+}
+.tree-node .halo {
+  fill: transparent;
+  stroke: transparent;
+}
+.tree-node .dot {
+  fill: #141c2e;
+  stroke: #857a62;
+  stroke-width: 1.4;
+  transition: fill 0.45s, stroke 0.45s, r 0.3s;
+}
+.tree-node[data-open="true"] .dot {
+  fill: #857a62;
+}
+.tree-node .mark {
+  fill: none;
+  stroke: none;
+  stroke-width: 1.6;
+  pointer-events: none;
+}
+.tree-node .label {
+  font-size: 12.5px;
+  fill: #cbbb97;
+  transition: fill 0.4s, opacity 0.4s;
+}
+.tree-node .label .caret {
+  fill: #857a62;
+  font-size: 10px;
+}
+.tree-node .label .code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 500;
+  fill: #e3d5b6;
+}
+.tree-node .label .desc {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  fill: #a8997a;
+}
+.tree-node .label .tag {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tree-node:hover .label .desc {
+  fill: #f3ead6;
+}
+.tree-node:hover .dot {
+  stroke: var(--brass);
+}
+
+.tree-node[data-state="visited"] .dot {
+  fill: #2a3858;
+  stroke: #9c772b;
+}
+.tree-node[data-state="visited"] .label .code {
+  fill: #f0d27f;
+}
+
+.tree-node[data-state="candidate"] .dot {
+  fill: #c89b3c;
+  stroke: #f7e4b0;
+  filter: url(#cc-glow);
+}
+.tree-node[data-state="candidate"] .label .code,
+.tree-node[data-state="candidate"] .label .tag {
+  fill: #f0d27f;
+}
+.tree-node[data-state="candidate"] .label .desc {
+  fill: #e3d5b6;
+}
+
+.tree-node[data-state="rejected"] .dot {
+  fill: #1c140e;
+  stroke: #e8705f;
+  stroke-opacity: 0.8;
+}
+.tree-node[data-state="rejected"] .mark {
+  stroke: #e8705f;
+}
+.tree-node[data-state="rejected"] .label {
+  opacity: 0.6;
+}
+.tree-node[data-state="rejected"] .label .code {
+  text-decoration: line-through;
+  fill: #cbbb97;
+}
+.tree-node[data-state="rejected"] .label .tag {
+  fill: #e8705f;
+}
+
+.tree-node[data-state="chosen"] .dot {
+  fill: #f6d36b;
+  stroke: #fff4cf;
+  stroke-width: 2;
+  filter: url(#cc-glow);
+}
+.tree-node[data-state="chosen"] .mark {
+  fill: #1c140e;
+  stroke: none;
+}
+.tree-node[data-state="chosen"] .label {
+  font-size: 14px;
+}
+.tree-node[data-state="chosen"] .label .code {
+  fill: #f6d36b;
+  font-weight: 600;
+}
+.tree-node[data-state="chosen"] .label .desc {
+  fill: #f3ead6;
+}
+.tree-node[data-state="chosen"] .label .tag {
+  fill: #f6d36b;
+}
+
+.tree-node[data-state="overruled"] .dot {
+  fill: #35251a;
+  stroke: #b07c6c;
+  stroke-dasharray: 2 2;
+}
+.tree-node[data-state="overruled"] .mark {
+  stroke: #b07c6c;
+}
+.tree-node[data-state="overruled"] .label .code {
+  fill: #b07c6c;
+  text-decoration: line-through;
+}
+.tree-node[data-state="overruled"] .label .tag {
+  fill: #d49a88;
+}
+
+/* Legend swatches mirror the node styles. */
+.legend-dot circle {
+  fill: #141c2e;
+  stroke: #857a62;
+  stroke-width: 1.4;
+}
+.legend-dot path {
+  stroke-width: 1.5;
+}
+.legend-visited circle {
+  fill: #2a3858;
+  stroke: #9c772b;
+}
+.legend-candidate circle {
+  fill: #c89b3c;
+  stroke: #f7e4b0;
+}
+.legend-rejected circle {
+  fill: #1c140e;
+  stroke: #e8705f;
+}
+.legend-rejected path {
+  stroke: #e8705f;
+}
+.legend-chosen circle {
+  fill: #f6d36b;
+  stroke: #fff4cf;
+}
+.legend-overruled circle {
+  fill: #35251a;
+  stroke: #b07c6c;
+  stroke-dasharray: 2 2;
+}
+.legend-overruled path {
+  stroke: #b07c6c;
+}
+
+/* Tooltip state chips */
+.state-visited {
+  @apply border-ink-600 text-parchment-200;
+}
+.state-candidate {
+  @apply border-brass-400 text-brass-300;
+}
+.state-rejected {
+  @apply border-verdict-red/70 text-verdict-red;
+}
+.state-chosen {
+  @apply border-brass-300 bg-brass-400 text-walnut-950;
+}
+.state-overruled {
+  @apply border-[#b07c6c] text-[#d49a88];
+}
+
+/* Streaming text caret */
+.caret-on::after {
+  content: "▍";
+  @apply ml-0.5 animate-caret text-brass-400;
+}
+
+/* Scrollbars that match the walnut panels */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #6e531e transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
