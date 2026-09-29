@@ -21,6 +21,10 @@ To use the tools in a new shell: `export PATH=~/.local/bin:~/.local/opt/lima/bin
 
 ## Open items for Rohan
 
+### 0. BLOCKER: Anthropic account usage limit hit again (2026-09-29 23:02 UTC)
+
+Every Claude call returns `You have reached your specified API usage limits. You will regain access on 2026-10-01 at 00:00 UTC.` This project had spent $12.70 of its $40 cap (`make cost`), so the account limit counts other projects on the same key too. Raise it at https://platform.claude.com/settings/limits, or wait for the reset. Everything paid so far is in the response cache; re-running any command resumes without paying twice.
+
 ### 1. Build status and resume point (updated 2026-09-29 22:45 UTC)
 
 The Anthropic usage limit from 2026-09-29 00:53 UTC was lifted by Rohan. The reasoner moved from Claude Sonnet 5.5 to Claude Sonnet 5 at Rohan's request (same list price; no Sonnet is cheaper per token). Runs before that switch (pilot-dev20-A) used Sonnet 5.5 and are labeled so.

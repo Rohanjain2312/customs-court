@@ -16,19 +16,6 @@
       "run_id": "test fixture (tests/fixtures/data)"
     },
     {
-      "exhibit_id": "handbag-leather-multi",
-      "traces": "demo/replays/sources/fixture.traces.jsonl",
-      "item_id": "fixture_handbag_multi",
-      "pair": "handbag-leather",
-      "title": "Leather handbag (multi-agent)",
-      "kind": "exhibit",
-      "placeholder": true,
-      "placeholder_note": "Scripted stand-in model with real tool calls on the fixture database. Not a model run and no real cost. Replace with a recorded multi-agent run.",
-      "gold_code": "4202.21.90.00",
-      "dataset": "tests/fixtures (hand-written test case, not a CBP ruling)",
-      "run_id": "scripted placeholder"
-    },
-    {
       "exhibit_id": "handbag-pvc-objection",
       "traces": "demo/replays/sources/fixture.traces.jsonl",
       "item_id": "fixture_handbag_pvc",
@@ -43,10 +30,27 @@
       "run_id": "scripted placeholder"
     },
     {
+      "exhibit_id": "polivac-film",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00000",
+      "title": "PET and polyethylene film",
+      "pair": "polivac-film",
+      "blurb": "A laminate of two plastics. Which one gives the essential character?"
+    },
+    {
+      "exhibit_id": "polivac-film-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00000",
+      "title": "PET and polyethylene film (multi-agent)",
+      "pair": "polivac-film",
+      "blurb": "A laminate of two plastics. Which one gives the essential character?"
+    },
+    {
       "exhibit_id": "vinyl-tiles",
-      "run_id": "pilot-dev20-A",
+      "run_id": "dev40-A-v1",
       "item_id": "atlas_validation_00003",
       "title": "Vinyl floor tiles",
+      "pair": "vinyl-tiles",
       "blurb": "The ruling's code, 3918.10.10.00, was split into new lines after it was issued. Open the time machine.",
       "kind": "timemachine",
       "timemachine": {
@@ -56,85 +60,159 @@
       }
     },
     {
+      "exhibit_id": "vinyl-tiles-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00003",
+      "title": "Vinyl floor tiles (multi-agent)",
+      "pair": "vinyl-tiles",
+      "blurb": "The ruling's code, 3918.10.10.00, was split into new lines after it was issued. Open the time machine.",
+      "kind": "exhibit"
+    },
+    {
       "exhibit_id": "boys-tshirt",
-      "run_id": "pilot-dev20-A",
+      "run_id": "dev40-A-v1",
       "item_id": "atlas_validation_00005",
       "title": "Boys' jersey T-shirt",
+      "pair": "boys-tshirt",
       "mystery": true
     },
     {
+      "exhibit_id": "boys-tshirt-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00005",
+      "title": "Boys' jersey T-shirt (multi-agent)",
+      "pair": "boys-tshirt",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "beer-dispenser",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00007",
+      "title": "Home beer dispenser",
+      "pair": "beer-dispenser",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "beer-dispenser-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00007",
+      "title": "Home beer dispenser (multi-agent)",
+      "pair": "beer-dispenser",
+      "mystery": true
+    },
+    {
+      "exhibit_id": "tank-equalizing-valve",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00018",
+      "title": "Tank equalizing valve",
+      "pair": "tank-equalizing-valve"
+    },
+    {
+      "exhibit_id": "tank-equalizing-valve-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00018",
+      "title": "Tank equalizing valve (multi-agent)",
+      "pair": "tank-equalizing-valve"
+    },
+    {
+      "exhibit_id": "womens-sweater",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00020",
+      "title": "Sweater with metallic yarn",
+      "pair": "womens-sweater",
+      "blurb": "A blend of cotton, nylon and metallic yarn. The fiber that predominates by weight decides."
+    },
+    {
+      "exhibit_id": "womens-sweater-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00020",
+      "title": "Sweater with metallic yarn (multi-agent)",
+      "pair": "womens-sweater",
+      "blurb": "A blend of cotton, nylon and metallic yarn. The fiber that predominates by weight decides."
+    },
+    {
+      "exhibit_id": "fuel-regulator-for-gas-engines",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00021",
+      "title": "Fuel regulator for gas engines",
+      "pair": "fuel-regulator-for-gas-engines"
+    },
+    {
+      "exhibit_id": "fuel-regulator-for-gas-engines-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00021",
+      "title": "Fuel regulator for gas engines (multi-agent)",
+      "pair": "fuel-regulator-for-gas-engines"
+    },
+    {
+      "exhibit_id": "transmission-spool-valve",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00025",
+      "title": "Transmission spool valve",
+      "pair": "transmission-spool-valve"
+    },
+    {
+      "exhibit_id": "transmission-spool-valve-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00025",
+      "title": "Transmission spool valve (multi-agent)",
+      "pair": "transmission-spool-valve"
+    },
+    {
+      "exhibit_id": "aluminum-alloy-sheets",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00028",
+      "title": "Aluminum alloy sheets",
+      "pair": "aluminum-alloy-sheets"
+    },
+    {
+      "exhibit_id": "aluminum-alloy-sheets-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00028",
+      "title": "Aluminum alloy sheets (multi-agent)",
+      "pair": "aluminum-alloy-sheets"
+    },
+    {
+      "exhibit_id": "mens-knit-polyester-jackets",
+      "run_id": "dev40-A-v1",
+      "item_id": "atlas_validation_00030",
+      "title": "Men's knit polyester jackets",
+      "pair": "mens-knit-polyester-jackets"
+    },
+    {
+      "exhibit_id": "mens-knit-polyester-jackets-multi",
+      "run_id": "dev10-D-v2",
+      "item_id": "atlas_validation_00030",
+      "title": "Men's knit polyester jackets (multi-agent)",
+      "pair": "mens-knit-polyester-jackets"
+    },
+    {
       "exhibit_id": "wool-coat",
-      "run_id": "pilot-dev20-A",
+      "run_id": "dev40-A-v1",
       "item_id": "atlas_validation_00044",
       "title": "Women's wool coat",
       "mystery": true
     },
     {
-      "exhibit_id": "beer-dispenser",
-      "run_id": "pilot-dev20-A",
-      "item_id": "atlas_validation_00007",
-      "title": "Home beer dispenser",
-      "mystery": true
-    },
-    {
       "exhibit_id": "pruning-shears",
-      "run_id": "pilot-dev20-A",
+      "run_id": "dev40-A-v1",
       "item_id": "atlas_validation_00047",
       "title": "Ratcheted pruning shears",
       "mystery": true
     },
     {
       "exhibit_id": "hex-bolt",
-      "run_id": "pilot-dev20-A",
+      "run_id": "dev40-A-v1",
       "item_id": "atlas_validation_00032",
       "title": "Automotive hex bolt",
       "mystery": true
     },
     {
-      "exhibit_id": "pliers-pouch",
-      "run_id": "pilot-dev20-A",
-      "item_id": "atlas_validation_00051",
-      "title": "Pliers with a nylon pouch",
-      "mystery": true
-    },
-    {
       "exhibit_id": "manicure-set",
-      "run_id": "pilot-dev20-A",
+      "run_id": "dev40-A-v1",
       "item_id": "atlas_validation_00034",
       "title": "Watch and manicure gift set",
       "blurb": "A retail set. The court must decide which item gives it its essential character."
-    },
-    {
-      "exhibit_id": "polivac-film",
-      "run_id": "pilot-dev20-A",
-      "item_id": "atlas_validation_00000",
-      "title": "PET and polyethylene film",
-      "blurb": "A laminate of two plastics. Which one gives the essential character?"
-    },
-    {
-      "exhibit_id": "womens-sweater",
-      "run_id": "pilot-dev20-A",
-      "item_id": "atlas_validation_00020",
-      "title": "Sweater with metallic yarn",
-      "blurb": "A blend of cotton, nylon and metallic yarn. The fiber that predominates by weight decides."
-    },
-    {
-      "exhibit_id": "dish-rack",
-      "run_id": "pilot-dev20-A",
-      "item_id": "atlas_validation_00045",
-      "title": "Coated wire dish rack"
-    },
-    {
-      "exhibit_id": "fiberglass-sheet",
-      "run_id": "pilot-dev20-A",
-      "item_id": "atlas_validation_00037",
-      "title": "Glass fiber reinforced plastic sheet"
-    },
-    {
-      "exhibit_id": "floor-mats",
-      "run_id": "pilot-dev20-A",
-      "item_id": "atlas_validation_00049",
-      "title": "Disposable polyethylene floor mats"
     }
   ]
 }

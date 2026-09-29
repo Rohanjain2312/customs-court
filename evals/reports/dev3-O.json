@@ -1,0 +1,146 @@
+{
+  "run_id": "dev3-O",
+  "dataset": "dev_100",
+  "dataset_sha256": "6cfdaab62642bb1a607686907310f7bb7131f402875dd4a21a386a8fc51c93fb",
+  "arm": "O",
+  "mode": "interactive",
+  "n_items": 3,
+  "repeat": 0,
+  "git_sha": "39583fd",
+  "config_hash": "ee6080961227",
+  "seed": 13,
+  "models": {
+    "main": "gpt-5-mini",
+    "friend": "",
+    "reasoner": "claude-sonnet-5",
+    "advocate": "claude-haiku-4-5"
+  },
+  "agent_config": {
+    "arm": "O",
+    "model": "gpt-5-mini",
+    "friend_model": "",
+    "max_turns": 10,
+    "token_budget": 120000,
+    "max_tokens_per_call": 4096,
+    "effort": "low",
+    "thinking": null,
+    "temperature": null,
+    "run_id": "dev3-O",
+    "cache_ttl": "5m",
+    "use_tools": true,
+    "checks": true,
+    "ask_mode": false,
+    "extra": {}
+  },
+  "redact_eval": true,
+  "started": "2026-09-29T23:04:07+00:00",
+  "finished": "2026-09-29T23:04:48+00:00",
+  "metrics": {
+    "n": 3,
+    "n_stale": 2,
+    "n_errors": 0,
+    "acc_10": 0.0,
+    "n_10": 1,
+    "acc_8": 1.0,
+    "n_8": 1,
+    "acc_6": 1.0,
+    "n_6": 3,
+    "acc_4": 1.0,
+    "n_4": 3,
+    "acc_2": 1.0,
+    "n_2": 3,
+    "acc_10_nonstale": 0.0,
+    "acc_6_stale": 1.0,
+    "abstain_rate": 0.3333,
+    "acc_when_answering": 0.5,
+    "acc_deepest_all": 0.6667,
+    "ece": 0.2833,
+    "coverage_curve": [
+      {
+        "coverage": 0.1,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.2,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.3,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.4,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.5,
+        "accuracy": 0.5
+      },
+      {
+        "coverage": 0.6,
+        "accuracy": 0.5
+      },
+      {
+        "coverage": 0.7,
+        "accuracy": 0.5
+      },
+      {
+        "coverage": 0.8,
+        "accuracy": 0.5
+      },
+      {
+        "coverage": 0.9,
+        "accuracy": 0.6667
+      },
+      {
+        "coverage": 1.0,
+        "accuracy": 0.6667
+      }
+    ],
+    "citations_total": 6,
+    "citation_valid_rate": 1.0,
+    "citation_hallucinated": 0,
+    "citation_not_in_force": 0,
+    "items_with_citation": 3,
+    "usd_total": 0.0225,
+    "usd_per_item": 0.00749,
+    "tokens_per_item": 62407.7,
+    "tool_calls_per_item": 6.33,
+    "latency_p50_s": 28.2,
+    "latency_p95_s": 40.6,
+    "cache_hit_rate": 0.8398
+  },
+  "ci95": {
+    "exact_10": {
+      "mean": 0.0,
+      "lo": 0.0,
+      "hi": 0.0,
+      "n": 1
+    },
+    "exact_8": {
+      "mean": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n": 1
+    },
+    "exact_6": {
+      "mean": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n": 3
+    },
+    "exact_4": {
+      "mean": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n": 3
+    },
+    "exact_2": {
+      "mean": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n": 3
+    }
+  },
+  "latency_note": ""
+}

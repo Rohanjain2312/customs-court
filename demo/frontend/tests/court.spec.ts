@@ -47,7 +47,7 @@ test("every screen renders", async ({ page }) => {
   await expect(page.locator('[data-testid="tree-node"][data-state="chosen"]')).toHaveCount(1);
   await expect(page.locator('[data-testid="tree-node"][data-state="rejected"]').first()).toBeVisible();
   await expect(page.getByTestId("reference-code")).toContainText("3920.62.00.00");
-  await expect(page.getByTestId("cost-usd")).toHaveText("$0.0569");
+  await expect(page.getByTestId("cost-usd")).toHaveText("$0.0499");
   expect(await page.getByTestId("counsel-step").count()).toBeGreaterThan(0);
 
   // Hover a rejected line: the reason shows.
@@ -58,13 +58,11 @@ test("every screen renders", async ({ page }) => {
   await page.getByTestId("ruling-panel").screenshot({ path: `${SHOTS}/04-ruling.png` });
 
   // A multi-agent hearing through the arm toggle: advocate cards, then the adjudicator names the GRI.
-  await pick(page, "handbag-leather");
-  await expect(page.getByTestId("final-code")).toHaveText("4202.21.90.00");
+  // polivac-film has a real single-agent and a real multi-agent recording (same item).
   await page.getByTestId("arm-multi").click();
   await expect(page.getByTestId("advocate-card")).toHaveCount(2);
   await expect(page.getByTestId("adjudicator-card")).toBeVisible();
   await expect(page.getByTestId("deciding-gri")).toHaveText("GRI 1");
-  await expect(page.getByTestId("placeholder-note")).toBeVisible();
   await expect(page.getByTestId("arm-compare")).toBeVisible();
   await page.screenshot({ path: `${SHOTS}/05-multi-agent-hearing.png` });
   await page.getByTestId("cost-meter").screenshot({ path: `${SHOTS}/06-cost-meter.png` });
@@ -98,14 +96,14 @@ test("beat the broker: guess, hear, reveal, score", async ({ page }) => {
   await page.getByTestId("sealed-guess-input").fill("6109.90");
   await page.screenshot({ path: `${SHOTS}/09-broker-guess.png` });
   await page.getByTestId("sealed-lock").click();
-  await expect(page.getByTestId("final-code")).toHaveText("6109.90.10.09");
+  await expect(page.getByTestId("final-code")).toHaveText("6109.90.10.25");
   await expect(page.getByTestId("broker-reveal")).toBeEnabled();
   await page.getByTestId("broker-reveal").click();
   await expect(page.getByTestId("broker-result")).toContainText("6109.90.10.09");
   const board = page.getByTestId("scoreboard");
   await expect(board.locator('tr[data-player="human"] td').nth(1)).toHaveText("1");
   await expect(board.locator('tr[data-player="human"] td').nth(3)).toHaveText("6");
-  await expect(board.locator('tr[data-player="single"] td').nth(3)).toHaveText("10");
+  await expect(board.locator('tr[data-player="single"] td').nth(3)).toHaveText("8");
   await page.getByTestId("broker-result").scrollIntoViewIfNeeded();
   await page.screenshot({ path: `${SHOTS}/10-broker-reveal.png` });
 

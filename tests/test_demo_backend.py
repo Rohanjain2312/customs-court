@@ -69,7 +69,7 @@ def test_reveal_returns_the_sealed_code(monkeypatch):
 
 def test_replay_stream_parses_into_typed_events(monkeypatch):
     c = _app(monkeypatch)
-    for eid in ("polivac-film", "handbag-leather-multi"):
+    for eid in ("polivac-film", "polivac-film-multi"):
         r = c.get(f"/api/replay/{eid}?speed=0")
         assert r.status_code == 200 and r.headers["content-type"].startswith("text/event-stream")
         msgs = _sse(r.text)
@@ -87,7 +87,7 @@ def test_replay_splits_long_chunks_without_changing_text(monkeypatch):
     from demo.backend.app import ROOT
     from demo.backend.replays import ReplayStore, schedule
 
-    rep = ReplayStore(ROOT / "demo" / "replays").get("handbag-leather-multi")
+    rep = ReplayStore(ROOT / "demo" / "replays").get("polivac-film-multi")
     orig = "".join(e["text"] for e in rep.events() if e["type"] == "adjudicator_chunk")
     sent = [ev for _, ev in schedule(rep.events()) if ev["type"] == "adjudicator_chunk"]
     assert len(sent) > 1
