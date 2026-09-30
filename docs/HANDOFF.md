@@ -21,9 +21,15 @@ To use the tools in a new shell: `export PATH=~/.local/bin:~/.local/opt/lima/bin
 
 ## Open items for Rohan
 
-### 0. BLOCKER: Anthropic account usage limit hit again (2026-09-29 23:02 UTC)
+### 0. Money: API budget closed, remaining runs are free (updated 2026-09-30 00:30 UTC)
 
-Every Claude call returns `You have reached your specified API usage limits. You will regain access on 2026-10-01 at 00:00 UTC.` This project had spent $12.70 of its $40 cap (`make cost`), so the account limit counts other projects on the same key too. Raise it at https://platform.claude.com/settings/limits, or wait for the reset. Everything paid so far is in the response cache; re-running any command resumes without paying twice.
+- Rohan's budget for this project is spent. Paid API spend stopped at $13.18 (`make cost`). `BUDGET_USD_TOTAL` in `.env` is locked at $13.19, so any paid call now fails closed.
+- The Anthropic account limit was also hit (resets 2026-10-01). It will not be raised.
+- Remaining eval runs use open-weights models (Qwen3.6-35B-A3B-FP8 strong tier, Qwen3.5-4B cheap tier, both Apache-2.0) served by vLLM inside a Hugging Face Job. Jobs are paid from the HF PRO plan's included $2 monthly compute credit. The HF account has no payment method (`whoami-v2` says `canPay: false`), so a job stops when the credit runs out and nothing can be billed. On 2026-09-30 a launch was refused with "Pre-paid credit balance is insufficient" (this month's $2 was already used), which confirms that guard.
+- Running models on the MacBook was tried and stopped: it overheats.
+- `scripts/hf_job/auto_run.sh` (running in the background of the build session) waits for the credit refill at 2026-10-01 00:05 UTC, runs a CPU check job (a fraction of a cent), then one GPU job on an RTX PRO 6000 capped at 43 minutes ($2), then merges the results. Steps run in priority order and the response cache syncs every 2 minutes, so an early stop loses nothing and a later job resumes.
+- To run it by hand: `bash scripts/hf_job/auto_run.sh "2026-10-01 00:05"`, or `uv run python scripts/hf_job/launch.py run --tag gpu1 --plan A,D,freshA,judge,objection,B,C,Z,freshZ,ask,judge --flavor rtx-pro-6000 --timeout 43m` then `... launch.py fetch --tag gpu1`.
+- Optional, only if more free compute is wanted later: a free API key from a provider with a large free tier (for example Mistral's Experiment plan) could be added as another provider. Not needed for the plan above.
 
 ### 1. Build status and resume point (updated 2026-09-29 22:45 UTC)
 
