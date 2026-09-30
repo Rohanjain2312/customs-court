@@ -15,7 +15,7 @@ TAG="${JOB_TAG:-job}"
 PLAN="${JOB_PLAN:-check}"
 DEADLINE_MIN="${JOB_DEADLINE_MIN:-40}"
 START=$(date +%s)
-W=/work
+W="${WORK_DIR:-/work}"
 mkdir -p "$W" && cd "$W"
 log() { echo "[$(date -u +%H:%M:%S) +$(( ($(date +%s) - START) / 60 ))m] $*"; }
 left_min() { echo $(( DEADLINE_MIN - ($(date +%s) - START) / 60 )); }
@@ -35,12 +35,15 @@ done
 : > data/ledger.jsonl
 
 log "install harness (own venv, sees the image's torch)"
-python3 -m venv --system-site-packages /opt/ta
-/opt/ta/bin/pip install -q "pydantic-settings>=2.4" "typer>=0.12" rich python-dotenv "mcp>=1.20" \
+python3 -m venv --system-site-packages ${VENV_DIR:-/opt/ta}
+# CPU torch first, so sentence-transformers does not pull a 2.5 GB CUDA build (query embeddings run on CPU).
+${VENV_DIR:-/opt/ta}/bin/python -c "import torch" 2>/dev/null || \
+  ${VENV_DIR:-/opt/ta}/bin/pip install -q torch --index-url https://download.pytorch.org/whl/cpu > logs/pip.log 2>&1
+${VENV_DIR:-/opt/ta}/bin/pip install -q "pydantic-settings>=2.4" "typer>=0.12" rich python-dotenv "mcp>=1.20" \
   "anthropic>=0.70" "openai>=1.50" "sentence-transformers>=3.0" faiss-cpu pypdf beautifulsoup4 \
-  sse-starlette pytest > logs/pip.log 2>&1 || { log "pip failed"; tail -20 logs/pip.log; }
-/opt/ta/bin/pip install -q --no-deps -e . >> logs/pip.log 2>&1
-TA=/opt/ta/bin/tariffagent
+  sse-starlette pytest >> logs/pip.log 2>&1 || { log "pip failed"; tail -20 logs/pip.log; }
+${VENV_DIR:-/opt/ta}/bin/pip install -q --no-deps -e . >> logs/pip.log 2>&1
+TA=${VENV_DIR:-/opt/ta}/bin/tariffagent
 
 export DATA_DIR="$W/data" USE_VECTORS=true OFFLINE=false PHASE=open
 export REASONER_MODEL=local-qwen3.6-35b-a3b ADVOCATE_MODEL=local-qwen3.5-4b JUDGE_MODEL=local-qwen3.6-35b-a3b
@@ -59,9 +62,13 @@ SYNC_PID=$!
 
 if [ "$PLAN" = "check" ]; then
   log "CPU check: offline tests and smoke eval"
-  (cd "$W" && DATA_DIR= OFFLINE=true USE_VECTORS=false /opt/ta/bin/python -m pytest -q -m "not live" -p no:cacheprovider tests 2>&1 | tail -5) | tee logs/check.log
+  (cd "$W" && OFFLINE=true USE_VECTORS=false ${VENV_DIR:-/opt/ta}/bin/python -m pytest -q -m "not live" -p no:cacheprovider tests 2>&1 | tail -5) | tee logs/check.log
   (OFFLINE=true $TA eval smoke 2>&1 | tail -3) | tee -a logs/check.log
-  /opt/ta/bin/python -c "from tariffagent.agents.runner import provider_for; print(type(provider_for('local-qwen3.6-35b-a3b')).__name__)" | tee -a logs/check.log
+  ${VENV_DIR:-/opt/ta}/bin/python -c "from tariffagent.agents.runner import provider_for; print(type(provider_for('local-qwen3.6-35b-a3b')).__name__)" | tee -a logs/check.log
+  ${VENV_DIR:-/opt/ta}/bin/python -c "
+from tariffagent.mcp_server.tools.core import TariffTools
+t = TariffTools(redact_eval=True); print('real-data tools ok', len(t.hts_search('leather handbag', 5).hits), len(t.cross_search('leather handbag').hits))" 2>&1 | tail -1 | tee -a logs/check.log
+  vllm --version 2>&1 | tail -1 | tee -a logs/check.log
   kill $SYNC_PID; sync_state; exit 0
 fi
 
@@ -98,7 +105,7 @@ for step in "${STEPS[@]}"; do
     Z) run os-atlas200-Z --dataset atlas_test_200 --arm Z --phase open ;;
     freshZ) run os-fresh150-Z --dataset fresh_150 --arm Z --phase open ;;
     B)
-      bud=$(/opt/ta/bin/python -c "import json;print(int(json.load(open('evals/reports/os-atlas200-D.json'))['metrics']['tokens_per_item']))" 2>/dev/null || echo 150000)
+      bud=$(${VENV_DIR:-/opt/ta}/bin/python -c "import json;print(int(json.load(open('evals/reports/os-atlas200-D.json'))['metrics']['tokens_per_item']))" 2>/dev/null || echo 150000)
       run os-subset80-B --dataset atlas_test_200 --items-from subset_80 --arm B --token-budget "$bud" --max-turns 16 --phase open ;;
     C) run os-subset80-C --dataset atlas_test_200 --items-from subset_80 --arm C --phase open ;;
     objection)
