@@ -32,6 +32,21 @@ From anthropics/skills (the `mcp-builder` skill in particular, read 2026-09-28):
 
 The skill body is part of the cached static prefix of every agent call (system prompt, skill body, GRI text). The worked examples were chosen from rulings dated before 2026-07-01 and outside every evaluation set, and none shares an 8-digit code with an ATLAS test or validation gold code, so the references cannot leak answers.
 
+## Providers, caching and the zero-cost path
+
+One request type (`llm/base.py: LLMRequest`) and one response type go through every provider. Episodes are generators that yield requests, so the same agent code runs interactively, through the Anthropic Message Batches API, or against a local server.
+
+| Provider | Used for | Notes |
+|---|---|---|
+| `AnthropicProvider` | Claude runs (Sonnet 5 reasoner, Haiku 4.5 cheap tier) | Two cache breakpoints, 1-hour TTL in batch mode, one pre-warm call per shared prefix before each batch, structured output through `output_config.format` |
+| `OpenAIProvider` | gpt-5-mini provider comparison | OpenAI caches long prefixes automatically; cached tokens are logged |
+| `LocalProvider` | Open-weights models behind an OpenAI-compatible server (vLLM or llama.cpp) | $0 in the ledger. Tools and a JSON-schema grammar cannot be combined there, so the schema is enforced only on turns without tools; the regex parser and the checked final step cover the rest |
+| `BedrockProvider`, `VertexClaudeProvider`, `VertexGeminiProvider` | Deploy-ready code paths | Tested with mocked transports only; building a real client needs `I_ACCEPT_CLOUD_COSTS=yes` |
+
+Every call goes through an on-disk response cache keyed by the full request, and every paid call appends to `data/ledger.jsonl`. Budgets (total, per run, per day) fail closed before a call is made.
+
+When the paid budget ran out, the remaining evaluation runs moved to a Hugging Face Job (`scripts/hf_job/`): a vLLM container serves Qwen3.6-35B-A3B-FP8 and Qwen3.5-4B on one GPU, the harness runs the eval steps in priority order with per-thread read-only database connections (`TOOLS_PARALLEL=true`), and the response cache syncs back to a private dataset repo every two minutes, so a job that stops early loses nothing. The job is paid from the plan's included credits, and the account has no payment method, so it cannot be billed beyond them.
+
 ## Components and data flow
 
 ![Components and data flow](diagrams/components.svg)

@@ -50,5 +50,5 @@ Next steps in order (each run resumes from the response cache, so nothing is pai
 6. Phase 9 docs.
 
 ### Other handoff items
-- Making the GitHub repo public: only after a secrets scan. `gh repo edit Rohanjain2312/customs-court --visibility public --accept-visibility-change-consequences`
+- Making the GitHub repo public (your decision). Secrets scan done 2026-09-30 over the full git history: no Anthropic, OpenAI, Hugging Face or GitHub token appears; the only key-shaped string is the fake placeholder `AKIASCRIPTEDLOCAL000` in a deploy test. `.env` was never committed. Command: `gh repo edit Rohanjain2312/customs-court --visibility public --accept-visibility-change-consequences`
 - Cloud deploys: never run by this build. `make deploy-aws` / `make deploy-gcp` refuse unless `I_ACCEPT_CLOUD_COSTS=yes`.
