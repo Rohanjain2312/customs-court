@@ -278,3 +278,51 @@ class LocalProvider(OpenAIProvider):
             },
         )
         return resp
+
+
+class MistralProvider(LocalProvider):
+    """Mistral's API on the free "Experiment" plan (OpenAI-compatible chat completions).
+
+    Added 2026-09-30 as a zero-cost path after the paid budget ran out. The free plan is
+    rate-limited, so requests are spaced by MISTRAL_RPS and 429s are retried with backoff.
+    Logged at $0 because the plan is free; prompts contain only public CBP and HTS text.
+    """
+
+    name = "mistral"
+    _lock = __import__("threading").Lock()
+    _last = 0.0
+
+    def client_for(self, model: str):
+        if self._client is not None:
+            return self._client
+        if "mistral" not in self._clients:
+            import openai
+
+            s = get_settings()
+            if not s.mistral_api_key:
+                raise RuntimeError("MISTRAL_API_KEY is not set")
+            self._clients["mistral"] = openai.OpenAI(
+                base_url="https://api.mistral.ai/v1", api_key=s.mistral_api_key, max_retries=10, timeout=600
+            )
+        return self._clients["mistral"]
+
+    def build_params(self, req: LLMRequest) -> dict:
+        p = LocalProvider.build_params(self, req)
+        p.pop("extra_body", None)
+        p.pop("top_p", None)
+        p.pop("presence_penalty", None)
+        p["temperature"] = get_settings().mistral_temperature
+        if p.get("tool_choice", {}) == {"type": "none"}:
+            p["tool_choice"] = "none"
+        return p
+
+    def complete(self, req: LLMRequest) -> LLMResponse:
+        key = request_key(req.cache_payload(self.name))
+        if self.cache.get(key) is None and not get_settings().offline:
+            gap = 1.0 / max(0.01, get_settings().mistral_rps)
+            with MistralProvider._lock:
+                wait = MistralProvider._last + gap - time.time()
+                if wait > 0:
+                    time.sleep(wait)
+                MistralProvider._last = time.time()
+        return super().complete(req)

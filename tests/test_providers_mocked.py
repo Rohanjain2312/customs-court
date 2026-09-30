@@ -285,3 +285,20 @@ def test_local_provider_params_and_zero_cost():
     assert "tools" not in p and p["response_format"]["type"] == "json_schema"
     assert price_for("local-qwen3.5-4b").input == 0 and price_for("local-qwen3.5-2b").output == 0
     assert isinstance(provider_for("local-qwen3.5-4b"), LocalProvider)
+
+
+def test_mistral_provider_params_zero_cost_and_routing():
+    from tariffagent.agents.runner import provider_for
+    from tariffagent.config import price_for
+    from tariffagent.llm.openai_provider import MistralProvider
+
+    r = _req()
+    r.model = "mistral-medium-2604"
+    p = MistralProvider().build_params(r)
+    assert "tools" in p and "response_format" not in p
+    assert "extra_body" not in p and "top_p" not in p and "reasoning_effort" not in p
+    r.tool_choice = {"type": "none"}
+    p = MistralProvider().build_params(r)
+    assert p["response_format"]["type"] == "json_schema"
+    assert price_for("mistral-medium-2604").input == 0 and price_for("mistral-small-2603").output == 0
+    assert isinstance(provider_for("mistral-small-2603"), MistralProvider)

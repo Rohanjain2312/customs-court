@@ -44,6 +44,10 @@ PRICES: dict[str, Price] = {
     "gpt-5-nano": Price(input=0.05, output=0.4, cache_write_5m=0.05, cache_write_1h=0.05, cache_read=0.005),
     # Open-weights models run on this machine with llama.cpp. Free.
     "local-": Price(input=0.0, output=0.0, cache_write_5m=0.0, cache_write_1h=0.0, cache_read=0.0),
+    # Mistral free "Experiment" plan (no charges; rate-limited).
+    "mistral-": Price(input=0.0, output=0.0, cache_write_5m=0.0, cache_write_1h=0.0, cache_read=0.0),
+    "ministral-": Price(input=0.0, output=0.0, cache_write_5m=0.0, cache_write_1h=0.0, cache_read=0.0),
+    "magistral-": Price(input=0.0, output=0.0, cache_write_5m=0.0, cache_write_1h=0.0, cache_read=0.0),
 }
 
 FORBIDDEN_MODEL_MARKERS = ("opus", "fable", "mythos")
@@ -66,6 +70,10 @@ class Settings(BaseSettings):
         "local-qwen3.5-4b=http://127.0.0.1:8081/v1,local-qwen3.5-2b=http://127.0.0.1:8082/v1"
     )
     local_temperature: float = 0.7
+    # Mistral free "Experiment" plan: requests per second and sampling.
+    mistral_api_key: str | None = None
+    mistral_rps: float = 1.0
+    mistral_temperature: float = 0.3
     # Per-thread read-only DB connections for tools (used by the high-concurrency GPU job).
     tools_parallel: bool = False
     local_thinking: bool = False
