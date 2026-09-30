@@ -3,49 +3,59 @@
  "classification": {
   "hts10": "3920.62.00.90",
   "facts": {
-   "material": "biaxially oriented polypropylene laminated to poly(ethylene terephthalate)",
-   "function": "packaging/laminated film",
-   "form": "noncellular, unreinforced film",
-   "end_use": "packaging (assumed)"
+   "material": "plastics: biaxially oriented polypropylene laminated to PET",
+   "function": "packaging/converting film",
+   "form": "laminated film, non-cellular, unreinforced",
+   "end_use": "likely flexible packaging"
   },
   "gri_path": [
-   "GRI 1: heading 3920 plates, sheets, film of plastics, noncellular, not reinforced, laminated",
-   "GRI 3(c): layers of PP (3920.20) and PET (3920.62) with no essential character shown; last in numerical order",
-   "GRI 6: 3920.62.00 of PET, not metallized, not gift wrap"
+   "GRI 1: heading 3920 covers plastic film laminated, supported or similarly combined, noncellular and not reinforced",
+   "GRI 3(b): two-polymer laminate, essential character assumed from PET layer",
+   "GRI 6: 3920.62 of PET, .00.90 Other"
   ],
-  "deciding_gri": "GRI 3(c)",
+  "deciding_gri": "GRI 3(b)",
   "cited_rulings": [
    {
-    "id": "K84976",
+    "id": "I87495",
+    "status": "in_force"
+   },
+   {
+    "id": "J80001",
     "status": "in_force"
    }
   ],
   "rejected_alternatives": [
    {
     "code": "3920.20.00.55",
-    "reason": "polypropylene film; BOPP layer may give essential character, weights not stated"
+    "reason": "propylene-polymer film; chosen only if the BOPP layer gives the essential character"
+   },
+   {
+    "code": "3921.90",
+    "reason": "applies to laminates with aluminum foil or other materials (J80001); not stated"
    },
    {
     "code": "3920.62.00.50",
     "reason": "metallized PET film only"
    },
    {
-    "code": "3921",
-    "reason": "heading 3920 covers laminated plastic film"
+    "code": "3920.62.00.20",
+    "reason": "gift wrap use not stated"
    }
   ],
   "missing_facts": [
-   "relative thickness and weight of the BOPP and PET layers",
-   "whether metallized or printed"
+   "relative thickness/weight of BOPP vs PET layers",
+   "whether metallized or used as gift wrap"
   ],
   "confidence": 0.35,
-  "abstain": false,
-  "rationale": "Laminate of two plastic films stays in 3920; with no essential layer established, the later subheading PET 3920.62 wins under GRI 3(c). K84976 shows BOPP in 3920.20 as the alternative."
+  "abstain": true,
+  "rationale": "Both layers are plastics, so the laminate falls in 3920 and the subheading depends on which polymer gives essential character. PET was assumed; I87495 shows PET film in 3920.62."
  },
- "tool_calls": 6,
+ "tool_calls": 5,
  "tools": [
+  "hts_search",
   "cross_search",
   "hts_navigate",
-  "ruling_status"
+  "ruling_status",
+  "get_notes"
  ]
 }

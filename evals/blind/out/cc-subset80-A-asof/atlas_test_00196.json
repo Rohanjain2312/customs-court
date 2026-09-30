@@ -3,46 +3,54 @@
  "classification": {
   "hts10": "3923.21.00.95",
   "facts": {
-   "material": "polyethylene plastic",
-   "function": "packing/conveyance of goods",
-   "form": "bags",
-   "end_use": "packaging"
+   "material": "clear polyethylene sheeting",
+   "function": "conveyance and packing of goods",
+   "form": "open bags without handles (closure not stated)",
+   "end_use": "packing"
   },
   "gri_path": [
-   "GRI 1: 3923 articles for conveyance or packing, sacks and bags; 3923.21 of polymers of ethylene; no handles so not PRCB line"
+   "GRI 1: heading 3923 articles for conveyance or packing of goods, of plastics; sacks and bags",
+   "GRI 6: 3923.21 of polymers of ethylene; not reclosable, not a PRCB with handles, other"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [
    {
-    "id": "N015142",
+    "id": "F88931",
     "status": "in_force"
    }
   ],
   "rejected_alternatives": [
    {
     "code": "3923.21.00.85",
-    "reason": "retail carrier bags with handles"
+    "reason": "PRCB requires handles"
    },
    {
     "code": "3923.21.00.80",
-    "reason": "sides not exceeding 75 mm"
+    "reason": "only if no side exceeds 75 mm"
    },
    {
-    "code": "3923.29",
-    "reason": "other plastics"
+    "code": "3923.21.00.20",
+    "reason": "reclosable with sliders not stated"
+   },
+   {
+    "code": "4202.22.15.00",
+    "reason": "bags of this type are handbag/case articles, not plain packing bags"
    }
   ],
   "missing_facts": [
-   "bag dimensions, sliders"
+   "dimensions (75 mm side limit)",
+   "whether reclosable"
   ],
-  "confidence": 0.6,
+  "confidence": 0.65,
   "abstain": false,
-  "rationale": "Polyethylene bags without handles are 3923.21; N015142 placed similar unprinted bags in the other line."
+  "rationale": "Open-end polyethylene bags are classified as other sacks and bags of polymers of ethylene in heading 3923 per F88931; no handles excludes PRCB line."
  },
- "tool_calls": 3,
+ "tool_calls": 4,
  "tools": [
   "hts_search",
+  "cross_search",
   "hts_navigate",
-  "cross_search"
+  "get_ruling",
+  "ruling_status"
  ]
 }

@@ -1,10 +1,61 @@
 {
   "cc-subset80-A": {
-    "filter": "no date filter",
+    "filter": "Claude Opus 5.5, no date filter, first-generation source hiding",
     "items": 80,
-    "items_with_as_of_date": 38,
-    "citations_dated_after_the_item": 22,
-    "items_citing_a_later_ruling": 20,
+    "items_with_as_of_date": 76,
+    "citations_dated_after_the_item": 46,
+    "items_citing_a_later_ruling": 41,
+    "citations_of_a_candidate_source_ruling": 12,
+    "source_detail": [
+      {
+        "item_id": "atlas_test_00013",
+        "cited": "F83391"
+      },
+      {
+        "item_id": "atlas_test_00037",
+        "cited": "N358520"
+      },
+      {
+        "item_id": "atlas_test_00072",
+        "cited": "N361135"
+      },
+      {
+        "item_id": "atlas_test_00079",
+        "cited": "N249760"
+      },
+      {
+        "item_id": "atlas_test_00083",
+        "cited": "962659"
+      },
+      {
+        "item_id": "atlas_test_00085",
+        "cited": "I85144"
+      },
+      {
+        "item_id": "atlas_test_00108",
+        "cited": "L88053"
+      },
+      {
+        "item_id": "atlas_test_00114",
+        "cited": "N359472"
+      },
+      {
+        "item_id": "atlas_test_00135",
+        "cited": "J87560"
+      },
+      {
+        "item_id": "atlas_test_00159",
+        "cited": "J89828"
+      },
+      {
+        "item_id": "atlas_test_00186",
+        "cited": "N334310"
+      },
+      {
+        "item_id": "atlas_test_00188",
+        "cited": "H310618"
+      }
+    ],
     "detail": [
       {
         "item_id": "atlas_test_00003",
@@ -22,6 +73,11 @@
         "cited_date": "2025-06-27"
       },
       {
+        "item_id": "atlas_test_00029",
+        "cited": "H314335",
+        "cited_date": "2022-08-11"
+      },
+      {
         "item_id": "atlas_test_00036",
         "cited": "H89862",
         "cited_date": "2002-04-11"
@@ -32,14 +88,64 @@
         "cited_date": "2025-11-21"
       },
       {
+        "item_id": "atlas_test_00037",
+        "cited": "N358520",
+        "cited_date": "2026-02-12"
+      },
+      {
+        "item_id": "atlas_test_00039",
+        "cited": "N347101",
+        "cited_date": "2025-04-16"
+      },
+      {
+        "item_id": "atlas_test_00040",
+        "cited": "H097658",
+        "cited_date": "2013-12-31"
+      },
+      {
+        "item_id": "atlas_test_00040",
+        "cited": "H278181",
+        "cited_date": "2021-01-19"
+      },
+      {
+        "item_id": "atlas_test_00040",
+        "cited": "N355088",
+        "cited_date": "2025-10-28"
+      },
+      {
+        "item_id": "atlas_test_00045",
+        "cited": "N336394",
+        "cited_date": "2023-11-16"
+      },
+      {
         "item_id": "atlas_test_00047",
         "cited": "N249832",
         "cited_date": "2014-03-24"
       },
       {
+        "item_id": "atlas_test_00048",
+        "cited": "N326371",
+        "cited_date": "2022-06-16"
+      },
+      {
         "item_id": "atlas_test_00054",
         "cited": "N359864",
         "cited_date": "2026-04-02"
+      },
+      {
+        "item_id": "atlas_test_00064",
+        "cited": "N020188",
+        "cited_date": "2007-12-19"
+      },
+      {
+        "item_id": "atlas_test_00065",
+        "cited": "N339672",
+        "cited_date": "2024-04-29"
+      },
+      {
+        "item_id": "atlas_test_00067",
+        "cited": "N265147",
+        "cited_date": "2015-06-09"
       },
       {
         "item_id": "atlas_test_00072",
@@ -62,6 +168,21 @@
         "cited_date": "2004-12-15"
       },
       {
+        "item_id": "atlas_test_00085",
+        "cited": "I85144",
+        "cited_date": "2002-09-05"
+      },
+      {
+        "item_id": "atlas_test_00096",
+        "cited": "N362482",
+        "cited_date": "2026-07-09"
+      },
+      {
+        "item_id": "atlas_test_00097",
+        "cited": "N333219",
+        "cited_date": "2023-06-21"
+      },
+      {
         "item_id": "atlas_test_00104",
         "cited": "N351497",
         "cited_date": "2025-08-14"
@@ -70,6 +191,16 @@
         "item_id": "atlas_test_00109",
         "cited": "H81340",
         "cited_date": "2001-06-13"
+      },
+      {
+        "item_id": "atlas_test_00114",
+        "cited": "N359472",
+        "cited_date": "2026-03-18"
+      },
+      {
+        "item_id": "atlas_test_00116",
+        "cited": "N011941",
+        "cited_date": "2007-06-21"
       },
       {
         "item_id": "atlas_test_00117",
@@ -87,14 +218,49 @@
         "cited_date": "2015-08-07"
       },
       {
+        "item_id": "atlas_test_00137",
+        "cited": "N329057",
+        "cited_date": "2022-11-17"
+      },
+      {
+        "item_id": "atlas_test_00145",
+        "cited": "N107290",
+        "cited_date": "2010-06-13"
+      },
+      {
         "item_id": "atlas_test_00159",
         "cited": "J89828",
         "cited_date": "2003-10-23"
       },
       {
+        "item_id": "atlas_test_00168",
+        "cited": "N356719",
+        "cited_date": "2025-12-23"
+      },
+      {
+        "item_id": "atlas_test_00168",
+        "cited": "N014992",
+        "cited_date": "2007-08-02"
+      },
+      {
         "item_id": "atlas_test_00175",
         "cited": "N341739",
         "cited_date": "2024-08-23"
+      },
+      {
+        "item_id": "atlas_test_00177",
+        "cited": "N252078",
+        "cited_date": "2014-04-28"
+      },
+      {
+        "item_id": "atlas_test_00180",
+        "cited": "H319171",
+        "cited_date": "2024-06-13"
+      },
+      {
+        "item_id": "atlas_test_00183",
+        "cited": "965589",
+        "cited_date": "2002-09-17"
       },
       {
         "item_id": "atlas_test_00184",
@@ -112,6 +278,232 @@
         "cited_date": "2002-04-28"
       },
       {
+        "item_id": "atlas_test_00196",
+        "cited": "N015142",
+        "cited_date": "2007-08-27"
+      },
+      {
+        "item_id": "atlas_test_00197",
+        "cited": "G86134",
+        "cited_date": "2001-01-28"
+      }
+    ]
+  },
+  "cc-subset80-A-s55": {
+    "filter": "Claude Sonnet 5.5, no date filter",
+    "items": 80,
+    "items_with_as_of_date": 76,
+    "citations_dated_after_the_item": 42,
+    "items_citing_a_later_ruling": 37,
+    "citations_of_a_candidate_source_ruling": 0,
+    "source_detail": [],
+    "detail": [
+      {
+        "item_id": "atlas_test_00008",
+        "cited": "N355243",
+        "cited_date": "2025-11-07"
+      },
+      {
+        "item_id": "atlas_test_00010",
+        "cited": "N341739",
+        "cited_date": "2024-08-23"
+      },
+      {
+        "item_id": "atlas_test_00010",
+        "cited": "N327606",
+        "cited_date": "2022-08-24"
+      },
+      {
+        "item_id": "atlas_test_00013",
+        "cited": "I80761",
+        "cited_date": "2002-04-21"
+      },
+      {
+        "item_id": "atlas_test_00029",
+        "cited": "H314335",
+        "cited_date": "2022-08-11"
+      },
+      {
+        "item_id": "atlas_test_00036",
+        "cited": "R03592",
+        "cited_date": "2006-04-09"
+      },
+      {
+        "item_id": "atlas_test_00040",
+        "cited": "N355088",
+        "cited_date": "2025-10-28"
+      },
+      {
+        "item_id": "atlas_test_00040",
+        "cited": "N333439",
+        "cited_date": "2023-06-15"
+      },
+      {
+        "item_id": "atlas_test_00042",
+        "cited": "N323762",
+        "cited_date": "2022-02-08"
+      },
+      {
+        "item_id": "atlas_test_00045",
+        "cited": "963250",
+        "cited_date": "2001-07-23"
+      },
+      {
+        "item_id": "atlas_test_00045",
+        "cited": "L81485",
+        "cited_date": "2005-01-11"
+      },
+      {
+        "item_id": "atlas_test_00047",
+        "cited": "N325758",
+        "cited_date": "2022-05-25"
+      },
+      {
+        "item_id": "atlas_test_00048",
+        "cited": "N020079",
+        "cited_date": "2007-12-10"
+      },
+      {
+        "item_id": "atlas_test_00054",
+        "cited": "N359864",
+        "cited_date": "2026-04-02"
+      },
+      {
+        "item_id": "atlas_test_00064",
+        "cited": "I84334",
+        "cited_date": "2002-08-13"
+      },
+      {
+        "item_id": "atlas_test_00065",
+        "cited": "N033447",
+        "cited_date": "2008-08-11"
+      },
+      {
+        "item_id": "atlas_test_00067",
+        "cited": "N265147",
+        "cited_date": "2015-06-09"
+      },
+      {
+        "item_id": "atlas_test_00072",
+        "cited": "H328055",
+        "cited_date": "2023-07-31"
+      },
+      {
+        "item_id": "atlas_test_00076",
+        "cited": "N239953",
+        "cited_date": "2013-04-12"
+      },
+      {
+        "item_id": "atlas_test_00079",
+        "cited": "N347490",
+        "cited_date": "2025-04-17"
+      },
+      {
+        "item_id": "atlas_test_00080",
+        "cited": "L81175",
+        "cited_date": "2004-12-15"
+      },
+      {
+        "item_id": "atlas_test_00096",
+        "cited": "N362482",
+        "cited_date": "2026-07-09"
+      },
+      {
+        "item_id": "atlas_test_00097",
+        "cited": "N333219",
+        "cited_date": "2023-06-21"
+      },
+      {
+        "item_id": "atlas_test_00108",
+        "cited": "H208896",
+        "cited_date": "2012-03-22"
+      },
+      {
+        "item_id": "atlas_test_00109",
+        "cited": "H81340",
+        "cited_date": "2001-06-13"
+      },
+      {
+        "item_id": "atlas_test_00116",
+        "cited": "N011941",
+        "cited_date": "2007-06-21"
+      },
+      {
+        "item_id": "atlas_test_00117",
+        "cited": "N332349",
+        "cited_date": "2023-04-26"
+      },
+      {
+        "item_id": "atlas_test_00125",
+        "cited": "N012776",
+        "cited_date": "2007-06-21"
+      },
+      {
+        "item_id": "atlas_test_00128",
+        "cited": "N341303",
+        "cited_date": "2024-08-07"
+      },
+      {
+        "item_id": "atlas_test_00130",
+        "cited": "N338010",
+        "cited_date": "2024-02-14"
+      },
+      {
+        "item_id": "atlas_test_00138",
+        "cited": "N316920",
+        "cited_date": "2021-02-05"
+      },
+      {
+        "item_id": "atlas_test_00145",
+        "cited": "N107290",
+        "cited_date": "2010-06-13"
+      },
+      {
+        "item_id": "atlas_test_00165",
+        "cited": "N347490",
+        "cited_date": "2025-04-17"
+      },
+      {
+        "item_id": "atlas_test_00175",
+        "cited": "N341739",
+        "cited_date": "2024-08-23"
+      },
+      {
+        "item_id": "atlas_test_00175",
+        "cited": "N261168",
+        "cited_date": "2015-02-24"
+      },
+      {
+        "item_id": "atlas_test_00180",
+        "cited": "H319171",
+        "cited_date": "2024-06-13"
+      },
+      {
+        "item_id": "atlas_test_00184",
+        "cited": "N007469",
+        "cited_date": "2007-03-25"
+      },
+      {
+        "item_id": "atlas_test_00185",
+        "cited": "N355530",
+        "cited_date": "2025-11-19"
+      },
+      {
+        "item_id": "atlas_test_00193",
+        "cited": "H112725",
+        "cited_date": "2010-10-06"
+      },
+      {
+        "item_id": "atlas_test_00193",
+        "cited": "I80102",
+        "cited_date": "2002-04-28"
+      },
+      {
+        "item_id": "atlas_test_00196",
+        "cited": "N015142",
+        "cited_date": "2007-08-27"
+      },
+      {
         "item_id": "atlas_test_00197",
         "cited": "G86134",
         "cited_date": "2001-01-28"
@@ -119,19 +511,39 @@
     ]
   },
   "cc-subset80-A-asof": {
-    "filter": "date filter on",
+    "filter": "Claude Sonnet 5.5, date filter on",
     "items": 80,
-    "items_with_as_of_date": 38,
+    "items_with_as_of_date": 76,
     "citations_dated_after_the_item": 0,
     "items_citing_a_later_ruling": 0,
+    "citations_of_a_candidate_source_ruling": 0,
+    "source_detail": [],
     "detail": []
   },
   "cc-fresh40-A": {
-    "filter": "no date filter",
+    "filter": "Claude Opus 5.5, no date filter",
     "items": 40,
     "items_with_as_of_date": 40,
     "citations_dated_after_the_item": 1,
     "items_citing_a_later_ruling": 1,
+    "citations_of_a_candidate_source_ruling": 0,
+    "source_detail": [],
+    "detail": [
+      {
+        "item_id": "fresh_N356982",
+        "cited": "N358799",
+        "cited_date": "2026-07-21"
+      }
+    ]
+  },
+  "cc-fresh40-A-s55": {
+    "filter": "Claude Sonnet 5.5, no date filter",
+    "items": 40,
+    "items_with_as_of_date": 40,
+    "citations_dated_after_the_item": 1,
+    "items_citing_a_later_ruling": 1,
+    "citations_of_a_candidate_source_ruling": 0,
+    "source_detail": [],
     "detail": [
       {
         "item_id": "fresh_N356982",
@@ -141,11 +553,13 @@
     ]
   },
   "cc-fresh40-A-asof": {
-    "filter": "date filter on",
+    "filter": "Claude Sonnet 5.5, date filter on",
     "items": 40,
     "items_with_as_of_date": 40,
     "citations_dated_after_the_item": 0,
     "items_citing_a_later_ruling": 0,
+    "citations_of_a_candidate_source_ruling": 0,
+    "source_detail": [],
     "detail": []
   }
 }

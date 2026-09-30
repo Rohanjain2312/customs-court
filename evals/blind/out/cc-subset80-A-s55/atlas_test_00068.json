@@ -1,0 +1,37 @@
+{
+ "item_id": "atlas_test_00068",
+ "classification": {
+  "hts10": "2905.32.00.00",
+  "facts": {
+   "material": "propylene glycol (propane-1,2-diol)",
+   "function": "chemical",
+   "form": "chemically defined organic compound",
+   "end_use": "not stated"
+  },
+  "gri_path": [
+   "GRI 1: heading 2905 acyclic alcohols, diols; subheading 2905.32 names propylene glycol; chapter 29 note 1 covers separate defined compounds"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3824.99",
+    "reason": "chemical preparations not elsewhere specified; a defined compound belongs in ch.29"
+   },
+   {
+    "code": "3808.90",
+    "reason": "only for formulated biocide mixtures"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.93,
+  "abstain": false,
+  "rationale": "Propylene glycol is named eo nomine in 2905.32.00.00."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_notes"
+ ]
+}

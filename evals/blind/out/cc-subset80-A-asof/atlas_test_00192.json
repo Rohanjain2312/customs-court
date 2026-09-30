@@ -3,13 +3,14 @@
  "classification": {
   "hts10": "5911.90.00.80",
   "facts": {
-   "material": "particulate filter media, textile assumed",
-   "function": "filters particles in a respirator",
-   "form": "filter cartridge, imported separately",
-   "end_use": "welding respiratory protection"
+   "material": "fibrous (textile/nonwoven) filter media in cartridge (assumed)",
+   "function": "removes particulates from air for respirator",
+   "form": "replaceable filter",
+   "end_use": "respirator filter for welding and similar"
   },
   "gri_path": [
-   "GRI 1: heading 5911 textile articles for technical uses; Section XVI note 1(e) excludes textile filters from 8421"
+   "GRI 1: heading 5911 textile articles for technical uses; Section XVI note 1(e) removes textile technical articles from chapter 84",
+   "GRI 6: 5911.90 other, 5911.90.00.80 other"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [
@@ -20,25 +21,32 @@
   ],
   "rejected_alternatives": [
    {
-    "code": "8421.39.80",
-    "reason": "filtering machinery; excluded by Section XVI note 1(e) if textile"
+    "code": "8421.39.80.90",
+    "reason": "Section XVI note 1(e) excludes textile technical articles"
    },
    {
-    "code": "9020.00.90",
-    "reason": "accessories of breathing appliances; filter is textile article"
+    "code": "9020.00.90.00",
+    "reason": "parts of breathing appliances; filter of textile filtering material better fits 5911 per N253050"
+   },
+   {
+    "code": "6307.90.98",
+    "reason": "that is for face masks, not a separate filter"
    }
   ],
   "missing_facts": [
-   "filter medium composition"
+   "filter media composition (textile vs non-textile)",
+   "whether the filter is solely a respirator part (9020.00.90)"
   ],
-  "confidence": 0.4,
+  "confidence": 0.5,
   "abstain": false,
-  "rationale": "N253050 classified a 3M respirator filter cartridge as textile article for technical uses in 5911.90.0080."
+  "rationale": "3M respirator particulate filter of textile media follows N253050 (similar 3M respirator filter) into 5911.90.00.80; if media is not textile, 9020.00.90 would apply."
  },
- "tool_calls": 3,
+ "tool_calls": 5,
  "tools": [
+  "hts_search",
   "cross_search",
   "get_ruling",
-  "ruling_status"
+  "ruling_status",
+  "hts_navigate"
  ]
 }

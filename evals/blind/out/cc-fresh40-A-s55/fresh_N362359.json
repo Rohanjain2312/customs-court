@@ -1,0 +1,57 @@
+{
+ "item_id": "fresh_N362359",
+ "classification": {
+  "hts10": "6302.91.00.60",
+  "facts": {
+   "material": "two layers 100% cotton cheesecloth (woven)",
+   "function": "facial exfoliating/cleansing cloth",
+   "form": "6x6 in sewn squares, unfinished (dye and border stitch applied after import); refill sold 2 cloths, kit adds magnetic hanger",
+   "end_use": "personal facial cleansing"
+  },
+  "gri_path": [
+   "GRI 1: heading 6302 covers toilet linen; facial/wash cloths are toilet linen, not dishcloths/dusters of 6307.10 (cleaning cloths) and not fabric by the piece of ch.52",
+   "GRI 2(a): unfinished cloth has the essential character of the finished cloth",
+   "GRI 6: 6302.91.00 of cotton, non-pile (cheesecloth), other than towels/dish -> .60"
+  ],
+  "deciding_gri": "GRI 2(a)",
+  "cited_rulings": [
+   {
+    "id": "F86293",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6307.90.98.91",
+    "reason": "facial wipes of nonwoven single-use pads (N354952) differ; this is a reusable sewn cotton cloth of toilet-linen type"
+   },
+   {
+    "code": "6307.10.20",
+    "reason": "cleaning cloths for floors/dishes/dusting, not personal toilet use"
+   },
+   {
+    "code": "6302.60.00",
+    "reason": "not terry toweling"
+   },
+   {
+    "code": "6302.91.00.50",
+    "reason": "towels line; a 6x6 facial cloth is not a towel"
+   }
+  ],
+  "missing_facts": [
+   "whether CBP treats the magnetic hanger kit as a retail set (hanger minor; cloths give essential character)"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Reusable cotton facial cloths are toilet linen of heading 6302 (F86293 held a facial cloth there, though of man-made pile). Cotton non-pile -> 6302.91.00, statistical Other 60. Suffix is an assumption; 6307.90 is arguable."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

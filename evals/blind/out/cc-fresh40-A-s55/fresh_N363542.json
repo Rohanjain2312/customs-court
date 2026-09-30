@@ -1,0 +1,53 @@
+{
+ "item_id": "fresh_N363542",
+ "classification": {
+  "hts10": "6114.30.30.60",
+  "facts": {
+   "material": "100% polyester double-knit (coat)",
+   "function": "costume for portraying a British soldier",
+   "form": "coat well made (collar, lapels, cuffs, finished edges) plus vest, pants, cravat, sash, boot covers, hat",
+   "end_use": "consumer dress-up costume"
+  },
+  "gri_path": [
+   "GRI 1: ch.95 note 1(e) excludes well-made textile fancy dress of ch.61/62; coat is well made",
+   "Section XI note 13: garments of different headings not classified as sets, each classified separately",
+   "GRI 6: 6114.30 other garments, knitted, man-made fibers, men's or boys'"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N003904",
+    "status": "in_force"
+   },
+   {
+    "id": "N349938",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90.60.00",
+    "reason": "excluded for the well-made coat by ch.95 note 1(e); N349938 shows 9505 applies only when coat is not well made"
+   },
+   {
+    "code": "6103.33",
+    "reason": "suit-type jacket not indicated; costume coat not suit-type"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: vest (raw armholes, likely 9505), pants, cravat, sash, boot covers, hat",
+   "Coat closure direction confirming men's"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Coat is made to men's sizes with well-made features, so it is in ch.61 by note 1(e) to ch.95; N003904 classified a similar costume coat in 6114.30.3060; first-named article classified."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "get_notes"
+ ]
+}

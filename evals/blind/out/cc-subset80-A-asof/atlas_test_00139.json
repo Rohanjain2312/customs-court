@@ -1,1 +1,57 @@
-{"item_id":"atlas_test_00139","classification":{"hts10":"3920.61.00.00","facts":{"material":"acrylic and polycarbonate plastics","function":"decorative wall paneling and furniture components","form":"rigid panels/sheets, construction not stated","end_use":"wall paneling, furniture"},"gri_path":["GRI 1: heading 3920 plates and sheets of plastics, noncellular, not reinforced; 3925 builders' ware considered","GRI 3(c): two equally arguable subheadings (acrylic 3920.51, polycarbonate 3920.61); last in numerical order","GRI 6: 3920.61 of polycarbonates"],"deciding_gri":"GRI 3(c)","cited_rulings":[],"rejected_alternatives":[{"code":"3920.51.50","reason":"acrylic (PMMA); precedes polycarbonate, loses under GRI 3(c) if both materials are equally in play"},{"code":"3925.90.00.00","reason":"builders' ware; flat panels are plates and sheets of 3920 unless worked into building articles"},{"code":"3921.90.50.00","reason":"residual other plates; 3920 is more specific for noncellular unreinforced sheets"},{"code":"4412","reason":"plywood, not plastics"}],"missing_facts":["whether panels are acrylic, polycarbonate, or a laminate of both","cellular or reinforced construction","whether worked beyond flat sheet"],"confidence":0.3,"abstain":false,"rationale":"Rigid plastic panels of acrylic and polycarbonate are plates/sheets of heading 3920. With both polymers named and no essential character given, GRI 3(c) picks the later subheading, polycarbonates. No ruling found in tool results was on the same goods (N362535 concerns textile-combined acrylic coated sheets) so none is cited."},"tool_calls":10,"tools":["hts_search","cross_search","hts_navigate","get_notes","get_ruling","ruling_status"]}
+{
+ "item_id": "atlas_test_00139",
+ "classification": {
+  "hts10": "3920.51.50.90",
+  "facts": {
+   "material": "acrylic (PMMA) and polycarbonate plastic",
+   "function": "decorative panels",
+   "form": "rigid noncellular sheets/panels",
+   "end_use": "wall paneling and furniture components"
+  },
+  "gri_path": [
+   "GRI 1: heading 3920 plates and sheets of plastics noncellular and not reinforced; chapter 39 governs",
+   "GRI 3(c)/first-named: two polymers named, acrylic named first, classified as acrylic polymers",
+   "GRI 6: 3920.51 PMMA, 3920.51.50 other (not flexible), .90 other than flame retardant sheets"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N347347",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3920.61.00.00",
+    "reason": "polycarbonate sheet (N347347); alternative if polycarbonate predominates"
+   },
+   {
+    "code": "3925.90.00.00",
+    "reason": "builders' ware; generic panels also used as furniture components, not a dedicated building article"
+   },
+   {
+    "code": "3921.90",
+    "reason": "no laminating/reinforcement stated"
+   },
+   {
+    "code": "3920.51.50.50",
+    "reason": "flame-retardant sheets not stated"
+   }
+  ],
+  "missing_facts": [
+   "whether panels are acrylic or polycarbonate (classify separately: polycarbonate panels to 3920.61.00.00)",
+   "surface finish/decoration and whether flame retardant"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Rigid plastic panels are sheets of heading 3920. Acrylic is named first so the acrylic line is used; N347347 supports polycarbonate sheets in 3920.61, which would be the classify-separately line."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "get_notes"
+ ]
+}

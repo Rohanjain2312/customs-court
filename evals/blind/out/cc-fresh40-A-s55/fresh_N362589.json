@@ -1,0 +1,54 @@
+{
+ "item_id": "fresh_N362589",
+ "classification": {
+  "hts10": "6201.40.75.11",
+  "facts": {
+   "material": "woven 100% polyamide (hood, sleeves, yoke, shoulders) and knit 82% polyester 18% elastane; neither over 60% of surface",
+   "function": "men's jacket with hood, zippers, pockets",
+   "form": "complete garment, removable hood and sleeves",
+   "end_use": "outerwear for men"
+  },
+  "gri_path": [
+   "GRI 1: heading 6201 men's anoraks/windbreakers/similar (woven) vs 6101 (knit); composite of both",
+   "GRI 3(b): no component gives essential character (stated neither fabric exceeds 60%)",
+   "GRI 3(c): last in numerical order, 6201 over 6101",
+   "GRI 6: man-made fibers, windbreaker-type, not recreational performance outerwear or water resistant (ch.62 US notes 2-3), other, men's"
+  ],
+  "deciding_gri": "GRI 3(c)",
+  "cited_rulings": [
+   {
+    "id": "N339058",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6101.30.20.10",
+    "reason": "knit men's jackets; 6101 precedes 6201 so loses under GRI 3(c)"
+   },
+   {
+    "code": "6201.40.45.00",
+    "reason": "water resistant line; no rubber/plastic coating stated"
+   },
+   {
+    "code": "6201.40.50.11",
+    "reason": "recreational performance outerwear needs water resistance/sealed seams and 5 features; not shown"
+   }
+  ],
+  "missing_facts": [
+   "water resistance / sealed seams / coating"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "With no fabric imparting essential character, GRI 3(c) picks 6201. N339058 placed a polyester/elastane woven windbreaker-type hooded jacket at 6201.40.75.11; N298465 (in_force) differs since woven gave essential character there."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

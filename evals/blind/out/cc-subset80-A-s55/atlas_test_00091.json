@@ -1,0 +1,46 @@
+{
+ "item_id": "atlas_test_00091",
+ "classification": {
+  "hts10": "8202.31.00.00",
+  "facts": {
+   "material": "base metal (steel) cutting tools",
+   "function": "cutting, threading, drilling, boring, milling metal",
+   "form": "assorted finished tools",
+   "end_use": "metalworking"
+  },
+  "gri_path": [
+   "GRI 1: multiple different articles named; classify first-named, metal slitting saws",
+   "Heading 8202 names blades for saws of all kinds including slitting saw blades; chapter 82 note 1 satisfied (steel working part)",
+   "GRI 6: 8202.31 circular saw blades with working part of steel"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8202.99.00.00",
+    "reason": "other saw blades; slitting saws are circular"
+   },
+   {
+    "code": "8207.70.60.30",
+    "reason": "milling tools cover milling cutters, not saw blades of 8202"
+   },
+   {
+    "code": "8207.40.60.00",
+    "reason": "taps/threading tools are a separate article, not first-named"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: taps, threading tools, drills, reamers, boring tools, milling tools (heading 8207)",
+   "working part material (HSS vs carbide) and whether circular"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Description lists several tools; first-named metal slitting saws are circular saw blades, heading 8202, steel working part at 8202.31. Others fall in 8207 and are to be classified separately. No ruling cited."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate"
+ ]
+}

@@ -3,14 +3,13 @@
  "classification": {
   "hts10": "2933.31.00.00",
   "facts": {
-   "material": "pyridine, CAS 110-86-1, chemically defined organic compound",
-   "function": "chemical (solvent/intermediate)",
-   "form": "separate chemically defined compound",
-   "end_use": "chemical industry"
+   "material": "pyridine, separate chemically defined organic compound, CAS 110-86-1",
+   "function": "chemical intermediate/solvent",
+   "form": "liquid compound",
+   "end_use": "not stated; origin China"
   },
   "gri_path": [
-   "GRI 1: heading 2933 heterocyclic compounds with nitrogen hetero-atom(s) only; chapter 29 note 1(a) separate chemically defined compounds",
-   "GRI 6: 2933.31 pyridine and its salts"
+   "GRI 1: chapter 29 note 1(a) covers separate chemically defined organic compounds; heading 2933 heterocyclic compounds with nitrogen hetero-atom(s) only; 2933.31 names pyridine and its salts by name"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [],
@@ -21,18 +20,19 @@
    },
    {
     "code": "2933.32",
-    "reason": "piperidine, not pyridine"
+    "reason": "piperidine, a different compound"
    }
   ],
   "missing_facts": [],
   "confidence": 0.95,
   "abstain": false,
-  "rationale": "Pyridine is named in subheading 2933.31 and the single 10-digit line is 2933.31.00.00."
+  "rationale": "Pyridine is eo nomine provided for in 2933.31.00.00; the heading text and chapter 29 note 1 settle it. Searches returned no relevant ruling, so none is cited."
  },
- "tool_calls": 3,
+ "tool_calls": 4,
  "tools": [
   "hts_search",
-  "get_notes",
-  "hts_navigate"
+  "cross_search",
+  "hts_navigate",
+  "get_notes"
  ]
 }

@@ -1,0 +1,51 @@
+{
+ "item_id": "atlas_test_00067",
+ "classification": {
+  "hts10": "6505.00.15.15",
+  "facts": {
+   "material": "100% cotton knit",
+   "function": "infant clothing",
+   "form": "retail set of sweater and hat",
+   "end_use": "babies"
+  },
+  "gri_path": [
+   "GRI 1: 6111 babies' knitted garments and 6505 knitted hats both fit; chapter 61 sets note does not cover a sweater+hat set (hat not a garment of the set)",
+   "GRI 3(b): no single component gives essential character (assumed equal)",
+   "GRI 3(c): last in numerical order is 6505",
+   "GRI 6: 6505.00.15 cotton knitted, 6505.00.15.15 for babies"
+  ],
+  "deciding_gri": "GRI 3(c)",
+  "cited_rulings": [
+   {
+    "id": "N265147",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6111.20.60.20",
+    "reason": "babies' set under ch.61 requires garments; hat is 6505, and 3(c) gives the later heading"
+   },
+   {
+    "code": "6111.20.30.00",
+    "reason": "sweater alone; set classified as a whole"
+   }
+  ],
+  "missing_facts": [
+   "whether set is put up for retail sale",
+   "relative value of sweater vs hat"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "N265147 treated a hat/bib/bootie infant set under GRI 3(c) as 6505.00.1515 since no item gave essential character; by analogy the sweater and hat set goes to 6505 for babies."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

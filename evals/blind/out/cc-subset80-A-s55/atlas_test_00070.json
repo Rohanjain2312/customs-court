@@ -1,0 +1,53 @@
+{
+ "item_id": "atlas_test_00070",
+ "classification": {
+  "hts10": "8205.59.55.10",
+  "facts": {
+   "material": "not stated; typical steel wire/blades with wooden handles",
+   "function": "cutting, scraping and sculpting clay",
+   "form": "hand tools, likely a set",
+   "end_use": "pottery/clay crafts"
+  },
+  "gri_path": [
+   "GRI 1: heading 8205 handtools n.e.s.; chapter 82 note 1 requires a working part of base metal",
+   "GRI 6: 8205.59 other handtools; 8205.59.55 other of iron or steel; edged handtools line .10"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "M83095",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8205.59.55.60",
+    "reason": "non-edged other handtools; cutters are edged"
+   },
+   {
+    "code": "9602.00",
+    "reason": "carved molded articles, not tools"
+   },
+   {
+    "code": "3407.00",
+    "reason": "modeling pastes, not tools"
+   }
+  ],
+  "missing_facts": [
+   "material of working parts (base metal vs wood/plastic)",
+   "whether presented as a set"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "M83095 classified a pottery tool set (wire clay cutter, scrapers, modeling tools) in 8205.59.5510; if tools were wood or plastic only, chapter 82 would not apply."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

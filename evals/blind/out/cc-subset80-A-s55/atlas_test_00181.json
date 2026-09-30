@@ -1,0 +1,50 @@
+{
+ "item_id": "atlas_test_00181",
+ "classification": {
+  "hts10": "8501.10.40.40",
+  "facts": {
+   "material": "electric motor assembly",
+   "function": "drives scanning mirror/polygon",
+   "form": "complete DC brushless motor",
+   "end_use": "laser bar code scanner subcomponent"
+  },
+  "gri_path": [
+   "GRI 1: heading 8501 electric motors; motor output not exceeding 37.5 W assumed under 18.65 W",
+   "GRI 6: 8501.10.40 DC brushless"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H87929",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8503.00.95.20",
+    "reason": "complete motor, not a part"
+   },
+   {
+    "code": "8501.10.60.40",
+    "reason": "output assumed under 18.65 W"
+   },
+   {
+    "code": "8543.90",
+    "reason": "not a part of scanner as it is a motor of 8501"
+   }
+  ],
+  "missing_facts": [
+   "power output"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Finished DC brushless motor is 8501.10; small output assumed; H87929 placed a DC brushless motor in 8501.10.4040."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "ruling_status",
+  "get_notes"
+ ]
+}

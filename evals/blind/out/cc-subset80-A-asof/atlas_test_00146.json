@@ -1,1 +1,54 @@
-{"item_id":"atlas_test_00146","classification":{"hts10":"9605.00.00.00","facts":{"material":"goldplated base-metal implements, leather case","function":"personal grooming and toilet","form":"retail set: tweezers, nail clippers, safety scissors, pen knife, shoe horn in zip top leather case","end_use":"personal toilet/travel use"},"gri_path":["GRI 1: heading 9605 travel sets for personal toilet; heading 8214 manicure sets considered","GRI 3(b): set put up for retail sale, toilet set content includes non-manicure items (pen knife, shoe horn)","GRI 6: 9605.00.00.00"],"deciding_gri":"GRI 1","cited_rulings":[{"id":"F84722","status":"in_force"},{"id":"H83408","status":"in_force"}],"rejected_alternatives":[{"code":"8214.20.60.00","reason":"manicure/pedicure sets in leather containers; set includes pen knife and shoe horn beyond manicure tools, so it is a toilet set"},{"code":"4202.32","reason":"leather case is only the container of the set"}],"missing_facts":["proportion of manicure tools versus other grooming items"],"confidence":0.5,"abstain":false,"rationale":"F84722 held a zippered case with clippers, scissors, tweezers, shoehorn and a knife is a toilet set of 9605. H83408 put a five-tool manicure set in leather container under 8214.20.60, but this set includes a pen knife and shoe horn so 9605 is chosen."},"tool_calls":5,"tools":["hts_search","cross_search","get_ruling","ruling_status"]}
+{
+ "item_id": "atlas_test_00146",
+ "classification": {
+  "hts10": "8214.20.60.00",
+  "facts": {
+   "material": "base metal implements, gold plated; leather case",
+   "function": "manicure/grooming",
+   "form": "set in zip-top leather case",
+   "end_use": "personal grooming"
+  },
+  "gri_path": [
+   "GRI 1: heading 8214 names manicure or pedicure sets and instruments; ch 82 note 1 covers manicure sets",
+   "GRI 6: 8214.20 manicure sets; in leather containers"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "K83874",
+    "status": "in_force"
+   },
+   {
+    "id": "L82484",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8214.20.90.00",
+    "reason": "other containers; here the case is leather"
+   },
+   {
+    "code": "4202",
+    "reason": "case is not the essential character of the set"
+   },
+   {
+    "code": "7113",
+    "reason": "implements not jewelry"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "Set of manicure implements in a leather case falls in 8214.20.60 (in leather containers). K83874 and L82484 (in force) place such sets in 8214.20; K83874 was for a plastic container (.90), so the leather case moves it to .60."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes",
+  "ruling_status",
+  "get_ruling"
+ ]
+}

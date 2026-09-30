@@ -187,3 +187,19 @@ def test_tool_executor_passes_as_of_to_backend(tools):
     none = ToolExecutor(InProcessBackend(tools))
     assert '"found":false' in early.run("get_ruling", {"id": "964384"})[0]
     assert '"found":true' in none.run("get_ruling", {"id": "964384"})[0]
+
+
+# ---- source-ruling linker (hides the answer ruling even when the gold code is wrong) ----
+
+
+def test_link_sources_finds_the_source_even_with_a_wrong_gold_code():
+    from tariffagent.data import atlas
+
+    items = [
+        {"item_id": "a", "description": "footwear from Argentina", "gold_digits": "6403599045"},
+        {"item_id": "b", "description": "footwear from Argentina", "gold_digits": "9999999999"},
+    ]
+    a, b = atlas.link_sources(items)
+    assert "N326421" in a["candidates"]
+    assert "N326421" in b["candidates"]  # code bonus missing, text still finds it
+    assert a["dates"] and all(isinstance(d, str) for d in a["dates"])

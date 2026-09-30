@@ -1,0 +1,44 @@
+{
+ "item_id": "fresh_N363487",
+ "classification": {
+  "hts10": "8413.60.00.30",
+  "facts": {
+   "material": "aluminum casing, gears, bearings",
+   "function": "hydraulic gear unit: pump when driven by external motor; reversible to act as motor",
+   "form": "complete unit with inlet, outlet, flange cover",
+   "end_use": "hydraulic fluid power"
+  },
+  "gri_path": [
+   "GRI 1: heading 8413 pumps for liquids; principal function pump",
+   "GRI 6: 8413.60 other rotary positive displacement pumps, hydraulic fluid power, gear type"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N361506",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8412.29.80.15",
+    "reason": "hydraulic motors gear type; principal function is pump"
+   },
+   {
+    "code": "8413.91",
+    "reason": "parts of pumps; complete unit"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "Gear hydraulic unit driven by external motor is a hydraulic fluid power gear pump; N361506 classified the same Marzocchi units in 8413.60.0030."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

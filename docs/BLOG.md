@@ -36,7 +36,7 @@ I built Customs Court to see how far an agent gets at this, and to measure it ho
 <!-- analysis:headline -->
 On the same 80 test items, the agent working blind in the Claude Code session got 51.5% of 10-digit codes right. The same kind of model with no tools got 21.2%. On rulings issued after every model's training cutoff the gap is wider: 82.5% against 15.0%. Zero-shot models often land the right heading and then miss the last four digits, which need the actual tariff tree. The agent that ran on the test set is a different model from the one I tuned on dev, so this shows the design works, not how much the model adds. A second model graded the legal reasoning against CBP's own analysis and passed 67.6% of the subset answers.
 
-A note on fairness: the first agent runs could cite rulings issued after the product's own ruling. The tools now hide later rulings, and a rerun with that on (a different model, Claude Sonnet 5.5) cited none and scored 45.5% on the test subset and 85.0% on the fresh set. Details in `docs/EVAL.md`.
+A note on fairness: the first agent runs could see rulings issued after the product's own ruling, and for about half the test items the answer ruling itself was not hidden. The tools now hide both. A rerun with that fixed (Claude Sonnet 5.5, a different model from the main run) scored 47.0% on the test subset and 85.0% on the fresh set, within noise of the same model without the date limit (45.5% and 82.5%). Details in `docs/EVAL.md`.
 <!-- /analysis:headline -->
 
 The agent on the 80-item subset, all rows on the same items:
@@ -48,7 +48,8 @@ The agent on the 80-item subset, all rows on the same items:
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
 | Zero-shot, no tools (in the Claude Code session) | Claude Sonnet 5.5 | 21.2% [12.1, 31.8] | 53.8% [42.5, 65.0] | 63.7% [52.5, 73.8] | 13.8% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
-| TariffAgent single agent, rulings limited to before each item's own date (in the Claude Code session) | Claude Sonnet 5.5 | 45.5% [33.3, 57.6] | 61.3% [50.0, 71.2] | 68.8% [57.5, 78.8] | 8.8% | $0 (no API spend) |
+| TariffAgent single agent, no date limit (in the Claude Code session) | Claude Sonnet 5.5 | 45.5% [33.3, 57.6] | 57.5% [46.2, 67.5] | 62.5% [51.2, 72.5] | 8.8% | $0 (no API spend) |
+| TariffAgent single agent, rulings limited to before each item's own date (in the Claude Code session) | Claude Sonnet 5.5 | 47.0% [34.8, 59.1] | 60.0% [48.8, 70.0] | 65.0% [53.8, 75.0] | 11.2% | $0 (no API spend) |
 <!-- /results:subset -->
 
 ## Doing it without a budget

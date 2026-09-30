@@ -1,0 +1,52 @@
+{
+ "item_id": "atlas_test_00096",
+ "classification": {
+  "hts10": "8543.70.45.00",
+  "facts": {
+   "material": "wire loops / electronic sensing elements",
+   "function": "detect vehicles and axles by inductance for traffic counting",
+   "form": "sensors/loops",
+   "end_use": "traffic counting"
+  },
+  "gri_path": [
+   "GRI 1: 8543 electrical apparatus with individual functions not elsewhere specified; sensors/transducers fall at 8543.70.45 per CBP",
+   "GRI 6: 8543.70 other machines, transducers line"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N362482",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9031.80.80",
+    "reason": "other measuring/checking instruments; electrical sensor treated as chapter 85 transducer"
+   },
+   {
+    "code": "9029.10",
+    "reason": "revolution/production counters, not vehicle detectors"
+   },
+   {
+    "code": "8543.70.99.60",
+    "reason": "other; transducer line more specific"
+   }
+  ],
+  "missing_facts": [
+   "whether loops are plain wire (8544) or include detector electronics",
+   "exact output function"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Inductive loops and axle sensors are electrical transducers sending signals on detection; N362482 classes an axle sensor as a transducer at 8543.70.4500. Low confidence: plain loop wire or measuring instruments of 9031 are arguable."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

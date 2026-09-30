@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00114", "verdict": "pass", "reason": "Both reach heading 8530 and cite parts of traffic control equipment as the decisive legal basis."}
+{"item_id": "atlas_test_00117", "verdict": "pass", "reason": "Both reach heading 3920 and apply the plasticizer content criterion from the heading text."}
+{"item_id": "atlas_test_00121", "verdict": "fail", "reason": "Assistant classified as bakeware (oven-only) while CBP classified as cooking ware; different legal classification within 7323.93."}
+{"item_id": "atlas_test_00123", "verdict": "pass", "reason": "Both reach heading 8467, both apply GRI 3(b) retail set with drill as essential character."}
+{"item_id": "atlas_test_00125", "verdict": "fail", "reason": "Assistant reached 9401 but chose parts line 9401.99.90 (residual other) while CBP used more specific 9401.90.5000 line."}
+{"item_id": "atlas_test_00128", "verdict": "pass", "reason": "Both reach heading 7419 and apply brass predominance by weight to classify as plumbing goods."}
+{"item_id": "atlas_test_00130", "verdict": "fail", "reason": "Both reach heading 3920 but assistant assumed PET gives essential character (3920.62) while CBP classified under polypropylene (3920.20)."}
+{"item_id": "atlas_test_00131", "verdict": "pass", "reason": "Both reach heading 2933 and recognize pyridine is specifically named (eo nomine) in that heading."}
+{"item_id": "atlas_test_00133", "verdict": "fail", "reason": "Both reach heading 2930 but assistant classified to line 2930.90.49.50 while CBP used more specific 2930.90.2900 line."}
+{"item_id": "atlas_test_00135", "verdict": "pass", "reason": "Both reach heading 6102 and apply the 25 percent or more leather content line for knitted garments."}
+{"item_id": "atlas_test_00137", "verdict": "pass", "reason": "Both reach heading 8427 and apply GRI 2(a) to classify unfinished machinery with essential character as the complete article."}
+{"item_id": "atlas_test_00138", "verdict": "pass", "reason": "Both reach heading 6104 and apply GRI 3(b) with dress as essential character for the set."}
+{"item_id": "atlas_test_00145", "verdict": "pass", "reason": "Both reach heading 6111 and classify textile fancy dress of babies' garments under Chapter 61 per Chapter 95 Note 1(e)."}
+{"item_id": "atlas_test_00146", "verdict": "fail", "reason": "Assistant misidentified set as manicure set (8214.20) while CBP classified mixed toilet/grooming implements as hand tools (8205.60)."}
+{"item_id": "atlas_test_00147", "verdict": "fail", "reason": "Assistant's reasoning that non-printed connectors exclude product from 8534 directly contradicts CBP's explicit statement that EN allows non-printed elements in 8534."}
+{"item_id": "atlas_test_00154", "verdict": "fail", "reason": "Product description states circular polarizing filter is mounted in ring, but assistant classified as unmounted (9001) instead of mounted (9002)."}
+{"item_id": "atlas_test_00156", "verdict": "fail", "reason": "Assistant classified as marine engine (8407) versus CBP's parts of machinery (8431); assistant acknowledged this is a low-confidence guess."}
+{"item_id": "atlas_test_00159", "verdict": "pass", "reason": "Both reach heading 6110 and apply pullover classification under other textile materials; suffix variation is immaterial."}
+{"item_id": "atlas_test_00163", "verdict": "pass", "reason": "Both classify APECS electronic engine controller under heading 9032 automatic regulating apparatus."}

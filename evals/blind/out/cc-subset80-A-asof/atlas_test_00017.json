@@ -4,43 +4,44 @@
   "hts10": "7326.90.86.88",
   "facts": {
    "material": "steel",
-   "function": "air vent/register for air conditioning distribution",
-   "form": "finished article",
-   "end_use": "HVAC air outlet"
+   "function": "air outlet/vent cover directing conditioned air",
+   "form": "finished grille/register",
+   "end_use": "air conditioning/HVAC ducting"
   },
   "gri_path": [
-   "GRI 1: heading 7326 other articles of iron or steel; Section XVI note 1(g) not applicable",
-   "GRI 6: 7326.90.86.88 other"
+   "GRI 1: heading 7326 other articles of iron or steel; 7322 covers hot air distributors with motor-driven fan only (not plain vent); Ch.73 residual",
+   "GRI 6: 7326.90.86 other, statistical 88 other"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "8415.90.80.45",
-    "reason": "parts of air conditioners require suitable for use solely with AC machines; vents are general duct hardware"
+    "code": "7322.90.00.45",
+    "reason": "parts of air heaters/hot air distributors with fan; a plain vent is not such a part"
    },
    {
-    "code": "7322.90.00",
-    "reason": "parts of air heaters/distributors with fan; not stated"
+    "code": "8415.90",
+    "reason": "A/C parts: vent of base metal is a general HVAC duct fitting, not specifically for machine"
    },
    {
-    "code": "3926.90.98.80",
-    "reason": "J80084 register is plastic; this is steel"
+    "code": "7308/7307",
+    "reason": "not structures or pipe fittings"
    }
   ],
   "missing_facts": [
-   "Is it a duct register/grille or a part dedicated to an AC machine?"
+   "Whether for A/C machine or a duct register",
+   "Whether forged or cast"
   ],
-  "confidence": 0.4,
+  "confidence": 0.35,
   "abstain": false,
-  "rationale": "A steel air vent is an other article of iron or steel."
+  "rationale": "Steel vent is a residual iron or steel article. J80084 (plastic register) was viewed but concerns a different material, so not cited."
  },
  "tool_calls": 6,
  "tools": [
   "hts_search",
   "cross_search",
+  "hts_navigate",
   "get_ruling",
-  "ruling_status",
-  "hts_navigate"
+  "ruling_status"
  ]
 }

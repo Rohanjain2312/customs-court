@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00003", "verdict": "fail", "reason": "Heading 4002 matches but CBP relied on the natural/synthetic mixture subheading 4002.80, which the assistant explicitly rejected, treating it as unspecified synthetic rubber."}
+{"item_id": "atlas_test_00008", "verdict": "fail", "reason": "Heading 9027 matches, but CBP classified the unfinished sensor PCBA as a gas analysis apparatus under GRI 2(a), while the assistant treated it as a part under Chapter 90 note 2(b)."}
+{"item_id": "atlas_test_00010", "verdict": "pass", "reason": "Both choose 3918 as plastic floor coverings (vinyl tile) over the extruded profile heading, with the PVC-dominant character supporting it."}
+{"item_id": "atlas_test_00013", "verdict": "fail", "reason": "Gold is heading 3926 (plastic articles) but the assistant chose 4911 printed matter."}
+{"item_id": "atlas_test_00017", "verdict": "pass", "reason": "Both put the steel vent in 7326 as another steel article, rejecting 7322 because a vent is not a part of a heater or air distributor."}
+{"item_id": "atlas_test_00029", "verdict": "fail", "reason": "CBP classified the O-rings in heading 3926 but the assistant chose heading 4016 (vulcanized rubber)."}
+{"item_id": "atlas_test_00030", "verdict": "fail", "reason": "The CBP ruling treats the coat as knitted and classifies it in 6102, while the assistant chose 6202 (not knitted)."}
+{"item_id": "atlas_test_00036", "verdict": "pass", "reason": "Both classify the transmitters in 9025.80.10 as electrical hygrometers under heading 9025."}
+{"item_id": "atlas_test_00037", "verdict": "pass", "reason": "Both classify the EUV scanner components as parts of semiconductor manufacturing machines in 8486."}
+{"item_id": "atlas_test_00038", "verdict": "fail", "reason": "CBP chose 9031 (optical measuring instrument, not analysis) while the assistant chose 9027."}
+{"item_id": "atlas_test_00039", "verdict": "pass", "reason": "Both classify the shower filter in 8421.21 as a water filtering apparatus rather than sanitary ware."}
+{"item_id": "atlas_test_00040", "verdict": "fail", "reason": "CBP chose heading 8207 under GRI 3(c) while the assistant chose 8202 under GRI 3(b)."}
+{"item_id": "atlas_test_00042", "verdict": "pass", "reason": "Both classify the plastic bib apron in 3926.20 as a plastic apparel article, with the plastic apron giving essential character."}
+{"item_id": "atlas_test_00045", "verdict": "fail", "reason": "CBP chose 8471 while the assistant chose 8517."}
+{"item_id": "atlas_test_00047", "verdict": "fail", "reason": "CBP chose 3504 (protein substances) while the assistant chose 3002."}
+{"item_id": "atlas_test_00048", "verdict": "pass", "reason": "Both classify the PET film in 3920.62 as noncellular plastic film in heading 3920, ahead of its use in LED panels."}
+{"item_id": "atlas_test_00053", "verdict": "pass", "reason": "Both classify the cycle computer in 9029.20.20 as a bicycle speedometer under heading 9029."}
+{"item_id": "atlas_test_00054", "verdict": "pass", "reason": "Both classify dried ovalbumin as egg albumin in 3502.11 under the terms of heading 3502."}
+{"item_id": "atlas_test_00055", "verdict": "fail", "reason": "CBP chose 8431 (parts of a crane attachment) while the assistant guessed 8716 with no basis."}

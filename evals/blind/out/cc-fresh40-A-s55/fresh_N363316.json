@@ -1,0 +1,54 @@
+{
+ "item_id": "fresh_N363316",
+ "classification": {
+  "hts10": "9014.90.60.00",
+  "facts": {
+   "material": "PCB assembly with switches, LEDs, photodiodes, backplate, bezel",
+   "function": "crew input interface of aircraft flight management system",
+   "form": "incomplete subassembly without LCD, uncalibrated",
+   "end_use": "aircraft cockpit MCDU"
+  },
+  "gri_path": [
+   "GRI 1: complete MCDU is an aeronautical navigation appliance of heading 9014; Section XVI note 1(m) excludes ch.90 articles",
+   "Section XVI note 2 / ch.90 note 2: parts suitable solely or principally for a particular instrument go with it",
+   "GRI 2(a) considered: lacks display, so treated as part not the instrument",
+   "GRI 6: 9014.90 parts, 9014.90.60 other"
+  ],
+  "deciding_gri": "GRI 1 (parts rule)",
+  "cited_rulings": [
+   {
+    "id": "963183",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8537.10.91.70",
+    "reason": "control boards heading is in Section XVI; MCDU is an ch.90 navigation appliance"
+   },
+   {
+    "code": "9014.20.60.00",
+    "reason": "imported item lacks display and is not complete"
+   },
+   {
+    "code": "8538.90",
+    "reason": "parts of switchgear; item is principally part of navigation instrument"
+   }
+  ],
+  "missing_facts": [
+   "Whether CBP treats an MCDU as 9014.20 or as an ADP/control unit of 8537/8471"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "MCDU interface to flight management system is an aeronautical navigation appliance (963183 placed spacecraft control processor in 9014.20); the control panel subassembly is a part."
+ },
+ "tool_calls": 9,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "get_notes",
+  "hts_navigate",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

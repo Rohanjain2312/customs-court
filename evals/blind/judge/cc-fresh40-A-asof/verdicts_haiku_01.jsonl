@@ -1,0 +1,20 @@
+{"item_id": "fresh_N363462", "verdict": "pass", "reason": "Wheeled tote with plastic outer surface correctly classified as travel/sports bag heading 4202 using GRI 1; same decisive basis as CBP."}
+{"item_id": "fresh_N363468", "verdict": "pass", "reason": "DSP unit correctly classified in heading 8543 with GRI 1; differences in statistical suffix (91 vs 98) do not matter per rubric."}
+{"item_id": "fresh_N363486", "verdict": "pass", "reason": "Costume with flimsy dress correctly applies GRI 3(b), identifies wood/textile as essential character, heading 9505 matches CBP."}
+{"item_id": "fresh_N363487", "verdict": "pass", "reason": "Hydraulic gear pump correctly identified as GRI 1 heading 8413 rotary positive displacement pump with gear type."}
+{"item_id": "fresh_N363542", "verdict": "fail", "reason": "Coat made of double-knit polyester must be classified under 6110 (knitted/crocheted garments), not 6101 (non-knit); wrong heading."}
+{"item_id": "fresh_N363573", "verdict": "pass", "reason": "Aluminum pill case correctly classified as composite good under GRI 3(b) with aluminum giving essential character in heading 7615."}
+{"item_id": "fresh_N363777", "verdict": "fail", "reason": "Pulse oximetry monitoring system misclassified under 9018 (medical diagnostic) instead of CBP's 9029 (measuring instruments); wrong heading."}
+{"item_id": "fresh_N363849", "verdict": "pass", "reason": "Liquid strainers correctly classified in heading 8421 as filtering machinery for liquids; differences in statistical suffix do not matter."}
+{"item_id": "fresh_N363928", "verdict": "pass", "reason": "Folding utility knife correctly identified under GRI 1 heading 8211 as knife with folding blades; legal basis matches CBP."}
+{"item_id": "fresh_N363949", "verdict": "pass", "reason": "Woven cotton baseball cap correctly classified under heading 6505 as textile headgear of cotton, not knitted; same decisive basis as CBP."}
+{"item_id": "fresh_N363956", "verdict": "pass", "reason": "Retractable tape measure correctly identified in heading 9017 as hand-held length-measuring instrument per GRI 1."}
+{"item_id": "fresh_N363968", "verdict": "pass", "reason": "Cutting board with steel accessories correctly applies GRI 3(b), wood imparts essential character, heading 4419 matches CBP."}
+{"item_id": "fresh_N363991", "verdict": "fail", "reason": "Outdoor mounting kit misclassified as wood articles (4421) instead of furniture parts (9403.91); wrong heading entirely."}
+{"item_id": "fresh_N364000", "verdict": "pass", "reason": "Mycoprotein food product correctly classified under heading 2106 as food preparation not elsewhere specified; differences in statistical suffix do not matter."}
+{"item_id": "fresh_N364356", "verdict": "pass", "reason": "Direct evaporative cooling units correctly identified in heading 8479 with GRI 1; evaporative air cooler is specific decisive basis matching CBP."}
+{"item_id": "fresh_N364408", "verdict": "pass", "reason": "Tire inflator correctly classified as hand-operated valve in heading 8481 using GRI 3(b); differences in statistical suffix do not matter."}
+{"item_id": "fresh_N364413", "verdict": "pass", "reason": "Motorcycle footpegs correctly classified as parts/accessories of motorcycles in heading 8714; Section XVII note correctly excludes from metal chapters."}
+{"item_id": "fresh_N364446", "verdict": "pass", "reason": "CGM transmitter correctly classified in heading 9027 as part of glucose monitoring system per Chapter 90 Note 2(b); legal basis matches CBP."}
+{"item_id": "fresh_N364644", "verdict": "pass", "reason": "Concrete forming molds correctly classified in heading 8480 as molds for mineral materials, other types; decisive basis matches CBP."}
+{"item_id": "fresh_N364732", "verdict": "pass", "reason": "Polyamide monofilament correctly classified in heading 3916 with 1.75 mm diameter exceeding the 1 mm threshold; legal basis matches CBP."}

@@ -3,38 +3,56 @@
  "classification": {
   "hts10": "9027.90.56.95",
   "facts": {
-   "material": "mixed optics (lenses, laser, detector)",
-   "function": "fluorescence detection in DNA analyzer",
-   "form": "assembly, part",
-   "end_use": "genetic analysis instruments"
+   "material": "optical and electronic components (lasers, lenses, detector; assumed)",
+   "function": "fluorescence detection module of capillary electrophoresis DNA analyzer",
+   "form": "assembly (part)",
+   "end_use": "ABI Prism 3100 Genetic Analyzer"
   },
   "gri_path": [
-   "GRI 1: heading 9027 parts of instruments; Section XVI/XVIII note 2(b) parts",
-   "GRI 6: 9027.90.56 parts of electrophoresis or optical-radiation instruments, other"
+   "GRI 1: heading 9027 instruments for physical or chemical analysis and parts and accessories",
+   "Chapter 90 note 2(b): parts suitable solely or principally for a particular instrument go with that instrument, unless a heading of their own (9001 lenses etc.) applies to the assembly as a whole",
+   "GRI 6: 9027.90.56 parts of instruments of 9027.20/.30/.50/.81/.89; Other"
   ],
   "deciding_gri": "GRI 1",
-  "cited_rulings": [],
+  "cited_rulings": [
+   {
+    "id": "G83746",
+    "status": "in_force"
+   }
+  ],
   "rejected_alternatives": [
    {
-    "code": "9001/9002",
-    "reason": "optical elements; assembly is dedicated part of instrument"
+    "code": "9027.90.54.00",
+    "reason": "that line is for electrophoresis instruments with no optical or measuring device; this analyzer incorporates fluorescence detection"
    },
    {
-    "code": "8419.89.99",
-    "reason": "oven assembly ruling G83746 is a different component"
+    "code": "9031.90.54.00",
+    "reason": "parts of measuring or checking optical instruments of 9031; analyzer is a 9027 instrument"
+   },
+   {
+    "code": "9001",
+    "reason": "assembly is a part of the instrument, not an optical element itself"
+   },
+   {
+    "code": "8419.89.99.85",
+    "reason": "G83746 oven assembly is heating machinery; optical assembly does no heating"
    }
   ],
   "missing_facts": [
-   "which 9027 subheading applies to the analyzer; assembly composition"
+   "composition of the optical assembly",
+   "exact 6-digit subheading of the ABI 3100 (9027.20 vs 9027.89)"
   ],
-  "confidence": 0.3,
-  "abstain": true,
-  "rationale": "Optical assemblies dedicated to a genetic analyzer are parts of a 9027 instrument; exact subheading uncertain."
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "G83746 confirms the ABI 3100 is treated as an analysis system and its components are parts of it; optical assembly is a part of a 9027 instrument, placed in the Other line of 9027.90.56."
  },
  "tool_calls": 4,
  "tools": [
   "cross_search",
+  "hts_search",
+  "get_ruling",
+  "ruling_status",
   "hts_navigate",
-  "get_ruling"
+  "get_notes"
  ]
 }

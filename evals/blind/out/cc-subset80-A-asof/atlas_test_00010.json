@@ -3,50 +3,49 @@
  "classification": {
   "hts10": "3918.10.10.20",
   "facts": {
-   "material": "PVC (4 mm base, 0.5 mm backing) with 0.5 mm wood veneer top",
+   "material": "PVC (4 mm base, 0.5 mm backing) with 0.5 mm decorative wood veneer layer",
    "function": "floor covering",
    "form": "click-lock planks/tiles",
-   "end_use": "flooring installation"
+   "end_use": "residential/commercial flooring"
   },
   "gri_path": [
-   "GRI 1: heading 3918 floor coverings of plastics in tiles; 3918.10 of vinyl chloride polymers",
-   "GRI 3(b): PVC layers provide essential character over thin veneer",
-   "GRI 6: 3918.10.10 vinyl tile, rigid solid polymer core"
+   "GRI 1: heading 3918 floor coverings of plastics in the form of tiles; PVC is >90% of thickness so plastic gives essential character",
+   "GRI 3(b): composite, PVC base/backing gives essential character over thin wood veneer",
+   "GRI 6: 3918.10 polymers of vinyl chloride, 3918.10.10 vinyl tile, rigid core suffix"
   ],
   "deciding_gri": "GRI 3(b)",
-  "cited_rulings": [
-   {
-    "id": "N261168",
-    "status": "in_force"
-   }
-  ],
+  "cited_rulings": [],
   "rejected_alternatives": [
    {
     "code": "4418.73",
-    "reason": "assembled wood flooring panels; wood veneer is only 0.5 mm of ~5 mm"
+    "reason": "wood flooring panels; wood is only 0.5 mm of 5 mm, not essential character"
    },
    {
     "code": "4412",
-    "reason": "plywood/veneered panels; PVC gives essential character"
+    "reason": "veneered panels; plastic predominates"
    },
    {
     "code": "3918.10.10.30",
-    "reason": "core is solid, not expanded"
+    "reason": "expanded core not indicated"
+   },
+   {
+    "code": "3918.10.10.40",
+    "reason": "other vinyl tile; rigid solid PVC core assumed"
    }
   ],
   "missing_facts": [
-   "Is the core rigid solid (assumed) vs expanded?"
+   "Whether the PVC core is rigid solid or expanded",
+   "Whether plank/tile form"
   ],
-  "confidence": 0.6,
+  "confidence": 0.55,
   "abstain": false,
-  "rationale": "PVC layers make up ~90% of thickness, so vinyl tile of heading 3918 with rigid solid core."
+  "rationale": "Nearly all thickness is PVC, so heading 3918.10 vinyl tile; click-lock rigid PVC base assumed solid polymer core. Wood flooring rulings found did not match the facts so none is cited."
  },
- "tool_calls": 9,
+ "tool_calls": 6,
  "tools": [
   "hts_search",
   "cross_search",
   "hts_navigate",
-  "get_notes",
-  "ruling_status"
+  "get_notes"
  ]
 }

@@ -1,0 +1,47 @@
+{
+ "item_id": "atlas_test_00180",
+ "classification": {
+  "hts10": "8431.43.80.60",
+  "facts": {
+   "material": "steel/metal",
+   "function": "float collar prevents backflow of mud into casing; float shoe guides casing",
+   "form": "casing accessories",
+   "end_use": "downhole drilling"
+  },
+  "gri_path": [
+   "GRI 1: heading 8431 parts of machinery 8425-8430; Section XVI note 2 parts rule",
+   "GRI 6: 8431.43.80 other, 60 Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H319171",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "7326.90",
+    "reason": "8431 covers parts of drilling machinery"
+   },
+   {
+    "code": "7305.20",
+    "reason": "not casing tube itself"
+   }
+  ],
+  "missing_facts": [
+   "whether floats are classified in 8431.43.80.60 vs other suffix"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "H319171 describes float collars/shoes and stop collars as parts of drilling machinery under 8431 (H243821 cited within but not found in corpus, not cited)."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

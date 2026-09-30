@@ -114,6 +114,7 @@ def build() -> tuple[dict, dict[str, str]]:
         "Z_cc": stats("cc-subset80-Z"),
         "A_cc": stats("cc-subset80-A"),
         "A_asof": stats("cc-subset80-A-asof"),
+        "A_s55": stats("cc-subset80-A-s55"),
     }
     data["subset80"] = sub
     tables["subset"] = "\n".join(
@@ -132,6 +133,18 @@ def build() -> tuple[dict, dict[str, str]]:
                 OPUS_CC,
                 sub["A_cc"],
                 " (no API spend)",
+            ),
+            *(
+                [
+                    row(
+                        "TariffAgent single agent, no date limit (in the Claude Code session)",
+                        SONNET55_CC,
+                        sub["A_s55"],
+                        " (no API spend)",
+                    )
+                ]
+                if sub["A_s55"]
+                else []
             ),
             *(
                 [
@@ -165,16 +178,22 @@ def build() -> tuple[dict, dict[str, str]]:
                 }
                 diffs[f"A_cc_minus_{arm}_acc{k}"] = paired_diff(a, b)
     asof = scored("cc-subset80-A-asof")
+    s55 = scored("cc-subset80-A-s55")
     zcc = scored("cc-subset80-Z")
-    if asof and zcc:
-        for k in (10, 6):
-            a = {i: float(zcc[i][f"exact_{k}"]) for i in ids if i in zcc and zcc[i][f"exact_{k}"] is not None}
-            b = {
-                i: float(asof[i][f"exact_{k}"])
-                for i in ids
-                if i in asof and asof[i][f"exact_{k}"] is not None
-            }
-            diffs[f"A_asof_minus_Z_cc_acc{k}"] = paired_diff(a, b)
+    for tag, hi, lo in (
+        ("asof_minus_Z_cc", asof, zcc),
+        ("s55_minus_Z_cc", s55, zcc),
+        ("asof_minus_s55", asof, s55),
+    ):
+        if hi and lo:
+            for k in (10, 6):
+                a = {
+                    i: float(lo[i][f"exact_{k}"]) for i in ids if i in lo and lo[i][f"exact_{k}"] is not None
+                }
+                b = {
+                    i: float(hi[i][f"exact_{k}"]) for i in ids if i in hi and hi[i][f"exact_{k}"] is not None
+                }
+                diffs[f"A_{tag}_acc{k}"] = paired_diff(a, b)
     data["subset80_diffs"] = diffs
 
     def dline(key):
@@ -192,9 +211,11 @@ def build() -> tuple[dict, dict[str, str]]:
             f"| Agent (Claude in session) minus Claude Sonnet 5.5 zero-shot (in session) | {dline('A_cc_minus_Z_cc_acc10')} | {dline('A_cc_minus_Z_cc_acc6')} |",
             *(
                 [
-                    f"| Date-limited agent (Claude Sonnet 5.5, in session) minus Claude Sonnet 5.5 zero-shot (in session) | {dline('A_asof_minus_Z_cc_acc10')} | {dline('A_asof_minus_Z_cc_acc6')} |"
+                    f"| No-date-limit agent (Claude Sonnet 5.5, in session) minus Claude Sonnet 5.5 zero-shot (in session) | {dline('A_s55_minus_Z_cc_acc10')} | {dline('A_s55_minus_Z_cc_acc6')} |",
+                    f"| Date-limited agent (Claude Sonnet 5.5, in session) minus Claude Sonnet 5.5 zero-shot (in session) | {dline('A_asof_minus_Z_cc_acc10')} | {dline('A_asof_minus_Z_cc_acc6')} |",
+                    f"| Date-limited agent minus no-date-limit agent (same model, same items: the effect of the date limit) | {dline('A_asof_minus_s55_acc10')} | {dline('A_asof_minus_s55_acc6')} |",
                 ]
-                if "A_asof_minus_Z_cc_acc10" in diffs
+                if "A_asof_minus_s55_acc10" in diffs
                 else []
             ),
         ]
@@ -208,6 +229,7 @@ def build() -> tuple[dict, dict[str, str]]:
         "Z_cc40": stats("cc-fresh40-Z"),
         "A_cc40": stats("cc-fresh40-A"),
         "A_asof40": stats("cc-fresh40-A-asof"),
+        "A_s5540": stats("cc-fresh40-A-s55"),
     }
     data["fresh"] = f
     fz = scored("fresh150-Z")
@@ -223,20 +245,18 @@ def build() -> tuple[dict, dict[str, str]]:
                 }
                 diffs[f"fresh_A_cc_minus_{tag}_acc{k}"] = paired_diff(a, b)
     fasof = scored("cc-fresh40-A-asof")
+    fs55 = scored("cc-fresh40-A-s55")
     fzcc = scored("cc-fresh40-Z")
-    if fasof and fzcc:
-        for k in (10, 6):
-            a = {
-                i: float(fzcc[i][f"exact_{k}"])
-                for i in fids
-                if i in fzcc and fzcc[i][f"exact_{k}"] is not None
-            }
-            b = {
-                i: float(fasof[i][f"exact_{k}"])
-                for i in fids
-                if i in fasof and fasof[i][f"exact_{k}"] is not None
-            }
-            diffs[f"fresh_A_asof_minus_Z_cc_acc{k}"] = paired_diff(a, b)
+    for tag, hi, lo in (("asof_minus_Z_cc", fasof, fzcc), ("asof_minus_s55", fasof, fs55)):
+        if hi and lo:
+            for k in (10, 6):
+                a = {
+                    i: float(lo[i][f"exact_{k}"]) for i in fids if i in lo and lo[i][f"exact_{k}"] is not None
+                }
+                b = {
+                    i: float(hi[i][f"exact_{k}"]) for i in fids if i in hi and hi[i][f"exact_{k}"] is not None
+                }
+                diffs[f"fresh_A_{tag}_acc{k}"] = paired_diff(a, b)
     tables["fresh"] = "\n".join(
         [
             HEAD,
@@ -253,6 +273,18 @@ def build() -> tuple[dict, dict[str, str]]:
                 OPUS_CC,
                 f["A_cc40"],
                 " (no API spend)",
+            ),
+            *(
+                [
+                    row(
+                        "TariffAgent single agent, no date limit (in the Claude Code session), same 40",
+                        SONNET55_CC,
+                        f["A_s5540"],
+                        " (no API spend)",
+                    )
+                ]
+                if f["A_s5540"]
+                else []
             ),
             *(
                 [
@@ -274,6 +306,8 @@ def build() -> tuple[dict, dict[str, str]]:
                 [
                     "",
                     f"Paired, same 40 items, date-limited agent (Claude Sonnet 5.5) minus Claude Sonnet 5.5 zero-shot (both in session): 10-digit {dline('fresh_A_asof_minus_Z_cc_acc10')}; 6-digit {dline('fresh_A_asof_minus_Z_cc_acc6')}.",
+                    "",
+                    f"Paired, same 40 items, date-limited agent minus no-date-limit agent (same model; the effect of the date limit): 10-digit {dline('fresh_A_asof_minus_s55_acc10')}; 6-digit {dline('fresh_A_asof_minus_s55_acc6')}.",
                 ]
                 if "fresh_A_asof_minus_Z_cc_acc10" in diffs
                 else []
@@ -283,11 +317,15 @@ def build() -> tuple[dict, dict[str, str]]:
 
     # Reasoning judge on the in-session agent runs (two in-session judges, Cohen's kappa)
     jrows = []
-    for label, rid in (("Test subset (80)", "cc-subset80-A"), ("Fresh set (40)", "cc-fresh40-A")):
+    for label, rid in (
+        ("Test subset (80), Opus 5.5 agent", "cc-subset80-A"),
+        ("Fresh set (40), Opus 5.5 agent", "cc-fresh40-A"),
+        ("Test subset (80), date-limited Sonnet 5.5 agent", "cc-subset80-A-asof"),
+        ("Fresh set (40), date-limited Sonnet 5.5 agent", "cc-fresh40-A-asof"),
+    ):
         j = report(f"{rid}.judge")
         data[f"judge_{rid}"] = j and {k: v for k, v in j.items() if k != "verdicts"}
         if not j:
-            jrows.append(f"| {label} | not run yet | | | | |")
             continue
         pc, pw = j["proxy_pass_given_correct10"], j["proxy_fail_given_wrong_chapter"]
 

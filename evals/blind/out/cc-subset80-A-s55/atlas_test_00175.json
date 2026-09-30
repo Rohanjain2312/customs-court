@@ -1,0 +1,50 @@
+{
+ "item_id": "atlas_test_00175",
+ "classification": {
+  "hts10": "3918.10.10.20",
+  "facts": {
+   "material": "polyvinyl chloride",
+   "function": "floor covering",
+   "form": "tile 11.74x23.74 in, 4 mm thick",
+   "end_use": "flooring"
+  },
+  "gri_path": [
+   "GRI 1: heading 3918 floor coverings of plastics in tiles; 3918.10 polymers of vinyl chloride",
+   "GRI 6: vinyl tile; rigid solid core assumed at 4 mm"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N341739",
+    "status": "in_force"
+   },
+   {
+    "id": "N261168",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3918.10.10.40",
+    "reason": "Other; applies if core not rigid"
+   },
+   {
+    "code": "3918.10.10.30",
+    "reason": "expanded core not indicated"
+   }
+  ],
+  "missing_facts": [
+   "core type (rigid solid, rigid expanded, flexible)"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "PVC tile is vinyl tile of 3918.10.10; N341739 placed rigid solid core planks in .20."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "ruling_status",
+  "get_notes"
+ ]
+}

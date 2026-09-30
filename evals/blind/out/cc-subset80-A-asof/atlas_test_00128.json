@@ -3,48 +3,58 @@
  "classification": {
   "hts10": "7419.80.50.10",
   "facts": {
-   "material": "not stated (assumed brass/bronze)",
-   "function": "drain grate over shower drain",
-   "form": "grate",
-   "end_use": "residential showers"
+   "material": "not stated; metal (brass assumed per closest ruling)",
+   "function": "grate covering a shower drain",
+   "form": "finished article, cast/machined",
+   "end_use": "residential shower drainage"
   },
   "gri_path": [
-   "GRI 1: heading 7419 other articles of copper (brass and bronze are copper alloys)",
-   "GRI 6: 7419.80.50.10 brass plumbing goods nec"
+   "GRI 1: heading 7419 other articles of copper (ch. 74 note 1(b) copper alloys incl. brass); not a tap/valve of 8481",
+   "GRI 6: 7419.80 other, 7419.80.50 Other, .10 brass plumbing goods nesoi"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [
    {
     "id": "N327820",
     "status": "in_force"
+   },
+   {
+    "id": "N326857",
+    "status": "in_force"
    }
   ],
   "rejected_alternatives": [
    {
     "code": "7324.90.00.00",
-    "reason": "stainless steel shower grate or cast iron drain base (N326857); material not stated"
+    "reason": "applies if cast iron or stainless steel (N326857 drain base); material not given"
    },
    {
-    "code": "3922.90.00.00",
-    "reason": "plastic sanitary ware; material not stated"
+    "code": "7419.20",
+    "reason": "cast-not-further-worked; grate is machined (N327820)"
    },
    {
     "code": "8481.80",
-    "reason": "a grate is not a valve or tap"
+    "reason": "grate is not a valve or tap"
+   },
+   {
+    "code": "3922.90",
+    "reason": "applies only if plastic"
    }
   ],
   "missing_facts": [
-   "material of the grate (copper alloy, stainless steel, cast iron, plastic)"
+   "material of the grate (brass, stainless steel, plastic)"
   ],
-  "confidence": 0.35,
+  "confidence": 0.45,
   "abstain": false,
-  "rationale": "N327820 classified a nickel bronze shower grate in 7419.80.50.10. Material is not given here, so the code depends on that assumption."
+  "rationale": "N327820 classified a shower grate to drain wastewater of brass in 7419.80.50.10. The description omits the material, so this follows the closest in-force ruling; steel would move it to 7324.90."
  },
- "tool_calls": 4,
+ "tool_calls": 6,
  "tools": [
   "hts_search",
   "cross_search",
+  "get_ruling",
   "ruling_status",
-  "hts_navigate"
+  "hts_navigate",
+  "get_notes"
  ]
 }

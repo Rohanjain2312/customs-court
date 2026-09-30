@@ -1,0 +1,51 @@
+{
+ "item_id": "fresh_N363423",
+ "classification": {
+  "hts10": "3923.90.00.80",
+  "facts": {
+   "material": "polyethylene foam (plastic)",
+   "function": "protect a robotic arm during shipment",
+   "form": "custom cut-to-profile insert with product-specific cavities",
+   "end_use": "packing/conveyance of goods"
+  },
+  "gri_path": [
+   "GRI 1: heading 3923 covers articles for the conveyance or packing of goods, of plastics; Section VII / ch.39 notes do not exclude",
+   "GRI 6: 3923.90 other, statistical line Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H89540",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3926.90.99",
+    "reason": "other articles of plastics; 3923 is the specific packing heading"
+   },
+   {
+    "code": "3921.19",
+    "reason": "plates/sheets of cellular plastics; goods are cut and cavity-formed into fitted packaging, beyond mere sheet form"
+   },
+   {
+    "code": "9404.90",
+    "reason": "cushion/furnishing; not a furnishing"
+   }
+  ],
+  "missing_facts": [
+   "Whether imported as flat sheet stock or fully shaped"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Fitted foam insert used as packaging tray matches heading 3923 (articles for conveyance or packing of goods of plastics); H89540 classified a comparable plastic foam insert in 3923.90.0080."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "ruling_status",
+  "get_ruling",
+  "hts_navigate"
+ ]
+}

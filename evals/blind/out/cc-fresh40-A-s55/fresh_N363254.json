@@ -1,0 +1,47 @@
+{
+ "item_id": "fresh_N363254",
+ "classification": {
+  "hts10": "3924.90.56.50",
+  "facts": {
+   "material": "polypropylene panels (majority of weight/bulk), aluminum pole/handle, steel fasteners",
+   "function": "hand rake/scoop to gather and lift yard debris",
+   "form": "60-inch complete garden rake",
+   "end_use": "household yard work"
+  },
+  "gri_path": [
+   "GRI 1: heading 8201 covers rakes but Ch.82 note 1 limits chapter to articles with a working part of base metal; the working parts here are plastic, so excluded",
+   "GRI 1: heading 3924 other household articles of plastics",
+   "GRI 3(b): plastic panels give essential character (bulk, weight, principal function)",
+   "GRI 6: 3924.90.56 other, stat .50 other"
+  ],
+  "deciding_gri": "GRI 1 (with GRI 3(b) for composite)",
+  "cited_rulings": [
+   {
+    "id": "N333477",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8201.30.00.80",
+    "reason": "Ch.82 note 1: working part is plastic, not base metal"
+   },
+   {
+    "code": "3926.90.99",
+    "reason": "3924 more specific for household garden articles per N333477"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Rake hands of polypropylene were classified in 3924.90.5650 (N333477, in force); Ch.82 note 1 removes plastic-working-part rakes from heading 8201; plastic predominates."
+ },
+ "tool_calls": 9,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_search"
+ ]
+}

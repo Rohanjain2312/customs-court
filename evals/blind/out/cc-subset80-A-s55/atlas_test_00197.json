@@ -1,0 +1,48 @@
+{
+ "item_id": "atlas_test_00197",
+ "classification": {
+  "hts10": "9027.90.56.50",
+  "facts": {
+   "material": "laser, CCD, mirrors, lenses, filters",
+   "function": "deliver/collect fluorescent light in DNA analyzer",
+   "form": "optical assembly (part)",
+   "end_use": "ABI Prism 3100 Genetic Analyzer"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 and its parts; Section XVIII note 2(b) parts of 9027 instruments",
+   "GRI 6: 9027.90.56 parts of 9027.50 instruments, of 9027.50.40"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "G86134",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9027.90.54.00",
+    "reason": "electrophoresis without optical measuring device"
+   },
+   {
+    "code": "9013",
+    "reason": "not standalone optical device"
+   }
+  ],
+  "missing_facts": [
+   "which specific assembly"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "G86134 classified the excitation optics assembly of the same analyzer under 9027.90.5450 (now 9027.90.56.50 line validated)."
+ },
+ "tool_calls": 8,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

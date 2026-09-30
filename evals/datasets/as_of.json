@@ -1,1840 +1,2484 @@
 {
  "note": "Rulings dated after an item's as_of are hidden from the tools during evaluation.",
- "min_link_score": 0.6,
  "coverage": {
   "atlas_test_200": {
    "items": 200,
-   "with_as_of": 100
-  },
-  "dev_100": {
-   "items": 100,
-   "with_as_of": 52
+   "with_as_of": 188,
+   "by_tier": {
+    "earliest_of_candidates": 97,
+    "unique": 91
+   }
   },
   "subset_80": {
    "items": 80,
-   "with_as_of": 38
+   "with_as_of": 76,
+   "by_tier": {
+    "unique": 37,
+    "earliest_of_candidates": 39
+   }
   },
   "fresh_150": {
    "items": 150,
-   "with_as_of": 150
+   "with_as_of": 150,
+   "by_tier": {
+    "exact": 150
+   }
   },
   "fresh_40": {
    "items": 40,
-   "with_as_of": 40
+   "with_as_of": 40,
+   "by_tier": {
+    "exact": 40
+   }
   },
   "fresh_300": {
    "items": 300,
-   "with_as_of": 300
+   "with_as_of": 300,
+   "by_tier": {
+    "exact": 300
+   }
   }
  },
  "items": {
+  "atlas_test_00000": {
+   "as_of": "2004-03-10",
+   "basis": "earliest of candidate source rulings N332307,N290712,R05069,N362609,K83125 (score 0.64)",
+   "tier": "earliest_of_candidates"
+  },
   "atlas_test_00001": {
    "as_of": "2002-07-21",
-   "basis": "linked ruling I83224 (score 1.0)"
+   "basis": "earliest of candidate source rulings I83224 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00002": {
+   "as_of": "2004-03-11",
+   "basis": "earliest of candidate source rulings R00160,H312118 (score 0.704)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00003": {
    "as_of": "1994-01-14",
-   "basis": "linked ruling 893402 (score 0.896)"
+   "basis": "earliest of candidate source rulings 893402 (score 1.197)",
+   "tier": "unique"
   },
   "atlas_test_00004": {
-   "as_of": "2005-01-25",
-   "basis": "linked ruling L82120 (score 0.865)"
+   "as_of": "2002-06-09",
+   "basis": "earliest of candidate source rulings L82120,I82536,I83309,L80053,N337887 (score 1.17)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00005": {
+   "as_of": "1995-06-06",
+   "basis": "earliest of candidate source rulings G86433,I86507,810714,967978 (score 0.63)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00006": {
+   "as_of": "2008-05-28",
+   "basis": "earliest of candidate source rulings N027053,N140543,N142419 (score 0.856)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00007": {
+   "as_of": "2010-11-09",
+   "basis": "earliest of candidate source rulings H119060 (score 0.708)",
+   "tier": "unique"
   },
   "atlas_test_00008": {
    "as_of": "2023-09-28",
-   "basis": "linked ruling N335170 (score 1.0)"
+   "basis": "earliest of candidate source rulings N335170 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00009": {
-   "as_of": "2008-05-21",
-   "basis": "linked ruling N028029 (score 1.0)"
+   "as_of": "2007-10-22",
+   "basis": "earliest of candidate source rulings N017954,N028029 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00010": {
    "as_of": "2017-04-11",
-   "basis": "linked ruling N285109 (score 0.791)"
+   "basis": "earliest of candidate source rulings N285109 (score 1.09)",
+   "tier": "unique"
   },
   "atlas_test_00011": {
    "as_of": "2001-01-22",
-   "basis": "linked ruling G85730 (score 0.907)"
+   "basis": "earliest of candidate source rulings G85730,G89363 (score 1.208)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00012": {
+   "as_of": "2002-12-10",
+   "basis": "earliest of candidate source rulings N010850,I88780 (score 0.584)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00013": {
+   "as_of": "2000-03-02",
+   "basis": "earliest of candidate source rulings F83391 (score 1.0)",
+   "tier": "unique"
   },
   "atlas_test_00014": {
    "as_of": "2000-08-11",
-   "basis": "linked ruling F89525 (score 0.79)"
+   "basis": "earliest of candidate source rulings F89525,I87397 (score 1.092)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00015": {
-   "as_of": "2009-07-13",
-   "basis": "linked ruling N047889 (score 0.695)"
+   "as_of": "2000-01-13",
+   "basis": "earliest of candidate source rulings N047889,J82399,N254459,F80949,N033479,N355506,848002,F88730 (score 0.995)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00016": {
    "as_of": "2003-10-07",
-   "basis": "linked ruling J88337 (score 0.758)"
+   "basis": "earliest of candidate source rulings J88337 (score 1.06)",
+   "tier": "unique"
   },
   "atlas_test_00017": {
    "as_of": "2008-02-01",
-   "basis": "linked ruling N022317 (score 1.0)"
+   "basis": "earliest of candidate source rulings N022317 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00018": {
+   "as_of": "2005-06-15",
+   "basis": "earliest of candidate source rulings M82909,R04182,M80398,L85212,N016669 (score 0.65)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00019": {
+   "as_of": "2007-11-05",
+   "basis": "earliest of candidate source rulings N018427 (score 0.789)",
+   "tier": "unique"
+  },
+  "atlas_test_00020": {
+   "as_of": "1992-01-08",
+   "basis": "earliest of candidate source rulings 869797,882999,J86689,K89736,K89827,N191295,N191297,N196579 (score 0.534)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00021": {
+   "as_of": "2022-12-06",
+   "basis": "earliest of candidate source rulings N329453 (score 0.626)",
+   "tier": "unique"
+  },
+  "atlas_test_00022": {
+   "as_of": "1991-10-08",
+   "basis": "earliest of candidate source rulings 866933 (score 0.854)",
+   "tier": "unique"
   },
   "atlas_test_00023": {
    "as_of": "2008-05-19",
-   "basis": "linked ruling N027243 (score 1.0)"
+   "basis": "earliest of candidate source rulings N027241,N027243 (score 1.3)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00024": {
+   "as_of": "2015-04-06",
+   "basis": "earliest of candidate source rulings N344700,N262359 (score 0.661)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00025": {
-   "as_of": "2023-05-26",
-   "basis": "linked ruling N332595 (score 1.0)"
+   "as_of": "2023-01-12",
+   "basis": "earliest of candidate source rulings N329837,N332591,N332592,N332593,N332595 (score 1.3)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00026": {
+   "as_of": "2002-11-04",
+   "basis": "earliest of candidate source rulings N326764,N338047,I87365 (score 0.64)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00027": {
-   "as_of": "2017-09-26",
-   "basis": "linked ruling N290278 (score 1.0)"
+   "as_of": "2017-08-28",
+   "basis": "earliest of candidate source rulings N289058,N290278 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00028": {
    "as_of": "2003-10-06",
-   "basis": "linked ruling J88343 (score 0.76)"
+   "basis": "earliest of candidate source rulings K89503,J88343,N348500,N015499 (score 1.06)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00029": {
+   "as_of": "2005-03-03",
+   "basis": "earliest of candidate source rulings R01491 (score 0.879)",
+   "tier": "unique"
   },
   "atlas_test_00030": {
    "as_of": "2022-11-16",
-   "basis": "linked ruling N329324 (score 0.898)"
+   "basis": "earliest of candidate source rulings N329324 (score 1.199)",
+   "tier": "unique"
+  },
+  "atlas_test_00031": {
+   "as_of": "2000-02-16",
+   "basis": "earliest of candidate source rulings J89311,J82128,F82589 (score 0.899)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00032": {
+   "as_of": "1995-12-06",
+   "basis": "earliest of candidate source rulings 816949,N315940 (score 0.528)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00033": {
+   "as_of": "2014-03-31",
+   "basis": "earliest of candidate source rulings N251391 (score 0.613)",
+   "tier": "unique"
+  },
+  "atlas_test_00034": {
+   "as_of": "1993-08-20",
+   "basis": "earliest of candidate source rulings 889197 (score 0.757)",
+   "tier": "unique"
+  },
+  "atlas_test_00035": {
+   "as_of": "1999-07-02",
+   "basis": "earliest of candidate source rulings E83534 (score 0.738)",
+   "tier": "unique"
   },
   "atlas_test_00036": {
    "as_of": "2002-02-12",
-   "basis": "linked ruling H87548 (score 1.0)"
+   "basis": "earliest of candidate source rulings H87548 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00037": {
+   "as_of": "2012-09-20",
+   "basis": "earliest of candidate source rulings N350440,N361571,N358520,N359267,N232638 (score 0.79)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00039": {
+   "as_of": "2008-05-06",
+   "basis": "earliest of candidate source rulings N346963,N346964,N346965,N350783,N354669,N336672,N026033,N353710 (score 0.663)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00040": {
+   "as_of": "2008-11-14",
+   "basis": "earliest of candidate source rulings N041570 (score 0.835)",
+   "tier": "unique"
+  },
+  "atlas_test_00041": {
+   "as_of": "2006-09-28",
+   "basis": "earliest of candidate source rulings N361038,M86889,N230148,N297103,N342499,N043643 (score 0.776)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00042": {
+   "as_of": "2002-04-07",
+   "basis": "earliest of candidate source rulings K81018,L85711,H89663,I89303 (score 0.866)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00043": {
+   "as_of": "2019-11-22",
+   "basis": "earliest of candidate source rulings N307336 (score 0.66)",
+   "tier": "unique"
+  },
+  "atlas_test_00044": {
+   "as_of": "2007-08-20",
+   "basis": "earliest of candidate source rulings N014698 (score 0.635)",
+   "tier": "unique"
+  },
+  "atlas_test_00045": {
+   "as_of": "2000-12-27",
+   "basis": "earliest of candidate source rulings M83284,I85985,N013471,G85044,G88524,N332683,I86745,N010850 (score 0.64)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00046": {
+   "as_of": "2001-05-15",
+   "basis": "earliest of candidate source rulings H80603 (score 0.796)",
+   "tier": "unique"
   },
   "atlas_test_00047": {
    "as_of": "1993-09-23",
-   "basis": "linked ruling 888723 (score 1.0)"
+   "basis": "earliest of candidate source rulings 888723 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00048": {
+   "as_of": "2001-03-26",
+   "basis": "earliest of candidate source rulings G88375,N337887 (score 0.699)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00049": {
    "as_of": "2002-07-30",
-   "basis": "linked ruling I83432 (score 0.894)"
+   "basis": "earliest of candidate source rulings 965894,I83432 (score 1.195)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00050": {
    "as_of": "2007-12-11",
-   "basis": "linked ruling N019868 (score 0.621)"
+   "basis": "earliest of candidate source rulings N019868 (score 0.923)",
+   "tier": "unique"
   },
   "atlas_test_00051": {
    "as_of": "2006-12-01",
-   "basis": "linked ruling N003643 (score 0.698)"
+   "basis": "earliest of candidate source rulings N003643 (score 0.997)",
+   "tier": "unique"
   },
   "atlas_test_00052": {
    "as_of": "2000-03-24",
-   "basis": "linked ruling F83529 (score 0.682)"
+   "basis": "earliest of candidate source rulings F83529 (score 0.983)",
+   "tier": "unique"
+  },
+  "atlas_test_00053": {
+   "as_of": "2001-07-17",
+   "basis": "earliest of candidate source rulings H83311 (score 0.65)",
+   "tier": "unique"
   },
   "atlas_test_00054": {
    "as_of": "2024-11-13",
-   "basis": "linked ruling N343294 (score 1.0)"
+   "basis": "earliest of candidate source rulings N343294 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00055": {
    "as_of": "2025-04-24",
-   "basis": "linked ruling N347842 (score 1.0)"
+   "basis": "earliest of candidate source rulings N347842 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00056": {
-   "as_of": "2008-07-14",
-   "basis": "linked ruling N033195 (score 0.689)"
+   "as_of": "2004-11-04",
+   "basis": "earliest of candidate source rulings N033195,M87365,L80434 (score 0.989)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00057": {
+   "as_of": "2014-07-28",
+   "basis": "earliest of candidate source rulings H240546,H281558 (score 0.828)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00058": {
+   "as_of": "2018-10-30",
+   "basis": "earliest of candidate source rulings N300924 (score 0.754)",
+   "tier": "unique"
   },
   "atlas_test_00059": {
-   "as_of": "2004-03-11",
-   "basis": "linked ruling K83625 (score 0.83)"
+   "as_of": "2002-01-03",
+   "basis": "earliest of candidate source rulings K83625,H86240,H87616,I87641,K83997 (score 1.131)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00060": {
    "as_of": "1999-02-23",
-   "basis": "linked ruling C87994 (score 1.0)"
+   "basis": "earliest of candidate source rulings C87994 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00061": {
    "as_of": "2000-03-21",
-   "basis": "linked ruling F83494 (score 0.713)"
+   "basis": "earliest of candidate source rulings F83494,G88558,N004459,H86974,N047268,N019756,J87183,F88917 (score 1.013)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00062": {
-   "as_of": "2004-07-06",
-   "basis": "linked ruling K84096 (score 0.929)"
+   "as_of": "2003-08-11",
+   "basis": "earliest of candidate source rulings K84096,M82595,N084598,K84071,J82578,N328326,N254459,N096117 (score 1.228)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00063": {
+   "as_of": "2005-03-11",
+   "basis": "earliest of candidate source rulings R01545 (score 0.662)",
+   "tier": "unique"
+  },
+  "atlas_test_00064": {
+   "as_of": "2002-07-21",
+   "basis": "earliest of candidate source rulings I84150 (score 0.65)",
+   "tier": "unique"
+  },
+  "atlas_test_00065": {
+   "as_of": "2004-11-24",
+   "basis": "earliest of candidate source rulings L81088,N308917,L80743 (score 0.8)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00066": {
    "as_of": "2002-06-11",
-   "basis": "linked ruling I81920 (score 1.0)"
+   "basis": "earliest of candidate source rulings I81920 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00067": {
+   "as_of": "2002-04-23",
+   "basis": "earliest of candidate source rulings N337115,I80839,N014981,J80890 (score 0.968)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00068": {
+   "as_of": "2000-01-19",
+   "basis": "earliest of candidate source rulings 963725,F81122,H273386,H304957,H82315,J80227,J82988,J86231 (score 1.0)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00069": {
+   "as_of": "2026-04-02",
+   "basis": "earliest of candidate source rulings N359736 (score 1.0)",
+   "tier": "unique"
   },
   "atlas_test_00070": {
-   "as_of": "2010-03-30",
-   "basis": "linked ruling N096605 (score 1.0)"
+   "as_of": "2010-03-14",
+   "basis": "earliest of candidate source rulings N096598,N096605 (score 1.3)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00071": {
+   "as_of": "1995-02-21",
+   "basis": "earliest of candidate source rulings 806984,A82063,A82064,C85573,C87534,C88124,D83022,G84446 (score 0.744)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00072": {
-   "as_of": "2024-07-17",
-   "basis": "linked ruling N341089 (score 0.617)"
+   "as_of": "2014-05-01",
+   "basis": "earliest of candidate source rulings N252076,N341089,N361135,N252074,N252082,N252085 (score 0.917)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00073": {
    "as_of": "2001-01-25",
-   "basis": "linked ruling G86050 (score 0.903)"
+   "basis": "earliest of candidate source rulings G86050,G85916,G88075 (score 1.204)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00074": {
-   "as_of": "2025-04-18",
-   "basis": "linked ruling N347408 (score 1.0)"
+   "as_of": "1995-12-08",
+   "basis": "earliest of candidate source rulings 816587,N347408 (score 1.3)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00075": {
+   "as_of": "2007-07-17",
+   "basis": "earliest of candidate source rulings N013444 (score 0.73)",
+   "tier": "unique"
   },
   "atlas_test_00076": {
-   "as_of": "1995-03-10",
-   "basis": "linked ruling 955334 (score 1.0)"
+   "as_of": "1992-08-11",
+   "basis": "earliest of candidate source rulings 951239,955334 (score 1.3)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00077": {
+   "as_of": "2005-10-25",
+   "basis": "earliest of candidate source rulings N296484,N252023,L88358,N346678 (score 0.632)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00078": {
+   "as_of": "1997-08-18",
+   "basis": "earliest of candidate source rulings K80332,L81073,N047200,B87923,F85809,K89351,N309957,H195875 (score 0.555)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00079": {
+   "as_of": "2014-02-03",
+   "basis": "earliest of candidate source rulings N316752,N249760,N354570 (score 0.667)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00080": {
    "as_of": "2000-12-05",
-   "basis": "linked ruling G84446 (score 0.952)"
+   "basis": "earliest of candidate source rulings G84446 (score 1.254)",
+   "tier": "unique"
   },
   "atlas_test_00081": {
    "as_of": "2004-09-01",
-   "basis": "linked ruling K88211 (score 1.0)"
+   "basis": "earliest of candidate source rulings K88211 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00082": {
+   "as_of": "2006-04-06",
+   "basis": "earliest of candidate source rulings R03599,N014352,N276908,N338985 (score 0.547)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00083": {
-   "as_of": "2023-09-18",
-   "basis": "linked ruling N335129 (score 0.607)"
+   "as_of": "2000-11-22",
+   "basis": "earliest of candidate source rulings 962659,N335129,N189761 (score 0.932)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00084": {
+   "as_of": "2004-06-23",
+   "basis": "earliest of candidate source rulings R00452 (score 0.763)",
+   "tier": "unique"
+  },
+  "atlas_test_00085": {
+   "as_of": "2002-04-14",
+   "basis": "earliest of candidate source rulings 562881,H274096,H89952,I85144,N329503,N333773,N344236,N358675 (score 0.63)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00086": {
    "as_of": "1990-05-17",
-   "basis": "linked ruling 084610 (score 1.0)"
+   "basis": "earliest of candidate source rulings 084610 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00088": {
+   "as_of": "2018-08-30",
+   "basis": "earliest of candidate source rulings N299589 (score 0.537)",
+   "tier": "unique"
   },
   "atlas_test_00089": {
    "as_of": "2002-03-26",
-   "basis": "linked ruling H89122 (score 1.0)"
+   "basis": "earliest of candidate source rulings H89122 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00090": {
+   "as_of": "2003-03-24",
+   "basis": "earliest of candidate source rulings N261252,J81441 (score 0.642)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00091": {
+   "as_of": "2002-07-30",
+   "basis": "earliest of candidate source rulings H251432,965414 (score 0.573)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00092": {
    "as_of": "2002-05-02",
-   "basis": "linked ruling I80630 (score 0.897)"
+   "basis": "earliest of candidate source rulings I80630 (score 1.197)",
+   "tier": "unique"
+  },
+  "atlas_test_00093": {
+   "as_of": "2007-03-01",
+   "basis": "earliest of candidate source rulings N006160 (score 0.755)",
+   "tier": "unique"
+  },
+  "atlas_test_00094": {
+   "as_of": "1999-06-04",
+   "basis": "earliest of candidate source rulings E81379 (score 0.645)",
+   "tier": "unique"
   },
   "atlas_test_00095": {
-   "as_of": "2003-05-05",
-   "basis": "linked ruling J83401 (score 0.726)"
+   "as_of": "2000-10-18",
+   "basis": "earliest of candidate source rulings J83401,G85962,N005117,I80267,G87373,K89906,N005110,G82123 (score 1.028)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00096": {
+   "as_of": "1991-07-09",
+   "basis": "earliest of candidate source rulings 864313 (score 0.589)",
+   "tier": "unique"
+  },
+  "atlas_test_00097": {
+   "as_of": "2014-07-21",
+   "basis": "earliest of candidate source rulings N347290,H305588,N254852 (score 0.648)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00098": {
-   "as_of": "2025-04-23",
-   "basis": "linked ruling N347799 (score 0.631)"
+   "as_of": "2001-02-28",
+   "basis": "earliest of candidate source rulings F88730,N014413,N347799,H80461,H86471,M80744,N190940,K85422 (score 0.933)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00099": {
+   "as_of": "2007-07-22",
+   "basis": "earliest of candidate source rulings N013443 (score 0.505)",
+   "tier": "unique"
   },
   "atlas_test_00102": {
-   "as_of": "2010-08-19",
-   "basis": "linked ruling N118644 (score 1.0)"
+   "as_of": "2010-06-24",
+   "basis": "earliest of candidate source rulings N118644,N109495 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00103": {
-   "as_of": "2002-05-15",
-   "basis": "linked ruling I80580 (score 0.877)"
+   "as_of": "2000-10-16",
+   "basis": "earliest of candidate source rulings I80580,I88687,M82829,G82141,K89905,H80775,G82140,N013093 (score 1.178)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00104": {
    "as_of": "2014-08-01",
-   "basis": "linked ruling N255354 (score 0.728)"
+   "basis": "earliest of candidate source rulings N255354 (score 1.03)",
+   "tier": "unique"
   },
   "atlas_test_00105": {
    "as_of": "1998-03-26",
-   "basis": "linked ruling C85572 (score 1.0)"
+   "basis": "earliest of candidate source rulings C85572 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00107": {
-   "as_of": "2002-08-18",
-   "basis": "linked ruling I84710 (score 0.751)"
+   "as_of": "2000-04-17",
+   "basis": "earliest of candidate source rulings F85027,I84710,N359366,F88287,G85932,N326658,N335097 (score 1.05)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00108": {
-   "as_of": "2007-03-20",
-   "basis": "linked ruling N007303 (score 1.0)"
+   "as_of": "2005-11-02",
+   "basis": "earliest of candidate source rulings N007303,L88053 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00109": {
    "as_of": "1990-05-01",
-   "basis": "linked ruling 086883 (score 0.678)"
+   "basis": "earliest of candidate source rulings 086883 (score 0.981)",
+   "tier": "unique"
   },
   "atlas_test_00110": {
-   "as_of": "2014-04-18",
-   "basis": "linked ruling N251823 (score 0.793)"
+   "as_of": "2000-02-11",
+   "basis": "earliest of candidate source rulings N251823,N034818,F81558,I85872,J82033,J85531,J88920,M83553 (score 1.095)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00111": {
    "as_of": "1991-07-29",
-   "basis": "linked ruling 864992 (score 0.771)"
+   "basis": "earliest of candidate source rulings 864957,864960,864992,H260250 (score 1.069)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00113": {
    "as_of": "2004-12-14",
-   "basis": "linked ruling 966632 (score 0.637)"
+   "basis": "earliest of candidate source rulings 966632 (score 0.94)",
+   "tier": "unique"
+  },
+  "atlas_test_00114": {
+   "as_of": "2004-09-15",
+   "basis": "earliest of candidate source rulings N359472,R00795 (score 0.619)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00115": {
+   "as_of": "1999-10-08",
+   "basis": "earliest of candidate source rulings E87167,G81584,N356357,N336987 (score 0.568)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00116": {
+   "as_of": "1999-03-04",
+   "basis": "earliest of candidate source rulings D87639 (score 0.611)",
+   "tier": "unique"
   },
   "atlas_test_00117": {
    "as_of": "2022-01-28",
-   "basis": "linked ruling N323764 (score 0.911)"
+   "basis": "earliest of candidate source rulings N323764 (score 1.213)",
+   "tier": "unique"
+  },
+  "atlas_test_00118": {
+   "as_of": "2006-10-25",
+   "basis": "earliest of candidate source rulings M86963,N287133 (score 0.854)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00119": {
+   "as_of": "2000-03-31",
+   "basis": "earliest of candidate source rulings F83955 (score 0.898)",
+   "tier": "unique"
+  },
+  "atlas_test_00120": {
+   "as_of": "2000-03-31",
+   "basis": "earliest of candidate source rulings I81509,G81748,G83641,G80929,K89852,963616,963581,H86983 (score 0.828)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00121": {
    "as_of": "2015-07-16",
-   "basis": "linked ruling N265787 (score 0.643)"
+   "basis": "earliest of candidate source rulings N265787 (score 0.947)",
+   "tier": "unique"
+  },
+  "atlas_test_00122": {
+   "as_of": "2002-03-24",
+   "basis": "earliest of candidate source rulings L82502,L86987,N068619,H89094,L80103,N264969,N289284,N331868 (score 0.772)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00123": {
-   "as_of": "2006-08-23",
-   "basis": "linked ruling R04660 (score 0.666)"
+   "as_of": "2002-07-16",
+   "basis": "earliest of candidate source rulings R04660,I83932,N317503,N338031 (score 0.962)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00124": {
    "as_of": "2009-03-02",
-   "basis": "linked ruling N051748 (score 1.0)"
+   "basis": "earliest of candidate source rulings N051748 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00125": {
    "as_of": "2006-08-14",
-   "basis": "linked ruling M85637 (score 1.0)"
+   "basis": "earliest of candidate source rulings M85525,M85635,M85636,M85637 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00126": {
    "as_of": "2004-03-15",
-   "basis": "linked ruling K83097 (score 1.0)"
+   "basis": "earliest of candidate source rulings K83097 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00127": {
    "as_of": "2005-11-15",
-   "basis": "linked ruling L88472 (score 1.0)"
+   "basis": "earliest of candidate source rulings L88472 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00128": {
    "as_of": "2022-09-21",
-   "basis": "linked ruling N328038 (score 1.0)"
+   "basis": "earliest of candidate source rulings N328038 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00130": {
    "as_of": "2004-05-10",
-   "basis": "linked ruling K85180 (score 1.0)"
+   "basis": "earliest of candidate source rulings K85180,N355146 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00131": {
-   "as_of": "1993-03-26",
-   "basis": "linked ruling 883685 (score 0.899)"
+   "as_of": "1992-07-10",
+   "basis": "earliest of candidate source rulings 876120,883685 (score 1.199)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00132": {
+   "as_of": "2000-02-08",
+   "basis": "earliest of candidate source rulings F81928 (score 0.82)",
+   "tier": "unique"
   },
   "atlas_test_00133": {
-   "as_of": "1995-12-14",
-   "basis": "linked ruling 817332 (score 1.0)"
+   "as_of": "1995-03-23",
+   "basis": "earliest of candidate source rulings 808279,817332 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00134": {
    "as_of": "2002-02-13",
-   "basis": "linked ruling H86452 (score 1.0)"
+   "basis": "earliest of candidate source rulings H86452 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00135": {
+   "as_of": "2003-08-13",
+   "basis": "earliest of candidate source rulings N348579,N266374,J87560,K85873,L83211,N061900 (score 0.905)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00136": {
+   "as_of": "2024-08-15",
+   "basis": "earliest of candidate source rulings N341638 (score 0.655)",
+   "tier": "unique"
+  },
+  "atlas_test_00137": {
+   "as_of": "2021-10-18",
+   "basis": "earliest of candidate source rulings H312118 (score 0.707)",
+   "tier": "unique"
   },
   "atlas_test_00138": {
    "as_of": "2002-03-12",
-   "basis": "linked ruling H88105 (score 0.786)"
+   "basis": "earliest of candidate source rulings H88105 (score 1.088)",
+   "tier": "unique"
+  },
+  "atlas_test_00140": {
+   "as_of": "1993-08-09",
+   "basis": "earliest of candidate source rulings 888351,C87837,N018427,I87416,N324999 (score 0.815)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00141": {
-   "as_of": "2009-07-14",
-   "basis": "linked ruling N065976 (score 1.0)"
+   "as_of": "2000-06-26",
+   "basis": "earliest of candidate source rulings F87255,K84773,K85127,K86499,K87408,L81550,N065976,G87897 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00142": {
    "as_of": "2001-02-13",
-   "basis": "linked ruling G86712 (score 0.942)"
+   "basis": "earliest of candidate source rulings G86712 (score 1.243)",
+   "tier": "unique"
   },
   "atlas_test_00144": {
    "as_of": "2018-05-02",
-   "basis": "linked ruling N295916 (score 1.0)"
+   "basis": "earliest of candidate source rulings N295916 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00145": {
-   "as_of": "2017-01-05",
-   "basis": "linked ruling N281599 (score 0.621)"
+   "as_of": "2007-05-16",
+   "basis": "earliest of candidate source rulings N010330,N281599,N047756,N342167,N296484 (score 0.92)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00148": {
+   "as_of": "2026-02-12",
+   "basis": "earliest of candidate source rulings N357918 (score 0.864)",
+   "tier": "unique"
   },
   "atlas_test_00149": {
    "as_of": "2003-09-01",
-   "basis": "linked ruling J88216 (score 1.0)"
+   "basis": "earliest of candidate source rulings J88216 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00150": {
    "as_of": "1998-04-22",
-   "basis": "linked ruling C86022 (score 0.71)"
+   "basis": "earliest of candidate source rulings C86022 (score 1.01)",
+   "tier": "unique"
+  },
+  "atlas_test_00151": {
+   "as_of": "2025-05-22",
+   "basis": "earliest of candidate source rulings N348526 (score 1.0)",
+   "tier": "unique"
+  },
+  "atlas_test_00153": {
+   "as_of": "1991-12-11",
+   "basis": "earliest of candidate source rulings 869777,875590,N259536 (score 0.711)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00154": {
+   "as_of": "2007-01-22",
+   "basis": "earliest of candidate source rulings N267335,N005020 (score 0.767)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00155": {
-   "as_of": "2006-11-14",
-   "basis": "linked ruling M87234 (score 0.762)"
+   "as_of": "2006-03-29",
+   "basis": "earliest of candidate source rulings M87234,M81657,M81967,M82100,M83865,M83941,M85137,M85528 (score 1.063)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00156": {
+   "as_of": "2006-04-26",
+   "basis": "earliest of candidate source rulings H257715,H335007,116625,N333600,N333758,N362361 (score 0.751)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00157": {
    "as_of": "2017-05-15",
-   "basis": "linked ruling H280956 (score 1.0)"
+   "basis": "earliest of candidate source rulings H280956 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00158": {
    "as_of": "1996-03-27",
-   "basis": "linked ruling A81571 (score 0.819)"
+   "basis": "earliest of candidate source rulings A81571 (score 1.12)",
+   "tier": "unique"
   },
   "atlas_test_00159": {
-   "as_of": "2002-12-29",
-   "basis": "linked ruling I89291 (score 0.603)"
+   "as_of": "2002-06-11",
+   "basis": "earliest of candidate source rulings I89291,I81858,J89828 (score 0.904)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00160": {
    "as_of": "1996-04-16",
-   "basis": "linked ruling A81921 (score 1.0)"
+   "basis": "earliest of candidate source rulings A81921 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00161": {
    "as_of": "2022-04-26",
-   "basis": "linked ruling N325229 (score 1.0)"
+   "basis": "earliest of candidate source rulings N325229 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00162": {
    "as_of": "2001-05-15",
-   "basis": "linked ruling H80591 (score 0.707)"
+   "basis": "earliest of candidate source rulings H80591 (score 1.011)",
+   "tier": "unique"
+  },
+  "atlas_test_00163": {
+   "as_of": "2009-12-11",
+   "basis": "earliest of candidate source rulings N085238 (score 0.517)",
+   "tier": "unique"
   },
   "atlas_test_00164": {
-   "as_of": "2017-07-14",
-   "basis": "linked ruling N287986 (score 0.774)"
+   "as_of": "2009-07-05",
+   "basis": "earliest of candidate source rulings N287986,N251213,N251867,N064160 (score 1.075)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00165": {
    "as_of": "2017-09-21",
-   "basis": "linked ruling N290182 (score 0.647)"
+   "basis": "earliest of candidate source rulings N290182,N293416,N343403 (score 0.946)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00166": {
+   "as_of": "2018-03-21",
+   "basis": "earliest of candidate source rulings N346878,N286927 (score 0.881)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00167": {
+   "as_of": "2007-01-12",
+   "basis": "earliest of candidate source rulings N360714,N004377 (score 0.62)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00168": {
+   "as_of": "2006-10-24",
+   "basis": "earliest of candidate source rulings N288625,M87250 (score 0.725)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00169": {
    "as_of": "2010-02-01",
-   "basis": "linked ruling N091357 (score 0.763)"
+   "basis": "earliest of candidate source rulings N091357 (score 1.062)",
+   "tier": "unique"
+  },
+  "atlas_test_00170": {
+   "as_of": "2004-03-17",
+   "basis": "earliest of candidate source rulings K83226,K85967 (score 0.587)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00171": {
-   "as_of": "2004-11-24",
-   "basis": "linked ruling L80759 (score 1.0)"
+   "as_of": "2000-10-30",
+   "basis": "earliest of candidate source rulings G88129,I89841,I89940,I89941,J81298,L80759,960567,G82772 (score 1.3)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00172": {
+   "as_of": "2019-03-22",
+   "basis": "earliest of candidate source rulings N303292 (score 0.552)",
+   "tier": "unique"
   },
   "atlas_test_00173": {
    "as_of": "2020-10-09",
-   "basis": "linked ruling N314689 (score 1.0)"
+   "basis": "earliest of candidate source rulings N314689 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00174": {
    "as_of": "2024-01-18",
-   "basis": "linked ruling N337216 (score 1.0)"
+   "basis": "earliest of candidate source rulings N337216 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00175": {
    "as_of": "2014-10-22",
-   "basis": "linked ruling N257782 (score 0.734)"
+   "basis": "earliest of candidate source rulings N257782,N285109 (score 1.033)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00176": {
-   "as_of": "2004-10-26",
-   "basis": "linked ruling L80236 (score 1.0)"
+   "as_of": "2004-09-14",
+   "basis": "earliest of candidate source rulings L80235,L80236,K89026 (score 1.3)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00177": {
+   "as_of": "1993-10-08",
+   "basis": "earliest of candidate source rulings 889984 (score 0.578)",
+   "tier": "unique"
   },
   "atlas_test_00178": {
-   "as_of": "2006-07-26",
-   "basis": "linked ruling R04440 (score 1.0)"
+   "as_of": "2006-01-20",
+   "basis": "earliest of candidate source rulings R04440,L89889 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00179": {
    "as_of": "2007-06-05",
-   "basis": "linked ruling N011225 (score 1.0)"
+   "basis": "earliest of candidate source rulings N011225 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00180": {
+   "as_of": "2015-12-23",
+   "basis": "earliest of candidate source rulings H243821 (score 0.698)",
+   "tier": "unique"
+  },
+  "atlas_test_00181": {
+   "as_of": "2004-07-25",
+   "basis": "earliest of candidate source rulings R04518,N251391,K87773 (score 0.672)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00182": {
+   "as_of": "2000-02-23",
+   "basis": "earliest of candidate source rulings F85692,I89927,K86019,N253765,F88018,K81416,F81885,I89357 (score 0.79)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00183": {
+   "as_of": "1996-08-12",
+   "basis": "earliest of candidate source rulings A85805,963309 (score 0.886)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00184": {
-   "as_of": "2006-11-14",
-   "basis": "linked ruling M87234 (score 1.0)"
+   "as_of": "2006-03-24",
+   "basis": "earliest of candidate source rulings M85137,M85528,M87234,M80620,N006992,N012027,M85589,M87722 (score 1.3)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00185": {
    "as_of": "2020-07-22",
-   "basis": "linked ruling N312964 (score 1.0)"
+   "basis": "earliest of candidate source rulings N312964 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00186": {
+   "as_of": "2023-08-17",
+   "basis": "earliest of candidate source rulings N336811,N334310 (score 0.6)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00187": {
    "as_of": "1995-03-07",
-   "basis": "linked ruling 806952 (score 1.0)"
+   "basis": "earliest of candidate source rulings 806952 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00188": {
+   "as_of": "2021-04-30",
+   "basis": "earliest of candidate source rulings H310618 (score 1.0)",
+   "tier": "unique"
+  },
+  "atlas_test_00189": {
+   "as_of": "1997-05-12",
+   "basis": "earliest of candidate source rulings B84860,N015842 (score 0.518)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00190": {
    "as_of": "2025-05-16",
-   "basis": "linked ruling N348706 (score 1.0)"
+   "basis": "earliest of candidate source rulings N348706 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00191": {
-   "as_of": "2011-05-12",
-   "basis": "linked ruling N161156 (score 0.709)"
+   "as_of": "2000-04-14",
+   "basis": "earliest of candidate source rulings N161156,N361819,K81660,N340269,N248882,F84714,I80875,K85360 (score 1.009)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00192": {
    "as_of": "2014-07-15",
-   "basis": "linked ruling N252644 (score 1.0)"
+   "basis": "earliest of candidate source rulings N252644 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00193": {
    "as_of": "2001-12-17",
-   "basis": "linked ruling H85728 (score 1.0)"
+   "basis": "earliest of candidate source rulings H85728 (score 1.3)",
+   "tier": "unique"
   },
   "atlas_test_00194": {
-   "as_of": "2016-01-15",
-   "basis": "linked ruling N266374 (score 0.728)"
+   "as_of": "2011-06-02",
+   "basis": "earliest of candidate source rulings N266374,N153595,N236517,N338303 (score 1.029)",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00195": {
+   "as_of": "2007-12-07",
+   "basis": "earliest of candidate source rulings N019972 (score 0.786)",
+   "tier": "unique"
   },
   "atlas_test_00196": {
-   "as_of": "2023-08-09",
-   "basis": "linked ruling N334395 (score 0.736)"
+   "as_of": "2000-08-07",
+   "basis": "earliest of candidate source rulings G80099,N334395,N253256,N006374,N026184,N238279,N287730,N341828 (score 1.061)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00197": {
    "as_of": "2001-01-25",
-   "basis": "linked ruling G86133 (score 1.0)"
+   "basis": "earliest of candidate source rulings G86133 (score 1.3)",
+   "tier": "unique"
+  },
+  "atlas_test_00198": {
+   "as_of": "2022-04-26",
+   "basis": "earliest of candidate source rulings N325180,N326460,H317391,N338228 (score 0.779)",
+   "tier": "earliest_of_candidates"
   },
   "atlas_test_00199": {
    "as_of": "1995-07-11",
-   "basis": "linked ruling 811563 (score 1.0)"
-  },
-  "atlas_validation_00000": {
-   "as_of": "2000-04-25",
-   "basis": "linked ruling F85371 (score 0.638)"
-  },
-  "atlas_validation_00003": {
-   "as_of": "2017-04-11",
-   "basis": "linked ruling N285109 (score 0.906)"
-  },
-  "atlas_validation_00005": {
-   "as_of": "2000-09-06",
-   "basis": "linked ruling G80663 (score 0.753)"
-  },
-  "atlas_validation_00007": {
-   "as_of": "2008-08-26",
-   "basis": "linked ruling N034518 (score 0.829)"
-  },
-  "atlas_validation_00020": {
-   "as_of": "2001-08-20",
-   "basis": "linked ruling H84347 (score 0.76)"
-  },
-  "atlas_validation_00030": {
-   "as_of": "2008-08-13",
-   "basis": "linked ruling N033479 (score 0.667)"
-  },
-  "atlas_validation_00032": {
-   "as_of": "2025-06-24",
-   "basis": "linked ruling N349423 (score 0.647)"
-  },
-  "atlas_validation_00033": {
-   "as_of": "2008-08-13",
-   "basis": "linked ruling N033479 (score 0.667)"
-  },
-  "atlas_validation_00037": {
-   "as_of": "2010-11-01",
-   "basis": "linked ruling N127208 (score 0.807)"
-  },
-  "atlas_validation_00044": {
-   "as_of": "2002-11-26",
-   "basis": "linked ruling I87641 (score 0.899)"
-  },
-  "atlas_validation_00047": {
-   "as_of": "1993-12-15",
-   "basis": "linked ruling 892921 (score 0.607)"
-  },
-  "atlas_validation_00049": {
-   "as_of": "2007-11-05",
-   "basis": "linked ruling N018427 (score 0.789)"
-  },
-  "atlas_validation_00051": {
-   "as_of": "2008-11-21",
-   "basis": "linked ruling N043898 (score 1.0)"
-  },
-  "atlas_validation_00054": {
-   "as_of": "2025-06-24",
-   "basis": "linked ruling N349423 (score 1.0)"
-  },
-  "atlas_validation_00057": {
-   "as_of": "2004-05-13",
-   "basis": "linked ruling K85127 (score 1.0)"
-  },
-  "atlas_validation_00059": {
-   "as_of": "2004-08-06",
-   "basis": "linked ruling 967016 (score 1.0)"
-  },
-  "atlas_validation_00063": {
-   "as_of": "2012-04-23",
-   "basis": "linked ruling N213175 (score 0.623)"
-  },
-  "atlas_validation_00064": {
-   "as_of": "2006-11-02",
-   "basis": "linked ruling M87008 (score 0.911)"
-  },
-  "atlas_validation_00065": {
-   "as_of": "2007-06-26",
-   "basis": "linked ruling N012194 (score 0.946)"
-  },
-  "atlas_validation_00070": {
-   "as_of": "1993-08-23",
-   "basis": "linked ruling 888942 (score 0.661)"
-  },
-  "atlas_validation_00074": {
-   "as_of": "2024-09-20",
-   "basis": "linked ruling N342332 (score 1.0)"
-  },
-  "atlas_validation_00088": {
-   "as_of": "2000-03-14",
-   "basis": "linked ruling F82995 (score 0.784)"
-  },
-  "atlas_validation_00091": {
-   "as_of": "2023-05-03",
-   "basis": "linked ruling N332271 (score 1.0)"
-  },
-  "atlas_validation_00092": {
-   "as_of": "2001-03-28",
-   "basis": "linked ruling G89322 (score 1.0)"
-  },
-  "atlas_validation_00093": {
-   "as_of": "2003-02-27",
-   "basis": "linked ruling J81103 (score 1.0)"
-  },
-  "atlas_validation_00094": {
-   "as_of": "2026-07-28",
-   "basis": "linked ruling N362773 (score 0.911)"
-  },
-  "atlas_validation_00097": {
-   "as_of": "2000-12-08",
-   "basis": "linked ruling G82530 (score 1.0)"
-  },
-  "atlas_validation_00102": {
-   "as_of": "2024-06-06",
-   "basis": "linked ruling N340123 (score 0.689)"
-  },
-  "atlas_validation_00109": {
-   "as_of": "2000-06-16",
-   "basis": "linked ruling F88573 (score 0.805)"
-  },
-  "atlas_validation_00113": {
-   "as_of": "1998-12-04",
-   "basis": "linked ruling 004449 (score 1.0)"
-  },
-  "atlas_validation_00115": {
-   "as_of": "2002-02-21",
-   "basis": "linked ruling H87616 (score 0.653)"
-  },
-  "atlas_validation_00117": {
-   "as_of": "2024-01-25",
-   "basis": "linked ruling N337615 (score 1.0)"
-  },
-  "atlas_validation_00119": {
-   "as_of": "2007-01-05",
-   "basis": "linked ruling N004205 (score 1.0)"
-  },
-  "atlas_validation_00121": {
-   "as_of": "2015-09-10",
-   "basis": "linked ruling N267697 (score 1.0)"
-  },
-  "atlas_validation_00124": {
-   "as_of": "2018-05-15",
-   "basis": "linked ruling N296384 (score 0.837)"
-  },
-  "atlas_validation_00125": {
-   "as_of": "2022-06-23",
-   "basis": "linked ruling N326460 (score 0.723)"
-  },
-  "atlas_validation_00132": {
-   "as_of": "2006-05-11",
-   "basis": "linked ruling M82879 (score 0.611)"
-  },
-  "atlas_validation_00137": {
-   "as_of": "1995-05-26",
-   "basis": "linked ruling 810507 (score 0.728)"
-  },
-  "atlas_validation_00144": {
-   "as_of": "2000-04-17",
-   "basis": "linked ruling F85027 (score 0.934)"
-  },
-  "atlas_validation_00148": {
-   "as_of": "1996-11-25",
-   "basis": "linked ruling A89471 (score 0.884)"
-  },
-  "atlas_validation_00152": {
-   "as_of": "2018-11-19",
-   "basis": "linked ruling N301832 (score 1.0)"
-  },
-  "atlas_validation_00164": {
-   "as_of": "2020-01-28",
-   "basis": "linked ruling N308934 (score 1.0)"
-  },
-  "atlas_validation_00167": {
-   "as_of": "2023-01-27",
-   "basis": "linked ruling N330117 (score 0.922)"
-  },
-  "atlas_validation_00170": {
-   "as_of": "2000-12-07",
-   "basis": "linked ruling G84884 (score 1.0)"
-  },
-  "atlas_validation_00175": {
-   "as_of": "2004-06-13",
-   "basis": "linked ruling K86470 (score 1.0)"
-  },
-  "atlas_validation_00179": {
-   "as_of": "2003-04-08",
-   "basis": "linked ruling J81756 (score 1.0)"
-  },
-  "atlas_validation_00182": {
-   "as_of": "2000-04-25",
-   "basis": "linked ruling F85371 (score 0.92)"
-  },
-  "atlas_validation_00191": {
-   "as_of": "2021-02-09",
-   "basis": "linked ruling N316914 (score 0.824)"
-  },
-  "atlas_validation_00193": {
-   "as_of": "2004-10-17",
-   "basis": "linked ruling K89635 (score 0.855)"
-  },
-  "atlas_validation_00195": {
-   "as_of": "2008-07-24",
-   "basis": "linked ruling N032910 (score 0.605)"
-  },
-  "atlas_validation_00196": {
-   "as_of": "2014-05-19",
-   "basis": "linked ruling N252342 (score 1.0)"
-  },
-  "atlas_validation_00197": {
-   "as_of": "1999-07-08",
-   "basis": "linked ruling E83637 (score 1.0)"
+   "basis": "earliest of candidate source rulings 811563 (score 1.3)",
+   "tier": "unique"
   },
   "fresh_N355231": {
    "as_of": "2026-07-15",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355233": {
    "as_of": "2026-07-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355239": {
    "as_of": "2026-07-16",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355576": {
    "as_of": "2026-07-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355647": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355895": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355896": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355898": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N355899": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N356981": {
    "as_of": "2026-07-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N356982": {
    "as_of": "2026-07-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N357024": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N357245": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N357263": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N358093": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N358620": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N358837": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N359193": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N359194": {
    "as_of": "2026-08-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N359282": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N359992": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N360370": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N361278": {
    "as_of": "2026-08-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N361298": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N361396": {
    "as_of": "2026-07-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362119": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362166": {
    "as_of": "2026-07-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362167": {
    "as_of": "2026-07-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362170": {
    "as_of": "2026-07-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362193": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362197": {
    "as_of": "2026-07-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362222": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362225": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362226": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362258": {
    "as_of": "2026-07-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362265": {
    "as_of": "2026-07-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362267": {
    "as_of": "2026-07-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362269": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362270": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362278": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362304": {
    "as_of": "2026-07-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362334": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362344": {
    "as_of": "2026-07-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362359": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362362": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362365": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362369": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362388": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362389": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362414": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362417": {
    "as_of": "2026-07-16",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362421": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362423": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362426": {
    "as_of": "2026-07-15",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362427": {
    "as_of": "2026-07-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362435": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362451": {
    "as_of": "2026-07-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362453": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362456": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362469": {
    "as_of": "2026-07-16",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362493": {
    "as_of": "2026-07-16",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362504": {
    "as_of": "2026-07-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362508": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362516": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362518": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362523": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362524": {
    "as_of": "2026-07-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362525": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362531": {
    "as_of": "2026-07-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362589": {
    "as_of": "2026-07-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362600": {
    "as_of": "2026-07-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362602": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362612": {
    "as_of": "2026-07-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362665": {
    "as_of": "2026-07-15",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362680": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362694": {
    "as_of": "2026-07-16",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362695": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362701": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362726": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362750": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362754": {
    "as_of": "2026-07-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362757": {
    "as_of": "2026-07-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362770": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362772": {
    "as_of": "2026-07-22",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362773": {
    "as_of": "2026-07-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362780": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362785": {
    "as_of": "2026-07-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362786": {
    "as_of": "2026-07-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362807": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362809": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362816": {
    "as_of": "2026-07-15",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362823": {
    "as_of": "2026-07-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362825": {
    "as_of": "2026-07-15",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362830": {
    "as_of": "2026-07-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362836": {
    "as_of": "2026-07-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362842": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362844": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362847": {
    "as_of": "2026-07-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362854": {
    "as_of": "2026-08-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362874": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362902": {
    "as_of": "2026-07-22",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362904": {
    "as_of": "2026-07-15",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362905": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362909": {
    "as_of": "2026-07-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362910": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362917": {
    "as_of": "2026-07-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362921": {
    "as_of": "2026-07-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362924": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362934": {
    "as_of": "2026-07-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362939": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362969": {
    "as_of": "2026-07-16",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362974": {
    "as_of": "2026-07-22",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362992": {
    "as_of": "2026-07-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362995": {
    "as_of": "2026-07-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N362998": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363001": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363004": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363025": {
    "as_of": "2026-07-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363046": {
    "as_of": "2026-07-16",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363073": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363127": {
    "as_of": "2026-07-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363173": {
    "as_of": "2026-07-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363205": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363251": {
    "as_of": "2026-07-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363253": {
    "as_of": "2026-07-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363254": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363274": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363283": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363287": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363288": {
    "as_of": "2026-08-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363296": {
    "as_of": "2026-08-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363313": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363316": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363339": {
    "as_of": "2026-07-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363354": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363356": {
    "as_of": "2026-07-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363359": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363362": {
    "as_of": "2026-07-30",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363381": {
    "as_of": "2026-08-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363384": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363385": {
    "as_of": "2026-07-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363389": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363399": {
    "as_of": "2026-07-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363416": {
    "as_of": "2026-08-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363422": {
    "as_of": "2026-07-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363423": {
    "as_of": "2026-07-30",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363425": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363447": {
    "as_of": "2026-08-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363455": {
    "as_of": "2026-07-29",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363462": {
    "as_of": "2026-07-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363464": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363468": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363470": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363472": {
    "as_of": "2026-08-14",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363486": {
    "as_of": "2026-08-05",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363487": {
    "as_of": "2026-08-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363492": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363495": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363511": {
    "as_of": "2026-08-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363514": {
    "as_of": "2026-08-05",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363520": {
    "as_of": "2026-08-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363522": {
    "as_of": "2026-08-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363531": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363534": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363538": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363542": {
    "as_of": "2026-08-18",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363545": {
    "as_of": "2026-08-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363548": {
    "as_of": "2026-08-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363550": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363551": {
    "as_of": "2026-08-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363561": {
    "as_of": "2026-08-12",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363562": {
    "as_of": "2026-08-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363570": {
    "as_of": "2026-08-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363571": {
    "as_of": "2026-08-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363572": {
    "as_of": "2026-08-18",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363573": {
    "as_of": "2026-08-18",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363574": {
    "as_of": "2026-08-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363583": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363599": {
    "as_of": "2026-08-19",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363600": {
    "as_of": "2026-08-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363601": {
    "as_of": "2026-08-12",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363602": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363611": {
    "as_of": "2026-08-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363645": {
    "as_of": "2026-08-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363652": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363689": {
    "as_of": "2026-08-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363695": {
    "as_of": "2026-08-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363701": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363777": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363781": {
    "as_of": "2026-08-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363784": {
    "as_of": "2026-08-05",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363787": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363799": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363801": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363802": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363803": {
    "as_of": "2026-08-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363804": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363812": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363819": {
    "as_of": "2026-08-18",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363820": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363841": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363844": {
    "as_of": "2026-08-19",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363845": {
    "as_of": "2026-08-05",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363847": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363849": {
    "as_of": "2026-08-18",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363860": {
    "as_of": "2026-08-25",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363869": {
    "as_of": "2026-08-24",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363873": {
    "as_of": "2026-08-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363876": {
    "as_of": "2026-08-27",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363878": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363879": {
    "as_of": "2026-08-12",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363892": {
    "as_of": "2026-08-07",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363902": {
    "as_of": "2026-08-18",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363905": {
    "as_of": "2026-08-25",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363912": {
    "as_of": "2026-08-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363918": {
    "as_of": "2026-08-25",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363922": {
    "as_of": "2026-08-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363923": {
    "as_of": "2026-08-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363924": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363927": {
    "as_of": "2026-08-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363928": {
    "as_of": "2026-08-27",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363947": {
    "as_of": "2026-08-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363949": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363956": {
    "as_of": "2026-08-06",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363957": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363968": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363975": {
    "as_of": "2026-08-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363991": {
    "as_of": "2026-08-19",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N363992": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364000": {
    "as_of": "2026-08-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364037": {
    "as_of": "2026-08-17",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364038": {
    "as_of": "2026-08-13",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364053": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364065": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364069": {
    "as_of": "2026-08-24",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364070": {
    "as_of": "2026-08-24",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364071": {
    "as_of": "2026-08-25",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364094": {
    "as_of": "2026-08-25",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364095": {
    "as_of": "2026-08-27",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364096": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364098": {
    "as_of": "2026-08-18",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364099": {
    "as_of": "2026-08-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364114": {
    "as_of": "2026-08-27",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364119": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364143": {
    "as_of": "2026-08-26",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364145": {
    "as_of": "2026-08-24",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364148": {
    "as_of": "2026-08-20",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364169": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364179": {
    "as_of": "2026-08-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364190": {
    "as_of": "2026-09-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364213": {
    "as_of": "2026-09-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364220": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364221": {
    "as_of": "2026-09-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364225": {
    "as_of": "2026-08-24",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364245": {
    "as_of": "2026-09-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364247": {
    "as_of": "2026-08-19",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364249": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364257": {
    "as_of": "2026-08-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364258": {
    "as_of": "2026-08-25",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364261": {
    "as_of": "2026-08-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364265": {
    "as_of": "2026-09-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364267": {
    "as_of": "2026-09-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364270": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364281": {
    "as_of": "2026-09-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364295": {
    "as_of": "2026-08-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364306": {
    "as_of": "2026-08-27",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364311": {
    "as_of": "2026-09-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364313": {
    "as_of": "2026-08-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364318": {
    "as_of": "2026-09-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364323": {
    "as_of": "2026-08-24",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364328": {
    "as_of": "2026-09-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364333": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364356": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364369": {
    "as_of": "2026-09-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364376": {
    "as_of": "2026-08-24",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364379": {
    "as_of": "2026-09-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364400": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364408": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364413": {
    "as_of": "2026-08-21",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364423": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364444": {
    "as_of": "2026-08-28",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364445": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364446": {
    "as_of": "2026-08-27",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364453": {
    "as_of": "2026-09-03",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364476": {
    "as_of": "2026-08-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364483": {
    "as_of": "2026-09-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364486": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364501": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364503": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364540": {
    "as_of": "2026-09-01",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364546": {
    "as_of": "2026-09-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364557": {
    "as_of": "2026-08-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364619": {
    "as_of": "2026-08-31",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364644": {
    "as_of": "2026-09-09",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364670": {
    "as_of": "2026-09-02",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364671": {
    "as_of": "2026-09-04",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364732": {
    "as_of": "2026-09-11",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364746": {
    "as_of": "2026-09-08",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364811": {
    "as_of": "2026-09-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   },
   "fresh_N364878": {
    "as_of": "2026-09-10",
-   "basis": "ruling_date"
+   "basis": "ruling_date",
+   "tier": "exact"
   }
  }
 }

@@ -1,0 +1,48 @@
+{
+ "item_id": "atlas_test_00196",
+ "classification": {
+  "hts10": "3923.21.00.95",
+  "facts": {
+   "material": "polyethylene",
+   "function": "packing/conveying goods",
+   "form": "clear bags, no handles",
+   "end_use": "packing"
+  },
+  "gri_path": [
+   "GRI 1: heading 3923 sacks and bags of plastics; 3923.21 ethylene polymers",
+   "GRI 6: no handles so not PRCB; other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N015142",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3923.21.00.85",
+    "reason": "PRCBs require handles"
+   },
+   {
+    "code": "4202",
+    "reason": "not a container of that kind"
+   }
+  ],
+  "missing_facts": [
+   "size, reclosable feature"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "N015142 classifies unprinted polyethylene bags without handles in 3923.21.0095."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

@@ -3,42 +3,55 @@
  "classification": {
   "hts10": "8501.10.40.60",
   "facts": {
-   "material": "electric motor (DC) with housing, contact, grommet",
-   "function": "generates vibration",
-   "form": "motor",
-   "end_use": "vibration devices"
+   "material": "electric motor with metal housing, contact, rubber grommet",
+   "function": "produces vibration",
+   "form": "small DC motor with parts",
+   "end_use": "vibrating devices"
   },
   "gri_path": [
-   "GRI 1: heading 8501 motors; parts of 8501 to 8503 covered by note 2 to section XVI",
-   "GRI 6: 8501.10 under 37.5 W; DC other"
+   "GRI 1: heading 8501 electric motors; parts of motor go to 8503 separately",
+   "GRI 6: 8501.10 motors not exceeding 37.5 W, under 18.65 W assumed; DC other than brushless"
   ],
   "deciding_gri": "GRI 1",
-  "cited_rulings": [],
+  "cited_rulings": [
+   {
+    "id": "K89178",
+    "status": "in_force"
+   }
+  ],
   "rejected_alternatives": [
    {
-    "code": "8503.00",
-    "reason": "parts; the motor is first-named"
-   },
-   {
     "code": "8501.10.60.60",
-    "reason": "applies if 18.65W or more"
+    "reason": "output 18.65-37.5 W; vibrator motors assumed smaller"
    },
    {
-    "code": "8501.10.40.20",
-    "reason": "AC"
+    "code": "8501.10.40.40",
+    "reason": "brushless; vibrator motors typically brushed"
+   },
+   {
+    "code": "8503",
+    "reason": "parts classified separately"
+   },
+   {
+    "code": "8501.31",
+    "reason": "larger DC motors"
    }
   ],
   "missing_facts": [
-   "Power output",
-   "classify separately: housing, spring contact, rubber grommet"
+   "Output wattage not stated",
+   "brushed vs brushless not stated",
+   "parts classify separately under 8503/4016"
   ],
-  "confidence": 0.5,
+  "confidence": 0.45,
   "abstain": false,
-  "rationale": "A DC vibrator motor is typically under 18.65 W, making it DC other."
+  "rationale": "Motor is first-named article; small DC motor under 37.5 W. K89178 (solenoid actuator 8501.10.4060) is only weakly related and supports the under 18.65 W line, not DC type."
  },
- "tool_calls": 7,
+ "tool_calls": 5,
  "tools": [
+  "hts_search",
   "cross_search",
-  "hts_navigate"
+  "hts_navigate",
+  "ruling_status",
+  "get_notes"
  ]
 }

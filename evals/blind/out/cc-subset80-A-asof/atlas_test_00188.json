@@ -3,47 +3,46 @@
  "classification": {
   "hts10": "8413.91.90.31",
   "facts": {
-   "material": "steel",
-   "function": "sucker rods connect and drive downhole pump piston in oil wells; couplings join rods",
+   "material": "steel (assumed)",
+   "function": "connect downhole plunger to pumping unit in oil well reciprocating pumps; couplings join rods",
    "form": "rods and couplings",
-   "end_use": "oil and gas field pumps"
+   "end_use": "oil well pumping"
   },
   "gri_path": [
-   "GRI 1: heading 8413 parts of pumps (EN names sucker rods); GRI 6: 8413.91.90 other parts; statistical line for sucker rods"
+   "GRI 1: heading 8413 names parts of pumps; Section XVI note 2(b) sends parts suitable solely or principally for a pump to 8413",
+   "GRI 6: 8413.91 parts of pumps, Other 8413.91.90, sucker rods of statistical note 3"
   ],
   "deciding_gri": "GRI 1",
-  "cited_rulings": [
-   {
-    "id": "H310618",
-    "status": "in_force"
-   }
-  ],
+  "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "8431.43.80",
-    "reason": "parts for boring machinery; rejected in H310618"
+    "code": "7308",
+    "reason": "steel structures; specific pump part line applies via Sec XVI note 2(b)"
    },
    {
-    "code": "7307.99.50",
-    "reason": "pipe fittings; couplings are for solid rods"
+    "code": "7318",
+    "reason": "couplings are rod connectors for pumps, not general fasteners"
    },
    {
     "code": "8413.91.90.39",
-    "reason": "other sucker rod parts/couplings; first-named article is the rod"
+    "reason": "other parts; sucker rods have own line"
    }
   ],
   "missing_facts": [
-   "classify separately: sucker rod couplings (8413.91.90 other lines)"
+   "classify separately: sucker rod couplings (likely 8413.91.90.39)",
+   "material and whether rods meet statistical note 3"
   ],
-  "confidence": 0.75,
+  "confidence": 0.65,
   "abstain": false,
-  "rationale": "H310618 holds both sucker rods and couplings are parts of pumps in 8413.91.90. The sucker rod statistical line is 8413.91.90.31."
+  "rationale": "Sucker rods are parts of oil-well reciprocating pumps, with a dedicated statistical line under 8413.91.90."
  },
- "tool_calls": 3,
+ "tool_calls": 4,
  "tools": [
+  "hts_search",
   "cross_search",
-  "get_ruling",
   "hts_navigate",
-  "ruling_status"
+  "get_ruling",
+  "ruling_status",
+  "get_notes"
  ]
 }

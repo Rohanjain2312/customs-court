@@ -7,14 +7,14 @@
   "mode": "agent-in-session",
   "n_items": 40,
   "n_with_output": 40,
-  "git_sha": "d20f46b",
+  "git_sha": "a1e7848",
   "seed": 13,
   "models": {
     "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), rulings limited to before each item's own date"
   },
   "protocol": "Blind: the classifying agents read only a descriptions-only file (evals/blind/*.jsonl), the skill, and a tool CLI backed by the MCP server with --redact-eval. Gold labels stayed in files they were told never to open. Same skill workflow, final checks and output schema as arm A.",
   "redact_eval": true,
-  "scored_at": "2026-09-30T17:54:24+00:00",
+  "scored_at": "2026-09-30T22:46:27+00:00",
   "metrics": {
     "n": 40,
     "n_stale": 0,

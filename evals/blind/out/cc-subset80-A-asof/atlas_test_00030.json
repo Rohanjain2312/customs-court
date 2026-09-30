@@ -3,42 +3,43 @@
  "classification": {
   "hts10": "6202.40.20.20",
   "facts": {
-   "material": "70% polyester, 30% wool woven",
-   "function": "women's outerwear coat",
-   "form": "finished knee-length coat",
-   "end_use": "worn by women"
+   "material": "70% polyester, 30% wool (assumed woven)",
+   "function": "outerwear coat",
+   "form": "women's knee-length coat",
+   "end_use": "apparel"
   },
   "gri_path": [
-   "GRI 1: heading 6202 women's overcoats",
-   "GRI 6: 6202.40 man-made fibers predominate; under 36% wool so not 6202.40.15; other overcoats, women's"
+   "GRI 1: heading 6202 women's overcoats, carcoats; Section XI note 2 predominance: man-made fibers",
+   "GRI 6: 6202.40 man-made fibers; wool under 36% so not 6202.40.15; other, women's"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "6202.20",
-    "reason": "wool does not predominate"
+    "code": "6202.20.11",
+    "reason": "wool predominance required; wool only 30%"
    },
    {
     "code": "6202.40.15.10",
     "reason": "needs 36% or more wool"
    },
    {
-    "code": "6202.40.20.05",
-    "reason": "raincoats"
+    "code": "6102.30",
+    "reason": "only if knitted"
    }
   ],
   "missing_facts": [
-   "Woven or knitted (knitted would be 6102)?",
-   "Down/water-resistant features?"
+   "Knit vs woven construction not stated; woven assumed"
   ],
   "confidence": 0.6,
   "abstain": false,
-  "rationale": "Overcoat of man-made fibers with under 36% wool: other overcoats, women's."
+  "rationale": "Polyester predominates, so the man-made fiber subheading applies; wool share below 36% excludes the wool-containing line. Rulings found (H81643, etc.) concerned wool coats and were not cited."
  },
- "tool_calls": 13,
+ "tool_calls": 5,
  "tools": [
+  "hts_search",
   "hts_navigate",
-  "hts_search"
+  "get_notes",
+  "cross_search"
  ]
 }

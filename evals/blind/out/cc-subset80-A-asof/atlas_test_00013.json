@@ -3,41 +3,48 @@
  "classification": {
   "hts10": "4911.99.80.00",
   "facts": {
-   "material": "printed paper or plastic card",
-   "function": "lists fuses in fuse box",
+   "material": "paper or paperboard/plastic card, printed",
+   "function": "identifies fuse positions and ratings",
    "form": "printed card",
-   "end_use": "affixed to vehicle fuse box cover"
+   "end_use": "inserted in motor vehicle fuse box"
   },
   "gri_path": [
-   "GRI 1: heading 4911 other printed matter",
-   "GRI 6: 4911.99.80 other"
+   "GRI 1: heading 4911 other printed matter; chapter 49 note 1 has no exclusion",
+   "GRI 6: 4911.99 other, not lithographic (unknown), residual 4911.99.80"
   ],
   "deciding_gri": "GRI 1",
-  "cited_rulings": [
-   {
-    "id": "F83391",
-    "status": "in_force"
-   }
-  ],
+  "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "3919.90.50",
-    "reason": "applies only if self-adhesive plastic (F83391 plastic fuse card with adhesive back)"
+    "code": "4821.10",
+    "reason": "labels; card not self-adhesive label"
+   },
+   {
+    "code": "4911.99.60",
+    "reason": "lithographic printing not indicated"
+   },
+   {
+    "code": "8536.90",
+    "reason": "fuse hardware; card is printed matter only"
+   },
+   {
+    "code": "8708",
+    "reason": "not a vehicle part with function beyond information"
    }
   ],
   "missing_facts": [
-   "Is the card self-adhesive plastic (3919) or non-adhesive?"
+   "Card material and printing method",
+   "Whether the card is actually a fuse/circuit component"
   ],
-  "confidence": 0.65,
+  "confidence": 0.4,
   "abstain": false,
-  "rationale": "Non-adhesive printed fuse cards were classified as other printed matter 4911.99.80 in F83391."
+  "rationale": "Printed information cards for fuse boxes are other printed matter under 4911.99; no on-point ruling found."
  },
- "tool_calls": 6,
+ "tool_calls": 5,
  "tools": [
   "hts_search",
   "cross_search",
-  "get_ruling",
-  "ruling_status",
+  "get_notes",
   "hts_navigate"
  ]
 }

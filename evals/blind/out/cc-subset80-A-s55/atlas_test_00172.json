@@ -1,0 +1,51 @@
+{
+ "item_id": "atlas_test_00172",
+ "classification": {
+  "hts10": "8543.30.90.90",
+  "facts": {
+   "material": "electrolytic cell cartridge (electrodes, plastic housing) in salt system",
+   "function": "electrolyzes salt water to generate chlorine for spa sanitation",
+   "form": "replaceable cartridge",
+   "end_use": "spa water sanitation"
+  },
+  "gri_path": [
+   "GRI 1: heading 8543 covers electrical machines with individual functions; 8543.30 electrolysis apparatus",
+   "GRI 6: 8543.30.90.90 Other (not hydrogen electrolyzers or magnesium anodes)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "F89627",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "2801.10.00.00",
+    "reason": "product is apparatus, not chlorine itself"
+   },
+   {
+    "code": "8421.21.00.00",
+    "reason": "generates chlorine rather than filtering water"
+   },
+   {
+    "code": "8543.90.88.85",
+    "reason": "treated as the electrolysis apparatus itself rather than a mere part"
+   }
+  ],
+  "missing_facts": [
+   "whether cartridge is complete electrolytic cell or only a part"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Cartridge electrolyzes brine to make chlorine: electrolysis apparatus of 8543.30; F89627 treats electrolysis machine components in 8543.90 (only analogous support)."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes",
+  "ruling_status"
+ ]
+}

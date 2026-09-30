@@ -1,0 +1,52 @@
+{
+ "item_id": "fresh_N362750",
+ "classification": {
+  "hts10": "8544.49.30.80",
+  "facts": {
+   "material": "23 AWG copper conductors, FEP insulation, PVC jacket",
+   "function": "Cat6 gigabit ethernet data cable",
+   "form": "4 twisted pairs on reels, no connectors, 48 V",
+   "end_use": "structured cabling, cut to length by user"
+  },
+  "gri_path": [
+   "GRI 1: heading 8544 insulated conductors; 48 V not exceeding 1,000 V, not fitted with connectors",
+   "GRI 6: 8544.49 other; of copper 8544.49.30; not over 600 V -> .80"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N355321",
+    "status": "in_force"
+   },
+   {
+    "id": "N357575",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8544.42",
+    "reason": "fitted with connectors; these are not"
+   },
+   {
+    "code": "8544.49.10.00",
+    "reason": "telecom line; CBP rulings on ethernet cables of copper use the copper line 8544.49.30"
+   },
+   {
+    "code": "8544.49.30.40",
+    "reason": "for voltage exceeding 600 V; rated 48 V"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.8,
+  "abstain": false,
+  "rationale": "N355321 and N357575 placed unterminated copper ethernet cables on reels in 8544.49.30.80."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

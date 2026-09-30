@@ -240,3 +240,5 @@ Numbers marked "expected" were not measured, because nothing was deployed.
 ## As-of date (evaluation)
 
 A caller can send a date in the request's `_meta` (key `tariffagent/as_of`, `YYYY-MM-DD`). The server then hides rulings dated after it from `cross_search`, `get_ruling`, `ruling_status` (including `replaced_by`) and the ruling hints in `hts_search`. It is a context variable, so one server handles concurrent callers with different dates, and it is not a tool argument, so a model cannot see or change it. A bad date is an error, never a silent no-op. The harness sets it per item from `evals/datasets/as_of.json`.
+
+The eval harness also hides every candidate source ruling of an ATLAS item (`atlas.link_sources`, stored in the `eval_redactions` table) and sets the as-of date to the earliest candidate date.

@@ -9,6 +9,11 @@ The test split is kept intact.
 ATLAS items carry no ruling ids, so link_to_rulings() finds the source ruling
 in our corpus (same 10-digit code, highest text overlap). The links drive
 --redact-eval so the agent cannot retrieve the golden ruling.
+
+link_sources() is the second, stronger linker. It looks at the whole corpus, not only
+rulings that list the gold code, because the gold code in ATLAS is sometimes wrong or
+out of date (the first linker missed the source ruling for about one item in eight).
+It is validated on the fresh set, where the true ruling is known.
 """
 
 from __future__ import annotations
@@ -143,4 +148,81 @@ def link_to_rulings(items: list[dict], dataset: str) -> list[dict]:
             )
         out.append(link)
     con.commit()
+    return out
+
+
+def link_sources(
+    items: list[dict], k: int = 25, tie: float = 0.85, floor: float = 0.35, cap: int = 8
+) -> list[dict]:
+    """Find each item's source ruling in the whole corpus.
+
+    Candidates: the top `k` BM25 hits for the description, plus every ruling that lists the gold
+    code (10 digits, else 8). Score: IDF-weighted share of the description's words found in the
+    ruling's subject and first 2,000 characters, plus a bonus when the ruling lists the gold code
+    (0.30 for 10 digits, 0.22 for 8, 0.12 for 6). `tie` is every candidate within 85% of the top
+    score (and at least `floor`), at most `cap`. Several near-identical rulings on the same product
+    often exist, so all of them are treated as possible sources: redact all, and date the item
+    by the earliest (nothing later than any candidate can be precedent).
+    """
+    from tariffagent.index.search import HybridSearch
+
+    con = connect(readonly=True)
+    hs = HybridSearch(con, use_vectors=False)
+    df: Counter = Counter()
+    n = 0
+    by_code: dict[str, list[str]] = {}
+    for r in con.execute("SELECT id, subject, substr(text, 1, 2000) t, tariffs FROM rulings"):
+        df.update(set(_toks((r["subject"] or "") + " " + (r["t"] or ""))))
+        n += 1
+        for t in json.loads(r["tariffs"] or "[]"):
+            d = re.sub(r"\D", "", t)
+            if len(d) >= 8:
+                by_code.setdefault(d[:10], []).append(r["id"])
+                if len(d) > 8:
+                    by_code.setdefault(d[:8], []).append(r["id"])
+
+    def idf(t: str) -> float:
+        return math.log(1 + n / (1 + df[t]))
+
+    out = []
+    for it in items:
+        g = it["gold_digits"]
+        q = set(_toks(it["description"]))
+        norm = sum(idf(t) for t in q) or 1.0
+        pool = list(
+            dict.fromkeys(
+                [h.key for h in hs.search_rulings(it["description"], k=k)]
+                + (by_code.get(g[:10]) or by_code.get(g[:8]) or [])
+            )
+        )
+        scored = []
+        for rid in pool:
+            r = con.execute(
+                "SELECT date, subject, tariffs, substr(text, 1, 2000) t FROM rulings WHERE id=?", (rid,)
+            ).fetchone()
+            ov = sum(idf(t) for t in q & set(_toks((r["subject"] or "") + " " + (r["t"] or "")))) / norm
+            codes = [re.sub(r"\D", "", c) for c in json.loads(r["tariffs"] or "[]")]
+            bonus = (
+                0.30
+                if any(c[:10] == g[:10] for c in codes)
+                else 0.22
+                if any(c[:8] == g[:8] for c in codes)
+                else 0.12
+                if any(c[:6] == g[:6] for c in codes)
+                else 0.0
+            )
+            scored.append((ov + bonus, rid, r["date"] or ""))
+        scored.sort(key=lambda x: (-x[0], x[1]))
+        top = scored[0][0] if scored else 0.0
+        ties = [x for x in scored if x[0] >= max(tie * top, floor)][:cap]
+        dates = [d for _, _, d in ties if d]
+        out.append(
+            {
+                "item_id": it["item_id"],
+                "top": scored[0][1] if scored else None,
+                "score": round(top, 3),
+                "candidates": [rid for _, rid, _ in ties],
+                "dates": dates,
+            }
+        )
     return out

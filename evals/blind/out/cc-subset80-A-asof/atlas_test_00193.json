@@ -3,38 +3,50 @@
  "classification": {
   "hts10": "9020.00.60.00",
   "facts": {
-   "material": "plastic shell with filter lens and respirator (mixed)",
-   "function": "welding face protection plus respiratory protection",
-   "form": "helmet with respirator",
+   "material": "plastic helmet with auto-darkening filter and respirator (assumed powered/with replaceable filters)",
+   "function": "welding face/head protection plus supplied filtered breathing air",
+   "form": "complete helmet with respirator",
    "end_use": "welding"
   },
   "gri_path": [
-   "GRI 1: 9020 breathing appliances with mechanical parts or replaceable filters",
-   "GRI 3(b): respirator gives essential character"
+   "GRI 1: heading 9020 other breathing appliances, excluding protective masks lacking mechanical parts or replaceable filters",
+   "GRI 3(b): helmet plus respirator composite; respiratory function assumed essential character (alternatively 6506.10.60)",
+   "GRI 6: 9020.00.60 other breathing appliances"
   ],
   "deciding_gri": "GRI 3(b)",
   "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "6506.10",
-    "reason": "safety headgear; does not provide respiratory function"
+    "code": "6506.10.60.00",
+    "reason": "safety headgear; respirator unit gives the breathing appliance character"
    },
    {
-    "code": "9020.00.90",
-    "reason": "parts/accessories only"
+    "code": "9020.00.90.00",
+    "reason": "that is for parts/accessories; complete unit is an appliance"
+   },
+   {
+    "code": "9020.00.40.00",
+    "reason": "not underwater breathing device"
+   },
+   {
+    "code": "9004.90",
+    "reason": "welding filter is part of helmet, not spectacles"
    }
   ],
   "missing_facts": [
-   "whether powered"
+   "whether respirator is powered (blower) or filter-only",
+   "whether helmet and respirator are imported together as a unit"
   ],
-  "confidence": 0.4,
+  "confidence": 0.5,
   "abstain": false,
-  "rationale": "Helmet with a respirator is a breathing appliance of heading 9020, other breathing appliances."
+  "rationale": "A welding helmet with integral respirator is a breathing appliance with mechanical parts/replaceable filters under 9020; no in-force ruling found on point."
  },
- "tool_calls": 3,
+ "tool_calls": 5,
  "tools": [
   "cross_search",
+  "ruling_status",
+  "hts_navigate",
   "hts_search",
-  "hts_navigate"
+  "get_notes"
  ]
 }

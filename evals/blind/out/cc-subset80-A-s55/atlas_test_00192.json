@@ -1,0 +1,52 @@
+{
+ "item_id": "atlas_test_00192",
+ "classification": {
+  "hts10": "5911.90.00.80",
+  "facts": {
+   "material": "fibrous particulate filter media (assumed textile/nonwoven) in housing",
+   "function": "replaceable HE particulate filter for a powered air-purifying welding respirator",
+   "form": "filter cartridge",
+   "end_use": "respiratory protection in welding"
+  },
+  "gri_path": [
+   "GRI 1: heading 5911 textile articles for technical uses; Section XVI note 1(e) and ch.90 note 1(a) exclude textile technical articles from 8421/9020",
+   "GRI 6: 5911.90.00.80"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N253050",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9020.00.90.00",
+    "reason": "parts of breathing appliances, but ch.90 note 1(a) excludes textile technical articles"
+   },
+   {
+    "code": "8421.39.80",
+    "reason": "Section XVI note 1(e) excludes textile filtering articles"
+   },
+   {
+    "code": "6307.90.98",
+    "reason": "not a face mask"
+   }
+  ],
+  "missing_facts": [
+   "filter media composition (textile vs other)"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "N253050 classifies an analogous 3M respirator filter cartridge in 5911.90.0080 because textile filtering media is precluded from 84/90."
+ },
+ "tool_calls": 8,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

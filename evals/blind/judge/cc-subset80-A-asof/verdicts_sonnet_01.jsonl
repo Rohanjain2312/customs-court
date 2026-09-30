@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00063", "verdict": "pass", "reason": "The reference text says CBP classified the coffeemaker in 8516.71.0020 (its listed gold code 8521 conflicts with its own text), and the assistant chose 8516.71.00.20 by GRI 1 on the coffee-maker heading text."}
+{"item_id": "atlas_test_00064", "verdict": "pass", "reason": "The reference classifies the knit synthetic dress in 6104.43 (its listed gold 6114 conflicts with its text), and the assistant chose 6104.43 via GRI 1 as a women's knitted dress of synthetic fibers."}
+{"item_id": "atlas_test_00065", "verdict": "fail", "reason": "CBP put the covers in heading 8504 as parts of the motor controller, while the assistant chose heading 8538."}
+{"item_id": "atlas_test_00067", "verdict": "pass", "reason": "Both put the cotton infant knit set in heading 6111 as babies' garments, knitted, sets."}
+{"item_id": "atlas_test_00068", "verdict": "pass", "reason": "The reference text classifies propylene glycol in 2905.32 (gold 2914 conflicts with it), and the assistant chose 2905.32 by GRI 1 on the named heading."}
+{"item_id": "atlas_test_00070", "verdict": "pass", "reason": "The assistant reached heading 8205 handtools n.e.s., the same heading CBP used for the clay tool kit."}
+{"item_id": "atlas_test_00072", "verdict": "pass", "reason": "Both classify the parts in heading 8481 as parts of valves, which excludes the vehicle parts heading 8708."}
+{"item_id": "atlas_test_00076", "verdict": "fail", "reason": "CBP classified the powder coatings in heading 3907 as polymers in primary form, while the assistant chose paint heading 3210 and rejected 3907."}
+{"item_id": "atlas_test_00079", "verdict": "pass", "reason": "Both classify the connecting rods in 8409.99.9110 as parts of diesel engines for heavy-truck vehicles."}
+{"item_id": "atlas_test_00080", "verdict": "fail", "reason": "CBP classified each component separately (the snorkel set in 9506.29) rather than as a GRI 3(b) retail set, so the assistant's right heading rests on a different legal basis."}
+{"item_id": "atlas_test_00083", "verdict": "pass", "reason": "Both classify the industrial robot in 8479.50 as industrial robots not elsewhere specified."}
+{"item_id": "atlas_test_00085", "verdict": "pass", "reason": "The reference text classifies the orthodontic instruments as dental hand instruments in 9018.49 (gold 9022 conflicts with it), and the assistant chose 9018.49.80 by GRI 1."}
+{"item_id": "atlas_test_00088", "verdict": "pass", "reason": "Both classify the aircraft deicer in 8516.80.40 as an electric heating resistor."}
+{"item_id": "atlas_test_00091", "verdict": "fail", "reason": "The gold code is heading 8211 while the assistant chose 8207, so the heading differs."}
+{"item_id": "atlas_test_00096", "verdict": "fail", "reason": "CBP classified the sensors in 9029 as parts and accessories of counters, while the assistant chose 9031."}
+{"item_id": "atlas_test_00097", "verdict": "pass", "reason": "Both classify the key cap in 8505.11 as a permanent metal magnet, with the magnet giving the essential character."}
+{"item_id": "atlas_test_00104", "verdict": "fail", "reason": "CBP classified the warmer in 8543.70 as an electrical machine, while the assistant chose medical heading 9018 and rejected 8543."}
+{"item_id": "atlas_test_00109", "verdict": "fail", "reason": "CBP classified the grapples and carriages in 8431 as parts of logging machinery, while the assistant chose 8428 as complete machinery."}
+{"item_id": "atlas_test_00113", "verdict": "pass", "reason": "Both classify the cationic corn starches as modified starches in 3505.10.0040, rejecting 3809."}

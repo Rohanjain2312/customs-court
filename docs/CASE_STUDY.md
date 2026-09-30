@@ -44,7 +44,8 @@ The agent on `subset_80` (80 test items, same items in every row):
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
 | Zero-shot, no tools (in the Claude Code session) | Claude Sonnet 5.5 | 21.2% [12.1, 31.8] | 53.8% [42.5, 65.0] | 63.7% [52.5, 73.8] | 13.8% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
-| TariffAgent single agent, rulings limited to before each item's own date (in the Claude Code session) | Claude Sonnet 5.5 | 45.5% [33.3, 57.6] | 61.3% [50.0, 71.2] | 68.8% [57.5, 78.8] | 8.8% | $0 (no API spend) |
+| TariffAgent single agent, no date limit (in the Claude Code session) | Claude Sonnet 5.5 | 45.5% [33.3, 57.6] | 57.5% [46.2, 67.5] | 62.5% [51.2, 72.5] | 8.8% | $0 (no API spend) |
+| TariffAgent single agent, rulings limited to before each item's own date (in the Claude Code session) | Claude Sonnet 5.5 | 47.0% [34.8, 59.1] | 60.0% [48.8, 70.0] | 65.0% [53.8, 75.0] | 11.2% | $0 (no API spend) |
 <!-- /results:subset -->
 
 <!-- results:subset_diffs -->
@@ -53,7 +54,9 @@ The agent on `subset_80` (80 test items, same items in every row):
 | Agent (Claude in session) minus Claude Sonnet 5 zero-shot | +28.8 points [+16.7, +40.9], n=66 | +12.5 points [+1.2, +23.8], n=80 |
 | Agent (Claude in session) minus agent on gpt-5-mini | +7.6 points [-3.0, +18.2], n=66 | +12.5 points [+2.5, +22.5], n=80 |
 | Agent (Claude in session) minus Claude Sonnet 5.5 zero-shot (in session) | +30.3 points [+18.2, +43.9], n=66 | +10.0 points [+1.2, +18.8], n=80 |
-| Date-limited agent (Claude Sonnet 5.5, in session) minus Claude Sonnet 5.5 zero-shot (in session) | +24.2 points [+12.1, +36.4], n=66 | +7.5 points [-1.2, +16.2], n=80 |
+| No-date-limit agent (Claude Sonnet 5.5, in session) minus Claude Sonnet 5.5 zero-shot (in session) | +24.2 points [+12.1, +36.4], n=66 | +3.8 points [-6.2, +12.5], n=80 |
+| Date-limited agent (Claude Sonnet 5.5, in session) minus Claude Sonnet 5.5 zero-shot (in session) | +25.8 points [+13.6, +37.9], n=66 | +6.2 points [-1.2, +13.8], n=80 |
+| Date-limited agent minus no-date-limit agent (same model, same items: the effect of the date limit) | +1.5 points [-7.6, +10.6], n=66 | +2.5 points [-3.8, +8.8], n=80 |
 <!-- /results:subset_diffs -->
 
 <!-- analysis:headline -->
@@ -63,7 +66,7 @@ What the numbers say:
 - **The model is not held fixed.** The tuned API agent ran on Claude Sonnet 5; the test-set agent is Claude Opus 5.5 in the session, and the no-tools control is Claude Sonnet 5.5 (the usage limit ruled out an Opus control). So these rows show that the agent design works, not how much comes from the model. The gap to the gpt-5-mini agent (+7.6 points at 10 digits) has an interval that crosses zero.
 - **Why the fresh set scores higher.** Its descriptions come from the ruling's own facts, its labels are the ruling's own current codes (no stale codes, no multi-article mismatch), and recent rulings on similar goods exist. The answer rulings, and any later ruling that names them, are hidden from the tools. The tools can also hide every ruling dated after an item's own ruling (next bullet).
 - **Citations hold up.** No invented rulings: 97.5% of 79 citations on the subset and 100% of 42 on the fresh set are valid, in-corpus rulings with the right status.
-- **Date-limited rerun.** The first agent runs had no date filter: 22 citations on 20 of the 38 subset items that have a known date, and 1 fresh item, cited a ruling issued after the item's own. The tools now take a per-request as-of date that the model never sees and hide later rulings. The agent rerun with it on (Claude Sonnet 5.5 in the session, all 80 subset and 40 fresh items) cited none, and scored 45.5% on the subset and 85.0% on the fresh set, against 21.2% and 15.0% for the same model with no tools. Only 38 of 80 subset items have a date to limit by (ATLAS does not publish one; it comes from the linked source ruling when the link is confident); the rest run unfiltered. The model differs from the Opus 5.5 row, so the two agent rows do not isolate the filter's effect. The reasoning judges were not rerun on these two runs.
+- **Source-ruling hiding and the date limit.** Checking the dates showed the first linker missed the answer ruling for 42 of the 80 subset items (ATLAS gold codes are sometimes wrong, and it only looked at rulings listing the gold code), so those rulings were visible to the tools. The Opus 5.5 subset run cited a candidate source ruling 12 times, so its 51.5% is probably somewhat inflated. A second linker searches the whole corpus (150 of 150 correct on the fresh set, where the answer is known), hides every candidate, and dates 76 of the 80 subset items. The tools now also hide rulings dated after the item's own (a per-request date the model never sees; for ambiguous items it is the earliest candidate date, which is conservative). Without the limit, the Sonnet 5.5 agent cited 42 later-dated rulings on 37 subset items; with it, none. Same model, same items: 47.0% with the limit against 45.5% without on the subset, 85.0% against 82.5% on the fresh set. Both gaps sit inside the intervals, so the limit costs nothing measurable. The Sonnet 5.5 rows are the clean comparison with the Sonnet 5.5 no-tools control (21.2% and 15.0%). The judges passed 62.2% of the date-limited subset answers and 92.5% of the fresh ones.
 - **Reasoning, not just codes.** A reference-grounded judge passed 67.6% of the subset answers and 90.0% of the fresh answers (details in `docs/EVAL.md`).
 - These are 80 items, not the 200 the published ATLAS numbers use, so they are not a like-for-like comparison with that paper.
 <!-- /analysis:headline -->
@@ -77,6 +80,7 @@ Post-cutoff set (150 rulings dated 2026-07-01 or later; the agent ran on a fixed
 | Zero-shot, no tools, the 40-item sample | Claude Sonnet 5 | 17.5% [7.5, 30.0] | 47.5% [32.5, 62.5] | 67.5% [52.5, 82.5] | 2.5% | $0.0060 |
 | Zero-shot, no tools (in the Claude Code session), same 40 | Claude Sonnet 5.5 | 15.0% [5.0, 27.5] | 60.0% [45.0, 75.0] | 70.0% [55.0, 82.5] | 7.5% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session), same 40 | Claude Opus 5.5 | 82.5% [70.0, 92.5] | 90.0% [80.0, 97.5] | 92.5% [82.5, 100.0] | 7.5% | $0 (no API spend) |
+| TariffAgent single agent, no date limit (in the Claude Code session), same 40 | Claude Sonnet 5.5 | 82.5% [70.0, 92.5] | 82.5% [70.0, 92.5] | 85.0% [72.5, 95.0] | 2.5% | $0 (no API spend) |
 | TariffAgent single agent, rulings limited to before each item's own date (in the Claude Code session), same 40 | Claude Sonnet 5.5 | 85.0% [72.5, 95.0] | 92.5% [82.5, 100.0] | 92.5% [82.5, 100.0] | 0.0% | $0 (no API spend) |
 
 Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit +65.0 points [+50.0, +80.0], n=40; 6-digit +42.5 points [+27.5, +57.5], n=40.
@@ -84,6 +88,8 @@ Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit +65.0 poi
 Paired, same 40 items, agent minus Claude Sonnet 5.5 zero-shot (in session): 10-digit +67.5 points [+52.5, +82.5], n=40; 6-digit +30.0 points [+15.0, +45.0], n=40.
 
 Paired, same 40 items, date-limited agent (Claude Sonnet 5.5) minus Claude Sonnet 5.5 zero-shot (both in session): 10-digit +70.0 points [+55.0, +85.0], n=40; 6-digit +32.5 points [+20.0, +47.5], n=40.
+
+Paired, same 40 items, date-limited agent minus no-date-limit agent (same model; the effect of the date limit): 10-digit +2.5 points [-10.0, +15.0], n=40; 6-digit +10.0 points [+2.5, +20.0], n=40.
 <!-- /results:fresh -->
 
 ### Reasoning judge
@@ -91,8 +97,10 @@ Paired, same 40 items, date-limited agent (Claude Sonnet 5.5) minus Claude Sonne
 <!-- results:judge -->
 | Run | Judge pass rate | Pass when 10-digit correct | Fail when chapter wrong | Cohen's kappa, second judge | Raw agreement |
 |---|---|---|---|---|---|
-| Test subset (80) | 67.6% [56.8, 78.4] (n=74) | 90.3% (n=31) | 90.9% (n=11) | 0.64 | 83.8% (n=74) |
-| Fresh set (40) | 90.0% [80.0, 97.5] (n=40) | 100.0% (n=33) | 100.0% (n=1) | 0.77 | 95.0% (n=40) |
+| Test subset (80), Opus 5.5 agent | 67.6% [56.8, 78.4] (n=74) | 90.3% (n=31) | 90.9% (n=11) | 0.64 | 83.8% (n=74) |
+| Fresh set (40), Opus 5.5 agent | 90.0% [80.0, 97.5] (n=40) | 100.0% (n=33) | 100.0% (n=1) | 0.77 | 95.0% (n=40) |
+| Test subset (80), date-limited Sonnet 5.5 agent | 62.2% [51.3, 73.0] (n=74) | 100.0% (n=28) | 100.0% (n=11) | 0.89 | 94.6% (n=74) |
+| Fresh set (40), date-limited Sonnet 5.5 agent | 92.5% [82.5, 100.0] (n=40) | 100.0% (n=34) | 100.0% (n=1) | 0.72 | 95.0% (n=40) |
 <!-- /results:judge -->
 
 <!-- analysis:judge -->
@@ -163,7 +171,7 @@ The paid budget ($13.34) covered building, tuning, the dev analysis and the zero
 ## What comes next
 
 - Run the Claude agent (A and D) on the test split when a budget exists; every piece is in place and the response cache makes it resumable.
-- Dates for the ATLAS items the filter cannot reach (42 of the 80 subset items have no confident source-ruling link, so they run unfiltered).
+- Rerun the Opus 5.5 agent with the second source-ruling linker and the date limit (it needs usage headroom), so the main row and the clean comparison use the same model.
 - Ask-for-facts as a first-class product mode: most wrong answers on well-labeled items traced to facts the description never gave.
 - A cleaner benchmark: split multi-article rulings into one item per article.
 - Ruling status from ruling text is right about 80% of the time on held-out cases. A small labeled set and a classifier would do better than the regex heuristic.

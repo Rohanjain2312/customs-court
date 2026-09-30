@@ -17,11 +17,19 @@ from tariffagent.evals.datasets import load_dataset
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = [
-    ("cc-subset80-A", "atlas_test_200", "subset_80", "no date filter"),
-    ("cc-subset80-A-asof", "atlas_test_200", "subset_80", "date filter on"),
-    ("cc-fresh40-A", "fresh_150", "fresh_40", "no date filter"),
-    ("cc-fresh40-A-asof", "fresh_150", "fresh_40", "date filter on"),
+    (
+        "cc-subset80-A",
+        "atlas_test_200",
+        "subset_80",
+        "Claude Opus 5.5, no date filter, first-generation source hiding",
+    ),
+    ("cc-subset80-A-s55", "atlas_test_200", "subset_80", "Claude Sonnet 5.5, no date filter"),
+    ("cc-subset80-A-asof", "atlas_test_200", "subset_80", "Claude Sonnet 5.5, date filter on"),
+    ("cc-fresh40-A", "fresh_150", "fresh_40", "Claude Opus 5.5, no date filter"),
+    ("cc-fresh40-A-s55", "fresh_150", "fresh_40", "Claude Sonnet 5.5, no date filter"),
+    ("cc-fresh40-A-asof", "fresh_150", "fresh_40", "Claude Sonnet 5.5, date filter on"),
 ]
+LINKS = json.loads((ROOT / "evals" / "datasets" / "source_links.json").read_text())["items"]
 
 
 def main() -> None:
@@ -31,9 +39,13 @@ def main() -> None:
         keep = {it["item_id"] for it in load_dataset(sub)}
         items = {it["item_id"]: it for it in load_dataset(ds) if it["item_id"] in keep}
         dated = [i for i, it in items.items() if item_as_of(it)]
-        late, late_items = [], set()
+        late, late_items, src = [], set(), []
         for iid in dated:
             raw = json.loads((ROOT / "evals" / "blind" / "out" / run / f"{iid}.json").read_text())
+            for c in raw["classification"].get("cited_rulings", []):
+                truth = LINKS[iid]["candidates"] if iid in LINKS else [items[iid].get("ruling_id")]
+                if c["id"] in truth:
+                    src.append({"item_id": iid, "cited": c["id"]})
             for c in raw["classification"].get("cited_rulings", []):
                 r = con.execute("SELECT date FROM rulings WHERE id=?", (c["id"],)).fetchone()
                 if r and r[0] and r[0] > item_as_of(items[iid]):
@@ -45,9 +57,22 @@ def main() -> None:
             "items_with_as_of_date": len(dated),
             "citations_dated_after_the_item": len(late),
             "items_citing_a_later_ruling": len(late_items),
+            "citations_of_a_candidate_source_ruling": len(src),
+            "source_detail": src,
             "detail": late,
         }
-        print(run, label, len(dated), "dated;", len(late), "late citations in", len(late_items), "items")
+        print(
+            run,
+            label,
+            len(dated),
+            "dated;",
+            len(late),
+            "late citations in",
+            len(late_items),
+            "items;",
+            len(src),
+            "source-ruling citations",
+        )
     (ROOT / "evals" / "reports" / "as_of_impact.json").write_text(json.dumps(out, indent=2))
 
 

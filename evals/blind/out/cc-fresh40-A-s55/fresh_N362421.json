@@ -1,0 +1,45 @@
+{
+ "item_id": "fresh_N362421",
+ "classification": {
+  "hts10": "3004.90.92.55",
+  "facts": {
+   "material": "pantoprazole sodium (PPI) active ingredient",
+   "function": "treats erosive esophagitis and gastric acid hypersecretion",
+   "form": "20 mg and 40 mg delayed-release tablets in dosage form",
+   "end_use": "human therapeutic medicament, digestive system"
+  },
+  "gri_path": [
+   "GRI 1: heading 3004 medicaments in measured doses; chapter 30 note 1 does not exclude",
+   "GRI 6: 3004.90.92 other, digestive system medicaments, containing pantoprazole or its salts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N337151",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "2933.39.41",
+    "reason": "bulk active ingredient, not put up in measured doses"
+   },
+   {
+    "code": "3004.90.92.57",
+    "reason": "current tree assigns glycopyrrolate there; pantoprazole has its own line .55"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "N337151 classified identical pantoprazole DR tablets in 3004.90.92 under the old suffix 57; the current 2026 tree provides a dedicated line 3004.90.92.55 for pantoprazole, validated as current."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "hts_navigate",
+  "get_notes",
+  "cross_search",
+  "ruling_status"
+ ]
+}

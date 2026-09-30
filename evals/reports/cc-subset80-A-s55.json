@@ -1,0 +1,428 @@
+{
+  "run_id": "cc-subset80-A-s55",
+  "dataset": "atlas_test_200",
+  "dataset_sha256": "de42b0dd45f66a3ea81ebdb636cfe1757798520ff0ca5ea31c43dce9b2edfb68",
+  "items_from": "subset_80",
+  "arm": "A",
+  "mode": "agent-in-session",
+  "n_items": 80,
+  "n_with_output": 80,
+  "git_sha": "a1e7848",
+  "seed": 13,
+  "models": {
+    "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), no date limit (source rulings hidden)"
+  },
+  "protocol": "Blind: the classifying agents read only a descriptions-only file (evals/blind/*.jsonl), the skill, and a tool CLI backed by the MCP server with --redact-eval. Gold labels stayed in files they were told never to open. Same skill workflow, final checks and output schema as arm A.",
+  "redact_eval": true,
+  "scored_at": "2026-09-30T22:42:05+00:00",
+  "metrics": {
+    "n": 80,
+    "n_stale": 13,
+    "n_errors": 0,
+    "acc_10": 0.4545,
+    "n_10": 66,
+    "acc_8": 0.5821,
+    "n_8": 67,
+    "acc_6": 0.575,
+    "n_6": 80,
+    "acc_4": 0.625,
+    "n_4": 80,
+    "acc_2": 0.8,
+    "n_2": 80,
+    "acc_10_nonstale": 0.4545,
+    "acc_6_stale": 0.3846,
+    "abstain_rate": 0.0875,
+    "acc_when_answering": 0.4658,
+    "acc_deepest_all": 0.45,
+    "ece": 0.1341,
+    "coverage_curve": [
+      {
+        "coverage": 0.1,
+        "accuracy": 0.75
+      },
+      {
+        "coverage": 0.2,
+        "accuracy": 0.75
+      },
+      {
+        "coverage": 0.3,
+        "accuracy": 0.7083
+      },
+      {
+        "coverage": 0.4,
+        "accuracy": 0.6875
+      },
+      {
+        "coverage": 0.5,
+        "accuracy": 0.6
+      },
+      {
+        "coverage": 0.6,
+        "accuracy": 0.5625
+      },
+      {
+        "coverage": 0.7,
+        "accuracy": 0.5714
+      },
+      {
+        "coverage": 0.8,
+        "accuracy": 0.5312
+      },
+      {
+        "coverage": 0.9,
+        "accuracy": 0.4861
+      },
+      {
+        "coverage": 1.0,
+        "accuracy": 0.45
+      }
+    ],
+    "citations_total": 65,
+    "citation_valid_rate": 0.9846,
+    "citation_hallucinated": 0,
+    "citation_not_in_force": 1,
+    "items_with_citation": 56,
+    "usd_total": 0.0,
+    "usd_per_item": 0.0,
+    "tokens_per_item": 0.0,
+    "tool_calls_per_item": 5.84,
+    "latency_p50_s": null,
+    "latency_p95_s": null,
+    "cache_hit_rate": null
+  },
+  "ci95": {
+    "exact_10": {
+      "mean": 0.4545,
+      "lo": 0.3333,
+      "hi": 0.5758,
+      "n": 66
+    },
+    "exact_8": {
+      "mean": 0.5821,
+      "lo": 0.4627,
+      "hi": 0.7015,
+      "n": 67
+    },
+    "exact_6": {
+      "mean": 0.575,
+      "lo": 0.4625,
+      "hi": 0.675,
+      "n": 80
+    },
+    "exact_4": {
+      "mean": 0.625,
+      "lo": 0.525,
+      "hi": 0.725,
+      "n": 80
+    },
+    "exact_2": {
+      "mean": 0.8,
+      "lo": 0.7125,
+      "hi": 0.8875,
+      "n": 80
+    }
+  },
+  "later_dated_citations": [
+    {
+      "item_id": "atlas_test_00008",
+      "cited": "N355243",
+      "cited_date": "2025-11-07",
+      "item_date": "2023-09-28"
+    },
+    {
+      "item_id": "atlas_test_00010",
+      "cited": "N341739",
+      "cited_date": "2024-08-23",
+      "item_date": "2017-04-11"
+    },
+    {
+      "item_id": "atlas_test_00010",
+      "cited": "N327606",
+      "cited_date": "2022-08-24",
+      "item_date": "2017-04-11"
+    },
+    {
+      "item_id": "atlas_test_00013",
+      "cited": "I80761",
+      "cited_date": "2002-04-21",
+      "item_date": "2000-03-02"
+    },
+    {
+      "item_id": "atlas_test_00029",
+      "cited": "H314335",
+      "cited_date": "2022-08-11",
+      "item_date": "2005-03-03"
+    },
+    {
+      "item_id": "atlas_test_00036",
+      "cited": "R03592",
+      "cited_date": "2006-04-09",
+      "item_date": "2002-02-12"
+    },
+    {
+      "item_id": "atlas_test_00040",
+      "cited": "N355088",
+      "cited_date": "2025-10-28",
+      "item_date": "2008-11-14"
+    },
+    {
+      "item_id": "atlas_test_00040",
+      "cited": "N333439",
+      "cited_date": "2023-06-15",
+      "item_date": "2008-11-14"
+    },
+    {
+      "item_id": "atlas_test_00042",
+      "cited": "N323762",
+      "cited_date": "2022-02-08",
+      "item_date": "2002-04-07"
+    },
+    {
+      "item_id": "atlas_test_00045",
+      "cited": "963250",
+      "cited_date": "2001-07-23",
+      "item_date": "2000-12-27"
+    },
+    {
+      "item_id": "atlas_test_00045",
+      "cited": "L81485",
+      "cited_date": "2005-01-11",
+      "item_date": "2000-12-27"
+    },
+    {
+      "item_id": "atlas_test_00047",
+      "cited": "N325758",
+      "cited_date": "2022-05-25",
+      "item_date": "1993-09-23"
+    },
+    {
+      "item_id": "atlas_test_00048",
+      "cited": "N020079",
+      "cited_date": "2007-12-10",
+      "item_date": "2001-03-26"
+    },
+    {
+      "item_id": "atlas_test_00054",
+      "cited": "N359864",
+      "cited_date": "2026-04-02",
+      "item_date": "2024-11-13"
+    },
+    {
+      "item_id": "atlas_test_00064",
+      "cited": "I84334",
+      "cited_date": "2002-08-13",
+      "item_date": "2002-07-21"
+    },
+    {
+      "item_id": "atlas_test_00065",
+      "cited": "N033447",
+      "cited_date": "2008-08-11",
+      "item_date": "2004-11-24"
+    },
+    {
+      "item_id": "atlas_test_00067",
+      "cited": "N265147",
+      "cited_date": "2015-06-09",
+      "item_date": "2002-04-23"
+    },
+    {
+      "item_id": "atlas_test_00072",
+      "cited": "H328055",
+      "cited_date": "2023-07-31",
+      "item_date": "2014-05-01"
+    },
+    {
+      "item_id": "atlas_test_00076",
+      "cited": "N239953",
+      "cited_date": "2013-04-12",
+      "item_date": "1992-08-11"
+    },
+    {
+      "item_id": "atlas_test_00079",
+      "cited": "N347490",
+      "cited_date": "2025-04-17",
+      "item_date": "2014-02-03"
+    },
+    {
+      "item_id": "atlas_test_00080",
+      "cited": "L81175",
+      "cited_date": "2004-12-15",
+      "item_date": "2000-12-05"
+    },
+    {
+      "item_id": "atlas_test_00096",
+      "cited": "N362482",
+      "cited_date": "2026-07-09",
+      "item_date": "1991-07-09"
+    },
+    {
+      "item_id": "atlas_test_00097",
+      "cited": "N333219",
+      "cited_date": "2023-06-21",
+      "item_date": "2014-07-21"
+    },
+    {
+      "item_id": "atlas_test_00108",
+      "cited": "H208896",
+      "cited_date": "2012-03-22",
+      "item_date": "2005-11-02"
+    },
+    {
+      "item_id": "atlas_test_00109",
+      "cited": "H81340",
+      "cited_date": "2001-06-13",
+      "item_date": "1990-05-01"
+    },
+    {
+      "item_id": "atlas_test_00116",
+      "cited": "N011941",
+      "cited_date": "2007-06-21",
+      "item_date": "1999-03-04"
+    },
+    {
+      "item_id": "atlas_test_00117",
+      "cited": "N332349",
+      "cited_date": "2023-04-26",
+      "item_date": "2022-01-28"
+    },
+    {
+      "item_id": "atlas_test_00125",
+      "cited": "N012776",
+      "cited_date": "2007-06-21",
+      "item_date": "2006-08-14"
+    },
+    {
+      "item_id": "atlas_test_00128",
+      "cited": "N341303",
+      "cited_date": "2024-08-07",
+      "item_date": "2022-09-21"
+    },
+    {
+      "item_id": "atlas_test_00130",
+      "cited": "N338010",
+      "cited_date": "2024-02-14",
+      "item_date": "2004-05-10"
+    },
+    {
+      "item_id": "atlas_test_00138",
+      "cited": "N316920",
+      "cited_date": "2021-02-05",
+      "item_date": "2002-03-12"
+    },
+    {
+      "item_id": "atlas_test_00145",
+      "cited": "N107290",
+      "cited_date": "2010-06-13",
+      "item_date": "2007-05-16"
+    },
+    {
+      "item_id": "atlas_test_00165",
+      "cited": "N347490",
+      "cited_date": "2025-04-17",
+      "item_date": "2017-09-21"
+    },
+    {
+      "item_id": "atlas_test_00175",
+      "cited": "N341739",
+      "cited_date": "2024-08-23",
+      "item_date": "2014-10-22"
+    },
+    {
+      "item_id": "atlas_test_00175",
+      "cited": "N261168",
+      "cited_date": "2015-02-24",
+      "item_date": "2014-10-22"
+    },
+    {
+      "item_id": "atlas_test_00180",
+      "cited": "H319171",
+      "cited_date": "2024-06-13",
+      "item_date": "2015-12-23"
+    },
+    {
+      "item_id": "atlas_test_00184",
+      "cited": "N007469",
+      "cited_date": "2007-03-25",
+      "item_date": "2006-03-24"
+    },
+    {
+      "item_id": "atlas_test_00185",
+      "cited": "N355530",
+      "cited_date": "2025-11-19",
+      "item_date": "2020-07-22"
+    },
+    {
+      "item_id": "atlas_test_00193",
+      "cited": "H112725",
+      "cited_date": "2010-10-06",
+      "item_date": "2001-12-17"
+    },
+    {
+      "item_id": "atlas_test_00193",
+      "cited": "I80102",
+      "cited_date": "2002-04-28",
+      "item_date": "2001-12-17"
+    },
+    {
+      "item_id": "atlas_test_00196",
+      "cited": "N015142",
+      "cited_date": "2007-08-27",
+      "item_date": "2000-08-07"
+    },
+    {
+      "item_id": "atlas_test_00197",
+      "cited": "G86134",
+      "cited_date": "2001-01-28",
+      "item_date": "2001-01-25"
+    }
+  ],
+  "sensitivity_without_later_citations": {
+    "note": "exact_10 leaving out items that cite a ruling dated after the item's own ruling",
+    "excluded": [
+      "atlas_test_00008",
+      "atlas_test_00010",
+      "atlas_test_00013",
+      "atlas_test_00029",
+      "atlas_test_00036",
+      "atlas_test_00040",
+      "atlas_test_00042",
+      "atlas_test_00045",
+      "atlas_test_00047",
+      "atlas_test_00048",
+      "atlas_test_00054",
+      "atlas_test_00064",
+      "atlas_test_00065",
+      "atlas_test_00067",
+      "atlas_test_00072",
+      "atlas_test_00076",
+      "atlas_test_00079",
+      "atlas_test_00080",
+      "atlas_test_00096",
+      "atlas_test_00097",
+      "atlas_test_00108",
+      "atlas_test_00109",
+      "atlas_test_00116",
+      "atlas_test_00117",
+      "atlas_test_00125",
+      "atlas_test_00128",
+      "atlas_test_00130",
+      "atlas_test_00138",
+      "atlas_test_00145",
+      "atlas_test_00165",
+      "atlas_test_00175",
+      "atlas_test_00180",
+      "atlas_test_00184",
+      "atlas_test_00185",
+      "atlas_test_00193",
+      "atlas_test_00196",
+      "atlas_test_00197"
+    ],
+    "exact_10": {
+      "mean": 0.4444,
+      "lo": 0.2778,
+      "hi": 0.6111,
+      "n": 36
+    }
+  },
+  "cost_note": "No API spend: produced in the Claude Code session (covered by the user's plan)."
+}

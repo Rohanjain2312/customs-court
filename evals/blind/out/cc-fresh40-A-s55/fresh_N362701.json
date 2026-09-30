@@ -1,0 +1,47 @@
+{
+ "item_id": "fresh_N362701",
+ "classification": {
+  "hts10": "3213.10.00.00",
+  "facts": {
+   "material": "acrylic paint pods, brushes, acrylic sheet, printed paper, wooden stand",
+   "function": "creative painting and display activity",
+   "form": "retail set of components used together",
+   "end_use": "hobby/craft painting for all ages"
+  },
+  "gri_path": [
+   "GRI 1: no heading covers the whole kit",
+   "GRI 3(b): retail set put up for specific activity; paints and brushes give essential character",
+   "GRI 6: 3213.10 colors in sets"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "N342888",
+    "status": "in_force"
+   },
+   {
+    "id": "N356897",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9603.30.60.00",
+    "reason": "brushes are a minor component of the set"
+   },
+   {
+    "code": "3926.90.98.80",
+    "reason": "acrylic sheet/stand not essential character"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "Paint-by-number style kits with acrylic paint pods and brushes were classified as sets in 3213.10.00 with essential character from paints and brushes (N342888, N356897)."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search"
+ ]
+}

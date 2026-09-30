@@ -1,0 +1,3316 @@
+{
+ "note": "Source ruling candidates for ATLAS test items. as_of is the earliest candidate date when the top score is at least 0.5.",
+ "method": "atlas.link_sources",
+ "validation": {
+  "set": "fresh_150 (true ruling known)",
+  "items": 150,
+  "top1_correct": 150,
+  "true_ruling_in_candidates": 150,
+  "mean_candidates": 1.1
+ },
+ "built": "2026-09-30T18:09:47+00:00",
+ "items": {
+  "atlas_test_00000": {
+   "item_id": "atlas_test_00000",
+   "top": "N332307",
+   "score": 0.64,
+   "candidates": [
+    "N332307",
+    "N290712",
+    "R05069",
+    "N362609",
+    "K83125"
+   ],
+   "dates": [
+    "2023-05-08",
+    "2017-10-26",
+    "2006-11-01",
+    "2026-07-21",
+    "2004-03-10"
+   ],
+   "as_of": "2004-03-10",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00001": {
+   "item_id": "atlas_test_00001",
+   "top": "I83224",
+   "score": 1.3,
+   "candidates": [
+    "I83224"
+   ],
+   "dates": [
+    "2002-07-21"
+   ],
+   "as_of": "2002-07-21",
+   "tier": "unique"
+  },
+  "atlas_test_00002": {
+   "item_id": "atlas_test_00002",
+   "top": "R00160",
+   "score": 0.704,
+   "candidates": [
+    "R00160",
+    "H312118"
+   ],
+   "dates": [
+    "2004-03-11",
+    "2021-10-18"
+   ],
+   "as_of": "2004-03-11",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00003": {
+   "item_id": "atlas_test_00003",
+   "top": "893402",
+   "score": 1.197,
+   "candidates": [
+    "893402"
+   ],
+   "dates": [
+    "1994-01-14"
+   ],
+   "as_of": "1994-01-14",
+   "tier": "unique"
+  },
+  "atlas_test_00004": {
+   "item_id": "atlas_test_00004",
+   "top": "L82120",
+   "score": 1.17,
+   "candidates": [
+    "L82120",
+    "I82536",
+    "I83309",
+    "L80053",
+    "N337887"
+   ],
+   "dates": [
+    "2005-01-25",
+    "2002-06-09",
+    "2002-06-24",
+    "2004-10-12",
+    "2024-02-26"
+   ],
+   "as_of": "2002-06-09",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00005": {
+   "item_id": "atlas_test_00005",
+   "top": "G86433",
+   "score": 0.63,
+   "candidates": [
+    "G86433",
+    "I86507",
+    "810714",
+    "967978"
+   ],
+   "dates": [
+    "2001-01-28",
+    "2002-09-24",
+    "1995-06-06",
+    "2006-03-31"
+   ],
+   "as_of": "1995-06-06",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00006": {
+   "item_id": "atlas_test_00006",
+   "top": "N027053",
+   "score": 0.856,
+   "candidates": [
+    "N027053",
+    "N140543",
+    "N142419"
+   ],
+   "dates": [
+    "2008-05-28",
+    "2011-01-10",
+    "2011-01-11"
+   ],
+   "as_of": "2008-05-28",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00007": {
+   "item_id": "atlas_test_00007",
+   "top": "H119060",
+   "score": 0.708,
+   "candidates": [
+    "H119060"
+   ],
+   "dates": [
+    "2010-11-09"
+   ],
+   "as_of": "2010-11-09",
+   "tier": "unique"
+  },
+  "atlas_test_00008": {
+   "item_id": "atlas_test_00008",
+   "top": "N335170",
+   "score": 1.3,
+   "candidates": [
+    "N335170"
+   ],
+   "dates": [
+    "2023-09-28"
+   ],
+   "as_of": "2023-09-28",
+   "tier": "unique"
+  },
+  "atlas_test_00009": {
+   "item_id": "atlas_test_00009",
+   "top": "N017954",
+   "score": 1.3,
+   "candidates": [
+    "N017954",
+    "N028029"
+   ],
+   "dates": [
+    "2007-10-22",
+    "2008-05-21"
+   ],
+   "as_of": "2007-10-22",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00010": {
+   "item_id": "atlas_test_00010",
+   "top": "N285109",
+   "score": 1.09,
+   "candidates": [
+    "N285109"
+   ],
+   "dates": [
+    "2017-04-11"
+   ],
+   "as_of": "2017-04-11",
+   "tier": "unique"
+  },
+  "atlas_test_00011": {
+   "item_id": "atlas_test_00011",
+   "top": "G85730",
+   "score": 1.208,
+   "candidates": [
+    "G85730",
+    "G89363"
+   ],
+   "dates": [
+    "2001-01-22",
+    "2001-04-12"
+   ],
+   "as_of": "2001-01-22",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00012": {
+   "item_id": "atlas_test_00012",
+   "top": "N010850",
+   "score": 0.584,
+   "candidates": [
+    "N010850",
+    "I88780"
+   ],
+   "dates": [
+    "2007-06-03",
+    "2002-12-10"
+   ],
+   "as_of": "2002-12-10",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00013": {
+   "item_id": "atlas_test_00013",
+   "top": "F83391",
+   "score": 1.0,
+   "candidates": [
+    "F83391"
+   ],
+   "dates": [
+    "2000-03-02"
+   ],
+   "as_of": "2000-03-02",
+   "tier": "unique"
+  },
+  "atlas_test_00014": {
+   "item_id": "atlas_test_00014",
+   "top": "F89525",
+   "score": 1.092,
+   "candidates": [
+    "F89525",
+    "I87397"
+   ],
+   "dates": [
+    "2000-08-11",
+    "2002-11-11"
+   ],
+   "as_of": "2000-08-11",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00015": {
+   "item_id": "atlas_test_00015",
+   "top": "N047889",
+   "score": 0.995,
+   "candidates": [
+    "N047889",
+    "J82399",
+    "N254459",
+    "F80949",
+    "N033479",
+    "N355506",
+    "848002",
+    "F88730"
+   ],
+   "dates": [
+    "2009-07-13",
+    "2003-04-17",
+    "2015-01-16",
+    "2000-01-13",
+    "2008-08-13",
+    "2025-11-25",
+    "2000-12-12",
+    "2001-02-28"
+   ],
+   "as_of": "2000-01-13",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00016": {
+   "item_id": "atlas_test_00016",
+   "top": "J88337",
+   "score": 1.06,
+   "candidates": [
+    "J88337"
+   ],
+   "dates": [
+    "2003-10-07"
+   ],
+   "as_of": "2003-10-07",
+   "tier": "unique"
+  },
+  "atlas_test_00017": {
+   "item_id": "atlas_test_00017",
+   "top": "N022317",
+   "score": 1.3,
+   "candidates": [
+    "N022317"
+   ],
+   "dates": [
+    "2008-02-01"
+   ],
+   "as_of": "2008-02-01",
+   "tier": "unique"
+  },
+  "atlas_test_00018": {
+   "item_id": "atlas_test_00018",
+   "top": "M82909",
+   "score": 0.65,
+   "candidates": [
+    "M82909",
+    "R04182",
+    "M80398",
+    "L85212",
+    "N016669"
+   ],
+   "dates": [
+    "2006-05-04",
+    "2006-07-06",
+    "2006-02-21",
+    "2005-06-15",
+    "2007-09-25"
+   ],
+   "as_of": "2005-06-15",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00019": {
+   "item_id": "atlas_test_00019",
+   "top": "N018427",
+   "score": 0.789,
+   "candidates": [
+    "N018427"
+   ],
+   "dates": [
+    "2007-11-05"
+   ],
+   "as_of": "2007-11-05",
+   "tier": "unique"
+  },
+  "atlas_test_00020": {
+   "item_id": "atlas_test_00020",
+   "top": "869797",
+   "score": 0.534,
+   "candidates": [
+    "869797",
+    "882999",
+    "J86689",
+    "K89736",
+    "K89827",
+    "N191295",
+    "N191297",
+    "N196579"
+   ],
+   "dates": [
+    "1992-01-08",
+    "1993-05-12",
+    "2003-07-21",
+    "2004-10-22",
+    "2004-10-12",
+    "2012-01-06",
+    "2012-01-06",
+    "2012-01-10"
+   ],
+   "as_of": "1992-01-08",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00021": {
+   "item_id": "atlas_test_00021",
+   "top": "N329453",
+   "score": 0.626,
+   "candidates": [
+    "N329453"
+   ],
+   "dates": [
+    "2022-12-06"
+   ],
+   "as_of": "2022-12-06",
+   "tier": "unique"
+  },
+  "atlas_test_00022": {
+   "item_id": "atlas_test_00022",
+   "top": "866933",
+   "score": 0.854,
+   "candidates": [
+    "866933"
+   ],
+   "dates": [
+    "1991-10-08"
+   ],
+   "as_of": "1991-10-08",
+   "tier": "unique"
+  },
+  "atlas_test_00023": {
+   "item_id": "atlas_test_00023",
+   "top": "N027241",
+   "score": 1.3,
+   "candidates": [
+    "N027241",
+    "N027243"
+   ],
+   "dates": [
+    "2008-05-19",
+    "2008-05-19"
+   ],
+   "as_of": "2008-05-19",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00024": {
+   "item_id": "atlas_test_00024",
+   "top": "N344700",
+   "score": 0.661,
+   "candidates": [
+    "N344700",
+    "N262359"
+   ],
+   "dates": [
+    "2025-01-13",
+    "2015-04-06"
+   ],
+   "as_of": "2015-04-06",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00025": {
+   "item_id": "atlas_test_00025",
+   "top": "N329837",
+   "score": 1.3,
+   "candidates": [
+    "N329837",
+    "N332591",
+    "N332592",
+    "N332593",
+    "N332595"
+   ],
+   "dates": [
+    "2023-01-12",
+    "2023-05-26",
+    "2023-05-26",
+    "2023-05-26",
+    "2023-05-26"
+   ],
+   "as_of": "2023-01-12",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00026": {
+   "item_id": "atlas_test_00026",
+   "top": "N326764",
+   "score": 0.64,
+   "candidates": [
+    "N326764",
+    "N338047",
+    "I87365"
+   ],
+   "dates": [
+    "2022-07-07",
+    "2024-02-22",
+    "2002-11-04"
+   ],
+   "as_of": "2002-11-04",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00027": {
+   "item_id": "atlas_test_00027",
+   "top": "N289058",
+   "score": 1.3,
+   "candidates": [
+    "N289058",
+    "N290278"
+   ],
+   "dates": [
+    "2017-08-28",
+    "2017-09-26"
+   ],
+   "as_of": "2017-08-28",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00028": {
+   "item_id": "atlas_test_00028",
+   "top": "K89503",
+   "score": 1.06,
+   "candidates": [
+    "K89503",
+    "J88343",
+    "N348500",
+    "N015499"
+   ],
+   "dates": [
+    "2004-10-07",
+    "2003-10-06",
+    "2025-05-15",
+    "2007-09-03"
+   ],
+   "as_of": "2003-10-06",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00029": {
+   "item_id": "atlas_test_00029",
+   "top": "R01491",
+   "score": 0.879,
+   "candidates": [
+    "R01491"
+   ],
+   "dates": [
+    "2005-03-03"
+   ],
+   "as_of": "2005-03-03",
+   "tier": "unique"
+  },
+  "atlas_test_00030": {
+   "item_id": "atlas_test_00030",
+   "top": "N329324",
+   "score": 1.199,
+   "candidates": [
+    "N329324"
+   ],
+   "dates": [
+    "2022-11-16"
+   ],
+   "as_of": "2022-11-16",
+   "tier": "unique"
+  },
+  "atlas_test_00031": {
+   "item_id": "atlas_test_00031",
+   "top": "J89311",
+   "score": 0.899,
+   "candidates": [
+    "J89311",
+    "J82128",
+    "F82589"
+   ],
+   "dates": [
+    "2003-10-23",
+    "2003-03-25",
+    "2000-02-16"
+   ],
+   "as_of": "2000-02-16",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00032": {
+   "item_id": "atlas_test_00032",
+   "top": "816949",
+   "score": 0.528,
+   "candidates": [
+    "816949",
+    "N315940"
+   ],
+   "dates": [
+    "1995-12-06",
+    "2020-12-09"
+   ],
+   "as_of": "1995-12-06",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00033": {
+   "item_id": "atlas_test_00033",
+   "top": "N251391",
+   "score": 0.613,
+   "candidates": [
+    "N251391"
+   ],
+   "dates": [
+    "2014-03-31"
+   ],
+   "as_of": "2014-03-31",
+   "tier": "unique"
+  },
+  "atlas_test_00034": {
+   "item_id": "atlas_test_00034",
+   "top": "889197",
+   "score": 0.757,
+   "candidates": [
+    "889197"
+   ],
+   "dates": [
+    "1993-08-20"
+   ],
+   "as_of": "1993-08-20",
+   "tier": "unique"
+  },
+  "atlas_test_00035": {
+   "item_id": "atlas_test_00035",
+   "top": "E83534",
+   "score": 0.738,
+   "candidates": [
+    "E83534"
+   ],
+   "dates": [
+    "1999-07-02"
+   ],
+   "as_of": "1999-07-02",
+   "tier": "unique"
+  },
+  "atlas_test_00036": {
+   "item_id": "atlas_test_00036",
+   "top": "H87548",
+   "score": 1.3,
+   "candidates": [
+    "H87548"
+   ],
+   "dates": [
+    "2002-02-12"
+   ],
+   "as_of": "2002-02-12",
+   "tier": "unique"
+  },
+  "atlas_test_00037": {
+   "item_id": "atlas_test_00037",
+   "top": "N350440",
+   "score": 0.79,
+   "candidates": [
+    "N350440",
+    "N361571",
+    "N358520",
+    "N359267",
+    "N232638"
+   ],
+   "dates": [
+    "2025-07-10",
+    "2026-05-29",
+    "2026-02-12",
+    "2026-03-13",
+    "2012-09-20"
+   ],
+   "as_of": "2012-09-20",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00038": {
+   "item_id": "atlas_test_00038",
+   "top": "D88836",
+   "score": 0.481,
+   "candidates": [
+    "D88836",
+    "J81370",
+    "N262178",
+    "N262187"
+   ],
+   "dates": [
+    "1999-03-26",
+    "2003-03-16",
+    "2015-03-30",
+    "2015-03-30"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00039": {
+   "item_id": "atlas_test_00039",
+   "top": "N346963",
+   "score": 0.663,
+   "candidates": [
+    "N346963",
+    "N346964",
+    "N346965",
+    "N350783",
+    "N354669",
+    "N336672",
+    "N026033",
+    "N353710"
+   ],
+   "dates": [
+    "2025-04-01",
+    "2025-04-01",
+    "2025-04-01",
+    "2025-07-29",
+    "2025-10-29",
+    "2023-12-14",
+    "2008-05-06",
+    "2025-09-19"
+   ],
+   "as_of": "2008-05-06",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00040": {
+   "item_id": "atlas_test_00040",
+   "top": "N041570",
+   "score": 0.835,
+   "candidates": [
+    "N041570"
+   ],
+   "dates": [
+    "2008-11-14"
+   ],
+   "as_of": "2008-11-14",
+   "tier": "unique"
+  },
+  "atlas_test_00041": {
+   "item_id": "atlas_test_00041",
+   "top": "N361038",
+   "score": 0.776,
+   "candidates": [
+    "N361038",
+    "M86889",
+    "N230148",
+    "N297103",
+    "N342499",
+    "N043643"
+   ],
+   "dates": [
+    "2026-05-19",
+    "2006-09-28",
+    "2012-09-05",
+    "2018-06-14",
+    "2024-09-11",
+    "2008-12-03"
+   ],
+   "as_of": "2006-09-28",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00042": {
+   "item_id": "atlas_test_00042",
+   "top": "K81018",
+   "score": 0.866,
+   "candidates": [
+    "K81018",
+    "L85711",
+    "H89663",
+    "I89303"
+   ],
+   "dates": [
+    "2003-11-13",
+    "2005-07-13",
+    "2002-04-07",
+    "2003-01-13"
+   ],
+   "as_of": "2002-04-07",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00043": {
+   "item_id": "atlas_test_00043",
+   "top": "N307336",
+   "score": 0.66,
+   "candidates": [
+    "N307336"
+   ],
+   "dates": [
+    "2019-11-22"
+   ],
+   "as_of": "2019-11-22",
+   "tier": "unique"
+  },
+  "atlas_test_00044": {
+   "item_id": "atlas_test_00044",
+   "top": "N014698",
+   "score": 0.635,
+   "candidates": [
+    "N014698"
+   ],
+   "dates": [
+    "2007-08-20"
+   ],
+   "as_of": "2007-08-20",
+   "tier": "unique"
+  },
+  "atlas_test_00045": {
+   "item_id": "atlas_test_00045",
+   "top": "M83284",
+   "score": 0.64,
+   "candidates": [
+    "M83284",
+    "I85985",
+    "N013471",
+    "G85044",
+    "G88524",
+    "N332683",
+    "I86745",
+    "N010850"
+   ],
+   "dates": [
+    "2006-06-20",
+    "2002-09-26",
+    "2007-07-15",
+    "2000-12-27",
+    "2001-04-19",
+    "2023-05-11",
+    "2002-10-06",
+    "2007-06-03"
+   ],
+   "as_of": "2000-12-27",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00046": {
+   "item_id": "atlas_test_00046",
+   "top": "H80603",
+   "score": 0.796,
+   "candidates": [
+    "H80603"
+   ],
+   "dates": [
+    "2001-05-15"
+   ],
+   "as_of": "2001-05-15",
+   "tier": "unique"
+  },
+  "atlas_test_00047": {
+   "item_id": "atlas_test_00047",
+   "top": "888723",
+   "score": 1.3,
+   "candidates": [
+    "888723"
+   ],
+   "dates": [
+    "1993-09-23"
+   ],
+   "as_of": "1993-09-23",
+   "tier": "unique"
+  },
+  "atlas_test_00048": {
+   "item_id": "atlas_test_00048",
+   "top": "G88375",
+   "score": 0.699,
+   "candidates": [
+    "G88375",
+    "N337887"
+   ],
+   "dates": [
+    "2001-03-26",
+    "2024-02-26"
+   ],
+   "as_of": "2001-03-26",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00049": {
+   "item_id": "atlas_test_00049",
+   "top": "965894",
+   "score": 1.195,
+   "candidates": [
+    "965894",
+    "I83432"
+   ],
+   "dates": [
+    "2003-01-23",
+    "2002-07-30"
+   ],
+   "as_of": "2002-07-30",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00050": {
+   "item_id": "atlas_test_00050",
+   "top": "N019868",
+   "score": 0.923,
+   "candidates": [
+    "N019868"
+   ],
+   "dates": [
+    "2007-12-11"
+   ],
+   "as_of": "2007-12-11",
+   "tier": "unique"
+  },
+  "atlas_test_00051": {
+   "item_id": "atlas_test_00051",
+   "top": "N003643",
+   "score": 0.997,
+   "candidates": [
+    "N003643"
+   ],
+   "dates": [
+    "2006-12-01"
+   ],
+   "as_of": "2006-12-01",
+   "tier": "unique"
+  },
+  "atlas_test_00052": {
+   "item_id": "atlas_test_00052",
+   "top": "F83529",
+   "score": 0.983,
+   "candidates": [
+    "F83529"
+   ],
+   "dates": [
+    "2000-03-24"
+   ],
+   "as_of": "2000-03-24",
+   "tier": "unique"
+  },
+  "atlas_test_00053": {
+   "item_id": "atlas_test_00053",
+   "top": "H83311",
+   "score": 0.65,
+   "candidates": [
+    "H83311"
+   ],
+   "dates": [
+    "2001-07-17"
+   ],
+   "as_of": "2001-07-17",
+   "tier": "unique"
+  },
+  "atlas_test_00054": {
+   "item_id": "atlas_test_00054",
+   "top": "N343294",
+   "score": 1.3,
+   "candidates": [
+    "N343294"
+   ],
+   "dates": [
+    "2024-11-13"
+   ],
+   "as_of": "2024-11-13",
+   "tier": "unique"
+  },
+  "atlas_test_00055": {
+   "item_id": "atlas_test_00055",
+   "top": "N347842",
+   "score": 1.3,
+   "candidates": [
+    "N347842"
+   ],
+   "dates": [
+    "2025-04-24"
+   ],
+   "as_of": "2025-04-24",
+   "tier": "unique"
+  },
+  "atlas_test_00056": {
+   "item_id": "atlas_test_00056",
+   "top": "N033195",
+   "score": 0.989,
+   "candidates": [
+    "N033195",
+    "M87365",
+    "L80434"
+   ],
+   "dates": [
+    "2008-07-14",
+    "2006-10-16",
+    "2004-11-04"
+   ],
+   "as_of": "2004-11-04",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00057": {
+   "item_id": "atlas_test_00057",
+   "top": "H240546",
+   "score": 0.828,
+   "candidates": [
+    "H240546",
+    "H281558"
+   ],
+   "dates": [
+    "2014-07-28",
+    "2017-01-05"
+   ],
+   "as_of": "2014-07-28",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00058": {
+   "item_id": "atlas_test_00058",
+   "top": "N300924",
+   "score": 0.754,
+   "candidates": [
+    "N300924"
+   ],
+   "dates": [
+    "2018-10-30"
+   ],
+   "as_of": "2018-10-30",
+   "tier": "unique"
+  },
+  "atlas_test_00059": {
+   "item_id": "atlas_test_00059",
+   "top": "K83625",
+   "score": 1.131,
+   "candidates": [
+    "K83625",
+    "H86240",
+    "H87616",
+    "I87641",
+    "K83997"
+   ],
+   "dates": [
+    "2004-03-11",
+    "2002-01-03",
+    "2002-02-21",
+    "2002-11-26",
+    "2004-03-30"
+   ],
+   "as_of": "2002-01-03",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00060": {
+   "item_id": "atlas_test_00060",
+   "top": "C87994",
+   "score": 1.3,
+   "candidates": [
+    "C87994"
+   ],
+   "dates": [
+    "1999-02-23"
+   ],
+   "as_of": "1999-02-23",
+   "tier": "unique"
+  },
+  "atlas_test_00061": {
+   "item_id": "atlas_test_00061",
+   "top": "F83494",
+   "score": 1.013,
+   "candidates": [
+    "F83494",
+    "G88558",
+    "N004459",
+    "H86974",
+    "N047268",
+    "N019756",
+    "J87183",
+    "F88917"
+   ],
+   "dates": [
+    "2000-03-21",
+    "2001-04-19",
+    "2007-01-04",
+    "2002-01-24",
+    "2009-01-09",
+    "2007-11-20",
+    "2003-09-04",
+    "2000-07-20"
+   ],
+   "as_of": "2000-03-21",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00062": {
+   "item_id": "atlas_test_00062",
+   "top": "K84096",
+   "score": 1.228,
+   "candidates": [
+    "K84096",
+    "M82595",
+    "N084598",
+    "K84071",
+    "J82578",
+    "N328326",
+    "N254459",
+    "N096117"
+   ],
+   "dates": [
+    "2004-07-06",
+    "2006-05-11",
+    "2010-02-21",
+    "2004-04-04",
+    "2003-08-11",
+    "2022-10-05",
+    "2015-01-16",
+    "2010-03-14"
+   ],
+   "as_of": "2003-08-11",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00063": {
+   "item_id": "atlas_test_00063",
+   "top": "R01545",
+   "score": 0.662,
+   "candidates": [
+    "R01545"
+   ],
+   "dates": [
+    "2005-03-11"
+   ],
+   "as_of": "2005-03-11",
+   "tier": "unique"
+  },
+  "atlas_test_00064": {
+   "item_id": "atlas_test_00064",
+   "top": "I84150",
+   "score": 0.65,
+   "candidates": [
+    "I84150"
+   ],
+   "dates": [
+    "2002-07-21"
+   ],
+   "as_of": "2002-07-21",
+   "tier": "unique"
+  },
+  "atlas_test_00065": {
+   "item_id": "atlas_test_00065",
+   "top": "L81088",
+   "score": 0.8,
+   "candidates": [
+    "L81088",
+    "N308917",
+    "L80743"
+   ],
+   "dates": [
+    "2004-12-06",
+    "2020-01-24",
+    "2004-11-24"
+   ],
+   "as_of": "2004-11-24",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00066": {
+   "item_id": "atlas_test_00066",
+   "top": "I81920",
+   "score": 1.3,
+   "candidates": [
+    "I81920"
+   ],
+   "dates": [
+    "2002-06-11"
+   ],
+   "as_of": "2002-06-11",
+   "tier": "unique"
+  },
+  "atlas_test_00067": {
+   "item_id": "atlas_test_00067",
+   "top": "N337115",
+   "score": 0.968,
+   "candidates": [
+    "N337115",
+    "I80839",
+    "N014981",
+    "J80890"
+   ],
+   "dates": [
+    "2024-01-10",
+    "2002-04-23",
+    "2007-08-20",
+    "2003-02-27"
+   ],
+   "as_of": "2002-04-23",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00068": {
+   "item_id": "atlas_test_00068",
+   "top": "963725",
+   "score": 1.0,
+   "candidates": [
+    "963725",
+    "F81122",
+    "H273386",
+    "H304957",
+    "H82315",
+    "J80227",
+    "J82988",
+    "J86231"
+   ],
+   "dates": [
+    "2001-05-17",
+    "2000-01-19",
+    "2017-06-13",
+    "2020-10-20",
+    "2001-06-25",
+    "2003-02-20",
+    "2003-04-20",
+    "2003-07-01"
+   ],
+   "as_of": "2000-01-19",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00069": {
+   "item_id": "atlas_test_00069",
+   "top": "N359736",
+   "score": 1.0,
+   "candidates": [
+    "N359736"
+   ],
+   "dates": [
+    "2026-04-02"
+   ],
+   "as_of": "2026-04-02",
+   "tier": "unique"
+  },
+  "atlas_test_00070": {
+   "item_id": "atlas_test_00070",
+   "top": "N096598",
+   "score": 1.3,
+   "candidates": [
+    "N096598",
+    "N096605"
+   ],
+   "dates": [
+    "2010-03-14",
+    "2010-03-30"
+   ],
+   "as_of": "2010-03-14",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00071": {
+   "item_id": "atlas_test_00071",
+   "top": "806984",
+   "score": 0.744,
+   "candidates": [
+    "806984",
+    "A82063",
+    "A82064",
+    "C85573",
+    "C87534",
+    "C88124",
+    "D83022",
+    "G84446"
+   ],
+   "dates": [
+    "1995-02-21",
+    "1996-04-05",
+    "1996-04-11",
+    "1998-03-23",
+    "1998-05-28",
+    "1998-06-08",
+    "1998-10-07",
+    "2000-12-05"
+   ],
+   "as_of": "1995-02-21",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00072": {
+   "item_id": "atlas_test_00072",
+   "top": "N252076",
+   "score": 0.917,
+   "candidates": [
+    "N252076",
+    "N341089",
+    "N361135",
+    "N252074",
+    "N252082",
+    "N252085"
+   ],
+   "dates": [
+    "2014-05-01",
+    "2024-07-17",
+    "2026-05-21",
+    "2014-05-01",
+    "2014-05-02",
+    "2014-05-01"
+   ],
+   "as_of": "2014-05-01",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00073": {
+   "item_id": "atlas_test_00073",
+   "top": "G86050",
+   "score": 1.204,
+   "candidates": [
+    "G86050",
+    "G85916",
+    "G88075"
+   ],
+   "dates": [
+    "2001-01-25",
+    "2001-03-01",
+    "2001-03-26"
+   ],
+   "as_of": "2001-01-25",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00074": {
+   "item_id": "atlas_test_00074",
+   "top": "816587",
+   "score": 1.3,
+   "candidates": [
+    "816587",
+    "N347408"
+   ],
+   "dates": [
+    "1995-12-08",
+    "2025-04-18"
+   ],
+   "as_of": "1995-12-08",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00075": {
+   "item_id": "atlas_test_00075",
+   "top": "N013444",
+   "score": 0.73,
+   "candidates": [
+    "N013444"
+   ],
+   "dates": [
+    "2007-07-17"
+   ],
+   "as_of": "2007-07-17",
+   "tier": "unique"
+  },
+  "atlas_test_00076": {
+   "item_id": "atlas_test_00076",
+   "top": "951239",
+   "score": 1.3,
+   "candidates": [
+    "951239",
+    "955334"
+   ],
+   "dates": [
+    "1992-08-11",
+    "1995-03-10"
+   ],
+   "as_of": "1992-08-11",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00077": {
+   "item_id": "atlas_test_00077",
+   "top": "N296484",
+   "score": 0.632,
+   "candidates": [
+    "N296484",
+    "N252023",
+    "L88358",
+    "N346678"
+   ],
+   "dates": [
+    "2018-05-23",
+    "2014-05-02",
+    "2005-10-25",
+    "2025-09-16"
+   ],
+   "as_of": "2005-10-25",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00078": {
+   "item_id": "atlas_test_00078",
+   "top": "K80332",
+   "score": 0.555,
+   "candidates": [
+    "K80332",
+    "L81073",
+    "N047200",
+    "B87923",
+    "F85809",
+    "K89351",
+    "N309957",
+    "H195875"
+   ],
+   "dates": [
+    "2003-11-21",
+    "2004-12-13",
+    "2009-01-09",
+    "1997-08-18",
+    "2000-05-02",
+    "2004-10-04",
+    "2020-02-25",
+    "2013-09-12"
+   ],
+   "as_of": "1997-08-18",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00079": {
+   "item_id": "atlas_test_00079",
+   "top": "N316752",
+   "score": 0.667,
+   "candidates": [
+    "N316752",
+    "N249760",
+    "N354570"
+   ],
+   "dates": [
+    "2021-01-22",
+    "2014-02-03",
+    "2025-10-28"
+   ],
+   "as_of": "2014-02-03",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00080": {
+   "item_id": "atlas_test_00080",
+   "top": "G84446",
+   "score": 1.254,
+   "candidates": [
+    "G84446"
+   ],
+   "dates": [
+    "2000-12-05"
+   ],
+   "as_of": "2000-12-05",
+   "tier": "unique"
+  },
+  "atlas_test_00081": {
+   "item_id": "atlas_test_00081",
+   "top": "K88211",
+   "score": 1.3,
+   "candidates": [
+    "K88211"
+   ],
+   "dates": [
+    "2004-09-01"
+   ],
+   "as_of": "2004-09-01",
+   "tier": "unique"
+  },
+  "atlas_test_00082": {
+   "item_id": "atlas_test_00082",
+   "top": "R03599",
+   "score": 0.547,
+   "candidates": [
+    "R03599",
+    "N014352",
+    "N276908",
+    "N338985"
+   ],
+   "dates": [
+    "2006-04-06",
+    "2007-07-22",
+    "2016-07-22",
+    "2024-04-11"
+   ],
+   "as_of": "2006-04-06",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00083": {
+   "item_id": "atlas_test_00083",
+   "top": "962659",
+   "score": 0.932,
+   "candidates": [
+    "962659",
+    "N335129",
+    "N189761"
+   ],
+   "dates": [
+    "2000-11-22",
+    "2023-09-18",
+    "2011-11-17"
+   ],
+   "as_of": "2000-11-22",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00084": {
+   "item_id": "atlas_test_00084",
+   "top": "R00452",
+   "score": 0.763,
+   "candidates": [
+    "R00452"
+   ],
+   "dates": [
+    "2004-06-23"
+   ],
+   "as_of": "2004-06-23",
+   "tier": "unique"
+  },
+  "atlas_test_00085": {
+   "item_id": "atlas_test_00085",
+   "top": "562881",
+   "score": 0.63,
+   "candidates": [
+    "562881",
+    "H274096",
+    "H89952",
+    "I85144",
+    "N329503",
+    "N333773",
+    "N344236",
+    "N358675"
+   ],
+   "dates": [
+    "2003-12-24",
+    "2018-01-26",
+    "2002-04-14",
+    "2002-09-05",
+    "2022-12-07",
+    "2023-07-28",
+    "2024-12-04",
+    "2026-03-05"
+   ],
+   "as_of": "2002-04-14",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00086": {
+   "item_id": "atlas_test_00086",
+   "top": "084610",
+   "score": 1.3,
+   "candidates": [
+    "084610"
+   ],
+   "dates": [
+    "1990-05-17"
+   ],
+   "as_of": "1990-05-17",
+   "tier": "unique"
+  },
+  "atlas_test_00087": {
+   "item_id": "atlas_test_00087",
+   "top": "800666",
+   "score": 0.419,
+   "candidates": [
+    "800666",
+    "898677",
+    "898919",
+    "898925"
+   ],
+   "dates": [
+    "1994-08-05",
+    "1994-06-07",
+    "1994-06-16",
+    "1994-06-16"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00088": {
+   "item_id": "atlas_test_00088",
+   "top": "N299589",
+   "score": 0.537,
+   "candidates": [
+    "N299589"
+   ],
+   "dates": [
+    "2018-08-30"
+   ],
+   "as_of": "2018-08-30",
+   "tier": "unique"
+  },
+  "atlas_test_00089": {
+   "item_id": "atlas_test_00089",
+   "top": "H89122",
+   "score": 1.3,
+   "candidates": [
+    "H89122"
+   ],
+   "dates": [
+    "2002-03-26"
+   ],
+   "as_of": "2002-03-26",
+   "tier": "unique"
+  },
+  "atlas_test_00090": {
+   "item_id": "atlas_test_00090",
+   "top": "N261252",
+   "score": 0.642,
+   "candidates": [
+    "N261252",
+    "J81441"
+   ],
+   "dates": [
+    "2015-02-19",
+    "2003-03-24"
+   ],
+   "as_of": "2003-03-24",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00091": {
+   "item_id": "atlas_test_00091",
+   "top": "H251432",
+   "score": 0.573,
+   "candidates": [
+    "H251432",
+    "965414"
+   ],
+   "dates": [
+    "2016-10-20",
+    "2002-07-30"
+   ],
+   "as_of": "2002-07-30",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00092": {
+   "item_id": "atlas_test_00092",
+   "top": "I80630",
+   "score": 1.197,
+   "candidates": [
+    "I80630"
+   ],
+   "dates": [
+    "2002-05-02"
+   ],
+   "as_of": "2002-05-02",
+   "tier": "unique"
+  },
+  "atlas_test_00093": {
+   "item_id": "atlas_test_00093",
+   "top": "N006160",
+   "score": 0.755,
+   "candidates": [
+    "N006160"
+   ],
+   "dates": [
+    "2007-03-01"
+   ],
+   "as_of": "2007-03-01",
+   "tier": "unique"
+  },
+  "atlas_test_00094": {
+   "item_id": "atlas_test_00094",
+   "top": "E81379",
+   "score": 0.645,
+   "candidates": [
+    "E81379"
+   ],
+   "dates": [
+    "1999-06-04"
+   ],
+   "as_of": "1999-06-04",
+   "tier": "unique"
+  },
+  "atlas_test_00095": {
+   "item_id": "atlas_test_00095",
+   "top": "J83401",
+   "score": 1.028,
+   "candidates": [
+    "J83401",
+    "G85962",
+    "N005117",
+    "I80267",
+    "G87373",
+    "K89906",
+    "N005110",
+    "G82123"
+   ],
+   "dates": [
+    "2003-05-05",
+    "2001-01-17",
+    "2007-02-02",
+    "2002-04-09",
+    "2001-03-27",
+    "2004-10-26",
+    "2007-02-02",
+    "2000-10-18"
+   ],
+   "as_of": "2000-10-18",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00096": {
+   "item_id": "atlas_test_00096",
+   "top": "864313",
+   "score": 0.589,
+   "candidates": [
+    "864313"
+   ],
+   "dates": [
+    "1991-07-09"
+   ],
+   "as_of": "1991-07-09",
+   "tier": "unique"
+  },
+  "atlas_test_00097": {
+   "item_id": "atlas_test_00097",
+   "top": "N347290",
+   "score": 0.648,
+   "candidates": [
+    "N347290",
+    "H305588",
+    "N254852"
+   ],
+   "dates": [
+    "2025-04-30",
+    "2022-03-03",
+    "2014-07-21"
+   ],
+   "as_of": "2014-07-21",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00098": {
+   "item_id": "atlas_test_00098",
+   "top": "F88730",
+   "score": 0.933,
+   "candidates": [
+    "F88730",
+    "N014413",
+    "N347799",
+    "H80461",
+    "H86471",
+    "M80744",
+    "N190940",
+    "K85422"
+   ],
+   "dates": [
+    "2001-02-28",
+    "2007-07-29",
+    "2025-04-23",
+    "2001-05-21",
+    "2002-01-16",
+    "2006-02-23",
+    "2011-11-22",
+    "2004-05-16"
+   ],
+   "as_of": "2001-02-28",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00099": {
+   "item_id": "atlas_test_00099",
+   "top": "N013443",
+   "score": 0.505,
+   "candidates": [
+    "N013443"
+   ],
+   "dates": [
+    "2007-07-22"
+   ],
+   "as_of": "2007-07-22",
+   "tier": "unique"
+  },
+  "atlas_test_00100": {
+   "item_id": "atlas_test_00100",
+   "top": "561940",
+   "score": 0.408,
+   "candidates": [
+    "561940",
+    "N355141",
+    "N357755",
+    "881469"
+   ],
+   "dates": [
+    "2001-02-07",
+    "2025-11-17",
+    "2026-02-04",
+    "1993-01-19"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00101": {
+   "item_id": "atlas_test_00101",
+   "top": "967158",
+   "score": 0.47,
+   "candidates": [
+    "967158"
+   ],
+   "dates": [
+    "2004-09-03"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00102": {
+   "item_id": "atlas_test_00102",
+   "top": "N118644",
+   "score": 1.3,
+   "candidates": [
+    "N118644",
+    "N109495"
+   ],
+   "dates": [
+    "2010-08-19",
+    "2010-06-24"
+   ],
+   "as_of": "2010-06-24",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00103": {
+   "item_id": "atlas_test_00103",
+   "top": "I80580",
+   "score": 1.178,
+   "candidates": [
+    "I80580",
+    "I88687",
+    "M82829",
+    "G82141",
+    "K89905",
+    "H80775",
+    "G82140",
+    "N013093"
+   ],
+   "dates": [
+    "2002-05-15",
+    "2002-12-12",
+    "2006-05-29",
+    "2000-10-17",
+    "2004-10-27",
+    "2001-06-17",
+    "2000-10-16",
+    "2007-07-10"
+   ],
+   "as_of": "2000-10-16",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00104": {
+   "item_id": "atlas_test_00104",
+   "top": "N255354",
+   "score": 1.03,
+   "candidates": [
+    "N255354"
+   ],
+   "dates": [
+    "2014-08-01"
+   ],
+   "as_of": "2014-08-01",
+   "tier": "unique"
+  },
+  "atlas_test_00105": {
+   "item_id": "atlas_test_00105",
+   "top": "C85572",
+   "score": 1.3,
+   "candidates": [
+    "C85572"
+   ],
+   "dates": [
+    "1998-03-26"
+   ],
+   "as_of": "1998-03-26",
+   "tier": "unique"
+  },
+  "atlas_test_00106": {
+   "item_id": "atlas_test_00106",
+   "top": "M80343",
+   "score": 0.465,
+   "candidates": [
+    "M80343",
+    "I82895",
+    "N103739",
+    "N337783",
+    "N332345"
+   ],
+   "dates": [
+    "2006-02-28",
+    "2002-06-19",
+    "2010-05-23",
+    "2024-02-09",
+    "2023-05-04"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00107": {
+   "item_id": "atlas_test_00107",
+   "top": "F85027",
+   "score": 1.05,
+   "candidates": [
+    "F85027",
+    "I84710",
+    "N359366",
+    "F88287",
+    "G85932",
+    "N326658",
+    "N335097"
+   ],
+   "dates": [
+    "2000-04-17",
+    "2002-08-18",
+    "2026-03-31",
+    "2000-06-14",
+    "2001-01-10",
+    "2022-07-14",
+    "2023-09-27"
+   ],
+   "as_of": "2000-04-17",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00108": {
+   "item_id": "atlas_test_00108",
+   "top": "N007303",
+   "score": 1.3,
+   "candidates": [
+    "N007303",
+    "L88053"
+   ],
+   "dates": [
+    "2007-03-20",
+    "2005-11-02"
+   ],
+   "as_of": "2005-11-02",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00109": {
+   "item_id": "atlas_test_00109",
+   "top": "086883",
+   "score": 0.981,
+   "candidates": [
+    "086883"
+   ],
+   "dates": [
+    "1990-05-01"
+   ],
+   "as_of": "1990-05-01",
+   "tier": "unique"
+  },
+  "atlas_test_00110": {
+   "item_id": "atlas_test_00110",
+   "top": "N251823",
+   "score": 1.095,
+   "candidates": [
+    "N251823",
+    "N034818",
+    "F81558",
+    "I85872",
+    "J82033",
+    "J85531",
+    "J88920",
+    "M83553"
+   ],
+   "dates": [
+    "2014-04-18",
+    "2008-08-25",
+    "2000-02-11",
+    "2002-10-02",
+    "2003-04-08",
+    "2003-07-01",
+    "2003-10-28",
+    "2006-06-15"
+   ],
+   "as_of": "2000-02-11",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00111": {
+   "item_id": "atlas_test_00111",
+   "top": "864957",
+   "score": 1.069,
+   "candidates": [
+    "864957",
+    "864960",
+    "864992",
+    "H260250"
+   ],
+   "dates": [
+    "1991-07-29",
+    "1991-07-29",
+    "1991-07-29",
+    "2015-05-27"
+   ],
+   "as_of": "1991-07-29",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00112": {
+   "item_id": "atlas_test_00112",
+   "top": "885590",
+   "score": 0.439,
+   "candidates": [
+    "885590",
+    "885592"
+   ],
+   "dates": [
+    "1993-05-25",
+    "1993-05-21"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00113": {
+   "item_id": "atlas_test_00113",
+   "top": "966632",
+   "score": 0.94,
+   "candidates": [
+    "966632"
+   ],
+   "dates": [
+    "2004-12-14"
+   ],
+   "as_of": "2004-12-14",
+   "tier": "unique"
+  },
+  "atlas_test_00114": {
+   "item_id": "atlas_test_00114",
+   "top": "N359472",
+   "score": 0.619,
+   "candidates": [
+    "N359472",
+    "R00795"
+   ],
+   "dates": [
+    "2026-03-18",
+    "2004-09-15"
+   ],
+   "as_of": "2004-09-15",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00115": {
+   "item_id": "atlas_test_00115",
+   "top": "E87167",
+   "score": 0.568,
+   "candidates": [
+    "E87167",
+    "G81584",
+    "N356357",
+    "N336987"
+   ],
+   "dates": [
+    "1999-10-08",
+    "2000-09-19",
+    "2025-12-09",
+    "2023-12-27"
+   ],
+   "as_of": "1999-10-08",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00116": {
+   "item_id": "atlas_test_00116",
+   "top": "D87639",
+   "score": 0.611,
+   "candidates": [
+    "D87639"
+   ],
+   "dates": [
+    "1999-03-04"
+   ],
+   "as_of": "1999-03-04",
+   "tier": "unique"
+  },
+  "atlas_test_00117": {
+   "item_id": "atlas_test_00117",
+   "top": "N323764",
+   "score": 1.213,
+   "candidates": [
+    "N323764"
+   ],
+   "dates": [
+    "2022-01-28"
+   ],
+   "as_of": "2022-01-28",
+   "tier": "unique"
+  },
+  "atlas_test_00118": {
+   "item_id": "atlas_test_00118",
+   "top": "M86963",
+   "score": 0.854,
+   "candidates": [
+    "M86963",
+    "N287133"
+   ],
+   "dates": [
+    "2006-10-25",
+    "2017-06-21"
+   ],
+   "as_of": "2006-10-25",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00119": {
+   "item_id": "atlas_test_00119",
+   "top": "F83955",
+   "score": 0.898,
+   "candidates": [
+    "F83955"
+   ],
+   "dates": [
+    "2000-03-31"
+   ],
+   "as_of": "2000-03-31",
+   "tier": "unique"
+  },
+  "atlas_test_00120": {
+   "item_id": "atlas_test_00120",
+   "top": "I81509",
+   "score": 0.828,
+   "candidates": [
+    "I81509",
+    "G81748",
+    "G83641",
+    "G80929",
+    "K89852",
+    "963616",
+    "963581",
+    "H86983"
+   ],
+   "dates": [
+    "2002-05-19",
+    "2000-10-18",
+    "2000-10-30",
+    "2000-09-11",
+    "2004-10-07",
+    "2000-05-16",
+    "2000-03-31",
+    "2002-01-28"
+   ],
+   "as_of": "2000-03-31",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00121": {
+   "item_id": "atlas_test_00121",
+   "top": "N265787",
+   "score": 0.947,
+   "candidates": [
+    "N265787"
+   ],
+   "dates": [
+    "2015-07-16"
+   ],
+   "as_of": "2015-07-16",
+   "tier": "unique"
+  },
+  "atlas_test_00122": {
+   "item_id": "atlas_test_00122",
+   "top": "L82502",
+   "score": 0.772,
+   "candidates": [
+    "L82502",
+    "L86987",
+    "N068619",
+    "H89094",
+    "L80103",
+    "N264969",
+    "N289284",
+    "N331868"
+   ],
+   "dates": [
+    "2005-02-17",
+    "2005-08-16",
+    "2009-07-29",
+    "2002-03-24",
+    "2004-10-06",
+    "2015-06-05",
+    "2017-09-13",
+    "2023-04-13"
+   ],
+   "as_of": "2002-03-24",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00123": {
+   "item_id": "atlas_test_00123",
+   "top": "R04660",
+   "score": 0.962,
+   "candidates": [
+    "R04660",
+    "I83932",
+    "N317503",
+    "N338031"
+   ],
+   "dates": [
+    "2006-08-23",
+    "2002-07-16",
+    "2021-03-02",
+    "2024-02-21"
+   ],
+   "as_of": "2002-07-16",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00124": {
+   "item_id": "atlas_test_00124",
+   "top": "N051748",
+   "score": 1.3,
+   "candidates": [
+    "N051748"
+   ],
+   "dates": [
+    "2009-03-02"
+   ],
+   "as_of": "2009-03-02",
+   "tier": "unique"
+  },
+  "atlas_test_00125": {
+   "item_id": "atlas_test_00125",
+   "top": "M85525",
+   "score": 1.3,
+   "candidates": [
+    "M85525",
+    "M85635",
+    "M85636",
+    "M85637"
+   ],
+   "dates": [
+    "2006-08-14",
+    "2006-08-14",
+    "2006-08-14",
+    "2006-08-14"
+   ],
+   "as_of": "2006-08-14",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00126": {
+   "item_id": "atlas_test_00126",
+   "top": "K83097",
+   "score": 1.3,
+   "candidates": [
+    "K83097"
+   ],
+   "dates": [
+    "2004-03-15"
+   ],
+   "as_of": "2004-03-15",
+   "tier": "unique"
+  },
+  "atlas_test_00127": {
+   "item_id": "atlas_test_00127",
+   "top": "L88472",
+   "score": 1.3,
+   "candidates": [
+    "L88472"
+   ],
+   "dates": [
+    "2005-11-15"
+   ],
+   "as_of": "2005-11-15",
+   "tier": "unique"
+  },
+  "atlas_test_00128": {
+   "item_id": "atlas_test_00128",
+   "top": "N328038",
+   "score": 1.3,
+   "candidates": [
+    "N328038"
+   ],
+   "dates": [
+    "2022-09-21"
+   ],
+   "as_of": "2022-09-21",
+   "tier": "unique"
+  },
+  "atlas_test_00129": {
+   "item_id": "atlas_test_00129",
+   "top": "J83885",
+   "score": 0.469,
+   "candidates": [
+    "J83885",
+    "J85091"
+   ],
+   "dates": [
+    "2003-05-06",
+    "2003-09-08"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00130": {
+   "item_id": "atlas_test_00130",
+   "top": "K85180",
+   "score": 1.3,
+   "candidates": [
+    "K85180",
+    "N355146"
+   ],
+   "dates": [
+    "2004-05-10",
+    "2025-11-10"
+   ],
+   "as_of": "2004-05-10",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00131": {
+   "item_id": "atlas_test_00131",
+   "top": "876120",
+   "score": 1.199,
+   "candidates": [
+    "876120",
+    "883685"
+   ],
+   "dates": [
+    "1992-07-10",
+    "1993-03-26"
+   ],
+   "as_of": "1992-07-10",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00132": {
+   "item_id": "atlas_test_00132",
+   "top": "F81928",
+   "score": 0.82,
+   "candidates": [
+    "F81928"
+   ],
+   "dates": [
+    "2000-02-08"
+   ],
+   "as_of": "2000-02-08",
+   "tier": "unique"
+  },
+  "atlas_test_00133": {
+   "item_id": "atlas_test_00133",
+   "top": "808279",
+   "score": 1.3,
+   "candidates": [
+    "808279",
+    "817332"
+   ],
+   "dates": [
+    "1995-03-23",
+    "1995-12-14"
+   ],
+   "as_of": "1995-03-23",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00134": {
+   "item_id": "atlas_test_00134",
+   "top": "H86452",
+   "score": 1.3,
+   "candidates": [
+    "H86452"
+   ],
+   "dates": [
+    "2002-02-13"
+   ],
+   "as_of": "2002-02-13",
+   "tier": "unique"
+  },
+  "atlas_test_00135": {
+   "item_id": "atlas_test_00135",
+   "top": "N348579",
+   "score": 0.905,
+   "candidates": [
+    "N348579",
+    "N266374",
+    "J87560",
+    "K85873",
+    "L83211",
+    "N061900"
+   ],
+   "dates": [
+    "2025-06-03",
+    "2016-01-15",
+    "2003-08-13",
+    "2004-05-16",
+    "2005-03-08",
+    "2009-06-11"
+   ],
+   "as_of": "2003-08-13",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00136": {
+   "item_id": "atlas_test_00136",
+   "top": "N341638",
+   "score": 0.655,
+   "candidates": [
+    "N341638"
+   ],
+   "dates": [
+    "2024-08-15"
+   ],
+   "as_of": "2024-08-15",
+   "tier": "unique"
+  },
+  "atlas_test_00137": {
+   "item_id": "atlas_test_00137",
+   "top": "H312118",
+   "score": 0.707,
+   "candidates": [
+    "H312118"
+   ],
+   "dates": [
+    "2021-10-18"
+   ],
+   "as_of": "2021-10-18",
+   "tier": "unique"
+  },
+  "atlas_test_00138": {
+   "item_id": "atlas_test_00138",
+   "top": "H88105",
+   "score": 1.088,
+   "candidates": [
+    "H88105"
+   ],
+   "dates": [
+    "2002-03-12"
+   ],
+   "as_of": "2002-03-12",
+   "tier": "unique"
+  },
+  "atlas_test_00139": {
+   "item_id": "atlas_test_00139",
+   "top": "N351419",
+   "score": 0.472,
+   "candidates": [
+    "N351419",
+    "L80956",
+    "N047200",
+    "N329606",
+    "N343636",
+    "814368",
+    "880295",
+    "889036"
+   ],
+   "dates": [
+    "2025-07-31",
+    "2004-12-07",
+    "2009-01-09",
+    "2022-12-16",
+    "2024-11-18",
+    "1995-09-11",
+    "1992-12-08",
+    "1993-08-26"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00140": {
+   "item_id": "atlas_test_00140",
+   "top": "888351",
+   "score": 0.815,
+   "candidates": [
+    "888351",
+    "C87837",
+    "N018427",
+    "I87416",
+    "N324999"
+   ],
+   "dates": [
+    "1993-08-09",
+    "1998-06-11",
+    "2007-11-05",
+    "2002-11-04",
+    "2022-04-06"
+   ],
+   "as_of": "1993-08-09",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00141": {
+   "item_id": "atlas_test_00141",
+   "top": "F87255",
+   "score": 1.3,
+   "candidates": [
+    "F87255",
+    "K84773",
+    "K85127",
+    "K86499",
+    "K87408",
+    "L81550",
+    "N065976",
+    "G87897"
+   ],
+   "dates": [
+    "2000-06-26",
+    "2004-05-02",
+    "2004-05-13",
+    "2004-06-20",
+    "2004-07-13",
+    "2005-01-12",
+    "2009-07-14",
+    "2001-03-28"
+   ],
+   "as_of": "2000-06-26",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00142": {
+   "item_id": "atlas_test_00142",
+   "top": "G86712",
+   "score": 1.243,
+   "candidates": [
+    "G86712"
+   ],
+   "dates": [
+    "2001-02-13"
+   ],
+   "as_of": "2001-02-13",
+   "tier": "unique"
+  },
+  "atlas_test_00143": {
+   "item_id": "atlas_test_00143",
+   "top": "N260393",
+   "score": 0.476,
+   "candidates": [
+    "N260393",
+    "L83432"
+   ],
+   "dates": [
+    "2015-01-20",
+    "2005-04-01"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00144": {
+   "item_id": "atlas_test_00144",
+   "top": "N295916",
+   "score": 1.3,
+   "candidates": [
+    "N295916"
+   ],
+   "dates": [
+    "2018-05-02"
+   ],
+   "as_of": "2018-05-02",
+   "tier": "unique"
+  },
+  "atlas_test_00145": {
+   "item_id": "atlas_test_00145",
+   "top": "N010330",
+   "score": 0.92,
+   "candidates": [
+    "N010330",
+    "N281599",
+    "N047756",
+    "N342167",
+    "N296484"
+   ],
+   "dates": [
+    "2007-05-16",
+    "2017-01-05",
+    "2009-01-06",
+    "2024-08-30",
+    "2018-05-23"
+   ],
+   "as_of": "2007-05-16",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00146": {
+   "item_id": "atlas_test_00146",
+   "top": "K82394",
+   "score": 0.461,
+   "candidates": [
+    "K82394",
+    "H83408",
+    "I82599",
+    "F84722",
+    "F85958",
+    "N347281"
+   ],
+   "dates": [
+    "2004-01-21",
+    "2001-07-17",
+    "2002-05-29",
+    "2000-03-23",
+    "2000-05-09",
+    "2025-04-23"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00147": {
+   "item_id": "atlas_test_00147",
+   "top": "N325811",
+   "score": 0.465,
+   "candidates": [
+    "N325811",
+    "G83515",
+    "E87543",
+    "M86565",
+    "N089875",
+    "N302249"
+   ],
+   "dates": [
+    "2022-05-13",
+    "2000-11-07",
+    "1999-10-14",
+    "2006-10-02",
+    "2010-01-13",
+    "2019-02-06"
+   ],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00148": {
+   "item_id": "atlas_test_00148",
+   "top": "N357918",
+   "score": 0.864,
+   "candidates": [
+    "N357918"
+   ],
+   "dates": [
+    "2026-02-12"
+   ],
+   "as_of": "2026-02-12",
+   "tier": "unique"
+  },
+  "atlas_test_00149": {
+   "item_id": "atlas_test_00149",
+   "top": "J88216",
+   "score": 1.3,
+   "candidates": [
+    "J88216"
+   ],
+   "dates": [
+    "2003-09-01"
+   ],
+   "as_of": "2003-09-01",
+   "tier": "unique"
+  },
+  "atlas_test_00150": {
+   "item_id": "atlas_test_00150",
+   "top": "C86022",
+   "score": 1.01,
+   "candidates": [
+    "C86022"
+   ],
+   "dates": [
+    "1998-04-22"
+   ],
+   "as_of": "1998-04-22",
+   "tier": "unique"
+  },
+  "atlas_test_00151": {
+   "item_id": "atlas_test_00151",
+   "top": "N348526",
+   "score": 1.0,
+   "candidates": [
+    "N348526"
+   ],
+   "dates": [
+    "2025-05-22"
+   ],
+   "as_of": "2025-05-22",
+   "tier": "unique"
+  },
+  "atlas_test_00152": {
+   "item_id": "atlas_test_00152",
+   "top": "803077",
+   "score": 0.3,
+   "candidates": [],
+   "dates": [],
+   "as_of": null,
+   "tier": null
+  },
+  "atlas_test_00153": {
+   "item_id": "atlas_test_00153",
+   "top": "869777",
+   "score": 0.711,
+   "candidates": [
+    "869777",
+    "875590",
+    "N259536"
+   ],
+   "dates": [
+    "1991-12-11",
+    "1992-07-02",
+    "2014-12-09"
+   ],
+   "as_of": "1991-12-11",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00154": {
+   "item_id": "atlas_test_00154",
+   "top": "N267335",
+   "score": 0.767,
+   "candidates": [
+    "N267335",
+    "N005020"
+   ],
+   "dates": [
+    "2015-08-28",
+    "2007-01-22"
+   ],
+   "as_of": "2007-01-22",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00155": {
+   "item_id": "atlas_test_00155",
+   "top": "M87234",
+   "score": 1.063,
+   "candidates": [
+    "M87234",
+    "M81657",
+    "M81967",
+    "M82100",
+    "M83865",
+    "M83941",
+    "M85137",
+    "M85528"
+   ],
+   "dates": [
+    "2006-11-14",
+    "2006-03-29",
+    "2006-05-09",
+    "2006-05-02",
+    "2006-06-29",
+    "2006-07-05",
+    "2006-08-10",
+    "2006-08-28"
+   ],
+   "as_of": "2006-03-29",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00156": {
+   "item_id": "atlas_test_00156",
+   "top": "H257715",
+   "score": 0.751,
+   "candidates": [
+    "H257715",
+    "H335007",
+    "116625",
+    "N333600",
+    "N333758",
+    "N362361"
+   ],
+   "dates": [
+    "2014-09-30",
+    "2024-04-29",
+    "2006-04-26",
+    "2023-07-06",
+    "2023-07-14",
+    "2026-07-08"
+   ],
+   "as_of": "2006-04-26",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00157": {
+   "item_id": "atlas_test_00157",
+   "top": "H280956",
+   "score": 1.3,
+   "candidates": [
+    "H280956"
+   ],
+   "dates": [
+    "2017-05-15"
+   ],
+   "as_of": "2017-05-15",
+   "tier": "unique"
+  },
+  "atlas_test_00158": {
+   "item_id": "atlas_test_00158",
+   "top": "A81571",
+   "score": 1.12,
+   "candidates": [
+    "A81571"
+   ],
+   "dates": [
+    "1996-03-27"
+   ],
+   "as_of": "1996-03-27",
+   "tier": "unique"
+  },
+  "atlas_test_00159": {
+   "item_id": "atlas_test_00159",
+   "top": "I89291",
+   "score": 0.904,
+   "candidates": [
+    "I89291",
+    "I81858",
+    "J89828"
+   ],
+   "dates": [
+    "2002-12-29",
+    "2002-06-11",
+    "2003-10-23"
+   ],
+   "as_of": "2002-06-11",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00160": {
+   "item_id": "atlas_test_00160",
+   "top": "A81921",
+   "score": 1.3,
+   "candidates": [
+    "A81921"
+   ],
+   "dates": [
+    "1996-04-16"
+   ],
+   "as_of": "1996-04-16",
+   "tier": "unique"
+  },
+  "atlas_test_00161": {
+   "item_id": "atlas_test_00161",
+   "top": "N325229",
+   "score": 1.3,
+   "candidates": [
+    "N325229"
+   ],
+   "dates": [
+    "2022-04-26"
+   ],
+   "as_of": "2022-04-26",
+   "tier": "unique"
+  },
+  "atlas_test_00162": {
+   "item_id": "atlas_test_00162",
+   "top": "H80591",
+   "score": 1.011,
+   "candidates": [
+    "H80591"
+   ],
+   "dates": [
+    "2001-05-15"
+   ],
+   "as_of": "2001-05-15",
+   "tier": "unique"
+  },
+  "atlas_test_00163": {
+   "item_id": "atlas_test_00163",
+   "top": "N085238",
+   "score": 0.517,
+   "candidates": [
+    "N085238"
+   ],
+   "dates": [
+    "2009-12-11"
+   ],
+   "as_of": "2009-12-11",
+   "tier": "unique"
+  },
+  "atlas_test_00164": {
+   "item_id": "atlas_test_00164",
+   "top": "N287986",
+   "score": 1.075,
+   "candidates": [
+    "N287986",
+    "N251213",
+    "N251867",
+    "N064160"
+   ],
+   "dates": [
+    "2017-07-14",
+    "2014-03-17",
+    "2014-04-10",
+    "2009-07-05"
+   ],
+   "as_of": "2009-07-05",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00165": {
+   "item_id": "atlas_test_00165",
+   "top": "N290182",
+   "score": 0.946,
+   "candidates": [
+    "N290182",
+    "N293416",
+    "N343403"
+   ],
+   "dates": [
+    "2017-09-21",
+    "2018-01-30",
+    "2024-11-12"
+   ],
+   "as_of": "2017-09-21",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00166": {
+   "item_id": "atlas_test_00166",
+   "top": "N346878",
+   "score": 0.881,
+   "candidates": [
+    "N346878",
+    "N286927"
+   ],
+   "dates": [
+    "2025-04-03",
+    "2018-03-21"
+   ],
+   "as_of": "2018-03-21",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00167": {
+   "item_id": "atlas_test_00167",
+   "top": "N360714",
+   "score": 0.62,
+   "candidates": [
+    "N360714",
+    "N004377"
+   ],
+   "dates": [
+    "2026-04-28",
+    "2007-01-12"
+   ],
+   "as_of": "2007-01-12",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00168": {
+   "item_id": "atlas_test_00168",
+   "top": "N288625",
+   "score": 0.725,
+   "candidates": [
+    "N288625",
+    "M87250"
+   ],
+   "dates": [
+    "2017-08-24",
+    "2006-10-24"
+   ],
+   "as_of": "2006-10-24",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00169": {
+   "item_id": "atlas_test_00169",
+   "top": "N091357",
+   "score": 1.062,
+   "candidates": [
+    "N091357"
+   ],
+   "dates": [
+    "2010-02-01"
+   ],
+   "as_of": "2010-02-01",
+   "tier": "unique"
+  },
+  "atlas_test_00170": {
+   "item_id": "atlas_test_00170",
+   "top": "K83226",
+   "score": 0.587,
+   "candidates": [
+    "K83226",
+    "K85967"
+   ],
+   "dates": [
+    "2004-03-17",
+    "2004-05-25"
+   ],
+   "as_of": "2004-03-17",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00171": {
+   "item_id": "atlas_test_00171",
+   "top": "G88129",
+   "score": 1.3,
+   "candidates": [
+    "G88129",
+    "I89841",
+    "I89940",
+    "I89941",
+    "J81298",
+    "L80759",
+    "960567",
+    "G82772"
+   ],
+   "dates": [
+    "2001-03-20",
+    "2003-01-21",
+    "2003-02-12",
+    "2003-02-12",
+    "2003-02-26",
+    "2004-11-24",
+    "2000-11-21",
+    "2000-10-30"
+   ],
+   "as_of": "2000-10-30",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00172": {
+   "item_id": "atlas_test_00172",
+   "top": "N303292",
+   "score": 0.552,
+   "candidates": [
+    "N303292"
+   ],
+   "dates": [
+    "2019-03-22"
+   ],
+   "as_of": "2019-03-22",
+   "tier": "unique"
+  },
+  "atlas_test_00173": {
+   "item_id": "atlas_test_00173",
+   "top": "N314689",
+   "score": 1.3,
+   "candidates": [
+    "N314689"
+   ],
+   "dates": [
+    "2020-10-09"
+   ],
+   "as_of": "2020-10-09",
+   "tier": "unique"
+  },
+  "atlas_test_00174": {
+   "item_id": "atlas_test_00174",
+   "top": "N337216",
+   "score": 1.3,
+   "candidates": [
+    "N337216"
+   ],
+   "dates": [
+    "2024-01-18"
+   ],
+   "as_of": "2024-01-18",
+   "tier": "unique"
+  },
+  "atlas_test_00175": {
+   "item_id": "atlas_test_00175",
+   "top": "N257782",
+   "score": 1.033,
+   "candidates": [
+    "N257782",
+    "N285109"
+   ],
+   "dates": [
+    "2014-10-22",
+    "2017-04-11"
+   ],
+   "as_of": "2014-10-22",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00176": {
+   "item_id": "atlas_test_00176",
+   "top": "L80235",
+   "score": 1.3,
+   "candidates": [
+    "L80235",
+    "L80236",
+    "K89026"
+   ],
+   "dates": [
+    "2004-10-25",
+    "2004-10-26",
+    "2004-09-14"
+   ],
+   "as_of": "2004-09-14",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00177": {
+   "item_id": "atlas_test_00177",
+   "top": "889984",
+   "score": 0.578,
+   "candidates": [
+    "889984"
+   ],
+   "dates": [
+    "1993-10-08"
+   ],
+   "as_of": "1993-10-08",
+   "tier": "unique"
+  },
+  "atlas_test_00178": {
+   "item_id": "atlas_test_00178",
+   "top": "R04440",
+   "score": 1.3,
+   "candidates": [
+    "R04440",
+    "L89889"
+   ],
+   "dates": [
+    "2006-07-26",
+    "2006-01-20"
+   ],
+   "as_of": "2006-01-20",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00179": {
+   "item_id": "atlas_test_00179",
+   "top": "N011225",
+   "score": 1.3,
+   "candidates": [
+    "N011225"
+   ],
+   "dates": [
+    "2007-06-05"
+   ],
+   "as_of": "2007-06-05",
+   "tier": "unique"
+  },
+  "atlas_test_00180": {
+   "item_id": "atlas_test_00180",
+   "top": "H243821",
+   "score": 0.698,
+   "candidates": [
+    "H243821"
+   ],
+   "dates": [
+    "2015-12-23"
+   ],
+   "as_of": "2015-12-23",
+   "tier": "unique"
+  },
+  "atlas_test_00181": {
+   "item_id": "atlas_test_00181",
+   "top": "R04518",
+   "score": 0.672,
+   "candidates": [
+    "R04518",
+    "N251391",
+    "K87773"
+   ],
+   "dates": [
+    "2006-08-27",
+    "2014-03-31",
+    "2004-07-25"
+   ],
+   "as_of": "2004-07-25",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00182": {
+   "item_id": "atlas_test_00182",
+   "top": "F85692",
+   "score": 0.79,
+   "candidates": [
+    "F85692",
+    "I89927",
+    "K86019",
+    "N253765",
+    "F88018",
+    "K81416",
+    "F81885",
+    "I89357"
+   ],
+   "dates": [
+    "2000-06-21",
+    "2003-02-06",
+    "2004-05-17",
+    "2014-06-17",
+    "2000-06-22",
+    "2003-12-22",
+    "2000-02-23",
+    "2003-01-20"
+   ],
+   "as_of": "2000-02-23",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00183": {
+   "item_id": "atlas_test_00183",
+   "top": "A85805",
+   "score": 0.886,
+   "candidates": [
+    "A85805",
+    "963309"
+   ],
+   "dates": [
+    "1996-08-12",
+    "2000-05-31"
+   ],
+   "as_of": "1996-08-12",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00184": {
+   "item_id": "atlas_test_00184",
+   "top": "M85137",
+   "score": 1.3,
+   "candidates": [
+    "M85137",
+    "M85528",
+    "M87234",
+    "M80620",
+    "N006992",
+    "N012027",
+    "M85589",
+    "M87722"
+   ],
+   "dates": [
+    "2006-08-10",
+    "2006-08-28",
+    "2006-11-14",
+    "2006-03-24",
+    "2007-03-16",
+    "2007-06-28",
+    "2006-08-22",
+    "2006-11-21"
+   ],
+   "as_of": "2006-03-24",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00185": {
+   "item_id": "atlas_test_00185",
+   "top": "N312964",
+   "score": 1.3,
+   "candidates": [
+    "N312964"
+   ],
+   "dates": [
+    "2020-07-22"
+   ],
+   "as_of": "2020-07-22",
+   "tier": "unique"
+  },
+  "atlas_test_00186": {
+   "item_id": "atlas_test_00186",
+   "top": "N336811",
+   "score": 0.6,
+   "candidates": [
+    "N336811",
+    "N334310"
+   ],
+   "dates": [
+    "2023-12-07",
+    "2023-08-17"
+   ],
+   "as_of": "2023-08-17",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00187": {
+   "item_id": "atlas_test_00187",
+   "top": "806952",
+   "score": 1.3,
+   "candidates": [
+    "806952"
+   ],
+   "dates": [
+    "1995-03-07"
+   ],
+   "as_of": "1995-03-07",
+   "tier": "unique"
+  },
+  "atlas_test_00188": {
+   "item_id": "atlas_test_00188",
+   "top": "H310618",
+   "score": 1.0,
+   "candidates": [
+    "H310618"
+   ],
+   "dates": [
+    "2021-04-30"
+   ],
+   "as_of": "2021-04-30",
+   "tier": "unique"
+  },
+  "atlas_test_00189": {
+   "item_id": "atlas_test_00189",
+   "top": "B84860",
+   "score": 0.518,
+   "candidates": [
+    "B84860",
+    "N015842"
+   ],
+   "dates": [
+    "1997-05-12",
+    "2007-08-26"
+   ],
+   "as_of": "1997-05-12",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00190": {
+   "item_id": "atlas_test_00190",
+   "top": "N348706",
+   "score": 1.3,
+   "candidates": [
+    "N348706"
+   ],
+   "dates": [
+    "2025-05-16"
+   ],
+   "as_of": "2025-05-16",
+   "tier": "unique"
+  },
+  "atlas_test_00191": {
+   "item_id": "atlas_test_00191",
+   "top": "N161156",
+   "score": 1.009,
+   "candidates": [
+    "N161156",
+    "N361819",
+    "K81660",
+    "N340269",
+    "N248882",
+    "F84714",
+    "I80875",
+    "K85360"
+   ],
+   "dates": [
+    "2011-05-12",
+    "2026-06-15",
+    "2004-05-17",
+    "2024-06-14",
+    "2014-07-31",
+    "2000-04-14",
+    "2002-05-08",
+    "2004-05-18"
+   ],
+   "as_of": "2000-04-14",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00192": {
+   "item_id": "atlas_test_00192",
+   "top": "N252644",
+   "score": 1.3,
+   "candidates": [
+    "N252644"
+   ],
+   "dates": [
+    "2014-07-15"
+   ],
+   "as_of": "2014-07-15",
+   "tier": "unique"
+  },
+  "atlas_test_00193": {
+   "item_id": "atlas_test_00193",
+   "top": "H85728",
+   "score": 1.3,
+   "candidates": [
+    "H85728"
+   ],
+   "dates": [
+    "2001-12-17"
+   ],
+   "as_of": "2001-12-17",
+   "tier": "unique"
+  },
+  "atlas_test_00194": {
+   "item_id": "atlas_test_00194",
+   "top": "N266374",
+   "score": 1.029,
+   "candidates": [
+    "N266374",
+    "N153595",
+    "N236517",
+    "N338303"
+   ],
+   "dates": [
+    "2016-01-15",
+    "2011-06-02",
+    "2015-09-15",
+    "2024-02-26"
+   ],
+   "as_of": "2011-06-02",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00195": {
+   "item_id": "atlas_test_00195",
+   "top": "N019972",
+   "score": 0.786,
+   "candidates": [
+    "N019972"
+   ],
+   "dates": [
+    "2007-12-07"
+   ],
+   "as_of": "2007-12-07",
+   "tier": "unique"
+  },
+  "atlas_test_00196": {
+   "item_id": "atlas_test_00196",
+   "top": "G80099",
+   "score": 1.061,
+   "candidates": [
+    "G80099",
+    "N334395",
+    "N253256",
+    "N006374",
+    "N026184",
+    "N238279",
+    "N287730",
+    "N341828"
+   ],
+   "dates": [
+    "2000-08-07",
+    "2023-08-09",
+    "2014-05-30",
+    "2007-02-14",
+    "2008-05-06",
+    "2013-02-25",
+    "2017-07-25",
+    "2024-08-16"
+   ],
+   "as_of": "2000-08-07",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00197": {
+   "item_id": "atlas_test_00197",
+   "top": "G86133",
+   "score": 1.3,
+   "candidates": [
+    "G86133"
+   ],
+   "dates": [
+    "2001-01-25"
+   ],
+   "as_of": "2001-01-25",
+   "tier": "unique"
+  },
+  "atlas_test_00198": {
+   "item_id": "atlas_test_00198",
+   "top": "N325180",
+   "score": 0.779,
+   "candidates": [
+    "N325180",
+    "N326460",
+    "H317391",
+    "N338228"
+   ],
+   "dates": [
+    "2022-04-26",
+    "2022-06-23",
+    "2022-10-13",
+    "2024-03-06"
+   ],
+   "as_of": "2022-04-26",
+   "tier": "earliest_of_candidates"
+  },
+  "atlas_test_00199": {
+   "item_id": "atlas_test_00199",
+   "top": "811563",
+   "score": 1.3,
+   "candidates": [
+    "811563"
+   ],
+   "dates": [
+    "1995-07-11"
+   ],
+   "as_of": "1995-07-11",
+   "tier": "unique"
+  }
+ }
+}

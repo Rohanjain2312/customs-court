@@ -1,0 +1,56 @@
+{
+ "item_id": "atlas_test_00128",
+ "classification": {
+  "hts10": "7419.80.50.10",
+  "facts": {
+   "material": "not stated; assumed brass/copper alloy",
+   "function": "grate cover over shower drain",
+   "form": "finished machined grate",
+   "end_use": "residential shower drainage"
+  },
+  "gri_path": [
+   "GRI 1: grate of base metal is an article of base metal (Sec XV); brass -> 7419 other articles of copper",
+   "GRI 6: 7419.80.50.10 brass plumbing goods nesoi"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N327820",
+    "status": "in_force"
+   },
+   {
+    "id": "N341303",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "7326.90.86.88",
+    "reason": "iron or steel other articles; applies if grate is steel (N341303)"
+   },
+   {
+    "code": "3922.90.00.00",
+    "reason": "plastic sanitary ware only if plastic"
+   },
+   {
+    "code": "7324.90.00.00",
+    "reason": "sanitary ware of steel; grate is a drain part not a sanitary article"
+   }
+  ],
+  "missing_facts": [
+   "material of the grate (brass, stainless steel, plastic)"
+  ],
+  "confidence": 0.4,
+  "abstain": true,
+  "rationale": "Material missing. N327820 classified a shower grate of brass in 7419.80.5010; steel would go to 7326.90.86.88 per N341303."
+ },
+ "tool_calls": 8,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_notes",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

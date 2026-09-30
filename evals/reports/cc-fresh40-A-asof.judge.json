@@ -1,0 +1,78 @@
+{
+  "run_id": "cc-fresh40-A-asof",
+  "mode": "judged in the Claude Code session (no API spend)",
+  "judge_model": "claude-sonnet-5-5 (in session)",
+  "second_judge_model": "claude-haiku-4-5 (in session)",
+  "graded_in_main_session": {
+    "sonnet": [],
+    "haiku": []
+  },
+  "discarded_attempts": [],
+  "prompt": "evals/judge.py JUDGE_SYSTEM, reference from evals/judge.py reference_for",
+  "n_packets": 40,
+  "n_judged": 40,
+  "pass_rate": {
+    "mean": 0.925,
+    "lo": 0.825,
+    "hi": 1.0,
+    "n": 40
+  },
+  "proxy_pass_given_correct10": {
+    "rate": 1.0,
+    "n": 34
+  },
+  "proxy_fail_given_wrong_chapter": {
+    "rate": 1.0,
+    "n": 1
+  },
+  "reference_sources": {
+    "ruling": 40,
+    "atlas_reasoning": 0
+  },
+  "cohen_kappa": 0.7241,
+  "raw_agreement": 0.95,
+  "n_both": 40,
+  "second_pass_rate": 0.875,
+  "verdicts": {
+    "fresh_N356982": "pass",
+    "fresh_N359194": "pass",
+    "fresh_N362359": "pass",
+    "fresh_N362421": "pass",
+    "fresh_N362589": "pass",
+    "fresh_N362701": "pass",
+    "fresh_N362750": "pass",
+    "fresh_N362809": "pass",
+    "fresh_N362823": "pass",
+    "fresh_N362874": "pass",
+    "fresh_N362934": "pass",
+    "fresh_N362939": "pass",
+    "fresh_N362969": "pass",
+    "fresh_N363127": "pass",
+    "fresh_N363254": "pass",
+    "fresh_N363288": "pass",
+    "fresh_N363316": "pass",
+    "fresh_N363384": "pass",
+    "fresh_N363422": "pass",
+    "fresh_N363423": "pass",
+    "fresh_N363462": "pass",
+    "fresh_N363468": "pass",
+    "fresh_N363486": "pass",
+    "fresh_N363487": "pass",
+    "fresh_N363542": "fail",
+    "fresh_N363573": "pass",
+    "fresh_N363777": "fail",
+    "fresh_N363849": "pass",
+    "fresh_N363928": "pass",
+    "fresh_N363949": "pass",
+    "fresh_N363956": "pass",
+    "fresh_N363968": "pass",
+    "fresh_N363991": "fail",
+    "fresh_N364000": "pass",
+    "fresh_N364356": "pass",
+    "fresh_N364408": "pass",
+    "fresh_N364413": "pass",
+    "fresh_N364446": "pass",
+    "fresh_N364644": "pass",
+    "fresh_N364732": "pass"
+  }
+}

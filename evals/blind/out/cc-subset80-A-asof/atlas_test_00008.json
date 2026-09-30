@@ -3,42 +3,51 @@
  "classification": {
   "hts10": "9027.90.59.10",
   "facts": {
-   "material": "electronic PCB with components (gas sensing circuitry)",
-   "function": "processes signal of a hydrogen gas sensor",
-   "form": "printed circuit board assembly",
-   "end_use": "part of electrical gas analysis apparatus"
+   "material": "printed circuit board with electronic components and hydrogen gas sensing element",
+   "function": "detect hydrogen gas and produce an electrical signal",
+   "form": "assembled PCB (assembly, part of an apparatus)",
+   "end_use": "part of electrical gas detection/analysis apparatus"
   },
   "gri_path": [
-   "GRI 1: heading 9027 gas analysis apparatus and parts; Section XVI notes do not apply to ch. 90 (PCB assembly is a part of the instrument)",
-   "GRI 6: 9027.90 parts, electrical gas analysis (9027.10.20)"
+   "GRI 1: heading 9027 covers gas analysis apparatus and parts; chapter 90 note 2(b) sends parts suitable solely/principally for one kind of apparatus with that apparatus",
+   "GRI 6: 9027.90 parts, electrical, of articles of 9027.10.20"
   ],
   "deciding_gri": "GRI 1",
-  "cited_rulings": [],
+  "cited_rulings": [
+   {
+    "id": "N325069",
+    "status": "in_force"
+   }
+  ],
   "rejected_alternatives": [
    {
-    "code": "8543.70.45.00",
-    "reason": "sensor board treated as part of instrument in ch. 90 when dedicated to it"
+    "code": "8543.70.45",
+    "reason": "transducer/sensor board ruling N325069 (air-flow sensor) treated as general electrical machine; here the specific heading 9027 for gas analysis parts applies"
    },
    {
-    "code": "8534.00.00",
-    "reason": "populated board with components, not a bare printed circuit"
+    "code": "8534.00",
+    "reason": "bare printed circuits only; this is an assembly with components"
    },
    {
-    "code": "9027.90.45.00",
-    "reason": "for 9027.81/89 instruments (mass spectrometers etc.), not gas analysis 9027.10"
+    "code": "9027.10.20.00",
+    "reason": "complete gas analyser; item is only the sensor PCB assembly"
    }
   ],
   "missing_facts": [
-   "Is the board dedicated to a gas analysis instrument or sold standalone?"
+   "Whether the board is a complete standalone detector or a part of a larger analyzer",
+   "Whether solely used with gas analysis apparatus"
   ],
   "confidence": 0.4,
   "abstain": false,
-  "rationale": "A populated PCB assembly for a hydrogen gas sensor is a part of electrical gas analysis apparatus of 9027.10.20, so 9027.90.59.10."
+  "rationale": "Sensor PCB assembly dedicated to hydrogen gas detection is a part of gas analysis apparatus under 9027 via Ch.90 note 2(b). N325069 (sensor board under 8543.70.45) is cited only as the contrasting alternative where the sensor is a general transducer."
  },
- "tool_calls": 6,
+ "tool_calls": 8,
  "tools": [
   "hts_search",
   "cross_search",
-  "hts_navigate"
+  "hts_navigate",
+  "get_notes",
+  "get_ruling",
+  "ruling_status"
  ]
 }

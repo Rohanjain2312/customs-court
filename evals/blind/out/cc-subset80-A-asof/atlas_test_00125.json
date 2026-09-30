@@ -4,49 +4,53 @@
   "hts10": "9401.99.90.85",
   "facts": {
    "material": "metal",
-   "function": "mechanism allowing a seat to recline",
-   "form": "part",
-   "end_use": "furniture seating (recliner chairs/sofas), not motor vehicle"
+   "function": "reclining mechanism for a seat",
+   "form": "part/mechanism, separately imported",
+   "end_use": "chair/recliner seating (not motor vehicle, aircraft)"
   },
   "gri_path": [
-   "GRI 1: heading 9401 seats and parts thereof",
-   "Chapter 94 note 1(d) excludes parts of general use of base metal, but a recliner mechanism is specific to seats; HQ 966201 treated seat adjusters as parts of seats rather than 8302",
-   "GRI 6: 9401.99 parts, other; 9401.99.90 Other; Other"
+   "GRI 1: heading 9401 covers seats and parts thereof; chapter 94 note 1(d) excludes only parts of general use (note 2 to section XV), and a recliner mechanism is specific to seats",
+   "GRI 6: 9401.99 other parts; not motor vehicle, cane or plastics; 9401.99.90 Other; statistical suffix .85 Other"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [
    {
-    "id": "966201",
+    "id": "G84204",
     "status": "in_force"
    }
   ],
   "rejected_alternatives": [
    {
-    "code": "8302.42.30",
-    "reason": "furniture mountings; rulings on seat adjusters put them in heading 9401 as parts"
+    "code": "8302.10",
+    "reason": "hinges/mountings of base metal; recliner mechanism is a dedicated seat part, not general-purpose fitting"
+   },
+   {
+    "code": "9403.99",
+    "reason": "parts of other furniture; recliner is for seats of 9401"
    },
    {
     "code": "9401.99.10",
-    "reason": "for motor vehicle seats; not stated"
+    "reason": "not stated to be for motor-vehicle seats"
    },
    {
-    "code": "9402.90.00",
-    "reason": "medical and barber chairs; not stated"
+    "code": "9402.90",
+    "reason": "medical/barber chairs only"
    }
   ],
   "missing_facts": [
-   "whether for motor vehicle seats",
-   "whether motorized"
+   "whether mechanism is for motor vehicle or aircraft seats or is motorized"
   ],
-  "confidence": 0.5,
+  "confidence": 0.6,
   "abstain": false,
-  "rationale": "Metal recliner mechanisms are parts of seats of heading 9401; 966201 (seat adjuster for automobiles) supports treating such mechanisms as seat parts, here the non-vehicle Other line."
+  "rationale": "Metal recliner mechanisms are parts suitable for seats, classified under 9401 parts; ruling G84204 classified recliner seat parts in the parts-other line (older code 9401.90.5000, same in-force status), supporting placement. Default to Other, Other."
  },
- "tool_calls": 7,
+ "tool_calls": 4,
  "tools": [
-  "cross_search",
   "hts_search",
+  "cross_search",
   "hts_navigate",
-  "ruling_status"
+  "get_notes",
+  "ruling_status",
+  "get_ruling"
  ]
 }

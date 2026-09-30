@@ -1,0 +1,55 @@
+{
+ "item_id": "atlas_test_00097",
+ "classification": {
+  "hts10": "8505.11.00.70",
+  "facts": {
+   "material": "rubber cap with sintered neodymium-iron-boron magnet",
+   "function": "magnet holds key on metal surfaces",
+   "form": "cap with embedded magnet",
+   "end_use": "key storage"
+  },
+  "gri_path": [
+   "GRI 1: heading 8505 permanent magnets; 8505.11 of metal",
+   "GRI 3(b): magnet gives essential character over rubber cap",
+   "GRI 6: 8505.11.00.70 sintered neodymium-iron-boron"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "N333219",
+    "status": "in_force"
+   },
+   {
+    "id": "R01307",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8505.19.10.00",
+    "reason": "flexible magnets; R01307 was magnetized rubber, here magnet is NdFeB metal"
+   },
+   {
+    "code": "4016",
+    "reason": "rubber cap is not the essential character"
+   },
+   {
+    "code": "8505.11.00.90",
+    "reason": "other metal magnets; NdFeB has its own line"
+   }
+  ],
+  "missing_facts": [
+   "whether magnet is sintered NdFeB"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Key cap of rubber with a neodymium magnet; magnet imparts essential character, heading 8505, of metal, NdFeB line. N333219 (neodymium magnet-backed articles, 8505.11.0070) and R01307 (magnetic key holder in 8505) support heading."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

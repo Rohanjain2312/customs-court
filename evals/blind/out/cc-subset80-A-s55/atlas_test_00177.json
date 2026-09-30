@@ -1,0 +1,45 @@
+{
+ "item_id": "atlas_test_00177",
+ "classification": {
+  "hts10": "8474.10.00.90",
+  "facts": {
+   "material": "steel machinery",
+   "function": "separates pulverized coal by particle size",
+   "form": "stationary classifier on coal mill",
+   "end_use": "coal burning power plants"
+  },
+  "gri_path": [
+   "GRI 1: heading 8474 sorting, screening, separating machines for mineral substances in solid form",
+   "GRI 6: 8474.10.00.90 stationary"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8474.20",
+    "reason": "primary function is separation not grinding"
+   },
+   {
+    "code": "8421",
+    "reason": "separates solids in powder, not centrifuge/filter of fluids"
+   },
+   {
+    "code": "8479.89",
+    "reason": "8474 more specific"
+   }
+  ],
+  "missing_facts": [
+   "whether sold as part of a pulverizer (parts 8474.90)"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Classifier separates solid coal particles by size: 8474.10, stationary."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

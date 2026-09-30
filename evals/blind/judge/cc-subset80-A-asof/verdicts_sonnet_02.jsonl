@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00114", "verdict": "pass", "reason": "Both place the housing and bracket as parts of traffic signalling equipment in 8530.90 on the heading text."}
+{"item_id": "atlas_test_00117", "verdict": "pass", "reason": "Same heading 3920.43 based on PVC strip with at least 6% plasticizers."}
+{"item_id": "atlas_test_00121", "verdict": "fail", "reason": "Heading 7323 matches, but the assistant relied on an invented glass-tray composite under GRI 3(b) whereas CBP classified the stainless pan by the heading text (GRI 1)."}
+{"item_id": "atlas_test_00123", "verdict": "pass", "reason": "Both apply GRI 3(b) retail set with the drill giving essential character, heading 8467."}
+{"item_id": "atlas_test_00125", "verdict": "pass", "reason": "Both classify the recliner mechanisms as parts of seats in heading 9401 on the heading text."}
+{"item_id": "atlas_test_00128", "verdict": "pass", "reason": "Both place the brass shower grate in 7419 as other articles of copper, though the assistant inferred brass from another ruling."}
+{"item_id": "atlas_test_00130", "verdict": "fail", "reason": "Heading 3920 matches, but the assistant assumed PET essential character under GRI 3(b) while CBP classed the laminate by the polypropylene subheading."}
+{"item_id": "atlas_test_00131", "verdict": "pass", "reason": "Both classify pyridine eo nomine in 2933.31 as a nitrogen heterocyclic compound."}
+{"item_id": "atlas_test_00133", "verdict": "pass", "reason": "Both classify it as an organo-sulfur compound in heading 2930."}
+{"item_id": "atlas_test_00135", "verdict": "pass", "reason": "Both choose 6102.30.05 for a knit man-made fiber jacket containing 25% or more leather."}
+{"item_id": "atlas_test_00137", "verdict": "pass", "reason": "Both treat unfinished LPG forklifts as fork-lift trucks in 8427.20 rider-type counterbalanced."}
+{"item_id": "atlas_test_00138", "verdict": "pass", "reason": "Both put the princess costume in 6104.43 girls' dress because the dress gives the set its essential character."}
+{"item_id": "atlas_test_00145", "verdict": "pass", "reason": "Both classify well-made knit costumes in chapter 61 heading 6111 babies' garments, excluding heading 9505."}
+{"item_id": "atlas_test_00146", "verdict": "fail", "reason": "Assistant chose 8214 manicure set while CBP chose 8205 (shoe horn-driven set line), a different heading."}
+{"item_id": "atlas_test_00147", "verdict": "fail", "reason": "Assistant chose 8536 connectors, but CBP held the flexible circuit with non-printed connectors remains in 8534."}
+{"item_id": "atlas_test_00154", "verdict": "fail", "reason": "Assistant chose 9001 unmounted while CBP classed the mounted circular polarizing filter in 9002."}
+{"item_id": "atlas_test_00156", "verdict": "fail", "reason": "Assistant guessed marine engine 8407 while CBP classified the propulsion unit as parts in 8431."}
+{"item_id": "atlas_test_00159", "verdict": "pass", "reason": "Both classify the men's knit pullover in 6110 other textile materials on the heading text."}
+{"item_id": "atlas_test_00163", "verdict": "fail", "reason": "Assistant chose 9032 for the whole set while CBP's gold code is in heading 8482 with separate 8481, 9032 and 8537 classifications for components."}

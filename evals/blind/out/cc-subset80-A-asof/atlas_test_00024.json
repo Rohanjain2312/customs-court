@@ -5,35 +5,41 @@
   "facts": {
    "material": "brass (copper-zinc alloy)",
    "function": "decorative pipe",
-   "form": "tubes, seamless and ERW, 2\" and 1.5\" OD, 0.40\" wall",
+   "form": "seamless (also ERW) pipe, 2in and 1.5in OD, 0.40in wall",
    "end_use": "decorative"
   },
   "gri_path": [
-   "GRI 1: heading 7411 copper tubes and pipes",
-   "GRI 6: 7411.21 brass; seamless 7411.21.10"
+   "GRI 1: heading 7411 copper tubes and pipes; ch74 note 1 brass = copper-zinc alloy",
+   "GRI 6: 7411.21 brass; 7411.21.10 seamless"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [],
   "rejected_alternatives": [
    {
     "code": "7411.21.50.00",
-    "reason": "other than seamless: applies to the ERW pipe (classify separately)"
+    "reason": "Other (welded) line; pipe is described as seamless"
    },
    {
     "code": "7411.10",
-    "reason": "refined copper, not brass"
+    "reason": "not refined copper"
+   },
+   {
+    "code": "7412",
+    "reason": "fittings, not pipe"
    }
   ],
   "missing_facts": [
-   "classify separately: ERW brass pipe (7411.21.50.00)"
+   "Description says both seamless and ERW; seamless assumed"
   ],
   "confidence": 0.6,
   "abstain": false,
-  "rationale": "Brass tubes/pipes fall in 7411.21; first-named seamless pipe goes to 7411.21.10.00."
+  "rationale": "Brass tubes and pipes fall in 7411; brass subheading 7411.21; seamless statistical line 7411.21.10.00. No relevant ruling cited."
  },
- "tool_calls": 3,
+ "tool_calls": 5,
  "tools": [
+  "hts_search",
+  "cross_search",
   "hts_navigate",
-  "cross_search"
+  "get_notes"
  ]
 }

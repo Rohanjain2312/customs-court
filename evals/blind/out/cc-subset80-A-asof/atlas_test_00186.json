@@ -3,46 +3,47 @@
  "classification": {
   "hts10": "8519.81.30.20",
   "facts": {
-   "material": "electronic, semiconductor media (assumed)",
+   "material": "electronic apparatus (battery-powered, stored sound files assumed)",
    "function": "reproduces recorded predator calls",
-   "form": "battery operated sound reproducing apparatus",
-   "end_use": "hunting"
+   "form": "complete portable device",
+   "end_use": "hunting game calls"
   },
   "gri_path": [
-   "GRI 1: 8519 sound reproducing apparatus; GRI 6: 8519.81 using semiconductor media, sound reproducing only, other"
+   "GRI 1: heading 8519 sound recording or reproducing apparatus; chapter 85 note 1 does not exclude",
+   "GRI 6: 8519.81 semiconductor/magnetic/optical media, sound reproducing only, Other 8519.81.30, Other .20"
   ],
   "deciding_gri": "GRI 1",
-  "cited_rulings": [
-   {
-    "id": "N334310",
-    "status": "in_force"
-   }
-  ],
+  "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "8519.81.41.50",
-    "reason": "sound recording and reproducing; this item only reproduces"
+    "code": "8519.81.30.10",
+    "reason": "not an optical disc player"
    },
    {
-    "code": "8518.21",
-    "reason": "loudspeaker alone; device is complete player"
+    "code": "8519.81.20.00",
+    "reason": "not for motor vehicle installation"
    },
    {
-    "code": "9503.00",
-    "reason": "toy; hunting tool"
+    "code": "8519.89",
+    "reason": "presumes media-less apparatus; device plays stored digital files"
+   },
+   {
+    "code": "8518.29.80",
+    "reason": "loudspeaker only; device is a player"
    }
   ],
   "missing_facts": [
-   "storage media type; whether it records"
+   "storage medium type (solid-state vs tape/disc)"
   ],
-  "confidence": 0.4,
+  "confidence": 0.6,
   "abstain": false,
-  "rationale": "A battery-operated device that only plays back stored calls is sound reproducing apparatus using semiconductor media. N334310 (a recording and reproducing device) is a related precedent but covers recording."
+  "rationale": "Battery hunting call that reproduces stored sounds is sound reproducing apparatus of 8519; assumed semiconductor media, sound-reproducing only, other."
  },
- "tool_calls": 3,
+ "tool_calls": 6,
  "tools": [
-  "cross_search",
   "hts_search",
-  "hts_navigate"
+  "cross_search",
+  "hts_navigate",
+  "get_notes"
  ]
 }

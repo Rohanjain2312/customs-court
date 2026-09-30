@@ -1,0 +1,54 @@
+{
+ "item_id": "atlas_test_00079",
+ "classification": {
+  "hts10": "8409.99.91.10",
+  "facts": {
+   "material": "forged steel",
+   "function": "connects piston to crankshaft in diesel engine",
+   "form": "finished part",
+   "end_use": "14.8L diesel engines for Class 8 heavy trucks (heading 8704)"
+  },
+  "gri_path": [
+   "GRI 1: heading 8409 parts suitable for use solely or principally with engines of 8407/8408",
+   "Section XVI note 2(b): parts suitable solely or principally with one kind of machine go to 8409; not excluded by notes 1",
+   "GRI 6: 8409.99 other (compression-ignition), 8409.99.91 to be installed in vehicles of 8704, .10 connecting rods"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N347490",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8409.99.99.10",
+    "reason": "other; heavy trucks are vehicles of 8704 so .91 is specific"
+   },
+   {
+    "code": "8409.91.50.10",
+    "reason": "spark-ignition engines, this is diesel"
+   },
+   {
+    "code": "8409.99.10",
+    "reason": "cast-iron parts; this is forged"
+   },
+   {
+    "code": "8409.99.92.10",
+    "reason": "marine propulsion only"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "Forged connecting rods for diesel engines are parts of heading 8407/8408 engines under Section XVI note 2(b). Diesel goes under 8409.99; used in Class 8 trucks (8704) so the 'to be installed in vehicles' line applies. N347490 (connecting rod, spark-ignition) supports the heading and the connecting-rods statistical line."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes",
+  "ruling_status"
+ ]
+}

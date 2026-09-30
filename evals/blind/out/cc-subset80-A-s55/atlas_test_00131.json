@@ -1,0 +1,34 @@
+{
+ "item_id": "atlas_test_00131",
+ "classification": {
+  "hts10": "2933.31.00.00",
+  "facts": {
+   "material": "pyridine, separate chemically defined compound C5H5N",
+   "function": "chemical intermediate/solvent",
+   "form": "liquid chemical",
+   "end_use": "industrial"
+  },
+  "gri_path": [
+   "GRI 1: heading 2933 heterocyclic compounds with nitrogen only; subheading 2933.31 names pyridine and its salts",
+   "GRI 6: 2933.31.00.00"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "2933.39",
+    "reason": "other pyridine-ring compounds; pyridine itself is named in 2933.31"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.95,
+  "abstain": false,
+  "rationale": "Pyridine is named eo nomine in 2933.31; no ruling needed."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_notes"
+ ]
+}

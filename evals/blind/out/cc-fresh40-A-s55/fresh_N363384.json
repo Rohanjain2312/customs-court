@@ -1,0 +1,45 @@
+{
+ "item_id": "fresh_N363384",
+ "classification": {
+  "hts10": "3926.20.90.50",
+  "facts": {
+   "material": "cellular polyurethane plastic shell with polyester woven backing for reinforcement only; polyester lining and batting",
+   "function": "outerwear jacket",
+   "form": "finished jacket",
+   "end_use": "apparel"
+  },
+  "gri_path": [
+   "GRI 1: Ch.59 note 2(a)(5) removes cellular plastic with textile merely for reinforcement from textiles; garment is of plastics",
+   "GRI 1: heading 3926 articles of apparel",
+   "GRI 6: 3926.20.90.50 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N326796",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6201/6202",
+    "reason": "outer material is plastic, not textile"
+   },
+   {
+    "code": "3926.20.60.00",
+    "reason": "rainwear with PVC outer shell; polyurethane here"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "N326796 classified a near-identical cellular polyurethane/woven backing jacket in 3926.20.9050."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

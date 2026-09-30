@@ -3,37 +3,47 @@
  "classification": {
   "hts10": "9025.80.10.00",
   "facts": {
-   "material": "electronic sensors/transmitters",
-   "function": "measure dew point (humidity) and temperature",
-   "form": "transmitter instruments",
-   "end_use": "industrial process/HVAC measurement"
+   "material": "electronic instrument",
+   "function": "measure dew point/humidity and temperature and transmit signal",
+   "form": "electrical transmitter",
+   "end_use": "industrial process monitoring"
   },
   "gri_path": [
-   "GRI 1: heading 9025 hygrometers, thermometers",
-   "GRI 6: 9025.80 other instruments, electrical"
+   "GRI 1: heading 9025 hygrometers, thermometers, combined",
+   "GRI 6: 9025.80 other instruments; electrical 9025.80.10"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "9025.19.80",
-    "reason": "other thermometers; combined instrument goes to other instruments"
+    "code": "9025.80.35.00",
+    "reason": "non-electric hygrometers/psychrometers"
    },
    {
-    "code": "9026",
-    "reason": "not flow/level/pressure measurement"
+    "code": "9032.89.60.70",
+    "reason": "humidity control instruments; device measures, not controls"
+   },
+   {
+    "code": "9027",
+    "reason": "dew point analyzers possible but device is humidity/temperature measuring"
+   },
+   {
+    "code": "9025.19",
+    "reason": "temperature-only thermometers"
    }
   ],
   "missing_facts": [
-   "Does it output electrical signal (assumed)?"
+   "Whether instrument is an electrical device and its exact measuring principle"
   ],
-  "confidence": 0.5,
+  "confidence": 0.4,
   "abstain": false,
-  "rationale": "Electrical dew point hygrometer/temperature instrument falls in 9025.80.10."
+  "rationale": "Dew point and temperature transmitters are electrical hygrometer/thermometer instruments of 9025; no relevant ruling found."
  },
- "tool_calls": 5,
+ "tool_calls": 4,
  "tools": [
+  "hts_search",
   "cross_search",
-  "hts_navigate"
+  "hts_navigate",
+  "get_notes"
  ]
 }

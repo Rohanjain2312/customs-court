@@ -3,39 +3,44 @@
  "classification": {
   "hts10": "4002.99.00.00",
   "facts": {
-   "material": "unvulcanized rubber, described as synthetic but in 'natural' soft and standard grades",
+   "material": "unvulcanized synthetic rubber",
    "function": "raw material for rubber manufacture",
-   "form": "primary forms (bales/blocks)",
-   "end_use": "industrial rubber compounding"
+   "form": "primary forms (bulk/bales), 'soft natural' and 'standard natural' grades",
+   "end_use": "industrial rubber feedstock"
   },
   "gri_path": [
-   "GRI 1: chapter 40 note 1 treats natural and synthetic rubber as rubber; headings 4001 (natural) and 4002 (synthetic) cover primary forms",
-   "GRI 6: 4002.99 other synthetic rubber in primary forms"
+   "GRI 1: heading 4002 covers synthetic rubber in primary forms; chapter 40 note 3 primary forms include blocks, bales, lumps; note 4 defines synthetic rubber",
+   "GRI 6: 4002.99 other synthetic rubber, since the type is unspecified"
   ],
   "deciding_gri": "GRI 1",
   "cited_rulings": [],
   "rejected_alternatives": [
    {
-    "code": "4001.29.00.00",
-    "reason": "natural rubber, other; description says synthetic rubber"
+    "code": "4001",
+    "reason": "natural rubber heading; description says synthetic"
    },
    {
-    "code": "4002.80.00.00",
-    "reason": "mixture of natural and synthetic not stated"
+    "code": "4005",
+    "reason": "compounded rubber; none indicated (note 5)"
+   },
+   {
+    "code": "4002.80",
+    "reason": "mixture of 4001 and 4002 products not stated"
    }
   ],
   "missing_facts": [
-   "Is the rubber actually natural (heading 4001, e.g. TSNR 4001.22) or synthetic (4002)?",
-   "Is it a mixture of natural and synthetic?"
+   "Exact synthetic polymer type (SBR, BR, IR, etc.)",
+   "Meaning of 'soft natural' and 'standard natural' forms; whether a mixture with natural rubber"
   ],
-  "confidence": 0.25,
+  "confidence": 0.3,
   "abstain": true,
-  "rationale": "Description is contradictory (synthetic rubber in natural forms). Following the lead term, synthetic rubber in primary forms falls in 4002; best-guess residual line 4002.99."
+  "rationale": "Unvulcanized synthetic rubber in bulk primary forms falls in 4002; polymer type unknown so residual 4002.99 chosen. Description is ambiguous, possibly natural rubber (4001)."
  },
- "tool_calls": 4,
+ "tool_calls": 5,
  "tools": [
   "hts_search",
   "cross_search",
-  "hts_navigate"
+  "hts_navigate",
+  "get_notes"
  ]
 }

@@ -1,0 +1,17 @@
+{"item_id": "atlas_test_00165", "verdict": "pass", "reason": "Heading 8409 as parts solely or principally for spark-ignition piston engines matches CBP's basis."}
+{"item_id": "atlas_test_00168", "verdict": "pass", "reason": "Heading 6111 sets of knit cotton infant garments matches CBP."}
+{"item_id": "atlas_test_00170", "verdict": "pass", "reason": "Heading 8481 as parts of taps and valves matches CBP's basis, only the material suffix differs."}
+{"item_id": "atlas_test_00171", "verdict": "pass", "reason": "Heading 6211 cotton women's garment for the bib apron matches CBP."}
+{"item_id": "atlas_test_00172", "verdict": "fail", "reason": "Assistant chose 8543 electrolysis apparatus parts while CBP chose 8421 parts of water purifying machinery."}
+{"item_id": "atlas_test_00175", "verdict": "pass", "reason": "Heading 3918 vinyl floor tile under GRI 1 matches CBP."}
+{"item_id": "atlas_test_00177", "verdict": "pass", "reason": "Heading 8474 stationary separating machinery for mineral substances matches CBP's basis."}
+{"item_id": "atlas_test_00180", "verdict": "pass", "reason": "Heading 8431 as parts of boring/sinking machinery matches CBP's reasoning."}
+{"item_id": "atlas_test_00181", "verdict": "pass", "reason": "Heading 8501 small electric motor matches CBP's basis."}
+{"item_id": "atlas_test_00184", "verdict": "pass", "reason": "Heading 6110 knitted cotton pullover matches CBP under GRI 1."}
+{"item_id": "atlas_test_00185", "verdict": "fail", "reason": "Assistant chose heading 8483 gearbox but CBP classified it as a part of agricultural machinery in 8432."}
+{"item_id": "atlas_test_00186", "verdict": "pass", "reason": "Heading 8519 sound reproducing apparatus matches CBP's basis."}
+{"item_id": "atlas_test_00188", "verdict": "pass", "reason": "Heading 8413 as parts of pumps matches CBP's reasoning."}
+{"item_id": "atlas_test_00192", "verdict": "fail", "reason": "Assistant chose 5911 textile technical article while CBP chose 9020 as parts/accessories of breathing appliances."}
+{"item_id": "atlas_test_00193", "verdict": "pass", "reason": "Heading 9020 with the respirator giving the essential character matches CBP."}
+{"item_id": "atlas_test_00196", "verdict": "pass", "reason": "Heading 3923 plastic sacks and bags of polyethylene matches CBP."}
+{"item_id": "atlas_test_00197", "verdict": "fail", "reason": "Assistant chose 9027 parts of analysis instruments while CBP chose 9002 mounted lenses under Chapter 90 Note 2(a)."}

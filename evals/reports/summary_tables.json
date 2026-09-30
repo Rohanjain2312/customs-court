@@ -200,6 +200,43 @@
       "run_id": "cc-subset80-A-asof",
       "n": 80,
       "acc_10": {
+        "mean": 0.4697,
+        "lo": 0.3485,
+        "hi": 0.5909,
+        "n": 66
+      },
+      "acc_8": {
+        "mean": 0.5821,
+        "lo": 0.4627,
+        "hi": 0.7015,
+        "n": 67
+      },
+      "acc_6": {
+        "mean": 0.6,
+        "lo": 0.4875,
+        "hi": 0.7,
+        "n": 80
+      },
+      "acc_4": {
+        "mean": 0.65,
+        "lo": 0.5375,
+        "hi": 0.75,
+        "n": 80
+      },
+      "abstain_rate": 0.1125,
+      "acc6_when_answering": 0.6479,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 5.49,
+      "mode": "agent-in-session",
+      "models": {
+        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), rulings limited to before each item's own date"
+      }
+    },
+    "A_s55": {
+      "run_id": "cc-subset80-A-s55",
+      "n": 80,
+      "acc_10": {
         "mean": 0.4545,
         "lo": 0.3333,
         "hi": 0.5758,
@@ -212,25 +249,25 @@
         "n": 67
       },
       "acc_6": {
-        "mean": 0.6125,
-        "lo": 0.5,
-        "hi": 0.7125,
+        "mean": 0.575,
+        "lo": 0.4625,
+        "hi": 0.675,
         "n": 80
       },
       "acc_4": {
-        "mean": 0.6875,
-        "lo": 0.575,
-        "hi": 0.7875,
+        "mean": 0.625,
+        "lo": 0.5125,
+        "hi": 0.725,
         "n": 80
       },
       "abstain_rate": 0.0875,
-      "acc6_when_answering": 0.6301,
+      "acc6_when_answering": 0.589,
       "usd_per_item": 0.0,
       "tokens_per_item": 0.0,
-      "tool_calls_per_item": 5.35,
+      "tool_calls_per_item": 5.84,
       "mode": "agent-in-session",
       "models": {
-        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), rulings limited to before each item's own date"
+        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), no date limit (source rulings hidden)"
       }
     }
   },
@@ -278,16 +315,44 @@
       "within_noise": false
     },
     "A_asof_minus_Z_cc_acc10": {
+      "diff": 0.2576,
+      "lo": 0.1364,
+      "hi": 0.3788,
+      "n": 66,
+      "within_noise": false
+    },
+    "A_asof_minus_Z_cc_acc6": {
+      "diff": 0.0625,
+      "lo": -0.0125,
+      "hi": 0.1375,
+      "n": 80,
+      "within_noise": true
+    },
+    "A_s55_minus_Z_cc_acc10": {
       "diff": 0.2424,
       "lo": 0.1212,
       "hi": 0.3636,
       "n": 66,
       "within_noise": false
     },
-    "A_asof_minus_Z_cc_acc6": {
-      "diff": 0.075,
-      "lo": -0.0125,
-      "hi": 0.1625,
+    "A_s55_minus_Z_cc_acc6": {
+      "diff": 0.0375,
+      "lo": -0.0625,
+      "hi": 0.125,
+      "n": 80,
+      "within_noise": true
+    },
+    "A_asof_minus_s55_acc10": {
+      "diff": 0.0152,
+      "lo": -0.0758,
+      "hi": 0.1061,
+      "n": 66,
+      "within_noise": true
+    },
+    "A_asof_minus_s55_acc6": {
+      "diff": 0.025,
+      "lo": -0.0375,
+      "hi": 0.0875,
       "n": 80,
       "within_noise": true
     },
@@ -330,6 +395,20 @@
       "diff": 0.325,
       "lo": 0.2,
       "hi": 0.475,
+      "n": 40,
+      "within_noise": false
+    },
+    "fresh_A_asof_minus_s55_acc10": {
+      "diff": 0.025,
+      "lo": -0.1,
+      "hi": 0.15,
+      "n": 40,
+      "within_noise": true
+    },
+    "fresh_A_asof_minus_s55_acc6": {
+      "diff": 0.1,
+      "lo": 0.025,
+      "hi": 0.2,
       "n": 40,
       "within_noise": false
     }
@@ -525,6 +604,43 @@
       "models": {
         "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), rulings limited to before each item's own date"
       }
+    },
+    "A_s5540": {
+      "run_id": "cc-fresh40-A-s55",
+      "n": 40,
+      "acc_10": {
+        "mean": 0.825,
+        "lo": 0.7,
+        "hi": 0.925,
+        "n": 40
+      },
+      "acc_8": {
+        "mean": 0.825,
+        "lo": 0.7,
+        "hi": 0.925,
+        "n": 40
+      },
+      "acc_6": {
+        "mean": 0.825,
+        "lo": 0.7,
+        "hi": 0.925,
+        "n": 40
+      },
+      "acc_4": {
+        "mean": 0.85,
+        "lo": 0.725,
+        "hi": 0.95,
+        "n": 40
+      },
+      "abstain_rate": 0.025,
+      "acc6_when_answering": 0.8205,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 5.95,
+      "mode": "agent-in-session",
+      "models": {
+        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), no date limit"
+      }
     }
   },
   "judge_cc-subset80-A": {
@@ -605,6 +721,78 @@
     "raw_agreement": 0.95,
     "n_both": 40,
     "second_pass_rate": 0.85
+  },
+  "judge_cc-subset80-A-asof": {
+    "run_id": "cc-subset80-A-asof",
+    "mode": "judged in the Claude Code session (no API spend)",
+    "judge_model": "claude-sonnet-5-5 (in session)",
+    "second_judge_model": "claude-haiku-4-5 (in session)",
+    "graded_in_main_session": {
+      "sonnet": [],
+      "haiku": []
+    },
+    "discarded_attempts": [],
+    "prompt": "evals/judge.py JUDGE_SYSTEM, reference from evals/judge.py reference_for",
+    "n_packets": 74,
+    "n_judged": 74,
+    "pass_rate": {
+      "mean": 0.6216,
+      "lo": 0.5135,
+      "hi": 0.7297,
+      "n": 74
+    },
+    "proxy_pass_given_correct10": {
+      "rate": 1.0,
+      "n": 28
+    },
+    "proxy_fail_given_wrong_chapter": {
+      "rate": 1.0,
+      "n": 11
+    },
+    "reference_sources": {
+      "ruling": 25,
+      "atlas_reasoning": 49
+    },
+    "cohen_kappa": 0.8851,
+    "raw_agreement": 0.9459,
+    "n_both": 74,
+    "second_pass_rate": 0.6216
+  },
+  "judge_cc-fresh40-A-asof": {
+    "run_id": "cc-fresh40-A-asof",
+    "mode": "judged in the Claude Code session (no API spend)",
+    "judge_model": "claude-sonnet-5-5 (in session)",
+    "second_judge_model": "claude-haiku-4-5 (in session)",
+    "graded_in_main_session": {
+      "sonnet": [],
+      "haiku": []
+    },
+    "discarded_attempts": [],
+    "prompt": "evals/judge.py JUDGE_SYSTEM, reference from evals/judge.py reference_for",
+    "n_packets": 40,
+    "n_judged": 40,
+    "pass_rate": {
+      "mean": 0.925,
+      "lo": 0.825,
+      "hi": 1.0,
+      "n": 40
+    },
+    "proxy_pass_given_correct10": {
+      "rate": 1.0,
+      "n": 34
+    },
+    "proxy_fail_given_wrong_chapter": {
+      "rate": 1.0,
+      "n": 1
+    },
+    "reference_sources": {
+      "ruling": 40,
+      "atlas_reasoning": 0
+    },
+    "cohen_kappa": 0.7241,
+    "raw_agreement": 0.95,
+    "n_both": 40,
+    "second_pass_rate": 0.875
   },
   "dev": {
     "dev100-A": {

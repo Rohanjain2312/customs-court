@@ -1,0 +1,53 @@
+{
+ "item_id": "atlas_test_00076",
+ "classification": {
+  "hts10": "3208.10.00.00",
+  "facts": {
+   "material": "polyester/epoxy hybrid thermosetting resin with pigments/additives (assumed)",
+   "function": "protective or decorative surface coating",
+   "form": "dry powder",
+   "end_use": "coating metal articles"
+  },
+  "gri_path": [
+   "GRI 1: heading 3208 paints and varnishes based on synthetic polymers; 3907 primary-form resins considered",
+   "GRI 6: 3208.10 based on polyesters (polyester named first, assumed predominant)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N239953",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3907.30.00.00",
+    "reason": "N239953 covers epoxide resin coatings sold as resin sets; this is a formulated polyester/epoxy coating, not an epoxide resin alone"
+   },
+   {
+    "code": "3208.90.00.00",
+    "reason": "other polymers; polyester assumed predominant"
+   },
+   {
+    "code": "3907.99",
+    "reason": "unformulated polyester resin in primary form; product is a formulated coating"
+   }
+  ],
+  "missing_facts": [
+   "polyester vs epoxy proportions",
+   "whether pigmented/formulated coating or bare resin powder",
+   "whether powder counts as 3208 (dispersed or dissolved) versus 3907 primary forms"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Formulated polyester/epoxy powder coatings are treated as paints of heading 3208, polyester-based subheading assumed. N239953 was examined as the epoxy alternative and is not on point for a formulated hybrid; heading 3208 versus 3907 stays arguable for a dry powder."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

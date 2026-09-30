@@ -1,0 +1,20 @@
+{"item_id": "fresh_N363462", "verdict": "pass", "reason": "Same heading 4202 as travel/sports bag with plastic sheeting outer surface, same textual basis."}
+{"item_id": "fresh_N363468", "verdict": "pass", "reason": "Same heading 8543 by GRI 1 as electrical apparatus with individual function and not an amplifier; only the subheading split differs."}
+{"item_id": "fresh_N363486", "verdict": "pass", "reason": "Heading 9505 with GRI 3(b) dress giving essential character matches CBP."}
+{"item_id": "fresh_N363487", "verdict": "pass", "reason": "Heading 8413 gear-type hydraulic pump by GRI 1, matching CBP."}
+{"item_id": "fresh_N363542", "verdict": "fail", "reason": "Assistant chose heading 6101 (coat as essential character) while CBP chose 6110 knit vest, so the heading differs."}
+{"item_id": "fresh_N363573", "verdict": "pass", "reason": "Heading 7615 household aluminum article, with aluminum predominance noted as in CBP's GRI 3(b) essential character."}
+{"item_id": "fresh_N363777", "verdict": "fail", "reason": "Assistant chose 9018 medical apparatus whereas CBP classified in 9029."}
+{"item_id": "fresh_N363849", "verdict": "pass", "reason": "Heading 8421 filtering apparatus for liquids, same as CBP."}
+{"item_id": "fresh_N363928", "verdict": "pass", "reason": "Heading 8211 folding knife under GRI 1, same as CBP."}
+{"item_id": "fresh_N363949", "verdict": "pass", "reason": "Heading 6505 woven cotton headwear, same as CBP."}
+{"item_id": "fresh_N363956", "verdict": "pass", "reason": "Heading 9017 hand-held length measuring tape, same as CBP."}
+{"item_id": "fresh_N363968", "verdict": "pass", "reason": "Heading 4419 tropical wood kitchenware with wood board giving essential character, matching CBP."}
+{"item_id": "fresh_N363991", "verdict": "fail", "reason": "Assistant chose 4421 other wood articles while CBP chose 9403 furniture parts, so the heading differs."}
+{"item_id": "fresh_N364000", "verdict": "pass", "reason": "Heading 2106 food preparation, frozen, same as CBP."}
+{"item_id": "fresh_N364356", "verdict": "pass", "reason": "Heading 8479 evaporative air cooler with 8415 rejected for lack of refrigeration/humidity control, same as CBP."}
+{"item_id": "fresh_N364408", "verdict": "pass", "reason": "Heading 8481 hand-operated valve, same as CBP, with 8467/gauge alternatives rejected reasonably."}
+{"item_id": "fresh_N364413", "verdict": "pass", "reason": "Heading 8714 motorcycle parts and accessories, same as CBP."}
+{"item_id": "fresh_N364446", "verdict": "pass", "reason": "Heading 9027 via Chapter 90 Note 2(b) parts of the CGM system, same as CBP."}
+{"item_id": "fresh_N364644", "verdict": "pass", "reason": "Heading 8480 molds for mineral materials, same as CBP."}
+{"item_id": "fresh_N364732", "verdict": "pass", "reason": "Heading 3916 monofilament over 1 mm, same as CBP."}

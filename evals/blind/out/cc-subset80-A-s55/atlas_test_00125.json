@@ -1,0 +1,52 @@
+{
+ "item_id": "atlas_test_00125",
+ "classification": {
+  "hts10": "9401.99.90.85",
+  "facts": {
+   "material": "metal",
+   "function": "reclining mechanism for seats",
+   "form": "mechanism, part of a recliner",
+   "end_use": "incorporated into upholstered recliner seats"
+  },
+  "gri_path": [
+   "GRI 1: heading 9401 covers seats and parts thereof; ch.94 note 1(d) excludes only parts of general use of base metal, a recliner mechanism is specific to seats",
+   "GRI 6: 9401.99 parts other; not motor vehicle, cane or plastic, so 9401.99.90 Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N012776",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9401.99.10",
+    "reason": "not for motor vehicle seats"
+   },
+   {
+    "code": "9402.90.00",
+    "reason": "medical/barber chair parts, not indicated"
+   },
+   {
+    "code": "8302",
+    "reason": "mounting fittings; a recliner mechanism is a specific seat part (Sec XV note 1(k)/ch.94)"
+   }
+  ],
+  "missing_facts": [
+   "whether for motor vehicle seats"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Metal recliner mechanism is a part of seats of heading 9401; N012776 classified the same article in the old Parts/Other/Other line, which is now 9401.99.90; suffix 85 is the current Other."
+ },
+ "tool_calls": 8,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

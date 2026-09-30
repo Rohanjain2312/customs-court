@@ -1,0 +1,57 @@
+{
+ "item_id": "fresh_N363422",
+ "classification": {
+  "hts10": "7309.00.00.90",
+  "facts": {
+   "material": "steel",
+   "function": "enclosure holding batteries and electrical equipment",
+   "form": "complete knocked-down, 42,722 L, no electrical or mechanical parts at import",
+   "end_use": "battery energy storage system"
+  },
+  "gri_path": [
+   "GRI 2(a): unassembled complete cabinet classified as assembled container",
+   "GRI 1: heading 7309 steel containers over 300 L not fitted with mechanical or thermal equipment",
+   "GRI 6: 7309.00.00.90 other"
+  ],
+  "deciding_gri": "GRI 2(a)",
+  "cited_rulings": [
+   {
+    "id": "H329722",
+    "status": "in_force"
+   },
+   {
+    "id": "N317967",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8609.00",
+    "reason": "H329722 rejected as containers for carriage"
+   },
+   {
+    "code": "8537.20.00",
+    "reason": "not equipped with apparatus at importation"
+   },
+   {
+    "code": "7308.90",
+    "reason": "7309 more specific container"
+   },
+   {
+    "code": "7309.00.00.30",
+    "reason": "not a tank"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "H329722 placed steel BESS containers without mechanical equipment in 7309; N317967 used 7309.00.0090."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

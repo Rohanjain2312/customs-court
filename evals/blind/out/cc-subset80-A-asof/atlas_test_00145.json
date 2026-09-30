@@ -1,1 +1,58 @@
-{"item_id":"atlas_test_00145","classification":{"hts10":"6111.30.50.20","facts":{"material":"100% polyester knit fabric","function":"costume (dress-up garment)","form":"unisex infant and toddler costume, assumed a set such as jumpsuit plus hat","end_use":"infant and toddler costume wear"},"gri_path":["GRI 1: heading 6111 babies' garments knitted; chapter 95 note 1(e) excludes textile fancy dress of chapter 61","GRI 3(b): set, jumpsuit gives essential character (per N107290)","GRI 6: 6111.30 synthetic fibers; 6111.30.50 other; .20 sets"],"deciding_gri":"GRI 1","cited_rulings":[{"id":"N107290","status":"in_force"}],"rejected_alternatives":[{"code":"9505.90.60.00","reason":"festive articles; durable knit textile costumes excluded by chapter 95 note 1(e)"},{"code":"6111.30.50.70","reason":"other babies' garments; applies if a single garment and not a set"},{"code":"6209.30.30.20","reason":"woven infant costume; fabric here is knit"}],"missing_facts":["whether imported as a set or a single garment","size: infant/toddler under size 6x confirmed only by description"],"confidence":0.4,"abstain":false,"rationale":"N107290 classified unisex knit polyester infant and toddler costumes of jumpsuit and hat in 6111.30.5020 (sets). The set assumption drives the last suffix; a single garment would fall in 6111.30.50.70."},"tool_calls":7,"tools":["hts_search","cross_search","get_ruling","hts_navigate","ruling_status"]}
+{
+ "item_id": "atlas_test_00145",
+ "classification": {
+  "hts10": "6111.30.50.70",
+  "facts": {
+   "material": "100% polyester knit fabric",
+   "function": "costume / fancy dress wear",
+   "form": "made-up knitted garments",
+   "end_use": "infants and toddlers"
+  },
+  "gri_path": [
+   "GRI 1: chapter 95 note 1(e) excludes textile fancy dress to ch 61/62",
+   "GRI 1: heading 6111 babies' garments knitted",
+   "GRI 6: 6111.30 synthetic fibers; 6111.30.50 other; .70 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H88288",
+    "status": "in_force"
+   },
+   {
+    "id": "G85675",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90",
+    "reason": "ch 95 note 1(e) excludes textile fancy dress"
+   },
+   {
+    "code": "6114.30.30.54",
+    "reason": "toddler sizes above babies' size limit; description is infants and toddlers"
+   },
+   {
+    "code": "6111.30.50.20",
+    "reason": "sets; no set stated"
+   }
+  ],
+  "missing_facts": [
+   "sizes (babies' garments up to 86 cm vs toddler sizes)",
+   "whether costume is a set"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Textile fancy dress is classified in ch 61 per ch 95 note 1(e). Infant/toddler knit polyester costumes: H88288 and G85675 (in force) put infant costumes in 6111.30.50; toddler sizes can fall in 6114.30.30. Babies' heading chosen, Other line."
+ },
+ "tool_calls": 8,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes",
+  "ruling_status",
+  "get_ruling"
+ ]
+}

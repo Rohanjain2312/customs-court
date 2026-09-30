@@ -1,0 +1,47 @@
+{
+ "item_id": "fresh_N363486",
+ "classification": {
+  "hts10": "9505.90.60.00",
+  "facts": {
+   "material": "textile (dress, drape, medallions, armbands)",
+   "function": "costume for dress-up",
+   "form": "sleeveless dress with attached drape and accessories; raw unfinished edges at drape, ties and hem",
+   "end_use": "festive/carnival costume, adult size"
+  },
+  "gri_path": [
+   "GRI 1: heading 9505 festive, carnival or other entertainment articles; ch.95 note 1(e) excludes only well-made textile fancy dress of ch.61/62, and these raw-edged, flimsy garments are not well made",
+   "GRI 6: 9505.90.60 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N324994",
+    "status": "in_force"
+   },
+   {
+    "id": "N357230",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6104.43/6204.43",
+    "reason": "well-made apparel of ch.61/62; raw unfinished edges mean not well made"
+   }
+  ],
+  "missing_facts": [
+   "Fiber content and knit/woven construction not stated"
+  ],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "Raw, unfinished edges show the dress is not well made so note 1(e) to ch.95 does not exclude it; similar goddess costumes classified in 9505.90.6000."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "ruling_status",
+  "get_notes",
+  "hts_navigate"
+ ]
+}

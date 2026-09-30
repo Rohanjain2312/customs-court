@@ -1,0 +1,58 @@
+{
+ "item_id": "atlas_test_00072",
+ "classification": {
+  "hts10": "8481.90.90.40",
+  "facts": {
+   "material": "not stated",
+   "function": "parts of solenoid valves controlling brake fluid",
+   "form": "parts",
+   "end_use": "automotive braking system"
+  },
+  "gri_path": [
+   "GRI 1: heading 8481 covers valves and parts thereof; Section XVII note 2(e) excludes articles of heading 8481 from vehicle parts (8708)",
+   "Section XVI parts note: parts of valves follow 8481",
+   "GRI 6: 8481.90 parts; 8481.90.90 other; .40 other (not valve bodies)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H328055",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8708.30",
+    "reason": "Section XVII note 2(e) excludes articles of heading 8481"
+   },
+   {
+    "code": "8481.90.90.20",
+    "reason": "valve bodies only"
+   },
+   {
+    "code": "8481.90.10.00",
+    "reason": "material (copper) unknown"
+   },
+   {
+    "code": "8481.90.30.00",
+    "reason": "material (iron or steel) unknown"
+   }
+  ],
+  "missing_facts": [
+   "material of the parts (copper, iron or steel, other)",
+   "which part (valve body, coil, plunger)"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "H328055 treated solenoid valves in a brake control box as valves of 8481.20; parts of such valves go to 8481.90, and Section XVII note 2(e) bars 8708. The 10-digit line depends on material and part type, assumed other."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

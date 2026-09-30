@@ -1,0 +1,52 @@
+{
+ "item_id": "atlas_test_00193",
+ "classification": {
+  "hts10": "9020.00.60.00",
+  "facts": {
+   "material": "helmet with auto-darkening lens plus blower/filter unit",
+   "function": "welding head/eye protection with powered air-purifying respirator",
+   "form": "helmet with respirator system",
+   "end_use": "welding"
+  },
+  "gri_path": [
+   "GRI 1: heading 9020 other breathing appliances; helmet and blower function together as a respirator system",
+   "GRI 6: 9020.00.60 Other breathing appliances and gas masks"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H112725",
+    "status": "in_force"
+   },
+   {
+    "id": "I80102",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6506.10",
+    "reason": "safety headgear only; respirator function makes 9020 more specific"
+   },
+   {
+    "code": "9020.00.90.00",
+    "reason": "parts/accessories only, not complete appliance"
+   }
+  ],
+  "missing_facts": [
+   "whether imported as complete system with blower"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Speedglas helmet with respirator is a powered air-purifying respirator system (H112725 describes 3M Adflo welding system); gas mask ruling I80102 in 9020.00.6000."
+ },
+ "tool_calls": 8,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

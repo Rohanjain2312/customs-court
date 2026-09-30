@@ -1,0 +1,54 @@
+{
+ "item_id": "atlas_test_00104",
+ "classification": {
+  "hts10": "9018.90.75.70",
+  "facts": {
+   "material": "electric warming device and plastic disposable tubing sets",
+   "function": "warm fluids used in hemodialysis therapy",
+   "form": "warmer unit and disposable sets",
+   "end_use": "medical dialysis"
+  },
+  "gri_path": [
+   "GRI 1: heading 9018 medical instruments and appliances incl. electro-medical",
+   "GRI 6: 9018.90.75 other electro-medical; .70 parts and accessories of dialysis apparatus"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H81049",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8516",
+    "reason": "domestic-type electrothermic appliances; this is a medical device"
+   },
+   {
+    "code": "9018.90.75.20",
+    "reason": "dialysis apparatus itself; warmer is an accessory"
+   },
+   {
+    "code": "9018.90.75.60",
+    "reason": "other electro-medical if warmer not dialysis-specific"
+   },
+   {
+    "code": "3926",
+    "reason": "disposable sets not a plastic article only; used with warmer as medical accessory"
+   }
+  ],
+  "missing_facts": [
+   "whether warmer is dialysis-specific or general IV warmer"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "H81049 classifies an IV fluid warmer in 9018.90.75; NxStage warmer is used with a dialysis system so the accessory line .70 is chosen, suffix an assumption."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}
