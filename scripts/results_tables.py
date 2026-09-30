@@ -22,8 +22,7 @@ RUNS = ROOT / "evals" / "runs"
 DOCS = [ROOT / "README.md", ROOT / "docs" / "CASE_STUDY.md", ROOT / "docs" / "EVAL.md", ROOT / "docs" / "BLOG.md"]
 
 SONNET = "Claude Sonnet 5"
-Q36 = "Qwen3.6-35B-A3B (open weights)"
-Q4 = "Qwen3.5-4B (open weights)"
+OPUS_CC = "Claude Opus 5.5"
 
 
 def scored(run_id: str) -> dict[str, dict] | None:
@@ -88,85 +87,45 @@ def build() -> tuple[dict, dict[str, str]]:
     tables: dict[str, str] = {}
     pub = json.loads((REP / "atlas_published.json").read_text())["models"]
 
-    # Headline: atlas_test_200
-    h = {k: stats(k) for k in ("atlas200-Z", "os-atlas200-Z", "os-atlas200-A", "os-atlas200-D")}
+    # Headline: atlas_test_200 (full 200)
+    h = {k: stats(k) for k in ("atlas200-Z",)}
     data["atlas200"] = h
-    lines = [
-        HEAD,
-        f"| ATLAS fine-tuned LLaMA-3.3-70B (published) | paper | {pub['atlas_llama_3.3_70b_finetuned']['exact_10'] * 100:.1f}% | {pub['atlas_llama_3.3_70b_finetuned']['exact_6'] * 100:.1f}% | | | |",
-        f"| GPT-5-Thinking (published in ATLAS) | paper | {pub['gpt_5_thinking']['exact_10'] * 100:.1f}% | | | | |",
-        f"| Gemini-2.5-Pro-Thinking (published in ATLAS) | paper | {pub['gemini_2.5_pro_thinking']['exact_10'] * 100:.1f}% | | | | |",
-        row("Zero-shot, no tools", SONNET, h["atlas200-Z"]),
-        row("Zero-shot, no tools", Q36, h["os-atlas200-Z"]),
-        row("TariffAgent single agent (A)", Q36, h["os-atlas200-A"], " (free)"),
-        row(
-            "TariffAgent multi-agent (D)", f"{Q4} advocates, {Q36} adjudicator", h["os-atlas200-D"], " (free)"
-        ),
-    ]
-    tables["headline"] = "\n".join(lines)
-
-    # Fresh set
-    f = {k: stats(k) for k in ("fresh150-Z", "os-fresh150-Z", "os-fresh150-A")}
-    data["fresh150"] = f
-    tables["fresh"] = "\n".join(
+    tables["headline"] = "\n".join(
         [
             HEAD,
-            row("Zero-shot, no tools", SONNET, f["fresh150-Z"]),
-            row("Zero-shot, no tools", Q36, f["os-fresh150-Z"]),
-            row("TariffAgent single agent (A)", Q36, f["os-fresh150-A"], " (free)"),
+            f"| ATLAS fine-tuned LLaMA-3.3-70B (published) | paper | {pub['atlas_llama_3.3_70b_finetuned']['exact_10'] * 100:.1f}% | {pub['atlas_llama_3.3_70b_finetuned']['exact_6'] * 100:.1f}% | | | |",
+            f"| GPT-5-Thinking (published in ATLAS) | paper | {pub['gpt_5_thinking']['exact_10'] * 100:.1f}% | | | | |",
+            f"| Gemini-2.5-Pro-Thinking (published in ATLAS) | paper | {pub['gemini_2.5_pro_thinking']['exact_10'] * 100:.1f}% | | | | |",
+            row("Zero-shot, no tools, all 200", SONNET, h["atlas200-Z"]),
         ]
     )
 
-    # Study on subset_80 (all arms restricted to the same 80 items)
+    # Agent results on subset_80 (stratified 80 of the 200 test items); every row on the same items.
     ids = {it["item_id"] for it in load_dataset("subset_80")}
-    st = {
-        "A": stats("os-atlas200-A", ids),
-        "B": stats("os-subset80-B"),
-        "C": stats("os-subset80-C"),
-        "D": stats("os-atlas200-D", ids),
-        "A_ask": stats("os-subset80-A-ask"),
+    sub = {
+        "Z": stats("atlas200-Z", ids),
         "O": stats("subset80-O"),
+        "A_cc": stats("cc-subset80-A"),
     }
-    data["subset80"] = st
+    data["subset80"] = sub
+    tables["subset"] = "\n".join(
+        [
+            HEAD,
+            row("Zero-shot, no tools", SONNET, sub["Z"]),
+            row("TariffAgent single agent (API)", "gpt-5-mini", sub["O"]),
+            row("TariffAgent single agent (in the Claude Code session)", OPUS_CC, sub["A_cc"], " (no API spend)"),
+        ]
+    )
     diffs = {}
-    base = scored("os-atlas200-A")
-    for arm, rid in (("B", "os-subset80-B"), ("C", "os-subset80-C"), ("D", "os-atlas200-D")):
+    base = scored("cc-subset80-A")
+    for arm, rid in (("Z", "atlas200-Z"), ("O", "subset80-O")):
         other = scored(rid)
         if base and other:
             for k in (10, 6):
-                a = {
-                    i: float(base[i][f"exact_{k}"])
-                    for i in ids
-                    if i in base and base[i][f"exact_{k}"] is not None
-                }
-                b = {
-                    i: float(other[i][f"exact_{k}"])
-                    for i in ids
-                    if i in other and other[i][f"exact_{k}"] is not None
-                }
-                diffs[f"{arm}_minus_A_acc{k}"] = paired_diff(a, b)
+                a = {i: float(other[i][f"exact_{k}"]) for i in ids if i in other and other[i][f"exact_{k}"] is not None}
+                b = {i: float(base[i][f"exact_{k}"]) for i in ids if i in base and base[i][f"exact_{k}"] is not None}
+                diffs[f"A_cc_minus_{arm}_acc{k}"] = paired_diff(a, b)
     data["subset80_diffs"] = diffs
-
-    def study_row(label, model, s):
-        if s is None:
-            return f"| {label} | {model} | not run yet | | | | |"
-        return (
-            f"| {label} | {model} | {pct(s['acc_10'])} | {pct(s['acc_6'])} | {s['tokens_per_item']:,.0f} | "
-            f"{s['tool_calls_per_item']} | {usd(s['usd_per_item'])} |"
-        )
-
-    tables["study"] = "\n".join(
-        [
-            "| Arm | Models | 10-digit | 6-digit | Tokens per item | Tool calls per item | Cost per item |",
-            "|---|---|---|---|---|---|---|",
-            study_row("A single agent", Q36, st["A"]),
-            study_row("B single agent, token budget matched to D", Q36, st["B"]),
-            study_row("C smart friend (cheap model asks the strong one)", f"{Q4} + {Q36}", st["C"]),
-            study_row("D multi-agent", f"{Q4} + {Q36}", st["D"]),
-            study_row("A with ask-for-facts mode", Q36, st["A_ask"]),
-            study_row("A on another vendor (provider comparison)", "gpt-5-mini", st["O"]),
-        ]
-    )
 
     def dline(key):
         d = diffs.get(key)
@@ -174,15 +133,19 @@ def build() -> tuple[dict, dict[str, str]]:
             return "n/a"
         return f"{d['diff'] * 100:+.1f} points [{d['lo'] * 100:+.1f}, {d['hi'] * 100:+.1f}], n={d['n']}"
 
-    tables["study_diffs"] = "\n".join(
+    tables["subset_diffs"] = "\n".join(
         [
             "| Comparison (paired, same items) | 10-digit | 6-digit |",
             "|---|---|---|",
-            f"| B minus A | {dline('B_minus_A_acc10')} | {dline('B_minus_A_acc6')} |",
-            f"| C minus A | {dline('C_minus_A_acc10')} | {dline('C_minus_A_acc6')} |",
-            f"| D minus A | {dline('D_minus_A_acc10')} | {dline('D_minus_A_acc6')} |",
+            f"| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | {dline('A_cc_minus_Z_acc10')} | {dline('A_cc_minus_Z_acc6')} |",
+            f"| Agent (Claude in session) minus agent on gpt-5-mini | {dline('A_cc_minus_O_acc10')} | {dline('A_cc_minus_O_acc6')} |",
         ]
     )
+
+    # Fresh set
+    f = {k: stats(k) for k in ("fresh150-Z",)}
+    data["fresh150"] = f
+    tables["fresh"] = "\n".join([HEAD, row("Zero-shot, no tools", SONNET, f["fresh150-Z"])])
 
     # Claude agent runs on dev (prompt work only, not a reported test result)
     dv = {k: stats(k) for k in ("dev100-A", "dev40-A-v1", "dev10-D-v2", "pilot-dev20-A")}

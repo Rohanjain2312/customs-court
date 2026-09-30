@@ -20,9 +20,11 @@ The published baseline is ATLAS (arXiv 2509.18400): on 200 CBP rulings, a fine-t
 3. **Agent Skill**: the broker workflow as a reusable skill with worked examples from real rulings.
 4. **Single agent** with a checked final step: the code must be a current 10-digit line, a parts provision must name the parts rule it applied, and citations must exist, not be flagged, and not be revoked without saying so. When a check fails, the agent gets one repair turn.
 5. **Multi-agent court**: an orchestrator picks 2 to 3 candidate headings, cheap advocates argue for one heading each (read only), and one strong adjudicator writes the answer.
-6. **Controlled study**: single agent (A), single agent with a token budget matched to the court (B), a cheap model that can ask a strong model (C, "smart friend"), and the court (D). Same tools, skill, prompts and items.
+6. **Controlled study design**: single agent (A), single agent with a token budget matched to the court (B), a cheap model that can ask a strong model (C, "smart friend"), and the court (D), same tools, skill, prompts and items. Built and tested; the test-set runs of B, C and D did not fit the budget (see below).
 
 ## Results
+
+Full test split (200 rulings):
 
 <!-- results:headline -->
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
@@ -30,11 +32,29 @@ The published baseline is ATLAS (arXiv 2509.18400): on 200 CBP rulings, a fine-t
 | ATLAS fine-tuned LLaMA-3.3-70B (published) | paper | 40.0% | 57.5% | | | |
 | GPT-5-Thinking (published in ATLAS) | paper | 25.0% | | | | |
 | Gemini-2.5-Pro-Thinking (published in ATLAS) | paper | 13.5% | | | | |
-| Zero-shot, no tools | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
-| Zero-shot, no tools | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent single agent (A) | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent multi-agent (D) | Qwen3.5-4B (open weights) advocates, Qwen3.6-35B-A3B (open weights) adjudicator | not run yet | | | | |
+| Zero-shot, no tools, all 200 | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
 <!-- /results:headline -->
+
+The agent on `subset_80` (80 test items, same items in every row):
+
+<!-- results:subset -->
+| System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
+|---|---|---|---|---|---|---|
+| Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
+| TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
+| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+<!-- /results:subset -->
+
+<!-- results:subset_diffs -->
+| Comparison (paired, same items) | 10-digit | 6-digit |
+|---|---|---|
+| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | n/a | n/a |
+| Agent (Claude in session) minus agent on gpt-5-mini | n/a | n/a |
+<!-- /results:subset_diffs -->
+
+<!-- analysis:headline -->
+(Filled in from the subset run.)
+<!-- /analysis:headline -->
 
 Post-cutoff set (150 rulings dated 2026-07-01 or later):
 
@@ -42,13 +62,7 @@ Post-cutoff set (150 rulings dated 2026-07-01 or later):
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 20.0% [14.0, 26.7] | 48.0% [40.0, 56.0] | 69.3% [61.3, 76.7] | 1.3% | $0.0060 |
-| Zero-shot, no tools | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent single agent (A) | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
 <!-- /results:fresh -->
-
-<!-- analysis:headline -->
-(Filled in from the open-weights runs.)
-<!-- /analysis:headline -->
 
 ### Claude agent on the dev split (prompt work, not a test result)
 
@@ -86,30 +100,9 @@ What changed because of it (prompt v1.2, tuned on dev only): a best-guess code e
 
 ## Multi-agent vs single agent
 
-<!-- results:study -->
-| Arm | Models | 10-digit | 6-digit | Tokens per item | Tool calls per item | Cost per item |
-|---|---|---|---|---|---|---|
-| A single agent | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| B single agent, token budget matched to D | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| C smart friend (cheap model asks the strong one) | Qwen3.5-4B (open weights) + Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| D multi-agent | Qwen3.5-4B (open weights) + Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| A with ask-for-facts mode | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| A on another vendor (provider comparison) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 65,307 | 6.25 | $0.0077 |
-<!-- /results:study -->
+The court was built and runs end to end: an orchestrator, parallel read-only advocates and one adjudicator, with typed events for the demo and a batched path that runs all advocates in the same Message Batch. On 10 dev items it scored higher than the single agent on the same items, at about twice the cost per item after the cost cuts (dev table above). Ten items cannot separate the two: the interval spans most of the range.
 
-Paired differences on the same items (positive means the arm beat A):
-
-<!-- results:study_diffs -->
-| Comparison (paired, same items) | 10-digit | 6-digit |
-|---|---|---|
-| B minus A | n/a | n/a |
-| C minus A | n/a | n/a |
-| D minus A | n/a | n/a |
-<!-- /results:study_diffs -->
-
-<!-- analysis:study -->
-(Filled in from the open-weights runs.)
-<!-- /analysis:study -->
+The planned controlled study (A single, B single with the court's token budget, C smart friend, D court, on the 80-item subset) did not run: the API budget ran out first. Arm B is the important control, because without it a win for D only shows that more tokens help. The harness supports all four arms (`--arm B --token-budget N`, `--arm C`, `--arm D`) and the runs resume from the response cache, so the study is one command per arm once there is a budget.
 
 ## Cost
 
@@ -130,7 +123,7 @@ Paired differences on the same items (positive means the arm beat A):
 
 ## What the budget limited, and how the project finished anyway
 
-The paid budget was spent on building, tuning and baselines. The Claude agent never ran on the test split, and the Anthropic account limit stopped a dev run twice. The remaining evaluation runs moved to open-weights models on a Hugging Face Job paid from the plan's included credits, with a hard stop when the credit runs out. Running models on the laptop was tried and dropped because it overheated. The open-model rows answer "does the agent design work" and "does the court beat a single agent at equal tokens". They do not measure what Claude would have scored.
+The paid budget ($13.18) covered building, tuning, the dev analysis and the zero-shot baselines. The Anthropic account limit stopped a dev run twice. Free alternatives were tried in order: GitHub Models (the endpoint only answered "OK"), a local open-weights model (worked, but overheated the laptop), Hugging Face Jobs on included credits (built and dry-run tested, but the month's credit was already used), and Mistral's free tier (no longer offered to new organizations). The test-set agent run was finally done blind by Claude Opus 5.5 inside the Claude Code session, which the user's plan already covers: the same tools behind the MCP server with evaluation rulings hidden, the same skill and checks, a descriptions-only input file, and the same scorer. That run answers "does the agent design work on the test set". It is a different model from the Sonnet 5 API agent tuned on dev, and it is labeled that way everywhere.
 
 ## What comes next
 

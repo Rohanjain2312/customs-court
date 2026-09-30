@@ -45,7 +45,7 @@ One request type (`llm/base.py: LLMRequest`) and one response type go through ev
 
 Every call goes through an on-disk response cache keyed by the full request, and every paid call appends to `data/ledger.jsonl`. Budgets (total, per run, per day) fail closed before a call is made.
 
-When the paid budget ran out, the remaining evaluation runs moved to a Hugging Face Job (`scripts/hf_job/`): a vLLM container serves Qwen3.6-35B-A3B-FP8 and Qwen3.5-4B on one GPU, the harness runs the eval steps in priority order with per-thread read-only database connections (`TOOLS_PARALLEL=true`), and the response cache syncs back to a private dataset repo every two minutes, so a job that stops early loses nothing. The job is paid from the plan's included credits, and the account has no payment method, so it cannot be billed beyond them.
+When the paid budget ran out, a free path was built on a Hugging Face Job (`scripts/hf_job/`): a vLLM container serves Qwen3.6-35B-A3B-FP8 and Qwen3.5-4B on one GPU, the harness runs the eval steps in priority order with per-thread read-only database connections (`TOOLS_PARALLEL=true`), and the response cache syncs back to a private dataset repo every two minutes, so a job that stops early loses nothing. The job is paid from the plan's included credits, and the account has no payment method, so it cannot be billed beyond them. It was dry-run tested end to end with a scripted server but not run, because that month's credit was already used. The test-set agent run was instead done blind inside the Claude Code session through `scripts/agent_tools.py`, a thin client of the MCP server with `--redact-eval`, and scored by `scripts/score_blind.py`.
 
 ## Components and data flow
 

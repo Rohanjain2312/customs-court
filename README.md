@@ -18,7 +18,7 @@ TariffAgent classifies a product description into a 10-digit US HTS code the way
 
 ## Results
 
-Test set: the published ATLAS test split (200 CBP rulings). Percentages are exact-match rates with 95% bootstrap intervals. Codes that no longer exist in today's HTS are scored at 6 digits and excluded from the 10-digit column. Abstentions count as misses unless the agent still gave a code.
+Test set: the published ATLAS test split (200 CBP rulings). Percentages are exact-match rates with 95% bootstrap intervals. Codes that no longer exist in today's HTS are scored at 6 digits and left out of the 10-digit column. An abstention scores as a miss unless the agent still gave a code.
 
 <!-- results:headline -->
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
@@ -26,26 +26,41 @@ Test set: the published ATLAS test split (200 CBP rulings). Percentages are exac
 | ATLAS fine-tuned LLaMA-3.3-70B (published) | paper | 40.0% | 57.5% | | | |
 | GPT-5-Thinking (published in ATLAS) | paper | 25.0% | | | | |
 | Gemini-2.5-Pro-Thinking (published in ATLAS) | paper | 13.5% | | | | |
-| Zero-shot, no tools | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
-| Zero-shot, no tools | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent single agent (A) | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent multi-agent (D) | Qwen3.5-4B (open weights) advocates, Qwen3.6-35B-A3B (open weights) adjudicator | not run yet | | | | |
+| Zero-shot, no tools, all 200 | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
 <!-- /results:headline -->
 
-Post-training-cutoff set: 150 CBP rulings dated 2026-07-01 or later, after every model's training cutoff, reported separately.
+The agent on `subset_80` (80 of the 200 test items, stratified by product type and number of plausible headings), every row on the same items:
+
+<!-- results:subset -->
+| System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
+|---|---|---|---|---|---|---|
+| Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
+| TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
+| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+<!-- /results:subset -->
+
+<!-- results:subset_diffs -->
+| Comparison (paired, same items) | 10-digit | 6-digit |
+|---|---|---|
+| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | n/a | n/a |
+| Agent (Claude in session) minus agent on gpt-5-mini | n/a | n/a |
+<!-- /results:subset_diffs -->
+
+<!-- analysis:headline -->
+<!-- /analysis:headline -->
+
+Post-training-cutoff set (150 CBP rulings dated 2026-07-01 or later), reported separately:
 
 <!-- results:fresh -->
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 20.0% [14.0, 26.7] | 48.0% [40.0, 56.0] | 69.3% [61.3, 76.7] | 1.3% | $0.0060 |
-| Zero-shot, no tools | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent single agent (A) | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
 <!-- /results:fresh -->
 
 How the budget shaped these numbers, plainly:
-- The Claude agent was built, tuned and error-analyzed with Claude Sonnet 5 on the dev split. The project's API budget ran out before the Claude agent could run on the test split. The Claude zero-shot baseline did run on both test sets.
-- The agent runs on the test sets use open-weights models (Qwen3.6-35B-A3B and Qwen3.5-4B) served by vLLM on a Hugging Face Job paid from included plan credits, so they cost nothing extra. Same tools, skill, prompts, checks and datasets.
-- The Claude agent's dev numbers are in `docs/EVAL.md`. They are for prompt work, not a test result.
+- The agent was built, tuned and error-analyzed with Claude Sonnet 5 through the API on the dev split. The API budget ran out before the Claude agent ran on the test set.
+- The test-set agent run was then done blind by Claude Opus 5.5 working inside the Claude Code session (covered by the user's plan, no API spend), using the same tools (MCP server with `--redact-eval`), the same skill, the same final checks and the same scorer. It read only a descriptions-only file. It is labeled separately from the API runs.
+- The multi-agent vs single-agent study ran only on 10 dev items before the budget ran out; see `docs/CASE_STUDY.md`.
 
 Cost:
 
@@ -123,7 +138,6 @@ Every model response is stored in an on-disk cache keyed by the full request, so
 make test         # offline, recorded responses
 make eval-smoke   # re-scores committed runs and replays a recorded classification
 uv run tariffagent eval run --dataset atlas_test_200 --arm A --mode batch   # Claude, spends money
-uv run python scripts/hf_job/launch.py run --tag mine --plan A --flavor rtx-pro-6000 --timeout 43m   # open weights on HF Jobs
 uv run python scripts/results_tables.py   # rebuild every table in the docs from evals/reports
 ```
 

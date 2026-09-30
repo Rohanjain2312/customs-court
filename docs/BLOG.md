@@ -30,30 +30,24 @@ I built Customs Court to see how far an agent gets at this, and to measure it ho
 | ATLAS fine-tuned LLaMA-3.3-70B (published) | paper | 40.0% | 57.5% | | | |
 | GPT-5-Thinking (published in ATLAS) | paper | 25.0% | | | | |
 | Gemini-2.5-Pro-Thinking (published in ATLAS) | paper | 13.5% | | | | |
-| Zero-shot, no tools | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
-| Zero-shot, no tools | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent single agent (A) | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent multi-agent (D) | Qwen3.5-4B (open weights) advocates, Qwen3.6-35B-A3B (open weights) adjudicator | not run yet | | | | |
+| Zero-shot, no tools, all 200 | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
 <!-- /results:headline -->
 
 <!-- analysis:headline -->
 <!-- /analysis:headline -->
 
-## Multi-agent vs single agent
+The agent on the 80-item subset, all rows on the same items:
 
-<!-- results:study_diffs -->
-| Comparison (paired, same items) | 10-digit | 6-digit |
-|---|---|---|
-| B minus A | n/a | n/a |
-| C minus A | n/a | n/a |
-| D minus A | n/a | n/a |
-<!-- /results:study_diffs -->
-
-<!-- analysis:study -->
-<!-- /analysis:study -->
+<!-- results:subset -->
+| System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
+|---|---|---|---|---|---|---|
+| Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
+| TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
+| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+<!-- /results:subset -->
 
 ## Doing it without a budget
 
-The paid budget covered building, tuning and baselines. When it ran out, the remaining test runs moved to open-weights models served by vLLM on a Hugging Face Job, paid from the plan's included credits, with no payment method on file so nothing could be billed. The whole harness sits behind one provider interface, so the switch was a new adapter and a job script, not a rewrite. The trade-off is plain: the test-set agent numbers are for open models, not Claude.
+The paid budget covered building, tuning and baselines. When it ran out I tried the free routes one by one: a local open-weights model (it worked, and overheated the laptop), Hugging Face Jobs on included credits (built and dry-run tested, but that month's credit was gone), and a free API tier (no longer offered). The run that finished the project was the plainest one: Claude working inside the Claude Code session, which my plan already covers, acting as the agent blind. It saw only the product descriptions, called the same tools through the MCP server with the answer rulings hidden, and was scored by the same code. It is a different model from the API agent I tuned, so it gets its own row.
 
 Code and full write-up: the repository's `docs/CASE_STUDY.md`.

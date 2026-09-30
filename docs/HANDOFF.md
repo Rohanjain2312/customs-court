@@ -21,15 +21,13 @@ To use the tools in a new shell: `export PATH=~/.local/bin:~/.local/opt/lima/bin
 
 ## Open items for Rohan
 
-### 0. Money: API budget closed, remaining runs are free (updated 2026-09-30 00:30 UTC)
+### 0. Money: API budget closed; how the evaluation finished at $0 (updated 2026-09-30)
 
-- Rohan's budget for this project is spent. Paid API spend stopped at $13.18 (`make cost`). `BUDGET_USD_TOTAL` in `.env` is locked at $13.19, so any paid call now fails closed.
-- The Anthropic account limit was also hit (resets 2026-10-01). It will not be raised.
-- Remaining eval runs use open-weights models (Qwen3.6-35B-A3B-FP8 strong tier, Qwen3.5-4B cheap tier, both Apache-2.0) served by vLLM inside a Hugging Face Job. Jobs are paid from the HF PRO plan's included $2 monthly compute credit. The HF account has no payment method (`whoami-v2` says `canPay: false`), so a job stops when the credit runs out and nothing can be billed. On 2026-09-30 a launch was refused with "Pre-paid credit balance is insufficient" (this month's $2 was already used), which confirms that guard.
-- Running models on the MacBook was tried and stopped: it overheats.
-- `scripts/hf_job/auto_run.sh` (running in the background of the build session) waits for the credit refill at 2026-10-01 00:05 UTC, runs a CPU check job (a fraction of a cent), then one GPU job on an RTX PRO 6000 capped at 43 minutes ($2), then merges the results. Steps run in priority order and the response cache syncs every 2 minutes, so an early stop loses nothing and a later job resumes.
-- To run it by hand: `bash scripts/hf_job/auto_run.sh "2026-10-01 00:05"`, or `uv run python scripts/hf_job/launch.py run --tag gpu1 --plan A,D,freshA,judge,objection,B,C,Z,freshZ,ask,judge --flavor rtx-pro-6000 --timeout 43m` then `... launch.py fetch --tag gpu1`.
-- Optional, only if more free compute is wanted later: a free API key from a provider with a large free tier (for example Mistral's Experiment plan) could be added as another provider. Not needed for the plan above.
+- Rohan's budget for this project is spent. Paid API spend stopped at $13.18 (`make cost`). `BUDGET_USD_TOTAL` in `.env` is locked at $13.19, so any paid call now fails closed. The Anthropic account limit was also hit and will not be raised.
+- Free routes tried, in order: GitHub Models (endpoint only answers "OK"), a local open-weights model with llama.cpp (worked, overheated the MacBook, stopped), Hugging Face Jobs on the PRO plan's included credit (built and dry-run tested end to end; the launch was refused because the month's credit was already used, and nothing was charged), Mistral's free API tier (the console offers only paid plans now; the key in `.env` has a 0 requests/minute limit and is unused).
+- What finished it: the test-set agent run was done blind by Claude Opus 5.5 inside the Claude Code session (covered by Rohan's plan, no API spend) on `subset_80`, through `scripts/agent_tools.py` (a client of the MCP server with `--redact-eval`) and scored by `scripts/score_blind.py`. Protocol in `evals/reports/cc-subset80-A.json`.
+- The HF Job path is still ready if Rohan ever wants the open-weights runs: `bash scripts/hf_job/auto_run.sh "<UTC time after the credit refills>"`. It cannot bill beyond included credits.
+- Optional cleanup: the Mistral key in `.env` can be deleted (it has no active plan); the private HF dataset `rohanjain2312/customs-court-evaljobs` holds only the job bundle and can be deleted too.
 
 ### 1. Build status and resume point (updated 2026-09-29 22:45 UTC)
 

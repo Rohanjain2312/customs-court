@@ -78,11 +78,25 @@ Test split (`atlas_test_200`):
 | ATLAS fine-tuned LLaMA-3.3-70B (published) | paper | 40.0% | 57.5% | | | |
 | GPT-5-Thinking (published in ATLAS) | paper | 25.0% | | | | |
 | Gemini-2.5-Pro-Thinking (published in ATLAS) | paper | 13.5% | | | | |
-| Zero-shot, no tools | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
-| Zero-shot, no tools | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent single agent (A) | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent multi-agent (D) | Qwen3.5-4B (open weights) advocates, Qwen3.6-35B-A3B (open weights) adjudicator | not run yet | | | | |
+| Zero-shot, no tools, all 200 | Claude Sonnet 5 | 21.3% [14.9, 27.6] | 53.0% [46.0, 60.0] | 62.0% [55.5, 68.5] | 13.5% | $0.0061 |
 <!-- /results:headline -->
+
+Agent on `subset_80`:
+
+<!-- results:subset -->
+| System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
+|---|---|---|---|---|---|---|
+| Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
+| TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
+| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+<!-- /results:subset -->
+
+<!-- results:subset_diffs -->
+| Comparison (paired, same items) | 10-digit | 6-digit |
+|---|---|---|
+| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | n/a | n/a |
+| Agent (Claude in session) minus agent on gpt-5-mini | n/a | n/a |
+<!-- /results:subset_diffs -->
 
 Post-cutoff set (`fresh_150`):
 
@@ -90,30 +104,7 @@ Post-cutoff set (`fresh_150`):
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 20.0% [14.0, 26.7] | 48.0% [40.0, 56.0] | 69.3% [61.3, 76.7] | 1.3% | $0.0060 |
-| Zero-shot, no tools | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| TariffAgent single agent (A) | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
 <!-- /results:fresh -->
-
-Multi-agent study (`subset_80`, every arm on the same 80 items):
-
-<!-- results:study -->
-| Arm | Models | 10-digit | 6-digit | Tokens per item | Tool calls per item | Cost per item |
-|---|---|---|---|---|---|---|
-| A single agent | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| B single agent, token budget matched to D | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| C smart friend (cheap model asks the strong one) | Qwen3.5-4B (open weights) + Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| D multi-agent | Qwen3.5-4B (open weights) + Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| A with ask-for-facts mode | Qwen3.6-35B-A3B (open weights) | not run yet | | | | |
-| A on another vendor (provider comparison) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 65,307 | 6.25 | $0.0077 |
-<!-- /results:study -->
-
-<!-- results:study_diffs -->
-| Comparison (paired, same items) | 10-digit | 6-digit |
-|---|---|---|
-| B minus A | n/a | n/a |
-| C minus A | n/a | n/a |
-| D minus A | n/a | n/a |
-<!-- /results:study_diffs -->
 
 Claude agent on dev (prompt work only):
 
@@ -138,8 +129,8 @@ All 59 failures of `dev100-A` were read and tagged (`evals/taxonomy/dev100-A.jso
 
 ## Which model produced which number
 
-- Claude Sonnet 5: zero-shot baselines on both test sets, all dev agent runs after 2026-09-29.
-- Claude Sonnet 5.5: the 20-item pilot only (the reasoner was switched to Sonnet 5 on 2026-09-29).
-- gpt-5-mini: the provider comparison on `subset_80`.
-- Qwen3.6-35B-A3B-FP8 and Qwen3.5-4B (open weights, Apache-2.0): the agent and study runs on the test sets, served by vLLM on a Hugging Face Job paid from included plan credits, with thinking off and Qwen's recommended sampling for that mode. Run ids start with `os-`.
-
+- Claude Sonnet 5 (API): zero-shot baselines on both test sets, all dev agent runs after 2026-09-29.
+- Claude Sonnet 5.5 (API): the 20-item pilot only (the reasoner was switched to Sonnet 5 on 2026-09-29).
+- Claude Haiku 4.5 (API): the cheap tier in the dev multi-agent run.
+- gpt-5-mini (API): the provider comparison on `subset_80`.
+- Claude Opus 5.5 inside the Claude Code session: the blind agent run on `subset_80` (`cc-subset80-A`). Protocol in `evals/reports/cc-subset80-A.json`: descriptions-only input (`evals/blind/`), tools through the MCP server with `--redact-eval`, the skill's workflow and final checks, scored by the same code. No API spend. It is a different model from the API agent, so it is reported on its own row.
