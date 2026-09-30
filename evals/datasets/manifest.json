@@ -8,6 +8,15 @@
     "split": "test",
     "use": "reported results"
   },
+  "demo_objection": {
+    "created": "2026-09-30T00:11:53+00:00",
+    "file": "evals/datasets/demo_objection.jsonl",
+    "sha256": "f12d7a4c115bda7e307b42c51cf730b8b22b4ae6721628c9851bacd7bbec8f65",
+    "size": 2,
+    "source": "hand-written demo pair for the Objection flow; reference codes labeled by hand from the HTS text, not CBP rulings",
+    "split": "demo only",
+    "use": "demo replays, never reported"
+  },
   "dev_100": {
     "created": "2026-09-29T00:09:05+00:00",
     "file": "evals/datasets/dev_100.jsonl",

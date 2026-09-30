@@ -99,6 +99,27 @@ def best_snippet(text: str, query: str, width: int = 500) -> str:
     return text[best_i : best_i + width]
 
 
+class _ThreadLocalDB:
+    """A read-only SQLite connection per thread (TOOLS_PARALLEL=true)."""
+
+    def __init__(self):
+        self._local = threading.local()
+
+    def execute(self, *args):
+        c = getattr(self._local, "con", None)
+        if c is None:
+            c = self._local.con = connect(readonly=True)
+        return c.execute(*args)
+
+
+class _NoLock:
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
 class TariffTools:
     """Implements all MCP tools over the local SQLite store."""
 
@@ -109,15 +130,18 @@ class TariffTools:
         use_vectors: bool | None = None,
     ):
         s = get_settings()
-        self.con = con or connect(readonly=True)
+        parallel = con is None and s.tools_parallel
+        self.con = _ThreadLocalDB() if parallel else (con or connect(readonly=True))
         self.limit = s.tool_text_limit
         self.rev = current_rev(self.con)
         self.redact_eval = s.redact_eval if redact_eval is None else redact_eval
         self.search = HybridSearch(
             self.con, use_vectors=s.use_vectors if use_vectors is None else use_vectors
         )
-        self._lock = threading.RLock()
-        self.search._lock = self._lock  # one lock for the shared connection
+        # One lock for a shared connection. In parallel mode every thread has its own read-only
+        # connection, so tool calls from concurrent episodes do not queue behind each other.
+        self._lock = _NoLock() if parallel else threading.RLock()
+        self.search._lock = self._lock
         self.redacted: set[str] = set()
         if self.redact_eval:
             self.redacted = {r[0] for r in self.con.execute("SELECT DISTINCT ruling_id FROM eval_redactions")}

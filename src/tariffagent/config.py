@@ -66,6 +66,8 @@ class Settings(BaseSettings):
         "local-qwen3.5-4b=http://127.0.0.1:8081/v1,local-qwen3.5-2b=http://127.0.0.1:8082/v1"
     )
     local_temperature: float = 0.7
+    # Per-thread read-only DB connections for tools (used by the high-concurrency GPU job).
+    tools_parallel: bool = False
     local_thinking: bool = False
 
     def local_endpoint(self, model: str) -> str:

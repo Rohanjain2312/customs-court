@@ -45,7 +45,7 @@ TA=/opt/ta/bin/tariffagent
 export DATA_DIR="$W/data" USE_VECTORS=true OFFLINE=false PHASE=open
 export REASONER_MODEL=local-qwen3.6-35b-a3b ADVOCATE_MODEL=local-qwen3.5-4b JUDGE_MODEL=local-qwen3.6-35b-a3b
 export LOCAL_ENDPOINTS="local-qwen3.6-35b-a3b=http://127.0.0.1:8081/v1,local-qwen3.5-4b=http://127.0.0.1:8082/v1"
-export BUDGET_USD_TOTAL=0 HF_HUB_ENABLE_HF_TRANSFER=1
+export BUDGET_USD_TOTAL=0 TOOLS_PARALLEL=true
 
 sync_state() {
   tar czf /tmp/state.tar.gz data/cache evals/runs evals/reports evals/taxonomy data/ledger.jsonl logs 2>/dev/null
@@ -101,9 +101,12 @@ for step in "${STEPS[@]}"; do
       bud=$(/opt/ta/bin/python -c "import json;print(int(json.load(open('evals/reports/os-atlas200-D.json'))['metrics']['tokens_per_item']))" 2>/dev/null || echo 150000)
       run os-subset80-B --dataset atlas_test_200 --items-from subset_80 --arm B --token-budget "$bud" --max-turns 16 --phase open ;;
     C) run os-subset80-C --dataset atlas_test_200 --items-from subset_80 --arm C --phase open ;;
+    objection)
+      run os-demo-objection-A --dataset demo_objection --arm A --phase open
+      run os-demo-objection-D --dataset demo_objection --arm D --phase open ;;
     ask) run os-subset80-A-ask --dataset atlas_test_200 --items-from subset_80 --arm A --ask-mode --phase open ;;
     judge)
-      for r in os-atlas200-A os-atlas200-D atlas200-Z; do
+      for r in os-atlas200-A os-atlas200-D os-fresh150-A atlas200-Z; do
         [ -f "evals/reports/$r.json" ] && [ ! -f "evals/reports/$r.judge.json" ] && [ "$(left_min)" -gt 3 ] && \
           timeout "$(( $(left_min) - 2 ))m" $TA eval judge "$r" --second-model local-qwen3.5-4b > "logs/judge-$r.log" 2>&1 && log "judged $r"
       done ;;
