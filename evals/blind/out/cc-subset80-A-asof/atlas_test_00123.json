@@ -1,0 +1,50 @@
+{
+ "item_id": "atlas_test_00123",
+ "classification": {
+  "hts10": "8467.21.00.10",
+  "facts": {
+   "material": "plastic/metal tools with nylon bag",
+   "function": "cordless drilling with work light",
+   "form": "retail set: rechargeable drill, worklight, charger, battery, bits, nylon bag",
+   "end_use": "consumer power tool kit"
+  },
+  "gri_path": [
+   "GRI 1: heading 8467 hand tools with self-contained electric motor; set is not covered by a single heading",
+   "GRI 3(b): retail set of goods; the drill gives the set its essential character",
+   "GRI 6: 8467.21 drills of all kinds, battery powered"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "F81504",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8513.10",
+    "reason": "worklight is a secondary component"
+   },
+   {
+    "code": "8507.60",
+    "reason": "battery is an accessory of the drill in the set"
+   },
+   {
+    "code": "8467.21.00.30",
+    "reason": "chuck-capacity lines appear under non-battery branch; set is battery powered"
+   }
+  ],
+  "missing_facts": [
+   "chuck capacity, if a different line applies"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Retail set of a cordless drill with worklight, charger, battery, bits and bag is classified by the drill under GRI 3(b), as in F81504 (tool kit classified as the drill in the old equivalent line). Current battery powered drill line is 8467.21.00.10."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

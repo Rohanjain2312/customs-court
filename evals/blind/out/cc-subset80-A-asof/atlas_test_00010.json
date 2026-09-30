@@ -1,0 +1,52 @@
+{
+ "item_id": "atlas_test_00010",
+ "classification": {
+  "hts10": "3918.10.10.20",
+  "facts": {
+   "material": "PVC (4 mm base, 0.5 mm backing) with 0.5 mm wood veneer top",
+   "function": "floor covering",
+   "form": "click-lock planks/tiles",
+   "end_use": "flooring installation"
+  },
+  "gri_path": [
+   "GRI 1: heading 3918 floor coverings of plastics in tiles; 3918.10 of vinyl chloride polymers",
+   "GRI 3(b): PVC layers provide essential character over thin veneer",
+   "GRI 6: 3918.10.10 vinyl tile, rigid solid polymer core"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "N261168",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "4418.73",
+    "reason": "assembled wood flooring panels; wood veneer is only 0.5 mm of ~5 mm"
+   },
+   {
+    "code": "4412",
+    "reason": "plywood/veneered panels; PVC gives essential character"
+   },
+   {
+    "code": "3918.10.10.30",
+    "reason": "core is solid, not expanded"
+   }
+  ],
+  "missing_facts": [
+   "Is the core rigid solid (assumed) vs expanded?"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "PVC layers make up ~90% of thickness, so vinyl tile of heading 3918 with rigid solid core."
+ },
+ "tool_calls": 9,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes",
+  "ruling_status"
+ ]
+}

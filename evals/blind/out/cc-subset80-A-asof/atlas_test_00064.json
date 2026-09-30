@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00064",
+ "classification": {
+  "hts10": "6104.43.20.10",
+  "facts": {
+   "material": "100% nylon knit lace, 100% polyester knit slip liner",
+   "function": "women's dress",
+   "form": "finished knit dress with lining",
+   "end_use": "apparel"
+  },
+  "gri_path": [
+   "GRI 1: heading 6104 women's knitted dresses; chapter 61 note; GRI 6: 6104.43 synthetic fibers, 6104.43.20 other than wool, .10 women's"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6104.44",
+    "reason": "artificial fibers; nylon is synthetic"
+   },
+   {
+    "code": "6108.11",
+    "reason": "slip is a liner of dress, not separate garment"
+   },
+   {
+    "code": "6104.43.10",
+    "reason": "no wool"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.8,
+  "abstain": false,
+  "rationale": "Knit women's dress of synthetic fiber (nylon outer) in 6104.43; liner is part of the dress."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

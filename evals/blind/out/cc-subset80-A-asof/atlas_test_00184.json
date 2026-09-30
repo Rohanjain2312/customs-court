@@ -1,0 +1,49 @@
+{
+ "item_id": "atlas_test_00184",
+ "classification": {
+  "hts10": "6110.20.20.67",
+  "facts": {
+   "material": "100% cotton jersey knit",
+   "function": "men's pullover upper-body garment",
+   "form": "knitted garment, knit to shape (assumed, as in precedent)",
+   "end_use": "wearing apparel"
+  },
+  "gri_path": [
+   "GRI 1: heading 6110 sweaters and pullovers, knitted; GRI 6: of cotton, other, men's or boys', knit to shape per statistical note 6"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "M80620",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6110.20.20.10",
+    "reason": "Sweaters men's (345); precedent treats knit-to-shape pullover under 338 line"
+   },
+   {
+    "code": "6109.10",
+    "reason": "T-shirts/singlets; long-sleeved pullover with V-neck not a T-shirt"
+   },
+   {
+    "code": "6110.20.20.41",
+    "reason": "sweatshirts"
+   }
+  ],
+  "missing_facts": [
+   "whether knit to shape and stitch count"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "M80620 classified a near identical 100% cotton jersey pullover with tubular cuffs and tubular bottom (crew neck) in 6110.20.2067; that line still exists as knit to shape articles. Assumes the garment is knit to shape."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

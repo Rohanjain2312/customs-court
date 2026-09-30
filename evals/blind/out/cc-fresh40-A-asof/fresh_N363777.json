@@ -1,0 +1,50 @@
+{
+ "item_id": "fresh_N363777",
+ "classification": {
+  "hts10": "9018.19.95.50",
+  "facts": {
+   "material": "electronic sensor, textile bands, tablet",
+   "function": "continuous pulse rate and SpO2 monitoring via PPG",
+   "form": "set of sensor, bands, tablet with app, cables",
+   "end_use": "parents and clinicians monitoring"
+  },
+  "gri_path": [
+   "GRI 1: heading 9018 electro-diagnostic apparatus for checking physiological parameters",
+   "GRI 3(b): put-up set, sensor gives essential character",
+   "GRI 6: 9018.19.95.50 other apparatus"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "H338599",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8471",
+    "reason": "tablet is subordinate to monitoring function"
+   },
+   {
+    "code": "9018.19.95.60",
+    "reason": "sensor is apparatus not just a part"
+   },
+   {
+    "code": "9031.80.80.85",
+    "reason": "medical monitoring of pulse/SpO2 is 9018 (H338599)"
+   }
+  ],
+  "missing_facts": [
+   "FDA-cleared medical use vs consumer wellness"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Pulse oximeter function measures physiological parameters: 9018.19.95 per H338599; the set is classified by the sensor."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

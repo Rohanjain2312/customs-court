@@ -1,0 +1,50 @@
+{
+ "item_id": "fresh_N363849",
+ "classification": {
+  "hts10": "8421.29.00.65",
+  "facts": {
+   "material": "cast/ductile iron body, stainless steel perforated screen",
+   "function": "filter particulate from process fluids",
+   "form": "strainer with flanges and cover",
+   "end_use": "pipeline protection"
+  },
+  "gri_path": [
+   "GRI 1: heading 8421 filtering or purifying machinery for liquids; Section XVI",
+   "GRI 6: 8421.29 other liquids; 8421.29.00.65 Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "964174",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "7307",
+    "reason": "pipe fittings; strainer is a filtering apparatus"
+   },
+   {
+    "code": "8481",
+    "reason": "not a valve"
+   },
+   {
+    "code": "8421.39",
+    "reason": "gases only not principal"
+   }
+  ],
+  "missing_facts": [
+   "models may be for gas vs liquid use"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "HQ 964174 holds strainers to be heading 8421 filtering apparatus; 8421.29 other liquids, statistical 65 Other."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

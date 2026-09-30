@@ -1,0 +1,151 @@
+{
+  "cc-subset80-A": {
+    "filter": "no date filter",
+    "items": 80,
+    "items_with_as_of_date": 38,
+    "citations_dated_after_the_item": 22,
+    "items_citing_a_later_ruling": 20,
+    "detail": [
+      {
+        "item_id": "atlas_test_00003",
+        "cited": "I87160",
+        "cited_date": "2002-10-14"
+      },
+      {
+        "item_id": "atlas_test_00010",
+        "cited": "N288828",
+        "cited_date": "2017-08-31"
+      },
+      {
+        "item_id": "atlas_test_00017",
+        "cited": "N350010",
+        "cited_date": "2025-06-27"
+      },
+      {
+        "item_id": "atlas_test_00036",
+        "cited": "H89862",
+        "cited_date": "2002-04-11"
+      },
+      {
+        "item_id": "atlas_test_00036",
+        "cited": "N355340",
+        "cited_date": "2025-11-21"
+      },
+      {
+        "item_id": "atlas_test_00047",
+        "cited": "N249832",
+        "cited_date": "2014-03-24"
+      },
+      {
+        "item_id": "atlas_test_00054",
+        "cited": "N359864",
+        "cited_date": "2026-04-02"
+      },
+      {
+        "item_id": "atlas_test_00072",
+        "cited": "N361135",
+        "cited_date": "2026-05-21"
+      },
+      {
+        "item_id": "atlas_test_00076",
+        "cited": "H88731",
+        "cited_date": "2002-02-25"
+      },
+      {
+        "item_id": "atlas_test_00076",
+        "cited": "N239953",
+        "cited_date": "2013-04-12"
+      },
+      {
+        "item_id": "atlas_test_00080",
+        "cited": "L81175",
+        "cited_date": "2004-12-15"
+      },
+      {
+        "item_id": "atlas_test_00104",
+        "cited": "N351497",
+        "cited_date": "2025-08-14"
+      },
+      {
+        "item_id": "atlas_test_00109",
+        "cited": "H81340",
+        "cited_date": "2001-06-13"
+      },
+      {
+        "item_id": "atlas_test_00117",
+        "cited": "N332349",
+        "cited_date": "2023-04-26"
+      },
+      {
+        "item_id": "atlas_test_00125",
+        "cited": "N012776",
+        "cited_date": "2007-06-21"
+      },
+      {
+        "item_id": "atlas_test_00133",
+        "cited": "N264976",
+        "cited_date": "2015-08-07"
+      },
+      {
+        "item_id": "atlas_test_00159",
+        "cited": "J89828",
+        "cited_date": "2003-10-23"
+      },
+      {
+        "item_id": "atlas_test_00175",
+        "cited": "N341739",
+        "cited_date": "2024-08-23"
+      },
+      {
+        "item_id": "atlas_test_00184",
+        "cited": "N297115",
+        "cited_date": "2018-06-13"
+      },
+      {
+        "item_id": "atlas_test_00185",
+        "cited": "N355530",
+        "cited_date": "2025-11-19"
+      },
+      {
+        "item_id": "atlas_test_00193",
+        "cited": "I80102",
+        "cited_date": "2002-04-28"
+      },
+      {
+        "item_id": "atlas_test_00197",
+        "cited": "G86134",
+        "cited_date": "2001-01-28"
+      }
+    ]
+  },
+  "cc-subset80-A-asof": {
+    "filter": "date filter on",
+    "items": 80,
+    "items_with_as_of_date": 38,
+    "citations_dated_after_the_item": 0,
+    "items_citing_a_later_ruling": 0,
+    "detail": []
+  },
+  "cc-fresh40-A": {
+    "filter": "no date filter",
+    "items": 40,
+    "items_with_as_of_date": 40,
+    "citations_dated_after_the_item": 1,
+    "items_citing_a_later_ruling": 1,
+    "detail": [
+      {
+        "item_id": "fresh_N356982",
+        "cited": "N358799",
+        "cited_date": "2026-07-21"
+      }
+    ]
+  },
+  "cc-fresh40-A-asof": {
+    "filter": "date filter on",
+    "items": 40,
+    "items_with_as_of_date": 40,
+    "citations_dated_after_the_item": 0,
+    "items_citing_a_later_ruling": 0,
+    "detail": []
+  }
+}

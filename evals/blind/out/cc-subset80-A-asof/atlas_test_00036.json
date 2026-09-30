@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00036",
+ "classification": {
+  "hts10": "9025.80.10.00",
+  "facts": {
+   "material": "electronic sensors/transmitters",
+   "function": "measure dew point (humidity) and temperature",
+   "form": "transmitter instruments",
+   "end_use": "industrial process/HVAC measurement"
+  },
+  "gri_path": [
+   "GRI 1: heading 9025 hygrometers, thermometers",
+   "GRI 6: 9025.80 other instruments, electrical"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9025.19.80",
+    "reason": "other thermometers; combined instrument goes to other instruments"
+   },
+   {
+    "code": "9026",
+    "reason": "not flow/level/pressure measurement"
+   }
+  ],
+  "missing_facts": [
+   "Does it output electrical signal (assumed)?"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Electrical dew point hygrometer/temperature instrument falls in 9025.80.10."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate"
+ ]
+}

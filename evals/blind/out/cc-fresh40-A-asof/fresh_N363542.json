@@ -1,0 +1,42 @@
+{
+ "item_id": "fresh_N363542",
+ "classification": {
+  "hts10": "6101.30.20.10",
+  "facts": {
+   "material": "100% polyester double-knit coat, vest, pants, cravat, sash, boot covers, hat",
+   "function": "costume portraying British soldier",
+   "form": "retail set of textile pieces",
+   "end_use": "dress-up/role play"
+  },
+  "gri_path": [
+   "GRI 1/3(b): set; coat imparts essential character",
+   "Chapter 95 note 1(e): well-made fancy dress of textiles goes to ch 61/62, not 9505",
+   "GRI 6: 6101.30 of man-made fibers, 6101.30.20.10 men's"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90.60.00",
+    "reason": "coat has well-made collar, lapels, cuffs, so ch 61 note exclusion applies unlike flimsy costumes (e.g. N308919 flimsy upper garment)"
+   },
+   {
+    "code": "6103.33.20.00",
+    "reason": "coat is unlined overcoat-style, not a suit-type jacket (uncertain)"
+   }
+  ],
+  "missing_facts": [
+   "full description truncated (vest, pants, hat construction)",
+   "whether coat is lined/suit-type"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "The coat is made of finished knit fabric with well-made collar, lapels and cuffs and so is wearing apparel excluded from ch 95 by note 1(e); as the set's essential character component it gives the knit men's coat line 6101.30.20.10. Low confidence: 9505.90.60 is possible if the set is judged flimsy overall; 6103.33 also arguable."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "get_ruling"
+ ]
+}

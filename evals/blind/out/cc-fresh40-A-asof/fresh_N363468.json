@@ -1,0 +1,55 @@
+{
+ "item_id": "fresh_N363468",
+ "classification": {
+  "hts10": "8543.70.98.60",
+  "facts": {
+   "material": "electronic DSP chipset in metal housing",
+   "function": "digital audio signal processing: DAC, crossover, EQ, level adjustment; no amplification",
+   "form": "electronic apparatus with rotary dial, RCA/XLR/S-PDIF I/O, wireless",
+   "end_use": "loudspeaker system processing"
+  },
+  "gri_path": [
+   "GRI 1: heading 8543 electrical apparatus with individual functions not elsewhere specified; not an amplifier (8518.40) nor a loudspeaker part as it does not amplify",
+   "GRI 6: 8543.70 other machines; 8543.70.98 Other; .60 Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N345901",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8518.40.20.00",
+    "reason": "no amplification, so not an audio-frequency amplifier"
+   },
+   {
+    "code": "8542.31.00.35",
+    "reason": "a finished apparatus, not an integrated circuit"
+   },
+   {
+    "code": "8543.70.91.00",
+    "reason": "requires network connection for mixing of sound; device is a speaker processor with unspecified wireless link"
+   },
+   {
+    "code": "8518.90",
+    "reason": "not shown to be a part solely for loudspeakers"
+   }
+  ],
+  "missing_facts": [
+   "type of wireless connectivity (network vs simple Bluetooth)",
+   "whether device is dedicated to a single speaker brand"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "DSP unit performing crossover/EQ/level adjustment without amplification falls in residual 8543.70.98, as the in-force effects-processor ruling N345901 did; uncertainty over 8543.70.91 if the wireless link is a network for sound mixing."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

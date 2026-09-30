@@ -1,0 +1,47 @@
+{
+ "item_id": "fresh_N363928",
+ "classification": {
+  "hts10": "8211.93.00.35",
+  "facts": {
+   "material": "zinc alloy and stainless steel",
+   "function": "general cutting with replaceable blade",
+   "form": "manual folding knife with locking blade, screwdriver",
+   "end_use": "utility cutting"
+  },
+  "gri_path": [
+   "GRI 1: heading 8211 knives with cutting blades; 8211.93 other than fixed blades",
+   "GRI 6: pocket knives with folding blades 8211.93.00.35"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N361367",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8211.93.00.60",
+    "reason": "other non-fixed blade; this has folding blade"
+   },
+   {
+    "code": "8211.92",
+    "reason": "not fixed-blade"
+   },
+   {
+    "code": "8208",
+    "reason": "not machine knife"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "Folding utility knife matches N361367, 8211.93.0035."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_search",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

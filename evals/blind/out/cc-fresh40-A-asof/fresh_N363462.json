@@ -1,0 +1,50 @@
+{
+ "item_id": "fresh_N363462",
+ "classification": {
+  "hts10": "4202.92.45.00",
+  "facts": {
+   "material": "plastic sheeting outer surface, foam lining, zipper, casters",
+   "function": "carry laundry on wheels",
+   "form": "tote bag with 3 handles, 18x14x24 in",
+   "end_use": "laundry hauling"
+  },
+  "gri_path": [
+   "GRI 1: heading 4202 covers travel, sports and similar bags with outer surface of plastic sheeting",
+   "GRI 6: 4202.92 outer surface of plastic sheeting or textile; 4202.92.45 Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H278965",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "4202.22.15.00",
+    "reason": "handbag provision; a large wheeled tote is a travel/similar bag"
+   },
+   {
+    "code": "4202.92.31",
+    "reason": "outer surface is plastic sheeting, not textile"
+   },
+   {
+    "code": "4202.92.04.00",
+    "reason": "not a beverage bag"
+   }
+  ],
+  "missing_facts": [
+   "whether the plastic sheeting is reinforced/laminated (would not change line)"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "Wheeled tote with plastic-sheeting outer surface is a travel, sports and similar bag under 4202.92; plastic outer surface falls in the residual 4202.92.45, consistent with H278965 and other tote-bag rulings."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

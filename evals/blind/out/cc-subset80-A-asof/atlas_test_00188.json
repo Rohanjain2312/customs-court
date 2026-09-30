@@ -1,0 +1,49 @@
+{
+ "item_id": "atlas_test_00188",
+ "classification": {
+  "hts10": "8413.91.90.31",
+  "facts": {
+   "material": "steel",
+   "function": "sucker rods connect and drive downhole pump piston in oil wells; couplings join rods",
+   "form": "rods and couplings",
+   "end_use": "oil and gas field pumps"
+  },
+  "gri_path": [
+   "GRI 1: heading 8413 parts of pumps (EN names sucker rods); GRI 6: 8413.91.90 other parts; statistical line for sucker rods"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H310618",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8431.43.80",
+    "reason": "parts for boring machinery; rejected in H310618"
+   },
+   {
+    "code": "7307.99.50",
+    "reason": "pipe fittings; couplings are for solid rods"
+   },
+   {
+    "code": "8413.91.90.39",
+    "reason": "other sucker rod parts/couplings; first-named article is the rod"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: sucker rod couplings (8413.91.90 other lines)"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "H310618 holds both sucker rods and couplings are parts of pumps in 8413.91.90. The sucker rod statistical line is 8413.91.90.31."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "get_ruling",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

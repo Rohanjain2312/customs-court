@@ -1,0 +1,42 @@
+{
+ "item_id": "fresh_N363573",
+ "classification": {
+  "hts10": "7615.10.91.00",
+  "facts": {
+   "material": "aluminum alloy 6061-T6 body and lid, stainless spring plunger",
+   "function": "store and organize pills/vitamins, three compartments",
+   "form": "small lidded case",
+   "end_use": "personal/home use"
+  },
+  "gri_path": [
+   "GRI 1: heading 7615 household articles of aluminum; aluminum predominates (GRI 3(b))",
+   "GRI 6: 7615.10 household articles; not cooking/kitchen ware so 7615.10.91 Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7612.90.10",
+    "reason": "commercial packaging containers; this is home-use article"
+   },
+   {
+    "code": "7615.10.71",
+    "reason": "cooking and kitchen ware only"
+   },
+   {
+    "code": "7616.99",
+    "reason": "specific household heading 7615 preferred"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Aluminum pill case sold for home use is a household article of aluminum, heading 7615, not kitchenware, so the residual 7615.10.91."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate"
+ ]
+}

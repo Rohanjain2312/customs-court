@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00008",
+ "classification": {
+  "hts10": "9027.90.59.10",
+  "facts": {
+   "material": "electronic PCB with components (gas sensing circuitry)",
+   "function": "processes signal of a hydrogen gas sensor",
+   "form": "printed circuit board assembly",
+   "end_use": "part of electrical gas analysis apparatus"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 gas analysis apparatus and parts; Section XVI notes do not apply to ch. 90 (PCB assembly is a part of the instrument)",
+   "GRI 6: 9027.90 parts, electrical gas analysis (9027.10.20)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8543.70.45.00",
+    "reason": "sensor board treated as part of instrument in ch. 90 when dedicated to it"
+   },
+   {
+    "code": "8534.00.00",
+    "reason": "populated board with components, not a bare printed circuit"
+   },
+   {
+    "code": "9027.90.45.00",
+    "reason": "for 9027.81/89 instruments (mass spectrometers etc.), not gas analysis 9027.10"
+   }
+  ],
+  "missing_facts": [
+   "Is the board dedicated to a gas analysis instrument or sold standalone?"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A populated PCB assembly for a hydrogen gas sensor is a part of electrical gas analysis apparatus of 9027.10.20, so 9027.90.59.10."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate"
+ ]
+}

@@ -40,8 +40,8 @@ class Spy:
         self.inner = inner
         self.outputs: list[str] = []
 
-    def call(self, name, args):
-        out = self.inner.call(name, args)
+    def call(self, name, args, **kw):
+        out = self.inner.call(name, args, **kw)
         self.outputs.append(out)
         return out
 

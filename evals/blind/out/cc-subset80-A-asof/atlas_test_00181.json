@@ -1,0 +1,49 @@
+{
+ "item_id": "atlas_test_00181",
+ "classification": {
+  "hts10": "8501.10.40.40",
+  "facts": {
+   "material": "electric motor, DC brushless",
+   "function": "drives the scanning mechanism of a laser bar code scanner",
+   "form": "motor assembly (subcomponent)",
+   "end_use": "bar code scanner"
+  },
+  "gri_path": [
+   "GRI 1: heading 8501 covers electric motors; motor assembly is a motor",
+   "GRI 6: 8501.10 motors not exceeding 37.5 W, assumed under 18.65 W; DC brushless"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H87929",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8501.31",
+    "reason": "output over 37.5 W; scanner motors are tiny"
+   },
+   {
+    "code": "8501.10.60.40",
+    "reason": "18.65 W or more but not over 37.5 W; assumed smaller"
+   },
+   {
+    "code": "8501.90",
+    "reason": "parts of motors; this is a complete motor assembly"
+   }
+  ],
+  "missing_facts": [
+   "power output in watts"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A DC brushless motor is an electric motor of heading 8501. Small scanner motors are assumed under 18.65 W, giving 8501.10.40.40 (DC, brushless), in line with ruling H87929 on a DC brushless motor."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "ruling_status"
+ ]
+}

@@ -39,7 +39,7 @@ from tariffagent.agents.single import (
     system_blocks,
     user_prompt,
 )
-from tariffagent.agents.tooling import TOOL_SPECS, ToolExecutor
+from tariffagent.agents.tooling import TOOL_SPECS, ToolExecutor, item_as_of
 from tariffagent.config import get_settings
 from tariffagent.llm.base import LLMRequest
 from tariffagent.mcp_server.tools.core import TariffTools
@@ -218,7 +218,8 @@ def multi_episode(item: dict, cfg: MultiConfig, tools: TariffTools, bus: EventBu
     tool_calls = 0
 
     # 1. Orchestrator.
-    ex_o = ToolExecutor(tools, bus, agent="orchestrator", allowed=ORCH_TOOLS)
+    as_of = item_as_of(item)
+    ex_o = ToolExecutor(tools, bus, agent="orchestrator", allowed=ORCH_TOOLS, as_of=as_of)
     plan_text = yield from tool_loop(
         name="orchestrator",
         model=cfg.orchestrator_model,
@@ -257,7 +258,7 @@ def multi_episode(item: dict, cfg: MultiConfig, tools: TariffTools, bus: EventBu
     execs = {}
     started = {}
     for h in heads:
-        execs[h] = ToolExecutor(tools, bus, agent=f"advocate:{h}", allowed=ADV_TOOLS)
+        execs[h] = ToolExecutor(tools, bus, agent=f"advocate:{h}", allowed=ADV_TOOLS, as_of=as_of)
         gens[h] = tool_loop(
             name=f"advocate-{h}",
             model=cfg.advocate_model,
@@ -317,7 +318,7 @@ def multi_episode(item: dict, cfg: MultiConfig, tools: TariffTools, bus: EventBu
     tool_calls += sum(e.calls for e in execs.values())
 
     # 3. Adjudicator, the single writer.
-    ex_a = ToolExecutor(tools, bus, agent="adjudicator", allowed=ADJ_TOOLS)
+    ex_a = ToolExecutor(tools, bus, agent="adjudicator", allowed=ADJ_TOOLS, as_of=as_of)
     brief = {
         "facts": plan.facts.model_dump() if plan else {},
         "missing_facts": plan.missing_facts if plan else [],

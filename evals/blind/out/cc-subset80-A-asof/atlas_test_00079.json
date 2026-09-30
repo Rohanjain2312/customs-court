@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00079",
+ "classification": {
+  "hts10": "8409.99.91.10",
+  "facts": {
+   "material": "forged steel",
+   "function": "engine part",
+   "form": "part",
+   "end_use": "diesel engines for Class 8 trucks (heading 8704)"
+  },
+  "gri_path": [
+   "GRI 1: heading 8409 parts of engines 8407/8408; Section XVI note 2(b); GRI 6 8409.99.91 for vehicles of 8704, .10 connecting rods"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8409.91",
+    "reason": "spark-ignition only"
+   },
+   {
+    "code": "8409.99.99",
+    "reason": "not specific to vehicles"
+   },
+   {
+    "code": "7326",
+    "reason": "parts of machinery go to 84"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "Connecting rods for diesel truck engines are parts under 8409.99.91.10."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "item_id": "atlas_test_00076",
+ "classification": {
+  "hts10": "3208.10.00.00",
+  "facts": {
+   "material": "polyester/epoxy powder",
+   "function": "coating",
+   "form": "powder paint",
+   "end_use": ""
+  },
+  "gri_path": [
+   "GRI 1: heading 3208 paints and varnishes based on synthetic polymers dispersed in non-aqueous medium; 3208.10 polyesters"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3208.90",
+    "reason": "if epoxy predominates"
+   },
+   {
+    "code": "3210",
+    "reason": "not aqueous"
+   }
+  ],
+  "missing_facts": [
+   "Polyester vs epoxy proportion"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Polyester/epoxy hybrid powder coating; polyester named first, classed 'based on polyesters'."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

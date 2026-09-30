@@ -14,7 +14,7 @@ from pydantic import BaseModel
 
 from tariffagent.agents.events import EventBus, ToolCall, TreeFocus
 from tariffagent.llm.base import ToolSpec
-from tariffagent.mcp_server.tools.core import TariffTools
+from tariffagent.mcp_server.tools.core import AS_OF_META_KEY, TariffTools, as_of_scope, valid_as_of
 
 MAX_TOOL_CHARS = 6000
 
@@ -98,13 +98,26 @@ def compact(model: BaseModel) -> str:
     return s
 
 
+def item_as_of(item: dict) -> str | None:
+    """The date after which rulings are hidden from the tools for this item, if known.
+
+    Evaluation items carry `as_of` (see evals/datasets/as_of.json); fresh items also carry their
+    own `ruling_date`. No date means no cutoff.
+    """
+    return item.get("as_of") or item.get("ruling_date") or None
+
+
 class InProcessBackend:
     """Calls the shared TariffTools implementation directly."""
 
     def __init__(self, tools: TariffTools):
         self.tools = tools
 
-    def call(self, name: str, args: dict) -> str:
+    def call(self, name: str, args: dict, as_of: str | None = None) -> str:
+        with as_of_scope(as_of):
+            return self._call(name, args)
+
+    def _call(self, name: str, args: dict) -> str:
         fn = getattr(self.tools, name)
         if name == "hts_search":
             res = fn(args.get("text", ""), int(args.get("limit") or 8))
@@ -172,9 +185,10 @@ class MCPBackend:
     def list_tools(self) -> list[str]:
         return [t.name for t in self._run(self._client.list_tools()).tools]
 
-    def call(self, name: str, args: dict) -> str:
+    def call(self, name: str, args: dict, as_of: str | None = None) -> str:
         clean = {k: v for k, v in args.items() if v is not None}
-        res = self._run(self._client.call_tool(name, clean))
+        meta = {AS_OF_META_KEY: valid_as_of(as_of)} if as_of else None
+        res = self._run(self._client.call_tool(name, clean, meta=meta))
         if res.is_error:
             raise RuntimeError("".join(getattr(c, "text", "") for c in res.content)[:500])
         s = json.dumps(res.structured_content, ensure_ascii=False, separators=(",", ":"))
@@ -192,12 +206,18 @@ class MCPBackend:
 
 class ToolExecutor:
     def __init__(
-        self, backend, bus: EventBus | None = None, agent: str = "single", allowed: set[str] | None = None
+        self,
+        backend,
+        bus: EventBus | None = None,
+        agent: str = "single",
+        allowed: set[str] | None = None,
+        as_of: str | None = None,
     ):
         self.backend = backend if hasattr(backend, "call") else InProcessBackend(backend)
         self.bus = bus
         self.agent = agent
         self.allowed = allowed or TOOL_NAMES
+        self.as_of = valid_as_of(as_of)
         self.calls = 0
 
     def run(self, name: str, args: dict) -> tuple[str, bool]:
@@ -207,7 +227,9 @@ class ToolExecutor:
         try:
             if name not in self.allowed:
                 raise ValueError(f"Unknown or disallowed tool {name}")
-            out, err = self.backend.call(name, args), False
+            # A backend that cannot take a date fails loudly here rather than showing later rulings.
+            kw = {"as_of": self.as_of} if self.as_of else {}
+            out, err = self.backend.call(name, args, **kw), False
         except Exception as e:  # noqa: BLE001
             out, err = f"Tool error: {e}", True
         ms = int((time.perf_counter() - t0) * 1000)

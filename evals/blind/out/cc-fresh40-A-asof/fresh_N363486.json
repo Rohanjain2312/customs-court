@@ -1,0 +1,44 @@
+{
+ "item_id": "fresh_N363486",
+ "classification": {
+  "hts10": "9505.90.60.00",
+  "facts": {
+   "material": "textile dress with drape, medallions, armbands",
+   "function": "costume for dressing up",
+   "form": "retail costume set",
+   "end_use": "adult festive/carnival wear"
+  },
+  "gri_path": [
+   "GRI 1: heading 9505 festive, carnival articles; Chapter 95 note 1(e) excludes only well-made fancy dress of ch 61/62",
+   "GRI 3(b): dress gives essential character; raw unfinished edges, flimsy, so not apparel"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "N327404",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6204.4",
+    "reason": "dress is not well made (raw edges), so ch 62 apparel excluded from consideration"
+   },
+   {
+    "code": "9505.10",
+    "reason": "not Christmas article"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "Costume set whose dress has raw unfinished edges is flimsy, not wearing apparel; classified in 9505.90.60 consistent with Goddess costume rulings such as N327404."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "get_notes",
+  "cross_search",
+  "ruling_status"
+ ]
+}

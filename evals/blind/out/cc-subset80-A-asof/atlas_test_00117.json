@@ -1,0 +1,46 @@
+{
+ "item_id": "atlas_test_00117",
+ "classification": {
+  "hts10": "3920.43.50.00",
+  "facts": {
+   "material": "polyvinyl chloride containing plasticizers",
+   "function": "marking/flagging",
+   "form": "tape or strip, noncellular, apparently non-adhesive",
+   "end_use": "flagging and marking"
+  },
+  "gri_path": [
+   "GRI 1: heading 3920 other plates, sheets, film, foil and strip of plastics, noncellular and not reinforced",
+   "GRI 6: 3920.43 of vinyl chloride polymers containing 6 percent or more plasticizers; Other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3919.90.50",
+    "reason": "self-adhesive tape; description does not say the tape is adhesive"
+   },
+   {
+    "code": "3920.49.00.00",
+    "reason": "PVC with less than 6 percent plasticizer; description says plasticizers present (assumed 6 percent or more)"
+   },
+   {
+    "code": "4911.99.80",
+    "reason": "would apply only if printed with messages that are not subsidiary"
+   }
+  ],
+  "missing_facts": [
+   "whether adhesive",
+   "whether printed",
+   "plasticizer content at least 6 percent"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Plastic PVC strip with plasticizers in heading 3920, subheading 3920.43 (plasticizer content assumed at least 6 percent), Other."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate"
+ ]
+}

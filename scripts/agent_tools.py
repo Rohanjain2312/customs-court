@@ -7,6 +7,11 @@ cut at 6,000 characters.
 
     python scripts/agent_tools.py hts_search '{"text": "leather handbag"}'
     python scripts/agent_tools.py hts_navigate '{"code": "4202.21"}'
+
+Set TA_ITEM=<item_id> and the server hides every ruling dated after that item's own ruling
+(its as-of date, looked up in evals/datasets/as_of.json), as a broker on that date could not
+have had them. TA_AS_OF=YYYY-MM-DD sets the date directly. The date travels in the request's
+`_meta`, not as a tool argument, so the agent never sees or chooses it.
 """
 
 from __future__ import annotations
@@ -15,6 +20,7 @@ import json
 import os
 import sys
 import urllib.request
+from pathlib import Path
 
 URL = os.environ.get("TA_MCP_URL", "http://127.0.0.1:8765/mcp")
 MAX = 6000
@@ -30,10 +36,24 @@ ALLOWED = {
 }
 
 
+def _as_of() -> str:
+    if os.environ.get("TA_AS_OF"):
+        return os.environ["TA_AS_OF"]
+    item = os.environ.get("TA_ITEM")
+    if not item:
+        return ""
+    table = Path(__file__).resolve().parents[1] / "evals" / "datasets" / "as_of.json"
+    return json.loads(table.read_text())["items"].get(item, {}).get("as_of", "")
+
+
+AS_OF = _as_of()
+
+
 def call(name: str, args: dict) -> str:
-    body = json.dumps(
-        {"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": name, "arguments": args}}
-    )
+    params: dict = {"name": name, "arguments": args}
+    if AS_OF:
+        params["_meta"] = {"tariffagent/as_of": AS_OF}
+    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": params})
     req = urllib.request.Request(
         URL,
         data=body.encode(),

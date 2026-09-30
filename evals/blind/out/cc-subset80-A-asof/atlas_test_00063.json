@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00063",
+ "classification": {
+  "hts10": "8516.71.00.20",
+  "facts": {
+   "material": "plastic/metal electrothermic appliance",
+   "function": "brews coffee",
+   "form": "complete appliance",
+   "end_use": "household"
+  },
+  "gri_path": [
+   "GRI 1: heading 8516 electro-thermic appliances; 8516.71 coffee or tea makers; GRI 6 statistical suffix assumes automatic drip"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H88216",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8516.71.00.40",
+    "reason": "percolator not indicated"
+   },
+   {
+    "code": "8516.71.00.60",
+    "reason": "other types"
+   }
+  ],
+  "missing_facts": [
+   "Drip vs. pump/percolator vs. other type"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Electric coffeemakers fall in 8516.71; automatic drip is the default type, consistent with H88216."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

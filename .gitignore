@@ -13,3 +13,6 @@ build/
 demo/frontend/dist/
 .terraform/
 *.tfstate*
+
+# Short local-model trial (overheated the laptop); not used in any table. The report stays, the raw traces do not.
+/evals/runs/localtest-2b/

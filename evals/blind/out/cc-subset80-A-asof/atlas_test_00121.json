@@ -1,0 +1,52 @@
+{
+ "item_id": "atlas_test_00121",
+ "classification": {
+  "hts10": "7323.93.00.35",
+  "facts": {
+   "material": "stainless steel pan with a glass tray",
+   "function": "broiling food",
+   "form": "oven pan with tray, household",
+   "end_use": "household oven cooking"
+  },
+  "gri_path": [
+   "GRI 1: heading 7323 table, kitchen or other household articles of iron or steel",
+   "GRI 3(b): pan and glass tray as a composite; stainless steel pan gives essential character",
+   "GRI 6: 7323.93 of stainless steel; cooking ware not suitable for stove top use is bakeware"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "K85319",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "7013.49",
+    "reason": "glass kitchenware; the stainless pan gives the essential character"
+   },
+   {
+    "code": "7323.93.00.45",
+    "reason": "Other cooking ware, used for stove top; K85319 grill pan was put here but a broiler pan is for oven use"
+   },
+   {
+    "code": "7323.93.00.60",
+    "reason": "kitchen ware that is not cooking ware; a broiler pan cooks food"
+   }
+  ],
+  "missing_facts": [
+   "relative weight and value of the steel pan and the glass tray",
+   "whether the pan is suitable for stove top use"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "A stainless steel oven broiler pan is household cooking ware of heading 7323. K85319 (grill pan, stainless) supports 7323.93 but its stat suffix was Other; since the broiler pan is cookware for oven use only the bakeware line is selected."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00030",
+ "classification": {
+  "hts10": "6202.40.20.20",
+  "facts": {
+   "material": "70% polyester, 30% wool woven",
+   "function": "women's outerwear coat",
+   "form": "finished knee-length coat",
+   "end_use": "worn by women"
+  },
+  "gri_path": [
+   "GRI 1: heading 6202 women's overcoats",
+   "GRI 6: 6202.40 man-made fibers predominate; under 36% wool so not 6202.40.15; other overcoats, women's"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6202.20",
+    "reason": "wool does not predominate"
+   },
+   {
+    "code": "6202.40.15.10",
+    "reason": "needs 36% or more wool"
+   },
+   {
+    "code": "6202.40.20.05",
+    "reason": "raincoats"
+   }
+  ],
+  "missing_facts": [
+   "Woven or knitted (knitted would be 6102)?",
+   "Down/water-resistant features?"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Overcoat of man-made fibers with under 36% wool: other overcoats, women's."
+ },
+ "tool_calls": 13,
+ "tools": [
+  "hts_navigate",
+  "hts_search"
+ ]
+}

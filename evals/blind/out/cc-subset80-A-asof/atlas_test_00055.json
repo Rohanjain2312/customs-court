@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00055",
+ "classification": {
+  "hts10": "8431.20.00.00",
+  "facts": {
+   "material": "unknown (likely steel)",
+   "function": "overheight frame attachment, apparently a load-handling attachment",
+   "form": "attachment/part",
+   "end_use": "material handling equipment"
+  },
+  "gri_path": [
+   "GRI 1: heading 8431 parts of 8426-8430 machinery; Section XVI note 2 parts rule; best guess"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7326.90",
+    "reason": "general steel article residual; function unknown"
+   },
+   {
+    "code": "8716.90",
+    "reason": "trailer part alternative"
+   }
+  ],
+  "missing_facts": [
+   "What machine is it attached to (forklift, trailer, container)?",
+   "Material"
+  ],
+  "confidence": 0.15,
+  "abstain": true,
+  "rationale": "Description too thin; best guess is a part of fork-lift/works truck machinery of heading 8427 under 8431.20."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "hts_navigate"
+ ]
+}

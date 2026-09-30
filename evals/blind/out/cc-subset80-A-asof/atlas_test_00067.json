@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00067",
+ "classification": {
+  "hts10": "6111.20.60.20",
+  "facts": {
+   "material": "100% cotton knit",
+   "function": "babies' garments",
+   "form": "set of sweater and hat",
+   "end_use": "infants"
+  },
+  "gri_path": [
+   "GRI 1: heading 6111 with chapter 61 note 6 and Additional US note 1 (sets of 6111/6505 garments); 6111.20.60.20 Sets"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6111.20.30",
+    "reason": "sweaters except those imported as parts of sets"
+   },
+   {
+    "code": "6505.00",
+    "reason": "hat is part of the set"
+   }
+  ],
+  "missing_facts": [
+   "Confirm corresponding sizes and imported together"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "Sweater and hat of infant size imported together meet Additional US note 1 definition of sets under 6111."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "get_ruling",
+  "get_notes",
+  "ruling_status"
+ ]
+}

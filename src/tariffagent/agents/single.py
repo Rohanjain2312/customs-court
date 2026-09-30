@@ -157,7 +157,7 @@ def make_checker(executor: ToolExecutor | None, bus: EventBus):
     """Tool runner for the final checks. Uses the agent's own backend, logged as the 'checker' agent."""
     if executor is None:
         return None
-    ex = ToolExecutor(executor.backend, bus, agent="checker")
+    ex = ToolExecutor(executor.backend, bus, agent="checker", as_of=executor.as_of)
 
     def run(name: str, args: dict) -> str:
         return ex.run(name, args)[0]

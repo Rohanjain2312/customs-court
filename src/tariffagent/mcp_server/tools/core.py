@@ -6,6 +6,9 @@ import json
 import re
 import sqlite3
 import threading
+from collections.abc import Iterator
+from contextlib import contextmanager
+from contextvars import ContextVar
 
 from tariffagent.config import get_settings
 from tariffagent.data.db import connect
@@ -43,6 +46,32 @@ GRI_SUMMARY = [
 ]
 
 _WORD = re.compile(r"[a-z0-9]{3,}")
+
+# Per-request "as of" date. When set, rulings dated after it do not exist for the caller: a broker
+# classifying a product on that date could not have had them. Evaluations set it to the date of the
+# item's own ruling. It is a context variable (not an attribute) because one TariffTools serves
+# many concurrent episodes, each with its own date.
+AS_OF_META_KEY = "tariffagent/as_of"
+_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+_as_of: ContextVar[str | None] = ContextVar("tariffagent_as_of", default=None)
+
+
+def valid_as_of(value: object) -> str | None:
+    """A YYYY-MM-DD string, or None (no cutoff). Anything else is an error, never a silent no-op."""
+    if value in (None, ""):
+        return None
+    if not isinstance(value, str) or not _DATE.match(value):
+        raise ValueError(f"as_of must be YYYY-MM-DD, got {value!r}")
+    return value
+
+
+@contextmanager
+def as_of_scope(value: str | None) -> Iterator[None]:
+    token = _as_of.set(valid_as_of(value))
+    try:
+        yield
+    finally:
+        _as_of.reset(token)
 
 
 def _level(d: str) -> str:
@@ -199,15 +228,37 @@ class TariffTools:
             excerpt=wrap(f"HTS {scope} {nid} notes", rows[0]["text"], n),
         )
 
+    def _cutoff(self) -> str | None:
+        return _as_of.get()
+
+    def _too_late(self, date: str | None) -> bool:
+        """True when the ruling is dated after the caller's as-of date. Undated rulings stay visible."""
+        cut = self._cutoff()
+        return bool(cut and date and date > cut)
+
     def _visible(self, rid: str) -> bool:
-        return rid not in self.redacted
+        if rid in self.redacted:
+            return False
+        if self._cutoff():
+            rows = self._q("SELECT date FROM rulings WHERE id=?", rid)
+            return not (rows and self._too_late(rows[0]["date"]))
+        return True
+
+    def _date_to(self, date_to: str | None) -> str | None:
+        """The caller's date_to, tightened to the as-of date."""
+        cut = self._cutoff()
+        if not cut:
+            return date_to or None
+        return min(date_to, cut) if date_to else cut
 
     def _ruling_row(self, rid: str):
         rid = rid.strip().upper().replace("NY ", "").replace("HQ ", "").replace(" ", "")
-        if not self._visible(rid):
+        if rid in self.redacted:
             return None
         rows = self._q("SELECT * FROM rulings WHERE id=?", rid)
-        return rows[0] if rows else None
+        if not rows or self._too_late(rows[0]["date"]):
+            return None
+        return rows[0]
 
     def _status(self, rid: str) -> dict:
         with self._lock:
@@ -317,7 +368,9 @@ class TariffTools:
     def _ruling_code_hints(self, text: str, n_rulings: int = 12, top: int = 5) -> list[RulingCodeHint]:
         """Plain-language products map poorly to terse tariff text; similar rulings bridge the gap."""
         counts: dict[str, list[str]] = {}
-        for h in self.search.search_rulings(text, k=n_rulings, exclude=self.redacted):
+        for h in self.search.search_rulings(
+            text, k=n_rulings, date_to=self._date_to(None), exclude=self.redacted
+        ):
             row = self._q("SELECT tariffs FROM rulings WHERE id=?", h.key)
             for c in json.loads(row[0]["tariffs"] or "[]") if row else []:
                 d = digits(c)
@@ -369,7 +422,7 @@ class TariffTools:
     ) -> CrossSearchResult:
         limit = max(1, min(limit, 20))
         hits = self.search.search_rulings(
-            query, k=limit, date_from=date_from or None, date_to=date_to or None, exclude=self.redacted
+            query, k=limit, date_from=date_from or None, date_to=self._date_to(date_to), exclude=self.redacted
         )
         out = []
         for h in hits:

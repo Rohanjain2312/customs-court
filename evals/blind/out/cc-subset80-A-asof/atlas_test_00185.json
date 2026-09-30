@@ -1,0 +1,42 @@
+{
+ "item_id": "atlas_test_00185",
+ "classification": {
+  "hts10": "8483.40.50.80",
+  "facts": {
+   "material": "metal gearbox assembly",
+   "function": "transmit and change speed/torque in a fertilizer spreader",
+   "form": "assembly, part",
+   "end_use": "agricultural machinery"
+  },
+  "gri_path": [
+   "GRI 1: heading 8483 names gear boxes and speed changers",
+   "Section XVI note 2(a): parts that are goods of a heading of 84/85 go in that heading, so not 8432.90",
+   "GRI 6: 8483.40.50 other, 8483.40.50.80 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8432.90.00.60",
+    "reason": "parts of spreaders; displaced by note 2(a) since gear box has its own heading"
+   },
+   {
+    "code": "8483.40.70.00",
+    "reason": "other speed changers; gear boxes fall under .50"
+   }
+  ],
+  "missing_facts": [
+   "type of gearing (fixed ratio or not)"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Gear boxes have their own heading 8483, so the gearbox assembly is classified there rather than as a part of a fertilizer distributor."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

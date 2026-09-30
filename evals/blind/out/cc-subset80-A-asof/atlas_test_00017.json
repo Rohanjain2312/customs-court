@@ -1,0 +1,46 @@
+{
+ "item_id": "atlas_test_00017",
+ "classification": {
+  "hts10": "7326.90.86.88",
+  "facts": {
+   "material": "steel",
+   "function": "air vent/register for air conditioning distribution",
+   "form": "finished article",
+   "end_use": "HVAC air outlet"
+  },
+  "gri_path": [
+   "GRI 1: heading 7326 other articles of iron or steel; Section XVI note 1(g) not applicable",
+   "GRI 6: 7326.90.86.88 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8415.90.80.45",
+    "reason": "parts of air conditioners require suitable for use solely with AC machines; vents are general duct hardware"
+   },
+   {
+    "code": "7322.90.00",
+    "reason": "parts of air heaters/distributors with fan; not stated"
+   },
+   {
+    "code": "3926.90.98.80",
+    "reason": "J80084 register is plastic; this is steel"
+   }
+  ],
+  "missing_facts": [
+   "Is it a duct register/grille or a part dedicated to an AC machine?"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A steel air vent is an other article of iron or steel."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

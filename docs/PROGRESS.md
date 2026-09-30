@@ -131,3 +131,8 @@ Built and validated locally, nothing deployed. See `docs/ARCHITECTURE.md` (deplo
 - `evals/reports/data_report.json` (`tariffagent data status --write`) is the source for the data figures in `docs/EVAL.md`; the corpus stale-code rate is 28.8% on the frozen corpus.
 - Docs: every results table is generated from `evals/reports/`; `scripts/number_audit.py` passes on README, CASE_STUDY, BLOG, EVAL, WALKTHROUGH and RESUME. `evals/audit/audit_25.md` for an optional human check.
 
+## Phase 10: date filter and cleanup (2026-09-30)
+
+- Precedent date filter: `TariffTools` hides rulings dated after a per-request as-of date (context variable; `_meta` key `tariffagent/as_of` over MCP; `ToolExecutor(as_of=...)` in the harness; `TA_ITEM`/`TA_AS_OF` in `scripts/agent_tools.py`). Covers `cross_search`, `get_ruling`, `ruling_status`, `replaced_by` and the hts_search ruling hints. Per-item dates in `evals/datasets/as_of.json` (`scripts/build_as_of.py`): exact for fresh items, from the linked source ruling (score >= 0.6) for 38 of 80 subset items. Tests in `tests/test_mcp_tools.py` and `tests/test_mcp_transports.py` (stdio and HTTP).
+- Reruns with the filter on, Claude Sonnet 5.5 in the session: `cc-subset80-A-asof` 45.5% at 10 digits, `cc-fresh40-A-asof` 85.0%. Zero later-dated citations (was 22 on 20 items, and 1). Impact in `evals/reports/as_of_impact.json`.
+- Cleanup: Mistral key removed from `.env`; private HF bundle dataset deleted; `evals/runs/localtest-2b/` git-ignored; `evals/audit/audit_25.md` reviewed (21 pass, 4 fail).

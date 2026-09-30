@@ -1,0 +1,48 @@
+{
+ "item_id": "atlas_test_00186",
+ "classification": {
+  "hts10": "8519.81.30.20",
+  "facts": {
+   "material": "electronic, semiconductor media (assumed)",
+   "function": "reproduces recorded predator calls",
+   "form": "battery operated sound reproducing apparatus",
+   "end_use": "hunting"
+  },
+  "gri_path": [
+   "GRI 1: 8519 sound reproducing apparatus; GRI 6: 8519.81 using semiconductor media, sound reproducing only, other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N334310",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8519.81.41.50",
+    "reason": "sound recording and reproducing; this item only reproduces"
+   },
+   {
+    "code": "8518.21",
+    "reason": "loudspeaker alone; device is complete player"
+   },
+   {
+    "code": "9503.00",
+    "reason": "toy; hunting tool"
+   }
+  ],
+  "missing_facts": [
+   "storage media type; whether it records"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A battery-operated device that only plays back stored calls is sound reproducing apparatus using semiconductor media. N334310 (a recording and reproducing device) is a related precedent but covers recording."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate"
+ ]
+}

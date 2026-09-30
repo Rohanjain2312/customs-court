@@ -1,0 +1,45 @@
+{
+ "item_id": "fresh_N363949",
+ "classification": {
+  "hts10": "6505.00.20.60",
+  "facts": {
+   "material": "100% cotton woven fabric",
+   "function": "headwear",
+   "form": "baseball-style cap, multi-panel crown, peak",
+   "end_use": "unisex wear"
+  },
+  "gri_path": [
+   "GRI 1: heading 6505 headgear made up from textile fabric",
+   "GRI 6: of cotton, not knitted: 6505.00.20; Other (359)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "L81714",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6505.00.20.30",
+    "reason": "not for babies"
+   },
+   {
+    "code": "6506",
+    "reason": "not hats of other materials"
+   }
+  ],
+  "missing_facts": [
+   "whether adult or baby size"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "Woven cotton baseball cap falls in headwear of cotton 6505.00.20; old-format ruling L81714 placed similar caps at the equivalent 6505.90.2060 line."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "hts_navigate",
+  "cross_search"
+ ]
+}

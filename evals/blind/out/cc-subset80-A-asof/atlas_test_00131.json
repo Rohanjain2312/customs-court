@@ -1,0 +1,38 @@
+{
+ "item_id": "atlas_test_00131",
+ "classification": {
+  "hts10": "2933.31.00.00",
+  "facts": {
+   "material": "pyridine, CAS 110-86-1, chemically defined organic compound",
+   "function": "chemical (solvent/intermediate)",
+   "form": "separate chemically defined compound",
+   "end_use": "chemical industry"
+  },
+  "gri_path": [
+   "GRI 1: heading 2933 heterocyclic compounds with nitrogen hetero-atom(s) only; chapter 29 note 1(a) separate chemically defined compounds",
+   "GRI 6: 2933.31 pyridine and its salts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "2933.39",
+    "reason": "other unfused pyridine-ring compounds; pyridine itself is named in 2933.31"
+   },
+   {
+    "code": "2933.32",
+    "reason": "piperidine, not pyridine"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.95,
+  "abstain": false,
+  "rationale": "Pyridine is named in subheading 2933.31 and the single 10-digit line is 2933.31.00.00."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_search",
+  "get_notes",
+  "hts_navigate"
+ ]
+}

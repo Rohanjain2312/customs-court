@@ -65,6 +65,27 @@ async def exercise(client: Client, redact: bool = False) -> None:
         assert res.structured_content["found"] is False
 
 
+async def exercise_as_of(client: Client) -> None:
+    """The as-of date travels in the request `_meta`, not as a tool argument."""
+    from tariffagent.mcp_server.tools.core import AS_OF_META_KEY
+
+    res = await client.call_tool("get_ruling", {"id": "964384"})
+    assert res.structured_content["found"] is True
+    res = await client.call_tool("get_ruling", {"id": "964384"}, meta={AS_OF_META_KEY: "2000-06-01"})
+    assert res.structured_content["found"] is False
+    res = await client.call_tool(
+        "cross_search", {"query": "tariff classification", "limit": 20}, meta={AS_OF_META_KEY: "2001-01-01"}
+    )
+    assert res.structured_content["hits"] and all(
+        h["date"] <= "2001-01-01" for h in res.structured_content["hits"]
+    )
+    bad = await client.call_tool("get_ruling", {"id": "964384"}, meta={AS_OF_META_KEY: "soon"})
+    assert bad.is_error  # a malformed date is an error, never a silent no-op
+    tools = await client.list_tools()
+    for t in tools.tools:
+        assert "as_of" not in json.dumps(t.input_schema) and "ctx" not in json.dumps(t.input_schema)
+
+
 @pytest.mark.anyio
 @pytest.mark.parametrize("redact", [False, True])
 async def test_stdio_transport(redact):
@@ -74,6 +95,7 @@ async def test_stdio_transport(redact):
     params = StdioServerParameters(command=sys.executable, args=args, env=env())
     async with Client(params) as client:
         await exercise(client, redact)
+        await exercise_as_of(client)
 
 
 def _free_port() -> int:
@@ -120,6 +142,7 @@ def http_server():
 async def test_streamable_http_transport(http_server):
     async with Client(http_server) as client:
         await exercise(client, redact=True)
+        await exercise_as_of(client)
 
 
 @pytest.fixture

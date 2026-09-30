@@ -14,7 +14,7 @@ from datetime import UTC, datetime
 from tariffagent.agents.events import EventBus
 from tariffagent.agents.runner import run_batched, run_interactive
 from tariffagent.agents.single import AgentConfig, single_episode
-from tariffagent.agents.tooling import ToolExecutor
+from tariffagent.agents.tooling import ToolExecutor, item_as_of
 from tariffagent.config import ROOT, get_settings
 from tariffagent.evals.datasets import MANIFEST, load_dataset
 from tariffagent.evals.metrics import score_run
@@ -41,7 +41,7 @@ def make_factory(arm: str, cfg: AgentConfig, tools: TariffTools):
 
             mcfg = MultiConfig.default(run_id=cfg.run_id, **cfg.extra)
             return multi_episode(item, mcfg, tools, bus), bus
-        ex = ToolExecutor(tools, bus, agent="single") if cfg.use_tools else None
+        ex = ToolExecutor(tools, bus, agent="single", as_of=item_as_of(item)) if cfg.use_tools else None
         return single_episode(item, cfg, ex, bus), bus
 
     return make

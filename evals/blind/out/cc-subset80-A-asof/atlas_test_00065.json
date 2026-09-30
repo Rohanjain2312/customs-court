@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00065",
+ "classification": {
+  "hts10": "8504.90.96.50",
+  "facts": {
+   "material": "plastic",
+   "function": "cover/housing for motor controller",
+   "form": "part",
+   "end_use": "motor controller (static converter)"
+  },
+  "gri_path": [
+   "GRI 1: heading 8504 parts; Section XVI note 2(b) parts suitable for static converters; GRI 6 .96 other, 'of static converters'"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "L81088",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8538.90.60",
+    "reason": "would apply only if controller is 8537 switchgear; molded parts"
+   },
+   {
+    "code": "3926.90.99",
+    "reason": "Section XVI note 2 sends parts of machines to ch 85"
+   }
+  ],
+  "missing_facts": [
+   "Whether controller is static converter (8504.40) or 8537 control apparatus"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Motor controller treated as static converter per L81088; plastic covers are parts under 8504.90."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

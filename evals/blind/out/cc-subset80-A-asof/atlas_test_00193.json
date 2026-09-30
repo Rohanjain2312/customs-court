@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00193",
+ "classification": {
+  "hts10": "9020.00.60.00",
+  "facts": {
+   "material": "plastic shell with filter lens and respirator (mixed)",
+   "function": "welding face protection plus respiratory protection",
+   "form": "helmet with respirator",
+   "end_use": "welding"
+  },
+  "gri_path": [
+   "GRI 1: 9020 breathing appliances with mechanical parts or replaceable filters",
+   "GRI 3(b): respirator gives essential character"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6506.10",
+    "reason": "safety headgear; does not provide respiratory function"
+   },
+   {
+    "code": "9020.00.90",
+    "reason": "parts/accessories only"
+   }
+  ],
+  "missing_facts": [
+   "whether powered"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Helmet with a respirator is a breathing appliance of heading 9020, other breathing appliances."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate"
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "item_id": "atlas_test_00128",
+ "classification": {
+  "hts10": "7419.80.50.10",
+  "facts": {
+   "material": "not stated (assumed brass/bronze)",
+   "function": "drain grate over shower drain",
+   "form": "grate",
+   "end_use": "residential showers"
+  },
+  "gri_path": [
+   "GRI 1: heading 7419 other articles of copper (brass and bronze are copper alloys)",
+   "GRI 6: 7419.80.50.10 brass plumbing goods nec"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N327820",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "7324.90.00.00",
+    "reason": "stainless steel shower grate or cast iron drain base (N326857); material not stated"
+   },
+   {
+    "code": "3922.90.00.00",
+    "reason": "plastic sanitary ware; material not stated"
+   },
+   {
+    "code": "8481.80",
+    "reason": "a grate is not a valve or tap"
+   }
+  ],
+  "missing_facts": [
+   "material of the grate (copper alloy, stainless steel, cast iron, plastic)"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "N327820 classified a nickel bronze shower grate in 7419.80.50.10. Material is not given here, so the code depends on that assumption."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

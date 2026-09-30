@@ -1,0 +1,54 @@
+{
+ "item_id": "atlas_test_00116",
+ "classification": {
+  "hts10": "8413.91.90.15",
+  "facts": {
+   "material": "not stated (electrical and metal components)",
+   "function": "components of an electric fuel pump",
+   "form": "separate parts: capacitor, valve plate, valve seat, valve body, protective cap",
+   "end_use": "electric fuel pump for an internal combustion piston engine (assumed)"
+  },
+  "gri_path": [
+   "GRI 1: heading 8413 covers pumps for liquids and parts thereof; 8413.30 fuel pumps for internal combustion piston engines",
+   "Section XVI note 2(b): parts solely or principally for a particular pump go with that pump",
+   "GRI 6: 8413.91 parts of pumps; 8413.91.90 Other; line Of subheading 8413.30.90 (old 8413.91.90.10 moved to .15 per hts_revision_diff)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N011941",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8532.29.00.40",
+    "reason": "capacitor has its own heading 8532 under Section XVI note 2(a), but the description treats all items as parts of the fuel pump and lists several articles; classified as pump parts"
+   },
+   {
+    "code": "8413.91.10.00",
+    "reason": "for compression-ignition fuel-injection pumps, not stated"
+   },
+   {
+    "code": "8481.90",
+    "reason": "valve parts: considered but they are parts of the pump here"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: capacitor (heading 8532), valve body/seat/plate as valve parts (8481.90) if imported separately",
+   "pump type: for internal combustion engine or not"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Parts of electric fuel pumps for piston engines fall under 8413.91.90 Of subheading 8413.30.90. N011941 classified fuel pump parts in the old equivalent 8413.91.9010; that line now exists as 8413.91.90.15. The capacitor could go to 8532 if entered separately."
+ },
+ "tool_calls": 10,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "get_ruling",
+  "ruling_status",
+  "hts_revision_diff"
+ ]
+}

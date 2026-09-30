@@ -1,0 +1,45 @@
+{
+ "item_id": "atlas_test_00070",
+ "classification": {
+  "hts10": "8205.59.55.10",
+  "facts": {
+   "material": "likely steel wire, wood, plastic",
+   "function": "clay cutting and modeling",
+   "form": "hand tools",
+   "end_use": "pottery/sculpting"
+  },
+  "gri_path": [
+   "GRI 1: heading 8205 handtools n.e.s.; 8205.59 other; 8205.59.55 follows M83095"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "M83095",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "4421",
+    "reason": "if wooden"
+   },
+   {
+    "code": "9603",
+    "reason": "not brushes"
+   }
+  ],
+  "missing_facts": [
+   "Material of tools (steel, wood, plastic)"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Pottery clay tools classified as other handtools in M83095."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

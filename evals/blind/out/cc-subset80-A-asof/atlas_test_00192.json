@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00192",
+ "classification": {
+  "hts10": "5911.90.00.80",
+  "facts": {
+   "material": "particulate filter media, textile assumed",
+   "function": "filters particles in a respirator",
+   "form": "filter cartridge, imported separately",
+   "end_use": "welding respiratory protection"
+  },
+  "gri_path": [
+   "GRI 1: heading 5911 textile articles for technical uses; Section XVI note 1(e) excludes textile filters from 8421"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N253050",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8421.39.80",
+    "reason": "filtering machinery; excluded by Section XVI note 1(e) if textile"
+   },
+   {
+    "code": "9020.00.90",
+    "reason": "accessories of breathing appliances; filter is textile article"
+   }
+  ],
+  "missing_facts": [
+   "filter medium composition"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "N253050 classified a 3M respirator filter cartridge as textile article for technical uses in 5911.90.0080."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

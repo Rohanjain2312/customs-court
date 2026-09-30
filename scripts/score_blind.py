@@ -17,6 +17,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from tariffagent.agents.schemas import Classification
+from tariffagent.agents.tooling import item_as_of
 from tariffagent.config import get_settings
 from tariffagent.evals.datasets import MANIFEST, load_dataset
 from tariffagent.evals.metrics import score_run
@@ -39,8 +40,11 @@ PROTOCOL = {
 
 
 def later_citations(items: list[dict], results: list[dict]) -> list[dict]:
-    """Cited rulings dated after the item's own ruling: precedent a broker could not have had."""
-    dated = {it["item_id"]: it["ruling_date"] for it in items if it.get("ruling_date")}
+    """Cited rulings dated after the item's as-of date: precedent a broker could not have had.
+
+    With the tools date-filtered this should be empty; it stays as a check on runs made without the filter.
+    """
+    dated = {it["item_id"]: item_as_of(it) for it in items if item_as_of(it)}
     if not dated:
         return []
     con = sqlite3.connect(f"file:{get_settings().db_path}?mode=ro", uri=True)

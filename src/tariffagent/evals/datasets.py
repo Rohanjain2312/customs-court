@@ -21,6 +21,7 @@ from tariffagent.data.crosswalk import Crosswalk
 
 DS_DIR = ROOT / "evals" / "datasets"
 MANIFEST = DS_DIR / "manifest.json"
+AS_OF = DS_DIR / "as_of.json"
 
 
 def _sha(p: Path) -> str:
@@ -50,7 +51,13 @@ def load_dataset(name: str) -> list[dict]:
     man = json.loads(MANIFEST.read_text())
     if _sha(p) != man[name]["sha256"]:
         raise ValueError(f"{name} does not match its manifest sha256")
-    return [json.loads(line) for line in p.open()]
+    items = [json.loads(line) for line in p.open()]
+    # The as-of dates sit beside the datasets, not in them, so the dataset hashes stay fixed.
+    dates = json.loads(AS_OF.read_text())["items"] if AS_OF.exists() else {}
+    for it in items:
+        if not it.get("as_of") and it["item_id"] in dates:
+            it["as_of"] = dates[it["item_id"]]["as_of"]
+    return items
 
 
 def _with_crosswalk(items: list[dict], cw: Crosswalk) -> list[dict]:

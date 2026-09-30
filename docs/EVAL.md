@@ -91,6 +91,7 @@ Agent on `subset_80`:
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
 | Zero-shot, no tools (in the Claude Code session) | Claude Sonnet 5.5 | 21.2% [12.1, 31.8] | 53.8% [42.5, 65.0] | 63.7% [52.5, 73.8] | 13.8% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
+| TariffAgent single agent, rulings limited to before each item's own date (in the Claude Code session) | Claude Sonnet 5.5 | 45.5% [33.3, 57.6] | 61.3% [50.0, 71.2] | 68.8% [57.5, 78.8] | 8.8% | $0 (no API spend) |
 <!-- /results:subset -->
 
 <!-- results:subset_diffs -->
@@ -99,6 +100,7 @@ Agent on `subset_80`:
 | Agent (Claude in session) minus Claude Sonnet 5 zero-shot | +28.8 points [+16.7, +40.9], n=66 | +12.5 points [+1.2, +23.8], n=80 |
 | Agent (Claude in session) minus agent on gpt-5-mini | +7.6 points [-3.0, +18.2], n=66 | +12.5 points [+2.5, +22.5], n=80 |
 | Agent (Claude in session) minus Claude Sonnet 5.5 zero-shot (in session) | +30.3 points [+18.2, +43.9], n=66 | +10.0 points [+1.2, +18.8], n=80 |
+| Date-limited agent (Claude Sonnet 5.5, in session) minus Claude Sonnet 5.5 zero-shot (in session) | +24.2 points [+12.1, +36.4], n=66 | +7.5 points [-1.2, +16.2], n=80 |
 <!-- /results:subset_diffs -->
 
 Post-cutoff set (`fresh_150`, and the agent on `fresh_40`):
@@ -110,10 +112,13 @@ Post-cutoff set (`fresh_150`, and the agent on `fresh_40`):
 | Zero-shot, no tools, the 40-item sample | Claude Sonnet 5 | 17.5% [7.5, 30.0] | 47.5% [32.5, 62.5] | 67.5% [52.5, 82.5] | 2.5% | $0.0060 |
 | Zero-shot, no tools (in the Claude Code session), same 40 | Claude Sonnet 5.5 | 15.0% [5.0, 27.5] | 60.0% [45.0, 75.0] | 70.0% [55.0, 82.5] | 7.5% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session), same 40 | Claude Opus 5.5 | 82.5% [70.0, 92.5] | 90.0% [80.0, 97.5] | 92.5% [82.5, 100.0] | 7.5% | $0 (no API spend) |
+| TariffAgent single agent, rulings limited to before each item's own date (in the Claude Code session), same 40 | Claude Sonnet 5.5 | 85.0% [72.5, 95.0] | 92.5% [82.5, 100.0] | 92.5% [82.5, 100.0] | 0.0% | $0 (no API spend) |
 
 Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit +65.0 points [+50.0, +80.0], n=40; 6-digit +42.5 points [+27.5, +57.5], n=40.
 
 Paired, same 40 items, agent minus Claude Sonnet 5.5 zero-shot (in session): 10-digit +67.5 points [+52.5, +82.5], n=40; 6-digit +30.0 points [+15.0, +45.0], n=40.
+
+Paired, same 40 items, date-limited agent (Claude Sonnet 5.5) minus Claude Sonnet 5.5 zero-shot (both in session): 10-digit +70.0 points [+55.0, +85.0], n=40; 6-digit +32.5 points [+20.0, +47.5], n=40.
 <!-- /results:fresh -->
 
 Claude agent on dev (prompt work only):
@@ -160,4 +165,5 @@ All 59 failures of `dev100-A` were read and tagged (`evals/taxonomy/dev100-A.jso
 - Claude Opus 5.5 inside the Claude Code session: the blind agent runs on `subset_80` (`cc-subset80-A`) and `fresh_40` (`cc-fresh40-A`), and judge 1. Protocol in `evals/reports/cc-subset80-A.json`: descriptions-only input (`evals/blind/`), tools through the MCP server with `--redact-eval`, the skill's workflow and final checks, scored by the same code (`scripts/score_blind.py`). No API spend. It is a different model from the API agent, so it is reported on its own row.
 - Claude Sonnet 5.5 inside the Claude Code session: the no-tools controls on the same items (`cc-subset80-Z`, `cc-fresh40-Z`). They read only the descriptions and the skill. An Opus control was started first; a usage limit stopped it after 10 and 20 items, and it was discarded and rerun on Sonnet 5.5 rather than mixing two models in one row.
 - Claude Haiku 4.5 inside the Claude Code session: judge 2.
-- Blind runs can cite a ruling dated after the item's own ruling, because the tools do not filter precedent by date. The scorer lists such citations and reports accuracy without those items (`later_dated_citations` in each report): one fresh item, 82.1% (n=39) instead of 82.5%.
+- **Date limit.** The first blind runs had no date filter, and cited rulings issued after the item's own: 22 citations on 20 of the 38 dated subset items, and 1 on the fresh set (`evals/reports/as_of_impact.json`). The tools now take an as-of date in the request's `_meta` (key `tariffagent/as_of`, set by `ToolExecutor`, the eval harness or `TA_ITEM` in `scripts/agent_tools.py`; never a tool argument, so the model cannot see or change it). Rulings dated after it are hidden from `cross_search`, `get_ruling`, `ruling_status` and the code hints in `hts_search`, and a ruling that replaced an earlier one is not named if it is later. A ruling's status is still today's status. Dates: fresh items use their own ruling date; ATLAS items have none, so 38 of the 80 subset items (100 of 200 test items) get the date of their linked source ruling, only when the link score is at least 0.6 (`evals/datasets/as_of.json`, built by `scripts/build_as_of.py`); the rest are unfiltered. The HTS tree itself is always the current one. Reruns with the filter on (`cc-subset80-A-asof`, `cc-fresh40-A-asof`, Claude Sonnet 5.5 in the session, same protocol) cited no later ruling. Their reasoning was not judged. Because the model differs from the Opus 5.5 runs, compare them with the Sonnet 5.5 no-tools controls, not with the Opus rows.
+- Claude Sonnet 5.5 inside the Claude Code session, agent with the date limit: `cc-subset80-A-asof` and `cc-fresh40-A-asof` (12 parallel batches of 10 items, each a fresh agent following the skill through `scripts/agent_tools.py` with `TA_ITEM` set).

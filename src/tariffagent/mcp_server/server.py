@@ -12,7 +12,7 @@ import argparse
 import os
 from typing import Annotated
 
-from mcp.server.mcpserver import MCPServer
+from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.transport_security import TransportSecuritySettings
 from mcp.types import ToolAnnotations
 from pydantic import Field
@@ -27,7 +27,7 @@ from tariffagent.mcp_server.schemas import (
     RulingResult,
     RulingStatusResult,
 )
-from tariffagent.mcp_server.tools.core import TariffTools
+from tariffagent.mcp_server.tools.core import AS_OF_META_KEY, TariffTools, as_of_scope
 
 INSTRUCTIONS = (
     "TariffAgent tools for classifying goods in the US Harmonized Tariff Schedule (HTS). "
@@ -39,6 +39,16 @@ INSTRUCTIONS = (
 READ_ONLY = ToolAnnotations(
     readOnlyHint=True, destructiveHint=False, idempotentHint=True, openWorldHint=False
 )
+
+
+def _as_of(ctx: Context):
+    """Scope a call to the caller's `_meta` as-of date, if it sent one (evaluation harnesses do).
+
+    The date is not a tool argument, so the model never sees it or controls it. It can only hide
+    rulings dated after it, so a client that sends one restricts its own view.
+    """
+    meta = ctx.request_context.meta or {}
+    return as_of_scope(meta.get(AS_OF_META_KEY))
 
 
 def build_server(tools: TariffTools | None = None) -> MCPServer:
@@ -61,9 +71,12 @@ def build_server(tools: TariffTools | None = None) -> MCPServer:
             str, Field(description="Product words, for example 'leather handbag with shoulder strap'")
         ],
         limit: Annotated[int, Field(ge=1, le=25)] = 10,
+        *,
+        ctx: Context,
     ) -> HtsSearchResult:
         """Find candidate HTS headings and subheadings for a description (keyword plus semantic search)."""
-        return t.hts_search(text, limit)
+        with _as_of(ctx):
+            return t.hts_search(text, limit)
 
     @mcp.tool(annotations=READ_ONLY)
     def get_notes(
@@ -85,22 +98,31 @@ def build_server(tools: TariffTools | None = None) -> MCPServer:
         date_from: Annotated[str | None, Field(description="YYYY-MM-DD, optional")] = None,
         date_to: Annotated[str | None, Field(description="YYYY-MM-DD, optional")] = None,
         limit: Annotated[int, Field(ge=1, le=20)] = 8,
+        *,
+        ctx: Context,
     ) -> CrossSearchResult:
         """Search CBP CROSS rulings (hybrid keyword and semantic). Each hit includes its status."""
-        return t.cross_search(query, date_from, date_to, limit)
+        with _as_of(ctx):
+            return t.cross_search(query, date_from, date_to, limit)
 
     @mcp.tool(annotations=READ_ONLY)
     def get_ruling(
         id: Annotated[str, Field(description="Ruling number, for example 'N364781' or 'H301619'")],
         offset: Annotated[int, Field(ge=0)] = 0,
+        *,
+        ctx: Context,
     ) -> RulingResult:
         """Return the full text of one ruling with its cited HTS codes and status."""
-        return t.get_ruling(id, offset)
+        with _as_of(ctx):
+            return t.get_ruling(id, offset)
 
     @mcp.tool(annotations=READ_ONLY)
-    def ruling_status(id: Annotated[str, Field(description="Ruling number")]) -> RulingStatusResult:
+    def ruling_status(
+        id: Annotated[str, Field(description="Ruling number")], *, ctx: Context
+    ) -> RulingStatusResult:
         """Return whether a ruling is in force, modified or revoked, and which rulings changed it."""
-        return t.ruling_status(id)
+        with _as_of(ctx):
+            return t.ruling_status(id)
 
     @mcp.tool(annotations=READ_ONLY)
     def hts_revision_diff(

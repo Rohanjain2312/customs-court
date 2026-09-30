@@ -195,6 +195,43 @@
       "models": {
         "main": "claude-opus-5-5 (in the Claude Code session, not the API)"
       }
+    },
+    "A_asof": {
+      "run_id": "cc-subset80-A-asof",
+      "n": 80,
+      "acc_10": {
+        "mean": 0.4545,
+        "lo": 0.3333,
+        "hi": 0.5758,
+        "n": 66
+      },
+      "acc_8": {
+        "mean": 0.5821,
+        "lo": 0.4627,
+        "hi": 0.7015,
+        "n": 67
+      },
+      "acc_6": {
+        "mean": 0.6125,
+        "lo": 0.5,
+        "hi": 0.7125,
+        "n": 80
+      },
+      "acc_4": {
+        "mean": 0.6875,
+        "lo": 0.575,
+        "hi": 0.7875,
+        "n": 80
+      },
+      "abstain_rate": 0.0875,
+      "acc6_when_answering": 0.6301,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 5.35,
+      "mode": "agent-in-session",
+      "models": {
+        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), rulings limited to before each item's own date"
+      }
     }
   },
   "subset80_diffs": {
@@ -240,6 +277,20 @@
       "n": 80,
       "within_noise": false
     },
+    "A_asof_minus_Z_cc_acc10": {
+      "diff": 0.2424,
+      "lo": 0.1212,
+      "hi": 0.3636,
+      "n": 66,
+      "within_noise": false
+    },
+    "A_asof_minus_Z_cc_acc6": {
+      "diff": 0.075,
+      "lo": -0.0125,
+      "hi": 0.1625,
+      "n": 80,
+      "within_noise": true
+    },
     "fresh_A_cc_minus_Z_acc10": {
       "diff": 0.65,
       "lo": 0.5,
@@ -265,6 +316,20 @@
       "diff": 0.3,
       "lo": 0.15,
       "hi": 0.45,
+      "n": 40,
+      "within_noise": false
+    },
+    "fresh_A_asof_minus_Z_cc_acc10": {
+      "diff": 0.7,
+      "lo": 0.55,
+      "hi": 0.85,
+      "n": 40,
+      "within_noise": false
+    },
+    "fresh_A_asof_minus_Z_cc_acc6": {
+      "diff": 0.325,
+      "lo": 0.2,
+      "hi": 0.475,
       "n": 40,
       "within_noise": false
     }
@@ -422,6 +487,43 @@
       "mode": "agent-in-session",
       "models": {
         "main": "claude-opus-5-5 (in the Claude Code session, not the API)"
+      }
+    },
+    "A_asof40": {
+      "run_id": "cc-fresh40-A-asof",
+      "n": 40,
+      "acc_10": {
+        "mean": 0.85,
+        "lo": 0.725,
+        "hi": 0.95,
+        "n": 40
+      },
+      "acc_8": {
+        "mean": 0.875,
+        "lo": 0.775,
+        "hi": 0.975,
+        "n": 40
+      },
+      "acc_6": {
+        "mean": 0.925,
+        "lo": 0.825,
+        "hi": 1.0,
+        "n": 40
+      },
+      "acc_4": {
+        "mean": 0.925,
+        "lo": 0.825,
+        "hi": 1.0,
+        "n": 40
+      },
+      "abstain_rate": 0.0,
+      "acc6_when_answering": 0.925,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 5.15,
+      "mode": "agent-in-session",
+      "models": {
+        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API), rulings limited to before each item's own date"
       }
     }
   },

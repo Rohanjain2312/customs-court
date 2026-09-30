@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00072",
+ "classification": {
+  "hts10": "8481.90.90.40",
+  "facts": {
+   "material": "unknown",
+   "function": "parts of solenoid valve",
+   "form": "part",
+   "end_use": "automotive braking system"
+  },
+  "gri_path": [
+   "GRI 1: heading 8481 parts; Section XVI note 2; 8481.90.90 other, of valves of 8481.20"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8708.30",
+    "reason": "valve parts are not brakes per se"
+   },
+   {
+    "code": "8481.90.90.85",
+    "reason": "other"
+   }
+  ],
+  "missing_facts": [
+   "Material and whether parts are valve bodies, plungers, coils"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Parts of hydraulic solenoid valves for brake system under 8481.90."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "hts_search"
+ ]
+}

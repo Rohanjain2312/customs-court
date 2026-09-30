@@ -1,0 +1,44 @@
+{
+ "item_id": "fresh_N363487",
+ "classification": {
+  "hts10": "8413.60.00.30",
+  "facts": {
+   "material": "aluminum casing, two gears with shafts",
+   "function": "hydraulic gear pump (reversible as motor when fed pressurized oil)",
+   "form": "hydraulic unit with inlet, outlet, flange cover, bearings",
+   "end_use": "fluid power"
+  },
+  "gri_path": [
+   "GRI 1: heading 8413 pumps for liquids; 8413.60 other rotary positive displacement pumps; gear type",
+   "GRI 6: 8413.60.00.30 gear type"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N361506",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8412.29.80.15",
+    "reason": "principal function as supplied is pump when driven by external motor; ruling N361506 on same units chose pumps"
+   },
+   {
+    "code": "8413.91",
+    "reason": "not parts"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "Marzocchi hydraulic gear units are gear-type rotary positive displacement hydraulic fluid power pumps; in-force ruling N361506 on the same units classified them in 8413.60.0030."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "item_id": "atlas_test_00029",
+ "classification": {
+  "hts10": "3926.90.45.10",
+  "facts": {
+   "material": "elastomer seal (plastic/perfluoroelastomer; material not stated)",
+   "function": "forms compressible seal in chamber",
+   "form": "torus O-rings",
+   "end_use": "semiconductor wafer processing chambers"
+  },
+  "gri_path": [
+   "GRI 1: O-rings are seals classified by material; Section XVI note 1 excludes rubber/plastic goods from 8486 parts",
+   "GRI 6: 3926.90.45.10 O-rings"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H314335",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8486.90.00.00",
+    "reason": "seals excluded from machine parts by section notes (per H314335 discussion)"
+   },
+   {
+    "code": "4016.93.50.10",
+    "reason": "applies if material is vulcanized rubber"
+   }
+  ],
+  "missing_facts": [
+   "Material: plastic/FFKM or vulcanized rubber?"
+  ],
+  "confidence": 0.4,
+  "abstain": true,
+  "rationale": "H314335 reviewed semiconductor-chamber O-rings classified by constituent material under 3926.90.45.10 rather than heading 8486; material assumed plastic."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

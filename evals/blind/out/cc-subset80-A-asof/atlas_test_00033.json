@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00033",
+ "classification": {
+  "hts10": "8501.10.40.60",
+  "facts": {
+   "material": "electric motor (DC) with housing, contact, grommet",
+   "function": "generates vibration",
+   "form": "motor",
+   "end_use": "vibration devices"
+  },
+  "gri_path": [
+   "GRI 1: heading 8501 motors; parts of 8501 to 8503 covered by note 2 to section XVI",
+   "GRI 6: 8501.10 under 37.5 W; DC other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8503.00",
+    "reason": "parts; the motor is first-named"
+   },
+   {
+    "code": "8501.10.60.60",
+    "reason": "applies if 18.65W or more"
+   },
+   {
+    "code": "8501.10.40.20",
+    "reason": "AC"
+   }
+  ],
+  "missing_facts": [
+   "Power output",
+   "classify separately: housing, spring contact, rubber grommet"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "A DC vibrator motor is typically under 18.65 W, making it DC other."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "cross_search",
+  "hts_navigate"
+ ]
+}

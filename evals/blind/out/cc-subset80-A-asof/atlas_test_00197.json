@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00197",
+ "classification": {
+  "hts10": "9027.90.56.95",
+  "facts": {
+   "material": "mixed optics (lenses, laser, detector)",
+   "function": "fluorescence detection in DNA analyzer",
+   "form": "assembly, part",
+   "end_use": "genetic analysis instruments"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 parts of instruments; Section XVI/XVIII note 2(b) parts",
+   "GRI 6: 9027.90.56 parts of electrophoresis or optical-radiation instruments, other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9001/9002",
+    "reason": "optical elements; assembly is dedicated part of instrument"
+   },
+   {
+    "code": "8419.89.99",
+    "reason": "oven assembly ruling G83746 is a different component"
+   }
+  ],
+  "missing_facts": [
+   "which 9027 subheading applies to the analyzer; assembly composition"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Optical assemblies dedicated to a genetic analyzer are parts of a 9027 instrument; exact subheading uncertain."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "get_ruling"
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "item_id": "atlas_test_00130",
+ "classification": {
+  "hts10": "3920.62.00.90",
+  "facts": {
+   "material": "biaxially oriented polypropylene laminated to poly(ethylene terephthalate)",
+   "function": "packaging/laminated film",
+   "form": "noncellular, unreinforced film",
+   "end_use": "packaging (assumed)"
+  },
+  "gri_path": [
+   "GRI 1: heading 3920 plates, sheets, film of plastics, noncellular, not reinforced, laminated",
+   "GRI 3(c): layers of PP (3920.20) and PET (3920.62) with no essential character shown; last in numerical order",
+   "GRI 6: 3920.62.00 of PET, not metallized, not gift wrap"
+  ],
+  "deciding_gri": "GRI 3(c)",
+  "cited_rulings": [
+   {
+    "id": "K84976",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3920.20.00.55",
+    "reason": "polypropylene film; BOPP layer may give essential character, weights not stated"
+   },
+   {
+    "code": "3920.62.00.50",
+    "reason": "metallized PET film only"
+   },
+   {
+    "code": "3921",
+    "reason": "heading 3920 covers laminated plastic film"
+   }
+  ],
+  "missing_facts": [
+   "relative thickness and weight of the BOPP and PET layers",
+   "whether metallized or printed"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Laminate of two plastic films stays in 3920; with no essential layer established, the later subheading PET 3920.62 wins under GRI 3(c). K84976 shows BOPP in 3920.20 as the alternative."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}
