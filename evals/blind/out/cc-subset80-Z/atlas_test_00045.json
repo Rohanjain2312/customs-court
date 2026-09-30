@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00045",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8517.62.00.90",
+  "facts": {
+   "material": "electronic devices",
+   "function": "network security, unidirectional data transfer",
+   "form": "data diode device",
+   "end_use": "network security"
+  },
+  "gri_path": [
+   "GRI 1: heading 8517 apparatus for transmission or reception of data"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8471.80",
+    "reason": "other ADP units"
+   },
+   {
+    "code": "8471.49",
+    "reason": "switches"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: keyboard switch, multiple computer switch, software"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "First-named article is the Data Diode Device, a network data transmission apparatus of 8517.62."
+ }
+}

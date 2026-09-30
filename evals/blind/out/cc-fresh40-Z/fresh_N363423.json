@@ -1,0 +1,35 @@
+{
+ "item_id": "fresh_N363423",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3923.90.00.80",
+  "facts": {
+   "material": "Polyethylene foam",
+   "function": "Protect robotic arm in shipment",
+   "form": "Custom cut inserts with cavities",
+   "end_use": "Packaging"
+  },
+  "gri_path": [
+   "GRI 1: heading 3923 articles for conveyance or packing of goods"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3921.19",
+    "reason": "Sheet form, but these are cut articles"
+   },
+   {
+    "code": "3926.90",
+    "reason": "Packing articles go to 3923"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical line"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Custom cut foam inserts for packing goods are plastic articles for the packing of goods, 3923 other."
+ }
+}

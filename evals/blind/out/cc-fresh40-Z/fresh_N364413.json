@@ -1,0 +1,35 @@
+{
+ "item_id": "fresh_N364413",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8714.10.00.80",
+  "facts": {
+   "material": "Aluminum alloy and stainless steel",
+   "function": "Additional foot position",
+   "form": "Footpeg kit",
+   "end_use": "Motorcycle"
+  },
+  "gri_path": [
+   "GRI 1: parts of motorcycles 8714.10"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8714.10.00.10",
+    "reason": "Other specific lines"
+   },
+   {
+    "code": "7616",
+    "reason": "Aluminum articles excluded since Section XVII parts"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Model-specific footpegs are parts and accessories of motorcycles, 8714.10."
+ }
+}

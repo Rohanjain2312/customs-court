@@ -36,7 +36,7 @@ The agent on `subset_80` (80 of the 200 test items, stratified by product type a
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
-| Zero-shot, no tools (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+| Zero-shot, no tools (in the Claude Code session) | Claude Sonnet 5.5 | 21.2% [12.1, 31.8] | 53.8% [42.5, 65.0] | 63.7% [52.5, 73.8] | 13.8% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
 <!-- /results:subset -->
 
@@ -45,30 +45,39 @@ The agent on `subset_80` (80 of the 200 test items, stratified by product type a
 |---|---|---|
 | Agent (Claude in session) minus Claude Sonnet 5 zero-shot | +28.8 points [+16.7, +40.9], n=66 | +12.5 points [+1.2, +23.8], n=80 |
 | Agent (Claude in session) minus agent on gpt-5-mini | +7.6 points [-3.0, +18.2], n=66 | +12.5 points [+2.5, +22.5], n=80 |
-| Agent (Claude in session) minus the same model zero-shot | n/a | n/a |
+| Agent (Claude in session) minus Claude Sonnet 5.5 zero-shot (in session) | +30.3 points [+18.2, +43.9], n=66 | +10.0 points [+1.2, +18.8], n=80 |
 <!-- /results:subset_diffs -->
 
 <!-- analysis:headline -->
+What the numbers say:
+
+- **Tools and precedent carry most of the gain.** On the same 80 test items the agent got 51.5% of 10-digit codes right. Claude Sonnet 5.5 with no tools, run the same blind way, got 21.2%, and Claude Sonnet 5 zero-shot got 22.7%. On the fresh set the gap is larger: 82.5% against 15.0%. Without tools, models often find the right heading but miss the last four digits, which need the actual tariff tree.
+- **The model is not held fixed.** The tuned API agent ran on Claude Sonnet 5; the test-set agent is Claude Opus 5.5 in the session, and the no-tools control is Claude Sonnet 5.5 (the usage limit ruled out an Opus control). So these rows show that the agent design works, not how much comes from the model. The gap to the gpt-5-mini agent (+7.6 points at 10 digits) has an interval that crosses zero.
+- **Why the fresh set scores higher.** Its descriptions come from the ruling's own facts, its labels are the ruling's own current codes (no stale codes, no multi-article mismatch), and recent rulings on similar goods exist. The answer rulings, and any later ruling that names them, are hidden from the tools. One fresh item cited a ruling dated after its own; leaving it out gives 82.1% (n=39). The tools do not filter precedent by date yet.
+- **Citations hold up.** No invented rulings: 97.5% of 79 citations on the subset and 100% of 42 on the fresh set are valid, in-corpus rulings with the right status.
+- **Reasoning, not just codes.** A reference-grounded judge passed 67.6% of the subset answers and 90.0% of the fresh answers (details in `docs/EVAL.md`).
+- These are 80 items, not the 200 the published ATLAS numbers use, so they are not a like-for-like comparison with that paper.
 <!-- /analysis:headline -->
 
-Post-training-cutoff set (150 CBP rulings dated 2026-07-01 or later), reported separately:
+Post-training-cutoff set (150 CBP rulings dated 2026-07-01 or later; the agent ran on a fixed 40-item sample), reported separately:
 
 <!-- results:fresh -->
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools, all 150 | Claude Sonnet 5 | 20.0% [14.0, 26.7] | 48.0% [40.0, 56.0] | 69.3% [61.3, 76.7] | 1.3% | $0.0060 |
 | Zero-shot, no tools, the 40-item sample | Claude Sonnet 5 | 17.5% [7.5, 30.0] | 47.5% [32.5, 62.5] | 67.5% [52.5, 82.5] | 2.5% | $0.0060 |
-| Zero-shot, no tools (in the Claude Code session), same 40 | Claude Opus 5.5 | not run yet | | | | |
+| Zero-shot, no tools (in the Claude Code session), same 40 | Claude Sonnet 5.5 | 15.0% [5.0, 27.5] | 60.0% [45.0, 75.0] | 70.0% [55.0, 82.5] | 7.5% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session), same 40 | Claude Opus 5.5 | 82.5% [70.0, 92.5] | 90.0% [80.0, 97.5] | 92.5% [82.5, 100.0] | 7.5% | $0 (no API spend) |
 
 Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit +65.0 points [+50.0, +80.0], n=40; 6-digit +42.5 points [+27.5, +57.5], n=40.
 
-Paired, same 40 items, agent minus the same model zero-shot: 10-digit n/a; 6-digit n/a.
+Paired, same 40 items, agent minus Claude Sonnet 5.5 zero-shot (in session): 10-digit +67.5 points [+52.5, +82.5], n=40; 6-digit +30.0 points [+15.0, +45.0], n=40.
 <!-- /results:fresh -->
 
 How the budget shaped these numbers, plainly:
 - The agent was built, tuned and error-analyzed with Claude Sonnet 5 through the API on the dev split. The API budget ran out before the Claude agent ran on the test set.
 - The test-set agent run was then done blind by Claude Opus 5.5 working inside the Claude Code session (covered by the user's plan, no API spend), using the same tools (MCP server with `--redact-eval`), the same skill, the same final checks and the same scorer. It read only a descriptions-only file. It is labeled separately from the API runs.
+- The no-tools controls (Claude Sonnet 5.5) and both reasoning judges (Claude Opus 5.5 and Claude Haiku 4.5) also ran in the session, the same blind way.
 - The multi-agent vs single-agent study ran only on 10 dev items before the budget ran out; see `docs/CASE_STUDY.md`.
 
 Cost:
@@ -76,10 +85,10 @@ Cost:
 <!-- results:cost -->
 | | USD |
 |---|---|
-| Paid API spend, whole project | $13.18 |
-| Same calls at list price, no caching, no batch discount | $39.30 |
-| Saving from prompt caching and the Batch API | 66.5% |
-| Share of input tokens read from the prompt cache | 81.3% |
+| Paid API spend, whole project | $13.34 |
+| Same calls at list price, no caching, no batch discount | $39.71 |
+| Saving from prompt caching and the Batch API | 66.4% |
+| Share of input tokens read from the prompt cache | 81.4% |
 | Blind test and fresh runs, and judging (in the Claude Code session) | $0 API spend |
 <!-- /results:cost -->
 

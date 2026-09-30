@@ -1,0 +1,39 @@
+{
+ "item_id": "fresh_N363573",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "7612.90.50.00",
+  "facts": {
+   "material": "Aluminum 6061",
+   "function": "Store pills",
+   "form": "Small case with lid and three compartments",
+   "end_use": "Personal use"
+  },
+  "gri_path": [
+   "GRI 1: 7612 boxes and similar containers of aluminum capacity under 300 L"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7615.20",
+    "reason": "Sanitary ware, not applicable"
+   },
+   {
+    "code": "4202.32",
+    "reason": "Cases of this type by shape but aluminum is not leather or plastic"
+   },
+   {
+    "code": "7616.99",
+    "reason": "Other articles"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical line"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A small aluminum box for pills is a container of heading 7612, capacity under 300 L."
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00114",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8530.90.00.00",
+  "facts": {
+   "material": "Lexan polycarbonate; cast aluminum",
+   "function": "housing and bracket for traffic light",
+   "form": "parts",
+   "end_use": "traffic signals"
+  },
+  "gri_path": [
+   "GRI 1: heading 8530 parts of electrical traffic signaling equipment; Section XVI Note 2(b)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3926.90",
+    "reason": "plastic articles"
+   },
+   {
+    "code": "7616.99",
+    "reason": "aluminum articles"
+   },
+   {
+    "code": "9405.99",
+    "reason": "lighting parts"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: aluminum bracket"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Parts solely for electrical traffic signals are in 8530.90 by Note 2(b)."
+ }
+}

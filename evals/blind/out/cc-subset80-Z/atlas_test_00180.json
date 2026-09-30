@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00180",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8431.43.80.90",
+  "facts": {
+   "material": "steel",
+   "function": "guides casing",
+   "form": "float collar and shoe",
+   "end_use": "oil drilling"
+  },
+  "gri_path": [
+   "GRI 1: heading 8431 parts of 8430 boring machinery; Note 2(b) Section XVI"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7307",
+    "reason": "pipe fittings"
+   },
+   {
+    "code": "8207",
+    "reason": "drilling tools"
+   },
+   {
+    "code": "8413.91",
+    "reason": "pump parts"
+   }
+  ],
+  "missing_facts": [
+   "Whether solely for drilling machinery"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Casing equipment for drilling is part of boring or sinking machinery 8431.43."
+ }
+}

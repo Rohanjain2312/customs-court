@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00168",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6111.20.60.40",
+  "facts": {
+   "material": "finely knit cotton",
+   "function": "infant sleepwear and bib",
+   "form": "set",
+   "end_use": "infants"
+  },
+  "gri_path": [
+   "GRI 3(b): set of babies' garments; Ch 61 Note 9"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6107",
+    "reason": "sleepwear"
+   },
+   {
+    "code": "6111.20.10",
+    "reason": "other"
+   }
+  ],
+  "missing_facts": [
+   "Essential character within set"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Bodysuit, stretchsuit and bib for infants of knit cotton are babies' garments of 6111.20."
+ }
+}

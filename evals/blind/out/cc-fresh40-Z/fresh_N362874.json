@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N362874",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "2926.90.48.00",
+  "facts": {
+   "material": "Organic nitrile compound",
+   "function": "Lithium ion battery electrolyte additive",
+   "form": "Liquid, 99.5% pure",
+   "end_use": "Electrolytes"
+  },
+  "gri_path": [
+   "GRI 1: heading 2926 nitrile-function compounds",
+   "GRI 6: other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3824",
+    "reason": "Separate chemically defined compound stays in Chapter 29"
+   },
+   {
+    "code": "2926.90.25",
+    "reason": "Other named nitriles"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical line"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "A chemically defined tricarbonitrile is a nitrile-function compound, heading 2926 other."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00040",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8202.99.00.40",
+  "facts": {
+   "material": "bi-metal steel, carry case",
+   "function": "cuts holes",
+   "form": "kit of hole saws, mandrels and case",
+   "end_use": "drilling holes"
+  },
+  "gri_path": [
+   "GRI 3(b): set, essential character from hole saws"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8206.00.00",
+    "reason": "sets of 8202-8205 tools, but mandrels/drills are 8207"
+   },
+   {
+    "code": "8207.50",
+    "reason": "drilling tools"
+   }
+  ],
+  "missing_facts": [
+   "Which component gives essential character"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Hole saw kit is a retail set; hole saws give essential character, so classified as other saw blades under 8202.99."
+ }
+}

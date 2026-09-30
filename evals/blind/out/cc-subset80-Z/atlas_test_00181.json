@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00181",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8501.10.60.00",
+  "facts": {
+   "material": "metal, magnets",
+   "function": "rotates scanner mirror/polygon",
+   "form": "brushless DC motor",
+   "end_use": "laser bar code scanner"
+  },
+  "gri_path": [
+   "GRI 1: heading 8501 electric motors; 8501.10 output not exceeding 37.5 W"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8543.90",
+    "reason": "parts"
+   },
+   {
+    "code": "8503",
+    "reason": "motor parts"
+   }
+  ],
+  "missing_facts": [
+   "Motor output wattage"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Brushless DC motor assembly is an electric motor of 8501; assumed output under 37.5 W."
+ }
+}

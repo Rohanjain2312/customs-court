@@ -1,0 +1,36 @@
+{
+ "item_id": "atlas_test_00116",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8532.22.00.80",
+  "facts": {
+   "material": "electronic component",
+   "function": "capacitor",
+   "form": "part",
+   "end_use": "electric fuel pump"
+  },
+  "gri_path": [
+   "GRI 1: Section XVI Note 2(a) parts that are goods of 8532 go in 8532"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8413.91",
+    "reason": "parts of pumps"
+   },
+   {
+    "code": "8503",
+    "reason": "parts of motors"
+   }
+  ],
+  "missing_facts": [
+   "Capacitor type (aluminum electrolytic, etc.)",
+   "Classify separately: valve plate, valve seat, valve body, protective cap (8413.91)"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "First-named capacitor is itself a good of heading 8532, so Note 2(a) of Section XVI places it there; the capacitor type decides the subheading."
+ }
+}

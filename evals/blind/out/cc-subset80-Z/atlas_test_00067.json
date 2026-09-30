@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00067",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6111.20.60.30",
+  "facts": {
+   "material": "100% cotton knit",
+   "function": "infant sweater and hat",
+   "form": "set",
+   "end_use": "babies wear"
+  },
+  "gri_path": [
+   "GRI 3(b): set, essential character sweater; Ch 61 babies' garments Note 9"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6505.00",
+    "reason": "hat"
+   },
+   {
+    "code": "6111.20.10",
+    "reason": "other cotton babies' garments"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: hat (6505.00) if not a retail set"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Sweater and hat set; the first-named sweater classified as babies' garments of cotton 6111.20."
+ }
+}

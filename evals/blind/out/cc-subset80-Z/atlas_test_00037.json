@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00037",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8486.90.00.80",
+  "facts": {
+   "material": "metal",
+   "function": "housing and collector for EUV lithography scanner",
+   "form": "machine components",
+   "end_use": "semiconductor lithography"
+  },
+  "gri_path": [
+   "GRI 1: heading 8486 machines for semiconductor manufacture; Note 11 Ch 84 parts; 8486.90"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9031.80",
+    "reason": "measuring instruments"
+   },
+   {
+    "code": "8486.20",
+    "reason": "whole machine, these are parts"
+   }
+  ],
+  "missing_facts": [
+   "Whether parts are solely for the EUV scanner"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Vessel housing and collector are parts solely or principally for EUV lithography machines of heading 8486, classified as parts in 8486.90."
+ }
+}

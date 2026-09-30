@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00083",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8479.50.00.00",
+  "facts": {
+   "material": "metal and mechanisms",
+   "function": "industrial robot",
+   "form": "robot without controller",
+   "end_use": "industrial"
+  },
+  "gri_path": [
+   "GRI 2(a): incomplete robot has essential character of the whole; heading 8479 industrial robots"
+  ],
+  "deciding_gri": "GRI 2(a)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8537.10",
+    "reason": "controller only if separate"
+   },
+   {
+    "code": "8428.90",
+    "reason": "handling machinery"
+   }
+  ],
+  "missing_facts": [
+   "Whether the controller is presented with the robot"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Robot lacking controller is still an industrial robot under GRI 2(a), 8479.50."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00171",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6211.32.00.70",
+  "facts": {
+   "material": "100% cotton woven",
+   "function": "apron",
+   "form": "bib apron",
+   "end_use": "kitchen"
+  },
+  "gri_path": [
+   "GRI 1: heading 6211 other garments"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6307.90",
+    "reason": "other made-up articles"
+   },
+   {
+    "code": "6216",
+    "reason": "gloves"
+   }
+  ],
+  "missing_facts": [
+   "Men's or women's; woven vs knit"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Bib apron is a garment of 6211; cotton subheading."
+ }
+}

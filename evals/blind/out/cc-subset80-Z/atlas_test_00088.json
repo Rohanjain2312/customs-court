@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00088",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8516.80.80.00",
+  "facts": {
+   "material": "electric heating elements",
+   "function": "prevents ice build-up",
+   "form": "electrical deicer",
+   "end_use": "aircraft"
+  },
+  "gri_path": [
+   "GRI 1: heading 8516 electric heating resistors; Section XVII Note 2(f) excludes Section XVI goods"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8803.30",
+    "reason": "parts of airplanes, excluded by Note 2(f)"
+   },
+   {
+    "code": "8543.70",
+    "reason": "other electrical machines"
+   }
+  ],
+  "missing_facts": [
+   "Construction (heating element vs other)"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Electrical deicer is an electrical heating apparatus of Section XVI, so not a Section XVII part; 8516.80."
+ }
+}

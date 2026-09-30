@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N363422",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "7308.90.95.00",
+  "facts": {
+   "material": "Steel",
+   "function": "Cabinet for battery energy storage",
+   "form": "Complete knocked down structure",
+   "end_use": "Battery energy storage system"
+  },
+  "gri_path": [
+   "GRI 2(a): unassembled treated as assembled",
+   "GRI 1: heading 7308 structures of iron or steel"
+  ],
+  "deciding_gri": "GRI 2(a)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8538.10",
+    "reason": "Not for apparatus of 8537"
+   },
+   {
+    "code": "8609",
+    "reason": "Not designed for carriage"
+   },
+   {
+    "code": "7309",
+    "reason": "Not a tank for liquids or gases"
+   }
+  ],
+  "missing_facts": [
+   "Whether it is a shipping container"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "A steel enclosure with no electrical parts is a structure of steel; unassembled form is treated as assembled under GRI 2(a). Heading 7308 other."
+ }
+}

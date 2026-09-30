@@ -39,10 +39,23 @@ def check_local(d: str, db: str) -> dict | None:
     ).fetchone()
     if not row:
         near = con.execute(
-            "SELECT code FROM hts_rows WHERE rev=? AND digits LIKE ? AND length(digits)=10 LIMIT 5", (rev[0], d[:8] + "%")
+            "SELECT code FROM hts_rows WHERE rev=? AND digits LIKE ? AND length(digits)=10 LIMIT 5",
+            (rev[0], d[:8] + "%"),
         ).fetchall()
-        return {"exists": False, "revision": rev[0], "source": "local", "same_8_digit_lines": [n[0] for n in near]}
-    return {"exists": True, "revision": rev[0], "source": "local", "description": row[0], "path": row[1], "is_leaf": bool(row[2])}
+        return {
+            "exists": False,
+            "revision": rev[0],
+            "source": "local",
+            "same_8_digit_lines": [n[0] for n in near],
+        }
+    return {
+        "exists": True,
+        "revision": rev[0],
+        "source": "local",
+        "description": row[0],
+        "path": row[1],
+        "is_leaf": bool(row[2]),
+    }
 
 
 def check_remote(d: str) -> dict | None:
@@ -66,10 +79,14 @@ def validate(code: str) -> tuple[int, dict]:
     out: dict = {"input": code, "digits": d}
     if len(d) != 10:
         out["valid"] = False
-        out["error"] = f"Expected 10 digits, got {len(d)}. A complete US classification needs the statistical suffix."
+        out["error"] = (
+            f"Expected 10 digits, got {len(d)}. A complete US classification needs the statistical suffix."
+        )
         return 1, out
     out["formatted"] = fmt(d)
-    db = os.environ.get("TARIFFAGENT_DB") or ("data/tariffagent.sqlite" if os.path.exists("data/tariffagent.sqlite") else "")
+    db = os.environ.get("TARIFFAGENT_DB") or (
+        "data/tariffagent.sqlite" if os.path.exists("data/tariffagent.sqlite") else ""
+    )
     res = check_local(d, db) if db else None
     if res is None:
         res = check_remote(d)
@@ -92,7 +109,9 @@ def main(argv: list[str]) -> int:
         print(json.dumps(out, indent=2))
     else:
         status = "VALID" if out.get("valid") else ("UNCHECKED" if rc == 2 else "INVALID")
-        print(f"{status} {out.get('formatted', out['input'])}: {out.get('description') or out.get('error', '')}")
+        print(
+            f"{status} {out.get('formatted', out['input'])}: {out.get('description') or out.get('error', '')}"
+        )
         if out.get("same_8_digit_lines"):
             print("Current lines under the same 8 digits:", ", ".join(out["same_8_digit_lines"]))
     return rc

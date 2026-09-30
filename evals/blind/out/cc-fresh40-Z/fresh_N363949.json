@@ -1,0 +1,35 @@
+{
+ "item_id": "fresh_N363949",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6505.00.90.80",
+  "facts": {
+   "material": "100% cotton woven fabric",
+   "function": "Headwear",
+   "form": "Baseball cap",
+   "end_use": "Wear"
+  },
+  "gri_path": [
+   "GRI 1: heading 6505 hats and other headgear, made up from textile fabric"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6504",
+    "reason": "Not plaited"
+   },
+   {
+    "code": "6506",
+    "reason": "Not other headgear of other materials"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "A cotton fabric cap made up from woven fabric is headgear of 6505."
+ }
+}

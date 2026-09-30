@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00070",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8205.59.55.80",
+  "facts": {
+   "material": "metal/wood",
+   "function": "cutting and shaping clay",
+   "form": "hand tools",
+   "end_use": "sculpting, pottery"
+  },
+  "gri_path": [
+   "GRI 1: heading 8205 hand tools n.e.s."
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8203",
+    "reason": "files, pliers"
+   },
+   {
+    "code": "9609",
+    "reason": "pencils"
+   },
+   {
+    "code": "8211",
+    "reason": "knives"
+   }
+  ],
+  "missing_facts": [
+   "Tool design, material, whether wire loop cutters or knives"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "Hand tools for clay are assumed hand tools n.e.s. of 8205.59."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00123",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8467.21.00.10",
+  "facts": {
+   "material": "drill, light, battery, bag",
+   "function": "drilling",
+   "form": "retail set",
+   "end_use": "power tool kit"
+  },
+  "gri_path": [
+   "GRI 3(b): set, drill essential character"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8513",
+    "reason": "worklight"
+   },
+   {
+    "code": "8507",
+    "reason": "battery"
+   }
+  ],
+  "missing_facts": [
+   "Relative values"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Drill gives the essential character of the retail set; drills of all kinds 8467.21."
+ }
+}

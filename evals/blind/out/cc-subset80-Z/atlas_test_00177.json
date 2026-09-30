@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00177",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8474.10.00.00",
+  "facts": {
+   "material": "steel",
+   "function": "classifies pulverized coal by particle size",
+   "form": "machine",
+   "end_use": "power plants"
+  },
+  "gri_path": [
+   "GRI 1: heading 8474 sorting, screening, separating machines"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8421.39",
+    "reason": "separators of gases"
+   },
+   {
+    "code": "8416",
+    "reason": "furnace burners"
+   }
+  ],
+  "missing_facts": [
+   "Mechanism (dynamic rotating separator)"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "A classifier separates particles by size, machines of heading 8474.10."
+ }
+}

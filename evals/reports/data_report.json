@@ -1,0 +1,93 @@
+{
+  "hts_current_revision": "2026HTSRev20",
+  "hts_rows_current": 35805,
+  "hts_10digit_lines_current": 19949,
+  "hts_revisions_held": {
+    "2018Basic": 33267,
+    "2019Basic": 33910,
+    "2020BasicB": 33999,
+    "2021Basic": 34429,
+    "2022Basic": 35165,
+    "2023Basic": 35480,
+    "2024Basic": 35744,
+    "2025Basic": 35859,
+    "2026Basic": 35571,
+    "2026HTSRev20": 35805
+  },
+  "notes": {
+    "chapter": 98,
+    "gri": 1,
+    "section": 22
+  },
+  "rulings_total": 219130,
+  "rulings_with_cross_meta": 218847,
+  "rulings_with_text": 44139,
+  "rulings_by_collection": {
+    "HQ": 36963,
+    "NY": 182167
+  },
+  "rulings_date_range_all": [
+    "1989-01-01",
+    "2026-09-21"
+  ],
+  "rulings_date_range_with_text": [
+    "1990-01-23",
+    "2026-09-21"
+  ],
+  "text_source": {
+    "cross": 3916,
+    "mirror:meta_code_match": 12690,
+    "mirror:own_header": 14590,
+    "mirror:rekeyed_by_header": 12943
+  },
+  "status_distribution": {
+    "in_force": 215556,
+    "modified": 1267,
+    "revoked": 2030,
+    "unknown": 277
+  },
+  "status_method": {
+    "meta": 3049,
+    "meta_no_signal": 215556,
+    "no_meta": 277,
+    "reverse_link": 86,
+    "text": 162
+  },
+  "corpus_distinct_10digit_codes": 7249,
+  "corpus_stale_code_rate": 0.2883,
+  "eval_redactions": {
+    "atlas_test_200": 307,
+    "atlas_validation_200": 289,
+    "fresh_300": 302
+  },
+  "dataset_crosswalk": {
+    "atlas_test_200": {
+      "n": 200,
+      "methods": {
+        "exact": 168,
+        "none": 23,
+        "desc_match": 6,
+        "single_child": 1,
+        "exact_8": 2
+      },
+      "stale": 23,
+      "stale_rate": 0.115
+    },
+    "dev_100": {
+      "n": 100,
+      "methods": {
+        "none": 11,
+        "exact": 86,
+        "desc_match": 1,
+        "exact_8": 1,
+        "single_child": 1
+      },
+      "stale": 11,
+      "stale_rate": 0.11
+    }
+  },
+  "fts_tables": [
+    "rulings_fts",
+    "hts_fts"
+  ]
+}

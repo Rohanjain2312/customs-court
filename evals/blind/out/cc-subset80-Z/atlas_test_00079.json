@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00079",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8409.99.91.90",
+  "facts": {
+   "material": "forged steel",
+   "function": "engine part",
+   "form": "connecting rod",
+   "end_use": "diesel engines"
+  },
+  "gri_path": [
+   "GRI 1: heading 8409 parts of engines of 8408; Note 2(b) Section XVI"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7326.19",
+    "reason": "forged steel articles"
+   },
+   {
+    "code": "8483",
+    "reason": "transmission shafts and cranks"
+   }
+  ],
+  "missing_facts": [
+   "Whether finish machined"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Connecting rods solely for diesel engines are parts of 8408 engines, 8409.99.91."
+ }
+}

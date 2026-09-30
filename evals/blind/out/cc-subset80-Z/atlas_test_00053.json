@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00053",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9029.10.80.00",
+  "facts": {
+   "material": "plastic, electronics",
+   "function": "measures speed and distance",
+   "form": "cycle computer",
+   "end_use": "bicycling"
+  },
+  "gri_path": [
+   "GRI 1: heading 9029 speed indicators and counters"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9029.20",
+    "reason": "speedometers"
+   },
+   {
+    "code": "9031",
+    "reason": "measuring instruments"
+   }
+  ],
+  "missing_facts": [
+   "Primary function speedometer vs odometer"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Cycle computers with distance and speed functions fall in heading 9029; guess subheading 9029.10."
+ }
+}

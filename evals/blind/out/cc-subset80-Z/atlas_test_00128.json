@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00128",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "7324.90.00.00",
+  "facts": {
+   "material": "unspecified (assumed stainless)",
+   "function": "drains water",
+   "form": "grate",
+   "end_use": "residential shower"
+  },
+  "gri_path": [
+   "GRI 1: heading 7324 sanitary ware"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3922",
+    "reason": "plastic"
+   },
+   {
+    "code": "7615",
+    "reason": "aluminum"
+   },
+   {
+    "code": "7326",
+    "reason": "other steel"
+   }
+  ],
+  "missing_facts": [
+   "Material of the grate"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Material is not stated and would decide between 7324, 7615, 3922 and other headings; best guess stainless sanitary ware."
+ }
+}

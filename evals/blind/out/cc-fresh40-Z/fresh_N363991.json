@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N363991",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "4421.99.98.90",
+  "facts": {
+   "material": "Pressure-treated pine, galvanized steel anchor",
+   "function": "Pedestal base for a little library",
+   "form": "Retail kit",
+   "end_use": "Garden display"
+  },
+  "gri_path": [
+   "GRI 3(b): wood components give essential character of the kit",
+   "GRI 1: 4421 other articles of wood"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7326.90",
+    "reason": "Steel anchor is minor in character"
+   },
+   {
+    "code": "9403.60",
+    "reason": "Not furniture"
+   }
+  ],
+  "missing_facts": [
+   "Relative value of wood versus steel"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Retail kit; the wood plate and post give essential character. Other articles of wood."
+ }
+}

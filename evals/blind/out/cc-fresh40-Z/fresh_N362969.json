@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N362969",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "4602.19.92.00",
+  "facts": {
+   "material": "Styrofoam form covered with sisal, cattails (plaiting materials) and other vegetable materials",
+   "function": "Decorative figure",
+   "form": "Owl figurine",
+   "end_use": "Home decor"
+  },
+  "gri_path": [
+   "GRI 1: plaiting materials cover about 75 percent; Chapter 46 articles of plaiting materials",
+   "GRI 3(b): essential character from plaiting materials"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90",
+    "reason": "Not a festive article on facts"
+   },
+   {
+    "code": "4420.10",
+    "reason": "Wooden statuettes; wood is not principal"
+   },
+   {
+    "code": "3926.40",
+    "reason": "Plastic statuette, plastic minor"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "The figure is a composite; sisal and cattails, plaiting materials, cover most of the surface and give essential character, pointing to heading 4602 articles of vegetable plaiting materials."
+ }
+}

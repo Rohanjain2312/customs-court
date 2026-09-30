@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N363316",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9014.90.60.00",
+  "facts": {
+   "material": "Printed circuit board with switches, backplate, bezel",
+   "function": "Control panel of aircraft MCDU",
+   "form": "Incomplete subassembly, lacks display",
+   "end_use": "Flight management interface"
+  },
+  "gri_path": [
+   "GRI 1: heading 9014 aeronautical navigation instruments and parts",
+   "Section XVI note excludes Chapter 90 goods; parts of Chapter 90 by note 2 to Ch 90"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8537.10",
+    "reason": "Switch panel, but part of Chapter 90 instrument is more specific"
+   },
+   {
+    "code": "9014.20",
+    "reason": "Incomplete, no display, and not full unit"
+   },
+   {
+    "code": "8803",
+    "reason": "Aircraft parts heading excludes Chapter 90 instruments"
+   }
+  ],
+  "missing_facts": [
+   "Whether essential character of complete MCDU under GRI 2(a)"
+  ],
+  "confidence": 0.25,
+  "abstain": false,
+  "rationale": "A control panel subassembly lacking the display is a part of an aeronautical navigation instrument, so 9014 parts."
+ }
+}

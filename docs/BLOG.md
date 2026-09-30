@@ -34,6 +34,7 @@ I built Customs Court to see how far an agent gets at this, and to measure it ho
 <!-- /results:headline -->
 
 <!-- analysis:headline -->
+On the same 80 test items, the agent working blind in the Claude Code session got 51.5% of 10-digit codes right. The same kind of model with no tools got 21.2%. On rulings issued after every model's training cutoff the gap is wider: 82.5% against 15.0%. Zero-shot models often land the right heading and then miss the last four digits, which need the actual tariff tree. The agent that ran on the test set is a different model from the one I tuned on dev, so this shows the design works, not how much the model adds. A second model graded the legal reasoning against CBP's own analysis and passed 67.6% of the subset answers.
 <!-- /analysis:headline -->
 
 The agent on the 80-item subset, all rows on the same items:
@@ -43,7 +44,7 @@ The agent on the 80-item subset, all rows on the same items:
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
-| Zero-shot, no tools (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+| Zero-shot, no tools (in the Claude Code session) | Claude Sonnet 5.5 | 21.2% [12.1, 31.8] | 53.8% [42.5, 65.0] | 63.7% [52.5, 73.8] | 13.8% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
 <!-- /results:subset -->
 

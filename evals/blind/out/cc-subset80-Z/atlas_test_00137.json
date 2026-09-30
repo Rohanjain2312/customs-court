@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00137",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8427.20.80.90",
+  "facts": {
+   "material": "steel",
+   "function": "lifting and stacking",
+   "form": "incomplete forklift truck",
+   "end_use": "warehouse"
+  },
+  "gri_path": [
+   "GRI 2(a): unfinished forklift has essential character of complete one"
+  ],
+  "deciding_gri": "GRI 2(a)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8427.10",
+    "reason": "electric powered"
+   },
+   {
+    "code": "8709",
+    "reason": "works trucks without lifting"
+   }
+  ],
+  "missing_facts": [
+   "What parts missing"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "Unfinished LPG forklifts are classified as complete forklifts under GRI 2(a), 8427.20 (self-propelled, not electric)."
+ }
+}

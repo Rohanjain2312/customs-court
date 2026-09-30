@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00113",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3505.10.50.00",
+  "facts": {
+   "material": "chemically modified starch",
+   "function": "sizing agent",
+   "form": "powder",
+   "end_use": "papermaking"
+  },
+  "gri_path": [
+   "GRI 1: heading 3505 dextrins and modified starches"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "1108",
+    "reason": "unmodified starches"
+   },
+   {
+    "code": "3505.10.10",
+    "reason": "esterified/etherified, not assumed"
+   }
+  ],
+  "missing_facts": [
+   "Type of modification (etherified/esterified)"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Modified starches fall in heading 3505; unspecified modification goes to other modified starches 3505.10.50."
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00170",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8481.80.90.90",
+  "facts": {
+   "material": "metal",
+   "function": "control beer flow",
+   "form": "valve head, coupling head, faucet",
+   "end_use": "beer dispensing"
+  },
+  "gri_path": [
+   "GRI 1: heading 8481 valves; Note 2(a) Section XVI"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8481.90",
+    "reason": "parts of valves"
+   },
+   {
+    "code": "8419.89",
+    "reason": "machinery"
+   },
+   {
+    "code": "8418.69",
+    "reason": "beverage cooling"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: spare parts of faucets (8481.90)"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "First-named valve head is itself a valve/appliance of 8481, not a part of another machine heading."
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00104",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9018.90.75.60",
+  "facts": {
+   "material": "electronic device with disposable sets",
+   "function": "warms fluid for patients",
+   "form": "warmer and disposable sets",
+   "end_use": "medical dialysis"
+  },
+  "gri_path": [
+   "GRI 1: heading 9018 medical instruments; first-named warmer"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8419.89",
+    "reason": "heating machinery"
+   },
+   {
+    "code": "8516",
+    "reason": "electrothermic"
+   },
+   {
+    "code": "3926.90",
+    "reason": "disposable sets"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: disposable sets"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "A fluid warmer for medical infusion is a medical appliance of 9018.90."
+ }
+}

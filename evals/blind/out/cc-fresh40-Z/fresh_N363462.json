@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N363462",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "4202.92.31.31",
+  "facts": {
+   "material": "Outer surface of plastic sheeting, foam inside",
+   "function": "Carry laundry",
+   "form": "Tote bag with wheels, zipper, three handles",
+   "end_use": "Laundry hauling"
+  },
+  "gri_path": [
+   "GRI 1: heading 4202 travel, sports and similar bags",
+   "GRI 6: other containers with outer surface of plastic sheeting"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4202.12",
+    "reason": "Wheeled trunk, suitcase style; this is a tote bag"
+   },
+   {
+    "code": "4202.22",
+    "reason": "Handbag type"
+   },
+   {
+    "code": "3923",
+    "reason": "Plastic packing container"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "A zippered tote bag with plastic sheeting outer surface is a container of heading 4202; it is a travel/sports-type bag and other bag with plastic outer surface."
+ }
+}

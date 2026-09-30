@@ -28,6 +28,7 @@ DOCS = [
 
 SONNET = "Claude Sonnet 5"
 OPUS_CC = "Claude Opus 5.5"
+SONNET55_CC = "Claude Sonnet 5.5"
 
 
 def scored(run_id: str) -> dict[str, dict] | None:
@@ -119,7 +120,12 @@ def build() -> tuple[dict, dict[str, str]]:
             HEAD,
             row("Zero-shot, no tools", SONNET, sub["Z"]),
             row("TariffAgent single agent (API)", "gpt-5-mini", sub["O"]),
-            row("Zero-shot, no tools (in the Claude Code session)", OPUS_CC, sub["Z_cc"], " (no API spend)"),
+            row(
+                "Zero-shot, no tools (in the Claude Code session)",
+                SONNET55_CC,
+                sub["Z_cc"],
+                " (no API spend)",
+            ),
             row(
                 "TariffAgent single agent (in the Claude Code session)",
                 OPUS_CC,
@@ -159,7 +165,7 @@ def build() -> tuple[dict, dict[str, str]]:
             "|---|---|---|",
             f"| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | {dline('A_cc_minus_Z_acc10')} | {dline('A_cc_minus_Z_acc6')} |",
             f"| Agent (Claude in session) minus agent on gpt-5-mini | {dline('A_cc_minus_O_acc10')} | {dline('A_cc_minus_O_acc6')} |",
-            f"| Agent (Claude in session) minus the same model zero-shot | {dline('A_cc_minus_Z_cc_acc10')} | {dline('A_cc_minus_Z_cc_acc6')} |",
+            f"| Agent (Claude in session) minus Claude Sonnet 5.5 zero-shot (in session) | {dline('A_cc_minus_Z_cc_acc10')} | {dline('A_cc_minus_Z_cc_acc6')} |",
         ]
     )
 
@@ -191,7 +197,7 @@ def build() -> tuple[dict, dict[str, str]]:
             row("Zero-shot, no tools, the 40-item sample", SONNET, f["Z40"]),
             row(
                 "Zero-shot, no tools (in the Claude Code session), same 40",
-                OPUS_CC,
+                SONNET55_CC,
                 f["Z_cc40"],
                 " (no API spend)",
             ),
@@ -204,7 +210,7 @@ def build() -> tuple[dict, dict[str, str]]:
             "",
             f"Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit {dline('fresh_A_cc_minus_Z_acc10')}; 6-digit {dline('fresh_A_cc_minus_Z_acc6')}.",
             "",
-            f"Paired, same 40 items, agent minus the same model zero-shot: 10-digit {dline('fresh_A_cc_minus_Z_cc_acc10')}; 6-digit {dline('fresh_A_cc_minus_Z_cc_acc6')}.",
+            f"Paired, same 40 items, agent minus Claude Sonnet 5.5 zero-shot (in session): 10-digit {dline('fresh_A_cc_minus_Z_cc_acc10')}; 6-digit {dline('fresh_A_cc_minus_Z_cc_acc6')}.",
         ]
     )
 

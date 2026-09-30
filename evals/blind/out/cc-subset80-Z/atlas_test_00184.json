@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00184",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6110.20.20.79",
+  "facts": {
+   "material": "100% cotton jersey knit",
+   "function": "men's pullover",
+   "form": "knit garment",
+   "end_use": "wear"
+  },
+  "gri_path": [
+   "GRI 1: heading 6110 sweaters, pullovers; Note 4 Ch 61 tubular cuffs and bottom"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6109.10",
+    "reason": "T-shirts"
+   },
+   {
+    "code": "6110.20.10",
+    "reason": "other cotton"
+   }
+  ],
+  "missing_facts": [
+   "Weight of fabric"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "V-neck pullover with tubular cuffs and bottom is a sweater type garment of 6110; cotton men's."
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "item_id": "atlas_test_00131",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "2933.31.00.00",
+  "facts": {
+   "material": "pyridine",
+   "function": "chemical",
+   "form": "liquid",
+   "end_use": "chemical"
+  },
+  "gri_path": [
+   "GRI 1: heading 2933 heterocyclic with nitrogen; 2933.31 pyridine"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "2933.39",
+    "reason": "other"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.95,
+  "abstain": false,
+  "rationale": "Pyridine is named in 2933.31."
+ }
+}

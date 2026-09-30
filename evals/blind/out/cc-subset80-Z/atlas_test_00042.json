@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00042",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3926.20.90.50",
+  "facts": {
+   "material": "plastic with textile trim",
+   "function": "apron",
+   "form": "bib apron",
+   "end_use": "protective apron"
+  },
+  "gri_path": [
+   "GRI 1: heading 3926 articles of apparel of plastics; Note 2(u) Section XI"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6216",
+    "reason": "gloves of textile"
+   },
+   {
+    "code": "6307.90",
+    "reason": "other made-up textile articles"
+   },
+   {
+    "code": "6210",
+    "reason": "coated fabric garments"
+   }
+  ],
+  "missing_facts": [
+   "Whether plastic is sheeting or coated textile"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Apron made of plastic material is an article of apparel and clothing accessory of plastics, 3926.20."
+ }
+}

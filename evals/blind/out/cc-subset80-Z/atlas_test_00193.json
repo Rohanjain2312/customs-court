@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00193",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9020.00.60.00",
+  "facts": {
+   "material": "plastic, electronics",
+   "function": "weld protection and respirator",
+   "form": "helmet with powered respirator",
+   "end_use": "welding"
+  },
+  "gri_path": [
+   "GRI 3(b): composite, respirator vs helmet; 9020"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6506.10",
+    "reason": "safety headgear"
+   },
+   {
+    "code": "9004.90",
+    "reason": "protective eyewear"
+   }
+  ],
+  "missing_facts": [
+   "Whether respirator is powered or contained"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Welding helmet with respirator classified as breathing appliance 9020 for the air supply function."
+ }
+}

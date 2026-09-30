@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N362809",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6307.90.98.89",
+  "facts": {
+   "material": "Polyester woven outer layers, polyester/cotton nonwoven batting",
+   "function": "Protect furniture during moves",
+   "form": "Quilted rectangular blanket",
+   "end_use": "Moving"
+  },
+  "gri_path": [
+   "GRI 1: made-up textile article",
+   "Not bedding of 9404 or blankets of 6301 by use"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6301.40",
+    "reason": "Not used as a blanket for persons"
+   },
+   {
+    "code": "9404.90",
+    "reason": "Not a quilt or bedding for sleeping"
+   },
+   {
+    "code": "5811",
+    "reason": "Quilted in the piece only; this is finished and bound"
+   }
+  ],
+  "missing_facts": [
+   "Whether CBP treats as 6301 blanket"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "A quilted furniture moving blanket is a finished textile article of no specific heading, so 6307.90 other made up articles."
+ }
+}

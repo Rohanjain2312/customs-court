@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00080",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9506.29.00.40",
+  "facts": {
+   "material": "plastic, rubber, mesh",
+   "function": "snorkeling",
+   "form": "retail set of goggles, snorkel, bag, capsule",
+   "end_use": "youth water sport"
+  },
+  "gri_path": [
+   "GRI 3(b): retail set, essential character snorkel set"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9004.90",
+    "reason": "goggles"
+   },
+   {
+    "code": "4202.92",
+    "reason": "bag"
+   },
+   {
+    "code": "3926.90",
+    "reason": "capsule"
+   }
+  ],
+  "missing_facts": [
+   "Relative value of items"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Retail set put up for snorkeling; the snorkel set gives essential character, other water sport equipment of 9506.29."
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N362823",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8907.90.00.00",
+  "facts": {
+   "material": "PVC, foam, LDPE bubble",
+   "function": "Floating platform to hold vessel out of water",
+   "form": "Assembled floating structure",
+   "end_use": "Marina hull protection"
+  },
+  "gri_path": [
+   "GRI 1: heading 8907 other floating structures",
+   "Not vessel, dock or part of a boat"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8906",
+    "reason": "Not a vessel"
+   },
+   {
+    "code": "8907.10",
+    "reason": "Not inflatable raft"
+   },
+   {
+    "code": "8901",
+    "reason": "Not a boat"
+   }
+  ],
+  "missing_facts": [
+   "Whether inflatable"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Floating structure that is not a vessel, dock or part of a vessel. Heading 8907 covers other floating structures, so 8907.90."
+ }
+}

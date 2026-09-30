@@ -1,0 +1,128 @@
+{
+  "run_id": "cc-subset80-Z",
+  "dataset": "atlas_test_200",
+  "dataset_sha256": "de42b0dd45f66a3ea81ebdb636cfe1757798520ff0ca5ea31c43dce9b2edfb68",
+  "items_from": "subset_80",
+  "arm": "Z",
+  "mode": "zero-shot-in-session",
+  "n_items": 80,
+  "n_with_output": 80,
+  "git_sha": "4a8db4b",
+  "seed": 13,
+  "models": {
+    "main": "claude-sonnet-5-5 (in the Claude Code session, not the API)"
+  },
+  "protocol": "Blind zero-shot control: one agent read only the descriptions-only file and the skill, with no lookup tools, and wrote the same output schema from its own knowledge.",
+  "redact_eval": false,
+  "scored_at": "2026-09-30T17:18:50+00:00",
+  "metrics": {
+    "n": 80,
+    "n_stale": 13,
+    "n_errors": 0,
+    "acc_10": 0.2121,
+    "n_10": 66,
+    "acc_8": 0.4328,
+    "n_8": 67,
+    "acc_6": 0.5375,
+    "n_6": 80,
+    "acc_4": 0.6375,
+    "n_4": 80,
+    "acc_2": 0.825,
+    "n_2": 80,
+    "acc_10_nonstale": 0.2121,
+    "acc_6_stale": 0.2308,
+    "abstain_rate": 0.1375,
+    "acc_when_answering": 0.2464,
+    "acc_deepest_all": 0.225,
+    "ece": 0.2262,
+    "coverage_curve": [
+      {
+        "coverage": 0.1,
+        "accuracy": 0.625
+      },
+      {
+        "coverage": 0.2,
+        "accuracy": 0.5
+      },
+      {
+        "coverage": 0.3,
+        "accuracy": 0.375
+      },
+      {
+        "coverage": 0.4,
+        "accuracy": 0.3438
+      },
+      {
+        "coverage": 0.5,
+        "accuracy": 0.3
+      },
+      {
+        "coverage": 0.6,
+        "accuracy": 0.2708
+      },
+      {
+        "coverage": 0.7,
+        "accuracy": 0.2679
+      },
+      {
+        "coverage": 0.8,
+        "accuracy": 0.2656
+      },
+      {
+        "coverage": 0.9,
+        "accuracy": 0.2361
+      },
+      {
+        "coverage": 1.0,
+        "accuracy": 0.225
+      }
+    ],
+    "citations_total": 0,
+    "citation_valid_rate": null,
+    "citation_hallucinated": 0,
+    "citation_not_in_force": 0,
+    "items_with_citation": 0,
+    "usd_total": 0.0,
+    "usd_per_item": 0.0,
+    "tokens_per_item": 0.0,
+    "tool_calls_per_item": 0.0,
+    "latency_p50_s": null,
+    "latency_p95_s": null,
+    "cache_hit_rate": null
+  },
+  "ci95": {
+    "exact_10": {
+      "mean": 0.2121,
+      "lo": 0.1212,
+      "hi": 0.3182,
+      "n": 66
+    },
+    "exact_8": {
+      "mean": 0.4328,
+      "lo": 0.3134,
+      "hi": 0.5522,
+      "n": 67
+    },
+    "exact_6": {
+      "mean": 0.5375,
+      "lo": 0.425,
+      "hi": 0.65,
+      "n": 80
+    },
+    "exact_4": {
+      "mean": 0.6375,
+      "lo": 0.525,
+      "hi": 0.7375,
+      "n": 80
+    },
+    "exact_2": {
+      "mean": 0.825,
+      "lo": 0.7375,
+      "hi": 0.9,
+      "n": 80
+    }
+  },
+  "later_dated_citations": [],
+  "sensitivity_without_later_citations": null,
+  "cost_note": "No API spend: produced in the Claude Code session (covered by the user's plan)."
+}

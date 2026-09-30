@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N362934",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9505.90.60.00",
+  "facts": {
+   "material": "Paper strips",
+   "function": "Party decoration, interlocking paper chain",
+   "form": "Flat-packed strips, assembled by user",
+   "end_use": "Single-use party decoration"
+  },
+  "gri_path": [
+   "GRI 1: heading 9505 festive, carnival or other entertainment articles",
+   "Party decorations of paper fall in 9505, Chapter 49/48 do not cover"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4911.99",
+    "reason": "Printed matter, not applicable"
+   },
+   {
+    "code": "4823.90",
+    "reason": "Cut paper articles, but festive articles excluded by 9505 heading"
+   },
+   {
+    "code": "9505.10",
+    "reason": "Not Christmas specific"
+   }
+  ],
+  "missing_facts": [
+   "Whether theme is Christmas"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Paper garland sold as party decoration is a festive article of heading 9505, other than Christmas."
+ }
+}

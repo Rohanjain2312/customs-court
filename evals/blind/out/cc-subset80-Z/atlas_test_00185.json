@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00185",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8483.40.51.00",
+  "facts": {
+   "material": "metal",
+   "function": "transmits power",
+   "form": "gearbox",
+   "end_use": "fertilizer spreaders"
+  },
+  "gri_path": [
+   "GRI 1: heading 8483 gearing; Note 2(a) Section XVI gear boxes are in 8483"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8432.90",
+    "reason": "parts of spreaders"
+   },
+   {
+    "code": "8708.40",
+    "reason": "vehicle gear boxes"
+   }
+  ],
+  "missing_facts": [
+   "Whether gearbox is a complete unit (8483.40) or casing"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Gear box assemblies are goods of 8483, not parts under 8432 because Note 2(a) of Section XVI sends them to 8483.40."
+ }
+}

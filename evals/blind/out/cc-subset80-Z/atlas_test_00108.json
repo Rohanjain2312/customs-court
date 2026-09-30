@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00108",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8481.90.90.60",
+  "facts": {
+   "material": "unspecified (assumed metal)",
+   "function": "faucet components",
+   "form": "parts",
+   "end_use": "plumbing"
+  },
+  "gri_path": [
+   "GRI 1: heading 8481 parts of taps; Section XVI Note 2(b)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7324",
+    "reason": "sanitary ware"
+   },
+   {
+    "code": "7419",
+    "reason": "copper"
+   }
+  ],
+  "missing_facts": [
+   "Material, specific part, origin not relevant"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Parts of faucets are parts of taps, 8481.90."
+ }
+}

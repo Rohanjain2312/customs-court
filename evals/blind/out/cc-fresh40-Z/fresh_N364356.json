@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N364356",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8479.89.94.99",
+  "facts": {
+   "material": "Machine with fans, evaporative media, controls",
+   "function": "Direct evaporative cooling of air",
+   "form": "Air handling unit",
+   "end_use": "Data centers"
+  },
+  "gri_path": [
+   "GRI 1: 8415 requires air conditioning; function is cooling not humidity",
+   "GRI 3(c) or 8479.89"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8415.83",
+    "reason": "Air conditioning, but humidity not regulated and no refrigeration"
+   },
+   {
+    "code": "8414.59",
+    "reason": "Fans; unit does more than move air"
+   }
+  ],
+  "missing_facts": [
+   "Whether CBP would treat as 8415"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "An evaporative cooling AHU is a machine with individual function, residual heading 8479."
+ }
+}

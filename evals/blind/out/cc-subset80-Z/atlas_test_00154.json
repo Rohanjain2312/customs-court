@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00154",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9002.20.40.00",
+  "facts": {
+   "material": "glass",
+   "function": "photographic filter",
+   "form": "optical filter",
+   "end_use": "photography"
+  },
+  "gri_path": [
+   "GRI 1: heading 9002 mounted optical elements; 9001 if unmounted"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9001.90",
+    "reason": "unmounted filters"
+   },
+   {
+    "code": "7020",
+    "reason": "glass articles"
+   }
+  ],
+  "missing_facts": [
+   "Mounted or unmounted"
+  ],
+  "confidence": 0.35,
+  "abstain": true,
+  "rationale": "Mounting decides between 9001 (unmounted) and 9002 (mounted filters); guess mounted."
+ }
+}

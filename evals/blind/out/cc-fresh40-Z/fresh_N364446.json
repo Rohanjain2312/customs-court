@@ -1,0 +1,39 @@
+{
+ "item_id": "fresh_N364446",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9018.90.75.00",
+  "facts": {
+   "material": "Polycarbonate enclosure with electronics and lithium polymer battery",
+   "function": "Transmit glucose data from implanted sensor",
+   "form": "Wearable transmitter",
+   "end_use": "Diabetes CGM"
+  },
+  "gri_path": [
+   "GRI 1: heading 9018 medical instruments and parts; Chapter 90 note 2(b)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8517.62",
+    "reason": "Data transmission apparatus"
+   },
+   {
+    "code": "9018.19",
+    "reason": "Complete diagnostic apparatus"
+   },
+   {
+    "code": "9027.80",
+    "reason": "Measuring instruments"
+   }
+  ],
+  "missing_facts": [
+   "Whether transmitter alone is an apparatus or part"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "A transmitter for CGM is part or accessory of medical apparatus of heading 9018."
+ }
+}

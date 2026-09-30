@@ -68,6 +68,30 @@ def data_report() -> dict:
             "SELECT dataset, COUNT(DISTINCT ruling_id) c FROM eval_redactions GROUP BY dataset"
         )
     }
+    rep["dataset_crosswalk"] = _crosswalk_counts()
     idx = con.execute("SELECT name FROM sqlite_master WHERE name IN ('rulings_fts','hts_fts')").fetchall()
     rep["fts_tables"] = [r["name"] for r in idx]
     return rep
+
+
+def _crosswalk_counts() -> dict:
+    """How each fixed dataset's gold codes map to today's HTS (exact, mapped, stale)."""
+    from collections import Counter
+
+    from tariffagent.evals.datasets import load_dataset
+
+    out = {}
+    for name in ("atlas_test_200", "dev_100"):
+        try:
+            items = load_dataset(name)
+        except FileNotFoundError:
+            continue
+        methods = Counter(it.get("crosswalk_method", "") for it in items)
+        stale = sum(1 for it in items if it.get("code_stale"))
+        out[name] = {
+            "n": len(items),
+            "methods": dict(methods),
+            "stale": stale,
+            "stale_rate": round(stale / len(items), 4),
+        }
+    return out

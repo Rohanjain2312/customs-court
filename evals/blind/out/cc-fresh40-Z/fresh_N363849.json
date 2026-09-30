@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N363849",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8421.29.00.65",
+  "facts": {
+   "material": "Cast or ductile iron body, steel screen",
+   "function": "Filter fluids of particulates",
+   "form": "Strainer with flanges",
+   "end_use": "Pipeline fluid systems"
+  },
+  "gri_path": [
+   "GRI 1: heading 8421 filtering or purifying machinery for liquids",
+   "GRI 6: 8421.29 other liquids"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8481.80",
+    "reason": "Valve"
+   },
+   {
+    "code": "8421.39",
+    "reason": "Gas filtering"
+   },
+   {
+    "code": "7307",
+    "reason": "Fittings"
+   }
+  ],
+  "missing_facts": [
+   "Whether valve or filter classification applies"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A strainer that removes particulates from process fluid is filtering apparatus, heading 8421; mainly for liquids so 8421.29."
+ }
+}

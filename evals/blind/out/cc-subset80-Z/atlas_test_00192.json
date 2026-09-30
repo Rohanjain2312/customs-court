@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00192",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9020.00.60.00",
+  "facts": {
+   "material": "filter media in housing",
+   "function": "filters particles",
+   "form": "respirator filter",
+   "end_use": "respirator"
+  },
+  "gri_path": [
+   "GRI 1: heading 9020 breathing appliances and parts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8421.39",
+    "reason": "filtering machinery"
+   },
+   {
+    "code": "5603",
+    "reason": "nonwovens"
+   }
+  ],
+  "missing_facts": [
+   "Whether it is part of respirator"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Particulate filter for respirators is a part of breathing appliances, heading 9020."
+ }
+}

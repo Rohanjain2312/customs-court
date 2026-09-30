@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00196",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3923.21.00.85",
+  "facts": {
+   "material": "polyethylene",
+   "function": "packaging",
+   "form": "bags",
+   "end_use": "packaging"
+  },
+  "gri_path": [
+   "GRI 1: heading 3923 articles for conveyance or packing; 3923.21 ethylene polymers"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3923.29",
+    "reason": "other plastics"
+   },
+   {
+    "code": "3924",
+    "reason": "household"
+   }
+  ],
+  "missing_facts": [
+   "Thickness irrelevant"
+  ],
+  "confidence": 0.8,
+  "abstain": false,
+  "rationale": "Polyethylene sacks and bags fall in 3923.21."
+ }
+}

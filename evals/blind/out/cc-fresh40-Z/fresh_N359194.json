@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N359194",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8007.00.50.90",
+  "facts": {
+   "material": "Tin-silver-copper alloy (SAC) powder, mostly tin",
+   "function": "Soldering material",
+   "form": "Fine metallic powder",
+   "end_use": "Electronics soldering paste manufacture"
+  },
+  "gri_path": [
+   "GRI 1: Chapter 80 tin; powder of tin alloy not in 8003 (bars, rods, wire)",
+   "Residual 8007 other articles of tin"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8003.00.00.00",
+    "reason": "Covers bars, rods, profiles and wire, not powder"
+   },
+   {
+    "code": "8311.90",
+    "reason": "Requires flux-coated or cored wire/rods"
+   },
+   {
+    "code": "7106",
+    "reason": "Silver is a minor constituent"
+   }
+  ],
+  "missing_facts": [
+   "Weight percentages of tin, silver, copper"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A tin-dominant alloy powder of Ag and Cu is an article of tin alloy. Not wire or bars, so it falls in the residual heading 8007 as other articles of tin."
+ }
+}

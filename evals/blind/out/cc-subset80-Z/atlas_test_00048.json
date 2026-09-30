@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00048",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3920.62.00.90",
+  "facts": {
+   "material": "polyester (PET)",
+   "function": "reflective film",
+   "form": "film",
+   "end_use": "LED light panels"
+  },
+  "gri_path": [
+   "GRI 1: heading 3920 plates, sheets, film of plastics non-cellular; 3920.62 PET"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3921",
+    "reason": "other sheets"
+   },
+   {
+    "code": "3919",
+    "reason": "self-adhesive"
+   }
+  ],
+  "missing_facts": [
+   "Thickness, adhesive"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "Non-cellular unreinforced PET film is in 3920.62."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "item_id": "fresh_N363254",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8201.30.00.60",
+  "facts": {
+   "material": "PP panels, aluminum handle, steel",
+   "function": "Rake and lift yard debris",
+   "form": "Hand tool, 60 inches",
+   "end_use": "Household yard work"
+  },
+  "gri_path": [
+   "GRI 1: heading 8201 hand tools for agriculture, horticulture; rakes"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3926.90",
+    "reason": "Plastic articles, but hand tool heading 8201 is more specific"
+   },
+   {
+    "code": "8432",
+    "reason": "Not machinery"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "A hand-operated garden rake is named in heading 8201 (mattocks, picks, hoes, rakes), regardless of plastic bulk."
+ }
+}

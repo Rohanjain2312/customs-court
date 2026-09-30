@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00117",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3920.43.10.00",
+  "facts": {
+   "material": "PVC with plasticizers",
+   "function": "marking tape",
+   "form": "flexible film strip",
+   "end_use": "flagging, marking"
+  },
+  "gri_path": [
+   "GRI 1: heading 3920 non-cellular plastic strip; 3920.43 PVC with 6%+ plasticizers"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3919",
+    "reason": "self-adhesive"
+   },
+   {
+    "code": "3921.12",
+    "reason": "cellular"
+   }
+  ],
+  "missing_facts": [
+   "Thickness, whether adhesive"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Non-adhesive flexible PVC strip with plasticizers falls in 3920.43."
+ }
+}

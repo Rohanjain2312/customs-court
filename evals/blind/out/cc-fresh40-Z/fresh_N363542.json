@@ -1,0 +1,37 @@
+{
+ "item_id": "fresh_N363542",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6103.33.20.10",
+  "facts": {
+   "material": "100% polyester double-knit, well-made coat",
+   "function": "Costume to portray British soldier",
+   "form": "Set: coat, vest, pants, cravat, sash, boot covers, hat",
+   "end_use": "Costume"
+  },
+  "gri_path": [
+   "GRI 1: heading 9505 or apparel depends on construction",
+   "GRI 3(b): coat gives essential character of set"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90.60",
+    "reason": "If garments are flimsy fancy dress, not well made"
+   },
+   {
+    "code": "6101.30",
+    "reason": "Overcoat-type knit"
+   }
+  ],
+  "missing_facts": [
+   "Whether the set is festive article or ordinary apparel",
+   "Description truncated on vest and pants"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "The coat is well made in knit fabric with finished edges, which points to apparel; as a set the coat gives essential character. A festive-article finding would move it to heading 9505."
+ }
+}

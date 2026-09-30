@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00121",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "7323.93.00.90",
+  "facts": {
+   "material": "stainless steel with glass tray",
+   "function": "broiling food",
+   "form": "pan with tray",
+   "end_use": "kitchen"
+  },
+  "gri_path": [
+   "GRI 1: heading 7323 table, kitchen or household articles of iron or steel; 7323.93 stainless"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7013",
+    "reason": "glassware"
+   },
+   {
+    "code": "7615",
+    "reason": "aluminum"
+   }
+  ],
+  "missing_facts": [
+   "Whether tray is a separate component"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Stainless steel kitchen article of 7323.93."
+ }
+}

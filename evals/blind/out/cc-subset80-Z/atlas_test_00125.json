@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00125",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9401.99.90.81",
+  "facts": {
+   "material": "metal",
+   "function": "reclining mechanism",
+   "form": "mechanism",
+   "end_use": "seating"
+  },
+  "gri_path": [
+   "GRI 1: heading 9401 parts of seats; Section XVI not applicable"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8302.10",
+    "reason": "hinges"
+   },
+   {
+    "code": "8302.42",
+    "reason": "mountings"
+   }
+  ],
+  "missing_facts": [
+   "Seat vs furniture use; hinge vs mechanism"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Metal recliner mechanisms are parts of seats of 9401.99."
+ }
+}

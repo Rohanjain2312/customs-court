@@ -1,0 +1,36 @@
+{
+ "item_id": "atlas_test_00130",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3920.62.00.90",
+  "facts": {
+   "material": "BOPP and PET layers",
+   "function": "packaging film",
+   "form": "laminated film",
+   "end_use": "packaging"
+  },
+  "gri_path": [
+   "GRI 3(b)/3(c): multi-layer plastic film"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3920.20",
+    "reason": "polypropylene"
+   },
+   {
+    "code": "3921.90",
+    "reason": "other plates"
+   }
+  ],
+  "missing_facts": [
+   "Which layer predominates",
+   "Thickness"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Laminate of propylene and polyester films; which layer gives essential character decides the subheading; guess PET."
+ }
+}

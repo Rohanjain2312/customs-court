@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N363487",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8413.60.20.30",
+  "facts": {
+   "material": "Aluminum casing with gears",
+   "function": "Hydraulic gear pump, reversible as motor",
+   "form": "Unit with inlet and outlet",
+   "end_use": "Fluid power systems"
+  },
+  "gri_path": [
+   "GRI 1: 8413.60 rotary positive displacement pump",
+   "GRI 3(c) between 8412 and 8413: pump principal function, latter heading"
+  ],
+  "deciding_gri": "GRI 3(c)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8412.29",
+    "reason": "Hydraulic motors"
+   },
+   {
+    "code": "8413.60.00",
+    "reason": "Other rotary pumps"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Gear units operate as pumps when externally driven, and are also capable of motor use. The pump is the principal function; 8413 also is the later heading."
+ }
+}

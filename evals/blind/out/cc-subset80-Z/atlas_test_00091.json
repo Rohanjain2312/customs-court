@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00091",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8202.31.00.30",
+  "facts": {
+   "material": "steel",
+   "function": "cuts metal",
+   "form": "circular saw blades",
+   "end_use": "metalworking"
+  },
+  "gri_path": [
+   "GRI 1: heading 8202 (first-named metal slitting saws); classify separately others"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8207",
+    "reason": "interchangeable tools"
+   },
+   {
+    "code": "8208",
+    "reason": "knives"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: taps, threading tools, drills, reamers, boring tools, milling tools (8207)"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "First-named article metal slitting saws are circular saw blades with steel working part under 8202.31."
+ }
+}

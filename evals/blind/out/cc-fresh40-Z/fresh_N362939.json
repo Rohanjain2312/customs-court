@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N362939",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3004.90.92.60",
+  "facts": {
+   "material": "Famotidine",
+   "function": "H2 antagonist",
+   "form": "Oral suspension in measured dose",
+   "end_use": "Treat ulcers and GERD"
+  },
+  "gri_path": [
+   "GRI 1: heading 3004 medicaments in doses",
+   "GRI 6: other medicaments"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3003",
+    "reason": "Not bulk"
+   },
+   {
+    "code": "2934",
+    "reason": "Active ingredient only, not the suspension"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "A dosed oral suspension medicament of therapeutic use is heading 3004, other (not antibiotic, hormone, alkaloid or vitamin)."
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "item_id": "fresh_N363468",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8543.70.99.60",
+  "facts": {
+   "material": "Electronic components in metal housing",
+   "function": "Audio DSP, crossover, equalization, D/A conversion, no amplification",
+   "form": "Standalone unit with dial and connections",
+   "end_use": "Loudspeaker systems"
+  },
+  "gri_path": [
+   "GRI 1: not an amplifier of 8518.40; electrical machine with individual function 8543.70"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8518.40",
+    "reason": "Audio amplifiers, but device does not amplify"
+   },
+   {
+    "code": "8519/8521",
+    "reason": "No recording or reproducing"
+   },
+   {
+    "code": "8471",
+    "reason": "Not a data processing machine"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A digital audio signal processor that does not amplify is not within 8518, so it falls in heading 8543 as an electrical machine with individual function."
+ }
+}

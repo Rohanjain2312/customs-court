@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00072",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8708.30.50.90",
+  "facts": {
+   "material": "metal",
+   "function": "part of solenoid valve",
+   "form": "valve parts",
+   "end_use": "automotive braking system"
+  },
+  "gri_path": [
+   "GRI 1: heading 8708 parts for motor vehicles; 8708.30 brakes"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8481.90",
+    "reason": "parts of valves"
+   },
+   {
+    "code": "8505.20",
+    "reason": "electromagnetic"
+   }
+  ],
+  "missing_facts": [
+   "Solely for braking vs general valve"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Parts dedicated to an automotive brake system classify in 8708.30 (Section XVII Note 2 excludes 8481 goods? valve parts compete)."
+ }
+}

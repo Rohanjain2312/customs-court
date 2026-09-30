@@ -1,0 +1,33 @@
+{
+ "item_id": "atlas_test_00039",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8421.21.00.00",
+  "facts": {
+   "material": "plastic housing with filter media",
+   "function": "filters and purifies water",
+   "form": "inline filter",
+   "end_use": "shower"
+  },
+  "gri_path": [
+   "GRI 1: heading 8421 filtering or purifying machinery for liquids; 8421.21 water"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8481",
+    "reason": "taps and valves"
+   },
+   {
+    "code": "3926",
+    "reason": "plastic articles"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "A shower filter with multiple filtration layers is a water filtering apparatus of 8421.21."
+ }
+}

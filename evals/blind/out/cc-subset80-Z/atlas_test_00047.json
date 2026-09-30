@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00047",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3002.51.00.00",
+  "facts": {
+   "material": "biological cell material, protein",
+   "function": "cell therapy",
+   "form": "cell product",
+   "end_use": "immunotherapy"
+  },
+  "gri_path": [
+   "GRI 1: heading 3002 cell therapy products"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3504",
+    "reason": "protein substances"
+   },
+   {
+    "code": "3002.59",
+    "reason": "other cell cultures"
+   }
+  ],
+  "missing_facts": [
+   "Whether it is a finished cell therapy product or a protein reagent"
+  ],
+  "confidence": 0.25,
+  "abstain": true,
+  "rationale": "NATCELL and CAR T cell described as protein is ambiguous; a cell therapy product falls in 3002.51, a protein in 3504 or 3002.90."
+ }
+}

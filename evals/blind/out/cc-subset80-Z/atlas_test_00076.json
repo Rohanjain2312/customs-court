@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00076",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3208.10.60.00",
+  "facts": {
+   "material": "polyester and epoxy resins",
+   "function": "coating",
+   "form": "powder",
+   "end_use": "industrial coating"
+  },
+  "gri_path": [
+   "GRI 1: heading 3208 paints based on synthetic polymers; polyester"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3907",
+    "reason": "polyester primary forms"
+   },
+   {
+    "code": "3210",
+    "reason": "other paints"
+   },
+   {
+    "code": "3208.90",
+    "reason": "other polymers"
+   }
+  ],
+  "missing_facts": [
+   "Dispersed or dissolved in non-aqueous medium? powder form"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "Powder coatings based on polyester/epoxy are placed in 3208; polyester-based in 3208.10."
+ }
+}

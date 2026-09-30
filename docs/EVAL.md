@@ -24,7 +24,7 @@ This file records how the data was built, what each dataset is, how scoring work
 ### Code drift and the crosswalk
 - A gold code is `exact` when the 10-digit line exists today. Otherwise we map it when a clean mapping exists: the same description under the same 6-digit subheading in the latest past edition we hold (`desc_match`), or an 8-digit line that now has exactly one statistical suffix (`single_child`). Everything else is `code_stale`.
 - `atlas_test_200`: 168 exact, 6 `desc_match`, 1 `single_child`, 2 eight-digit golds, 23 stale (11.5%). Stale items are scored at 6 digits and reported separately.
-- Across the text corpus, 29.5% of distinct 10-digit codes cited by rulings are stale today, which is why tools show the current tree and `hts_revision_diff`.
+- Across the text corpus, 28.8% of distinct 10-digit codes cited by rulings are stale today (`evals/reports/data_report.json`), which is why tools show the current tree and `hts_revision_diff`.
 
 ## Ruling status (`in_force | modified | revoked | unknown`)
 
@@ -53,7 +53,8 @@ Defined in Phases 3 and 4 before any prompt work. Each has a sha256 in `evals/da
 | `dev_100` | 100 | seeded sample of the ATLAS validation split | prompt work and error analysis only, never reported as a result |
 | `fresh_300` | 300 | CROSS rulings dated 2026-07-01 to 2026-09-11 with one 10-digit code; description cut from the ruling's facts by a fixed rule that drops any sentence mentioning a code, heading or classification | post-cutoff set |
 | `fresh_150` | 150 | seeded sample of `fresh_300`, to fit the budget | reported separately from ATLAS |
-| `subset_80` | 80 | `atlas_test_200` stratified by product type and number of plausible headings | multi-agent study arms |
+| `subset_80` | 80 | `atlas_test_200` stratified by product type and number of plausible headings | multi-agent study arms, blind in-session agent run |
+| `fresh_40` | 40 | seeded sample of `fresh_150` (seed 13), fixed before the run | blind in-session agent run on the post-cutoff set |
 | `demo_objection` | 2 | hand-written leather and PVC handbag pair | demo only |
 
 Every run uses `--redact-eval`: each golden ruling, and any later ruling that names it, is hidden from every tool.
@@ -88,7 +89,7 @@ Agent on `subset_80`:
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
-| Zero-shot, no tools (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+| Zero-shot, no tools (in the Claude Code session) | Claude Sonnet 5.5 | 21.2% [12.1, 31.8] | 53.8% [42.5, 65.0] | 63.7% [52.5, 73.8] | 13.8% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
 <!-- /results:subset -->
 
@@ -97,22 +98,22 @@ Agent on `subset_80`:
 |---|---|---|
 | Agent (Claude in session) minus Claude Sonnet 5 zero-shot | +28.8 points [+16.7, +40.9], n=66 | +12.5 points [+1.2, +23.8], n=80 |
 | Agent (Claude in session) minus agent on gpt-5-mini | +7.6 points [-3.0, +18.2], n=66 | +12.5 points [+2.5, +22.5], n=80 |
-| Agent (Claude in session) minus the same model zero-shot | n/a | n/a |
+| Agent (Claude in session) minus Claude Sonnet 5.5 zero-shot (in session) | +30.3 points [+18.2, +43.9], n=66 | +10.0 points [+1.2, +18.8], n=80 |
 <!-- /results:subset_diffs -->
 
-Post-cutoff set (`fresh_150`):
+Post-cutoff set (`fresh_150`, and the agent on `fresh_40`):
 
 <!-- results:fresh -->
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools, all 150 | Claude Sonnet 5 | 20.0% [14.0, 26.7] | 48.0% [40.0, 56.0] | 69.3% [61.3, 76.7] | 1.3% | $0.0060 |
 | Zero-shot, no tools, the 40-item sample | Claude Sonnet 5 | 17.5% [7.5, 30.0] | 47.5% [32.5, 62.5] | 67.5% [52.5, 82.5] | 2.5% | $0.0060 |
-| Zero-shot, no tools (in the Claude Code session), same 40 | Claude Opus 5.5 | not run yet | | | | |
+| Zero-shot, no tools (in the Claude Code session), same 40 | Claude Sonnet 5.5 | 15.0% [5.0, 27.5] | 60.0% [45.0, 75.0] | 70.0% [55.0, 82.5] | 7.5% | $0 (no API spend) |
 | TariffAgent single agent (in the Claude Code session), same 40 | Claude Opus 5.5 | 82.5% [70.0, 92.5] | 90.0% [80.0, 97.5] | 92.5% [82.5, 100.0] | 7.5% | $0 (no API spend) |
 
 Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit +65.0 points [+50.0, +80.0], n=40; 6-digit +42.5 points [+27.5, +57.5], n=40.
 
-Paired, same 40 items, agent minus the same model zero-shot: 10-digit n/a; 6-digit n/a.
+Paired, same 40 items, agent minus Claude Sonnet 5.5 zero-shot (in session): 10-digit +67.5 points [+52.5, +82.5], n=40; 6-digit +30.0 points [+15.0, +45.0], n=40.
 <!-- /results:fresh -->
 
 Claude agent on dev (prompt work only):
@@ -131,12 +132,19 @@ Claude agent on dev (prompt work only):
 <!-- results:judge -->
 | Run | Judge pass rate | Pass when 10-digit correct | Fail when chapter wrong | Cohen's kappa, second judge | Raw agreement |
 |---|---|---|---|---|---|
-| Test subset (80) | not run yet | | | | |
-| Fresh set (40) | not run yet | | | | |
+| Test subset (80) | 67.6% [56.8, 78.4] (n=74) | 90.3% (n=31) | 90.9% (n=11) | 0.64 | 83.8% (n=74) |
+| Fresh set (40) | 90.0% [80.0, 97.5] (n=40) | 100.0% (n=33) | 100.0% (n=1) | 0.77 | 95.0% (n=40) |
 <!-- /results:judge -->
 
 <!-- analysis:judge -->
-(Filled in from the judge reports.)
+Both judges ran in the Claude Code session with the judge prompt from `evals/judge.py`, one packet per item: the product, the CBP reference (the ruling text when the corpus has it, otherwise the ATLAS reasoning) and the agent's answer. Judge 1 is Claude Opus 5.5, judge 2 is Claude Haiku 4.5. Scripts: `scripts/judge_blind.py`; reports: `evals/reports/cc-subset80-A.judge.json`, `evals/reports/cc-fresh40-A.judge.json`.
+
+- **A discarded attempt.** The first Haiku pass on the subset finished 74 items in under three minutes with the same reason on every fail. It had compared strings instead of reading. It is kept as `evals/blind/judge/cc-subset80-A/discarded_verdicts_haiku_scripted.jsonl` and is not used. The rerun graded one packet at a time in four chunks.
+- **Proxies.** On the subset the judge passes 90.3% of answers with the right 10-digit code and fails 90.9% of answers with the wrong chapter. On the fresh set both are 100.0%, but only one fresh answer had the wrong chapter.
+- **Agreement.** Cohen's kappa is 0.64 on the subset (83.8% raw agreement) and 0.77 on the fresh set (95.0%). I read all 14 disagreements. Six are Haiku failing an answer for a difference below the heading, which the prompt says to ignore. Three are Haiku trusting the gold code where the CBP text in the same packet decides otherwise. Five are Opus failing the right heading because CBP relied on a different rule (GRI 2(a) or 3(b), or classifying items separately).
+- **Label noise again.** Judge 1 flagged 5 subset packets where the ATLAS gold code disagrees with the CBP text beside it, and graded against the text.
+- **Interruptions.** A usage limit stopped the Opus judge on the fresh set after 36 of 40 packets; the last 4 were graded in the main session by the same model and are listed in the report.
+- An optional 25-case sheet for a human spot check, including all 12 subset disagreements: `evals/audit/audit_25.md`.
 <!-- /analysis:judge -->
 
 ## Error analysis
@@ -149,4 +157,7 @@ All 59 failures of `dev100-A` were read and tagged (`evals/taxonomy/dev100-A.jso
 - Claude Sonnet 5.5 (API): the 20-item pilot only (the reasoner was switched to Sonnet 5 on 2026-09-29).
 - Claude Haiku 4.5 (API): the cheap tier in the dev multi-agent run.
 - gpt-5-mini (API): the provider comparison on `subset_80`.
-- Claude Opus 5.5 inside the Claude Code session: the blind agent run on `subset_80` (`cc-subset80-A`). Protocol in `evals/reports/cc-subset80-A.json`: descriptions-only input (`evals/blind/`), tools through the MCP server with `--redact-eval`, the skill's workflow and final checks, scored by the same code. No API spend. It is a different model from the API agent, so it is reported on its own row.
+- Claude Opus 5.5 inside the Claude Code session: the blind agent runs on `subset_80` (`cc-subset80-A`) and `fresh_40` (`cc-fresh40-A`), and judge 1. Protocol in `evals/reports/cc-subset80-A.json`: descriptions-only input (`evals/blind/`), tools through the MCP server with `--redact-eval`, the skill's workflow and final checks, scored by the same code (`scripts/score_blind.py`). No API spend. It is a different model from the API agent, so it is reported on its own row.
+- Claude Sonnet 5.5 inside the Claude Code session: the no-tools controls on the same items (`cc-subset80-Z`, `cc-fresh40-Z`). They read only the descriptions and the skill. An Opus control was started first; a usage limit stopped it after 10 and 20 items, and it was discarded and rerun on Sonnet 5.5 rather than mixing two models in one row.
+- Claude Haiku 4.5 inside the Claude Code session: judge 2.
+- Blind runs can cite a ruling dated after the item's own ruling, because the tools do not filter precedent by date. The scorer lists such citations and reports accuracy without those items (`later_dated_citations` in each report): one fresh item, 82.1% (n=39) instead of 82.5%.

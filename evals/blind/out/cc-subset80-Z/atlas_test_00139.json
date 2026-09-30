@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00139",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3920.51.50.90",
+  "facts": {
+   "material": "acrylic (PMMA) and polycarbonate",
+   "function": "wall and furniture panels",
+   "form": "non-cellular sheets",
+   "end_use": "decorative"
+  },
+  "gri_path": [
+   "GRI 1: heading 3920 plates and sheets; first-named acrylic 3920.51"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3920.59",
+    "reason": "polycarbonate"
+   },
+   {
+    "code": "3926.90",
+    "reason": "other plastic articles"
+   },
+   {
+    "code": "3921",
+    "reason": "combined"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: polycarbonate panels (3920.59)"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "First-named acrylic panels are PMMA sheets of 3920.51."
+ }
+}

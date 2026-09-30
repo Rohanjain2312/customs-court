@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00197",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9027.90.56.80",
+  "facts": {
+   "material": "optics and metal",
+   "function": "optical detection",
+   "form": "assembly",
+   "end_use": "genetic analyzer"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 parts of analysis instruments; Note 2(b) Ch 90"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9013",
+    "reason": "optical devices"
+   },
+   {
+    "code": "9001",
+    "reason": "optical elements"
+   }
+  ],
+  "missing_facts": [
+   "Whether solely for this instrument"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Optical assemblies dedicated to a genetic analyzer (electrophoresis instrument) are parts of 9027."
+ }
+}

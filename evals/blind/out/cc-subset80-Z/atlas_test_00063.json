@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00063",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8516.71.00.20",
+  "facts": {
+   "material": "plastic, metal, glass",
+   "function": "brews coffee",
+   "form": "electric coffeemaker",
+   "end_use": "household"
+  },
+  "gri_path": [
+   "GRI 1: heading 8516 electrothermic domestic appliances; 8516.71 coffee or tea makers"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8419.81",
+    "reason": "heating machinery for hot drinks, industrial"
+   },
+   {
+    "code": "8509",
+    "reason": "electromechanical domestic appliances"
+   }
+  ],
+  "missing_facts": [
+   "Drip vs espresso and whether commercial"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "Electric coffeemaker is specifically named in 8516.71 (coffee or tea makers)."
+ }
+}

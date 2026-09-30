@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00109",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8428.90.03.90",
+  "facts": {
+   "material": "steel",
+   "function": "logging grapples and carriages",
+   "form": "machines",
+   "end_use": "logging"
+  },
+  "gri_path": [
+   "GRI 1: heading 8428 other lifting/handling machinery"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8426",
+    "reason": "cranes"
+   },
+   {
+    "code": "8431",
+    "reason": "parts"
+   },
+   {
+    "code": "8425",
+    "reason": "hoists"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: slack-pulling carriages; function of choker grapples"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "First-named choker grapples are handling attachments; classified as other handling machinery 8428.90."
+ }
+}

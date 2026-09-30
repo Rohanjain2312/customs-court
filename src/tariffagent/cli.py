@@ -59,11 +59,17 @@ def data_derive():
 
 
 @data_app.command("status")
-def data_status(as_json: bool = False):
+def data_status(as_json: bool = False, write: bool = False):
     """Print counts, date ranges, stale-code rate and status distribution."""
     from tariffagent.data.report import data_report
 
     rep = data_report()
+    if write:
+        from tariffagent.evals.run import REPORTS
+
+        out = REPORTS / "data_report.json"
+        out.write_text(json.dumps(rep, indent=2))
+        console.print(f"wrote {out}")
     if as_json:
         print(json.dumps(rep, indent=2))
         return

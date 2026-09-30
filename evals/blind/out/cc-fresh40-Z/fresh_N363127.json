@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N363127",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "1605.21.10.00",
+  "facts": {
+   "material": "Shrimp 44% with rice flour wrapper and vegetables",
+   "function": "Appetizer, cook before eating",
+   "form": "Frozen individually formed rolls",
+   "end_use": "Foodservice"
+  },
+  "gri_path": [
+   "GRI 1: Chapter 16 note 6 prepared foods over 20% crustaceans go to heading 1605",
+   "GRI 6: shrimp prepared, not in airtight containers"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "1605.29",
+    "reason": "If packaged in hermetically sealed airtight containers"
+   },
+   {
+    "code": "1905.90",
+    "reason": "Rice wrapper dough product"
+   },
+   {
+    "code": "1902.20",
+    "reason": "Stuffed pasta"
+   }
+  ],
+  "missing_facts": [
+   "Whether packaging is hermetically sealed"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "Shrimp above 20 percent by weight puts the prepared food in heading 1605. Frozen trays are not hermetically sealed, so the not-in-airtight-container line."
+ }
+}

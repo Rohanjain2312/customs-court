@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00055",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8716.90.50.60",
+  "facts": {
+   "material": "steel (assumed)",
+   "function": "frame attachment to increase height",
+   "form": "frame component",
+   "end_use": "vehicle/trailer (assumed)"
+  },
+  "gri_path": [
+   "GRI 1: Section XVII parts of trailers; uncertain"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7326.90.86",
+    "reason": "other steel articles"
+   },
+   {
+    "code": "8609",
+    "reason": "container parts"
+   },
+   {
+    "code": "8708",
+    "reason": "truck parts"
+   }
+  ],
+  "missing_facts": [
+   "What article it attaches to, material, function"
+  ],
+  "confidence": 0.15,
+  "abstain": true,
+  "rationale": "Description too vague to decide; the machine or vehicle it is a part of decides the heading. Best guess is parts of trailers 8716.90."
+ }
+}

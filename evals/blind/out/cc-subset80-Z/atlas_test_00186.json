@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00186",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8519.81.70.00",
+  "facts": {
+   "material": "electronics, plastic",
+   "function": "reproduces predator calls",
+   "form": "sound apparatus",
+   "end_use": "hunting"
+  },
+  "gri_path": [
+   "GRI 1: heading 8519 sound reproducing apparatus"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8518",
+    "reason": "speakers"
+   },
+   {
+    "code": "9506.99",
+    "reason": "hunting equipment"
+   },
+   {
+    "code": "8527",
+    "reason": "radio"
+   }
+  ],
+  "missing_facts": [
+   "Memory medium type"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Electronic game caller reproduces stored sounds, heading 8519 solid-state storage apparatus."
+ }
+}

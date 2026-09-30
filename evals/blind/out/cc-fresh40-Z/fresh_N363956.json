@@ -1,0 +1,35 @@
+{
+ "item_id": "fresh_N363956",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9017.80.00.00",
+  "facts": {
+   "material": "Polyester tape, ABS and steel",
+   "function": "Measure distance",
+   "form": "Retractable tape measure",
+   "end_use": "Trades and consumers"
+  },
+  "gri_path": [
+   "GRI 1: heading 9017 measuring instruments; 9017.80 other instruments"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9017.20",
+    "reason": "Drawing or calculating, not applicable"
+   },
+   {
+    "code": "9017.30",
+    "reason": "Micrometers, calipers, gauges"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "A retractable tape measure is a hand-held measuring instrument; heading 9017.80 other instruments for measuring length."
+ }
+}

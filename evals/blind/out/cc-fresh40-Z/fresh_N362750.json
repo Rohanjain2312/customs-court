@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N362750",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8544.49.10.00",
+  "facts": {
+   "material": "Copper conductors insulated with FEP, PVC jacket",
+   "function": "Data transmission cable",
+   "form": "Reels, unterminated, 4 twisted pairs",
+   "end_use": "Structured cabling"
+  },
+  "gri_path": [
+   "GRI 1: heading 8544 insulated conductors",
+   "GRI 6: not fitted with connectors, so 8544.49; telecom use under 80 V"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8544.42",
+    "reason": "Applies only when fitted with connectors"
+   },
+   {
+    "code": "8544.60",
+    "reason": "Voltage not above 1000 V"
+   }
+  ],
+  "missing_facts": [
+   "Whether classified in telecom line or other line"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Unterminated insulated copper data cable rated 48 V, so 8544.49. It is of a kind used for telecommunications at not more than 80 V."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00038",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9027.80.45.00",
+  "facts": {
+   "material": "instrument with optics and electronics",
+   "function": "measures particle size and shape",
+   "form": "analyzer",
+   "end_use": "laboratory analysis of bulk solids"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 instruments for physical or chemical analysis"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9027.20",
+    "reason": "chromatographs and electrophoresis, not applicable"
+   },
+   {
+    "code": "9031.49",
+    "reason": "optical measuring instruments"
+   }
+  ],
+  "missing_facts": [
+   "Measurement principle (optical imaging) which could make 9031.49 competitive"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Particle size analyzer is an instrument for physical analysis under heading 9027; other instruments in 9027.80."
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "item_id": "fresh_N362589",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6201.93.35.21",
+  "facts": {
+   "material": "Polyamide woven and polyester/elastane knit composite",
+   "function": "Men's jacket with removable hood and sleeves",
+   "form": "Garment of mixed knit and woven",
+   "end_use": "Outerwear"
+  },
+  "gri_path": [
+   "GRI 3(b) fails: neither fabric gives essential character",
+   "GRI 3(c): last in numerical order, 6201 over 6101",
+   "GRI 6: 6201.93 man-made fibers"
+  ],
+  "deciding_gri": "GRI 3(c)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6101.30",
+    "reason": "Knit men's anorak, earlier heading loses under GRI 3(c)"
+   },
+   {
+    "code": "6201.92",
+    "reason": "Not cotton"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Knit and woven components are each under 60% and neither gives essential character, so the later heading 6201 (woven men's anoraks, windbreakers) applies by GRI 3(c). Man-made fibre predominates, giving 6201.93."
+ }
+}

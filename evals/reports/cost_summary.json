@@ -61,24 +61,34 @@
       "saving_vs_no_cache_no_batch": 0.7236
     },
     "provider": {
-      "actual_usd": 0.4836,
-      "no_cache_same_mode_usd": 1.2152,
-      "no_cache_no_batch_usd": 1.2152,
-      "calls": 489,
-      "cache_read_tokens": 3251456,
-      "input_tokens_all": 3938467,
-      "cache_read_share": 0.8256,
-      "saving_vs_no_cache_no_batch": 0.602
+      "actual_usd": 0.6414,
+      "no_cache_same_mode_usd": 1.6238,
+      "no_cache_no_batch_usd": 1.6238,
+      "calls": 635,
+      "cache_read_tokens": 4366336,
+      "input_tokens_all": 5257024,
+      "cache_read_share": 0.8306,
+      "saving_vs_no_cache_no_batch": 0.605
+    },
+    "local": {
+      "actual_usd": 0.0,
+      "no_cache_same_mode_usd": 0.0,
+      "no_cache_no_batch_usd": 0.0,
+      "calls": 38,
+      "cache_read_tokens": 368859,
+      "input_tokens_all": 482048,
+      "cache_read_share": 0.7652,
+      "saving_vs_no_cache_no_batch": 1.0
     }
   },
   "total": {
-    "actual_usd": 13.1836,
-    "no_cache_same_mode_usd": 26.9237,
-    "no_cache_no_batch_usd": 39.3047,
-    "calls": 2099,
-    "cache_read_tokens": 17268867,
-    "input_tokens_all": 21234507,
-    "cache_read_share": 0.8132,
-    "saving_vs_no_cache_no_batch": 0.6646
+    "actual_usd": 13.3414,
+    "no_cache_same_mode_usd": 27.3323,
+    "no_cache_no_batch_usd": 39.7133,
+    "calls": 2283,
+    "cache_read_tokens": 18752606,
+    "input_tokens_all": 23035112,
+    "cache_read_share": 0.8141,
+    "saving_vs_no_cache_no_batch": 0.6641
   }
 }

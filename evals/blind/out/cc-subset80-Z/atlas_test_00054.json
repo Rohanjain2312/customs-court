@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00054",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3502.11.00.90",
+  "facts": {
+   "material": "protein",
+   "function": "egg white protein",
+   "form": "powder",
+   "end_use": "food ingredient"
+  },
+  "gri_path": [
+   "GRI 1: heading 3502 albumins"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3502.19",
+    "reason": "other egg albumin"
+   },
+   {
+    "code": "3504",
+    "reason": "peptones and proteins"
+   }
+  ],
+  "missing_facts": [
+   "Whether fermentation-derived material counts as egg albumin"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Ovalbumin powder is albumin of heading 3502; dried egg albumin line used."
+ }
+}

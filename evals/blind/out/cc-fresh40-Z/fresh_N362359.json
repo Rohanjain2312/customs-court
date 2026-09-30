@@ -1,0 +1,41 @@
+{
+ "item_id": "fresh_N362359",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6307.90.98.89",
+  "facts": {
+   "material": "100% cotton cheesecloth, two layers sewn",
+   "function": "Facial exfoliating cloth",
+   "form": "Unfinished 6x6 inch squares sewn together",
+   "end_use": "Personal care, retail sold in pairs or kit with hanger"
+  },
+  "gri_path": [
+   "GRI 2(a): unfinished cloth has essential character of the finished article",
+   "GRI 1: heading 6307 other made up textile articles",
+   "GRI 3(b): kit with magnetic hanger, cloth gives character"
+  ],
+  "deciding_gri": "GRI 2(a)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6302.60",
+    "reason": "Not terry toweling"
+   },
+   {
+    "code": "5803",
+    "reason": "Gauze in the piece, but this is made up into cut, sewn squares"
+   },
+   {
+    "code": "6307.10",
+    "reason": "Not a floor, dish or cleaning cloth"
+   }
+  ],
+  "missing_facts": [
+   "Whether gauze weave qualifies under 5803 exclusion"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "A cut and sewn cotton cloth for facial use is a made-up textile article not elsewhere specified. The unfinished form is treated as the finished cloth under GRI 2(a); the hanger is incidental."
+ }
+}

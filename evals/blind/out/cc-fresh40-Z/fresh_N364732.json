@@ -1,0 +1,35 @@
+{
+ "item_id": "fresh_N364732",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3916.90.10.00",
+  "facts": {
+   "material": "Polyamide (PA6-imide)",
+   "function": "Feedstock for 3D printing",
+   "form": "Monofilament 1.75 mm on spools",
+   "end_use": "Additive manufacturing"
+  },
+  "gri_path": [
+   "GRI 1: monofilament cross section over 1 mm is 3916"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "5402",
+    "reason": "Filaments under 1 mm"
+   },
+   {
+    "code": "3916.90.50",
+    "reason": "Other"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical line"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Monofilament over 1 mm cross-section is in 3916; polyamide is a condensation polymer."
+ }
+}

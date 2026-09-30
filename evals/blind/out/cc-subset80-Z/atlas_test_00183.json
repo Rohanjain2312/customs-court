@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00183",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8439.99.10.00",
+  "facts": {
+   "material": "metal",
+   "function": "holds doctor blade",
+   "form": "holder assembly",
+   "end_use": "paper machines"
+  },
+  "gri_path": [
+   "GRI 1: heading 8439 parts of papermaking machinery; Note 2(b) Section XVI"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8441.90",
+    "reason": "parts of other paper machines"
+   },
+   {
+    "code": "8431",
+    "reason": "general parts"
+   }
+  ],
+  "missing_facts": [
+   "Whether for paper making or finishing machines (8441)"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Doctor blade holders are parts suitable solely for papermaking machinery 8439.99."
+ }
+}

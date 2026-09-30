@@ -1,0 +1,33 @@
+{
+ "item_id": "atlas_test_00175",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3918.10.10.00",
+  "facts": {
+   "material": "PVC",
+   "function": "floor covering",
+   "form": "tile 4 mm",
+   "end_use": "flooring"
+  },
+  "gri_path": [
+   "GRI 1: heading 3918; Note 9 Ch 39"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3925",
+    "reason": "builders ware"
+   },
+   {
+    "code": "3920",
+    "reason": "sheets"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "PVC floor tile is a plastic floor covering 3918.10."
+ }
+}

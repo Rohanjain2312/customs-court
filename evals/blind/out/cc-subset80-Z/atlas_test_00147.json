@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00147",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8534.00.00.40",
+  "facts": {
+   "material": "copper on flexible substrate polyimide",
+   "function": "electrical interconnect",
+   "form": "flexible printed circuit",
+   "end_use": "electronics"
+  },
+  "gri_path": [
+   "GRI 1: heading 8534 printed circuits"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8536.90",
+    "reason": "connectors"
+   },
+   {
+    "code": "8538.90",
+    "reason": "parts"
+   }
+  ],
+  "missing_facts": [
+   "Whether connectors are soldered on forming assembly"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Flexible printed circuit with terminals and connectors is a printed circuit of 8534."
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "item_id": "fresh_N363486",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9505.90.60.00",
+  "facts": {
+   "material": "Textile",
+   "function": "Fancy dress costume",
+   "form": "Sleeveless dress with drape, medallions and armbands, raw edges",
+   "end_use": "Festive, costume play"
+  },
+  "gri_path": [
+   "GRI 1: Chapter 62 note and Chapter 61/62 notes exclude unfinished festive costumes; heading 9505"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6204.43",
+    "reason": "Dress, but unfinished edges indicate costume not wearing apparel"
+   }
+  ],
+  "missing_facts": [
+   "Fiber content"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Raw unfinished edges and costume nature indicate a festive article of heading 9505 rather than ordinary apparel."
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "item_id": "fresh_N363288",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3004.90.92.60",
+  "facts": {
+   "material": "Unspecified acid-suppressing drug, NDA pending",
+   "function": "Treat reflux disease and esophagitis",
+   "form": "Not stated, likely tablet/capsule",
+   "end_use": "Medical"
+  },
+  "gri_path": [
+   "GRI 1: 3004 if measured doses; 29xx if bulk active"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "2933.99",
+    "reason": "If bulk active ingredient"
+   },
+   {
+    "code": "3003",
+    "reason": "Not mixed medicament in bulk"
+   }
+  ],
+  "missing_facts": [
+   "Name of drug",
+   "Whether imported as dosage form or bulk active",
+   "Composition"
+  ],
+  "confidence": 0.15,
+  "abstain": true,
+  "rationale": "Only indications are given; whether it is a dosed medicament (3004) or a bulk heterocyclic chemical (Chapter 29) decides the heading. Best guess is dosage form."
+ }
+}

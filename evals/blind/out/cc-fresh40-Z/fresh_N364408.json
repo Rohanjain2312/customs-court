@@ -1,0 +1,37 @@
+{
+ "item_id": "fresh_N364408",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9026.20.80.40",
+  "facts": {
+   "material": "Plastic body, steel valve",
+   "function": "Measure and display tire pressure and inflate/deflate",
+   "form": "Pistol grip with hose, LCD display",
+   "end_use": "Automotive"
+  },
+  "gri_path": [
+   "GRI 1: pressure measuring instrument 9026.20 versus valve 8481",
+   "GRI 3(b)"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8414.20",
+    "reason": "Pump, but no motor or compressor described"
+   },
+   {
+    "code": "8481.80",
+    "reason": "Valve"
+   }
+  ],
+  "missing_facts": [
+   "Whether device contains compressor or pump",
+   "Principal function"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Device has a digital pressure display and valve but no pump is described. Pressure measuring instrument is judged the principal function."
+ }
+}

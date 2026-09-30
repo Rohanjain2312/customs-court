@@ -1,0 +1,40 @@
+{
+ "item_id": "fresh_N363777",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9018.19.75.00",
+  "facts": {
+   "material": "LEDs, sensor, textile bands, tablet",
+   "function": "Pulse rate and SpO2 monitoring",
+   "form": "Retail set, wearable sensor plus tablet app",
+   "end_use": "Pediatric patient monitoring"
+  },
+  "gri_path": [
+   "GRI 1: heading 9018 electro-medical apparatus",
+   "GRI 3(b): sensor gives essential character of the set"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9018.19.10",
+    "reason": "Cardiographs"
+   },
+   {
+    "code": "8517",
+    "reason": "Tablet is component of monitoring system"
+   },
+   {
+    "code": "9025",
+    "reason": "Not an instrument measuring temperature etc"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical line"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Pulse and oxygen saturation monitors are electro-diagnostic apparatus of 9018.19; the sensor is the essential component of the set."
+ }
+}

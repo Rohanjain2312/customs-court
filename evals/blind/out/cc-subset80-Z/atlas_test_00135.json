@@ -1,0 +1,36 @@
+{
+ "item_id": "atlas_test_00135",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "4203.10.40.60",
+  "facts": {
+   "material": "polyester knit pile faux fur bonded to leather",
+   "function": "women's jacket",
+   "form": "garment",
+   "end_use": "wear"
+  },
+  "gri_path": [
+   "GRI 3(b): leather bonded composite; Ch 43 Note excludes knitted artificial fur"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4304.00",
+    "reason": "artificial fur articles; knit imitation fur excluded by Note 4 Ch 43"
+   },
+   {
+    "code": "6102.30",
+    "reason": "knit polyester coat"
+   }
+  ],
+  "missing_facts": [
+   "Which component forms outer surface and gives essential character",
+   "Leather share"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Garment of faux fur pile fabric bonded to leather; whether leather or textile gives essential character decides between 4203 and Ch 61/43. Best guess leather apparel."
+ }
+}

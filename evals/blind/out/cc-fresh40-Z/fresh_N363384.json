@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N363384",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3926.20.90.10",
+  "facts": {
+   "material": "Cellular polyurethane with polyester backing for reinforcement only",
+   "function": "Jacket",
+   "form": "Garment with lining and fill",
+   "end_use": "Outerwear"
+  },
+  "gri_path": [
+   "GRI 1: textile backing only reinforcing, so Chapter 39 note; heading 3926.20 apparel of plastics"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6201/6202",
+    "reason": "Outer surface is plastic, not textile"
+   },
+   {
+    "code": "3926.20.10",
+    "reason": "Gloves"
+   }
+  ],
+  "missing_facts": [
+   "Gender of jacket",
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Plastic outer shell with textile backing serving merely as reinforcement keeps the garment in Chapter 39 as apparel of plastics."
+ }
+}

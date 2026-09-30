@@ -1,0 +1,39 @@
+{
+ "item_id": "fresh_N364000",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "2106.90.99.00",
+  "facts": {
+   "material": "Mycoprotein paste with flavors and egg white",
+   "function": "Meat substitute",
+   "form": "Frozen retail pack",
+   "end_use": "Food"
+  },
+  "gri_path": [
+   "GRI 1: Chapter 21 food preparation NESOI; not meat, not vegetable"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "1604/1602",
+    "reason": "Not meat or fish"
+   },
+   {
+    "code": "2106.10",
+    "reason": "Protein concentrates"
+   },
+   {
+    "code": "2004",
+    "reason": "Not vegetables"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Fungal protein based meat substitute is a prepared food not elsewhere specified, heading 2106."
+ }
+}

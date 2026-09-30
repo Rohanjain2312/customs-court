@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00145",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6111.30.50.20",
+  "facts": {
+   "material": "100% polyester knit",
+   "function": "costume for infants",
+   "form": "garments",
+   "end_use": "dress-up"
+  },
+  "gri_path": [
+   "GRI 1: Ch 61 babies' garments; Note 1(e) Ch 95"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90.60",
+    "reason": "festive articles"
+   },
+   {
+    "code": "6209.30",
+    "reason": "woven babies' garments"
+   }
+  ],
+  "missing_facts": [
+   "Whether costumes are flimsy or durable (9505 vs 6111)"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Knit polyester costumes for infants are babies' garments of synthetic fibers, 6111.30."
+ }
+}

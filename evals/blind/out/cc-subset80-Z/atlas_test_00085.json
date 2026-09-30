@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00085",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9018.49.80.00",
+  "facts": {
+   "material": "stainless steel",
+   "function": "orthodontic work",
+   "form": "hand instruments",
+   "end_use": "orthodontics"
+  },
+  "gri_path": [
+   "GRI 1: heading 9018 instruments used in dental sciences"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8203",
+    "reason": "pliers of ch 82"
+   },
+   {
+    "code": "9021.40",
+    "reason": "orthodontic appliances worn in mouth"
+   }
+  ],
+  "missing_facts": [
+   "Which instruments (pliers, etc.)"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Orthodontic instruments are dental instruments of 9018.49."
+ }
+}

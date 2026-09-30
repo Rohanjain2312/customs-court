@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00146",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8214.20.30.00",
+  "facts": {
+   "material": "gold-plated base metal in leather case",
+   "function": "grooming",
+   "form": "manicure set",
+   "end_use": "personal care"
+  },
+  "gri_path": [
+   "GRI 1: heading 8214 manicure sets; GRI 3(b)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4202.39",
+    "reason": "leather case"
+   },
+   {
+    "code": "8213",
+    "reason": "scissors"
+   }
+  ],
+  "missing_facts": [
+   "Number of items; value split"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Toilet set of tweezers, clippers, scissors in leather case is a manicure or pedicure set of 8214.20."
+ }
+}

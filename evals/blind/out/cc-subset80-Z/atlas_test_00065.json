@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00065",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8538.90.81.50",
+  "facts": {
+   "material": "plastic",
+   "function": "cover for controller housing",
+   "form": "molded cover",
+   "end_use": "electric motor controller"
+  },
+  "gri_path": [
+   "GRI 1: heading 8538 parts of 8535/8536/8537; Section XVI Note 2(b)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3926.90",
+    "reason": "other plastic articles"
+   },
+   {
+    "code": "8503",
+    "reason": "parts of motors"
+   }
+  ],
+  "missing_facts": [
+   "Whether covers are solely for the controller"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Plastic covers for a motor controller (an 8537 apparatus) are parts suitable solely for 8537, classified in 8538.90."
+ }
+}

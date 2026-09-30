@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00096",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9031.80.80.00",
+  "facts": {
+   "material": "wire loop and sensor",
+   "function": "counts vehicles",
+   "form": "sensors",
+   "end_use": "traffic counting"
+  },
+  "gri_path": [
+   "GRI 1: heading 9031 measuring or checking instruments n.e.s."
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9029.10",
+    "reason": "counters"
+   },
+   {
+    "code": "8536.50",
+    "reason": "switches"
+   },
+   {
+    "code": "8543.70",
+    "reason": "electrical machines"
+   }
+  ],
+  "missing_facts": [
+   "Whether loops are just wire"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Inductive loops for traffic counting are sensing/checking devices 9031.80."
+ }
+}

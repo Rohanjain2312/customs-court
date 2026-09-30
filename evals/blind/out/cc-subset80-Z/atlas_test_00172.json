@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00172",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8543.90.88.80",
+  "facts": {
+   "material": "electrodes and plastic",
+   "function": "generates chlorine from salt",
+   "form": "cartridge",
+   "end_use": "spas"
+  },
+  "gri_path": [
+   "GRI 1: heading 8543 electrical apparatus with individual function; parts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3808.94",
+    "reason": "disinfectant"
+   },
+   {
+    "code": "2501",
+    "reason": "salt"
+   },
+   {
+    "code": "8421",
+    "reason": "filters"
+   }
+  ],
+  "missing_facts": [
+   "Whether cartridge contains electrolytic cell or only salt"
+  ],
+  "confidence": 0.25,
+  "abstain": true,
+  "rationale": "Cartridge that generates chlorine may be an electrolytic cell part (8543) or only salt/chemical (2501/3808)."
+ }
+}

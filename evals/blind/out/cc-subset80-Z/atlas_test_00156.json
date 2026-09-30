@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00156",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8487.10.00.00",
+  "facts": {
+   "material": "metal",
+   "function": "propels vessel",
+   "form": "propulsion unit",
+   "end_use": "ships"
+  },
+  "gri_path": [
+   "GRI 1: heading 8487 ship propellers; uncertain vs 8408 or 8483"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8408.10",
+    "reason": "marine engines"
+   },
+   {
+    "code": "8483.40",
+    "reason": "gears"
+   }
+  ],
+  "missing_facts": [
+   "Whether includes engine/motor, or only propeller and gears"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "Description gives no detail on engine or motor content, which decides between 8408, 8483, 8501 and 8487."
+ }
+}

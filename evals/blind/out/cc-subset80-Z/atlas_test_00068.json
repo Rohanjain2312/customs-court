@@ -1,0 +1,29 @@
+{
+ "item_id": "atlas_test_00068",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "2905.32.00.00",
+  "facts": {
+   "material": "propylene glycol",
+   "function": "chemical",
+   "form": "liquid",
+   "end_use": "chemical industry"
+  },
+  "gri_path": [
+   "GRI 1: heading 2905 acyclic alcohols; 2905.32 propylene glycol"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "2905.39",
+    "reason": "other diols"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "Propylene glycol (propane-1,2-diol) is named in 2905.32."
+ }
+}

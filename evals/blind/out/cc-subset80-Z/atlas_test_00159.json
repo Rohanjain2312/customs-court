@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00159",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6110.90.90.68",
+  "facts": {
+   "material": "hemp and cotton knit",
+   "function": "men's pullover",
+   "form": "knit garment",
+   "end_use": "wear"
+  },
+  "gri_path": [
+   "GRI 1: heading 6110; Section XI Note 2 predominant fiber"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6110.20",
+    "reason": "cotton, if cotton predominates"
+   },
+   {
+    "code": "6110.10",
+    "reason": "wool"
+   }
+  ],
+  "missing_facts": [
+   "Which fiber predominates by weight (hemp vs cotton)"
+  ],
+  "confidence": 0.35,
+  "abstain": true,
+  "rationale": "Hemp is a vegetable fiber other than cotton; if hemp predominates subheading 6110.90, if cotton predominates 6110.20. Fiber shares are not given."
+ }
+}

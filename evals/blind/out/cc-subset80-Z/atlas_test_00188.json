@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00188",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8413.91.90.90",
+  "facts": {
+   "material": "steel",
+   "function": "transmits reciprocating motion to downhole pump",
+   "form": "rods and couplings",
+   "end_use": "oil wells"
+  },
+  "gri_path": [
+   "GRI 1: heading 8413 parts of pumps; Note 2(b) Section XVI"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7228",
+    "reason": "bars"
+   },
+   {
+    "code": "7326",
+    "reason": "steel articles"
+   },
+   {
+    "code": "8431.43",
+    "reason": "drilling machinery parts"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: couplings"
+  ],
+  "confidence": 0.3,
+  "abstain": false,
+  "rationale": "Sucker rods drive reciprocating downhole pumps, parts of pumps in 8413.91."
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00097",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8505.11.00.70",
+  "facts": {
+   "material": "rubber and NdFeB magnet",
+   "function": "holds keys on metal",
+   "form": "magnet with rubber cover",
+   "end_use": "key storage"
+  },
+  "gri_path": [
+   "GRI 3(b): composite, magnet gives essential character"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4016.99",
+    "reason": "rubber articles"
+   },
+   {
+    "code": "8301",
+    "reason": "key fittings"
+   }
+  ],
+  "missing_facts": [
+   "Whether magnet is permanent metal magnet"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "Composite of rubber cap and magnet; the magnet provides the function and thus essential character, 8505.11."
+ }
+}

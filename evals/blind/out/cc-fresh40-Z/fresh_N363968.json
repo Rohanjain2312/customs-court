@@ -1,0 +1,41 @@
+{
+ "item_id": "fresh_N363968",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "4419.20.40.00",
+  "facts": {
+   "material": "Acacia tropical wood board, steel strainer, bins and rack",
+   "function": "Food prep cutting board system",
+   "form": "Set",
+   "end_use": "Kitchen"
+  },
+  "gri_path": [
+   "GRI 3(b): wood board gives essential character; heading 4419 tableware and kitchenware of wood",
+   "GRI 6: tropical wood"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4419.11",
+    "reason": "Bamboo"
+   },
+   {
+    "code": "7323",
+    "reason": "Steel kitchenware, but not essential character"
+   },
+   {
+    "code": "4419.90",
+    "reason": "Non-tropical wood"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical line",
+   "Relative value of steel and wood pieces"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "A set where the wooden cutting board gives the essential character is classified as kitchenware of tropical wood."
+ }
+}

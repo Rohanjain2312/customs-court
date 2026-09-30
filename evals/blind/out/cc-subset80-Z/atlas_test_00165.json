@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00165",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8409.91.99.90",
+  "facts": {
+   "material": "metal",
+   "function": "senses crankshaft position",
+   "form": "blade",
+   "end_use": "spark ignition engine"
+  },
+  "gri_path": [
+   "GRI 1: heading 8409 parts of engines 8407; Note 2(b) Section XVI"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9031.80",
+    "reason": "sensing instrument"
+   },
+   {
+    "code": "8409.99",
+    "reason": "other engines"
+   }
+  ],
+  "missing_facts": [
+   "Whether it is mere trigger wheel vs active sensor"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Sensing blade is a part solely for spark-ignition piston engines, 8409.91."
+ }
+}

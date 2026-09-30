@@ -122,7 +122,43 @@
         "advocate": "claude-haiku-4-5"
       }
     },
-    "Z_cc": null,
+    "Z_cc": {
+      "run_id": "cc-subset80-Z",
+      "n": 80,
+      "acc_10": {
+        "mean": 0.2121,
+        "lo": 0.1212,
+        "hi": 0.3182,
+        "n": 66
+      },
+      "acc_8": {
+        "mean": 0.4328,
+        "lo": 0.3134,
+        "hi": 0.5522,
+        "n": 67
+      },
+      "acc_6": {
+        "mean": 0.5375,
+        "lo": 0.425,
+        "hi": 0.65,
+        "n": 80
+      },
+      "acc_4": {
+        "mean": 0.6375,
+        "lo": 0.525,
+        "hi": 0.7375,
+        "n": 80
+      },
+      "abstain_rate": 0.1375,
+      "acc6_when_answering": 0.5942,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 0.0,
+      "mode": "zero-shot-in-session",
+      "models": {
+        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API)"
+      }
+    },
     "A_cc": {
       "run_id": "cc-subset80-A",
       "n": 80,
@@ -190,6 +226,20 @@
       "n": 80,
       "within_noise": false
     },
+    "A_cc_minus_Z_cc_acc10": {
+      "diff": 0.303,
+      "lo": 0.1818,
+      "hi": 0.4394,
+      "n": 66,
+      "within_noise": false
+    },
+    "A_cc_minus_Z_cc_acc6": {
+      "diff": 0.1,
+      "lo": 0.0125,
+      "hi": 0.1875,
+      "n": 80,
+      "within_noise": false
+    },
     "fresh_A_cc_minus_Z_acc10": {
       "diff": 0.65,
       "lo": 0.5,
@@ -201,6 +251,20 @@
       "diff": 0.425,
       "lo": 0.275,
       "hi": 0.575,
+      "n": 40,
+      "within_noise": false
+    },
+    "fresh_A_cc_minus_Z_cc_acc10": {
+      "diff": 0.675,
+      "lo": 0.525,
+      "hi": 0.825,
+      "n": 40,
+      "within_noise": false
+    },
+    "fresh_A_cc_minus_Z_cc_acc6": {
+      "diff": 0.3,
+      "lo": 0.15,
+      "hi": 0.45,
       "n": 40,
       "within_noise": false
     }
@@ -286,7 +350,43 @@
         "advocate": "claude-haiku-4-5"
       }
     },
-    "Z_cc40": null,
+    "Z_cc40": {
+      "run_id": "cc-fresh40-Z",
+      "n": 40,
+      "acc_10": {
+        "mean": 0.15,
+        "lo": 0.05,
+        "hi": 0.275,
+        "n": 40
+      },
+      "acc_8": {
+        "mean": 0.35,
+        "lo": 0.2,
+        "hi": 0.5,
+        "n": 40
+      },
+      "acc_6": {
+        "mean": 0.6,
+        "lo": 0.45,
+        "hi": 0.75,
+        "n": 40
+      },
+      "acc_4": {
+        "mean": 0.7,
+        "lo": 0.55,
+        "hi": 0.825,
+        "n": 40
+      },
+      "abstain_rate": 0.075,
+      "acc6_when_answering": 0.6216,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 0.0,
+      "mode": "zero-shot-in-session",
+      "models": {
+        "main": "claude-sonnet-5-5 (in the Claude Code session, not the API)"
+      }
+    },
     "A_cc40": {
       "run_id": "cc-fresh40-A",
       "n": 40,
@@ -325,8 +425,85 @@
       }
     }
   },
-  "judge_cc-subset80-A": null,
-  "judge_cc-fresh40-A": null,
+  "judge_cc-subset80-A": {
+    "run_id": "cc-subset80-A",
+    "mode": "judged in the Claude Code session (no API spend)",
+    "judge_model": "claude-opus-5-5 (in session)",
+    "second_judge_model": "claude-haiku-4-5 (in session)",
+    "graded_in_main_session": {
+      "opus": [],
+      "haiku": []
+    },
+    "discarded_attempts": [
+      "discarded_verdicts_haiku_scripted.jsonl"
+    ],
+    "prompt": "evals/judge.py JUDGE_SYSTEM, reference from evals/judge.py reference_for",
+    "n_packets": 74,
+    "n_judged": 74,
+    "pass_rate": {
+      "mean": 0.6757,
+      "lo": 0.5676,
+      "hi": 0.7838,
+      "n": 74
+    },
+    "proxy_pass_given_correct10": {
+      "rate": 0.9032,
+      "n": 31
+    },
+    "proxy_fail_given_wrong_chapter": {
+      "rate": 0.9091,
+      "n": 11
+    },
+    "reference_sources": {
+      "ruling": 25,
+      "atlas_reasoning": 49
+    },
+    "cohen_kappa": 0.6378,
+    "raw_agreement": 0.8378,
+    "n_both": 74,
+    "second_pass_rate": 0.6486
+  },
+  "judge_cc-fresh40-A": {
+    "run_id": "cc-fresh40-A",
+    "mode": "judged in the Claude Code session (no API spend)",
+    "judge_model": "claude-opus-5-5 (in session)",
+    "second_judge_model": "claude-haiku-4-5 (in session)",
+    "graded_in_main_session": {
+      "opus": [
+        "fresh_N364413",
+        "fresh_N364446",
+        "fresh_N364644",
+        "fresh_N364732"
+      ],
+      "haiku": []
+    },
+    "discarded_attempts": [],
+    "prompt": "evals/judge.py JUDGE_SYSTEM, reference from evals/judge.py reference_for",
+    "n_packets": 40,
+    "n_judged": 40,
+    "pass_rate": {
+      "mean": 0.9,
+      "lo": 0.8,
+      "hi": 0.975,
+      "n": 40
+    },
+    "proxy_pass_given_correct10": {
+      "rate": 1.0,
+      "n": 33
+    },
+    "proxy_fail_given_wrong_chapter": {
+      "rate": 1.0,
+      "n": 1
+    },
+    "reference_sources": {
+      "ruling": 40,
+      "atlas_reasoning": 0
+    },
+    "cohen_kappa": 0.7727,
+    "raw_agreement": 0.95,
+    "n_both": 40,
+    "second_pass_rate": 0.85
+  },
   "dev": {
     "dev100-A": {
       "run_id": "dev100-A",
@@ -490,13 +667,13 @@
     }
   },
   "cost": {
-    "actual_usd": 13.1836,
-    "no_cache_same_mode_usd": 26.9237,
-    "no_cache_no_batch_usd": 39.3047,
-    "calls": 2099,
-    "cache_read_tokens": 17268867,
-    "input_tokens_all": 21234507,
-    "cache_read_share": 0.8132,
-    "saving_vs_no_cache_no_batch": 0.6646
+    "actual_usd": 13.3414,
+    "no_cache_same_mode_usd": 27.3323,
+    "no_cache_no_batch_usd": 39.7133,
+    "calls": 2283,
+    "cache_read_tokens": 18752606,
+    "input_tokens_all": 23035112,
+    "cache_read_share": 0.8141,
+    "saving_vs_no_cache_no_batch": 0.6641
   }
 }

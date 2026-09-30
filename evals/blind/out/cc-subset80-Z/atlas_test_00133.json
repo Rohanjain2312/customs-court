@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00133",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "2930.90.49.00",
+  "facts": {
+   "material": "organic sulfur compound",
+   "function": "chemical intermediate",
+   "form": "solid",
+   "end_use": "chemical"
+  },
+  "gri_path": [
+   "GRI 1: heading 2930 organo-sulfur compounds"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "2918.29",
+    "reason": "phenolic/carboxylic acids"
+   },
+   {
+    "code": "2930.90.29",
+    "reason": "other organo-sulfur"
+   }
+  ],
+  "missing_facts": [
+   "Whether statistical suffix 2930.90.49 or .29 applies"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Disulfide of thiosalicylic acid is an organo-sulfur compound; under GRI 1 it goes to heading 2930 (Note 3 to Ch 29 sulfur functions), other organo-sulfur."
+ }
+}

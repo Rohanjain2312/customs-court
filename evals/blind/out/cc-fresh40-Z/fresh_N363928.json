@@ -1,0 +1,39 @@
+{
+ "item_id": "fresh_N363928",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8211.93.00.60",
+  "facts": {
+   "material": "Zinc alloy and stainless steel",
+   "function": "Cut cardboard and plastic",
+   "form": "Folding knife with replaceable blade and screwdriver",
+   "end_use": "General utility"
+  },
+  "gri_path": [
+   "GRI 1: heading 8211 knives with cutting blades, folding, other than fixed blades"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8211.92",
+    "reason": "Fixed blades"
+   },
+   {
+    "code": "8205.40",
+    "reason": "Screwdriver is incidental"
+   },
+   {
+    "code": "8208",
+    "reason": "Knife blades not imported separately"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "A folding knife with a removable blade is classified as a knife with other than fixed blade, 8211.93."
+ }
+}

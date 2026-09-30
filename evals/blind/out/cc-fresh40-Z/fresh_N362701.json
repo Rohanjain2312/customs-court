@@ -1,0 +1,41 @@
+{
+ "item_id": "fresh_N362701",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3213.10.00.00",
+  "facts": {
+   "material": "Acrylic paints, brushes, acrylic sheet, paper, wood stand",
+   "function": "Creative painting kit",
+   "form": "Retail set",
+   "end_use": "Art activity"
+  },
+  "gri_path": [
+   "GRI 3(b): retail set, essential character from paints",
+   "GRI 6: 3213.10 colors in sets"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9503.00.00",
+    "reason": "Activity kit for all ages, not clearly a toy"
+   },
+   {
+    "code": "3926.90",
+    "reason": "Acrylic sheet is merely a substrate"
+   },
+   {
+    "code": "9603.30",
+    "reason": "Brushes are minor"
+   }
+  ],
+  "missing_facts": [
+   "Whether kit is principally a children's toy",
+   "Relative value of components"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Put up as a retail set with mixed components, the kit is classified by the component giving essential character. The paints are the colouring medium and define the activity, so artists' colours in sets, 3213.10."
+ }
+}

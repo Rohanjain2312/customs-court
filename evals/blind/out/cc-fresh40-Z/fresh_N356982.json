@@ -1,0 +1,41 @@
+{
+ "item_id": "fresh_N356982",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6802.91.05.00",
+  "facts": {
+   "material": "Natural stone (Saturnia, dark gray/black mottled)",
+   "function": "Countertop/furniture surface slabs after cutting",
+   "form": "Large slab, top polished, sides sawn",
+   "end_use": "Kitchen and bathroom countertops, office furniture surfaces"
+  },
+  "gri_path": [
+   "GRI 1: heading 6802 covers worked monumental or building stone",
+   "GRI 6: polished (worked beyond simple sawing) goes to 6802.91 or 6802.92 depending on stone type"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6802.21",
+    "reason": "Top is polished, more than simply cut or sawn"
+   },
+   {
+    "code": "6802.92",
+    "reason": "Applies if the stone is limestone rather than marble/travertine"
+   },
+   {
+    "code": "2515",
+    "reason": "Stone is worked and polished, not merely roughly trimmed or squared"
+   }
+  ],
+  "missing_facts": [
+   "Geological type: marble/travertine versus limestone or other calcareous stone",
+   "Exact statistical line within 6802.91/6802.92"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Polished slabs of building stone fall in heading 6802. Whether they are marble/travertine (6802.91) or other calcareous stone (6802.92) decides the subheading and is not stated; best guess is marble/travertine."
+ }
+}

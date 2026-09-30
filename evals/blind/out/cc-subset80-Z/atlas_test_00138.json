@@ -1,0 +1,36 @@
+{
+ "item_id": "atlas_test_00138",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9505.90.60.00",
+  "facts": {
+   "material": "synthetic fibers and various materials",
+   "function": "dress-up",
+   "form": "costume set",
+   "end_use": "festive/play"
+  },
+  "gri_path": [
+   "GRI 1: heading 9505 festive articles; first-named princess set"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6208",
+    "reason": "girls' dresses"
+   },
+   {
+    "code": "6204",
+    "reason": "dresses, Note 1(e) Ch 95 excludes fancy dress of textiles of Ch 61/62 if durable"
+   }
+  ],
+  "missing_facts": [
+   "Classify separately: Hippie costume",
+   "Garment quality durable vs flimsy"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Princess costume set including non-textile items like crown and necklace treated as a festive article 9505.90.60."
+ }
+}

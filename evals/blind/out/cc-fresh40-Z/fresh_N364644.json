@@ -1,0 +1,39 @@
+{
+ "item_id": "fresh_N364644",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3917.21.00.00",
+  "facts": {
+   "material": "HDPE",
+   "function": "Mold tube for pouring concrete",
+   "form": "Cylindrical tube, 4 ft",
+   "end_use": "Construction"
+  },
+  "gri_path": [
+   "GRI 1: heading 3917 tubes of plastics"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3926.90",
+    "reason": "Other articles"
+   },
+   {
+    "code": "8480.50",
+    "reason": "Molds for mineral material, but single-use tube forms are not molds"
+   },
+   {
+    "code": "4822",
+    "reason": "Paper tubes"
+   }
+  ],
+  "missing_facts": [
+   "Whether rigid tube or mold"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Rigid HDPE cylindrical tubes are tubes of plastics, 3917.21 polymers of ethylene."
+ }
+}

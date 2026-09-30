@@ -1,0 +1,36 @@
+{
+ "item_id": "fresh_N362421",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3004.90.92.60",
+  "facts": {
+   "material": "Pantoprazole sodium active ingredient in tablet",
+   "function": "Proton pump inhibitor medicament",
+   "form": "Delayed-release tablets in measured doses",
+   "end_use": "Treatment of erosive esophagitis, acid hypersecretion"
+  },
+  "gri_path": [
+   "GRI 1: heading 3004 medicaments in measured doses",
+   "GRI 6: other medicaments, not antibiotic, hormone, alkaloid or vitamin"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3003",
+    "reason": "Not in bulk, put up in doses"
+   },
+   {
+    "code": "2933",
+    "reason": "Bulk active ingredient only, not dosage form"
+   }
+  ],
+  "missing_facts": [
+   "Exact statistical suffix"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Delayed-release tablets of a PPI are medicaments put up in measured doses, so heading 3004. The active is a heterocyclic compound not listed in earlier subheadings, so other medicaments."
+ }
+}
