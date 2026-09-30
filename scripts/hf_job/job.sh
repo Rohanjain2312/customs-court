@@ -25,6 +25,7 @@ python3 - <<PY
 from huggingface_hub import snapshot_download
 snapshot_download("$REPO", repo_type="dataset", local_dir="$W/hf", allow_patterns=["bundle/*", "results/*/state.tar.gz"])
 PY
+[ -f hf/bundle/code.tar.gz ] || { log "bundle download failed"; exit 1; }
 tar xzf hf/bundle/code.tar.gz -C "$W"
 mkdir -p data/index data/cache evals/runs evals/reports logs
 cp hf/bundle/data/*.sqlite hf/bundle/data/*.json data/ 2>/dev/null
@@ -39,10 +40,10 @@ python3 -m venv --system-site-packages ${VENV_DIR:-/opt/ta}
 # CPU torch first, so sentence-transformers does not pull a 2.5 GB CUDA build (query embeddings run on CPU).
 ${VENV_DIR:-/opt/ta}/bin/python -c "import torch" 2>/dev/null || \
   ${VENV_DIR:-/opt/ta}/bin/pip install -q torch --index-url https://download.pytorch.org/whl/cpu > logs/pip.log 2>&1
-${VENV_DIR:-/opt/ta}/bin/pip install -q "pydantic-settings>=2.4" "typer>=0.12" rich python-dotenv "mcp>=1.20" \
-  "anthropic>=0.70" "openai>=1.50" "sentence-transformers>=3.0" faiss-cpu pypdf beautifulsoup4 \
-  sse-starlette pytest >> logs/pip.log 2>&1 || { log "pip failed"; tail -20 logs/pip.log; }
-${VENV_DIR:-/opt/ta}/bin/pip install -q --no-deps -e . >> logs/pip.log 2>&1
+${VENV_DIR:-/opt/ta}/bin/pip install -q "pydantic-settings==2.15.0" "typer==0.27.2" "rich==15.0.0" python-dotenv \
+  "mcp==2.2.0" "anthropic[bedrock,vertex]==1.9.0" "openai==3.20.0" "sentence-transformers==6.1.0" \
+  "faiss-cpu==1.15.1" pypdf beautifulsoup4 sse-starlette fastapi uvicorn pytest >> logs/pip.log 2>&1 || { log "pip failed"; tail -20 logs/pip.log; }
+${VENV_DIR:-/opt/ta}/bin/pip install -q --no-deps -e . >> logs/pip.log 2>&1 || { log "install failed"; tail -20 logs/pip.log; exit 1; }
 TA=${VENV_DIR:-/opt/ta}/bin/tariffagent
 
 export DATA_DIR="$W/data" USE_VECTORS=true OFFLINE=false PHASE=open
@@ -62,6 +63,8 @@ SYNC_PID=$!
 
 if [ "$PLAN" = "check" ]; then
   log "CPU check: offline tests and smoke eval"
+  # Recorded fixtures were made with the Claude model ids.
+  export REASONER_MODEL=claude-sonnet-5 ADVOCATE_MODEL=claude-haiku-4-5 JUDGE_MODEL=claude-haiku-4-5
   (cd "$W" && OFFLINE=true USE_VECTORS=false ${VENV_DIR:-/opt/ta}/bin/python -m pytest -q -m "not live" -p no:cacheprovider tests 2>&1 | tail -5) | tee logs/check.log
   (OFFLINE=true $TA eval smoke 2>&1 | tail -3) | tee -a logs/check.log
   ${VENV_DIR:-/opt/ta}/bin/python -c "from tariffagent.agents.runner import provider_for; print(type(provider_for('local-qwen3.6-35b-a3b')).__name__)" | tee -a logs/check.log
