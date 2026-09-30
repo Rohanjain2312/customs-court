@@ -1,0 +1,56 @@
+{
+ "item_id": "atlas_test_00047",
+ "classification": {
+  "hts10": "3504.00.50.80",
+  "facts": {
+   "material": "protein (identity, source and purity not stated)",
+   "function": "not stated; product names suggest use in natural killer (NK) cell and CAR-T cell culture or therapy",
+   "form": "not stated",
+   "end_use": "presumably biotechnology/cell culture"
+  },
+  "gri_path": [
+   "GRI 1: the products are described only as proteins; heading 3504 covers other protein substances and their derivatives not elsewhere specified",
+   "Chapter 30 considered: 3002 (immunological products, cell therapy products) would apply if the goods are antibodies/cytokine immunological products or living cell therapy products, which the description does not establish",
+   "GRI 6: 3504.00 not a protein isolate, not from peas, so 3504.00.50.80"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N249832",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3002.51.00.00",
+    "reason": "cell therapy products (e.g. CAR-T therapy YESCARTA, N325758); applies only if the goods are living engineered cells, not a protein"
+   },
+   {
+    "code": "3002.15/3002.13/3002.14",
+    "reason": "immunological products (antibodies, cytokines, interleukins); applies if the protein is an immunological product, not stated"
+   },
+   {
+    "code": "3821.00.00",
+    "reason": "prepared culture media; applies only if the goods are a complete culture medium rather than a single protein"
+   },
+   {
+    "code": "3822",
+    "reason": "diagnostic or laboratory reagents on a backing or prepared kits; not described as such"
+   }
+  ],
+  "missing_facts": [
+   "What exactly are NATCELL and CAR T CELL: a single purified protein, a cytokine/antibody (immunological product of 3002), a culture medium or supplement (3821), or living cells (3002.51)?",
+   "What is the protein's source and purity, and is it put up in measured doses for therapeutic use?"
+  ],
+  "confidence": 0.25,
+  "abstain": true,
+  "rationale": "The description names two products only as 'Protein', without saying what protein they are or how they are used. If they are protein substances used to support NK or CAR-T cell culture, heading 3504 (other protein substances n.e.s.) applies, as in NY N249832 (laminin protein for cell culture, 3504.00.50, in force), giving 3504.00.50.80. If they are cytokines or antibodies, heading 3002 immunological products would apply, and if they are engineered cells, 3002.51 cell therapy products (NY N325758)."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "hts_search"
+ ]
+}

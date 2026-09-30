@@ -1,6 +1,6 @@
 """Write a descriptions-only copy of a dataset for blind classification (no gold fields).
 
-    uv run python scripts/blind_items.py atlas_test_200 --items-from subset_80 --out evals/blind/subset_80.jsonl
+uv run python scripts/blind_items.py atlas_test_200 --items-from subset_80 --out evals/blind/subset_80.jsonl
 """
 
 from __future__ import annotations

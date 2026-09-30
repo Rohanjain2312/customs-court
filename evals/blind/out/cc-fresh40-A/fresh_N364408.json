@@ -1,0 +1,51 @@
+{
+ "item_id": "fresh_N364408",
+ "classification": {
+  "hts10": "8481.80.50.90",
+  "facts": {
+   "material": "plastic pistol-grip body and trigger; air hose assembly",
+   "function": "hand-operated valve to inflate/deflate tires while a digital gauge displays pressure",
+   "form": "tire inflator with LCD pressure display, imported with batteries",
+   "end_use": "vehicle tire inflation"
+  },
+  "gri_path": [
+   "GRI 1: heading 8481 covers taps, cocks, valves and similar appliances for pipes, tanks or the like; the inflator is a hand-operated valve controlling air flow into/out of a tire",
+   "GRI 3(b): the valve mechanism, not the digital gauge, gives the essential character (gauge is an aid to operating the valve)",
+   "GRI 6: 8481.80 other appliances; hand operated; 8481.80.50 of other materials (plastic body); 8481.80.50.90 other"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "N054119",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9026.20.80",
+    "reason": "pressure gauge function is subsidiary to the valve function that controls inflation/deflation"
+   },
+   {
+    "code": "8414.80",
+    "reason": "device has no compressor or pump; it only controls air from an external source"
+   },
+   {
+    "code": "8481.80.30",
+    "reason": "body is plastic, not iron or steel"
+   }
+  ],
+  "missing_facts": [
+   "Batteries packed with the inflator may be classified separately (heading 8506)"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "The tire inflator is a hand-operated valve in a plastic pistol-grip body that lets the user inflate or deflate a tire while an LCD gauge shows the pressure. CBP classified tire inflators with gauge and gun grip as hand-operated valves of other materials in 8481.80.5090 (N054119, in force). The digital gauge is subsidiary to the valve function, and the plastic body points to the 'other materials' line."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "get_ruling"
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "item_id": "fresh_N363968",
+ "classification": {
+  "hts10": "4419.90.91.00",
+  "facts": {
+   "material": "acacia wood (tropical) cutting board; steel strainer, storage bins with lids and support rack",
+   "function": "food preparation: cutting, straining and holding prepped ingredients",
+   "form": "two-sided cutting board system with removable steel components",
+   "end_use": "household kitchen"
+  },
+  "gri_path": [
+   "GRI 1/2(b): prima facie classifiable in 4419 (kitchenware of wood) and 7323 (household articles of steel)",
+   "GRI 3(b): composite good / set for food prep; the acacia wood cutting board, the principal work surface, gives the essential character; the steel strainer, bins and rack are ancillary",
+   "GRI 6: 4419.90 other (not bamboo); 4419.90.91.00 other than forks and spoons"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "N010808",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "7323.93.00",
+    "reason": "steel strainer, bins and rack play a secondary role to the wood cutting surface"
+   },
+   {
+    "code": "4419.1x",
+    "reason": "those lines are for bamboo; board is acacia wood"
+   },
+   {
+    "code": "4419.90.11.00",
+    "reason": "not forks or spoons"
+   }
+  ],
+  "missing_facts": [
+   "Relative value and weight of the steel components versus the wood board (would confirm essential character)"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "The cutting board system combines an acacia wood board with removable steel strainer, bins and rack, so it is a composite good or set classified under GRI 3(b). The wood cutting board is the central work surface and gives the essential character, as CBP found for a wood board with an ancillary component in N010808 (in force). As kitchenware of non-bamboo wood other than forks and spoons, it falls in 4419.90.91.00."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

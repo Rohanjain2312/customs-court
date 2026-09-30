@@ -1,0 +1,51 @@
+{
+ "item_id": "fresh_N364446",
+ "classification": {
+  "hts10": "9027.90.56.95",
+  "facts": {
+   "material": "polycarbonate enclosure, electronics, rechargeable lithium-polymer battery",
+   "function": "powers the implanted glucose sensor and wirelessly transmits glucose data, alerts and trends to a mobile app",
+   "form": "reusable wearable transmitter, imported separately from sensors in trays of 20",
+   "end_use": "Eversense365 continuous glucose monitoring system for adults with diabetes"
+  },
+  "gri_path": [
+   "GRI 1: complete CGM system is an instrument for chemical analysis (glucose measurement) of heading 9027, subheading 9027.89",
+   "Chapter 90 note 2(b): the transmitter is designed exclusively for and is an integral component of the Eversense365 CGM system, so it is classified as a part of that instrument; it is not a standalone good of another heading under note 2(a) since it also powers and operates the sensor",
+   "GRI 6: 9027.90 parts and accessories; 9027.90.56 of instruments of 9027.89; 9027.90.56.95 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N354553",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8517.62.00",
+    "reason": "the wireless link is one of several functions; the transmitter also powers the implanted sensor and is designed solely for the CGM system (chapter 90 note 2(b)); arguable under note 2(a)"
+   },
+   {
+    "code": "9018.19.95.60",
+    "reason": "CBP treats CGM systems as instruments for chemical analysis of 9027, not electro-diagnostic apparatus"
+   },
+   {
+    "code": "9027.89.45",
+    "reason": "the transmitter alone is not a complete measuring instrument"
+   }
+  ],
+  "missing_facts": [
+   "Does the transmitter itself calculate glucose values from sensor signals (would support treatment as part vs. standalone transmission apparatus)?"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "The smart transmitter is designed exclusively for the Eversense365 CGM system, powering the implanted sensor and relaying glucose data to the app. Under chapter 90 note 2(b) it is classified with the instrument it serves, a glucose-measuring instrument of heading 9027. CBP has classified CGM sensors, which N354553 (in force) describes as part of a system that includes the transmitter, as parts and accessories in 9027.90.5695. The transmitter follows the same line."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

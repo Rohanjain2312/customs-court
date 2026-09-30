@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00008",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9027.90.56.80",
+  "facts": {
+   "material": "electronic components on PCB",
+   "function": "gas sensing circuit assembly",
+   "form": "printed circuit assembly",
+   "end_use": "part of hydrogen gas analyzer"
+  },
+  "gri_path": [
+   "GRI 1: parts of gas analysis instruments heading 9027, Note 2 to Ch 90"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8543.90",
+    "reason": "parts of electrical machines n.e.s.; 9027 part is more specific via Note 2(b)"
+   },
+   {
+    "code": "8537",
+    "reason": "not a control panel"
+   }
+  ],
+  "missing_facts": [
+   "Whether it is a part of a specific instrument or a standalone sensor"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A PCBA for a hydrogen gas sensor is a part solely for gas analysis apparatus of heading 9027. Classified as printed circuit assemblies of 9027.90."
+ }
+}

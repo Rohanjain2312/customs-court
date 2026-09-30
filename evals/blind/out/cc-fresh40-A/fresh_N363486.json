@@ -1,0 +1,44 @@
+{
+ "item_id": "fresh_N363486",
+ "classification": {
+  "hts10": "9505.90.60.00",
+  "facts": {
+   "material": "textile (fiber not stated)",
+   "function": "festive dress-up costume portraying an Olympian goddess",
+   "form": "sleeveless pullover dress with attached drape, two pin-on shoulder medallions, two armbands; raw unfinished edges at drape, back ties and hem",
+   "end_use": "adult festive/Halloween wear"
+  },
+  "gri_path": [
+   "GRI 1: Chapter 95 note 1 excludes fancy dress of textile materials of Chapter 61/62, but per CBP practice (Rubie's) flimsy, non-durable costumes with raw unfinished edges are festive articles of heading 9505",
+   "GRI 3(b): costume set put up together; the dress gives essential character",
+   "GRI 6: 9505.90 other festive articles; 9505.90.60.00 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N327404",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6204.49 / 6104.4x",
+    "reason": "costume is flimsy with raw unfinished edges and is not wearing apparel of chapters 61/62"
+   },
+   {
+    "code": "9505.90.40",
+    "reason": "that line covers Halloween/festive masks and other specified items, not textile costumes"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "The costume dress has raw, unfinished edges at the drape, back ties and hem, making it a flimsy, non-durable festive article rather than wearing apparel. CBP classifies such goddess-type costumes in 9505.90.6000 (N327404 Love Goddess, in force; N324994 Golden Goddess). The accessories (medallions, armbands) are packed with the dress and follow it as a set. Classification is 9505.90.60.00."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

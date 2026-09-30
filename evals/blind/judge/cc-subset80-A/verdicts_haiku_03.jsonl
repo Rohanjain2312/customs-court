@@ -1,0 +1,17 @@
+{"item_id": "atlas_test_00165", "verdict": "fail", "reason": "CBP classified as 8409.91.50.85 (parts for spark ignition engines in specific vehicles) vs assistant chose 8409.91.99.90 (residual without stated vehicle); different subheading due to different factual assumptions."}
+{"item_id": "atlas_test_00168", "verdict": "pass", "reason": "Both classified as 6111.20.60.20 (infants' cotton knit set); decisive basis is Additional U.S. Note 1 defining sets and GRI 6 for statistical suffix."}
+{"item_id": "atlas_test_00170", "verdict": "fail", "reason": "CBP classified as 8481.90 (parts of taps/valves) vs assistant as 8481.80 (complete valve/tap); different subheading and different legal basis."}
+{"item_id": "atlas_test_00171", "verdict": "pass", "reason": "Both classified as 6211.42 (women's cotton garments); heading and subheading match; differences in statistical suffix only due to tariff tree restructuring."}
+{"item_id": "atlas_test_00172", "verdict": "fail", "reason": "CBP classified as 8421.99.0040 (parts of filtering machinery) vs assistant as 8543.30.90.90 (electrolysis apparatus); different headings."}
+{"item_id": "atlas_test_00175", "verdict": "pass", "reason": "Both classified as 3918.10.10 (vinyl floor tiles); heading and subheading match; differences in statistical suffix only."}
+{"item_id": "atlas_test_00177", "verdict": "pass", "reason": "Both classified as 8474.10.00.90 (mineral sorting/separating machinery); same code with format notation difference."}
+{"item_id": "atlas_test_00180", "verdict": "pass", "reason": "Both classified as 8431.43 (parts of boring/sinking machinery); heading and subheading match; Section XVI note 2(b) used by both."}
+{"item_id": "atlas_test_00181", "verdict": "pass", "reason": "Both classified as 8501.10.40.40 (DC brushless motors); same code with notation difference; Section XVI note 2(a) used by both."}
+{"item_id": "atlas_test_00184", "verdict": "pass", "reason": "Both classified as 6110.20.20 (men's knit pullovers of cotton); heading and subheading match; differences in statistical suffix only."}
+{"item_id": "atlas_test_00185", "verdict": "fail", "reason": "CBP classified as 8432.90.0060 (parts of agricultural spreaders) vs assistant as 8483.40.50.10 (gear boxes); different headings."}
+{"item_id": "atlas_test_00186", "verdict": "pass", "reason": "Both classified as 8519.81.30.20 (sound reproducing apparatus); same code with notation difference."}
+{"item_id": "atlas_test_00188", "verdict": "pass", "reason": "Both classified as 8413.91.90 (parts of pumps); heading and subheading match; Section XVI note 2(b) used by both; assistant adds statistical suffix .31."}
+{"item_id": "atlas_test_00192", "verdict": "fail", "reason": "CBP classified as 9020.00.9000 (breathing appliances) vs assistant as 5911.90.00.80 (textile filtering articles); different headings."}
+{"item_id": "atlas_test_00193", "verdict": "pass", "reason": "Both classified as 9020.00.60.00 (breathing appliances); same code with notation difference; GRI 3(b) used for essential character."}
+{"item_id": "atlas_test_00196", "verdict": "pass", "reason": "Both classified as 3923.21.00.95 (polyethylene bags); same code with notation difference."}
+{"item_id": "atlas_test_00197", "verdict": "fail", "reason": "CBP classified as 9002.19.0000 (optical elements/lenses) vs assistant as 9027.90.56.50 (parts of electrical instruments); different headings."}

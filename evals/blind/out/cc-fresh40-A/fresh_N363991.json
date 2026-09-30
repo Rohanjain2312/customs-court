@@ -1,0 +1,51 @@
+{
+ "item_id": "fresh_N363991",
+ "classification": {
+  "hts10": "9403.91.00.80",
+  "facts": {
+   "material": "pressure-treated pine wood mounting plate and post; powder-coated galvanized steel helical ground anchor; hardware",
+   "function": "pedestal base supporting a Little Free Library book box above ground",
+   "form": "retail kit, unassembled: plate, post, anchor, hardware",
+   "end_use": "outdoor installation at residences/gardens for community book exchange"
+  },
+  "gri_path": [
+   "GRI 1: the Little Free Library book box is furniture of heading 9403 (CBP N350230 classified an outdoor literature storage box in 9403.60); the mounting kit is dedicated to it and serves as its pedestal base",
+   "Chapter 94 note / heading 9403 covers parts of furniture; kit is solely designed to mount to the Little Free Library",
+   "GRI 3(b): wood plate and post give the essential character of the kit over the steel anchor and hardware",
+   "GRI 6: 9403.91.00 parts of furniture of wood; 9403.91.00.80 other"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "N350230",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "4421.99.98",
+    "reason": "other articles of wood; the kit is a dedicated part (base) of furniture of 9403, which is more specific"
+   },
+   {
+    "code": "9403.99",
+    "reason": "parts of other materials; wood components predominate over the steel anchor"
+   },
+   {
+    "code": "7308.90 / 7326.90",
+    "reason": "steel anchor does not give essential character"
+   }
+  ],
+  "missing_facts": [
+   "Relative weight/value of the wood components versus the steel anchor"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "The Outdoor Mounting Kit is a pedestal base designed solely to support the Little Free Library book box, which CBP treats as furniture of heading 9403 (N350230, in force). As a dedicated component that attaches to and supports that furniture, it is a part of furniture. The wood mounting plate and post form the bulk of the kit and give it its essential character under GRI 3(b), so it falls in 9403.91.00.80, parts of furniture of wood, other."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

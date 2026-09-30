@@ -1,0 +1,54 @@
+{
+ "item_id": "fresh_N364732",
+ "classification": {
+  "hts10": "3916.90.30.00",
+  "facts": {
+   "material": "PA6-imide polyamide thermoplastic, no reinforcements or fillers",
+   "function": "feedstock for material-extrusion additive manufacturing (3D printing)",
+   "form": "extruded monofilament, solid circular cross-section, 1.75 mm diameter, on spools",
+   "end_use": "3D printing"
+  },
+  "gri_path": [
+   "GRI 1: heading 3916 covers monofilament of plastics of which any cross-sectional dimension exceeds 1 mm; 1.75 mm diameter qualifies",
+   "Section XI / chapter 54 exclude monofilament exceeding 1 mm cross-section, so not synthetic filament yarn of 5404",
+   "GRI 5(b): spools are ordinary packing/holding devices, classified with the filament",
+   "GRI 6: 3916.90 of other plastics (polyamide); other; other (not racket strings); 3916.90.30.00 monofilament"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N356246",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "5404.11 / 5404.19",
+    "reason": "synthetic monofilament of 67 decitex or more with cross-section not exceeding 1 mm; this filament is 1.75 mm"
+   },
+   {
+    "code": "3916.90.50.00",
+    "reason": "covers rods, sticks and profile shapes; the article is a monofilament"
+   },
+   {
+    "code": "3916.90.20.00",
+    "reason": "not racket strings"
+   },
+   {
+    "code": "3908.10",
+    "reason": "not a primary form; it is an extruded monofilament"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "The PA6-imide product is an extruded polyamide monofilament 1.75 mm in diameter, which exceeds 1 mm, so heading 3916 covers it rather than the textile monofilament provisions of chapter 54. The spools are ordinary holding devices. CBP classified 3D-printing filament of another plastic (PEEK) as monofilament in 3916.90.3000 (N356246, in force). The polyamide filament falls in 3916.90.30.00."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

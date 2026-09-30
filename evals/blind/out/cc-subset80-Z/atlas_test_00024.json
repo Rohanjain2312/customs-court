@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00024",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "7411.21.10.00",
+  "facts": {
+   "material": "brass (copper-zinc alloy)",
+   "function": "decorative pipe",
+   "form": "seamless and welded tube 2 in and 1.5 in OD",
+   "end_use": "decorative"
+  },
+  "gri_path": [
+   "GRI 1: heading 7411 copper tubes and pipes; Ch 74 Note 1 brass"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7411.29",
+    "reason": "other copper alloys, not brass"
+   },
+   {
+    "code": "7411.10",
+    "reason": "refined copper"
+   }
+  ],
+  "missing_facts": [
+   "Seamless vs welded split"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Brass tube of heading 7411, subheading 7411.21 of zinc-based alloys (brass). Seamless and ERW are both covered; first-named seamless is selected."
+ }
+}

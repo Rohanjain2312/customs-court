@@ -56,8 +56,13 @@ def reply(body: dict) -> dict:
         msg = {
             "role": "assistant",
             "content": None,
-            "tool_calls": [{"id": f"call_{time.time_ns()}", "type": "function",
-                            "function": {"name": name, "arguments": json.dumps(args)}}],
+            "tool_calls": [
+                {
+                    "id": f"call_{time.time_ns()}",
+                    "type": "function",
+                    "function": {"name": name, "arguments": json.dumps(args)},
+                }
+            ],
         }
         finish = "tool_calls"
     else:
@@ -78,8 +83,12 @@ def reply(body: dict) -> dict:
         "object": "chat.completion",
         "model": body.get("model"),
         "choices": [{"index": 0, "message": msg, "finish_reason": finish}],
-        "usage": {"prompt_tokens": 1000, "completion_tokens": 50, "total_tokens": 1050,
-                  "prompt_tokens_details": {"cached_tokens": 800}},
+        "usage": {
+            "prompt_tokens": 1000,
+            "completion_tokens": 50,
+            "total_tokens": 1050,
+            "prompt_tokens_details": {"cached_tokens": 800},
+        },
     }
 
 

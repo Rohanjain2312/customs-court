@@ -39,43 +39,40 @@
         "reasoner": "claude-sonnet-5",
         "advocate": "claude-haiku-4-5"
       }
-    },
-    "os-atlas200-Z": null,
-    "os-atlas200-A": null,
-    "os-atlas200-D": null
+    }
   },
-  "fresh150": {
-    "fresh150-Z": {
-      "run_id": "fresh150-Z",
-      "n": 150,
+  "subset80": {
+    "Z": {
+      "run_id": "atlas200-Z",
+      "n": 80,
       "acc_10": {
-        "mean": 0.2,
-        "lo": 0.14,
-        "hi": 0.2667,
-        "n": 150
+        "mean": 0.2273,
+        "lo": 0.1212,
+        "hi": 0.3333,
+        "n": 66
       },
       "acc_8": {
-        "mean": 0.3333,
-        "lo": 0.26,
-        "hi": 0.4133,
-        "n": 150
+        "mean": 0.403,
+        "lo": 0.2836,
+        "hi": 0.5224,
+        "n": 67
       },
       "acc_6": {
-        "mean": 0.48,
+        "mean": 0.5125,
         "lo": 0.4,
-        "hi": 0.56,
-        "n": 150
+        "hi": 0.625,
+        "n": 80
       },
       "acc_4": {
-        "mean": 0.6933,
-        "lo": 0.6133,
-        "hi": 0.7667,
-        "n": 150
+        "mean": 0.5375,
+        "lo": 0.425,
+        "hi": 0.65,
+        "n": 80
       },
-      "abstain_rate": 0.0133,
-      "acc6_when_answering": 0.4932,
-      "usd_per_item": 0.00599,
-      "tokens_per_item": 7309.8,
+      "abstain_rate": 0.15,
+      "acc6_when_answering": 0.6212,
+      "usd_per_item": 0.00671,
+      "tokens_per_item": 6966.4,
       "tool_calls_per_item": 0.0,
       "mode": "batch",
       "models": {
@@ -85,15 +82,6 @@
         "advocate": "claude-haiku-4-5"
       }
     },
-    "os-fresh150-Z": null,
-    "os-fresh150-A": null
-  },
-  "subset80": {
-    "A": null,
-    "B": null,
-    "C": null,
-    "D": null,
-    "A_ask": null,
     "O": {
       "run_id": "subset80-O",
       "n": 80,
@@ -133,9 +121,212 @@
         "reasoner": "claude-sonnet-5",
         "advocate": "claude-haiku-4-5"
       }
+    },
+    "Z_cc": null,
+    "A_cc": {
+      "run_id": "cc-subset80-A",
+      "n": 80,
+      "acc_10": {
+        "mean": 0.5152,
+        "lo": 0.3939,
+        "hi": 0.6364,
+        "n": 66
+      },
+      "acc_8": {
+        "mean": 0.6269,
+        "lo": 0.5075,
+        "hi": 0.7463,
+        "n": 67
+      },
+      "acc_6": {
+        "mean": 0.6375,
+        "lo": 0.525,
+        "hi": 0.7375,
+        "n": 80
+      },
+      "acc_4": {
+        "mean": 0.7,
+        "lo": 0.6,
+        "hi": 0.8,
+        "n": 80
+      },
+      "abstain_rate": 0.2,
+      "acc6_when_answering": 0.6719,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 5.64,
+      "mode": "agent-in-session",
+      "models": {
+        "main": "claude-opus-5-5 (in the Claude Code session, not the API)"
+      }
     }
   },
-  "subset80_diffs": {},
+  "subset80_diffs": {
+    "A_cc_minus_Z_acc10": {
+      "diff": 0.2879,
+      "lo": 0.1667,
+      "hi": 0.4091,
+      "n": 66,
+      "within_noise": false
+    },
+    "A_cc_minus_Z_acc6": {
+      "diff": 0.125,
+      "lo": 0.0125,
+      "hi": 0.2375,
+      "n": 80,
+      "within_noise": false
+    },
+    "A_cc_minus_O_acc10": {
+      "diff": 0.0758,
+      "lo": -0.0303,
+      "hi": 0.1818,
+      "n": 66,
+      "within_noise": true
+    },
+    "A_cc_minus_O_acc6": {
+      "diff": 0.125,
+      "lo": 0.025,
+      "hi": 0.225,
+      "n": 80,
+      "within_noise": false
+    },
+    "fresh_A_cc_minus_Z_acc10": {
+      "diff": 0.65,
+      "lo": 0.5,
+      "hi": 0.8,
+      "n": 40,
+      "within_noise": false
+    },
+    "fresh_A_cc_minus_Z_acc6": {
+      "diff": 0.425,
+      "lo": 0.275,
+      "hi": 0.575,
+      "n": 40,
+      "within_noise": false
+    }
+  },
+  "fresh": {
+    "Z150": {
+      "run_id": "fresh150-Z",
+      "n": 150,
+      "acc_10": {
+        "mean": 0.2,
+        "lo": 0.14,
+        "hi": 0.2667,
+        "n": 150
+      },
+      "acc_8": {
+        "mean": 0.3333,
+        "lo": 0.26,
+        "hi": 0.4133,
+        "n": 150
+      },
+      "acc_6": {
+        "mean": 0.48,
+        "lo": 0.4,
+        "hi": 0.56,
+        "n": 150
+      },
+      "acc_4": {
+        "mean": 0.6933,
+        "lo": 0.6133,
+        "hi": 0.7667,
+        "n": 150
+      },
+      "abstain_rate": 0.0133,
+      "acc6_when_answering": 0.4932,
+      "usd_per_item": 0.00599,
+      "tokens_per_item": 7309.8,
+      "tool_calls_per_item": 0.0,
+      "mode": "batch",
+      "models": {
+        "main": "claude-sonnet-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    },
+    "Z40": {
+      "run_id": "fresh150-Z",
+      "n": 40,
+      "acc_10": {
+        "mean": 0.175,
+        "lo": 0.075,
+        "hi": 0.3,
+        "n": 40
+      },
+      "acc_8": {
+        "mean": 0.35,
+        "lo": 0.2,
+        "hi": 0.5,
+        "n": 40
+      },
+      "acc_6": {
+        "mean": 0.475,
+        "lo": 0.325,
+        "hi": 0.625,
+        "n": 40
+      },
+      "acc_4": {
+        "mean": 0.675,
+        "lo": 0.525,
+        "hi": 0.825,
+        "n": 40
+      },
+      "abstain_rate": 0.025,
+      "acc6_when_answering": 0.5,
+      "usd_per_item": 0.00595,
+      "tokens_per_item": 7307.9,
+      "tool_calls_per_item": 0.0,
+      "mode": "batch",
+      "models": {
+        "main": "claude-sonnet-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    },
+    "Z_cc40": null,
+    "A_cc40": {
+      "run_id": "cc-fresh40-A",
+      "n": 40,
+      "acc_10": {
+        "mean": 0.825,
+        "lo": 0.7,
+        "hi": 0.925,
+        "n": 40
+      },
+      "acc_8": {
+        "mean": 0.85,
+        "lo": 0.725,
+        "hi": 0.95,
+        "n": 40
+      },
+      "acc_6": {
+        "mean": 0.9,
+        "lo": 0.8,
+        "hi": 0.975,
+        "n": 40
+      },
+      "acc_4": {
+        "mean": 0.925,
+        "lo": 0.825,
+        "hi": 1.0,
+        "n": 40
+      },
+      "abstain_rate": 0.075,
+      "acc6_when_answering": 0.9189,
+      "usd_per_item": 0.0,
+      "tokens_per_item": 0.0,
+      "tool_calls_per_item": 4.55,
+      "mode": "agent-in-session",
+      "models": {
+        "main": "claude-opus-5-5 (in the Claude Code session, not the API)"
+      }
+    }
+  },
+  "judge_cc-subset80-A": null,
+  "judge_cc-fresh40-A": null,
   "dev": {
     "dev100-A": {
       "run_id": "dev100-A",

@@ -1,0 +1,10 @@
+{"item_id": "fresh_N363462", "verdict": "pass", "reason": "Both classify as tote bag of heading 4202 with plastic sheeting outer surface under GRI 1; same heading and legal basis."}
+{"item_id": "fresh_N363468", "verdict": "fail", "reason": "Assistant classified in 8543.70.98.60 (residual), but CBP classified in 8543.70.9100 (networked DSP for sound mixing); different headings, and assistant explicitly rejected CBP's code."}
+{"item_id": "fresh_N363486", "verdict": "pass", "reason": "Both classify as festive article of heading 9505 because costume is flimsy with raw edges, not textile apparel; same heading and legal basis (GRI 3(b))."}
+{"item_id": "fresh_N363487", "verdict": "pass", "reason": "Both classify as hydraulic gear pump of heading 8413.60.00.30 under Section XVI note 3 (principal function is pumping); same heading and decisive basis."}
+{"item_id": "fresh_N363542", "verdict": "fail", "reason": "Assistant classified in 6103.33 (suit-type jackets), but CBP classified in 6110.30 (sweaters/pullovers/vests); different headings, CBP explicitly placed it in 6110."}
+{"item_id": "fresh_N363573", "verdict": "pass", "reason": "Both classify as household article of aluminum of heading 7615.10.91.00 under GRI 3(b) (aluminum essential character); same heading and decisive basis."}
+{"item_id": "fresh_N363777", "verdict": "fail", "reason": "Assistant classified in 9018.19 (medical/electro-diagnostic), but CBP classified in 9029.20 (speedometers/tachometers); fundamentally different headings."}
+{"item_id": "fresh_N363849", "verdict": "pass", "reason": "Both classify as filtering apparatus for liquids of heading 8421.29.00.65 under GRI 1; same heading and legal basis."}
+{"item_id": "fresh_N363928", "verdict": "pass", "reason": "Both classify as folding-blade knife of heading 8211.93.00.35 under GRI 1; same heading and legal basis."}
+{"item_id": "fresh_N363949", "verdict": "pass", "reason": "Both classify as cotton, non-knitted headgear of heading 6505.00.20.60 under GRI 1; same heading and legal basis."}

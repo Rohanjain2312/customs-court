@@ -1,0 +1,64 @@
+{
+ "item_id": "fresh_N363573",
+ "classification": {
+  "hts10": "7615.10.91.00",
+  "facts": {
+   "material": "aluminum alloy 6061-T6 body and lid (majority of weight and bulk), stainless-steel spring-ball plunger",
+   "function": "storing and organizing pills, vitamins, supplements",
+   "form": "small three-compartment case with removable lid (approx. 3 x 1.75 x 0.75 in and 3.75 x 2.1 x 0.9 in)",
+   "end_use": "personal use, primarily in the home"
+  },
+  "gri_path": [
+   "GRI 1: heading 7615 covers table, kitchen or other household articles of aluminum; the case is used primarily in the home",
+   "GRI 3(b) (via GRI 2(b)): composite of aluminum and steel; aluminum gives essential character (majority of weight, bulk and storage function), so classified as an article of aluminum",
+   "GRI 6: 7615.10 household articles; not pot scourers, not cooking or kitchen ware; 7615.10.91.00 other"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "K84936",
+    "status": "in_force"
+   },
+   {
+    "id": "N335841",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "4202.39.90.00",
+    "reason": "CBP has placed pocket-type pill cases here (N335841), but these are stated to be intended primarily for home use rather than carried in pocket or handbag; arguable"
+   },
+   {
+    "code": "4202.99.90.00",
+    "reason": "alternative if treated as a 4202 'similar container' not carried on the person; ruling facts stress aluminum essential character and household use, pointing to chapter 76"
+   },
+   {
+    "code": "7616.99.51",
+    "reason": "other articles of aluminum; heading 7615 more specifically covers household articles"
+   },
+   {
+    "code": "7615.10.71",
+    "reason": "cooking and kitchen ware; a pill case is not kitchen ware"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "The pill cases are composite goods of aluminum and a small stainless-steel plunger; the aluminum body and lid give the essential character under GRI 3(b). Because they are sold for personal use primarily in the home, they are household articles of aluminum of heading 7615 rather than articles carried in the pocket or handbag. They are not cooking or kitchen ware, so they fall in 7615.10.91.00. CBP classified a comparable metal (steel) pillbox as an article of base metal (K84936, in force), while pocket-carried pill cases have gone to 4202.39 (N335841)."
+ },
+ "tool_calls": 11,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "hts_navigate",
+  "get_ruling",
+  "hts_navigate",
+  "hts_navigate",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

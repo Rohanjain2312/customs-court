@@ -1,0 +1,54 @@
+{
+ "item_id": "fresh_N364413",
+ "classification": {
+  "hts10": "8714.10.00.50",
+  "facts": {
+   "material": "aluminum alloy footpegs (approx. 1,550 g) with stainless-steel mounting hardware (approx. 150 g)",
+   "function": "additional rider foot position",
+   "form": "kit of two model-specific auxiliary footpegs with hardware, mounted to motorcycle frame",
+   "end_use": "aftermarket accessory for motorcycles"
+  },
+  "gri_path": [
+   "Section XVII note 2: footpegs are not parts of general use (Section XV note 2) nor otherwise excluded; the stainless mounting hardware is packaged with the kit and follows it",
+   "Section XVII note 3: footpegs are model-specific and suitable solely or principally for motorcycles of heading 8711",
+   "GRI 1: heading 8714 covers parts and accessories of vehicles of headings 8711 to 8713; 8714.10 of motorcycles",
+   "GRI 6: 8714.10.00.50 other (not saddles/seats or wheels)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "G88285",
+    "status": "in_force"
+   },
+   {
+    "id": "N340630",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "7616.99.51",
+    "reason": "article of aluminum; Section XVII note 3 places dedicated motorcycle accessories in 8714"
+   },
+   {
+    "code": "8714.10.00.10",
+    "reason": "not saddles or seats"
+   },
+   {
+    "code": "8714.19.00.60",
+    "reason": "obsolete numbering used in older rulings; current line is 8714.10.00.50"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "The auxiliary footpegs are model-specific accessories that mount to the motorcycle frame, so under Section XVII note 3 they are suitable solely or principally for motorcycles, and no exclusion in Section XVII note 2 applies. Heading 8714 covers parts and accessories of motorcycles. CBP classified a motorcycle Highway Peg Kit as motorcycle parts and accessories (G88285, under the older 8714.19.0060 numbering), and current rulings use 8714.10.0050 (N340630). The kit falls in 8714.10.00.50."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "ruling_status"
+ ]
+}

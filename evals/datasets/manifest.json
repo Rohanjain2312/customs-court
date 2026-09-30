@@ -57,6 +57,19 @@
     "split": "rulings dated 2026-07-01 or later, one 10-digit code, description cut from the ruling facts by rule",
     "use": "reported separately from ATLAS (post training cutoff)"
   },
+  "fresh_40": {
+    "created": "2026-09-30T04:10:04+00:00",
+    "date_range": [
+      "2026-07-06",
+      "2026-09-11"
+    ],
+    "file": "evals/datasets/fresh_40.jsonl",
+    "sha256": "5eab6864b6929ca54a9d000b6a9b009658af9c60480894fbddef14e5bd50df8f",
+    "size": 40,
+    "source": "fresh_150",
+    "split": "seeded random sample (seed 13) of 40 of fresh_150, for the in-session agent run",
+    "use": "reported separately from ATLAS (post training cutoff)"
+  },
   "subset_80": {
     "created": "2026-09-29T00:19:53+00:00",
     "file": "evals/datasets/subset_80.jsonl",

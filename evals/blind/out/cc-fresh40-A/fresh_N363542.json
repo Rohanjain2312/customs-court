@@ -1,0 +1,56 @@
+{
+ "item_id": "fresh_N363542",
+ "classification": {
+  "hts10": "6103.33.20.00",
+  "facts": {
+   "material": "100% polyester double-knit fabric (coat)",
+   "function": "costume coat portraying a British soldier",
+   "form": "well-made men's coat with collar, lapels, turned-back cuffs, multi-panel back, knee-length tails; imported with vest, pants, cravat, sash, boot covers, hat",
+   "end_use": "adult men's dress-up costume"
+  },
+  "gri_path": [
+   "GRI 1: coat is well made (finished collar, lapels, cuffs, non-fraying double knit), so it is wearing apparel of Chapter 61, not a flimsy festive article of 9505",
+   "Section XI note 14 (formerly 13): textile garments of different headings are classified separately, so the costume is not a GRI 3(b) set; the first-named article, the coat, is classified",
+   "GRI 1: tailored coat with lapels, multi-panel construction and sleeves meets the suit-type jacket criteria of heading 6103 (men's, knit)",
+   "GRI 6: 6103.33 of synthetic fibers; 6103.33.20.00 other (not 23% or more wool)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N003904",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90.60.00",
+    "reason": "coat is well made and durable, not flimsy/non-durable"
+   },
+   {
+    "code": "6114.30.30.60",
+    "reason": "used by CBP for a costume coat lacking suit-type jacket tailoring (N003904); this coat has lapels, turned-back cuffs and a multi-panel back so 6103 is more specific; arguable if CBP finds suit-type criteria unmet"
+   },
+   {
+    "code": "6101.30",
+    "reason": "not an overcoat/anorak designed for protection from the elements"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: vest, pants, cravat, sash, boot covers, hat",
+   "Does the coat have a full front opening and does CBP treat the three-piece back as meeting suit-type jacket panel requirements?"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Under Section XI note 14 the garments of this costume are classified separately, so the first-named article, the coat, is classified. The coat is well made of non-fraying polyester double knit with a finished collar, lapels, turned-back cuffs and a multi-piece back, so it is wearing apparel rather than a festive article. Its tailored features point to a men's knit suit-type jacket of synthetic fibers, 6103.33.20.00. If the tailoring criteria are not met, CBP's practice for costume coats (N003904, in force) would place it in 6114.30.30.60."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "cross_search",
+  "get_ruling",
+  "hts_navigate",
+  "hts_navigate",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

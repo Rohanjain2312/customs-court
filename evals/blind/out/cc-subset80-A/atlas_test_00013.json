@@ -1,0 +1,53 @@
+{
+ "item_id": "atlas_test_00013",
+ "classification": {
+  "hts10": "4911.99.80.00",
+  "facts": {
+   "material": "plastic (or paper) card printed with a fuse chart",
+   "function": "identifies the vehicle's fuses by number and description",
+   "form": "flat printed card attached to the fuse box cover",
+   "end_use": "motor vehicle fuse box labeling"
+  },
+  "gri_path": [
+   "GRI 1: printed information chart is the defining feature; Section VII note 2 sends plastics printed with characters that are not merely subsidiary to their use to chapter 49, except goods of heading 3918 or 3919",
+   "Heading 4911 other printed matter; not paper-lithographed matter of 4911.99.60 if printed on plastic",
+   "GRI 6: 4911.99 other, 4911.99.80.00 other",
+   "If the card has a self-adhesive back it stays in 3919 (excepted from Section VII note 2), 3919.90.50.60"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "F83391",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3919.90.50.60",
+    "reason": "self-adhesive plastic flat shapes; applies only if the card has a pressure-sensitive adhesive back, which is not stated (F83391 used this line for the adhesive version)"
+   },
+   {
+    "code": "8538.90",
+    "reason": "not a part of switching/protecting apparatus; the card is only an information label"
+   },
+   {
+    "code": "4911.99.60.00",
+    "reason": "applies only to matter printed on paper by lithography; fuse cards are typically plastic"
+   }
+  ],
+  "missing_facts": [
+   "Does the card have a self-adhesive back (3919.90.50.60) or not (4911.99.80.00)?",
+   "Is the substrate plastic or paper, and if paper, is it printed lithographically (4911.99.60.00)?"
+  ],
+  "confidence": 0.45,
+  "abstain": true,
+  "rationale": "NY F83391 (in force) classified printed motor vehicle fuse cards carrying a fuse chart: the self-adhesive plastic card in 3919.90.50.60 and the non-adhesive card as other printed matter in 4911.99.80. The description does not say whether the cards are self-adhesive, which decides the heading. The best guess is the non-adhesive printed matter line 4911.99.80.00, since Section VII note 2 sends printed plastics other than 3918/3919 goods to chapter 49."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

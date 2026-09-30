@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00036",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "9025.80.10.00",
+  "facts": {
+   "material": "electronic instrument",
+   "function": "measures dew point and temperature, transmits signal",
+   "form": "transmitter",
+   "end_use": "industrial measurement"
+  },
+  "gri_path": [
+   "GRI 1: heading 9025 hygrometers and thermometers"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9026",
+    "reason": "flow, level, pressure"
+   },
+   {
+    "code": "9032.89",
+    "reason": "automatic control instruments"
+   }
+  ],
+  "missing_facts": [
+   "Electronic or non-electrical principle"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Dew point and temperature instruments are hygrometers and thermometers of heading 9025; electronic versions likely 9025.80.10."
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "item_id": "atlas_test_00048",
+ "classification": {
+  "hts10": "3920.62.00.90",
+  "facts": {
+   "material": "polyester (polyethylene terephthalate) film, white pigmented, reflective",
+   "function": "reflects light inside LED light panels",
+   "form": "film, presumably in rolls or sheets, noncellular and not metallized (assumed)",
+   "end_use": "component material in manufacture of LED light panels"
+  },
+  "gri_path": [
+   "GRI 1: heading 3920 covers plates, sheets, film, foil and strip of plastics, noncellular and not reinforced, laminated or supported; film in rolls/sheets is not yet a part of a luminaire",
+   "Chapter 39 note 10: 'plates, sheets, film' covers flat goods in rolls or rectangles, uncut to other shapes",
+   "GRI 6: 3920.62 of poly(ethylene terephthalate); not metallized PET film, so suffix 90 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N326371",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3920.62.00.50",
+    "reason": "metallized PET film; the film is white pigmented, not metallized"
+   },
+   {
+    "code": "3921.19",
+    "reason": "cellular plastic film; applies only if the white reflector is a microcellular (foamed) PET"
+   },
+   {
+    "code": "9405.99",
+    "reason": "parts of luminaires; applies only if the film is cut to shape as a dedicated part rather than imported as film material"
+   },
+   {
+    "code": "3919.90",
+    "reason": "self-adhesive film; no adhesive layer described"
+   }
+  ],
+  "missing_facts": [
+   "Is the film cellular (microfoamed) or solid?",
+   "Is it imported in rolls/rectangular sheets or die-cut to the panel shape, and is it self-adhesive?"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "White reflective polyester film is PET film of heading 3920 when it is noncellular, not reinforced or combined with other materials, and imported as flat film. Subheading 3920.62 covers PET, and because the film is white rather than metallized, the statistical line is 3920.62.00.90. NY N326371 (in force) classifies PET film in 3920.62.0090. If the reflector is microcellular or die-cut into a lamp part, 3921.19 or 9405.99 would be considered instead."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "hts_search",
+  "ruling_status"
+ ]
+}

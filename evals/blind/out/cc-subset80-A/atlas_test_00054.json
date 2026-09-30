@@ -1,0 +1,54 @@
+{
+ "item_id": "atlas_test_00054",
+ "classification": {
+  "hts10": "3502.11.00.00",
+  "facts": {
+   "material": "ovalbumin protein produced by microbial (precision) fermentation",
+   "function": "food ingredient protein (egg-white functionality)",
+   "form": "dried powder",
+   "end_use": "food manufacturing (assumed)"
+  },
+  "gri_path": [
+   "GRI 1: heading 3502 covers albumins, albuminates and other albumin derivatives; ovalbumin is egg albumin by chemical identity regardless of production by fermentation",
+   "Chapter 35 note 1 exclusions (e.g. yeasts of 2102, medicaments of chapter 30) do not apply",
+   "GRI 6: 3502.11 egg albumin, dried (powder), 3502.11.00.00"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N359864",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3502.90.00.00",
+    "reason": "other albumins; would apply if CBP treats fermentation-derived ovalbumin as not 'egg albumin' because it is not obtained from eggs"
+   },
+   {
+    "code": "3502.19.00.00",
+    "reason": "egg albumin not dried; the product is a powder"
+   },
+   {
+    "code": "3504.00",
+    "reason": "other protein substances n.e.s.; albumins are specifically provided for in 3502"
+   },
+   {
+    "code": "2106.90",
+    "reason": "food preparations n.e.s.; a single protein is not a food preparation unless compounded with other ingredients"
+   }
+  ],
+  "missing_facts": [
+   "Is the product substantially pure ovalbumin, or blended with other ingredients (2106.90)?"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Ovalbumin is the principal egg-white protein and is named by heading 3502 as egg albumin; the heading describes the substance, so production by fermentation rather than from eggs should not change the heading. In dried powder form it falls in 3502.11.00.00, the line CBP uses for dried egg-white protein powder (NY N359864, in force). The main risk is that CBP treats non-egg-derived ovalbumin as 'other' albumin in 3502.90.00.00."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "item_id": "atlas_test_00053",
+ "classification": {
+  "hts10": "9029.20.20.00",
+  "facts": {
+   "material": "electronic unit (LCD display, microprocessor, plastic housing) with wheel sensor",
+   "function": "17 functions: current/average/max speed, trip and total distance (odometer), ride time, clock and similar",
+   "form": "complete handlebar-mounted cycle computer",
+   "end_use": "bicycles"
+  },
+  "gri_path": [
+   "GRI 1: heading 9029 covers odometers and speedometers; chapter 90 note 3 applies Section XVI note 3: a multifunction apparatus is classified by its principal function, which is speed and distance indication for a bicycle",
+   "Section XVII note 2(g) excludes chapter 90 instruments from bicycle parts of 8714",
+   "GRI 6: 9029.20 speedometers; 9029.20.20.00 bicycle speedometers"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8714.99",
+    "reason": "Section XVII note 2(g) excludes chapter 90 instruments from bicycle parts"
+   },
+   {
+    "code": "9029.10.80",
+    "reason": "odometers/revolution counters; speed indication is the principal function and bicycle speedometers are specifically provided for"
+   },
+   {
+    "code": "9029.20.40",
+    "reason": "other speedometers; bicycle speedometers are named in 9029.20.20"
+   },
+   {
+    "code": "9106.90/9102",
+    "reason": "clock/stopwatch functions are secondary to the speed and distance measuring function"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "A 17-function bicycle computer measures and displays speed and distance and adds secondary timing and clock functions. Under chapter 90 note 3 and Section XVI note 3, it is classified by its principal function as a speedometer of heading 9029, and Section XVII note 2(g) keeps it out of bicycle parts in 8714. Subheading 9029.20.20.00 specifically covers bicycle speedometers. No ruling on this exact product was found."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate"
+ ]
+}

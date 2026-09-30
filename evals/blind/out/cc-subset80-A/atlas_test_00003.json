@@ -1,0 +1,57 @@
+{
+ "item_id": "atlas_test_00003",
+ "classification": {
+  "hts10": "4002.99.00.00",
+  "facts": {
+   "material": "synthetic rubber, unvulcanized (polymer type not stated)",
+   "function": "raw rubber for further processing",
+   "form": "primary forms (soft natural and standard natural grades), unvulcanized",
+   "end_use": "industrial manufacturing"
+  },
+  "gri_path": [
+   "GRI 1: heading 4002 covers synthetic rubber in primary forms or in plates, sheets or strip; chapter 40 note 1 includes synthetic rubber in 'rubber'",
+   "Heading 4001 (natural rubber) excluded because goods are synthetic; heading 4005 applies only if compounded, which is not stated",
+   "GRI 6: polymer type not named among 4002.11-4002.70, not latex, so residual 4002.99 'Other'"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "I87160",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "4001",
+    "reason": "covers natural rubber; goods described as synthetic rubber"
+   },
+   {
+    "code": "4005",
+    "reason": "compounded unvulcanized rubber; no compounding (carbon black, silica, other additives) described"
+   },
+   {
+    "code": "4002.80.00.00",
+    "reason": "mixtures of natural and synthetic rubber; no blend with heading 4001 rubber stated"
+   },
+   {
+    "code": "4002.60.00.00",
+    "reason": "isoprene rubber (IR) would apply if the polymer is synthetic polyisoprene; not stated"
+   }
+  ],
+  "missing_facts": [
+   "What is the chemical type of the synthetic rubber (SBR, BR, IR, EPDM, CR, NBR, etc.)?",
+   "Is it compounded with additives (heading 4005) or mixed with natural rubber (4002.80)?",
+   "Is it in latex form or solid (bales, sheets)?"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Unvulcanized synthetic rubber in primary forms falls in heading 4002 under GRI 1 and chapter 40 note 1. The 6-digit subheading turns on the polymer type, which the description does not give; 'soft natural' and 'standard natural' read like grade or color names, and a synthetic polyisoprene would go to 4002.60. Absent that fact the residual 4002.99.00.00 is the best guess, consistent with NY I87160 placing an unlisted synthetic rubber in 4002.99."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

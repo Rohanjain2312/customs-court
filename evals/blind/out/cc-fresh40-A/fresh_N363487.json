@@ -1,0 +1,45 @@
+{
+ "item_id": "fresh_N363487",
+ "classification": {
+  "hts10": "8413.60.00.30",
+  "facts": {
+   "material": "aluminum casing, gears with shafts, bearings",
+   "function": "hydraulic gear pump when externally driven; reversible to act as hydraulic motor",
+   "form": "complete gear unit with inlet, outlet, flange cover",
+   "end_use": "hydraulic fluid power systems"
+  },
+  "gri_path": [
+   "GRI 1: heading 8413 pumps for liquids; units are rotary positive displacement gear pumps whose speed, suction range and displacement are pump performance factors",
+   "Section XVI note 3: machine performing more than one function classified by principal function, which is pumping",
+   "GRI 6: 8413.60 other rotary positive displacement pumps; hydraulic fluid power pumps; 8413.60.00.30 gear type"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N361506",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8412.29",
+    "reason": "hydraulic motor function is secondary; principal function is pumping (Section XVI note 3)"
+   },
+   {
+    "code": "8413.60.00.20",
+    "reason": "vane type; these are gear type"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "The Marzocchi units are gear pumps that can be run in reverse as motors. Under Section XVI note 3 the principal function is pumping, and speed, suction and displacement are critical pump characteristics. CBP classified identical Marzocchi Pompe gear units in 8413.60.0030 as hydraulic fluid power gear pumps (N361506, in force). The code is 8413.60.00.30."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "get_ruling"
+ ]
+}

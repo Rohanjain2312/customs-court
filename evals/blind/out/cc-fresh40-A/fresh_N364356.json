@@ -1,0 +1,47 @@
+{
+ "item_id": "fresh_N364356",
+ "classification": {
+  "hts10": "8479.60.00.00",
+  "facts": {
+   "material": "not stated (industrial AHU cabinet with fans, evaporative media, water system, controls)",
+   "function": "cools air by direct evaporation of water through wetted media; also filters and distributes air",
+   "form": "complete industrial air handling unit with integrated direct evaporative cooling section",
+   "end_use": "data centers and large-scale facilities"
+  },
+  "gri_path": [
+   "GRI 1: heading 8415 requires a motor-driven fan and elements for changing temperature and humidity; the units do not use refrigeration and are not designed to regulate humidity, so they are not air conditioning machines",
+   "Section XVI note 3: principal function is cooling by direct evaporation; filtering and air distribution are secondary",
+   "GRI 1: subheading 8479.60 specifically names evaporative air coolers; 8479.60.00.00 is the statistical line"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8415.82",
+    "reason": "not an air conditioning machine: no refrigeration and humidity change is only incidental"
+   },
+   {
+    "code": "8414.59",
+    "reason": "fans are only one component; principal function is evaporative cooling"
+   },
+   {
+    "code": "8421.39",
+    "reason": "air filtration is secondary to cooling"
+   },
+   {
+    "code": "8479.89",
+    "reason": "8479.60 specifically names evaporative air coolers"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.8,
+  "abstain": false,
+  "rationale": "The Ballard AHU DEC units cool air by passing it through wetted evaporative media and use no refrigeration or humidity-regulating devices, so they fall outside heading 8415 air conditioning machines. Their principal function under Section XVI note 3 is evaporative cooling, which subheading 8479.60 names eo nomine. No on-point CBP ruling was found in the corpus, so the classification rests on the heading and subheading text."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "cross_search"
+ ]
+}

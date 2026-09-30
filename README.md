@@ -36,14 +36,16 @@ The agent on `subset_80` (80 of the 200 test items, stratified by product type a
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
-| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+| Zero-shot, no tools (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
 <!-- /results:subset -->
 
 <!-- results:subset_diffs -->
 | Comparison (paired, same items) | 10-digit | 6-digit |
 |---|---|---|
-| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | n/a | n/a |
-| Agent (Claude in session) minus agent on gpt-5-mini | n/a | n/a |
+| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | +28.8 points [+16.7, +40.9], n=66 | +12.5 points [+1.2, +23.8], n=80 |
+| Agent (Claude in session) minus agent on gpt-5-mini | +7.6 points [-3.0, +18.2], n=66 | +12.5 points [+2.5, +22.5], n=80 |
+| Agent (Claude in session) minus the same model zero-shot | n/a | n/a |
 <!-- /results:subset_diffs -->
 
 <!-- analysis:headline -->
@@ -54,7 +56,14 @@ Post-training-cutoff set (150 CBP rulings dated 2026-07-01 or later), reported s
 <!-- results:fresh -->
 | System | Model | 10-digit | 6-digit | 4-digit | Abstain | Cost per item |
 |---|---|---|---|---|---|---|
-| Zero-shot, no tools | Claude Sonnet 5 | 20.0% [14.0, 26.7] | 48.0% [40.0, 56.0] | 69.3% [61.3, 76.7] | 1.3% | $0.0060 |
+| Zero-shot, no tools, all 150 | Claude Sonnet 5 | 20.0% [14.0, 26.7] | 48.0% [40.0, 56.0] | 69.3% [61.3, 76.7] | 1.3% | $0.0060 |
+| Zero-shot, no tools, the 40-item sample | Claude Sonnet 5 | 17.5% [7.5, 30.0] | 47.5% [32.5, 62.5] | 67.5% [52.5, 82.5] | 2.5% | $0.0060 |
+| Zero-shot, no tools (in the Claude Code session), same 40 | Claude Opus 5.5 | not run yet | | | | |
+| TariffAgent single agent (in the Claude Code session), same 40 | Claude Opus 5.5 | 82.5% [70.0, 92.5] | 90.0% [80.0, 97.5] | 92.5% [82.5, 100.0] | 7.5% | $0 (no API spend) |
+
+Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit +65.0 points [+50.0, +80.0], n=40; 6-digit +42.5 points [+27.5, +57.5], n=40.
+
+Paired, same 40 items, agent minus the same model zero-shot: 10-digit n/a; 6-digit n/a.
 <!-- /results:fresh -->
 
 How the budget shaped these numbers, plainly:
@@ -71,7 +80,7 @@ Cost:
 | Same calls at list price, no caching, no batch discount | $39.30 |
 | Saving from prompt caching and the Batch API | 66.5% |
 | Share of input tokens read from the prompt cache | 81.3% |
-| Open-weights runs (HF Job, included PRO credits) | $0 extra |
+| Blind test and fresh runs, and judging (in the Claude Code session) | $0 API spend |
 <!-- /results:cost -->
 
 Every number above comes from a file in `evals/reports/` (`scripts/number_audit.py` checks this). Full write-up: `docs/CASE_STUDY.md`.

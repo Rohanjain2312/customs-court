@@ -1,0 +1,47 @@
+{
+ "item_id": "atlas_test_00033",
+ "classification": {
+  "hts10": "8501.10.40.60",
+  "facts": {
+   "material": "electric motor (metal, copper windings, magnet) with steel/plastic housing, spring contact and rubber grommet",
+   "function": "DC motor with eccentric weight producing vibration",
+   "form": "complete miniature motor; parts (housing, spring contact, rubber grommet) also listed",
+   "end_use": "vibration alert/haptic devices (not stated)"
+  },
+  "gri_path": [
+   "GRI 1: first-named article is the DC vibrator motor, an electric motor of heading 8501; Section XVI note 2(a) keeps a motor in its own heading even if used as a component of another device",
+   "GRI 6: 8501.10 output not exceeding 37.5 W (miniature vibrator motors are well under 1 W); 8501.10.40 under 18.65 W, other than synchronous; DC; not brushless (typical brushed vibrator motor), suffix 60",
+   "The listed parts are classified separately: housing and spring contact under 8503.00.95 (parts solely or principally for motors, Section XVI note 2(b)); rubber grommet in 4016 (Section XVI note 1(a))"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8501.10.40.40",
+    "reason": "DC brushless; vibrator motors are typically brushed, brushless type not stated"
+   },
+   {
+    "code": "8501.10.60",
+    "reason": "motors of 18.65 W or more; vibrator motors are far below"
+   },
+   {
+    "code": "8503.00.95",
+    "reason": "parts of motors; applies to the housing and contact, classified separately, not the complete motor"
+   }
+  ],
+  "missing_facts": [
+   "Is the motor brushless (8501.10.40.40) or brushed (8501.10.40.60)?",
+   "What is the rated output (assumed under 18.65 W)?",
+   "classify separately: the housing and spring tribor contact (8503.00.95) and rubber grommet (4016.99)"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "The first-named article is a complete DC vibrator motor, which is an electric motor of heading 8501 under GRI 1. Such motors are miniature and far below 18.65 W, so they fall in 8501.10.40 (other than synchronous), and as DC motors that are typically brushed they take suffix 60 (DC, other). The separate parts (housing, spring contact) would go to 8503 under Section XVI note 2(b), and the rubber grommet to 4016."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "hts_search"
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00033",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8501.10.60.00",
+  "facts": {
+   "material": "metal, rubber",
+   "function": "DC vibrator motor",
+   "form": "motor with parts",
+   "end_use": "vibration generation"
+  },
+  "gri_path": [
+   "GRI 1: heading 8501 electric motors; Note 2(b) Section XVI parts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8503",
+    "reason": "parts of motors; complete motor is 8501"
+   },
+   {
+    "code": "8479.89",
+    "reason": "vibrator machine"
+   }
+  ],
+  "missing_facts": [
+   "Motor output wattage"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A DC motor with its parts is an electric motor of 8501; assumed low output, under 37.5 W, subheading 8501.10."
+ }
+}

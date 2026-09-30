@@ -1,0 +1,59 @@
+{
+ "item_id": "atlas_test_00040",
+ "classification": {
+  "hts10": "8202.99.00.00",
+  "facts": {
+   "material": "bi-metal (HSS teeth on steel) hole saws, steel mandrels and pilot drills, plastic carry case",
+   "function": "cutting circular holes in wood, drywall, plastic and metal with a power drill",
+   "form": "retail kit of several hole saws, mandrels with pilot drills, fitted carrying case",
+   "end_use": "hand-held power drill use by trades and DIY consumers"
+  },
+  "gri_path": [
+   "GRI 1 fails: components are prima facie in different headings (hole saws 8202, mandrels 8466.10 per H278181, pilot drills 8207.50, case 4202)",
+   "GRI 3(b) retail set: different articles, put up together for the single activity of cutting holes, packed for retail sale without repacking",
+   "Essential character from the hole saws, which do the cutting and dominate the set's role in use (HQ H097658, NY N355088)",
+   "GRI 5(a): the fitted carrying case is classified with the set",
+   "GRI 6: 8202.99 other saw blades (including parts), 8202.99.00.00"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "H097658",
+    "status": "modified"
+   },
+   {
+    "id": "H278181",
+    "status": "in_force"
+   },
+   {
+    "id": "N355088",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8466.10.01",
+    "reason": "tool holders; mandrels alone are classified there (H278181), but they do not give the kit its essential character"
+   },
+   {
+    "code": "8207.50",
+    "reason": "interchangeable drilling tools; the pilot drills only guide the saw and are secondary"
+   },
+   {
+    "code": "4202",
+    "reason": "the case is a fitted container classified with the set under GRI 5(a)"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "The kit is a GRI 3(b) retail set of hole saws, mandrels with pilot drills and a fitted case, put up together to cut holes. HQ H097658 classified an essentially identical bi-metal hole saw kit in 8202.99.00 because the hole saws give essential character; H278181 later modified it only as to the separate classification of mandrels (8466.10.01), not the kit. NY N355088 (2025, in force) confirms hole saw sets in 8202.99.0000."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "ruling_status",
+  "get_ruling",
+  "hts_navigate"
+ ]
+}

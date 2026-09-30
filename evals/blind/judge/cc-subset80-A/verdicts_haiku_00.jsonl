@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00003", "verdict": "fail", "reason": "Assistant classified under 4002.99 (residual) but CBP correctly classified the mixture of natural and synthetic rubber under 4002.80, which is the specific subheading for such mixtures."}
+{"item_id": "atlas_test_00008", "verdict": "pass", "reason": "Both correctly classified under 9027.10.20 as an electrical gas analysis apparatus based on the essential character being the gas-detection function."}
+{"item_id": "atlas_test_00010", "verdict": "fail", "reason": "Assistant chose 4412 (wood veneered panels) but CBP correctly classified under 3918 (plastic floor coverings) as it is primarily PVC flooring with a veneer layer."}
+{"item_id": "atlas_test_00013", "verdict": "fail", "reason": "Assistant chose 4911 (printed matter) but CBP classified under 3926 (plastic articles)."}
+{"item_id": "atlas_test_00030", "verdict": "fail", "reason": "CBP correctly classified under 6102 (knitted) based on the knit fabric stated in the ruling; assistant incorrectly assumed woven fabric and chose 6202 (not knitted)."}
+{"item_id": "atlas_test_00038", "verdict": "fail", "reason": "Assistant classified under 9027 (analysis apparatus) but CBP correctly classified under 9031 (measuring instruments) because the device measures particle size, not analyzes them."}
+{"item_id": "atlas_test_00040", "verdict": "fail", "reason": "CBP used GRI 3(c) finding equal essential character (last in numerical order = 8207), but assistant used GRI 3(b) finding hole saws dominant (8202)."}
+{"item_id": "atlas_test_00045", "verdict": "fail", "reason": "CBP applied GRI 3(b) finding a retail set (8471), but assistant denied retail set status and classified as separate network transmission apparatus (8517)."}
+{"item_id": "atlas_test_00017", "verdict": "pass", "reason": "Both correctly classified under 7326 as a separate steel article (not an integral part of an AC machine)."}
+{"item_id": "atlas_test_00036", "verdict": "pass", "reason": "Both correctly classified under 9025 as electrical hygrometers measuring dew point and temperature."}
+{"item_id": "atlas_test_00029", "verdict": "pass", "reason": "Both correctly classified under 3926 as O-rings (articles of plastics), not semiconductor equipment parts."}
+{"item_id": "atlas_test_00042", "verdict": "pass", "reason": "Both correctly classified under 3926 using GRI 3(b); plastic body gives essential character, textile components are minor trim."}
+{"item_id": "atlas_test_00037", "verdict": "pass", "reason": "Both correctly classified under 8486 as parts of semiconductor machinery; vacuum vessel housing and elliptical collector are integral components."}
+{"item_id": "atlas_test_00039", "verdict": "pass", "reason": "Both correctly classified under 8421 as water filtering apparatus; shower filter with multiple filtration layers."}
+{"item_id": "atlas_test_00047", "verdict": "pass", "reason": "Both correctly classified under 3504 as protein supplements derived from biological sources."}
+{"item_id": "atlas_test_00048", "verdict": "pass", "reason": "Both correctly classified under 3920 as white reflective polyester film (PET film) for LED panels."}
+{"item_id": "atlas_test_00053", "verdict": "pass", "reason": "Both correctly classified under 9029 as a bicycle computer measuring speed and distance with secondary timing functions."}
+{"item_id": "atlas_test_00054", "verdict": "pass", "reason": "Both correctly classified under 3502 as egg albumin (ovalbumin), named in the heading regardless of production method."}
+{"item_id": "atlas_test_00055", "verdict": "pass", "reason": "Both correctly classified under 8431 as a lifting attachment for container-handling machinery under Section XVI note 2(b)."}

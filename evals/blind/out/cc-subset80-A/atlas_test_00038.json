@@ -1,0 +1,46 @@
+{
+ "item_id": "atlas_test_00038",
+ "classification": {
+  "hts10": "9027.50.40.60",
+  "facts": {
+   "material": "electro-optical instrument (light source, high-speed camera, electronics, software)",
+   "function": "measures particle size and shape distribution by imaging falling particles (dynamic image analysis)",
+   "form": "complete laboratory/process analyzer",
+   "end_use": "quality control of dry, pourable bulk materials (powders, granules)"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 covers instruments and apparatus for physical or chemical analysis; particle size (granulometric) analysis is physical analysis",
+   "Section XVI note 1(m) excludes chapter 90 instruments from chapter 84/85",
+   "GRI 6: 9027.50 other instruments using optical radiations (visible light imaging); electrical (chapter 90 additional U.S. note 2), 9027.50.40; not chemical, thermal or a photometer, so suffix 60 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9031.49.90",
+    "reason": "optical measuring or checking instruments not elsewhere specified; 9027 more specifically covers apparatus for physical analysis such as particle size analysis"
+   },
+   {
+    "code": "9027.89",
+    "reason": "other analysis instruments not using optical radiation; the analyzer works by optical imaging"
+   },
+   {
+    "code": "9027.50.40.15",
+    "reason": "chemical analysis; particle size/shape is physical analysis"
+   },
+   {
+    "code": "8471",
+    "reason": "not an automatic data processing machine; excluded as a chapter 90 instrument"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "A dynamic image analyzer determines particle size and shape of bulk powders and granules, which is physical analysis within heading 9027. It works by illuminating particles and capturing images with a camera, so it is an instrument using optical radiation of 9027.50, and being electrical it goes to 9027.50.40. As it is not a chemical or thermal analyzer or photometer, the statistical line is 9027.50.40.60 (other). No ruling on this exact instrument was found."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate"
+ ]
+}

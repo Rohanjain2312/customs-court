@@ -1,0 +1,58 @@
+{
+ "item_id": "atlas_test_00008",
+ "classification": {
+  "hts10": "9027.10.20.00",
+  "facts": {
+   "material": "printed circuit board with mounted electronic components and a hydrogen sensing element",
+   "function": "detects and measures hydrogen gas concentration and outputs an electrical signal",
+   "form": "printed circuit board assembly (sensor module)",
+   "end_use": "hydrogen detection in equipment or facilities (not stated)"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 covers instruments and apparatus for physical or chemical analysis, including gas analysis apparatus",
+   "Section XVI note 1(m) excludes articles of chapter 90 from heading 8543/8534, so the sensor module is not a general electrical article or bare printed circuit",
+   "Chapter 90 note 2(a): a part/module that is itself an instrument of a specific heading stays in that heading; the PCBA performs the gas-detection function itself",
+   "GRI 6: 9027.10 gas or smoke analysis apparatus; 9027.10.20 electrical"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "967082",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8543.70",
+    "reason": "Section XVI note 1(m) excludes chapter 90 instruments; gas analysis is specifically provided for in 9027"
+   },
+   {
+    "code": "8531.10",
+    "reason": "only applies to detectors that merely alarm without measuring; description is a sensor measuring hydrogen"
+   },
+   {
+    "code": "9027.90.88.00",
+    "reason": "parts of gas analysis apparatus; would apply only if the PCBA lacks the sensing element and is merely a control board of a larger analyzer"
+   },
+   {
+    "code": "8534.00.00",
+    "reason": "bare printed circuits only; this is a populated assembly with a sensing function"
+   }
+  ],
+  "missing_facts": [
+   "Does the PCBA itself contain the hydrogen sensing element and produce a concentration measurement, or is it a control board for a larger analyzer?",
+   "Does it only trigger an alarm without measuring (possible 8531)?"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "A PCBA that carries a hydrogen sensor and electronics to measure gas concentration is itself an electrical gas analysis apparatus of heading 9027, and Section XVI note 1(m) keeps it out of chapter 85. HQ 967082 classified gas detectors with sensors measuring ppm of gas and displaying levels in 9027.10.20, separating mere alarms into 8531. If the board lacks the sensing element it would instead be a part in 9027.90.88."
+ },
+ "tool_calls": 9,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_ruling",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "item_id": "fresh_N363928",
+ "classification": {
+  "hts10": "8211.93.00.35",
+  "facts": {
+   "material": "zinc alloy and stainless steel",
+   "function": "general cutting of cardboard, plastic and other materials",
+   "form": "manually operated folding utility knife with locking replaceable blade, quick-change system, attached screwdriver, spare blade",
+   "end_use": "general utility/consumer"
+  },
+  "gri_path": [
+   "GRI 1: heading 8211 covers knives with cutting blades, serrated or not; chapter 82 note excludes nothing relevant; replaceable-blade knife is not a tool of 8205",
+   "GRI 3(b): the attached screwdriver is subsidiary; the folding knife gives essential character; the spare blade is classified with the knife",
+   "GRI 6: 8211.93 knives having other than fixed blades; 8211.93.00.35 pen knives, pocket knives and other knives which have folding blades"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N361367",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8211.93.00.60",
+    "reason": "the blade folds into the handle, so the folding-blade line is more specific"
+   },
+   {
+    "code": "8211.93.00.31",
+    "reason": "not a two-handled multi-use tool"
+   },
+   {
+    "code": "8205.40",
+    "reason": "screwdriver is a minor attached feature; knife function predominates"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "The item is a folding utility knife with a locking, replaceable blade, which is a knife having other than a fixed blade in heading 8211. The attached screwdriver and spare blade do not change its essential character as a knife. CBP classified a materially identical manually operated folding utility knife in 8211.93.0035 (N361367, in force)."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

@@ -1,0 +1,10 @@
+{"item_id": "fresh_N363956", "verdict": "pass", "reason": "Both CBP and assistant classify the tape measure in 9017.80 under GRI 1 as a hand instrument for measuring length."}
+{"item_id": "fresh_N363968", "verdict": "fail", "reason": "Assistant placed the tropical acacia wood cutting board in 4419.90 (other wood) instead of 4419.20 (tropical wood), which CBP specifically required and rejected 4419.90 for this product."}
+{"item_id": "fresh_N363991", "verdict": "pass", "reason": "Both CBP and assistant classify the mounting kit in 9403.91 as parts of furniture, with wood components giving essential character."}
+{"item_id": "fresh_N364000", "verdict": "pass", "reason": "Both CBP and assistant classify the mycoprotein food product in 2106.90 under GRI 1 as a residual food preparation not elsewhere specified."}
+{"item_id": "fresh_N364356", "verdict": "pass", "reason": "Both CBP and assistant classify the evaporative cooling units in 8479.60 under GRI 1, recognizing they lack refrigeration and humidity control required for air conditioning."}
+{"item_id": "fresh_N364408", "verdict": "pass", "reason": "Both CBP and assistant classify the tire inflator in 8481.80 as a hand-operated valve appliance."}
+{"item_id": "fresh_N364413", "verdict": "pass", "reason": "Both CBP and assistant classify the motorcycle footpeg kit in 8714.10 under Section XVII note 3 as accessories designed solely for motorcycles."}
+{"item_id": "fresh_N364446", "verdict": "pass", "reason": "Both CBP and assistant classify the CGM transmitter in 9027.90 under Chapter 90 note 2(b) as a part of a chemical analysis instrument."}
+{"item_id": "fresh_N364644", "verdict": "pass", "reason": "Both CBP and assistant classify the concrete forming molds in 8480.60 under GRI 1 as molds for mineral materials."}
+{"item_id": "fresh_N364732", "verdict": "pass", "reason": "Both CBP and assistant classify the PA6-imide monofilament in 3916.90 under GRI 1, recognizing the 1.75 mm diameter exceeds the 1 mm threshold for heading 3916."}

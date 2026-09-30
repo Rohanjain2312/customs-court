@@ -1,0 +1,146 @@
+{
+  "run_id": "cc-fresh40-A",
+  "dataset": "fresh_40",
+  "dataset_sha256": "5eab6864b6929ca54a9d000b6a9b009658af9c60480894fbddef14e5bd50df8f",
+  "items_from": "",
+  "arm": "A",
+  "mode": "agent-in-session",
+  "n_items": 40,
+  "n_with_output": 40,
+  "git_sha": "6a36490",
+  "seed": 13,
+  "models": {
+    "main": "claude-opus-5-5 (in the Claude Code session, not the API)"
+  },
+  "protocol": "Blind: the classifying agents read only a descriptions-only file (evals/blind/*.jsonl), the skill, and a tool CLI backed by the MCP server with --redact-eval. Gold labels stayed in files they were told never to open. Same skill workflow, final checks and output schema as arm A.",
+  "redact_eval": true,
+  "scored_at": "2026-09-30T04:21:44+00:00",
+  "metrics": {
+    "n": 40,
+    "n_stale": 0,
+    "n_errors": 0,
+    "acc_10": 0.825,
+    "n_10": 40,
+    "acc_8": 0.85,
+    "n_8": 40,
+    "acc_6": 0.9,
+    "n_6": 40,
+    "acc_4": 0.925,
+    "n_4": 40,
+    "acc_2": 0.975,
+    "n_2": 40,
+    "acc_10_nonstale": 0.825,
+    "acc_6_stale": null,
+    "abstain_rate": 0.075,
+    "acc_when_answering": 0.8378,
+    "acc_deepest_all": 0.825,
+    "ece": 0.1813,
+    "coverage_curve": [
+      {
+        "coverage": 0.1,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.2,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.3,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.4,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.5,
+        "accuracy": 1.0
+      },
+      {
+        "coverage": 0.6,
+        "accuracy": 0.9583
+      },
+      {
+        "coverage": 0.7,
+        "accuracy": 0.8929
+      },
+      {
+        "coverage": 0.8,
+        "accuracy": 0.8438
+      },
+      {
+        "coverage": 0.9,
+        "accuracy": 0.8333
+      },
+      {
+        "coverage": 1.0,
+        "accuracy": 0.825
+      }
+    ],
+    "citations_total": 42,
+    "citation_valid_rate": 1.0,
+    "citation_hallucinated": 0,
+    "citation_not_in_force": 0,
+    "items_with_citation": 39,
+    "usd_total": 0.0,
+    "usd_per_item": 0.0,
+    "tokens_per_item": 0.0,
+    "tool_calls_per_item": 4.55,
+    "latency_p50_s": null,
+    "latency_p95_s": null,
+    "cache_hit_rate": null
+  },
+  "ci95": {
+    "exact_10": {
+      "mean": 0.825,
+      "lo": 0.7,
+      "hi": 0.925,
+      "n": 40
+    },
+    "exact_8": {
+      "mean": 0.85,
+      "lo": 0.725,
+      "hi": 0.95,
+      "n": 40
+    },
+    "exact_6": {
+      "mean": 0.9,
+      "lo": 0.8,
+      "hi": 0.975,
+      "n": 40
+    },
+    "exact_4": {
+      "mean": 0.925,
+      "lo": 0.825,
+      "hi": 1.0,
+      "n": 40
+    },
+    "exact_2": {
+      "mean": 0.975,
+      "lo": 0.925,
+      "hi": 1.0,
+      "n": 40
+    }
+  },
+  "later_dated_citations": [
+    {
+      "item_id": "fresh_N356982",
+      "cited": "N358799",
+      "cited_date": "2026-07-21",
+      "item_date": "2026-07-06"
+    }
+  ],
+  "sensitivity_without_later_citations": {
+    "note": "exact_10 leaving out items that cite a ruling dated after the item's own ruling",
+    "excluded": [
+      "fresh_N356982"
+    ],
+    "exact_10": {
+      "mean": 0.8205,
+      "lo": 0.6923,
+      "hi": 0.9231,
+      "n": 39
+    }
+  },
+  "cost_note": "No API spend: produced in the Claude Code session (covered by the user's plan)."
+}

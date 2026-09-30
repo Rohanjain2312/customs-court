@@ -1,0 +1,52 @@
+{
+ "item_id": "atlas_test_00037",
+ "classification": {
+  "hts10": "8486.90.00.00",
+  "facts": {
+   "material": "metal vacuum vessel housing (steel/aluminum assumed); collector is a coated elliptical mirror",
+   "function": "vessel maintains vacuum and houses the EUV light generation and collector; collector focuses EUV light",
+   "form": "dedicated sub-assemblies/components of an EUV lithography scanner",
+   "end_use": "semiconductor photolithography (EUV scanner, heading 8486.20)"
+  },
+  "gri_path": [
+   "GRI 1: the EUV scanner is a machine of heading 8486 (chapter 84 note 11(D): machines answering to 8486 are classified there and in no other heading)",
+   "Section XVI note 2(b) / heading 8486 text 'parts and accessories': the vacuum vessel housing (first-named article) is not a good of another specific heading and is suitable for use solely with the EUV scanner, so it is a part of 8486",
+   "Section XVI note 1(m) considered: the housing is not an optical element of chapter 90; the elliptical collector mirror is classified separately (possibly 9002.90 as a mounted optical element)",
+   "GRI 6: 8486.90.00.00 parts and accessories"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N358520",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8486.20.00.00",
+    "reason": "complete lithography machine; the housing is a component, not a machine"
+   },
+   {
+    "code": "7326.90/7616.99",
+    "reason": "Section XVI note 2(b) sends parts solely for an 8486 machine to 8486.90 rather than general articles of metal"
+   },
+   {
+    "code": "9002.90",
+    "reason": "mounted optical elements; applies to the elliptical collector mirror if classified separately, not to the vacuum vessel housing"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: the elliptical collector (likely a mounted mirror of 9002.90 under Section XVI note 1(m), or 8486.90 if not an optical element proper)",
+   "Are the housing and collector imported as a single assembled source module?"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "The first-named article, the vacuum vessel housing, is a dedicated component of an EUV scanner, which is a machine of heading 8486. Under Section XVI note 2(b) and the heading's own 'parts and accessories' text, such a part goes to 8486.90.00.00. CBP has placed dedicated components of ASML EUV systems in 8486.90.00.00 (NY N358520, in force). The elliptical collector mirror may be an optical element of chapter 90 and should be classified separately."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

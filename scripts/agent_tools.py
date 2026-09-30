@@ -19,15 +19,24 @@ import urllib.request
 URL = os.environ.get("TA_MCP_URL", "http://127.0.0.1:8765/mcp")
 MAX = 6000
 ALLOWED = {
-    "hts_search", "hts_navigate", "get_notes", "get_gri", "cross_search", "get_ruling", "ruling_status",
+    "hts_search",
+    "hts_navigate",
+    "get_notes",
+    "get_gri",
+    "cross_search",
+    "get_ruling",
+    "ruling_status",
     "hts_revision_diff",
 }
 
 
 def call(name: str, args: dict) -> str:
-    body = json.dumps({"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": name, "arguments": args}})
+    body = json.dumps(
+        {"jsonrpc": "2.0", "id": 1, "method": "tools/call", "params": {"name": name, "arguments": args}}
+    )
     req = urllib.request.Request(
-        URL, data=body.encode(),
+        URL,
+        data=body.encode(),
         headers={"Content-Type": "application/json", "Accept": "application/json, text/event-stream"},
     )
     with urllib.request.urlopen(req, timeout=120) as r:

@@ -1,0 +1,59 @@
+{
+ "item_id": "atlas_test_00010",
+ "classification": {
+  "hts10": "4412.92.52.05",
+  "facts": {
+   "material": "4 mm PVC base, 0.5 mm PVC backing, 0.5 mm decorative wood veneer face (species not stated)",
+   "function": "floor covering",
+   "form": "multilayer flooring planks with click-lock edges",
+   "end_use": "installed flooring (wood-faced substitute for solid wood flooring)"
+  },
+  "gri_path": [
+   "GRI 1: candidates 3918 (floor coverings of plastics) and 4412 (plywood, veneered panels and similar laminated wood)",
+   "Explanatory Note to 4412: wood veneered onto a base other than wood (e.g. panels of plastics) is classified in 4412 when the veneer gives the panel its essential character; the 0.5 mm face is a veneer (sheet not over 6 mm, heading 4408)",
+   "Essential character from the wood veneer: it is the visible wearing surface of a wood-faced substitute for wood flooring and the PVC core is hidden when installed (NY N288828)",
+   "GRI 6: 4412.92 other veneered panels with at least one outer ply of nonconiferous wood (assumed non-tropical hardwood); not plywood, so 4412.92.52; statistical suffix 05 wood flooring",
+   "hts_revision_diff: N288828's 4412.99.51.05 was removed in 2022 and the line now sits under 4412.91/4412.92/4412.99 by face species"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N288828",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3918.10.10.40",
+    "reason": "PVC floor covering would apply only if the plastic gave the essential character; here the wood veneer face gives it (N288828)"
+   },
+   {
+    "code": "4412.91.51",
+    "reason": "applies if the face veneer is a tropical wood; species not stated"
+   },
+   {
+    "code": "4412.99.97.00",
+    "reason": "applies only if the outer plies are coniferous wood"
+   },
+   {
+    "code": "4412.92.31/4412.92.42",
+    "reason": "plywood provisions; the product is a veneered panel on a plastic core, not plywood"
+   }
+  ],
+  "missing_facts": [
+   "What wood species is the veneer (tropical, other nonconiferous, or coniferous)?",
+   "Is the veneer covered with an opaque layer that obscures the wood grain?"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "The planks are a 0.5 mm wood veneer laminated onto a PVC core; under the EN to heading 4412, wood veneered onto a plastic base is a veneered panel when the veneer gives essential character. NY N288828 (in force) classified an identical 0.5 mm veneer on thermoplastic core flooring in 4412 as wood flooring because the veneer is the visible face and the core is hidden. Its 2017 line 4412.99.51.05 was split in 2022; for an assumed nonconiferous, non-tropical veneer the current line is 4412.92.52.05 (wood flooring)."
+ },
+ "tool_calls": 13,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "get_ruling",
+  "ruling_status",
+  "hts_revision_diff"
+ ]
+}

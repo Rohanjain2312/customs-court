@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00030",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "6202.13.50.10",
+  "facts": {
+   "material": "70% polyester, 30% wool",
+   "function": "women's outer coat",
+   "form": "knee-length garment",
+   "end_use": "wear"
+  },
+  "gri_path": [
+   "GRI 1: heading 6202 women's overcoats; GRI 3(b)/Section XI Note 2 predominant fiber polyester"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6202.11",
+    "reason": "wool coats; wool is not predominant"
+   },
+   {
+    "code": "6204",
+    "reason": "suits/jackets, not overcoats"
+   }
+  ],
+  "missing_facts": [
+   "Knit vs woven (assumed woven), water resistance"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Knee-length women's coat is an overcoat of heading 6202. Polyester predominates by weight so man-made fibers subheading 6202.13."
+ }
+}

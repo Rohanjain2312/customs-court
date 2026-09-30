@@ -1,0 +1,50 @@
+{
+ "item_id": "atlas_test_00030",
+ "classification": {
+  "hts10": "6202.40.20.20",
+  "facts": {
+   "material": "70% polyester, 30% wool (by weight assumed)",
+   "function": "outerwear coat",
+   "form": "knee-length coat, assumed woven fabric, not a raincoat, no down fill",
+   "end_use": "women's apparel"
+  },
+  "gri_path": [
+   "GRI 1: heading 6202 women's overcoats, carcoats and similar coats, not knitted (assumed woven; knit would be 6102)",
+   "Chapter 62 subheading note / Section XI subheading note: classified by the fiber predominating by weight, polyester (man-made) 70%, so 6202.40 of man-made fibers",
+   "GRI 6: 6202.40 overcoats, carcoats and similar coats > other (not down) > wool content 30% is below the 36% threshold of 6202.40.15, so 6202.40.20 other; not a raincoat, so 'Other: Women's' suffix 20"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6202.40.15.10",
+    "reason": "requires 36% or more by weight of wool or fine animal hair; coat has 30%"
+   },
+   {
+    "code": "6202.40.20.05",
+    "reason": "raincoats; no water-resistant raincoat feature stated"
+   },
+   {
+    "code": "6202.20",
+    "reason": "wool does not predominate by weight"
+   },
+   {
+    "code": "6102.30",
+    "reason": "knitted coats; applies only if the fabric is knitted or crocheted"
+   }
+  ],
+  "missing_facts": [
+   "Is the shell fabric woven or knitted (6102.30 if knitted)?",
+   "Is the coat a raincoat (water resistant) or down-filled?"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "A women's knee-length coat is an overcoat or carcoat-type garment of heading 6202 (assuming woven fabric). Polyester predominates by weight, so it falls under 6202.40 of man-made fibers, and 30% wool is below the 36% wool threshold of 6202.40.15, leaving 6202.40.20. Not being a raincoat, the women's statistical line is 6202.40.20.20. No ruling on this exact blend was found."
+ },
+ "tool_calls": 7,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "hts_search"
+ ]
+}

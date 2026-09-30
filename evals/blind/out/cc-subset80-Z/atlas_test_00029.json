@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00029",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "4016.93.50.00",
+  "facts": {
+   "material": "vulcanized rubber",
+   "function": "seal",
+   "form": "O-ring",
+   "end_use": "semiconductor process chambers"
+  },
+  "gri_path": [
+   "GRI 1: heading 4016 other articles of vulcanized rubber; Section XVI Note 1(a) excludes vulcanized rubber"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8486.90",
+    "reason": "parts of semiconductor machinery; excluded by Note 1(a) Section XVI"
+   },
+   {
+    "code": "4016.99",
+    "reason": "other"
+   }
+  ],
+  "missing_facts": [
+   "Elastomer type; if fluoroelastomer it is still 4016.93"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Gaskets, washers and other seals of vulcanized rubber fall in 4016.93. Section XVI Note 1(a) excludes vulcanized rubber parts from machinery chapters."
+ }
+}

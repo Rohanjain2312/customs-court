@@ -1,0 +1,49 @@
+{
+ "item_id": "atlas_test_00088",
+ "classification": {
+  "hts10": "8516.80.40.00",
+  "facts": {
+   "material": "electric resistance heating element on an insulating (rubber/composite) former with electrical leads (assumed)",
+   "function": "heats aircraft surfaces (propellers, wings, inlets) to prevent ice build-up",
+   "form": "heating resistor assembly (deicer boot/blanket)",
+   "end_use": "aircraft ice protection"
+  },
+  "gri_path": [
+   "Section XVII note 2(f): electrical machinery and equipment of chapter 85 is not a 'part of aircraft', which excludes heading 8807/8803",
+   "GRI 1: heading 8516 covers electric heating resistors other than those of 8545",
+   "GRI 6: 8516.80 electric heating resistors > 8516.80.40.00 assembled only with simple insulated former and electrical connections, used for anti-icing or deicing"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8807.30",
+    "reason": "Section XVII note 2(f) excludes chapter 85 electrical goods from aircraft parts"
+   },
+   {
+    "code": "8516.80.80.00",
+    "reason": "the deicer is used for anti-icing/deicing, which has its own line 8516.80.40"
+   },
+   {
+    "code": "8543.70.45.00",
+    "reason": "covers defrosters and demisters with electric resistors for aircraft, but heading 8543 applies only to apparatus not specified elsewhere in chapter 85; a deicing heating resistor is specified in 8516.80.40 (would apply if the deicer is a complete apparatus with controls rather than a heating resistor)"
+   },
+   {
+    "code": "8533",
+    "reason": "heading 8533 excludes heating resistors"
+   }
+  ],
+  "missing_facts": [
+   "Is the deicer only a heating element on an insulated former with electrical connections (8516.80.40), or a complete deicing apparatus with controllers (possibly 8543.70.45 as an aircraft defroster)?"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "An electrical aircraft deicer is an electric heating resistor that warms surfaces to prevent ice formation. Section XVII note 2(f) excludes chapter 85 electrical equipment from aircraft parts, and heading 8516 names electric heating resistors. The HTSUS has a specific line, 8516.80.40.00, for heating resistors assembled only with a simple insulated former and electrical connections used for anti-icing or deicing. No precedent ruling on an aircraft deicer was found in the searches."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "hts_search"
+ ]
+}

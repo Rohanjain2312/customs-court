@@ -1,0 +1,50 @@
+{
+ "item_id": "atlas_test_00024",
+ "classification": {
+  "hts10": "7411.21.10.00",
+  "facts": {
+   "material": "brass (copper-zinc base alloy)",
+   "function": "pipe used for decorative purposes",
+   "form": "straight pipe, 2 in and 1.5 in O.D., wall 0.40 in; seamless and ERW (welded) versions",
+   "end_use": "decorative applications"
+  },
+  "gri_path": [
+   "GRI 1: heading 7411 copper tubes and pipes; chapter 74 copper includes copper alloys, brass is a copper-zinc base alloy",
+   "Decorative end use does not move a pipe out of 7411; no more specific heading for decorative articles applies to plain pipe",
+   "GRI 6: 7411.21 of copper-zinc base alloys (brass); seamless pipe (first-named article) 7411.21.10.00",
+   "The ERW (welded) pipe is classified separately in 7411.21.50.00 (Other)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7411.21.50.00",
+    "reason": "covers non-seamless (welded/ERW) brass pipe; applies to the ERW pipe, classified separately"
+   },
+   {
+    "code": "7411.10",
+    "reason": "refined copper; goods are brass alloy"
+   },
+   {
+    "code": "7419.80",
+    "reason": "other articles of copper; plain pipe is specifically provided for in 7411"
+   },
+   {
+    "code": "7306",
+    "reason": "steel welded pipe; applies only if the pipe is brass-plated steel rather than solid brass"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: the ERW (welded) brass pipe goes to 7411.21.50.00",
+   "Is the pipe solid brass throughout, or brass-plated steel (chapter 73)?"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "Brass pipe is a copper-zinc base alloy tube of heading 7411, and its decorative use does not change that since the pipe is not further worked into an article. Subheading 7411.21 covers brass tubes and pipes, split by seamless (7411.21.10) versus other (7411.21.50). The description names seamless pipe first, so it is classified in 7411.21.10.00, and the ERW pipe would fall in 7411.21.50.00. No ruling was found on this exact good."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

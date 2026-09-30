@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00013",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8536.10.00.50",
+  "facts": {
+   "material": "plastic body with metal fuse elements",
+   "function": "fuse protecting circuits",
+   "form": "printed cards of fuses",
+   "end_use": "motor vehicle electrical systems"
+  },
+  "gri_path": [
+   "GRI 1: heading 8536 fuses for voltage not exceeding 1000V"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8538.90",
+    "reason": "parts of switchgear; complete fuse cards are fuses"
+   },
+   {
+    "code": "8537",
+    "reason": "not control board for voltage"
+   }
+  ],
+  "missing_facts": [
+   "Whether cards are complete fuses or merely printed paper cards"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Fuse cards for vehicles are assumed to be fuses for voltage not exceeding 1000 V, heading 8536.10. If they are only printed cards of paper, heading 4911 would apply."
+ }
+}

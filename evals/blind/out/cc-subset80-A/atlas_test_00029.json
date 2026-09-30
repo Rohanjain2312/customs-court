@@ -1,0 +1,51 @@
+{
+ "item_id": "atlas_test_00029",
+ "classification": {
+  "hts10": "3926.90.45.10",
+  "facts": {
+   "material": "not stated; semiconductor chamber O-rings are typically fluoropolymer/perfluoro plastics",
+   "function": "seals between chamber body and lid or lift mechanism against process gas leakage and vacuum loss",
+   "form": "toroidal O-ring",
+   "end_use": "semiconductor wafer processing chambers (heading 8486 machines)"
+  },
+  "gri_path": [
+   "Section XVI note 1(g): parts of general use (Section XV note 2) and similar goods of plastics are excluded from Section XVI, so heading 8486 parts do not apply; O-rings are similar to washers of 7318 (parts of general use)",
+   "GRI 1: heading 3926 other articles of plastics",
+   "GRI 6: 3926.90.45 gaskets, washers and other seals; suffix 10 O-rings"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H314335",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8486.90.00",
+    "reason": "excluded by Section XVI note 1(g) as a plastic good similar to parts of general use (H314335 affirming NY N314063)"
+   },
+   {
+    "code": "4016.93.50.10",
+    "reason": "vulcanized rubber O-rings; applies only if the O-rings are of vulcanized rubber rather than plastics (Section XVI note 1(a) would also exclude them from 8486)"
+   },
+   {
+    "code": "8484.10",
+    "reason": "gaskets of metal sheeting combined with other material; not applicable to a single-material O-ring"
+   }
+  ],
+  "missing_facts": [
+   "What is the O-ring material: plastics (e.g. PTFE, FFKM classed as plastic) or vulcanized rubber (4016.93.50.10)?"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "HQ H314335 (in force) affirmed NY N314063, classifying O-rings for semiconductor CVD and HDPCVD processing chambers in 3926.90.45 and rejecting heading 8486 because Section XVI note 1(g) excludes plastic goods similar to parts of general use. The same reasoning applies here, giving 3926.90.45.10 (O-rings). If the O-rings are vulcanized rubber, the parallel line is 4016.93.50.10."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

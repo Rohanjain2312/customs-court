@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00114", "verdict": "pass", "reason": "Heading 8530 matches; both rely on Section XVI note 2(b) for parts of traffic signals."}
+{"item_id": "atlas_test_00117", "verdict": "pass", "reason": "Heading 3920 matches; both rely on GRI 1 for non-adhesive PVC strip."}
+{"item_id": "atlas_test_00121", "verdict": "pass", "reason": "Heading 7323 matches; both apply GRI 3(b) for essential character of stainless steel pan."}
+{"item_id": "atlas_test_00123", "verdict": "pass", "reason": "Heading 8467 matches; both apply GRI 3(b) for drill's essential character in retail set."}
+{"item_id": "atlas_test_00125", "verdict": "pass", "reason": "Heading 9401 matches; both classify as part of seat furniture under GRI 1."}
+{"item_id": "atlas_test_00128", "verdict": "pass", "reason": "Heading 7419 matches; both assume brass and apply Section XV note 7 for plumbing goods."}
+{"item_id": "atlas_test_00130", "verdict": "pass", "reason": "Heading 3920 matches; both apply GRI 6 for laminated plastic film with BOPP predominating."}
+{"item_id": "atlas_test_00131", "verdict": "pass", "reason": "Heading 2933 matches; both classify pyridine eo nomine under GRI 1."}
+{"item_id": "atlas_test_00133", "verdict": "pass", "reason": "Heading 2930 matches; both apply Chapter 29 note 3 for compound fitting organo-sulfur & carboxylic acid."}
+{"item_id": "atlas_test_00135", "verdict": "fail", "reason": "Heading mismatch: assistant classified in 4203 (leather) while CBP placed in 6102 (women's knit coats)."}
+{"item_id": "atlas_test_00137", "verdict": "pass", "reason": "Heading 8427 matches; both apply GRI 2(a) for unfinished forklift with essential character."}
+{"item_id": "atlas_test_00138", "verdict": "pass", "reason": "Heading 6104 matches; both apply GRI 3(b) and Chapter 95 note 1 for well-made girl's costume dress."}
+{"item_id": "atlas_test_00145", "verdict": "pass", "reason": "Heading 6111 matches; both apply Rubie's Costume rule for well-made infant costumes."}
+{"item_id": "atlas_test_00146", "verdict": "fail", "reason": "Heading mismatch: assistant classified in 9605 (personal toilet sets) while CBP placed in 8205 (hand tools)."}
+{"item_id": "atlas_test_00147", "verdict": "pass", "reason": "Heading 8534 matches; both apply Chapter 85 note 8 to allow non-printed connectors in printed circuit."}
+{"item_id": "atlas_test_00154", "verdict": "fail", "reason": "Heading mismatch: assistant classified as unmounted (9001) while CBP placed mounted filters in 9002."}
+{"item_id": "atlas_test_00156", "verdict": "fail", "reason": "Heading mismatch: assistant classified as marine engine (8408) while CBP placed in parts (8431)."}
+{"item_id": "atlas_test_00159", "verdict": "pass", "reason": "Heading 6110 matches; both apply fiber-predominance rule with hemp as 'other textile material'."}
+{"item_id": "atlas_test_00163", "verdict": "fail", "reason": "Heading mismatch: assistant classified in 9032 (automatic regulator) while CBP reference describes as 8481 (valve with actuator)."}

@@ -1,0 +1,47 @@
+{
+ "item_id": "fresh_N363956",
+ "classification": {
+  "hts10": "9017.80.00.00",
+  "facts": {
+   "material": "polyester ruler tape; ABS and steel housing/components; magnetic hook",
+   "function": "measuring linear distance",
+   "form": "5-meter retractable tape measure marked in inches and centimeters",
+   "end_use": "tradespeople, inspectors, contractors, homeowners"
+  },
+  "gri_path": [
+   "GRI 1: heading 9017 covers instruments for measuring length for use in the hand (e.g., measuring rods and tapes)",
+   "GRI 6: 9017.80.00.00 other instruments (not drafting, calculating or micrometer/caliper instruments)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "G87211",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9017.30",
+    "reason": "micrometers, calipers and gauges; a tape measure is not a gauge"
+   },
+   {
+    "code": "9017.20",
+    "reason": "drawing, marking-out or mathematical calculating instruments; the tape measures length"
+   },
+   {
+    "code": "3926.90",
+    "reason": "article of plastics; heading 9017 specifically covers hand measuring tapes"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "The tape measure is a hand-held instrument for measuring length, which heading 9017 specifically covers. It is not a drafting, calculating or micrometer instrument, so it falls in 9017.80.00.00 (other instruments). CBP classified a retractable tape measure in 9017.80.0000 (G87211, in force)."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

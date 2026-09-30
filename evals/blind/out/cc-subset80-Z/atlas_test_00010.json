@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00010",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "3918.10.10.00",
+  "facts": {
+   "material": "PVC base, PVC backing, wood veneer surface",
+   "function": "floor covering",
+   "form": "click-lock planks/tiles",
+   "end_use": "flooring"
+  },
+  "gri_path": [
+   "GRI 1: heading 3918 plastic floor coverings; Note 9 to Ch 39"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4418.73",
+    "reason": "wood flooring; plastics dominate by thickness (4.5 of 5 mm)"
+   },
+   {
+    "code": "3918.90",
+    "reason": "other plastics, but PVC specific"
+   }
+  ],
+  "missing_facts": [
+   "Whether the veneer layer is real wood or printed"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Heading 3918 covers plastic floor coverings in tiles; PVC forms the bulk and gives the essential character, veneer is thin. Subheading 3918.10 of polymers of vinyl chloride."
+ }
+}

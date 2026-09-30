@@ -1,0 +1,49 @@
+{
+ "item_id": "fresh_N364644",
+ "classification": {
+  "hts10": "8480.60.00.90",
+  "facts": {
+   "material": "partially recycled HDPE plastic",
+   "function": "cast-in-place mold for pouring concrete piers, footings, columns and bollards",
+   "form": "single-use cylindrical tube, 4 ft long, stackable, diameters 8 to 30 in",
+   "end_use": "construction"
+  },
+  "gri_path": [
+   "GRI 1: heading 8480 covers molds for mineral materials; concrete is a mineral material and the tube shapes poured concrete into piers/columns",
+   "GRI 1: heading 8480 applies regardless of the mold's material (plastic), and 8480 is more specific than 3926 other articles of plastics",
+   "GRI 6: 8480.60.00 molds for mineral materials; 8480.60.00.90 other types (not injection or compression)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N353614",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3926.90.99",
+    "reason": "heading 8480 specifically provides for molds for mineral materials"
+   },
+   {
+    "code": "3917.21-3917.32",
+    "reason": "not tubes for conveying fluids; function is molding concrete"
+   },
+   {
+    "code": "8480.60.00.10",
+    "reason": "not an injection or compression mold"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "The Ceme-Tube forms are cylindrical molds into which wet concrete is poured to form piers, footings and columns, which makes them molds for mineral materials of heading 8480. CBP consistently classifies concrete formwork in 8480.60.0090 (N353614, in force; R03115). Being single-use and made of HDPE does not remove them from the molds provision, and as gravity-pour forms they are 'other types', not injection or compression molds."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "cross_search"
+ ]
+}

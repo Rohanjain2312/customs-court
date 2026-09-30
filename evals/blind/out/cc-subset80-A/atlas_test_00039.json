@@ -1,0 +1,48 @@
+{
+ "item_id": "atlas_test_00039",
+ "classification": {
+  "hts10": "8421.21.00.00",
+  "facts": {
+   "material": "housing (plastic or metal) containing multiple filter media layers",
+   "function": "filters and purifies water flowing to the shower head",
+   "form": "complete inline filter unit fitted between shower arm and shower head",
+   "end_use": "household bathing"
+  },
+  "gri_path": [
+   "GRI 1: heading 8421 covers filtering or purifying machinery and apparatus for liquids; the shower filter is a complete filtering apparatus, not a shower head or plumbing fitting",
+   "Section XVI applies; the article is not a part of a shower head but a stand-alone filter",
+   "GRI 6: 8421.21 for filtering or purifying water, 8421.21.00.00"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N347101",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8421.99",
+    "reason": "parts of filtering apparatus; the product is a complete filter unit, not a replacement cartridge alone"
+   },
+   {
+    "code": "3924.90.56/7907",
+    "reason": "shower heads classified by material; the article filters water and is not a shower head"
+   },
+   {
+    "code": "8481.80",
+    "reason": "taps, valves and similar appliances; the article does not control flow, it filters"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.8,
+  "abstain": false,
+  "rationale": "An inline shower filter with several filtration layers is apparatus for filtering or purifying water within heading 8421 under GRI 1. It is a complete filter, not a shower head or valve, so subheading 8421.21 (for filtering or purifying water) applies, statistical line 8421.21.00.00. CBP consistently classifies household water filters in 8421.21.0000, for example NY N347101 (in force)."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

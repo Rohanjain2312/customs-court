@@ -1,0 +1,56 @@
+{
+ "item_id": "atlas_test_00036",
+ "classification": {
+  "hts10": "9025.80.10.00",
+  "facts": {
+   "material": "electronic instrument (sensor, electronics, housing)",
+   "function": "measures dew point (humidity) and temperature of air or gas and transmits an electrical output signal",
+   "form": "complete transmitter instrument",
+   "end_use": "industrial or HVAC process monitoring"
+  },
+  "gri_path": [
+   "GRI 1: heading 9025 covers thermometers, hygrometers and psychrometers, recording or not, and any combination of these instruments; a dew point meter is a hygrometer and the combined dew point/temperature unit is a combination named in the heading",
+   "Section XVI note 1(m) excludes chapter 90 articles, so 8543 is not available",
+   "GRI 6: 9025.80 other instruments (combinations, not solely thermometers of 9025.1x); electrical, 9025.80.10.00"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H89862",
+    "status": "in_force"
+   },
+   {
+    "id": "N355340",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9025.19.80",
+    "reason": "thermometers only; the unit also measures dew point (humidity), a combination instrument"
+   },
+   {
+    "code": "9025.80.35.00",
+    "reason": "non-recording hygrometers that are not electrical; the transmitter is electrical"
+   },
+   {
+    "code": "9027.80",
+    "reason": "physical or chemical analysis apparatus; humidity and temperature measurement is specifically provided for in 9025"
+   },
+   {
+    "code": "9026.20",
+    "reason": "pressure measuring instruments; not the measured variable"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "Dew point transmitters are electrical hygrometers, and combined with temperature measurement they are a combination of instruments named in heading 9025. Electrical instruments of 9025.80 go to 9025.80.10.00. CBP classified an electronic temperature and humidity monitoring sensor in 9025.80.10 in NY H89862 and recent sensor modules there in NY N355340, both in force."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

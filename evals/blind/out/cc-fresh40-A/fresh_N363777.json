@@ -1,0 +1,55 @@
+{
+ "item_id": "fresh_N363777",
+ "classification": {
+  "hts10": "9018.19.95.50",
+  "facts": {
+   "material": "electronic PPG sensor with red/IR/green LEDs; textile bands; tablet",
+   "function": "continuous non-invasive monitoring of pulse rate and SpO2 (pulse oximetry) with Bluetooth transmission for parental/clinical review",
+   "form": "system imported with Gabi sensor, four textile bands, tablet with monitor app, cables, adapters, guides",
+   "end_use": "medical monitoring of children by parents and clinicians"
+  },
+  "gri_path": [
+   "GRI 1: heading 9018 covers electro-diagnostic instruments and apparatus used in medical sciences, including apparatus for functional exploratory examination such as pulse oximeters",
+   "GRI 3(b): the Gabi sensor, which performs the measurement, gives the system its essential character; bands, tablet, cables and adapters are ancillary",
+   "GRI 6: 9018.19 other electro-diagnostic apparatus; 9018.19.95 other; 9018.19.95.50 other apparatus"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "H338599",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9018.19.95.60",
+    "reason": "the sensor is a complete apparatus, not a part or accessory"
+   },
+   {
+    "code": "9031.80.80",
+    "reason": "consumer wellness wearables go there; this device measures SpO2/pulse for medical monitoring and is covered by heading 9018"
+   },
+   {
+    "code": "8517.62.00",
+    "reason": "Bluetooth transmission is ancillary to the medical measuring function"
+   },
+   {
+    "code": "8471.30.01",
+    "reason": "the tablet is an accessory to the system; if CBP treats the items as not a set, the tablet would be classified separately"
+   }
+  ],
+  "missing_facts": [
+   "Whether CBP treats the tablet, chargers and adapters as a GRI 3(b) set with the sensor or classifies them separately"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "The Gabi sensor is a wearable pulse oximeter that measures pulse rate and oxygen saturation by photoplethysmography for monitoring by parents and clinicians. CBP classifies pulse oximeters in 9018.19.95 as electro-diagnostic apparatus (H338599, in force). The sensor performs the core function and gives the system its essential character, so the system falls in 9018.19.95.50 (other apparatus)."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "cross_search"
+ ]
+}

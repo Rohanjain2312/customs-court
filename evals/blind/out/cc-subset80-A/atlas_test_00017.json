@@ -1,0 +1,54 @@
+{
+ "item_id": "atlas_test_00017",
+ "classification": {
+  "hts10": "7326.90.86.88",
+  "facts": {
+   "material": "steel",
+   "function": "covers a duct opening and directs conditioned air into a room",
+   "form": "finished vent/grille",
+   "end_use": "building HVAC/air conditioning systems"
+  },
+  "gri_path": [
+   "GRI 1: heading 8415 parts provision considered; Section XVI note 2 requires a part to be an integral, constituent component of the machine; a room vent is a separate article of the duct system, not a component of the air conditioning machine",
+   "Section XVI note 1(g) / Section XV note: article of steel not otherwise specified falls in heading 7326 other articles of iron or steel",
+   "GRI 6: 7326.90 other; 7326.90.86 other; suffix 88 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N350010",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8415.90",
+    "reason": "vents are not integral, constituent or component parts of an air conditioning machine (N350010, citing earlier vent and grille rulings)"
+   },
+   {
+    "code": "8708.29.51.60",
+    "reason": "motor vehicle body parts; applies only to vents for vehicles, not stated"
+   },
+   {
+    "code": "7308.90",
+    "reason": "not a structure or part of a structure"
+   },
+   {
+    "code": "3926.90",
+    "reason": "vent is steel, not plastic"
+   }
+  ],
+  "missing_facts": [
+   "Is the vent for a building duct system or for a motor vehicle (8708)?"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "A steel air conditioning vent is a separate article that fits a duct opening; CBP treats such vents, grilles and return air panels as not integral parts of an air conditioning unit, so heading 8415 does not apply. NY N350010 (in force) classified steel return air vents/access panels in 7326.90.86.88, following earlier vent and grille rulings. The vent falls in the residual steel line 7326.90.86.88."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

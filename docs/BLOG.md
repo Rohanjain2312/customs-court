@@ -43,7 +43,8 @@ The agent on the 80-item subset, all rows on the same items:
 |---|---|---|---|---|---|---|
 | Zero-shot, no tools | Claude Sonnet 5 | 22.7% [12.1, 33.3] | 51.2% [40.0, 62.5] | 53.8% [42.5, 65.0] | 15.0% | $0.0067 |
 | TariffAgent single agent (API) | gpt-5-mini | 43.9% [31.8, 56.1] | 51.2% [40.0, 62.5] | 57.5% [46.2, 68.8] | 22.5% | $0.0077 |
-| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+| Zero-shot, no tools (in the Claude Code session) | Claude Opus 5.5 | not run yet | | | | |
+| TariffAgent single agent (in the Claude Code session) | Claude Opus 5.5 | 51.5% [39.4, 63.6] | 63.7% [52.5, 73.8] | 70.0% [60.0, 80.0] | 20.0% | $0 (no API spend) |
 <!-- /results:subset -->
 
 ## Doing it without a budget

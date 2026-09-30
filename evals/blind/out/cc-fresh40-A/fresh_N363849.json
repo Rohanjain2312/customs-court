@@ -1,0 +1,49 @@
+{
+ "item_id": "fresh_N363849",
+ "classification": {
+  "hts10": "8421.29.00.65",
+  "facts": {
+   "material": "cast iron or ductile iron body, stainless-steel perforated screen",
+   "function": "removes particulates and debris from process fluids to protect pumps, valves, heat exchangers",
+   "form": "flanged pipeline strainer with hinged bolted cover and blowoff plugs, no moving parts",
+   "end_use": "industrial water, oil, gas and other fluid service"
+  },
+  "gri_path": [
+   "GRI 1: heading 8421 covers filtering or purifying machinery and apparatus for liquids or gases; Section XVI covers apparatus without moving parts",
+   "GRI 6: 8421.2 filtering apparatus for liquids; not solely for water (8421.21) as used with water, oil and other fluids; 8421.29.00 other",
+   "GRI 6 statistical: not refrigerant recovery, oil-separation, or hydraulic fluid power filter; 8421.29.00.65 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "964174",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8421.21.00",
+    "reason": "not designed solely for filtering or purifying water; used for oil, gas and other fluids"
+   },
+   {
+    "code": "8421.39",
+    "reason": "principally used with liquid process media; gas service is secondary"
+   },
+   {
+    "code": "7325.10 / 7326.90",
+    "reason": "cast iron article; heading 8421 is a more specific provision for filtering apparatus"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "The LPD strainers remove particulate matter from process fluids by passing them through a perforated stainless-steel screen, which is filtering apparatus of heading 8421. Because they are used with water, oil and other fluids rather than water alone, they fall in 8421.29.00 (other filtering apparatus for liquids). CBP classified Y-strainers in 8421.29.00 in HQ 964174 (in force), and the residual statistical line 8421.29.00.65 applies."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

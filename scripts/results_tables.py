@@ -19,7 +19,12 @@ from tariffagent.evals.stats import bootstrap_ci, paired_diff
 ROOT = Path(__file__).resolve().parents[1]
 REP = ROOT / "evals" / "reports"
 RUNS = ROOT / "evals" / "runs"
-DOCS = [ROOT / "README.md", ROOT / "docs" / "CASE_STUDY.md", ROOT / "docs" / "EVAL.md", ROOT / "docs" / "BLOG.md"]
+DOCS = [
+    ROOT / "README.md",
+    ROOT / "docs" / "CASE_STUDY.md",
+    ROOT / "docs" / "EVAL.md",
+    ROOT / "docs" / "BLOG.md",
+]
 
 SONNET = "Claude Sonnet 5"
 OPUS_CC = "Claude Opus 5.5"
@@ -105,6 +110,7 @@ def build() -> tuple[dict, dict[str, str]]:
     sub = {
         "Z": stats("atlas200-Z", ids),
         "O": stats("subset80-O"),
+        "Z_cc": stats("cc-subset80-Z"),
         "A_cc": stats("cc-subset80-A"),
     }
     data["subset80"] = sub
@@ -113,17 +119,31 @@ def build() -> tuple[dict, dict[str, str]]:
             HEAD,
             row("Zero-shot, no tools", SONNET, sub["Z"]),
             row("TariffAgent single agent (API)", "gpt-5-mini", sub["O"]),
-            row("TariffAgent single agent (in the Claude Code session)", OPUS_CC, sub["A_cc"], " (no API spend)"),
+            row("Zero-shot, no tools (in the Claude Code session)", OPUS_CC, sub["Z_cc"], " (no API spend)"),
+            row(
+                "TariffAgent single agent (in the Claude Code session)",
+                OPUS_CC,
+                sub["A_cc"],
+                " (no API spend)",
+            ),
         ]
     )
     diffs = {}
     base = scored("cc-subset80-A")
-    for arm, rid in (("Z", "atlas200-Z"), ("O", "subset80-O")):
+    for arm, rid in (("Z", "atlas200-Z"), ("O", "subset80-O"), ("Z_cc", "cc-subset80-Z")):
         other = scored(rid)
         if base and other:
             for k in (10, 6):
-                a = {i: float(other[i][f"exact_{k}"]) for i in ids if i in other and other[i][f"exact_{k}"] is not None}
-                b = {i: float(base[i][f"exact_{k}"]) for i in ids if i in base and base[i][f"exact_{k}"] is not None}
+                a = {
+                    i: float(other[i][f"exact_{k}"])
+                    for i in ids
+                    if i in other and other[i][f"exact_{k}"] is not None
+                }
+                b = {
+                    i: float(base[i][f"exact_{k}"])
+                    for i in ids
+                    if i in base and base[i][f"exact_{k}"] is not None
+                }
                 diffs[f"A_cc_minus_{arm}_acc{k}"] = paired_diff(a, b)
     data["subset80_diffs"] = diffs
 
@@ -139,13 +159,80 @@ def build() -> tuple[dict, dict[str, str]]:
             "|---|---|---|",
             f"| Agent (Claude in session) minus Claude Sonnet 5 zero-shot | {dline('A_cc_minus_Z_acc10')} | {dline('A_cc_minus_Z_acc6')} |",
             f"| Agent (Claude in session) minus agent on gpt-5-mini | {dline('A_cc_minus_O_acc10')} | {dline('A_cc_minus_O_acc6')} |",
+            f"| Agent (Claude in session) minus the same model zero-shot | {dline('A_cc_minus_Z_cc_acc10')} | {dline('A_cc_minus_Z_cc_acc6')} |",
         ]
     )
 
-    # Fresh set
-    f = {k: stats(k) for k in ("fresh150-Z",)}
-    data["fresh150"] = f
-    tables["fresh"] = "\n".join([HEAD, row("Zero-shot, no tools", SONNET, f["fresh150-Z"])])
+    # Fresh set: all 150 zero-shot, then the same 40 items for the agent comparison.
+    fids = {it["item_id"] for it in load_dataset("fresh_40")}
+    f = {
+        "Z150": stats("fresh150-Z"),
+        "Z40": stats("fresh150-Z", fids),
+        "Z_cc40": stats("cc-fresh40-Z"),
+        "A_cc40": stats("cc-fresh40-A"),
+    }
+    data["fresh"] = f
+    fz = scored("fresh150-Z")
+    fa = scored("cc-fresh40-A")
+    for tag, fo in (("Z", fz), ("Z_cc", scored("cc-fresh40-Z"))):
+        if fo and fa:
+            for k in (10, 6):
+                a = {
+                    i: float(fo[i][f"exact_{k}"]) for i in fids if i in fo and fo[i][f"exact_{k}"] is not None
+                }
+                b = {
+                    i: float(fa[i][f"exact_{k}"]) for i in fids if i in fa and fa[i][f"exact_{k}"] is not None
+                }
+                diffs[f"fresh_A_cc_minus_{tag}_acc{k}"] = paired_diff(a, b)
+    tables["fresh"] = "\n".join(
+        [
+            HEAD,
+            row("Zero-shot, no tools, all 150", SONNET, f["Z150"]),
+            row("Zero-shot, no tools, the 40-item sample", SONNET, f["Z40"]),
+            row(
+                "Zero-shot, no tools (in the Claude Code session), same 40",
+                OPUS_CC,
+                f["Z_cc40"],
+                " (no API spend)",
+            ),
+            row(
+                "TariffAgent single agent (in the Claude Code session), same 40",
+                OPUS_CC,
+                f["A_cc40"],
+                " (no API spend)",
+            ),
+            "",
+            f"Paired, same 40 items, agent minus Claude Sonnet 5 zero-shot: 10-digit {dline('fresh_A_cc_minus_Z_acc10')}; 6-digit {dline('fresh_A_cc_minus_Z_acc6')}.",
+            "",
+            f"Paired, same 40 items, agent minus the same model zero-shot: 10-digit {dline('fresh_A_cc_minus_Z_cc_acc10')}; 6-digit {dline('fresh_A_cc_minus_Z_cc_acc6')}.",
+        ]
+    )
+
+    # Reasoning judge on the in-session agent runs (two in-session judges, Cohen's kappa)
+    jrows = []
+    for label, rid in (("Test subset (80)", "cc-subset80-A"), ("Fresh set (40)", "cc-fresh40-A")):
+        j = report(f"{rid}.judge")
+        data[f"judge_{rid}"] = j and {k: v for k, v in j.items() if k != "verdicts"}
+        if not j:
+            jrows.append(f"| {label} | not run yet | | | | |")
+            continue
+        pc, pw = j["proxy_pass_given_correct10"], j["proxy_fail_given_wrong_chapter"]
+
+        def rate(d):
+            return "n/a" if d["rate"] is None else f"{d['rate'] * 100:.1f}% (n={d['n']})"
+
+        k = j["cohen_kappa"]
+        jrows.append(
+            f"| {label} | {pct(j['pass_rate'])} (n={j['n_judged']}) | {rate(pc)} | {rate(pw)} | "
+            f"{'n/a' if k is None else f'{k:.2f}'} | {j['raw_agreement'] * 100:.1f}% (n={j['n_both']}) |"
+        )
+    tables["judge"] = "\n".join(
+        [
+            "| Run | Judge pass rate | Pass when 10-digit correct | Fail when chapter wrong | Cohen's kappa, second judge | Raw agreement |",
+            "|---|---|---|---|---|---|",
+            *jrows,
+        ]
+    )
 
     # Claude agent runs on dev (prompt work only, not a reported test result)
     dv = {k: stats(k) for k in ("dev100-A", "dev40-A-v1", "dev10-D-v2", "pilot-dev20-A")}
@@ -170,7 +257,7 @@ def build() -> tuple[dict, dict[str, str]]:
             f"| Same calls at list price, no caching, no batch discount | ${cost['no_cache_no_batch_usd']:.2f} |",
             f"| Saving from prompt caching and the Batch API | {cost['saving_vs_no_cache_no_batch'] * 100:.1f}% |",
             f"| Share of input tokens read from the prompt cache | {cost['cache_read_share'] * 100:.1f}% |",
-            "| Open-weights runs (HF Job, included PRO credits) | $0 extra |",
+            "| Blind test and fresh runs, and judging (in the Claude Code session) | $0 API spend |",
         ]
     )
     return data, tables

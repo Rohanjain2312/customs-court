@@ -1,0 +1,48 @@
+{
+ "item_id": "atlas_test_00042",
+ "classification": {
+  "hts10": "3926.20.90.10",
+  "facts": {
+   "material": "plastic sheeting body; textile neck strap, piping and ties",
+   "function": "protective apron worn over clothing",
+   "form": "bib apron (covers chest and front)",
+   "end_use": "kitchen/household or work protection"
+  },
+  "gri_path": [
+   "GRI 1/GRI 2(b): apron is of plastics with textile components, prima facie in 3926.20 (articles of apparel of plastics) and 6211/6307 (textile)",
+   "GRI 3(b) composite: the plastic body forms the protective surface and the bulk of the apron and gives essential character; the textile strap, piping and ties are minor fastening/trim",
+   "GRI 6: 3926.20 articles of apparel; not seamless, gloves or PVC rainwear, so 3926.20.90; statistical suffix 10 aprons"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6211.43.00.91",
+    "reason": "woven textile bib aprons; the body here is plastic, textile is only trim and straps"
+   },
+   {
+    "code": "6307.90.98",
+    "reason": "other made up textile articles; textile does not give essential character"
+   },
+   {
+    "code": "6210.50",
+    "reason": "garments of textile fabric coated with plastics (heading 5903/5907); the apron is plastic sheeting, not coated textile"
+   },
+   {
+    "code": "3926.20.90.50",
+    "reason": "'Other' apparel; aprons have their own statistical suffix 10"
+   }
+  ],
+  "missing_facts": [
+   "Is the plastic body unsupported plastic sheeting, or textile fabric coated/laminated with plastic (which would point to 6210)?"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "The bib apron's body is plastic, with only the neck strap, piping and ties of textile. Under GRI 3(b) the plastic body, which supplies the protective function and most of the article, gives essential character, placing it in 3926.20 as an article of apparel of plastics. It is not seamless, a glove or PVC rainwear, so it falls in 3926.20.90, and the statistical suffix for aprons is 10. The textile apron rulings found (e.g. woven polyester aprons in 6211.43) do not apply because the body here is plastic."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

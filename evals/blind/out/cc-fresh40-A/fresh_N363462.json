@@ -1,0 +1,49 @@
+{
+ "item_id": "fresh_N363462",
+ "classification": {
+  "hts10": "4202.92.45.00",
+  "facts": {
+   "material": "outer surface of plastic sheeting, inner foam",
+   "function": "carrying/hauling laundry and personal effects",
+   "form": "wheeled tote bag with casters, zipper closure, three handles, 18x14x24 in",
+   "end_use": "household/consumer"
+  },
+  "gri_path": [
+   "GRI 1: heading 4202 covers traveling bags, shopping bags, tote bags and similar containers of sheeting of plastics",
+   "GRI 1: Chapter 63 laundry bags (6307) excluded because the outer surface is plastic sheeting, not textile; containers of 4202 type named in heading",
+   "GRI 6: 4202.92 other, outer surface of sheeting of plastics or textile; travel, sports and similar bags; 4202.92.45 other (outer surface of plastic sheeting)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H278965",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6307.90.98",
+    "reason": "textile laundry bags; this bag has an outer surface of plastic sheeting and is a 4202 tote-type container"
+   },
+   {
+    "code": "4202.92.31",
+    "reason": "outer surface of man-made fiber textile; here outer surface is plastic sheeting"
+   },
+   {
+    "code": "4202.12",
+    "reason": "trunks/suitcases subheading; item is a tote bag, not a suitcase"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "The laundry hauler is a tote bag, a container of the kind covered by heading 4202, with an outer surface of plastic sheeting. Wheels and casters do not change its character as a tote/travel-type bag. CBP consistently places tote bags with an outer surface of plastic sheeting in 4202.92.4500 (e.g., HQ H278965, in force). It is therefore classified in 4202.92.45.00."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "ruling_status",
+  "cross_search"
+ ]
+}

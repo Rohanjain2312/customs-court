@@ -1,0 +1,57 @@
+{
+ "item_id": "fresh_N363468",
+ "classification": {
+  "hts10": "8543.70.98.60",
+  "facts": {
+   "material": "electronic components (DSP chipset) in metal housing",
+   "function": "receives and processes audio signals: D/A conversion, crossover frequency division, equalization, level adjustment; no amplification",
+   "form": "complete standalone processor with RCA/XLR/S/PDIF I/O and wireless connectivity",
+   "end_use": "high-performance loudspeaker systems"
+  },
+  "gri_path": [
+   "GRI 1: not an amplifier (8518.40) or loudspeaker (8518.21/.22) since it performs no amplification and emits no sound",
+   "GRI 1: not a part of loudspeakers under Section XVI note 2 because it is a separate apparatus with an individual function; heading 8543 covers electrical apparatus having individual functions not elsewhere specified",
+   "GRI 6: 8543.70 other machines and apparatus; 8543.70.98 other (not a DSP apparatus for mixing of sound on a network); 8543.70.98.60 other (not an amplifier or effects pedal)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "J80321",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8518.40.20",
+    "reason": "device does not amplify audio signals"
+   },
+   {
+    "code": "8518.90",
+    "reason": "not a part of a loudspeaker; it is a standalone signal processor with its own function (Section XVI note 2(a) sends goods of a specific heading to that heading)"
+   },
+   {
+    "code": "8543.70.91.00",
+    "reason": "that line covers networked DSP apparatus for the mixing of sound; this device divides frequencies/equalizes rather than mixes multiple sources (arguable)"
+   },
+   {
+    "code": "8543.70.98.10",
+    "reason": "not an amplifier"
+   }
+  ],
+  "missing_facts": [
+   "Does the device mix multiple audio input sources and connect to a network (would support 8543.70.91.00)?"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "The DSP receives audio signals and performs D/A conversion, crossover, equalization and level control but performs no amplification, so it is not an audio-frequency amplifier of 8518.40. It is an electrical apparatus with an individual function not specified elsewhere in chapter 85, falling in 8543.70. CBP classified a similar digital-to-analog audio control unit without amplification in 8543 (J80321, in force). The residual line 8543.70.98.60 applies unless the device is a networked sound-mixing DSP."
+ },
+ "tool_calls": 6,
+ "tools": [
+  "cross_search",
+  "cross_search",
+  "hts_navigate",
+  "hts_navigate",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

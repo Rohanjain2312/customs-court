@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00017",
+ "tool_calls": 0,
+ "tools": [],
+ "classification": {
+  "hts10": "8415.90.80.85",
+  "facts": {
+   "material": "steel",
+   "function": "air vent register for air conditioning",
+   "form": "finished vent",
+   "end_use": "air conditioning system"
+  },
+  "gri_path": [
+   "GRI 1: Section XVI Note 2(b) parts of 8415"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7326.90.86",
+    "reason": "other steel articles"
+   },
+   {
+    "code": "8414.59",
+    "reason": "fans"
+   }
+  ],
+  "missing_facts": [
+   "Whether it is solely for AC units or general HVAC ductwork"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "A steel vent for air conditioners is a part suitable solely for air conditioning machines, heading 8415. Alternative is other articles of steel 7326."
+ }
+}

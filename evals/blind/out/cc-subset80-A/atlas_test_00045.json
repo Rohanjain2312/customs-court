@@ -1,0 +1,51 @@
+{
+ "item_id": "atlas_test_00045",
+ "classification": {
+  "hts10": "8517.62.00.90",
+  "facts": {
+   "material": "electronic network hardware",
+   "function": "Data Diode Device (first-named): enforces one-way transfer of data between networks of different security levels",
+   "form": "stand-alone network appliance; other listed products are a keyboard switch, a multiple computer (KVM) switch and software",
+   "end_use": "computer network security"
+  },
+  "gri_path": [
+   "Several different articles named, not a GRI 3(b) set: classify the first-named, the Data Diode Device",
+   "GRI 1: heading 8517 covers other apparatus for the transmission or reception of data in a wired or wireless network; chapter 84 note 6(D) excludes such network transmission apparatus from 8471",
+   "GRI 6: 8517.62.00 machines for the reception, conversion and transmission of data; a data diode passes data one way but is not a modem or switching/routing apparatus, so suffix 90 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N336394",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8517.62.00.20",
+    "reason": "switching and routing apparatus; the data diode does not switch or route traffic among multiple ports, it only enforces unidirectional transfer"
+   },
+   {
+    "code": "8471.80.10",
+    "reason": "units of ADP machines (used for KVM switches, N332683); excluded for network data transmission apparatus by chapter 84 note 6(D)"
+   },
+   {
+    "code": "8543.70",
+    "reason": "8517 more specifically covers network data transmission apparatus"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: Keyboard Switch and Multiple Computer Switch (KVM switches, likely 8471.80.10 per N332683) and Data Pump Applications software (classified with the carrier medium, 8523)",
+   "Does the data diode perform any switching or routing (8517.62.00.20)?"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "The description lists several distinct products that do not form a retail set, so the first-named, the Data Diode Device, is classified. A data diode receives and retransmits data between networks in one direction only, which is apparatus for the reception, conversion and transmission of data in heading 8517, subheading 8517.62; chapter 84 note 6(D) keeps it out of 8471. CBP places network data transceivers in 8517.62.0090 (NY N336394, in force); the KVM switches would go to 8471.80.10 separately (NY N332683)."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

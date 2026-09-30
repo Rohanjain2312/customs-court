@@ -1,0 +1,49 @@
+{
+ "item_id": "fresh_N363949",
+ "classification": {
+  "hts10": "6505.00.20.60",
+  "facts": {
+   "material": "100% cotton woven fabric",
+   "function": "headwear",
+   "form": "baseball-style cap, multi-panel crown, curved peak, embroidered logo",
+   "end_use": "unisex adult wear"
+  },
+  "gri_path": [
+   "GRI 1: heading 6505 covers hats and other headgear made up from textile fabric in the piece",
+   "GRI 6: 6505.00 other; of cotton, flax or both; not knitted; 6505.00.20 headwear of cotton; 6505.00.20.60 other (not for babies)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "L81714",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6505.00.15",
+    "reason": "cap is of woven, not knitted, fabric"
+   },
+   {
+    "code": "6505.00.20.30",
+    "reason": "not for babies"
+   },
+   {
+    "code": "6505.00.60",
+    "reason": "that line is for man-made fiber headwear; this cap is cotton"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.9,
+  "abstain": false,
+  "rationale": "The cap is headgear made up from woven cotton fabric in the piece, which falls in heading 6505. Because it is of cotton and not knitted, and is not for babies, the line is 6505.00.20.60. The embroidered logo does not affect classification. CBP classified a cotton brushed twill six-panel cap in the equivalent cotton, not-knitted provision (L81714, in force; its old code 6505.90.2060 is the prior numbering of this line)."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}
