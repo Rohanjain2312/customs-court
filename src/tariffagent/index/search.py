@@ -25,6 +25,10 @@ RRF_K = 60
 
 _model = None
 _model_lock = threading.Lock()
+# The embedding model and the vector indexes are not safe to use from several threads at once
+# (a silent crash with TOOLS_PARALLEL=true), so each query's embed + vector search is serialized.
+# The SQLite and FTS parts stay parallel.
+_vec_lock = threading.Lock()
 
 
 def index_dir() -> Path:
@@ -253,8 +257,9 @@ class HybridSearch:
                 break
         vec = []
         if self.use_vectors:
-            qv = embed([query], query=True)[0]
-            vec = [key for key, _ in self.rulings_vi.search(qv, pool, allow=allowed)]
+            with _vec_lock:
+                qv = embed([query], query=True)[0]
+                vec = [key for key, _ in self.rulings_vi.search(qv, pool, allow=allowed)]
         return rrf(bm, vec, k)
 
     def _special_idx(self) -> set[int]:
@@ -282,6 +287,7 @@ class HybridSearch:
         ][:pool]
         vec = []
         if self.use_vectors:
-            qv = embed([query], query=True)[0]
-            vec = [key for key, _ in self.hts_vi.search(qv, pool, allow=lambda i: int(i) not in special)]
+            with _vec_lock:
+                qv = embed([query], query=True)[0]
+                vec = [key for key, _ in self.hts_vi.search(qv, pool, allow=lambda i: int(i) not in special)]
         return rrf(bm, vec, k)
