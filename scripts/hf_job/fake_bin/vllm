@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Dry-run shim: `vllm serve MODEL --port P ...` starts the scripted fake server instead of a model.
+PORT=8000
+while [ $# -gt 0 ]; do [ "$1" = "--port" ] && PORT="$2"; shift; done
+exec python3 "$(dirname "$0")/../fake_openai_server.py" --port "$PORT"

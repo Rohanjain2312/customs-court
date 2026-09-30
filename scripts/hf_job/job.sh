@@ -94,7 +94,7 @@ run() { # run-id, then eval-run args
   local left; left=$(left_min)
   if [ "$left" -le 3 ]; then log "no time for $rid"; return 1; fi
   log "start $rid ($left min left)"
-  timeout "$(( left - 2 ))m" $TA eval run --run-id "$rid" --mode interactive --concurrency "${CONC:-48}" "$@" \
+  timeout "$(( left - 2 ))m" $TA eval run --run-id "$rid" --mode interactive --concurrency "${CONC:-48}" ${EVAL_N:+--n $EVAL_N} "$@" \
     > "logs/$rid.log" 2>&1
   log "end $rid: $(grep -E 'acc10|usd/item' "logs/$rid.log" | tr '\n' ' ' | cut -c1-200)"
 }
