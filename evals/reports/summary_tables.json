@@ -1,0 +1,311 @@
+{
+  "atlas200": {
+    "atlas200-Z": {
+      "run_id": "atlas200-Z",
+      "n": 200,
+      "acc_10": {
+        "mean": 0.2126,
+        "lo": 0.1494,
+        "hi": 0.2759,
+        "n": 174
+      },
+      "acc_8": {
+        "mean": 0.3955,
+        "lo": 0.322,
+        "hi": 0.4689,
+        "n": 177
+      },
+      "acc_6": {
+        "mean": 0.53,
+        "lo": 0.46,
+        "hi": 0.6,
+        "n": 200
+      },
+      "acc_4": {
+        "mean": 0.62,
+        "lo": 0.555,
+        "hi": 0.685,
+        "n": 200
+      },
+      "abstain_rate": 0.135,
+      "acc6_when_answering": 0.6199,
+      "usd_per_item": 0.00613,
+      "tokens_per_item": 6917.7,
+      "tool_calls_per_item": 0.0,
+      "mode": "batch",
+      "models": {
+        "main": "claude-sonnet-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    },
+    "os-atlas200-Z": null,
+    "os-atlas200-A": null,
+    "os-atlas200-D": null
+  },
+  "fresh150": {
+    "fresh150-Z": {
+      "run_id": "fresh150-Z",
+      "n": 150,
+      "acc_10": {
+        "mean": 0.2,
+        "lo": 0.14,
+        "hi": 0.2667,
+        "n": 150
+      },
+      "acc_8": {
+        "mean": 0.3333,
+        "lo": 0.26,
+        "hi": 0.4133,
+        "n": 150
+      },
+      "acc_6": {
+        "mean": 0.48,
+        "lo": 0.4,
+        "hi": 0.56,
+        "n": 150
+      },
+      "acc_4": {
+        "mean": 0.6933,
+        "lo": 0.6133,
+        "hi": 0.7667,
+        "n": 150
+      },
+      "abstain_rate": 0.0133,
+      "acc6_when_answering": 0.4932,
+      "usd_per_item": 0.00599,
+      "tokens_per_item": 7309.8,
+      "tool_calls_per_item": 0.0,
+      "mode": "batch",
+      "models": {
+        "main": "claude-sonnet-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    },
+    "os-fresh150-Z": null,
+    "os-fresh150-A": null
+  },
+  "subset80": {
+    "A": null,
+    "B": null,
+    "C": null,
+    "D": null,
+    "A_ask": null,
+    "O": {
+      "run_id": "subset80-O",
+      "n": 80,
+      "acc_10": {
+        "mean": 0.4394,
+        "lo": 0.3182,
+        "hi": 0.5606,
+        "n": 66
+      },
+      "acc_8": {
+        "mean": 0.5373,
+        "lo": 0.4179,
+        "hi": 0.6567,
+        "n": 67
+      },
+      "acc_6": {
+        "mean": 0.5125,
+        "lo": 0.4,
+        "hi": 0.625,
+        "n": 80
+      },
+      "acc_4": {
+        "mean": 0.575,
+        "lo": 0.4625,
+        "hi": 0.6875,
+        "n": 80
+      },
+      "abstain_rate": 0.225,
+      "acc6_when_answering": 0.5593,
+      "usd_per_item": 0.00774,
+      "tokens_per_item": 65307.0,
+      "tool_calls_per_item": 6.25,
+      "mode": "interactive",
+      "models": {
+        "main": "gpt-5-mini",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    }
+  },
+  "subset80_diffs": {},
+  "dev": {
+    "dev100-A": {
+      "run_id": "dev100-A",
+      "n": 100,
+      "acc_10": {
+        "mean": 0.4023,
+        "lo": 0.2989,
+        "hi": 0.5057,
+        "n": 87
+      },
+      "acc_8": {
+        "mean": 0.4831,
+        "lo": 0.382,
+        "hi": 0.5843,
+        "n": 89
+      },
+      "acc_6": {
+        "mean": 0.55,
+        "lo": 0.45,
+        "hi": 0.65,
+        "n": 100
+      },
+      "acc_4": {
+        "mean": 0.62,
+        "lo": 0.52,
+        "hi": 0.72,
+        "n": 100
+      },
+      "abstain_rate": 0.2,
+      "acc6_when_answering": 0.6962,
+      "usd_per_item": 0.02889,
+      "tokens_per_item": 53590.3,
+      "tool_calls_per_item": 5.04,
+      "mode": "batch",
+      "models": {
+        "main": "claude-sonnet-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    },
+    "dev40-A-v1": {
+      "run_id": "dev40-A-v1",
+      "n": 40,
+      "acc_10": {
+        "mean": 0.4167,
+        "lo": 0.25,
+        "hi": 0.5833,
+        "n": 36
+      },
+      "acc_8": {
+        "mean": 0.5556,
+        "lo": 0.3889,
+        "hi": 0.7222,
+        "n": 36
+      },
+      "acc_6": {
+        "mean": 0.6,
+        "lo": 0.45,
+        "hi": 0.75,
+        "n": 40
+      },
+      "acc_4": {
+        "mean": 0.65,
+        "lo": 0.5,
+        "hi": 0.8,
+        "n": 40
+      },
+      "abstain_rate": 0.225,
+      "acc6_when_answering": 0.75,
+      "usd_per_item": 0.04795,
+      "tokens_per_item": 55977.1,
+      "tool_calls_per_item": 4.88,
+      "mode": "interactive",
+      "models": {
+        "main": "claude-sonnet-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    },
+    "dev10-D-v2": {
+      "run_id": "dev10-D-v2",
+      "n": 10,
+      "acc_10": {
+        "mean": 0.5714,
+        "lo": 0.1429,
+        "hi": 0.8571,
+        "n": 7
+      },
+      "acc_8": {
+        "mean": 0.7143,
+        "lo": 0.4286,
+        "hi": 1.0,
+        "n": 7
+      },
+      "acc_6": {
+        "mean": 0.8,
+        "lo": 0.5,
+        "hi": 1.0,
+        "n": 10
+      },
+      "acc_4": {
+        "mean": 0.9,
+        "lo": 0.7,
+        "hi": 1.0,
+        "n": 10
+      },
+      "abstain_rate": 0.1,
+      "acc6_when_answering": 0.8889,
+      "usd_per_item": 0.10098,
+      "tokens_per_item": 183718.4,
+      "tool_calls_per_item": 25.3,
+      "mode": "interactive",
+      "models": {
+        "main": "claude-sonnet-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    },
+    "pilot-dev20-A": {
+      "run_id": "pilot-dev20-A",
+      "n": 20,
+      "acc_10": {
+        "mean": 0.4375,
+        "lo": 0.1875,
+        "hi": 0.6875,
+        "n": 16
+      },
+      "acc_8": {
+        "mean": 0.5,
+        "lo": 0.25,
+        "hi": 0.75,
+        "n": 16
+      },
+      "acc_6": {
+        "mean": 0.6,
+        "lo": 0.4,
+        "hi": 0.8,
+        "n": 20
+      },
+      "acc_4": {
+        "mean": 0.8,
+        "lo": 0.6,
+        "hi": 0.95,
+        "n": 20
+      },
+      "abstain_rate": 0.15,
+      "acc6_when_answering": 0.7059,
+      "usd_per_item": 0.03649,
+      "tokens_per_item": 30345.0,
+      "tool_calls_per_item": 3.05,
+      "mode": "interactive",
+      "models": {
+        "main": "claude-sonnet-5-5",
+        "friend": "",
+        "reasoner": "claude-sonnet-5-5",
+        "advocate": "claude-haiku-4-5"
+      }
+    }
+  },
+  "cost": {
+    "actual_usd": 13.1836,
+    "no_cache_same_mode_usd": 26.9237,
+    "no_cache_no_batch_usd": 39.3047,
+    "calls": 2099,
+    "cache_read_tokens": 17268867,
+    "input_tokens_all": 21234507,
+    "cache_read_share": 0.8132,
+    "saving_vs_no_cache_no_batch": 0.6646
+  }
+}

@@ -83,7 +83,7 @@ Pilot (dev, 20 items, interactive): 10-digit 7/16, 6-digit 12/20, $0.036 per ite
 ## Model switch (2026-09-29)
 
 At Rohan's request the reasoner moved from Claude Sonnet 5.5 to Claude Sonnet 5. No Sonnet model is cheaper per token than Sonnet 5.5 (pricing page, checked 2026-09-29: Sonnet 5 and 5.5 are both $2/$10 per million tokens, Sonnet 4.6 and 4.5 are $3/$15), so Sonnet 5 is the cheapest option that is not Sonnet 5.5. Savings came from caching instead:
-- Batch cache pre-warm (`AnthropicProvider.prewarm`): requests inside one Message Batch run concurrently, so each paid its own 1-hour cache write of the 7.4k-token static prefix. One interactive call now writes it once. Round 1 of dev_100 cost $0.21 for 100 requests after the change; the same round before it cost about $1.50. `max_tokens=0` would be the natural pre-warm, but the API refuses it with structured output, and the output schema is part of the cached prefix (dropping it changed the prefix by about 1,100 tokens), so the pre-warm asks for one token.
+- Batch cache pre-warm (`AnthropicProvider.prewarm`): requests inside one Message Batch run concurrently, so each paid its own 1-hour cache write of the 7.4k-token static prefix. One interactive call now writes it once. On round 1 of dev_100, cost per request fell from $0.0109 to $0.0021 (`evals/reports/caching_prewarm.json`). `max_tokens=0` would be the natural pre-warm, but the API refuses it with structured output, and the output schema is part of the cached prefix (dropping it changed the prefix by about 1,100 tokens), so the pre-warm asks for one token.
 - The pilot (pilot-dev20-A) is the only run on Sonnet 5.5 and is labeled so.
 
 ## Phase 4: Eval harness (2026-09-29, in progress)

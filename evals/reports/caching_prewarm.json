@@ -1,0 +1,22 @@
+{
+  "what": "First batch round of the dev_100 single-agent run (one request per item, turn 1), before and after the cache pre-warm. Same prompt prefix size; model changed from Sonnet 5.5 to Sonnet 5 at the same price.",
+  "before_prewarm_sonnet_5_5": {
+    "requests": 80,
+    "usd": 0.8743,
+    "cache_write_1h_tokens": 399371,
+    "cache_read_tokens": 197613,
+    "usd_per_request": 0.0109
+  },
+  "after_prewarm_sonnet_5": {
+    "requests": 100,
+    "usd": 0.207,
+    "cache_write_1h_tokens": 21021,
+    "cache_read_tokens": 732035,
+    "usd_per_request": 0.0021
+  },
+  "prewarm_calls": {
+    "n": 7,
+    "usd": 0.0117
+  },
+  "source": "data/ledger.jsonl"
+}

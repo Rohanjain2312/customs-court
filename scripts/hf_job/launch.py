@@ -26,7 +26,7 @@ REPO = "rohanjain2312/customs-court-evaljobs"
 IMAGE = "vllm/vllm-openai:latest"
 
 BOOT = (
-    "python3 -c \"from huggingface_hub import hf_hub_download as d; "
+    'python3 -c "from huggingface_hub import hf_hub_download as d; '
     f"d('{REPO}', 'bundle/code.tar.gz', repo_type='dataset', local_dir='/boot')\" && "
     "tar xzf /boot/bundle/code.tar.gz -C /boot scripts/hf_job/job.sh && bash /boot/scripts/hf_job/job.sh"
 )
@@ -38,7 +38,12 @@ def run(a) -> None:
     job = api.run_job(
         image=IMAGE,
         command=["bash", "-c", BOOT],
-        env={"JOB_TAG": a.tag, "JOB_PLAN": a.plan, "JOB_DEADLINE_MIN": str(max(5, minutes - 3)), "BUNDLE_REPO": REPO},
+        env={
+            "JOB_TAG": a.tag,
+            "JOB_PLAN": a.plan,
+            "JOB_DEADLINE_MIN": str(max(5, minutes - 3)),
+            "BUNDLE_REPO": REPO,
+        },
         secrets={"HF_TOKEN": get_token()},
         flavor=a.flavor,
         timeout=a.timeout,

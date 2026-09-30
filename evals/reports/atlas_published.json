@@ -1,0 +1,9 @@
+{
+  "source": "ATLAS: Benchmarking and Adapting LLMs for Global Trade via Harmonized Tariff Code Classification, arXiv 2509.18400, test split of 200 CROSS rulings",
+  "note": "Numbers as published in the paper; not re-run here.",
+  "models": {
+    "atlas_llama_3.3_70b_finetuned": {"exact_10": 0.40, "exact_6": 0.575},
+    "gpt_5_thinking": {"exact_10": 0.25},
+    "gemini_2.5_pro_thinking": {"exact_10": 0.135}
+  }
+}
