@@ -19,7 +19,7 @@ from tariffagent.evals.stats import bootstrap_ci, paired_diff
 ROOT = Path(__file__).resolve().parents[1]
 REP = ROOT / "evals" / "reports"
 RUNS = ROOT / "evals" / "runs"
-DOCS = [ROOT / "README.md", ROOT / "docs" / "CASE_STUDY.md", ROOT / "docs" / "EVAL.md"]
+DOCS = [ROOT / "README.md", ROOT / "docs" / "CASE_STUDY.md", ROOT / "docs" / "EVAL.md", ROOT / "docs" / "BLOG.md"]
 
 SONNET = "Claude Sonnet 5"
 Q36 = "Qwen3.6-35B-A3B (open weights)"
