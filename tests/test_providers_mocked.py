@@ -267,3 +267,21 @@ def test_batch_ids_are_valid_and_unique():
     ids = safe_batch_ids(cids)
     assert all(BATCH_ID_OK.match(v) for v in ids.values())
     assert len(set(ids.values())) == len(cids)
+
+
+def test_local_provider_params_and_zero_cost():
+    from tariffagent.agents.runner import provider_for
+    from tariffagent.config import price_for
+    from tariffagent.llm.openai_provider import LocalProvider
+
+    r = _req()
+    r.model = "local-qwen3.5-4b"
+    p = LocalProvider().build_params(r)
+    # llama.cpp cannot combine tools with a JSON-schema grammar: tools win on tool turns.
+    assert "tools" in p and "response_format" not in p and "reasoning_effort" not in p
+    assert p["extra_body"]["chat_template_kwargs"]["enable_thinking"] is False
+    r.tool_choice = {"type": "none"}
+    p = LocalProvider().build_params(r)
+    assert "tools" not in p and p["response_format"]["type"] == "json_schema"
+    assert price_for("local-qwen3.5-4b").input == 0 and price_for("local-qwen3.5-2b").output == 0
+    assert isinstance(provider_for("local-qwen3.5-4b"), LocalProvider)

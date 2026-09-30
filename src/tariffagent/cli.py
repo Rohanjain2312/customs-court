@@ -128,14 +128,19 @@ def eval_run(
 
 
 @eval_app.command("judge")
-def eval_judge(run_id: str, second_judge: bool = True, phase: str = "judge"):
+def eval_judge(
+    run_id: str,
+    second_judge: bool = True,
+    second_model: str = typer.Option("", help="model id of the second judge (default: OPENAI_MODEL)"),
+    phase: str = "judge",
+):
     """Reference-grounded reasoning judge on one run, validated by proxy and a second judge (kappa)."""
     import os
 
     os.environ["PHASE"] = phase
     from tariffagent.evals.analysis import judge_and_validate
 
-    out = judge_and_validate(run_id, second=second_judge)
+    out = judge_and_validate(run_id, second_model=second_model or None, second=second_judge)
     console.print({k: v for k, v in out.items() if k != "verdicts"})
 
 

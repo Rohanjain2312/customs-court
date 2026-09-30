@@ -221,7 +221,10 @@ def savings_report() -> dict:
         u = e["usage"]
         p = price_for(e["model"])
         all_in = (
-            u["input_tokens"] + u["cache_read_tokens"] + u["cache_write_5m_tokens"] + u["cache_write_1h_tokens"]
+            u["input_tokens"]
+            + u["cache_read_tokens"]
+            + u["cache_write_5m_tokens"]
+            + u["cache_write_1h_tokens"]
         )
         list_usd = (all_in * p.input + u["output_tokens"] * p.output) / 1e6
         disc = p.batch_discount if e.get("batch") else 1.0
@@ -241,5 +244,7 @@ def savings_report() -> dict:
             if k.endswith("_usd"):
                 b[k] = round(b[k], 4)
         b["cache_read_share"] = round(b["cache_read_tokens"] / max(1, b["input_tokens_all"]), 4)
-        b["saving_vs_no_cache_no_batch"] = round(1 - b["actual_usd"] / max(1e-9, b["no_cache_no_batch_usd"]), 4)
+        b["saving_vs_no_cache_no_batch"] = round(
+            1 - b["actual_usd"] / max(1e-9, b["no_cache_no_batch_usd"]), 4
+        )
     return out

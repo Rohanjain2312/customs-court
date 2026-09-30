@@ -42,6 +42,8 @@ PRICES: dict[str, Price] = {
     ),
     "gpt-5-mini": Price(input=0.25, output=2.0, cache_write_5m=0.25, cache_write_1h=0.25, cache_read=0.025),
     "gpt-5-nano": Price(input=0.05, output=0.4, cache_write_5m=0.05, cache_write_1h=0.05, cache_read=0.005),
+    # Open-weights models run on this machine with llama.cpp. Free.
+    "local-": Price(input=0.0, output=0.0, cache_write_5m=0.0, cache_write_1h=0.0, cache_read=0.0),
 }
 
 FORBIDDEN_MODEL_MARKERS = ("opus", "fable", "mythos")
@@ -58,6 +60,19 @@ class Settings(BaseSettings):
     advocate_model: str = "claude-haiku-4-5"
     judge_model: str = "claude-haiku-4-5"
     openai_model: str = "gpt-5-mini"
+
+    # Local open-weights models: model id -> OpenAI-compatible endpoint of its llama-server.
+    local_endpoints: str = (
+        "local-qwen3.5-4b=http://127.0.0.1:8081/v1,local-qwen3.5-2b=http://127.0.0.1:8082/v1"
+    )
+    local_temperature: float = 0.7
+    local_thinking: bool = False
+
+    def local_endpoint(self, model: str) -> str:
+        pairs = dict(x.split("=", 1) for x in self.local_endpoints.split(",") if "=" in x)
+        if model not in pairs:
+            raise KeyError(f"No LOCAL_ENDPOINTS entry for {model}")
+        return pairs[model]
 
     budget_usd_total: float = 40.0
     budget_usd_per_run: float = 8.0

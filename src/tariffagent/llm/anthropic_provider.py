@@ -302,9 +302,7 @@ class AnthropicProvider:
             req = by_id[res.custom_id]
             cid = back[res.custom_id]
             if res.result.type != "succeeded":
-                out[cid] = RuntimeError(
-                    f"batch item {res.result.type}: {getattr(res.result, 'error', '')}"
-                )
+                out[cid] = RuntimeError(f"batch item {res.result.type}: {getattr(res.result, 'error', '')}")
                 continue
             m = res.result.message
             u = usage_from(m.usage)

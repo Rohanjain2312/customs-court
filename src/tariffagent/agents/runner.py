@@ -16,15 +16,22 @@ from collections.abc import Callable
 from tariffagent.agents.events import ErrorEvent, EventBus
 from tariffagent.llm.anthropic_provider import AnthropicProvider
 from tariffagent.llm.base import LLMRequest, LLMResponse
-from tariffagent.llm.openai_provider import OpenAIProvider
+from tariffagent.llm.openai_provider import LocalProvider, OpenAIProvider
 
 _providers: dict[str, object] = {}
 
 
 def provider_for(model: str):
-    key = "openai" if model.startswith(("gpt", "o1", "o3", "o4")) else "anthropic"
+    if model.startswith("local-"):
+        key = "local"
+    elif model.startswith(("gpt", "o1", "o3", "o4")):
+        key = "openai"
+    else:
+        key = "anthropic"
     if key not in _providers:
-        _providers[key] = OpenAIProvider() if key == "openai" else AnthropicProvider()
+        _providers[key] = {"openai": OpenAIProvider, "anthropic": AnthropicProvider, "local": LocalProvider}[
+            key
+        ]()
     return _providers[key]
 
 

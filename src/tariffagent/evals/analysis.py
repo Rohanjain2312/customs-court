@@ -55,6 +55,7 @@ def judge_and_validate(run_id: str, second_model: str | None = None, second: boo
         k: sum(1 for v in j1.values() if v["reference"].startswith(k)) for k in ("ruling", "atlas_reasoning")
     }
     if second and (second_model or s.openai_api_key):
+        # batch=False: the second judge may be a provider without a batch API (runs in a thread pool).
         m2 = second_model or s.openai_model
         j2 = run_judge(items, results, run_id=f"judge2-{run_id}", model=m2, links=links, batch=False)
         both = [i for i in j1 if j1[i]["verdict"] and j2.get(i, {}).get("verdict")]

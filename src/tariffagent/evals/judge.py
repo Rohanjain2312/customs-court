@@ -86,6 +86,7 @@ def judge_request(item: dict, cls: dict, reference: str, model: str, run_id: str
         f"<assistant_answer>\n{json.dumps(agent, ensure_ascii=False)[:4000]}\n</assistant_answer>"
     )
     kw = {"temperature": 0.0} if "haiku" in model else {}
+    # The judge compares reasoning; it needs no tools and a small answer.
     return LLMRequest(
         model=model,
         system=[{"type": "text", "text": JUDGE_SYSTEM}],
@@ -139,12 +140,17 @@ def run_judge(
     if batch and hasattr(prov, "complete_batch"):
         res = prov.complete_batch(reqs)
     else:
-        res = {}
-        for iid, req in reqs:
+        from concurrent.futures import ThreadPoolExecutor
+
+        def one(pair):
+            iid, req = pair
             try:
-                res[iid] = prov.complete(req)
+                return iid, prov.complete(req)
             except Exception as e:  # noqa: BLE001
-                res[iid] = e
+                return iid, e
+
+        with ThreadPoolExecutor(max_workers=16) as pool:
+            res = dict(pool.map(one, reqs))
     for iid, r in res.items():
         verdict = None if isinstance(r, Exception) else parse_verdict(r.text)
         out[iid] = {
