@@ -23,14 +23,14 @@ left_min() { echo $(( DEADLINE_MIN - ($(date +%s) - START) / 60 )); }
 log "pull bundle and earlier state"
 python3 - <<PY
 from huggingface_hub import snapshot_download
-snapshot_download("$REPO", repo_type="dataset", local_dir="$W/hf", allow_patterns=["bundle/*", "results/*/state.tar.gz"])
+snapshot_download("$REPO", repo_type="dataset", local_dir="$W/hf", allow_patterns=["bundle/*", "results/gpu*/state.tar.gz"])
 PY
 [ -f hf/bundle/code.tar.gz ] || { log "bundle download failed"; exit 1; }
 tar xzf hf/bundle/code.tar.gz -C "$W"
 mkdir -p data/index data/cache evals/runs evals/reports logs
 cp hf/bundle/data/*.sqlite hf/bundle/data/*.json data/ 2>/dev/null
 cp hf/bundle/data/index/* data/index/
-for s in hf/results/*/state.tar.gz; do
+for s in hf/results/gpu*/state.tar.gz; do
   [ -f "$s" ] && tar xzf "$s" -C "$W" --exclude='logs/*' --exclude='data/ledger.jsonl' && log "restored $s"
 done
 : > data/ledger.jsonl
