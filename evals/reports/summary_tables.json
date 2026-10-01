@@ -794,6 +794,78 @@
     "n_both": 40,
     "second_pass_rate": 0.875
   },
+  "judge_cc-subset80-A-s55": {
+    "run_id": "cc-subset80-A-s55",
+    "mode": "judged in the Claude Code session (no API spend)",
+    "judge_model": "claude-sonnet-5-5 (in session)",
+    "second_judge_model": "claude-haiku-4-5 (in session)",
+    "graded_in_main_session": {
+      "sonnet": [],
+      "haiku": []
+    },
+    "discarded_attempts": [],
+    "prompt": "evals/judge.py JUDGE_SYSTEM, reference from evals/judge.py reference_for",
+    "n_packets": 74,
+    "n_judged": 74,
+    "pass_rate": {
+      "mean": 0.5541,
+      "lo": 0.4324,
+      "hi": 0.6622,
+      "n": 74
+    },
+    "proxy_pass_given_correct10": {
+      "rate": 0.963,
+      "n": 27
+    },
+    "proxy_fail_given_wrong_chapter": {
+      "rate": 1.0,
+      "n": 15
+    },
+    "reference_sources": {
+      "ruling": 25,
+      "atlas_reasoning": 49
+    },
+    "cohen_kappa": 0.6776,
+    "raw_agreement": 0.8378,
+    "n_both": 74,
+    "second_pass_rate": 0.473
+  },
+  "judge_cc-fresh40-A-s55": {
+    "run_id": "cc-fresh40-A-s55",
+    "mode": "judged in the Claude Code session (no API spend)",
+    "judge_model": "claude-sonnet-5-5 (in session)",
+    "second_judge_model": "claude-haiku-4-5 (in session)",
+    "graded_in_main_session": {
+      "sonnet": [],
+      "haiku": []
+    },
+    "discarded_attempts": [],
+    "prompt": "evals/judge.py JUDGE_SYSTEM, reference from evals/judge.py reference_for",
+    "n_packets": 40,
+    "n_judged": 40,
+    "pass_rate": {
+      "mean": 0.825,
+      "lo": 0.7,
+      "hi": 0.925,
+      "n": 40
+    },
+    "proxy_pass_given_correct10": {
+      "rate": 0.9697,
+      "n": 33
+    },
+    "proxy_fail_given_wrong_chapter": {
+      "rate": 1.0,
+      "n": 3
+    },
+    "reference_sources": {
+      "ruling": 40,
+      "atlas_reasoning": 0
+    },
+    "cohen_kappa": 0.918,
+    "raw_agreement": 0.975,
+    "n_both": 40,
+    "second_pass_rate": 0.8
+  },
   "dev": {
     "dev100-A": {
       "run_id": "dev100-A",

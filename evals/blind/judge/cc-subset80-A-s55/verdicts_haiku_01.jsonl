@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00063", "verdict": "fail", "reason": "Heading mismatch: assistant classified coffeemaker as 8516 (electrothermic appliances) but gold code is 8521."}
+{"item_id": "atlas_test_00064", "verdict": "fail", "reason": "Heading mismatch: assistant classified dress as 6104 (knitted) but gold code is 6114 (woven garments)."}
+{"item_id": "atlas_test_00065", "verdict": "fail", "reason": "Heading mismatch: assistant classified plastic covers as 8538 (control apparatus parts) but gold code is 8504 (transformer parts)."}
+{"item_id": "atlas_test_00067", "verdict": "fail", "reason": "Heading mismatch: assistant used GRI 3(c) to classify set as 6505 (hats) but gold code is 6111 (babies' sets)."}
+{"item_id": "atlas_test_00068", "verdict": "fail", "reason": "Heading mismatch: assistant classified propylene glycol as 2905 but gold code is 2914."}
+{"item_id": "atlas_test_00070", "verdict": "pass", "reason": "Identical heading 8205 (handtools) and legal basis; only statistical suffix difference (.10 vs .60) which does not affect grade."}
+{"item_id": "atlas_test_00072", "verdict": "pass", "reason": "Identical code 8481.90.90.40 and legal basis: parts of solenoid valves in brake systems under GRI 1."}
+{"item_id": "atlas_test_00076", "verdict": "fail", "reason": "Heading mismatch: assistant classified powder coatings as 3208 (paints) but gold code is 3907 (polymeric resins)."}
+{"item_id": "atlas_test_00079", "verdict": "pass", "reason": "Identical code 8409.99.91.10 and legal basis: diesel engine connecting rods for heavy trucks under GRI 1."}
+{"item_id": "atlas_test_00080", "verdict": "pass", "reason": "Identical heading 9506 (water sports equipment) and legal basis GRI 3(b) essential character; only statistical suffix difference."}
+{"item_id": "atlas_test_00083", "verdict": "pass", "reason": "Identical code 8479.50.00.00 and legal basis: industrial robots lacking controller under GRI 2(a)."}
+{"item_id": "atlas_test_00085", "verdict": "fail", "reason": "Heading mismatch: assistant classified orthodontic instruments as 9018 (dental) but gold code is 9022."}
+{"item_id": "atlas_test_00088", "verdict": "fail", "reason": "Heading mismatch: assistant classified aircraft deicer as 8543 (electrical machines) but gold code is 8516 (heating resistors)."}
+{"item_id": "atlas_test_00091", "verdict": "fail", "reason": "Heading mismatch: assistant classified metalworking tools as 8202 (slitting saws) but gold code is 8211."}
+{"item_id": "atlas_test_00096", "verdict": "fail", "reason": "Heading mismatch: assistant classified traffic sensors as 8543 (electrical transducers) but gold code is 9029 (counters)."}
+{"item_id": "atlas_test_00097", "verdict": "pass", "reason": "Identical code 8505.11.00.70 and legal basis: magnetic key cap with neodymium-iron-boron magnet under GRI 3(b)."}
+{"item_id": "atlas_test_00104", "verdict": "fail", "reason": "Heading mismatch: assistant classified fluid warmer as 9018 (electro-medical accessory) but gold code is 8543 (electrical apparatus)."}
+{"item_id": "atlas_test_00109", "verdict": "fail", "reason": "Heading mismatch: assistant classified logging equipment as 8428 (lifting/handling machinery) but gold code is 8431 (machinery parts)."}
+{"item_id": "atlas_test_00113", "verdict": "fail", "reason": "Heading mismatch: assistant classified modified starches as 3809 (papermaking finishing agents) but gold code is 3505 (modified starches)."}

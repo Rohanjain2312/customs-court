@@ -45,7 +45,7 @@ Not run, because the API budget is closed:
 - A live Objection exhibit for the demo (the current one is a labeled scripted placeholder).
 
 Known gaps:
-- The date limit reaches 76 of 80 subset items and all 40 fresh items. For 39 of the subset items the date is the earliest of several candidate source rulings (conservative). The no-limit Sonnet 5.5 runs (`*-s55`) were not judged for reasoning.
+- The date limit reaches 76 of 80 subset items and all 40 fresh items. For 39 of the subset items the date is the earliest of several candidate source rulings (conservative).
 - The Opus 5.5 rows predate the second source-ruling linker; that run cited a candidate source ruling 12 times, so its numbers may be inflated. The Sonnet 5.5 rows are the clean comparison. Rerunning Opus would need usage headroom.
 - ATLAS labels are noisy: 5 subset packets have a gold code that disagrees with the CBP text beside it (judge 1 flagged them).
 - `evals/reports/localtest-2b.json` is from the short local-model trial that overheated the laptop. Not used in any table. Its raw traces (`evals/runs/localtest-2b/`) are git-ignored.

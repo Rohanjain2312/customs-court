@@ -1,0 +1,17 @@
+{"item_id": "atlas_test_00165", "verdict": "pass", "reason": "Heading 8409 matches; both identify it as a part of spark-ignition engines under Section XVI note 2(b)."}
+{"item_id": "atlas_test_00168", "verdict": "pass", "reason": "Heading 6111 matches; both classify babies' knitted cotton garments as a set."}
+{"item_id": "atlas_test_00170", "verdict": "fail", "reason": "Heading 8481 matches but assistant assumes copper material while CBP ruling explicitly states parts are for materials other than copper."}
+{"item_id": "atlas_test_00171", "verdict": "fail", "reason": "Heading 6211 matches but codes differ (6211.42.0081 vs 6211.42.10.92); assistant cites different ruling G83072 rather than CBP's L80759."}
+{"item_id": "atlas_test_00172", "verdict": "fail", "reason": "Different headings entirely: assistant chose 8543 (electrolysis apparatus) while CBP classified as 8421 (water filtering machinery)."}
+{"item_id": "atlas_test_00175", "verdict": "fail", "reason": "Heading 3918 matches but assistant assumes rigid solid core construction as decisive factor, which CBP ruling does not mention."}
+{"item_id": "atlas_test_00177", "verdict": "pass", "reason": "Heading 8474 matches; both identify it as a stationary mineral separating machine."}
+{"item_id": "atlas_test_00180", "verdict": "fail", "reason": "Heading 8431 matches but codes differ (8431.43.80.90 vs 8431.43.80.60); assistant cites H319171 while gold code references different rulings."}
+{"item_id": "atlas_test_00181", "verdict": "pass", "reason": "Heading 8501 matches; both classify a DC brushless motor assembly as an electric motor not exceeding 37.5 watts."}
+{"item_id": "atlas_test_00184", "verdict": "fail", "reason": "Heading 6110 matches but codes differ (6110.20.2067 vs 6110.20.20.69); assistant cites ruling N007469 for 100% cotton while CBP ruling M87234 is for 70/30 blend product."}
+{"item_id": "atlas_test_00185", "verdict": "fail", "reason": "Different headings entirely: assistant chose 8483 (gearboxes) using Section XVI note 2(a) while CBP classified as 8432 (parts of spreaders)."}
+{"item_id": "atlas_test_00186", "verdict": "fail", "reason": "Different headings entirely: assistant classified as 9208 (decoy calls) while CBP classified as 8519 (sound reproducing apparatus)."}
+{"item_id": "atlas_test_00188", "verdict": "pass", "reason": "Heading 8413 matches; both classify sucker rods as parts of oil-well pumps; sub-code .31 is per statistical note."}
+{"item_id": "atlas_test_00192", "verdict": "fail", "reason": "Different headings entirely: assistant classified as 5911 (textile articles for technical use) while CBP classified as 9020 (breathing appliances)."}
+{"item_id": "atlas_test_00193", "verdict": "pass", "reason": "Heading 9020 matches; both classify the helmet with respirator as a complete powered air-purifying respirator system."}
+{"item_id": "atlas_test_00196", "verdict": "pass", "reason": "Heading 3923 matches; both classify polyethylene bags without handles as plastic sacks and bags."}
+{"item_id": "atlas_test_00197", "verdict": "fail", "reason": "Different headings entirely: assistant classified as 9027 (optical instruments) while CBP classified as 9002 (mounted optical elements)."}

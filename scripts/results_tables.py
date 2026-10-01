@@ -322,6 +322,8 @@ def build() -> tuple[dict, dict[str, str]]:
         ("Fresh set (40), Opus 5.5 agent", "cc-fresh40-A"),
         ("Test subset (80), date-limited Sonnet 5.5 agent", "cc-subset80-A-asof"),
         ("Fresh set (40), date-limited Sonnet 5.5 agent", "cc-fresh40-A-asof"),
+        ("Test subset (80), Sonnet 5.5 agent, no date limit", "cc-subset80-A-s55"),
+        ("Fresh set (40), Sonnet 5.5 agent, no date limit", "cc-fresh40-A-s55"),
     ):
         j = report(f"{rid}.judge")
         data[f"judge_{rid}"] = j and {k: v for k, v in j.items() if k != "verdicts"}

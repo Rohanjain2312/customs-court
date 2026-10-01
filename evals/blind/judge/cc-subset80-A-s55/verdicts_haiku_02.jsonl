@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00114", "verdict": "pass", "reason": "Both assign 8530 heading to parts of traffic control equipment with same legal basis under heading 8530 parts thereof."}
+{"item_id": "atlas_test_00117", "verdict": "pass", "reason": "Both assign 3920.43.50 to PVC strip with plasticizers; same legal basis and heading."}
+{"item_id": "atlas_test_00121", "verdict": "pass", "reason": "Both assign 7323.93 stainless steel cooking pan; statistical suffix differences do not matter."}
+{"item_id": "atlas_test_00123", "verdict": "pass", "reason": "Both assign 8467.21 to cordless drill set with same GRI 3(b) essential character reasoning; statistical suffix difference immaterial."}
+{"item_id": "atlas_test_00125", "verdict": "fail", "reason": "Assistant assigned 9401.99.90.85 but CBP assigned 9401.90.5080; different 6-digit subheadings indicate different parts classifications."}
+{"item_id": "atlas_test_00128", "verdict": "pass", "reason": "Both assign 7419.80.50.10 to brass shower grates under heading 7419 copper articles with same legal reasoning."}
+{"item_id": "atlas_test_00130", "verdict": "fail", "reason": "Assistant assigned 3920.62 (PET) but CBP assigned 3920.20 (polypropylene); divergent 6-digit subheadings represent different legal bases for material composition."}
+{"item_id": "atlas_test_00131", "verdict": "pass", "reason": "Both assign 2933.31 to pyridine as heterocyclic nitrogen compound named eo nomine; same heading and reasoning."}
+{"item_id": "atlas_test_00133", "verdict": "pass", "reason": "Both assign 2930.90.29 to organo-sulfur compound with same legal basis; formatting variation does not matter."}
+{"item_id": "atlas_test_00135", "verdict": "pass", "reason": "Both assign 6102.30.05 to knitted jacket with leather using same essential character reasoning; same heading."}
+{"item_id": "atlas_test_00137", "verdict": "pass", "reason": "Both assign 8427.20.40 to unfinished ICE-powered forklift with same GRI 2(a) reasoning for incomplete goods; same heading."}
+{"item_id": "atlas_test_00138", "verdict": "pass", "reason": "Both assign 6104.43.20.20 to girls' princess costume dress with same GRI 3(b) essential character reasoning."}
+{"item_id": "atlas_test_00145", "verdict": "fail", "reason": "Assistant assigned 6111.30.50.20 (sets line) but CBP assigned 6111.30.5070 (other line); 8-digit codes differ and represent distinct legal classifications."}
+{"item_id": "atlas_test_00146", "verdict": "fail", "reason": "Assistant assigned 9605 (travel toilet sets) but CBP assigned 8205 (hand tools); fundamentally different headings and legal bases."}
+{"item_id": "atlas_test_00147", "verdict": "pass", "reason": "Both assign 8534.00.00.80 to flexible printed circuit with non-printed connectors; same heading and reasoning."}
+{"item_id": "atlas_test_00154", "verdict": "fail", "reason": "Assistant assigned 9001 (unmounted optical elements) but CBP assigned 9002 (mounted photographic filters); different headings despite both being optical elements."}
+{"item_id": "atlas_test_00156", "verdict": "fail", "reason": "Assistant assigned 8408 (marine engines) but CBP assigned 8431 (parts of marine propulsion systems); different headings and legal classifications."}
+{"item_id": "atlas_test_00159", "verdict": "pass", "reason": "Both assign 6110.90.90 to men's knit pullover of other textile materials; statistical suffix .88 vs .23 difference is immaterial."}
+{"item_id": "atlas_test_00163", "verdict": "fail", "reason": "Assistant assigned 9032 (automatic controllers) but CBP assigned 8482 (parts of machines); different headings and legal bases."}

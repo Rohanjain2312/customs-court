@@ -1,0 +1,20 @@
+{"item_id": "fresh_N356982", "verdict": "pass", "reason": "Heading 6802 via GRI 1 worked building stone with polished face matches CBP."}
+{"item_id": "fresh_N359194", "verdict": "fail", "reason": "Assistant chose 8007 (tin powder) while CBP classified in 7106.10 via Chapter 71 alloy and subheading note on powder."}
+{"item_id": "fresh_N362359", "verdict": "pass", "reason": "Heading 6302 toilet linen with GRI 2(a) unfinished article matches CBP."}
+{"item_id": "fresh_N362421", "verdict": "pass", "reason": "Heading 3004 digestive medicament containing pantoprazole under GRI 1 matches CBP."}
+{"item_id": "fresh_N362589", "verdict": "pass", "reason": "Heading 6201 by GRI 3(c) last in numerical order because neither fabric gives essential character matches CBP."}
+{"item_id": "fresh_N362701", "verdict": "pass", "reason": "Heading 3213 as a set under GRI 3(b) with essential character from paints and brushes matches CBP."}
+{"item_id": "fresh_N362750", "verdict": "pass", "reason": "Heading 8544 insulated copper conductor under 1,000 V without connectors matches CBP."}
+{"item_id": "fresh_N362809", "verdict": "pass", "reason": "Quilted moving blanket as other made up textile article in 6307 matches CBP."}
+{"item_id": "fresh_N362823", "verdict": "pass", "reason": "Heading 8907 other floating structures matches CBP's holding and reasoning."}
+{"item_id": "fresh_N362874", "verdict": "pass", "reason": "Heading 2926 nitrile-function compound matches CBP."}
+{"item_id": "fresh_N362934", "verdict": "pass", "reason": "Heading 9505 festive articles party decoration paper garland matches CBP."}
+{"item_id": "fresh_N362939", "verdict": "pass", "reason": "Heading 3004 digestive-system medicament containing famotidine matches CBP."}
+{"item_id": "fresh_N362969", "verdict": "pass", "reason": "Heading 4602 article of plaiting material classified by covering material matches CBP."}
+{"item_id": "fresh_N363127", "verdict": "pass", "reason": "Heading 1605 prepared shrimp meal matches CBP."}
+{"item_id": "fresh_N363254", "verdict": "pass", "reason": "Heading 3924 with plastic panels giving essential character under GRI 3(b) matches CBP."}
+{"item_id": "fresh_N363288", "verdict": "pass", "reason": "Heading 3004 digestive-system medicament other than pantoprazole matches CBP."}
+{"item_id": "fresh_N363316", "verdict": "fail", "reason": "Assistant chose heading 9014 part while CBP classified in 8537 as equipped control panel."}
+{"item_id": "fresh_N363384", "verdict": "pass", "reason": "Heading 3926 via Chapter 59 Note 2(a)(5) reinforcement-only textile matches CBP."}
+{"item_id": "fresh_N363422", "verdict": "pass", "reason": "Heading 7309 steel container with GRI 2(a) for unassembled cabinet matches CBP."}
+{"item_id": "fresh_N363423", "verdict": "pass", "reason": "Heading 3923 plastic packing articles matches CBP."}

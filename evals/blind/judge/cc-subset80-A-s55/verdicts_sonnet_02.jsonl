@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00114", "verdict": "pass", "reason": "Heading 8530 and the basis (parts dedicated to traffic signal equipment) match CBP."}
+{"item_id": "atlas_test_00117", "verdict": "pass", "reason": "Same heading 3920 as non-adhesive plasticized PVC strip, same basis."}
+{"item_id": "atlas_test_00121", "verdict": "pass", "reason": "Heading 7323 matches, carried by the kitchen/cooking ware of stainless steel heading text."}
+{"item_id": "atlas_test_00123", "verdict": "pass", "reason": "Heading 8467 via GRI 3(b) retail set with the drill giving essential character, same as CBP."}
+{"item_id": "atlas_test_00125", "verdict": "pass", "reason": "Heading 9401 parts of seats, same basis as CBP."}
+{"item_id": "atlas_test_00128", "verdict": "pass", "reason": "Heading 7419 for brass articles matches CBP's predominant-metal brass reasoning."}
+{"item_id": "atlas_test_00130", "verdict": "fail", "reason": "Heading 3920 matches but the assistant chose PET via GRI 3(c) whereas CBP classified under the propylene subheading, a different decisive basis."}
+{"item_id": "atlas_test_00131", "verdict": "pass", "reason": "Pyridine named in heading 2933 subheading 2933.31, same as CBP."}
+{"item_id": "atlas_test_00133", "verdict": "pass", "reason": "Heading 2930 organo-sulfur compounds, same basis as CBP."}
+{"item_id": "atlas_test_00135", "verdict": "pass", "reason": "Heading 6102 with the leather 25 percent or more line, matching CBP."}
+{"item_id": "atlas_test_00137", "verdict": "pass", "reason": "Heading 8427 rider-type counterbalanced fork-lift, unfinished treated as the truck, same as CBP."}
+{"item_id": "atlas_test_00138", "verdict": "pass", "reason": "Heading 6104 dress giving the set its essential character, same as CBP."}
+{"item_id": "atlas_test_00145", "verdict": "pass", "reason": "Heading 6111 babies' knit garments with textile costumes kept in chapter 61, consistent with CBP."}
+{"item_id": "atlas_test_00146", "verdict": "fail", "reason": "Assistant chose heading 9605 whereas CBP gold is heading 8205."}
+{"item_id": "atlas_test_00147", "verdict": "pass", "reason": "Heading 8534 printed circuit of flexible type, same as CBP."}
+{"item_id": "atlas_test_00154", "verdict": "fail", "reason": "Assistant chose unmounted 9001 but CBP classified the mounted filter in 9002."}
+{"item_id": "atlas_test_00156", "verdict": "fail", "reason": "Assistant chose 8408 engines, CBP classified in 8431."}
+{"item_id": "atlas_test_00159", "verdict": "pass", "reason": "Heading 6110 other textile materials men's pullover, same as CBP."}
+{"item_id": "atlas_test_00163", "verdict": "fail", "reason": "Gold code is heading 8482 while the assistant chose heading 9032."}

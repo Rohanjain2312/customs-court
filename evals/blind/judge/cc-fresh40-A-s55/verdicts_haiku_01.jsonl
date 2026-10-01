@@ -1,0 +1,20 @@
+{"item_id": "fresh_N363462", "verdict": "pass", "reason": "Heading 4202 matches; assistant correctly applies GRI 1 with chapter 42 note 3(A)(a) durable-goods exclusion."}
+{"item_id": "fresh_N363468", "verdict": "pass", "reason": "Heading 8543 matches; assistant correctly identifies DSP apparatus with individual function as decisive basis."}
+{"item_id": "fresh_N363486", "verdict": "fail", "reason": "Assistant applies GRI 1 but CBP ruling explicitly uses GRI 3(b) for the multi-component set."}
+{"item_id": "fresh_N363487", "verdict": "pass", "reason": "Heading 8413 matches; assistant correctly identifies principal function (pump) and rejects motor classification."}
+{"item_id": "fresh_N363542", "verdict": "fail", "reason": "Heading 6114 does not match CBP gold code 6110; wrong heading selected."}
+{"item_id": "fresh_N363573", "verdict": "fail", "reason": "Heading 7612 does not match CBP gold code 7615; aluminum pill cases are table/kitchen articles, not containers."}
+{"item_id": "fresh_N363777", "verdict": "fail", "reason": "Heading 9018 does not match CBP gold code 9029; Gabi system is measuring apparatus, not medical diagnostic device."}
+{"item_id": "fresh_N363849", "verdict": "pass", "reason": "Heading 8421 matches; assistant correctly applies HQ 964174 precedent for strainer filtering apparatus."}
+{"item_id": "fresh_N363928", "verdict": "pass", "reason": "Heading 8211 matches; assistant correctly classifies folding utility knife with replaceable blade."}
+{"item_id": "fresh_N363949", "verdict": "pass", "reason": "Heading 6505 matches; assistant correctly identifies cotton woven baseball cap classification."}
+{"item_id": "fresh_N363956", "verdict": "pass", "reason": "Heading 9017 matches; assistant correctly applies heading text naming measuring tapes for hand use."}
+{"item_id": "fresh_N363968", "verdict": "pass", "reason": "Heading 4419 matches; assistant correctly applies GRI 3(b) with acacia wood providing essential character."}
+{"item_id": "fresh_N363991", "verdict": "fail", "reason": "Heading 4421 does not match CBP gold code 9403; outdoor mounting kit is furniture parts of wood, not wood articles."}
+{"item_id": "fresh_N364000", "verdict": "pass", "reason": "Heading 2106 matches; assistant correctly classifies frozen mycoprotein food preparation."}
+{"item_id": "fresh_N364356", "verdict": "fail", "reason": "Subheading 8479.89.65 does not use specific evaporative cooler provision 8479.60; decisive basis is different."}
+{"item_id": "fresh_N364408", "verdict": "pass", "reason": "Heading 8481 matches; assistant correctly identifies hand-operated valve as decisive basis."}
+{"item_id": "fresh_N364413", "verdict": "pass", "reason": "Heading 8714 matches; assistant correctly classifies auxiliary motorcycle footpegs as motorcycle accessories."}
+{"item_id": "fresh_N364446", "verdict": "pass", "reason": "Heading 9027 matches; assistant correctly classifies transmitter as part of analytical instrument system."}
+{"item_id": "fresh_N364644", "verdict": "pass", "reason": "Heading 8480 matches; assistant correctly classifies cement tube molds for mineral materials."}
+{"item_id": "fresh_N364732", "verdict": "pass", "reason": "Heading 3916 matches; assistant correctly identifies 1.75mm monofilament classification."}

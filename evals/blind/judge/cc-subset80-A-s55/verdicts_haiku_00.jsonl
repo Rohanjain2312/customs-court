@@ -1,0 +1,19 @@
+{"item_id": "atlas_test_00003", "verdict": "fail", "reason": "Assistant classified residual synthetic rubber 4002.99 instead of CBP's mixture code 4002.80 for natural/synthetic blends."}
+{"item_id": "atlas_test_00008", "verdict": "fail", "reason": "Assistant classified as parts 9027.90 rather than as complete apparatus 9027.10 despite product having detection and analysis capability."}
+{"item_id": "atlas_test_00010", "verdict": "pass", "reason": "Both classify as vinyl flooring 3918 with correct attribution of essential character to PVC base."}
+{"item_id": "atlas_test_00013", "verdict": "fail", "reason": "Assistant classified as printed matter 4911 when product is plastic articles 3926."}
+{"item_id": "atlas_test_00017", "verdict": "pass", "reason": "Both classify steel vent as iron/steel articles 7326, not as part of air heater machinery."}
+{"item_id": "atlas_test_00029", "verdict": "pass", "reason": "Both classify O-rings as plastic articles 3926 with parts of general use reasoning."}
+{"item_id": "atlas_test_00030", "verdict": "fail", "reason": "Assistant assumed woven construction 6202 when product is explicitly knitted 6102 per CBP ruling."}
+{"item_id": "atlas_test_00036", "verdict": "pass", "reason": "Both classify dew point/temperature transmitters as hygrometers 9025."}
+{"item_id": "atlas_test_00037", "verdict": "pass", "reason": "Both classify vacuum housing and collector as parts of semiconductor equipment 8486."}
+{"item_id": "atlas_test_00038", "verdict": "fail", "reason": "Assistant classified as analysis apparatus 9027 when CBP ruled optical measuring instrument 9031."}
+{"item_id": "atlas_test_00039", "verdict": "pass", "reason": "Both classify shower filter as water filtering apparatus 8421, not sanitary ware."}
+{"item_id": "atlas_test_00040", "verdict": "fail", "reason": "Assistant classified as saw blades 8202 when CBP applied GRI 3(c) to classify kit as drilling tools 8207."}
+{"item_id": "atlas_test_00042", "verdict": "pass", "reason": "Both classify plastic apron 3926 with textile components as minor trimmings."}
+{"item_id": "atlas_test_00045", "verdict": "fail", "reason": "Assistant classified as network apparatus 8517 when CBP classified as data processing control unit 8471."}
+{"item_id": "atlas_test_00047", "verdict": "fail", "reason": "Assistant classified as cell therapy 3002 when CBP classified as protein substances 3504 extracted from animal tissue."}
+{"item_id": "atlas_test_00048", "verdict": "pass", "reason": "Both classify polyester film 3920 for LED panels."}
+{"item_id": "atlas_test_00053", "verdict": "pass", "reason": "Both classify bicycle computer 9029 based on speedometer function."}
+{"item_id": "atlas_test_00054", "verdict": "pass", "reason": "Both classify fermentation-derived egg albumin as dried 3502."}
+{"item_id": "atlas_test_00055", "verdict": "fail", "reason": "Assistant guessed trailer parts 8716 when CBP identified as crane attachment parts 8431."}
