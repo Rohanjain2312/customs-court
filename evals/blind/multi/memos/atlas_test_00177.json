@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00177",
+ "memos": [
+  {
+   "heading": "8474",
+   "best_code": "8474.10.00",
+   "argument": "A classifier separates pulverized coal (a solid mineral fuel in powder form) by particle size; 8474 covers machinery for sorting, screening, separating, crushing, grinding of mineral substances in solid/powder form, and 8474.10 'sorting, screening, separating or washing machines' fits; parts go to 8474.90 if sold as mill parts.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Ch.84 Note 2: a machine answering both 8401-8424 and 8425-8480 goes to the earlier group, so if it also fits 8416 or 8421 that would prevail over 8474",
+    "No CROSS ruling retrieved for classifiers; multiple searches returned only irrelevant HQ rulings",
+    "If merely a part of a pulverizer/boiler, parts rules (Sec XVI Notes) could shift it"
+   ],
+   "strength": 0.6
+  },
+  {
+   "heading": "8421",
+   "best_code": "8421.99.01",
+   "argument": "Heading covers centrifuges and filtering or purifying machinery for liquids or gases; a dynamic classifier with rotating classifier wheel in a pressurized housing separating particles from an air/coal stream might be argued as separating solids from gas.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "8421 covers filtering/purifying of gases, but the purpose here is sizing a product, not purifying",
+    "Particle-size sorting of mineral solids is the more specific text of 8474.10",
+    "No supporting ruling found in searches"
+   ],
+   "strength": 0.2
+  },
+  {
+   "heading": "8416",
+   "best_code": "8416.90.00.00",
+   "argument": "8416 covers furnace burners for pulverized solid fuel and parts thereof; the classifier is integral to the coal pulverizer feeding burners in power-plant boilers, so it could be argued as a part of pulverized-fuel burner equipment.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Classifier is a mill component upstream of the burner, not a burner part; 8416.90 covers parts of burners/stokers",
+    "Mills (grinding) fall in 8474.20, with parts in 8474.90, which is more specific",
+    "No supporting ruling found; 8416 is not obviously a heading for pulverizers"
+   ],
+   "strength": 0.12
+  }
+ ]
+}

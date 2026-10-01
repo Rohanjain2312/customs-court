@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00053",
+ "facts": {
+  "material": "electronic with plastic housing",
+  "function": "displays speed, distance, time",
+  "form": "handlebar unit with sensor",
+  "end_use": "bicycle accessory"
+ },
+ "missing_facts": [
+  "sold with bicycle",
+  "mounting parts",
+  "clock vs speedometer principal",
+  "magnet sensor included"
+ ],
+ "candidate_headings": [
+  "9029",
+  "8714",
+  "9102",
+  "9031"
+ ],
+ "reasoning": "Bicycle speedometers 9029 vs bicycle parts 8714 vs 9102 vs 9031."
+}

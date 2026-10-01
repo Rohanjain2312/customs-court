@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00024",
+ "classification": {
+  "hts10": "7411.21.10.00",
+  "facts": {
+   "material": "brass (copper-zinc alloy)",
+   "function": "decorative pipe",
+   "form": "tubes/pipes, seamless and ERW, 2 in and 1.5 in OD, 0.40 in wall",
+   "end_use": "decorative"
+  },
+  "gri_path": [
+   "GRI 1: heading 7411 copper tubes and pipes; Chapter 74 note 1 defines copper alloys, brass is copper-zinc",
+   "GRI 6: 7411.21 brass; 10-digit seamless line (first-named)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7411.21.50.00",
+    "reason": "other than seamless; applies to the ERW pipe"
+   },
+   {
+    "code": "7411.22",
+    "reason": "copper-nickel/nickel-silver, not brass"
+   },
+   {
+    "code": "7306",
+    "reason": "iron/steel, not brass"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: ERW brass pipe under 7411.21.50.00"
+  ],
+  "confidence": 0.75,
+  "abstain": false,
+  "rationale": "Brass tubes and pipes are in 7411.21; seamless is the first-named type so 7411.21.10.00. The ERW pipe belongs in 7411.21.50.00. No ruling was a matching precedent."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

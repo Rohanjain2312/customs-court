@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00008",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "printed circuit board with components",
+   "function": "hydrogen gas sensing",
+   "form": "assembled PCB",
+   "end_use": "unknown"
+  },
+  "gri_path": [
+   "GRI 1: candidate headings differ at 4/6-digit level depending on missing facts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8534.00",
+    "reason": "has assembled components, so not a bare printed circuit"
+   }
+  ],
+  "missing_facts": [
+   "Is it a finished sensor/instrument or a board for a specific machine (parts of 9027.90, 8543.90, 8537, etc.)?",
+   "What does it do electrically and what device is it used in (principal use)?",
+   "Does it incorporate sensing element, display or housing?"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "A PCBA is classified by the machine it is a part of or its own function (9027.90 gas analysis parts, 8543.90, 8537.10 etc.); the use is not given, so I abstained."
+ },
+ "tool_calls": 1,
+ "tools": [
+  "hts_search"
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00091",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "tool steel/carbide unspecified",
+   "function": "metal cutting",
+   "form": "circular slitting saws plus various interchangeable tools",
+   "end_use": "metalworking"
+  },
+  "gri_path": [
+   "GRI 1: slitting saws in 8202 (8202.31 steel vs 8202.39 other working part); taps/drills/etc. 8207"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8207",
+    "reason": "interchangeable tools classified separately"
+   },
+   {
+    "code": "8202.91",
+    "reason": "straight blades; slitting saws are circular"
+   }
+  ],
+  "missing_facts": [
+   "Is the working part of the saws steel or other material (carbide etc.)?",
+   "classify separately: taps, threading tools, drills, reamers, boring tools, milling tools"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Classify first-named slitting saws, but 8202.31 vs 8202.39 depends on working-part material, unknown."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

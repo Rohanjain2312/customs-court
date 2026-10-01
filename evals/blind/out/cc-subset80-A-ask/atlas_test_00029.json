@@ -1,0 +1,32 @@
+{
+ "item_id": "atlas_test_00029",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "unknown (elastomer, PTFE/fluoropolymer, or metal)",
+   "function": "sealing ring",
+   "form": "O-ring",
+   "end_use": "semiconductor processing chambers"
+  },
+  "gri_path": [
+   "GRI 1: candidate headings differ at 4/6-digit level depending on missing facts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8486.90",
+    "reason": "parts of semiconductor machines only if no more specific heading; Section XVI note 2 would apply, uncertain"
+   }
+  ],
+  "missing_facts": [
+   "What is the O-ring made of (vulcanized rubber such as FKM/FFKM, PTFE plastic, metal)?",
+   "Is it a plain seal (4016.93, 3926.90) or a part of a specific machine?"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "O-rings fall in 4016.93 (rubber), 3926.90 (plastic) or 8484 (gaskets sets/mechanical seals); material decides at the 6-digit level, so I abstained."
+ },
+ "tool_calls": 0,
+ "tools": []
+}

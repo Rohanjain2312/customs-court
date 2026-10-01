@@ -1,0 +1,21 @@
+{
+ "item_id": "atlas_test_00088",
+ "facts": {
+  "material": "electrical (resistive heating) deicer, aircraft",
+  "function": "prevent ice build-up on aircraft",
+  "form": "unknown: heating element/mat vs complete system",
+  "end_use": "aircraft anti-icing"
+ },
+ "missing_facts": [
+  "whether it is a heating element only or a system with controls",
+  "whether it is a part of an aircraft or sold separately",
+  "metal/rubber construction"
+ ],
+ "candidate_headings": [
+  "8516",
+  "8807",
+  "8514",
+  "8512"
+ ],
+ "reasoning": "Electric heating resistor for anti-icing (8516.80.40) vs aircraft parts 8807 vs 8512 (vehicle defrosters, but not motor vehicles) vs 8514."
+}

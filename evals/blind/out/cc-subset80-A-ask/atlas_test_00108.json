@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00108",
+ "classification": {
+  "hts10": "8481.90.10.00",
+  "facts": {
+   "material": "unspecified (copper assumed)",
+   "function": "faucet parts",
+   "form": "parts",
+   "end_use": "plumbing"
+  },
+  "gri_path": [
+   "GRI 1: 8481.90 parts of taps; Section XVI note 2",
+   "GRI 6: material of part"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8481.90.30",
+    "reason": "iron or steel"
+   },
+   {
+    "code": "8481.90.50",
+    "reason": "other materials"
+   },
+   {
+    "code": "3922/3926",
+    "reason": "plastic fittings if applicable"
+   }
+  ],
+  "missing_facts": [
+   "Material of the parts (brass/copper, steel, plastic)"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Parts of faucets fall in 8481.90; material only changes the 8-digit line. Brass assumed."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

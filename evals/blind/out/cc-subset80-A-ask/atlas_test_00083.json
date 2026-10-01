@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00083",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "unspecified",
+   "function": "industrial robot (controller imported separately)",
+   "form": "incomplete robot",
+   "end_use": "industrial"
+  },
+  "gri_path": [
+   "GRI 1/2(a): robot without controller keeps essential character of robot; heading 8428.70 vs 8479.50 depends on function"
+  ],
+  "deciding_gri": "GRI 2(a)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8479.50.00.00",
+    "reason": "industrial robots n.e.s.; possible if not handling robot"
+   },
+   {
+    "code": "8428.70.00.00",
+    "reason": "industrial robots for lifting/handling; possible"
+   },
+   {
+    "code": "8479.90.95.30",
+    "reason": "parts of robots; only if not an essentially complete robot"
+   }
+  ],
+  "missing_facts": [
+   "What task does the robot perform (loading/handling/lifting vs welding, painting, assembly)?",
+   "What components are imported (arm, drives, motors) and is it essentially complete apart from the controller?"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Heading 8428.70 versus 8479.50 turns on the robot's function, which is not stated; asking importer."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_search",
+  "cross_search"
+ ]
+}

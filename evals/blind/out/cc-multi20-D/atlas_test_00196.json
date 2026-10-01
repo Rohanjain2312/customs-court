@@ -1,0 +1,49 @@
+{
+ "item_id": "atlas_test_00196",
+ "classification": {
+  "hts10": "3923.21.00.95",
+  "facts": {
+   "material": "clear polyethylene",
+   "function": "packing bags",
+   "form": "bags without handles",
+   "end_use": "packing"
+  },
+  "gri_path": [
+   "GRI 1: heading 3923 sacks and bags",
+   "GRI 6: 3923.21 of polymers of ethylene; other, no handles"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "F88931",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3926",
+    "reason": "residual; 3923 names bags"
+   },
+   {
+    "code": "3921",
+    "reason": "not film; made-up bags"
+   },
+   {
+    "code": "3923.21.00.85",
+    "reason": "PRCB requires handles"
+   }
+  ],
+  "missing_facts": [
+   "size (under 75 mm gives 3923.21.00.80)",
+   "slider closure"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Polyethylene bags without handles are 3923.21; no PRCB handles, residual Other .95 assuming over 75 mm and no sliders."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

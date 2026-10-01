@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00079",
+ "facts": {
+  "material": "forged steel",
+  "function": "engine connecting rod",
+  "form": "forged part",
+  "end_use": "14.8L diesel Class 8 trucks"
+ },
+ "missing_facts": [
+  "finished machined or rough forging",
+  "steel type",
+  "dedicated use",
+  "weight"
+ ],
+ "candidate_headings": [
+  "8409",
+  "7228",
+  "8483",
+  "7326"
+ ],
+ "reasoning": "Engine parts 8409 vs forgings 7228/7326 vs 8483."
+}

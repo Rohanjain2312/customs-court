@@ -1,0 +1,47 @@
+{
+ "item_id": "atlas_test_00192",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "not stated (filter media composition unknown)",
+   "function": "particulate filter for a respirator/powered air system",
+   "form": "replaceable filter, 3M GVP-440",
+   "end_use": "respiratory protection, e.g. welding"
+  },
+  "gri_path": [
+   "GRI 1: candidates are 5911.90 (textile articles for technical uses, filter media of textile), 9020.00 (breathing appliances; parts and accessories) and 8421.39 (gas filtering apparatus); Section XVI note 1(e) excludes textile technical articles from chapter 84"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N253050",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8421.39",
+    "reason": "if the filter is textile, Sec. XVI note 1(e) sends it to 5911 (N253050)"
+   },
+   {
+    "code": "6307.90.98",
+    "reason": "face masks without replaceable filters; this is a replaceable filter"
+   }
+  ],
+  "missing_facts": [
+   "What is the filter material (textile nonwoven/fiber media, glass fiber, plastic or other) and is it a cartridge with a plastic housing?",
+   "Is the filter imported alone or with the respirator or helmet?",
+   "Does the filter have a rigid housing making it an accessory of a breathing appliance of 9020?"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "The 6-digit result depends on the filter material and form: a textile filter is classified in 5911.90 (N253050, in force, 3M particulate filter for respirators), whereas a non-textile or housed filter may fall in 9020.00 or 8421.39. This is not stated, so I ask instead of guessing."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

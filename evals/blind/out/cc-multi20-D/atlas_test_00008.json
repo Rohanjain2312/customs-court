@@ -1,0 +1,57 @@
+{
+ "item_id": "atlas_test_00008",
+ "classification": {
+  "hts10": "9027.90.59.10",
+  "facts": {
+   "material": "PCB assembly with hydrogen sensing element",
+   "function": "detects hydrogen gas",
+   "form": "PCBA",
+   "end_use": "gas detection"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 gas analysis apparatus and parts; Ch90 note 2(b) sends parts principally for such an instrument to it",
+   "GRI 6: 9027.90 parts, of electrical instruments, 9027.90.59.10 of 9027.10.20 articles"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "967081",
+    "status": "in_force"
+   },
+   {
+    "id": "967082",
+    "status": "in_force"
+   },
+   {
+    "id": "N330417",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9031.80.80.85",
+    "reason": "9031 residual; gas analysis goes to 9027"
+   },
+   {
+    "code": "9033.00.90.00",
+    "reason": "note 2(c) residual only if not principally for a particular instrument"
+   },
+   {
+    "code": "8543.70",
+    "reason": "not shown as non-dedicated board"
+   }
+  ],
+  "missing_facts": [
+   "sensor type",
+   "bare PCBA vs complete detector (complete would be 9027.10.20.00)",
+   "dedicated use"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Hydrogen detection PCBA is a part principally for gas detectors of 9027.10.20, so 9027.90.59.10 under note 2(b)."
+ },
+ "tool_calls": 1,
+ "tools": [
+  "hts_navigate"
+ ]
+}

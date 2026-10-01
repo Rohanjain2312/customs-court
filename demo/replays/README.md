@@ -69,16 +69,14 @@ ruling id) come from `evals/datasets/*.jsonl` by item id.
 - 13 exhibits from `pilot-dev20-A` (real Claude Sonnet 5.5 runs, single agent, arm A), 6 of them
   mystery exhibits and one time-machine case (vinyl tiles, whose ruling code 3918.10.10.00 was
   split after 2018).
-- `handbag-leather`: real recorded Claude Sonnet 5 responses from the test fixture cache,
-  replayed offline against the fixture database (`sources/fixture.traces.jsonl`).
-- `handbag-leather-multi` and `handbag-pvc-objection`: **placeholders**. A scripted stand-in
-  model drives the real agent code and real tools on the fixture database, so the events have
-  the right shape, but the reasoning is scripted, it cites no rulings, and the cost is zero.
-  They exist so the multi-agent view and the Objection flow work until real runs are recorded.
-  Regenerate the fixture sources with `uv run python scripts/make_replays.py record-fixture`
-  (offline, no spend).
+- `handbag-leather` and `handbag-pvc-objection`: real recorded runs (Claude Sonnet 5.5 in the Claude Code
+  session, real tools on the full corpus, every tool call logged and replayed;
+  `sources/objection.traces.jsonl`, built by `scripts/trace_from_blind.py`). The PVC run is a fresh
+  classification of the changed description, not a continuation of the cowhide run.
+- `handbag-leather-multi`: **placeholder**. A scripted stand-in model drives the real multi-agent code
+  and real tools on the fixture database, so the events have the right shape, but the reasoning is
+  scripted, it cites no rulings, and the cost is zero. Regenerate the fixture sources with
+  `uv run python scripts/make_replays.py record-fixture` (offline, no spend).
 
-To replace the placeholders, record the runs (a multi-agent run on the same item, and an
-objection run whose description is the original plus
-`Correction to the facts, which overrides anything above: <fact>`), point the entries in
-`exhibits.json` at them, drop `placeholder`, and rebuild.
+To replace the remaining placeholder, record a multi-agent run on the same item, point its entry in
+`exhibits.json` at it, drop `placeholder`, and rebuild.

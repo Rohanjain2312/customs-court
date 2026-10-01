@@ -121,7 +121,7 @@ Built and validated locally, nothing deployed. See `docs/ARCHITECTURE.md` (deplo
 
 - FastAPI backend with SSE replay (compressed timing) and a gated live mode ($2 per session cap), React, TypeScript, D3 and Tailwind frontend with all seven features.
 - 26 exhibits from real Sonnet 5 recordings, including 10 items with both a single-agent and a multi-agent hearing. The Objection exhibit is a labeled scripted placeholder until one live run is possible.
-- Tests: `tests/test_demo_backend.py` (16), Playwright UI (6 passed), video `docs/demo.webm` and `docs/demo.gif` (recorded before the exhibits were switched to Sonnet 5 runs; re-record at the end).
+- Tests: `tests/test_demo_backend.py` (16), Playwright UI (6 passed), video `docs/demo.webm` and `docs/demo.gif` (re-recorded 2026-10-01 after the Objection exhibit became a real run; the GIF is built from the video with `demo/frontend/tools/webm_frames.mjs` and `scripts/frames_to_gif.py`).
 
 ## Phase 9: Evaluation at $0 and docs (2026-09-30)
 
@@ -137,3 +137,4 @@ Built and validated locally, nothing deployed. See `docs/ARCHITECTURE.md` (deplo
 - Found that the first linker left a candidate source ruling visible for 42 of 80 subset items; wrote `atlas.link_sources` (validated 150 of 150 on fresh) and `scripts/build_source_links.py`, which also refreshes the redaction table. Dates now cover 76 of 80 subset items.
 - Same-model reruns (Claude Sonnet 5.5 in the session): date limit on, `cc-subset80-A-asof` 47.0% and `cc-fresh40-A-asof` 85.0%; off, `cc-subset80-A-s55` 45.5% and `cc-fresh40-A-s55` 82.5%. Later-dated citations 0 against 42 (subset). Both judges graded all four runs (pass 62.2% subset and 92.5% fresh with the limit; 55.4% and 82.5% without). `evals/reports/as_of_impact.json` has the detail.
 - Cleanup: Mistral key removed from `.env`; private HF bundle dataset deleted; `evals/runs/localtest-2b/` git-ignored; `evals/audit/audit_25.md` reviewed (21 pass, 4 fail).
+- Ask-for-facts on all 80 subset items (`cc-subset80-A-ask`), a 20-item multi-agent pilot (`cc-multi20-D`) and a real Objection exhibit, all in the session on Claude Sonnet 5.5 at $0. Ask mode declined 41.2% of items; the pilot matched the single agent exactly. The demo's `handbag-leather` and `handbag-pvc-objection` exhibits now come from real runs (`demo/replays/sources/objection.traces.jsonl`).

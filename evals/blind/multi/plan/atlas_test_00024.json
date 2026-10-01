@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00024",
+ "facts": {
+  "material": "brass (copper-zinc)",
+  "function": "decorative",
+  "form": "seamless/ERW pipe 2in and 1.5in OD 0.40in wall",
+  "end_use": "decorative"
+ },
+ "missing_facts": [
+  "zinc/copper content",
+  "finished or cut length",
+  "polished/plated",
+  "fittings or tube"
+ ],
+ "candidate_headings": [
+  "7411",
+  "7418",
+  "7412",
+  "7407"
+ ],
+ "reasoning": "Brass tubes 7411 vs decorative articles 7418 vs fittings 7412."
+}

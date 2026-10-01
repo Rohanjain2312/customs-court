@@ -1,0 +1,42 @@
+{
+ "item_id": "atlas_test_00053",
+ "classification": {
+  "hts10": "9029.20.20.00",
+  "facts": {
+   "material": "electronic, plastic housing",
+   "function": "displays speed, distance, time",
+   "form": "handlebar unit with sensor",
+   "end_use": "bicycle"
+  },
+  "gri_path": [
+   "GRI 1: heading 9029 names speedometers; 9029.20.20 is 'Bicycle speedometers'",
+   "Section XVII Note 2 / ch.90 instruments not parts of cycles under 8714"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8714",
+    "reason": "specific instrument heading in Ch 90 prevails; Section XVII excludes Ch 90 articles"
+   },
+   {
+    "code": "9102",
+    "reason": "not a watch; time is secondary"
+   },
+   {
+    "code": "9031",
+    "reason": "residual, speedometers specified in 9029"
+   }
+  ],
+  "missing_facts": [
+   "clock vs speedometer principal function"
+  ],
+  "confidence": 0.8,
+  "abstain": false,
+  "rationale": "A cycle computer principally shows speed and distance; heading 9029 and subheading 9029.20.20 name bicycle speedometers. No ruling cited."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00088",
+ "classification": {
+  "hts10": "8516.80.40.00",
+  "facts": {
+   "material": "electric resistive heating element",
+   "function": "prevent ice build-up",
+   "form": "heating resistor/mat",
+   "end_use": "aircraft anti-icing"
+  },
+  "gri_path": [
+   "GRI 1: heading 8516 electric heating resistors; Section XVII note 2(f) removes ch.85 equipment from aircraft parts 8807",
+   "GRI 6: 8516.80.40 resistors assembled only with simple insulated former and connections for anti-icing or deicing"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "N026077",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8807.30",
+    "reason": "Section XVII note 2(f) excludes chapter 85 electrical equipment"
+   },
+   {
+    "code": "8514.90",
+    "reason": "not induction/dielectric/furnace heating"
+   }
+  ],
+  "missing_facts": [
+   "heating element only or system with controls"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Heading 8516 covers electric heating resistors, and subheading 8516.80.40 names anti-icing or deicing use. Section XVII note 2(f) bars 8807. If sold as a system with controls, 8516.80.80 may apply."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

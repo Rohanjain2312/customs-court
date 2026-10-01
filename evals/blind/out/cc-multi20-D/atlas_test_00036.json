@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00036",
+ "classification": {
+  "hts10": "9025.80.10.00",
+  "facts": {
+   "material": "electronic instrument",
+   "function": "measures dew point and temperature",
+   "form": "transmitter",
+   "end_use": "process/HVAC"
+  },
+  "gri_path": [
+   "GRI 1: heading 9025 hygrometers and thermometers; dew point is hygrometric",
+   "GRI 6: 9025.80 other instruments, electrical"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9025.80.35.00",
+    "reason": "non-electrical hygrometer; transmitter is electronic"
+   },
+   {
+    "code": "9027.89.45.60",
+    "reason": "hygrometers specifically named in 9025"
+   },
+   {
+    "code": "9032.89.60",
+    "reason": "measures only, no control function (Ch90 note 7)"
+   }
+  ],
+  "missing_facts": [
+   "output signal/control function",
+   "display/recorder"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Electronic dew point and temperature transmitter is a hygrometer/thermometer of 9025; electrical line chosen."
+ },
+ "tool_calls": 0,
+ "tools": []
+}

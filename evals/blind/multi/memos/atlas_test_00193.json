@@ -1,0 +1,60 @@
+{
+ "item_id": "atlas_test_00193",
+ "memos": [
+  {
+   "heading": "9020",
+   "best_code": "9020.00.60.00",
+   "argument": "A welding helmet integrated with a respirator is a respirator/breathing appliance worn on the person; heading 9020 covers other breathing appliances with mechanical parts or replaceable filters, and parts and accessories thereof. Ch.90 note 2(a)/(b) sends accessories to the principal appliance. If the unit has a blower or filter cartridges it is not the excluded 'protective mask having neither mechanical parts nor replaceable filters'. H81837 shows CBP applying EN 9020 to breathing apparatus. Helmet could be an accessory/part if the respirator provides the essential character (GRI 3(b)).",
+   "supporting_rulings": [
+    {
+     "id": "H81837",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "9020 text excludes protective masks having neither mechanical parts nor replaceable filters; if the SpeedGlas is a passive hood without blower or filter it falls out",
+    "Ch.90 note 1 has no direct exclusion, but missing facts: unknown whether respirator is powered or filtered, and whether helmet+respirator are a set/composite with helmet dominant",
+    "Search found no ruling directly on welding helmets with respirators"
+   ],
+   "strength": 0.55
+  },
+  {
+   "heading": "6506",
+   "best_code": "6506.10.30",
+   "argument": "A welding helmet is safety headgear of plastic; subheading 6506.10 is 'Safety headgear' with 6506.10.30 for reinforced or laminated plastics and 6506.10.60 other. Heading 6506 is a named-article fit for a protective hard-shell helmet worn on the head, and the respirator is arguably just a component of the headgear set.",
+   "supporting_rulings": [
+    {
+     "id": "F82205",
+     "status": "in_force"
+    },
+    {
+     "id": "G89437",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch.65 notes do not exclude it, but G89437 (face shield) was classed in 3926.90.9880, not 6506, and the importer's suggestion of 6506.10 there was not accepted per snippet",
+    "Respirator function (air-supplied) is not headgear; 9020 more specific for breathing function",
+    "F82205 (flashlight harness) is only weakly analogous (6506.99)"
+   ],
+   "strength": 0.3
+  },
+  {
+   "heading": "8414",
+   "best_code": "8414.60.00.00",
+   "argument": "If the unit includes a fan/blower supplying filtered air into the hood, it could be seen as a ventilating or recycling hood incorporating a fan (8414.60, hoods with max horizontal side not exceeding 120 cm) or a part of a blower (8414.90). The air-supplying blower is the mechanical, active component.",
+   "supporting_rulings": [
+    {
+     "id": "963857",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "8414.60 hoods are ventilating/extractor hoods (kitchen type); a worn protective helmet is not that; 963857 only concerns car fans (8414.59), weak support",
+    "Section XVI and ch.84 hoods are fixed ventilating appliances; breathing appliances are specifically provided in 9020",
+    "No ruling found placing a worn welding hood or PAPR in 8414; facts unknown (blower may not be imported)"
+   ],
+   "strength": 0.12
+  }
+ ]
+}

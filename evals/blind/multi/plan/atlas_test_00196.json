@@ -1,0 +1,23 @@
+{
+ "item_id": "atlas_test_00196",
+ "facts": {
+  "material": "clear polyethylene plastic",
+  "function": "packaging/carrying bags without handles",
+  "form": "bags, flat",
+  "end_use": "packing of goods"
+ },
+ "missing_facts": [
+  "thickness",
+  "dimensions",
+  "whether sold as rolls",
+  "whether retail carrier bags or packing bags",
+  "printing"
+ ],
+ "candidate_headings": [
+  "3923",
+  "3926",
+  "3921",
+  "3920"
+ ],
+ "reasoning": "Plastic sacks and bags of ethylene polymers 3923.21; alternatives 3926, 3921/3920 if sheeting-like."
+}

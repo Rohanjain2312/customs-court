@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00047",
+ "memos": [
+  {
+   "heading": "3002",
+   "best_code": "3002.13.00.90",
+   "argument": "NATCELL and CAR T cell products are cell-derived proteins/cell therapy materials. Heading 3002 covers immunological products and cell cultures, whether or not modified; Chapter 30 Note 2 defines immunological products as proteins directly involved in regulating immunological processes (antibodies, interleukins, interferons, growth factors, etc.), which fits T-cell/NK-cell directed proteins. Unmixed, not in measured doses -> 3002.13 (other, .90). If it is genetically modified cells (CAR T), 3002 'cell cultures, whether or not modified' also fits.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Ch30 Note 1(ij): diagnostic reagents of heading 3822 are excluded from Ch30",
+    "Note 2 requires proteins directly involved in immune regulation; a mere research protein may not qualify",
+    "If put up in measured doses for therapy, 3004 (medicaments) would take precedence over 3002.15 per Section VI Note 2",
+    "No ruling found in cross_search (results irrelevant)"
+   ],
+   "strength": 0.55
+  },
+  {
+   "heading": "3822",
+   "best_code": "3822.19.00.30",
+   "argument": "The product is described as a (Protein) product likely sold for research use; if it is a prepared laboratory reagent (e.g. for cell assays/staining/detection) heading 3822 covers prepared diagnostic or laboratory reagents, and Ch30 Note 1(ij) expressly sends diagnostic reagents there. Free general rate; 3822.19 other.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Description says nothing of diagnostic/lab reagent use; 'CAR T cell' suggests therapeutic cell material, not reagent",
+    "3822 is residual to 3002/3006 ('other than those of heading 3006') and Note 2 to Ch38 does not give priority except for certified reference materials",
+    "No supporting ruling found"
+   ],
+   "strength": 0.3
+  },
+  {
+   "heading": "3504",
+   "best_code": "3504.00.50.50",
+   "argument": "As a protein substance not elsewhere specified, 3504 (peptones; other protein substances and derivatives n.e.s.) is the residual protein heading, with 3504.00.50.50 Other. Applies if the item is just a protein of no specific immunological function.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Ch35 Note 1(b): excludes blood fractions, medicaments or other products of chapter 30",
+    "Heading is 'not elsewhere specified'; immunological proteins fall in 3002 under Ch30 Note 2",
+    "Cells/cell cultures are not protein substances",
+    "Duty 4% vs Free elsewhere; no ruling support"
+   ],
+   "strength": 0.15
+  }
+ ]
+}

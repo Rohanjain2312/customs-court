@@ -39,10 +39,9 @@ Finished runs (reports in `evals/reports/`, tables rebuilt by `scripts/results_t
 - Dev runs on the API: `dev100-A`, `dev40-A-v1`, `dev10-D`, `dev10-D-v2`, `pilot-dev20-A` (Sonnet 5.5).
 - Blind in-session runs (date-limited reruns `cc-subset80-A-asof`, `cc-fresh40-A-asof` on Sonnet 5.5 also done): `cc-subset80-A`, `cc-fresh40-A` (agent), `cc-subset80-Z`, `cc-fresh40-Z` (no-tools controls), with judge reports `cc-subset80-A.judge.json`, `cc-fresh40-A.judge.json`.
 
-Not run, because the API budget is closed:
-- The Claude Sonnet 5 API agent on the test split (arm A), and the controlled multi-agent study (arms B, C, D on `subset_80`). One command per arm when there is a budget (`scripts/eval_full.sh`); every response is cached.
-- Ask-for-facts mode measured on the subset.
-- A live Objection exhibit for the demo (the current one is a labeled scripted placeholder).
+Done in the session at $0 (2026-10-01): ask-for-facts mode on all 80 subset items, a 20-item multi-agent pilot, and a real Objection exhibit (see `docs/EVAL.md`).
+
+Not run, and not going to be (paid API budget is gone; never use paid APIs again): the Claude Sonnet 5 API agent on the test split, and the controlled multi-agent study (arms B, C, D on `subset_80`). `scripts/eval_full.sh` runs them if a budget ever exists; every response is cached.
 
 Known gaps:
 - The date limit reaches 76 of 80 subset items and all 40 fresh items. For 39 of the subset items the date is the earliest of several candidate source rulings (conservative).

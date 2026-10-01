@@ -1,0 +1,49 @@
+{
+ "item_id": "atlas_test_00065",
+ "classification": {
+  "hts10": "8538.90.60.00",
+  "facts": {
+   "material": "plastic",
+   "function": "covers for motor controller",
+   "form": "molded covers",
+   "end_use": "motor controller enclosure"
+  },
+  "gri_path": [
+   "GRI 1: heading 8538 parts suitable solely or principally for apparatus of 8535-8537; Section XVI Note 2(b)",
+   "Ch 39 Note 2(s) excludes Section XVI articles from ch.39",
+   "GRI 6: 8538.90.60 molded parts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "J81348",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3926",
+    "reason": "Ch 39 Note 2(s) excludes Section XVI parts"
+   },
+   {
+    "code": "8537",
+    "reason": "empty covers are not equipped boards"
+   },
+   {
+    "code": "8504",
+    "reason": "controller assumed switchgear/control apparatus, not static converter"
+   }
+  ],
+  "missing_facts": [
+   "what the controller is (8537 control apparatus vs 8504 drive)",
+   "whether covers are dedicated"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Assuming the covers are dedicated molded parts of 8537 control apparatus, they go to 8538.90.60 like J81348 molded plastic housings."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

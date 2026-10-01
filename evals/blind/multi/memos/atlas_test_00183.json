@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00183",
+ "memos": [
+  {
+   "heading": "8439",
+   "best_code": "8439.99.10.00",
+   "argument": "Doctor blade holders on paper machines are parts of machinery for making paper; heading 8439 covers machinery for making paper plus parts, with 8439.99.10 'Of machinery for making paper or paperboard'. Section XVI note 2(b): parts suitable solely or principally for a particular kind of machine go with that machine, so a holder assembly dedicated to a paper-making machine goes to 8439 (doctor blades scrape rolls in forming/press/dryer sections). Weakness: facts do not say whether it is for finishing (8439.99.50) or pulp machines. cross_search returned no relevant ruling.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Section XVI note 2(a): parts that are goods of any other heading of ch.84/85 (other than 8409, 8431, 8448, 8466, 8473...) go there in all cases; note 2(b) requires sole/principal use with paper machines, unconfirmed",
+    "Machinery of 8441 (making up paper, e.g. cutting) could take parts if holder is for such machines",
+    "Ch.84 note 1 and section XVI note 1 exclusions (e.g. belts, ceramic, glass parts) apply if made of such materials; material unconfirmed"
+   ],
+   "strength": 0.65
+  },
+  {
+   "heading": "8441",
+   "best_code": "8441.90.00.00",
+   "argument": "8441 covers other machinery for making up paper pulp, paper or paperboard, with a single 'Parts' subheading 8441.90. If the holders serve converting/making-up machines (cutters, coaters, rewinders) that do the cutting, scraping or cleaning, section XVI note 2(b) sends them there. Doctor blades also clean rolls on coating/converting lines. Weakness: papermaking per se is 8439; nothing in the description points to making-up machines. No relevant ruling found.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Heading 8439 covers machinery for making paper and its parts and is more specific if the machine is a paper-making machine; 8441 is 'other' machinery",
+    "Section XVI note 2(a)/(b) conditions: solely/principally used with 8441 machines unproven"
+   ],
+   "strength": 0.25
+  },
+  {
+   "heading": "8466",
+   "best_code": "8466.30",
+   "argument": "8466 covers parts and accessories solely or principally for machines of headings 8456 to 8465 including work or tool holders and special attachments, so a 'holder' might be argued as a tool holder. Honest assessment: heading text limits it to machine tools of 8456-8465 (and hand tool holders), which a paper machine is not. Subheading 8466.30 (special attachments) is the nearest, but I cannot construct a real case. No relevant ruling found.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Heading 8466 limited to parts for machines of headings 8456-8465 and tool holders for hand tools; paper machines are 8439/8441",
+    "Section XVI note 2(b)/(c) places parts with the particular machine heading when one exists"
+   ],
+   "strength": 0.05
+  }
+ ]
+}

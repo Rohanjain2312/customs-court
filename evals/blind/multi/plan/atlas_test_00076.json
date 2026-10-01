@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00076",
+ "facts": {
+  "material": "polyester/epoxy resin powder with pigments",
+  "function": "coating metal surfaces",
+  "form": "powder",
+  "end_use": "paint"
+ },
+ "missing_facts": [
+  "pigmented or clear",
+  "pigment content",
+  "dry powder vs dispersion",
+  "resin primary form"
+ ],
+ "candidate_headings": [
+  "3208",
+  "3210",
+  "3907",
+  "3209"
+ ],
+ "reasoning": "Powder paints 3208 vs 3210 vs resins 3907."
+}

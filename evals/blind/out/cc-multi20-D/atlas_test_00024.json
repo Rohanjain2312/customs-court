@@ -1,0 +1,42 @@
+{
+ "item_id": "atlas_test_00024",
+ "classification": {
+  "hts10": "7411.21.10.00",
+  "facts": {
+   "material": "brass",
+   "function": "decorative",
+   "form": "seamless and ERW pipe, 2in and 1.5in OD, 0.40in wall",
+   "end_use": "decorative"
+  },
+  "gri_path": [
+   "GRI 1: heading 7411 copper tubes and pipes; no use limitation",
+   "GRI 6: 7411.21 brass; 7411.21.10 seamless (first-named)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7418.10.00",
+    "reason": "stock pipe is not a finished household article"
+   },
+   {
+    "code": "7412.20.00.90",
+    "reason": "pipe not fittings"
+   },
+   {
+    "code": "7411.21.50.00",
+    "reason": "ERW portion; classify separately"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: ERW portion 7411.21.50.00",
+   "zinc content",
+   "finished or cut"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Brass pipe is covered by heading 7411 regardless of decorative end use; seamless line chosen as first-named."
+ },
+ "tool_calls": 0,
+ "tools": []
+}

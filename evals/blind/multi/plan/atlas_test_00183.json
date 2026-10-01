@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00183",
+ "facts": {
+  "material": "metal (probably steel) holder assemblies",
+  "function": "hold doctor blades against rolls to scrape/clean in paper machines",
+  "form": "assembly",
+  "end_use": "papermaking"
+ },
+ "missing_facts": [
+  "whether solely/principally used with paper machines",
+  "whether blade included",
+  "material",
+  "whether pulp-making (8439) or paper-making (8439/8441) machine"
+ ],
+ "candidate_headings": [
+  "8439",
+  "8441",
+  "8466",
+  "8431"
+ ],
+ "reasoning": "Parts of paper machinery 8439.99 vs 8441.90 vs 8466 tool holders."
+}

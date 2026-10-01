@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00079",
+ "classification": {
+  "hts10": "8409.99.91.10",
+  "facts": {
+   "material": "forged steel",
+   "function": "engine connecting rod",
+   "form": "forged part",
+   "end_use": "14.8L diesel Class 8 trucks"
+  },
+  "gri_path": [
+   "GRI 1: heading 8409 parts solely/principally for engines of 8407/8408; Section XVI Note 2(b)",
+   "8483 not named for connecting rods; Note 2(a) does not apply",
+   "GRI 6: 8409.99.91.10 connecting rods"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7228",
+    "reason": "identifiable engine part, not bar or rod"
+   },
+   {
+    "code": "8483",
+    "reason": "connecting rods not named in 8483"
+   },
+   {
+    "code": "7326",
+    "reason": "dedicated engine part goes to Section XVI"
+   }
+  ],
+  "missing_facts": [
+   "finished machined or rough forging"
+  ],
+  "confidence": 0.85,
+  "abstain": false,
+  "rationale": "A diesel engine connecting rod is a part of 8408 engines in 8409; the tariff has an express connecting rods statistical line."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "item_id": "atlas_test_00017",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "steel",
+   "function": "air distribution vent for air conditioning",
+   "form": "finished article",
+   "end_use": "unknown"
+  },
+  "gri_path": [
+   "GRI 1: candidate headings differ at 4/6-digit level depending on missing facts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8307.10",
+    "reason": "flexible tubing of base metal, not a vent register"
+   }
+  ],
+  "missing_facts": [
+   "Is it a part of a vehicle (8708.99), part of an air-conditioning machine (8415.90), a duct fitting for buildings (7326.90 or 7322.90), or a registers/grille for HVAC?",
+   "Is it for a motor vehicle or a building?",
+   "Does it incorporate a damper, fan or motor?"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "Steel vent: 7322.90 (hot air distributor parts), 7326.90, 8415.90 or 8708.99 depending on use and which machine it belongs to; the end use is missing, so I abstained."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_search",
+  "cross_search"
+ ]
+}

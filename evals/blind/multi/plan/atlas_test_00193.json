@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00193",
+ "facts": {
+  "material": "welding helmet (plastic) with powered/air-supplied respirator",
+  "function": "protect head/face from welding and filter breathing air",
+  "form": "helmet with respirator",
+  "end_use": "industrial welding"
+ },
+ "missing_facts": [
+  "whether helmet and respirator are a composite or a set",
+  "whether respirator is powered/filter blower",
+  "helmet material",
+  "auto-darkening lens"
+ ],
+ "candidate_headings": [
+  "9020",
+  "6506",
+  "8414",
+  "9004"
+ ],
+ "reasoning": "Respirator 9020 breathing appliances vs safety headgear 6506 vs blower 8414; 9004 eye protectors."
+}

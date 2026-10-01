@@ -1,0 +1,57 @@
+{
+ "item_id": "atlas_test_00008",
+ "memos": [
+  {
+   "heading": "9027",
+   "best_code": "9027.90.59.10",
+   "argument": "A hydrogen sensing PCBA is the sensing core of a gas analysis apparatus; heading 9027 names gas or smoke analysis apparatus, and CROSS (967081, 967082) classes gas detectors with a sensor under 9027.10.20. Chapter 90 note 2(a)/(b) sends a part principally for such an instrument to the instrument's heading, so a dedicated PCBA falls in 9027.90.59.10 (parts of 9027.10.20 articles); if presented as a complete working detector, 9027.10.20.00. N330417 shows a PCB classed in 9027.90.",
+   "supporting_rulings": [
+    {
+     "id": "967081",
+     "status": "in_force"
+    },
+    {
+     "id": "967082",
+     "status": "in_force"
+    },
+    {
+     "id": "N330417",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch90 note 2: parts only follow the instrument if suitable solely or principally for it; a generic PCBA with a sensing element could fall to 9033",
+    "Ch85 PCBA/sensor rulings (N325069) went to 8543.70 when board is not dedicated to a particular instrument",
+    "Facts missing: whether sensor is electrochemical (analysis) and whether it is a bare PCBA"
+   ],
+   "strength": 0.6
+  },
+  {
+   "heading": "9031",
+   "best_code": "9031.80.80.85",
+   "argument": "If the board detects/monitors hydrogen presence as a checking device rather than analyzing gas composition, it is a measuring or checking instrument not elsewhere specified in ch90, 9031.80.80. H154038 classed an item in 9031.80.80.",
+   "supporting_rulings": [
+    {
+     "id": "H154038",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Heading 9031 text 'not specified or included elsewhere in this chapter' defers to 9027 for gas analysis apparatus",
+    "A bare PCBA is at best a part; ch90 note 2(a) sends parts to the heading of the instrument"
+   ],
+   "strength": 0.25
+  },
+  {
+   "heading": "9033",
+   "best_code": "9033.00.90.00",
+   "argument": "As a PCBA with sensing element not tied to a specific instrument, it is a ch90 part or accessory of residual type under note 2(c), 9033.00.90.00.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Note 2(c) applies only when parts are not principally for a particular instrument; hydrogen-detection function points to 9027 per note 2(b)",
+    "Note 2(a) excludes goods themselves in ch85 headings (e.g., 8543) from 9033; 9033 is residual of last resort"
+   ],
+   "strength": 0.2
+  }
+ ]
+}

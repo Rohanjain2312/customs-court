@@ -1,0 +1,62 @@
+{
+ "item_id": "atlas_test_00104",
+ "memos": [
+  {
+   "heading": "9018",
+   "best_code": "9018.90.75.20",
+   "argument": "The NxStage fluid warmer is an electro-medical apparatus for warming dialysis/IV fluid before infusion; heading 9018 covers other electro-medical apparatus and parts/accessories. CROSS H81049 classified an IV fluid/blood warmer in 9018.90.75, citing medical-use characteristics (single-use limits, contamination concern); 9018.90.75.20 is dialysis instruments and apparatus. Disposable sets, if dedicated accessories, follow in 9018 (N065317 put medical plastic tubing assemblies in 9018.90.75.80, though other tubing in 3917).",
+   "supporting_rulings": [
+    {
+     "id": "H81049",
+     "status": "in_force"
+    },
+    {
+     "id": "N065317",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch. 90 note 1(f) excludes parts of general use / similar goods of plastics (chapter 39) - could pull generic disposable tubing to 3917/3926",
+    "Chapter 90 note 1 exclusion list is long; none excludes electro-medical warmers per se",
+    "N065317 shows plain plastic tubing can fall in 3917 rather than 9018"
+   ],
+   "strength": 0.85
+  },
+  {
+   "heading": "8516",
+   "best_code": "8516.79.00.00",
+   "argument": "The unit is an electrothermic heating appliance; 8516.79 'Other' electrothermic appliances. Argument is weak because 8516 covers appliances of a kind used for domestic purposes and ch. 85 is generally subordinate to specific medical heading 9018.",
+   "supporting_rulings": [
+    {
+     "id": "N026077",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "8516 text limited to domestic-type electrothermic appliances; this is professional medical equipment",
+    "Ch. 85 note 1(d) excludes medical vacuum apparatus to 9018, showing medical apparatus priority",
+    "H81049 put a comparable IV fluid warmer in 9018 not 8516",
+    "N026077 concerns ordinary electric heaters (space heaters), not medical"
+   ],
+   "strength": 0.1
+  },
+  {
+   "heading": "3926",
+   "best_code": "3926.90.99.00",
+   "argument": "If the Warmer Disposable Sets are entered separately as plastic tubing/bag sets, 3926 other articles of plastics is the residual plastic heading. It cannot cover the electric warmer itself. Not verified that 3926.90.99 is the exact leaf; heading-level residual only.",
+   "supporting_rulings": [
+    {
+     "id": "N065317",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch. 39 note 2(u) excludes articles of chapter 90",
+    "Ch. 39 note 2(s) excludes articles of section XVI",
+    "Plastic tubing has a more specific heading 3917 ahead of 3926",
+    "Applies at most to separately entered disposables; description lists warmer and sets together"
+   ],
+   "strength": 0.15
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00096",
+ "memos": [
+  {
+   "heading": "9030",
+   "best_code": "9030.89.01.00",
+   "argument": "Inductive loops and axle sensors are electronic detectors; 9030 covers instruments for measuring or checking electrical quantities. An inductive loop works by sensing inductance change, so arguably measures an electrical quantity (inductance); counting output would be 'other'. Weak: the goal is counting vehicles, not measuring an electrical quantity. cross_search returned no relevant rulings for this product (only unrelated 1990 HQ items), so no ruling is cited.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Heading text limited to measuring/checking electrical quantities or ionizing radiation; vehicle/axle counting is not an electrical quantity",
+    "Chapter 90 note 1(h) and 1(g) do not exclude directly, but chapter 90 requires a measuring/checking instrument, not a mere sensor/detector",
+    "Section XVI note 1(m) confirms chapter 90 articles are outside chapter 85, no help here"
+   ],
+   "strength": 0.2
+  },
+  {
+   "heading": "9031",
+   "best_code": "9031.80.80",
+   "argument": "9031 is the residual heading for measuring or checking instruments, appliances and machines not specified elsewhere in chapter 90. Traffic counting sensors that detect and count vehicles/axles are measuring/checking appliances of the kind (counting traffic volume), classifiable under 9031.80.80 as other instruments. Chapter 90 note 2(a)/(b) support parts/accessories of such instruments. Strongest if sold with a counter/recorder; bare loops may be only parts/accessories (9031.90) or wire. cross_search returned no relevant rulings for this product (only unrelated 1990 HQ items), so no ruling is cited.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "If merely wire loop without electronics, may be classified as insulated wire (8544) or as parts",
+    "Pure detectors that only switch without measuring may fall to 8536 or 8543",
+    "Heading 9031 only for items not covered by a more specific heading such as 9030"
+   ],
+   "strength": 0.5
+  },
+  {
+   "heading": "8536",
+   "best_code": "8536.50",
+   "argument": "Axle sensors and loops act as electrical switches/proximity sensors that close or open a circuit when a vehicle passes, fitting 'other switches' (8536.50) or 'other apparatus' (8536.90.85) for voltage not exceeding 1,000 V. Works if goods are simple sensor/switch devices without counting/recording function. cross_search returned no relevant rulings for this product (only unrelated 1990 HQ items), so no ruling is cited.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "8536 covers apparatus for switching, protecting or connecting circuits; a detector that senses vehicles and outputs a signal is not clearly one",
+    "Plan notes unclear whether the sensors measure; if they measure, chapter 90 controls (Section XVI note 1(m) excludes chapter 90 articles from chapter 85)"
+   ],
+   "strength": 0.25
+  }
+ ]
+}

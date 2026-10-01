@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00003",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "unvulcanized synthetic rubber (description also says natural forms)",
+   "function": "raw material",
+   "form": "soft natural and standard natural forms; unclear",
+   "end_use": "unknown"
+  },
+  "gri_path": [
+   "GRI 1: candidate headings differ at 4/6-digit level depending on missing facts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4005",
+    "reason": "only if compounded; unknown"
+   },
+   {
+    "code": "4006.90",
+    "reason": "only if other forms; unknown"
+   }
+  ],
+  "missing_facts": [
+   "Is the rubber natural (4001) or synthetic (4002)? The description says both.",
+   "Is it compounded (with carbon black, silica or other additives; heading 4005) or uncompounded?",
+   "Is it in primary forms, plates/sheets/strip, or other forms?",
+   "What polymer type (SBR, BR, IR, etc.)?"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "Heading 4001, 4002, 4005 or 4006 turns on whether it is natural or synthetic, compounded, and its form; these are 4/6-digit facts, so I abstained."
+ },
+ "tool_calls": 1,
+ "tools": [
+  "hts_search"
+ ]
+}

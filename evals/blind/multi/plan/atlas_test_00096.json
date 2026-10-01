@@ -1,0 +1,21 @@
+{
+ "item_id": "atlas_test_00096",
+ "facts": {
+  "material": "electronic sensors (inductive loops, axle sensors)",
+  "function": "detect and count vehicles/axles for traffic counting",
+  "form": "wire loops and sensors",
+  "end_use": "road traffic monitoring"
+ },
+ "missing_facts": [
+  "whether sensors only or with counter/recorder",
+  "whether they measure/check or merely detect",
+  "power/electronics content"
+ ],
+ "candidate_headings": [
+  "9030",
+  "9031",
+  "8536",
+  "8543"
+ ],
+ "reasoning": "Detecting/counting electrical instruments: 9030 or 9031 measuring/checking; 8543 other electrical apparatus; 8536 sensors/switches."
+}

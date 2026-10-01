@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00036",
+ "facts": {
+  "material": "electronic instrument with sensors",
+  "function": "measures dew point and temperature and transmits signal",
+  "form": "transmitter",
+  "end_use": "industrial process/HVAC"
+ },
+ "missing_facts": [
+  "display/recorder",
+  "output signal",
+  "sensing principle",
+  "automatic control use"
+ ],
+ "candidate_headings": [
+  "9025",
+  "9027",
+  "9032",
+  "9026"
+ ],
+ "reasoning": "Hygrometers 9025 vs analysis 9027 vs control 9032 vs 9026."
+}

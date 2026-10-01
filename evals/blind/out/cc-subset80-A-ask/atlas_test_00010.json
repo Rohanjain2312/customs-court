@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00010",
+ "classification": {
+  "hts10": "3918.10.10.20",
+  "facts": {
+   "material": "PVC base 4 mm, PVC backing 0.5 mm, 0.5 mm decorative wood veneer layer",
+   "function": "floor covering",
+   "form": "click-lock tiles/planks",
+   "end_use": "flooring"
+  },
+  "gri_path": [
+   "GRI 1: heading 3918 floor coverings of plastics in the form of tiles; PVC dominates by thickness; chapter 39 note 2 does not exclude",
+   "GRI 6: 3918.10 polymers of vinyl chloride, floor coverings, vinyl tile; 4 mm solid PVC base assumed rigid solid core"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4412",
+    "reason": "0.5 mm wood veneer is minor; plastic base gives essential character (GRI 3(b))"
+   },
+   {
+    "code": "3918.10.10.30",
+    "reason": "core assumed solid, not expanded/foamed"
+   },
+   {
+    "code": "3918.10.20",
+    "reason": "tile form is vinyl tile line"
+   }
+  ],
+  "missing_facts": [
+   "Confirm the PVC base is solid (not foamed) for the statistical suffix"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Floor covering of vinyl chloride polymer in tile form falls in 3918.10.10; the thin wood veneer layer does not give essential character against the 4 mm PVC base. Suffix assumes rigid solid core. Searched CROSS; the results were wood-flooring rulings on different facts so none cited."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_notes"
+ ]
+}

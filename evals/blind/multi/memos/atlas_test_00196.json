@@ -1,0 +1,63 @@
+{
+ "item_id": "atlas_test_00196",
+ "memos": [
+  {
+   "heading": "3923",
+   "best_code": "3923.21.00.95",
+   "argument": "Clear polyethylene bags for packing goods are 'sacks and bags (including cones)' of polymers of ethylene under 3923.21; the heading covers articles of plastics for conveyance or packing. F88931 classed clear polyethylene sheeting bags in 3923.21.0090. Without handles they are outside the PRCB line (3923.21.00.85, bags with handles), so the residual 'Other' 3923.21.00.95 fits; if closures with sliders or small bags under 75 mm exist, other statistical suffixes apply.",
+   "supporting_rulings": [
+    {
+     "id": "F88931",
+     "status": "in_force"
+    },
+    {
+     "id": "F84051",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Heading 3923 text covers articles for conveyance/packing; no chapter note excludes plain bags",
+    "If bags are 'sold as rolls' of flat tubing or sheeting, 3920/3921 may fit better",
+    "Statistical suffix depends on size/zip closure unknown"
+   ],
+   "strength": 0.9
+  },
+  {
+   "heading": "3926",
+   "best_code": "3926.90.99",
+   "argument": "3926 is the residual heading for other articles of plastics; a polyethylene bag is an article of plastics if not considered a packing article. Rulings such as 963496 show the 3923 vs 3926 boundary turns on packing/conveyance use.",
+   "supporting_rulings": [
+    {
+     "id": "963496",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "3926 is residual; a bag for packing goods is specifically named in 3923 (sacks and bags), so 3926 would apply only if not a packing article; 963496 itself denied 3923 only for a rigid tote tube, a distinguishing fact",
+    "best 10-digit leaf under 3926.90 not verified (only first children listed)"
+   ],
+   "strength": 0.1
+  },
+  {
+   "heading": "3921",
+   "best_code": "3921.19.00",
+   "argument": "If the goods are essentially lay-flat polyethylene film or tubing cut to length and sealed merely at one end, they could be argued as film/sheeting of plastics. Heading 3921 covers plates, sheets, film, foil and strip not elsewhere specified; PE film is generally 3920.10 though, so 3921 is weak.",
+   "supporting_rulings": [
+    {
+     "id": "F86665",
+     "status": "in_force"
+    },
+    {
+     "id": "F85042",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Polyethylene film is not cellular, reinforced or laminated, so it belongs to 3920.10.00 (of polymers of ethylene), not 3921 (3920 is preferred over 3921 for non-cellular unreinforced film)",
+    "Made-up bags (sewn/sealed) are articles, 3923 specifically covers sacks and bags",
+    "Ch.39 note 10 on shapes not checked beyond note truncation"
+   ],
+   "strength": 0.07
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00036",
+ "classification": {
+  "hts10": "9025.80.10.00",
+  "facts": {
+   "material": "electronic instrument",
+   "function": "measures dew point (humidity) and temperature and transmits a signal",
+   "form": "transmitter",
+   "end_use": "industrial process measurement"
+  },
+  "gri_path": [
+   "GRI 1: heading 9025 hygrometers, thermometers and combinations; chapter 90 notes do not exclude",
+   "GRI 6: 9025.80 other instruments, electrical"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9025.19",
+    "reason": "thermometers/pyrometers not combined with other instruments; this measures dew point too"
+   },
+   {
+    "code": "9026",
+    "reason": "flow/level/pressure instruments, not humidity"
+   },
+   {
+    "code": "9027.80",
+    "reason": "physical/chemical analysis instruments; dew point is a hygrometer function"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Dew point and temperature transmitters are electrical hygrometer/thermometer combinations of heading 9025, in 9025.80.10 'Electrical'. No directly matching ruling was cited."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "cross_search",
+  "hts_navigate"
+ ]
+}

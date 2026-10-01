@@ -1,0 +1,77 @@
+{
+ "item_id": "atlas_test_00138",
+ "memos": [
+  {
+   "heading": "9505",
+   "best_code": "9505.90.60.00",
+   "argument": "Halloween/dress-up costume sets with crown, necklace, sunglasses, flower are festive/entertainment articles. CROSS G89981 notes the festive-article treatment (9505.90.60) for costumes of flimsy construction not normal apparel; sets with plastic accessories can be argued as a whole to be festive. Weakness: that ruling itself rejected 9505 for well-made garments.",
+   "supporting_rulings": [
+    {
+     "id": "G89981",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch. 95 note 1(e) excludes fancy dress of textiles of chapter 61 or 62",
+    "Ch. 95 note 1(x) excludes apparel with utilitarian function",
+    "G89981 held well-constructed blouse/pant/vest are apparel, not 9505",
+    "Princess dress rulings (H80172, H82907) classified costumes in ch. 61"
+   ],
+   "strength": 0.15
+  },
+  {
+   "heading": "6104",
+   "best_code": "6104.43.20.20",
+   "argument": "Princess costume set: the long dress gives essential character under GRI 3(b); H80172 classified a Princess Costume (dress, crown, etc.) in 6104.43.2020 girls' knit synthetic dresses; H82053 and H82907 similar. Ch. 95 note 1(e) sends textile fancy dress to ch. 61/62. Applies to knit dress; fabric knit/woven not stated. Hippie set pants/blouse/vest could be 6104.63 per G89981 if knit.",
+   "supporting_rulings": [
+    {
+     "id": "H80172",
+     "status": "in_force"
+    },
+    {
+     "id": "H82053",
+     "status": "in_force"
+    },
+    {
+     "id": "H82907",
+     "status": "in_force"
+    },
+    {
+     "id": "G89981",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Knit vs woven not stated; if woven the dress is 6204",
+    "Hippie costume has mixed materials; G89981 put the woven set in 6206/6210 and pants in 6104.63 variously",
+    "Retail set with non-textile accessories; GRI 3(b) essential character needed"
+   ],
+   "strength": 0.55
+  },
+  {
+   "heading": "6204",
+   "best_code": "6204.43.40.40",
+   "argument": "Same costume-as-apparel logic if the dress is woven synthetic: ch. 95 note 1(e) routes fancy dress to ch. 62; H82053 put a woven polyester costume dress in 6204.43.4040 and H82907 also cited 6204.43.4040. Hippie set (blouse, pants, vest) of woven fabric would also sit in ch. 62 (G89981 woven blouse/pant/vest in 6206/6204-type headings). Leaf code from ruling citation, not navigated.",
+   "supporting_rulings": [
+    {
+     "id": "H82053",
+     "status": "in_force"
+    },
+    {
+     "id": "H82907",
+     "status": "in_force"
+    },
+    {
+     "id": "G89981",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Fabric construction unknown; if knit, 6104 applies",
+    "Ch. 95 note 1(e) only excludes; set-with-accessories needs GRI 3(b)",
+    "6204.43.40 leaf not verified via hts_navigate"
+   ],
+   "strength": 0.45
+  }
+ ]
+}

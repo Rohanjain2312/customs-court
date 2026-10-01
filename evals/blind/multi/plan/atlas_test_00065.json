@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00065",
+ "facts": {
+  "material": "plastic",
+  "function": "covers/housings for motor controller",
+  "form": "molded covers",
+  "end_use": "motor controller enclosure"
+ },
+ "missing_facts": [
+  "finished or with fittings",
+  "what controller is for",
+  "plastic type",
+  "dedicated use"
+ ],
+ "candidate_headings": [
+  "8538",
+  "3926",
+  "8537",
+  "8504"
+ ],
+ "reasoning": "Parts of switchgear 8538 vs plastic articles 3926 vs 8504."
+}

@@ -1,0 +1,45 @@
+{
+ "item_id": "atlas_test_00185",
+ "classification": {
+  "hts10": "8483.40.50.10",
+  "facts": {
+   "material": "not stated (mechanical assembly)",
+   "function": "gear box transmitting drive in a fertilizer spreader",
+   "form": "gearbox assembly",
+   "end_use": "fertilizer spreaders (agricultural machinery)"
+  },
+  "gri_path": [
+   "GRI 1: heading 8483 names gear boxes and other speed changers",
+   "Section XVI note 2(a): parts that are themselves goods of a heading of chapter 84/85 go in their own heading, not in 8432.90 parts",
+   "GRI 6: 8483.40 gear boxes; 8483.40.50 other than for paper machines; .10 fixed ratio (assumed)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8432.90.00.60",
+    "reason": "parts of fertilizer distributors; excluded because a gear box is itself a good of heading 8483 (Sec. XVI note 2(a))"
+   },
+   {
+    "code": "8483.40.30",
+    "reason": "only for pulp or paper machinery"
+   },
+   {
+    "code": "8483.40.50.80",
+    "reason": "other; assumed fixed ratio instead"
+   }
+  ],
+  "missing_facts": [
+   "Is the gearbox fixed-ratio (assumed) or variable-ratio? (affects only the statistical suffix)"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "A gearbox assembly is a good of heading 8483 and under Section XVI note 2(a) is classified there rather than as a part of the spreader in 8432. Statistical suffix assumes a fixed-ratio unit. No ruling on point retrieved."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate"
+ ]
+}

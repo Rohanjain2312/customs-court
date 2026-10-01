@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00188",
+ "classification": {
+  "hts10": "8413.91.90.31",
+  "facts": {
+   "material": "not stated (steel assumed)",
+   "function": "rods connecting the surface drive to a downhole reciprocating oil well pump",
+   "form": "rods and their couplings",
+   "end_use": "oil well sucker rod pumping"
+  },
+  "gri_path": [
+   "GRI 1: heading 8413 parts of pumps; sucker rods are parts of reciprocating positive displacement oil well pumps",
+   "Section XVI note 2(b): parts solely or principally used with a pump go to 8413.91; note 1(g) does not exclude them",
+   "GRI 6: 8413.91.90 other parts of pumps; .31 sucker rods of statistical note 3"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "7308/7326",
+    "reason": "articles of iron or steel; excluded as identifiable parts of pumps (Sec XVI note 1(g) and note 2)"
+   },
+   {
+    "code": "8413.91.90.39",
+    "reason": "other parts of 8413.50; the line .31 names sucker rods"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: sucker rod couplings (may be parts of the pump under 8413.91.90.39 or fittings of 7307 depending on design)"
+  ],
+  "confidence": 0.65,
+  "abstain": false,
+  "rationale": "Sucker rods are named in a dedicated statistical line under parts of pumps of 8413.50 (8413.91.90.31). The couplings are listed for separate classification. No CROSS ruling on point was retrieved."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate"
+ ]
+}

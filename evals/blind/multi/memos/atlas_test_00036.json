@@ -1,0 +1,65 @@
+{
+ "item_id": "atlas_test_00036",
+ "memos": [
+  {
+   "heading": "9025",
+   "best_code": "9025.80.35.00",
+   "argument": "A dew point and temperature transmitter is an instrument measuring humidity-related state (dew point is a hygrometric quantity) and temperature, so it is a hygrometer/thermometer combination under 9025 (recording or not; combinations expressly included). Hygrometers/psychrometers, non-recording is 9025.80.35.00 (1.4%); an electrical instrument may instead fit 9025.80.10.00 (Electrical, 1.7%), which probably applies to electronic sensors/transmitters. Rulings put electronic temperature instruments and moisture/hygrometer meters in 9025. Best code uncertain between 9025.80.10.00 and 9025.80.35.00; I choose 9025.80.10.00 if electric.",
+   "supporting_rulings": [
+    {
+     "id": "G86536",
+     "status": "in_force"
+    },
+    {
+     "id": "G84511",
+     "status": "in_force"
+    },
+    {
+     "id": "F83046",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Chapter 90 note 7 limits 9032 only; note 1(g) etc. do not exclude 9025",
+    "Transmitter signalling output could shift to 8543/8517 transmitters, but those rulings concern RF/IR transmitters, not process sensors",
+    "Rulings cited are consumer thermometer/moisture meter cases, not dew point transmitters; no direct ruling found",
+    "Heading 9025 does not clearly cover dew point measuring beyond 'hygrometers'; 9027 could capture 'quantities of heat'"
+   ],
+   "strength": 0.65
+  },
+  {
+   "heading": "9027",
+   "best_code": "9027.89.45.60",
+   "argument": "Dew point measurement is a physical analysis of gas moisture content and 9027 includes instruments for measuring or checking quantities of heat and for physical analysis. Electrical analysis instrument line 9027.89.45 (Physical analysis, 9027.89.45.60) is the best fit. Weak: heading 9027 enumerates analysis/viscosity/heat/sound/light, and hygrometers are specifically named in 9025, a more specific provision.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Hygrometers named expressly in 9025; specific beats general",
+    "No ruling retrieved that classifies dew point or humidity instruments in 9027",
+    "Chapter 90 notes (full text truncated) not seen to contain an affirmative inclusion of humidity instruments in 9027"
+   ],
+   "strength": 0.2
+  },
+  {
+   "heading": "9032",
+   "best_code": "9032.89.60",
+   "argument": "If the transmitter feeds an automatic control loop (HVAC or process) it could be an automatic controlling instrument or part/accessory of one under 9032 (9032.89.60 other; 9032.90 parts). Chapter 90 note 7 limits 9032 to instruments that automatically control a variable by constantly measuring and maintaining a desired value; a pure measuring transmitter does not itself regulate or hold a setpoint.",
+   "supporting_rulings": [
+    {
+     "id": "F82016",
+     "status": "in_force"
+    },
+    {
+     "id": "G88467",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Chapter 90 note 7 restricts 9032 to instruments that automatically control to a desired value; a transmitter only measures and sends signal",
+    "Missing fact: whether it includes control/setpoint function",
+    "F82016 (thermostats) and G88467 (tire pressure system) are controlling devices, not measuring transmitters",
+    "Sensing instruments are in 9025 and note 2 parts rules favor 9025 for a stand-alone sensor"
+   ],
+   "strength": 0.15
+  }
+ ]
+}

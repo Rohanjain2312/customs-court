@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00076",
+ "classification": {
+  "hts10": "3210.00.00.00",
+  "facts": {
+   "material": "polyester/epoxy resin with pigments",
+   "function": "coating metal",
+   "form": "dry powder",
+   "end_use": "paint"
+  },
+  "gri_path": [
+   "GRI 1: heading 3210 other paints and varnishes; 3208/3209 need nonaqueous/aqueous dispersion medium, dry powder has none",
+   "Ch 32 notes: pigmented coating preparations stay in ch.32"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3208",
+    "reason": "requires dispersion in nonaqueous medium"
+   },
+   {
+    "code": "3907",
+    "reason": "formulated pigmented coating, not plain primary-form polymer"
+   },
+   {
+    "code": "3209",
+    "reason": "aqueous medium"
+   }
+  ],
+  "missing_facts": [
+   "pigmented vs clear",
+   "dry powder vs dispersion"
+  ],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "Pigmented dry powder coatings are paints not in a liquid medium, so residual heading 3210. No ruling cited."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

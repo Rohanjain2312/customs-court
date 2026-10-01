@@ -1,0 +1,41 @@
+{
+ "item_id": "atlas_test_00186",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "not stated (electronic device)",
+   "function": "reproduces recorded predator calls",
+   "form": "battery-operated sound reproducing apparatus",
+   "end_use": "hunting (game calling)"
+  },
+  "gri_path": [
+   "GRI 1: heading 8519 sound recording or reproducing apparatus; 6-digit subheading depends on the storage medium (8519.81 magnetic/optical/semiconductor vs 8519.89 other)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9503.00",
+    "reason": "toy; this is a hunting accessory, not a toy, though toy callers exist (see N011557 for a children's nature caller)"
+   },
+   {
+    "code": "8518.21",
+    "reason": "loudspeaker only; the device stores and reproduces sounds"
+   }
+  ],
+  "missing_facts": [
+   "How are the calls stored: digital semiconductor memory/card, cassette tape, disc or other?",
+   "Does it have a built-in speaker, or does it connect to a separate speaker?",
+   "Can the user record or add sounds, or is it playback only?"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Heading 8519 fits, but the 6-digit subheading depends on the medium used (8519.81 for semiconductor/magnetic/optical media versus 8519.89 other) and whether it has its own speaker, none of which is stated, so the code cannot be determined."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate"
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00008",
+ "facts": {
+  "material": "PCB with electronic components and a hydrogen sensing element",
+  "function": "detects hydrogen gas",
+  "form": "printed circuit board assembly",
+  "end_use": "gas detection/monitoring"
+ },
+ "missing_facts": [
+  "sensor type (electrochemical, MEMS, thermal)",
+  "housing or complete instrument vs bare PCBA",
+  "principal function",
+  "dedicated use as a part"
+ ],
+ "candidate_headings": [
+  "9027",
+  "9031",
+  "9033",
+  "8543"
+ ],
+ "reasoning": "Gas sensor PCBA: gas analysis 9027 vs measuring/checking 9031 vs ch90 parts 9033 vs electrical machines nesoi 8543."
+}

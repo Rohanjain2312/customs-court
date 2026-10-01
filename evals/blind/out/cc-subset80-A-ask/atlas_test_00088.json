@@ -1,0 +1,39 @@
+{
+ "item_id": "atlas_test_00088",
+ "classification": {
+  "hts10": "8516.80.40.00",
+  "facts": {
+   "material": "electric resistance element",
+   "function": "anti-icing of aircraft",
+   "form": "heating element",
+   "end_use": "aircraft"
+  },
+  "gri_path": [
+   "GRI 1: 8516.80 electric heating resistors; 8516.80.40 for anti-icing or deicing"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8543.70",
+    "reason": "other electrical apparatus; heating resistor line is specific"
+   },
+   {
+    "code": "8516.90",
+    "reason": "parts line"
+   }
+  ],
+  "missing_facts": [
+   "Is it a bare heating resistor/element or a complete apparatus with controls?"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Electrical deicer assumed to be a heating resistor assembled with simple insulated former and connections."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "get_notes"
+ ]
+}

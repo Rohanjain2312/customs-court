@@ -1,0 +1,21 @@
+{
+ "item_id": "atlas_test_00184",
+ "facts": {
+  "material": "100% cotton jersey knit",
+  "function": "men's pullover garment, V-neck, long sleeves",
+  "form": "knitted pullover, tubular cuffs and waist",
+  "end_use": "apparel"
+ },
+ "missing_facts": [
+  "fabric weight/stitch count (sweater vs T-shirt)",
+  "whether raised/napped interior (sweatshirt)",
+  "whether jersey cut-and-sewn knit",
+  "gauge"
+ ],
+ "candidate_headings": [
+  "6110",
+  "6109",
+  "6105"
+ ],
+ "reasoning": "Knit pullovers 6110.20 (sweaters, pullovers) vs 6109 T-shirts vs 6105 shirts; cotton men's."
+}

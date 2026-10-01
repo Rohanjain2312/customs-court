@@ -1,0 +1,47 @@
+{
+ "item_id": "atlas_test_00104",
+ "classification": {
+  "hts10": "9018.90.75.20",
+  "facts": {
+   "material": "electro-medical heater plus plastic sets",
+   "function": "warm dialysis/IV fluid",
+   "form": "warmer unit and disposable sets",
+   "end_use": "dialysis"
+  },
+  "gri_path": [
+   "GRI 1: 9018 electro-medical apparatus and accessories; 8516 is for domestic-type appliances and ch.85 note 1 favors medical",
+   "GRI 6: 9018.90.75.20 dialysis instruments"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H81049",
+    "status": "in_force"
+   },
+   {
+    "id": "N065317",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8516.79",
+    "reason": "professional medical apparatus; H81049 placed comparable warmer in 9018"
+   },
+   {
+    "code": "3926.90",
+    "reason": "chapter 39 note 2 excludes ch.90 articles; dedicated sets are accessories"
+   }
+  ],
+  "missing_facts": [
+   "whether disposables entered separately (9018.90.75.70 for parts/accessories of dialysis apparatus)"
+  ],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Warmer is electro-medical dialysis apparatus under 9018, following H81049. Sets dedicated to it would be accessories (.70)."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

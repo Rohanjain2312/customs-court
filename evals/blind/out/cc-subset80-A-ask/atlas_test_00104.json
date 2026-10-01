@@ -1,0 +1,47 @@
+{
+ "item_id": "atlas_test_00104",
+ "classification": {
+  "hts10": "9018.90.75.60",
+  "facts": {
+   "material": "electric heater with plastic disposable set",
+   "function": "warming IV/dialysis fluids",
+   "form": "apparatus plus disposables",
+   "end_use": "medical"
+  },
+  "gri_path": [
+   "GRI 1: 9018 medical instruments",
+   "GRI 6: 9018.90.75 electromedical"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H81049",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9018.90.75.20",
+    "reason": "dialysis instruments; Express warmer use for dialysis not confirmed"
+   },
+   {
+    "code": "8516/8419",
+    "reason": "medical heading 9018 more specific"
+   }
+  ],
+  "missing_facts": [
+   "Is it used with dialysis fluid?"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "H81049 classed a medical fluid warmer in 9018.90.75; classified under the Other line."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "get_ruling",
+  "ruling_status",
+  "hts_navigate"
+ ]
+}

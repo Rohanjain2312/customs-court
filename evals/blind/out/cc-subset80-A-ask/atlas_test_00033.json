@@ -1,0 +1,33 @@
+{
+ "item_id": "atlas_test_00033",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "unknown",
+   "function": "DC vibrator motor, with parts housing, spring contact, rubber grommet",
+   "form": "motor and parts",
+   "end_use": "unknown"
+  },
+  "gri_path": [
+   "GRI 1: candidate headings differ at 4/6-digit level depending on missing facts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8503.00",
+    "reason": "parts only; the motor itself is in 8501"
+   }
+  ],
+  "missing_facts": [
+   "What is the rated output power (W) of the DC motor? 8501.10 (<=37.5 W) vs 8501.31 etc.",
+   "Is the motor a vibrator of a specific device (e.g., 8501 versus 8543)?",
+   "Classify separately: housing, contact and rubber grommet as parts (8503) or separate articles."
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "DC motors are split at the 6-digit level by output power, which is not given; the first-named article is the DC motor, so I abstained."
+ },
+ "tool_calls": 0,
+ "tools": []
+}

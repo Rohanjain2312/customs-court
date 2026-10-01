@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00181",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "not stated",
+   "function": "DC brushless electric motor assembly",
+   "form": "motor assembly, subcomponent",
+   "end_use": "subcomponent of a laser bar code scanner"
+  },
+  "gri_path": [
+   "GRI 1: heading 8501 covers electric motors; subheading depends on output in watts (8501.10 not exceeding 37.5 W vs 8501.31 etc.)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "H87929",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8473.30",
+    "reason": "parts of machines of 8471 would require a motor to be principally a part of such machine; a motor is a complete electric motor of heading 8501 (and Sec XVI note 2 sends goods of 8501 there)"
+   }
+  ],
+  "missing_facts": [
+   "What is the rated output power of the motor in watts (under 18.65 W, 18.65-37.5 W, or higher)?",
+   "Is the motor a complete motor or only a part (e.g., rotor/stator only)?"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Heading 8501 covers electric motors; the 6-digit subheading turns on output power (8501.10 for not over 37.5 W, 8501.31 for DC motors over 37.5 W up to 750 W), which is not stated. Ruling H87929 (DC brushless motor, in force) is on similar goods but the power rating is needed."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_search",
+  "cross_search"
+ ]
+}

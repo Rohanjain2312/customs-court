@@ -172,7 +172,7 @@ The paid budget ($13.34) covered building, tuning, the dev analysis and the zero
 
 ## What comes next
 
-- Run the Claude agent (A and D) on the test split when a budget exists; every piece is in place and the response cache makes it resumable.
+- The controlled multi-agent study (arm B, token-matched) on a larger sample; the 20-item pilot showed no difference. It needs either budget or many more in-session agent runs.
 - Rerun the Opus 5.5 agent with the second source-ruling linker and the date limit (it needs usage headroom), so the main row and the clean comparison use the same model.
 - Ask-for-facts as a first-class product mode: most wrong answers on well-labeled items traced to facts the description never gave.
 - A cleaner benchmark: split multi-article rulings into one item per article.

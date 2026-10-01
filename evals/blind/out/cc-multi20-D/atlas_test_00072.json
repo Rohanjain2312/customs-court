@@ -1,0 +1,50 @@
+{
+ "item_id": "atlas_test_00072",
+ "classification": {
+  "hts10": "8481.90.90.40",
+  "facts": {
+   "material": "metal, electrical coils",
+   "function": "solenoid valve components",
+   "form": "parts",
+   "end_use": "vehicle braking"
+  },
+  "gri_path": [
+   "GRI 1: heading 8481 covers valves and parts; solenoid valves are valves",
+   "Section XVII Note 2(e) removes 8481 articles and parts from 8708",
+   "Section XVI Note 2(b) parts of 8481",
+   "GRI 6: 8481.90.90 other parts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "J89209",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8708.30",
+    "reason": "Section XVII Note 2(e) excludes valves and their parts"
+   },
+   {
+    "code": "8536",
+    "reason": "valve actuates fluid, not a circuit"
+   },
+   {
+    "code": "8505",
+    "reason": "coil/electromagnet assemblies per J89209 if imported alone"
+   }
+  ],
+  "missing_facts": [
+   "which parts (valve body vs coil assembly)",
+   "complete valve or parts"
+  ],
+  "confidence": 0.45,
+  "abstain": true,
+  "rationale": "Mechanical valve parts fall in 8481.90.90; coil assemblies would be 8505, which changes the heading."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

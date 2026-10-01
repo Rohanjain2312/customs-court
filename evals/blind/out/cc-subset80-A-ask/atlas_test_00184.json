@@ -1,0 +1,48 @@
+{
+ "item_id": "atlas_test_00184",
+ "classification": {
+  "hts10": "6110.20.20.69",
+  "facts": {
+   "material": "100% cotton jersey knit",
+   "function": "men's pullover garment",
+   "form": "V-neck, long sleeves with tubular cuffs, tubular knit bottom",
+   "end_use": "men's apparel"
+  },
+  "gri_path": [
+   "GRI 1: heading 6110 covers knitted pullovers; chapter 61 note 1 applies to made up knitted articles",
+   "GRI 6: 6110.20 of cotton; 6110.20.20 other (not 36% flax); men's, other (338)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "L86635",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6110.20.20.10",
+    "reason": "men's sweaters (345) are coarser knit; this is a fine jersey knit pullover, as in rulings of similar goods classified outside the sweater category"
+   },
+   {
+    "code": "6110.20.20.41",
+    "reason": "sweatshirts (338) are fleece/terry-type garments, not a V-neck jersey pullover"
+   },
+   {
+    "code": "6110.20.10",
+    "reason": "no flax fibers"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Men's 100% cotton jersey knit pullover is in heading 6110, subheading 6110.20 (of cotton). L86635 (in force) classified a similar men's cotton jersey pullover in the now-superseded 6110.20.2065 line; the current equivalent is 6110.20.20.69 (men's, other, 338). Suffix is a judgement between sweater and other pullover."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "hts_navigate",
+  "cross_search",
+  "ruling_status"
+ ]
+}

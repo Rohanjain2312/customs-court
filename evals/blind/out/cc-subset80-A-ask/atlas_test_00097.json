@@ -1,0 +1,44 @@
+{
+ "item_id": "atlas_test_00097",
+ "classification": {
+  "hts10": "8505.19.30.00",
+  "facts": {
+   "material": "rubber cap with NdFeB permanent magnet",
+   "function": "stores keys on metal surfaces",
+   "form": "composite magnetic holder",
+   "end_use": "consumer"
+  },
+  "gri_path": [
+   "GRI 1/3(b): magnet gives essential character; 8505.19 permanent magnets",
+   "GRI 6: not flexible magnet, so 8505.19.30 other"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "R01307",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "8505.19.10",
+    "reason": "flexible magnets; NdFeB is rigid"
+   },
+   {
+    "code": "4016.99",
+    "reason": "rubber cap is minor"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.55,
+  "abstain": false,
+  "rationale": "R01307 treated a magnetic key holder as 8505.19 because the magnet gives essential character; here the magnet is rigid NdFeB so Other line applies."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_navigate",
+  "cross_search",
+  "get_ruling",
+  "ruling_status"
+ ]
+}

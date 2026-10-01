@@ -1,0 +1,66 @@
+{
+ "item_id": "atlas_test_00145",
+ "memos": [
+  {
+   "heading": "6111",
+   "best_code": "6111.30.5040",
+   "argument": "Chapter 95 Note 1(e) excludes fancy dress of textiles from ch.95 into ch.61/62. Knit 100% polyester infant/toddler costumes are babies' garments; 6111.30 (synthetic fibers) then 6111.30.50 Other. Multiple CROSS rulings classify infant/toddler knit polyester costumes (coveralls, buntings, animal suits) in 6111.30.50.",
+   "supporting_rulings": [
+    {
+     "id": "G85675",
+     "status": "in_force"
+    },
+    {
+     "id": "J85096",
+     "status": "in_force"
+    },
+    {
+     "id": "H88288",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch.61 Note 2 excludes only 6212, worn clothing, orthopedic - nothing hurting",
+    "Sizing unconfirmed: 6111 requires babies (generally to 24 months, size 3T/toddler rulings split between 6111 and 6114/6104)",
+    "Toddler-size costumes in some rulings went to 6114.30 or 6104.43 instead"
+   ],
+   "strength": 0.62
+  },
+  {
+   "heading": "9505",
+   "best_code": "9505.90.6000",
+   "argument": "Costumes are festive/carnival/entertainment articles; CROSS places flimsy non-textile or 'dress up' sets in 9505.90.60.",
+   "supporting_rulings": [
+    {
+     "id": "H89190",
+     "status": "in_force"
+    },
+    {
+     "id": "N007690",
+     "status": "in_force"
+    },
+    {
+     "id": "J82044",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch.95 Note 1(e) expressly excludes fancy dress of textiles of ch.61 or 62 - directly defeats a knit polyester garment",
+    "Rulings place well-made knit costumes in ch.61; only flimsy-textile or accessory-type items reach 9505, and knit garment here is well made (unconfirmed)"
+   ],
+   "strength": 0.15
+  },
+  {
+   "heading": "6112",
+   "best_code": "6112.12.00",
+   "argument": "If the costume is a one-piece coverall/jumpsuit-style of knit polyester, a track-suit-like reading under 6112.12 (synthetic) could be argued.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "6112 is track suits, ski-suits, swimwear; costumes are not of that kind",
+    "Babies' garments go specifically to 6111 (more specific for infants); no cited ruling places infant costumes in 6112",
+    "Searches returned no supporting ruling"
+   ],
+   "strength": 0.05
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+{
+ "item_id": "atlas_test_00030",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "70% polyester, 30% wool",
+   "function": "outerwear coat",
+   "form": "women's knee-length coat",
+   "end_use": "apparel"
+  },
+  "gri_path": [
+   "GRI 1: candidate headings differ at 4/6-digit level depending on missing facts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6202.13",
+    "reason": "woven man-made fibers; applies only if woven"
+   },
+   {
+    "code": "6102.30",
+    "reason": "knitted man-made fibers; applies only if knit"
+   }
+  ],
+  "missing_facts": [
+   "Is the fabric knitted/crocheted (6102.30) or woven (6202.13/6202.93 - 6202 is woven)?",
+   "Is it fully lined / does it have a hood or a below-waist pocket (tests for 6210 / 6202 details)?"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "Knit (chapter 61) versus woven (chapter 62) is decided at the heading level and is not stated; polyester predominates but I could not choose the chapter, so I abstained."
+ },
+ "tool_calls": 0,
+ "tools": []
+}

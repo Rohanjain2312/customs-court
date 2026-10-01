@@ -1,0 +1,53 @@
+{
+ "item_id": "atlas_test_00138",
+ "classification": {
+  "hts10": "6104.43.20.20",
+  "facts": {
+   "material": "synthetic fiber textile costumes with accessories",
+   "function": "dress-up",
+   "form": "retail sets",
+   "end_use": "children's costume"
+  },
+  "gri_path": [
+   "GRI 1: ch.95 note 1(e) excludes textile fancy dress to ch.61/62",
+   "GRI 3(b): princess set essential character the dress; GRI 6 6104.43.20 girls' dresses of synthetic"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "H80172",
+    "status": "in_force"
+   },
+   {
+    "id": "H82053",
+    "status": "in_force"
+   },
+   {
+    "id": "H82907",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90.60",
+    "reason": "note 1(e) excludes textile fancy dress"
+   },
+   {
+    "code": "6204.43.40",
+    "reason": "only if the dress is woven"
+   }
+  ],
+  "missing_facts": [
+   "knit vs woven",
+   "fabric composition",
+   "Hippie set materials"
+  ],
+  "confidence": 0.4,
+  "abstain": true,
+  "rationale": "Textile fancy dress goes to ch.61/62 by note 1(e); rulings H80172 classify princess costumes as knit girls' dresses. Knit vs woven unknown; two sets also complicate the entry."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

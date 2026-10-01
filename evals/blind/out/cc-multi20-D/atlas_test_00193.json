@@ -1,0 +1,46 @@
+{
+ "item_id": "atlas_test_00193",
+ "classification": {
+  "hts10": "9020.00.60.00",
+  "facts": {
+   "material": "plastic helmet with respirator",
+   "function": "head/face protection and breathing protection",
+   "form": "helmet with respirator",
+   "end_use": "industrial welding"
+  },
+  "gri_path": [
+   "GRI 1: heading 9020 breathing appliances and parts/accessories",
+   "GRI 3(b): respirator gives essential character if composite",
+   "GRI 6: 9020.00.60 other breathing appliances"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [
+   {
+    "id": "H81837",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6506",
+    "reason": "helmet only; respirator function is more specific to 9020"
+   },
+   {
+    "code": "8414",
+    "reason": "fixed ventilating hoods, not worn appliance"
+   }
+  ],
+  "missing_facts": [
+   "whether respirator is powered or has replaceable filters (excluded if neither)",
+   "composite or set"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "Assumed powered/filtered respirator, so not excluded from 9020; breathing function dominates over headgear."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

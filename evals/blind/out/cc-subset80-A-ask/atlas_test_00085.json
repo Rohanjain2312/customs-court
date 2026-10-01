@@ -1,0 +1,35 @@
+{
+ "item_id": "atlas_test_00085",
+ "classification": {
+  "hts10": "9018.49.80.40",
+  "facts": {
+   "material": "unspecified",
+   "function": "orthodontic work",
+   "form": "hand instruments",
+   "end_use": "dental"
+  },
+  "gri_path": [
+   "GRI 1: 9018 dental instruments",
+   "GRI 6: 9018.49.80.40 dental hand instruments"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8203/8204/8205",
+    "reason": "hand tools of base metal; specific dental heading 9018 prevails"
+   }
+  ],
+  "missing_facts": [
+   "Confirm hand-held (not powered) instruments"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Orthodontic instruments (pliers etc.) are dental instruments of heading 9018.49; assumed hand instruments."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "cross_search"
+ ]
+}

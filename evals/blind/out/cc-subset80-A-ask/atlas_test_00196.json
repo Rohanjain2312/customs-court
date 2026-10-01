@@ -1,0 +1,54 @@
+{
+ "item_id": "atlas_test_00196",
+ "classification": {
+  "hts10": "3923.21.00.95",
+  "facts": {
+   "material": "clear polyethylene plastic",
+   "function": "container for packing/conveying goods",
+   "form": "bags without handles",
+   "end_use": "packing and conveyance"
+  },
+  "gri_path": [
+   "GRI 1: heading 3923 articles for the conveyance or packing of goods, of plastics; sacks and bags",
+   "GRI 6: 3923.21 sacks and bags of polymers of ethylene; other (not carrier bags with handles, not slider-closure)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "F88931",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "3923.21.00.85",
+    "reason": "requires handles (retail carrier bags)"
+   },
+   {
+    "code": "3923.21.00.20",
+    "reason": "requires sliders that open or close the seal; none stated"
+   },
+   {
+    "code": "3923.21.00.11",
+    "reason": "requires no single side over 75 mm; size not stated, assumed larger"
+   },
+   {
+    "code": "4202",
+    "reason": "travel/storage bags are not packing bags; plastic sacks and bags are in 3923"
+   }
+  ],
+  "missing_facts": [
+   "Bag dimensions and whether it has a slider or zipper closure (suffix only)"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Polyethylene bags are provided for as sacks and bags in 3923.21 (of polymers of ethylene). F88931 (in force) classified polyethylene bags in 3923.21. Absent handles, sliders or small size, the residual line .95 applies."
+ },
+ "tool_calls": 4,
+ "tools": [
+  "hts_search",
+  "cross_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00096",
+ "classification": {
+  "hts10": "9031.80.80.85",
+  "facts": {
+   "material": "electronic sensors/wire loops",
+   "function": "detect and count vehicles/axles",
+   "form": "loops and sensors",
+   "end_use": "traffic counting"
+  },
+  "gri_path": [
+   "GRI 1: 9031 residual measuring/checking instruments",
+   "GRI 6: 9031.80.80 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9030.89",
+    "reason": "vehicle counting is not an electrical quantity"
+   },
+   {
+    "code": "8536.50",
+    "reason": "detector/counter, not a switch"
+   },
+   {
+    "code": "8544",
+    "reason": "bare loop wire if no electronics"
+   }
+  ],
+  "missing_facts": [
+   "sensors only or with counter",
+   "bare wire loop vs electronics"
+  ],
+  "confidence": 0.35,
+  "abstain": true,
+  "rationale": "No ruling found. Counting instruments are best in 9031 residual measuring/checking heading; bare loop wire might be 8544 or switch apparatus 8536, so abstaining."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

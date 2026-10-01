@@ -1,0 +1,21 @@
+{
+ "item_id": "atlas_test_00145",
+ "facts": {
+  "material": "100% polyester knit costumes",
+  "function": "dress-up costume for infants and toddlers",
+  "form": "knit garment, unisex",
+  "end_use": "play/festive wear"
+ },
+ "missing_facts": [
+  "whether garment is of a kind for ordinary wear or a costume",
+  "size/infant sizing",
+  "design details"
+ ],
+ "candidate_headings": [
+  "6111",
+  "9505",
+  "6112",
+  "6104"
+ ],
+ "reasoning": "Babies' knitted garments 6111 (synthetic) vs 9505 festive costume vs 6112/6104."
+}

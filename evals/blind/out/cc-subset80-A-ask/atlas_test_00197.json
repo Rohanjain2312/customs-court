@@ -1,0 +1,51 @@
+{
+ "item_id": "atlas_test_00197",
+ "classification": {
+  "hts10": "9027.90.56.95",
+  "facts": {
+   "material": "not stated (optical/electronic assembly)",
+   "function": "optical detection assembly (excitation and fluorescence detection) of a capillary electrophoresis genetic analyzer",
+   "form": "assembly, part",
+   "end_use": "ABI Prism 3100 Genetic Analyzer"
+  },
+  "gri_path": [
+   "GRI 1: heading 9027 instruments for physical or chemical analysis; parts and accessories at 9027.90",
+   "Section XVI/Chapter 90 note 2(b): parts solely or principally for a particular instrument go with that instrument",
+   "GRI 6: 9027.90.56 parts of electrical instruments of 9027.20/.30/.50/.81/.89; .95 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "G83746",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9001/9002",
+    "reason": "parts are not simply lenses or optical elements; the assembly is a part of an analyzer (chapter 90 note 2(b))"
+   },
+   {
+    "code": "9027.90.56.50",
+    "reason": "requires the analyzer to be in 9027.50.40; the exact analyzer subheading is not established"
+   },
+   {
+    "code": "8419.89",
+    "reason": "G83746 put an oven assembly of a genetic analyzer there, but this is an optical assembly, not a heating device"
+   }
+  ],
+  "missing_facts": [
+   "Which subheading the analyzer itself is in (e.g., 9027.50.40 optical or 9027.89), which would change the .56 suffix"
+  ],
+  "confidence": 0.4,
+  "abstain": false,
+  "rationale": "The optical assemblies are parts of an analytical instrument of heading 9027, placed in 9027.90 parts and accessories of electrical instruments. G83746 (in force) concerns a different assembly of a genetic analyzer, so it is only context, not a precedent on this part. Suffix is the residual line."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

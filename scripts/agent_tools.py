@@ -19,6 +19,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 import urllib.request
 from pathlib import Path
 
@@ -67,7 +68,19 @@ def call(name: str, args: dict) -> str:
     return s[:MAX] + '..."[truncated: call again with offset or a narrower query]' if len(s) > MAX else s
 
 
+def _log(name: str, args: dict, out: str, ms: int) -> None:
+    """With TA_LOG=<file>, append each call as a JSON line (used to build demo replays from real runs)."""
+    path = os.environ.get("TA_LOG")
+    if path:
+        with open(path, "a") as f:
+            f.write(json.dumps({"tool": name, "args": args, "result_preview": out[:300], "ms": ms}) + "\n")
+
+
 if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in ALLOWED:
         sys.exit(f"usage: agent_tools.py <{'|'.join(sorted(ALLOWED))}> '<json args>'")
-    print(call(sys.argv[1], json.loads(sys.argv[2]) if len(sys.argv) > 2 else {}))
+    _args = json.loads(sys.argv[2]) if len(sys.argv) > 2 else {}
+    _t0 = time.perf_counter()
+    _out = call(sys.argv[1], _args)
+    _log(sys.argv[1], _args, _out, int((time.perf_counter() - _t0) * 1000))
+    print(_out)

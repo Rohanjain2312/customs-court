@@ -3,31 +3,30 @@
   "exhibits": [
     {
       "exhibit_id": "handbag-leather",
-      "traces": "demo/replays/sources/fixture.traces.jsonl",
-      "item_id": "fixture_handbag",
+      "traces": "demo/replays/sources/objection.traces.jsonl",
+      "item_id": "objection_leather",
       "pair": "handbag-leather",
       "title": "Leather handbag",
       "blurb": "A cowhide handbag. Raise an objection to change the outer surface to PVC.",
       "kind": "exhibit",
       "gold_code": "4202.21.90.00",
-      "dataset": "tests/fixtures (hand-written test case, not a CBP ruling)",
-      "reference_excerpt": "Test fixture. The expected code for a leather handbag valued over $20 is 4202.21.90.00. This is not a CBP ruling.",
-      "note": "Recorded Claude Sonnet 5 responses, replayed from the test fixture's response cache against its small database (10 chapters, 79 rulings). That database holds a planted prompt-injection ruling (N999001) for the security tests; the agent did not follow it, and its answer mentions it.",
-      "run_id": "test fixture (tests/fixtures/data)"
+      "dataset": "evals/datasets/demo_objection.jsonl (hand-written pair; reference codes labeled by hand from the HTS text, not CBP rulings)",
+      "reference_excerpt": "Hand-written demo case. The expected code for a leather handbag valued over $20 is 4202.21.90.00. This is not a CBP ruling.",
+      "note": "Recorded run: Claude Sonnet 5.5 working in the Claude Code session through the real tools on the full corpus. Timing between tool calls is spread evenly over the logged call times.",
+      "run_id": "objection-run (Claude Sonnet 5.5 in the Claude Code session, real tool calls, $0 API spend)"
     },
     {
       "exhibit_id": "handbag-pvc-objection",
-      "traces": "demo/replays/sources/fixture.traces.jsonl",
-      "item_id": "fixture_handbag_pvc",
+      "traces": "demo/replays/sources/objection.traces.jsonl",
+      "item_id": "objection_pvc",
       "title": "Objection: the outer surface is PVC",
       "kind": "objection",
       "objection_of": "handbag-leather",
       "fact_change": "The outer surface is PVC plastic sheeting, not leather.",
-      "placeholder": true,
-      "placeholder_note": "Scripted stand-in model with real tool calls on the fixture database. Not a model run and no real cost. Replace with a recorded objection run.",
       "gold_code": "4202.22.15.00",
-      "dataset": "tests/fixtures (hand-written test case, not a CBP ruling)",
-      "run_id": "scripted placeholder"
+      "dataset": "evals/datasets/demo_objection.jsonl (hand-written pair; reference codes labeled by hand from the HTS text, not CBP rulings)",
+      "run_id": "objection-run (Claude Sonnet 5.5 in the Claude Code session, real tool calls, $0 API spend)",
+      "note": "Recorded objection run: the same handbag with the outer surface changed to PVC, classified again from scratch by Claude Sonnet 5.5 through the real tools on the full corpus."
     },
     {
       "exhibit_id": "polivac-film",

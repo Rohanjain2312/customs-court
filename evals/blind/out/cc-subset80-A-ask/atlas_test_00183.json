@@ -1,0 +1,38 @@
+{
+ "item_id": "atlas_test_00183",
+ "classification": {
+  "hts10": "8439.99.10.00",
+  "facts": {
+   "material": "not stated (machine part)",
+   "function": "holds the doctor blade that cleans or scrapes rolls on a paper machine",
+   "form": "assembly (part)",
+   "end_use": "papermaking machines"
+  },
+  "gri_path": [
+   "GRI 1: heading 8439 covers machinery for making or finishing paper and parts thereof",
+   "Section XVI note 2(b): parts suitable solely or principally for a particular machine are classified with that machine's heading (8439)",
+   "GRI 6: 8439.99 parts, other, of machinery for making paper or paperboard"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8441.90",
+    "reason": "parts of machinery for making up paper; the holders are for papermaking machines of 8439"
+   },
+   {
+    "code": "8439.91",
+    "reason": "parts of pulp-making machinery; not paper-making"
+   }
+  ],
+  "missing_facts": [],
+  "confidence": 0.7,
+  "abstain": false,
+  "rationale": "Doctor blade holder assemblies are parts solely or principally used on papermaking machines, so they fall under heading 8439 parts, 8439.99.10 (of machinery for making paper or paperboard). No relevant ruling surfaced."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "cross_search",
+  "hts_search"
+ ]
+}

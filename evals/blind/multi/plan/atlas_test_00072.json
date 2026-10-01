@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00072",
+ "facts": {
+  "material": "metal and electrical coils",
+  "function": "solenoid valve components",
+  "form": "parts",
+  "end_use": "automotive braking"
+ },
+ "missing_facts": [
+  "complete valve or parts",
+  "hydraulic or pneumatic",
+  "which parts",
+  "vehicle type"
+ ],
+ "candidate_headings": [
+  "8481",
+  "8708",
+  "8536",
+  "8412"
+ ],
+ "reasoning": "Valve parts 8481 vs vehicle brake parts 8708."
+}

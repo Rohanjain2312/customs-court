@@ -1,0 +1,57 @@
+{
+ "item_id": "atlas_test_00024",
+ "memos": [
+  {
+   "heading": "7411",
+   "best_code": "7411.21.10.00",
+   "argument": "The goods are pipe of brass (copper-zinc alloy), described as seamless and ERW, with stated OD and wall thickness: the classic subject of 'Copper tubes and pipes'. Subheading 7411.21 covers brass, with 7411.21.10 for seamless; ERW pipe would fall in 7411.21.50 (Other). Heading text has no end-use limitation; decoration of the end use does not change the form. Chapter 74 note 1 and subheading note define brass consistent with copper-zinc. Mixed seamless/ERW means the 10-digit split is uncertain (seamless 7411.21.10.00 vs other 7411.21.50.00).",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "No cited ruling found on brass tube; cross_search returned only fittings and candleholders",
+    "Section XV note 1 and ch.74 notes contain no exclusion that removes plain tube from 7411",
+    "If the goods are cut/finished into decorative articles (railings, furniture parts) heading 7418/7419 or ch.94 may displace",
+    "ERW portion maps to 7411.21.50.00 rather than the seamless line"
+   ],
+   "strength": 0.8
+  },
+  {
+   "heading": "7418",
+   "best_code": "7418.10.00.25",
+   "argument": "Decorative use might make the pipe an article for household/table use under 7418 only if it is dedicated to such use; the stated use is merely decorative. Best available line is 7418.10.00 (household articles) with brass sub-line 7418.10.00.02 for brass. Weak case: heading 7418 is limited to table, kitchen or other household articles and sanitary ware, and plain pipe of stock sizes (2in, 1.5in OD, 0.40in wall) is semi-finished material, not a finished household article.",
+   "supporting_rulings": [
+    {
+     "id": "H201157",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Heading text limited to table, kitchen, household articles, sanitary ware; undefined decorative pipe is not one",
+    "H201157 (brass escutcheons, decorative) went to 7419.99.50, not 7418, and is about a finished trim part, so it does not support 7418",
+    "Specific form heading 7411 (tubes and pipes) beats use-based 7418 under GRI 1 and 3(a)",
+    "Candleholder rulings (F87429 etc.) went to 9405, showing decorative brass articles scatter outside ch.74"
+   ],
+   "strength": 0.1
+  },
+  {
+   "heading": "7412",
+   "best_code": "7412.20.00.90",
+   "argument": "If the pipe were imported cut to length and threaded or otherwise adapted as couplings, elbows, sleeves, it would be 'Of copper alloys' under 7412.20.00. Rulings place brass pipe/tube fittings there. But the description presents pipe in 2in/1.5in OD lengths, not fittings.",
+   "supporting_rulings": [
+    {
+     "id": "J86353",
+     "status": "in_force"
+    },
+    {
+     "id": "N259868",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Description says pipe, not fittings; heading 7412 covers fittings (couplings, elbows, sleeves) only",
+    "Both cited rulings concern threaded pneumatic fittings/connectors, factually distinct from raw pipe",
+    "Plain tube is covered by 7411, so 7412 yields to it"
+   ],
+   "strength": 0.1
+  }
+ ]
+}

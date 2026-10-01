@@ -90,7 +90,10 @@ How the budget shaped these numbers, plainly:
 - The agent was built, tuned and error-analyzed with Claude Sonnet 5 through the API on the dev split. The API budget ran out before the Claude agent ran on the test set.
 - The test-set agent run was then done blind by Claude Opus 5.5 working inside the Claude Code session (covered by the user's plan, no API spend), using the same tools (MCP server with `--redact-eval`), the same skill, the same final checks and the same scorer. It read only a descriptions-only file. It is labeled separately from the API runs.
 - The no-tools controls (Claude Sonnet 5.5) and both reasoning judges (Claude Opus 5.5 and Claude Haiku 4.5) also ran in the session, the same blind way.
-- The multi-agent vs single-agent study ran only on 10 dev items before the budget ran out; see `docs/CASE_STUDY.md`.
+- Multi-agent court, pilot (20 subset items drawn with seed 13, Claude Sonnet 5.5 in the session; orchestrator, one advocate agent per item arguing each of three headings, adjudicator): 66.7% at 10 digits (n=18) and 65.0% at 6 digits, identical to the single agent on the same items, with 20.0% abstentions against 5.0%. Twenty items cannot show a difference; this is a pilot, not the controlled study (the token-matched arm B did not run).
+- Ask-for-facts mode, measured (80 subset items, Claude Sonnet 5.5 in the session, date limit on): it declined to answer 41.2% of items (33 of 80). On the 47 it answered, 10-digit accuracy was 53.7% (n=41) against 56.1% for the normal agent on the same items, so it gave up almost nothing there. On the 33 it declined, the normal agent was right at 10 digits only 32.0% of the time (n=25), so the questions it asked were mostly on items it would have gotten wrong.
+- The Objection exhibit is now a real recording: the same handbag in cowhide (4202.21.90.00) and in PVC (4202.22.15.00), each classified from scratch by Claude Sonnet 5.5 through the real tools, with the tool calls logged and replayed. The PVC objection run is its own fresh classification of the changed description.
+- Not done: the controlled multi-agent study (arm B), because the paid API budget is gone and nothing here will use it again.
 
 Cost:
 

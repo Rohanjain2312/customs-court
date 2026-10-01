@@ -1,0 +1,21 @@
+{
+ "item_id": "atlas_test_00104",
+ "facts": {
+  "material": "electro-medical heating device plus plastic disposable tubing sets",
+  "function": "warm IV/dialysis fluids before patient infusion",
+  "form": "electric warmer unit and disposable sets",
+  "end_use": "medical/dialysis use"
+ },
+ "missing_facts": [
+  "whether warmer and sets are imported together or separately",
+  "whether disposables are plastic tubing/bags",
+  "heating mechanism"
+ ],
+ "candidate_headings": [
+  "9018",
+  "8516",
+  "3926",
+  "9019"
+ ],
+ "reasoning": "Medical apparatus 9018 (dialysis parts) vs electric heating 8516 vs plastic disposable 3926; disposables possibly separate."
+}

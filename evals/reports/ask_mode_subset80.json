@@ -1,0 +1,28 @@
+{
+ "abstained": 33,
+ "answered": 47,
+ "ask_answered_acc10": [
+  0.537,
+  41
+ ],
+ "ask_answered_acc6": [
+  0.702,
+  47
+ ],
+ "baseline_on_answered_acc10": [
+  0.561,
+  41
+ ],
+ "baseline_on_answered_acc6": [
+  0.723,
+  47
+ ],
+ "baseline_on_abstained_acc10": [
+  0.32,
+  25
+ ],
+ "baseline_on_abstained_acc6": [
+  0.424,
+  33
+ ]
+}

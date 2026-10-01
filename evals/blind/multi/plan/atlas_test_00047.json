@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00047",
+ "facts": {
+  "material": "protein/biological reagents",
+  "function": "cell-related proteins, reagent",
+  "form": "unspecified",
+  "end_use": "research, diagnostic or therapeutic"
+ },
+ "missing_facts": [
+  "cells or only protein",
+  "therapeutic/diagnostic/research use",
+  "measured doses/retail",
+  "chemical identity"
+ ],
+ "candidate_headings": [
+  "3002",
+  "3822",
+  "3504",
+  "2933"
+ ],
+ "reasoning": "Immunological/cell products 3002 vs reagents 3822 vs proteins 3504."
+}

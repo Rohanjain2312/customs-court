@@ -1,0 +1,56 @@
+{
+ "item_id": "atlas_test_00145",
+ "classification": {
+  "hts10": "6111.30.50.70",
+  "facts": {
+   "material": "100% polyester knit",
+   "function": "costume",
+   "form": "garments for infants/toddlers",
+   "end_use": "dress-up"
+  },
+  "gri_path": [
+   "GRI 1: ch.95 note 1(e) excludes textile fancy dress; heading 6111 babies' knitted garments",
+   "GRI 6: 6111.30 synthetic fibers, 6111.30.50 other, .70 other"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "G85675",
+    "status": "in_force"
+   },
+   {
+    "id": "J85096",
+    "status": "in_force"
+   },
+   {
+    "id": "H88288",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "9505.90.60",
+    "reason": "note 1(e) excludes"
+   },
+   {
+    "code": "6112.12",
+    "reason": "not track suit/swimwear"
+   },
+   {
+    "code": "6104.43",
+    "reason": "only if sized beyond babies"
+   }
+  ],
+  "missing_facts": [
+   "size (babies up to 24 months vs toddler sizes)",
+   "garment type (coverall, set)"
+  ],
+  "confidence": 0.6,
+  "abstain": false,
+  "rationale": "Knit synthetic costumes for babies fall in 6111.30.50 per cited rulings; .70 is the residual statistical line."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_navigate"
+ ]
+}

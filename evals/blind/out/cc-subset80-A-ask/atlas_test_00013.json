@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00013",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "unknown (paper or plastic card)",
+   "function": "identifies fuse positions/ratings in a vehicle fuse box",
+   "form": "printed card",
+   "end_use": "motor vehicle"
+  },
+  "gri_path": [
+   "GRI 1: candidate headings differ at 4/6-digit level depending on missing facts"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "4909.00",
+    "reason": "greetings/message cards, not obviously applicable"
+   },
+   {
+    "code": "8512.90",
+    "reason": "fuse cards are not lighting/signaling equipment"
+   }
+  ],
+  "missing_facts": [
+   "What is the card made of (paper, paperboard, plastic)?",
+   "Is it printed matter (4911/4909) or a part or accessory of motor vehicles (8708, 8536.90)?",
+   "Does it carry electronics or fuses, or is it only a printed label/chart?"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "A printed card could be printed matter of ch. 49, an article of paper, plastic article, or a vehicle part; material and function are not given, so I abstained."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_search",
+  "cross_search"
+ ]
+}

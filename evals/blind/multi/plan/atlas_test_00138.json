@@ -1,0 +1,22 @@
+{
+ "item_id": "atlas_test_00138",
+ "facts": {
+  "material": "synthetic fiber textile costumes with mixed accessories (crown, necklace, sunglasses)",
+  "function": "dress-up/play costume",
+  "form": "retail set of apparel and accessories",
+  "end_use": "children's play, Halloween/festive"
+ },
+ "missing_facts": [
+  "fabric composition and knit/woven",
+  "whether sets are classifiable as sets for retail sale",
+  "whether items are loosely made, non-wearing apparel in character",
+  "material of accessories"
+ ],
+ "candidate_headings": [
+  "9505",
+  "6104",
+  "6204",
+  "6111"
+ ],
+ "reasoning": "Costumes: 9505 festive articles if not ordinary wearing apparel (Chapter 95 note); otherwise apparel chapters 61/62."
+}

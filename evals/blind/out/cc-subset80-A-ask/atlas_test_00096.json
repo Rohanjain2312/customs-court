@@ -1,0 +1,43 @@
+{
+ "item_id": "atlas_test_00096",
+ "classification": {
+  "hts10": "",
+  "facts": {
+   "material": "unspecified",
+   "function": "vehicle detection / traffic counting",
+   "form": "sensors and loop wire",
+   "end_use": "traffic counting"
+  },
+  "gri_path": [
+   "GRI 1: candidates 9031.80, 9029.10, 8544.49, 8543"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "9031.80",
+    "reason": "measuring/checking instruments"
+   },
+   {
+    "code": "9029.10",
+    "reason": "counters"
+   },
+   {
+    "code": "8544.49",
+    "reason": "insulated wire loops"
+   }
+  ],
+  "missing_facts": [
+   "Is the loop just insulated wire or a sensor with electronics?",
+   "Do the sensors count or only detect, and is there a display/counter?"
+  ],
+  "confidence": 0.2,
+  "abstain": true,
+  "rationale": "Heading depends on whether the goods are passive wire loops or electronic detectors/counters."
+ },
+ "tool_calls": 2,
+ "tools": [
+  "hts_search",
+  "cross_search"
+ ]
+}

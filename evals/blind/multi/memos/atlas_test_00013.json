@@ -1,0 +1,48 @@
+{
+ "item_id": "atlas_test_00013",
+ "memos": [
+  {
+   "heading": "8536",
+   "best_code": "8536.10.00.40",
+   "argument": "If the cards carry mounted actual fuses (a fuse assortment card/kit for motor vehicles), the fuses are the goods and heading 8536 names fuses for voltage up to 1,000 V; 12 V automotive fuses fit 8536.10.00 (glass cartridge 20 vs other 40). The card is mere packaging under GRI 1/5.",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Fact missing: whether fuses are physically present; purely printed cards have no fuses",
+    "No relevant CROSS ruling on fuse cards found in my searches"
+   ],
+   "strength": 0.4
+  },
+  {
+   "heading": "4911",
+   "best_code": "4911.99.80.00",
+   "argument": "As described, 'printed fuse cards' are printed cards (charts/identification of fuses), printed matter of heading 4911 not elsewhere specified; ch49 note 2 treats 'printed' broadly. Printed on paper by lithography would be 4911.99.60.00 but 4911.99.80.00 is the default. Rulings F81395 and F83047 show 4911 lines for printed articles/posters.",
+   "supporting_rulings": [
+    {
+     "id": "F83047",
+     "status": "in_force"
+    },
+    {
+     "id": "F81395",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Ch49 note 1 does not exclude fuses, but if actual fuses are mounted, the printed card is packaging and the fuses give essential character (8536)",
+    "Cited rulings are weakly analogous (posters, tinplate articles), not fuse cards"
+   ],
+   "strength": 0.5
+  },
+  {
+   "heading": "8538",
+   "best_code": "8538.90",
+   "argument": "Heading 8538 covers parts suitable solely or principally for apparatus of 8535, 8536, 8537; a fuse card could be argued a part/accessory of fuse boxes (identification card for a fuse panel).",
+   "supporting_rulings": [],
+   "exclusions_against": [
+    "Fuses themselves are in 8536, not parts of it",
+    "A printed chart is not a part that functions in the apparatus; weak fit",
+    "No ruling support found; navigate gave 8538.90 without a verified 10-digit code"
+   ],
+   "strength": 0.1
+  }
+ ]
+}

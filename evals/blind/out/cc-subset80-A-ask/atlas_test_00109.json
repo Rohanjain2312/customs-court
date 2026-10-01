@@ -1,0 +1,40 @@
+{
+ "item_id": "atlas_test_00109",
+ "classification": {
+  "hts10": "8431.41.00.40",
+  "facts": {
+   "material": "steel",
+   "function": "grabbing logs",
+   "form": "grapple attachments and carriages",
+   "end_use": "logging"
+  },
+  "gri_path": [
+   "GRI 1: parts of machinery of 8426 under 8431; Section XVI note 2"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "8426.49",
+    "reason": "complete cable operated machine"
+   },
+   {
+    "code": "8431.41.00.80",
+    "reason": "other; grapple attachments named"
+   }
+  ],
+  "missing_facts": [
+   "classify separately: slack-pulling carriages"
+  ],
+  "confidence": 0.35,
+  "abstain": false,
+  "rationale": "Choker grapple classed as a grapple attachment for lifting machinery of 8426; carriages classified separately."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate",
+  "get_notes"
+ ]
+}

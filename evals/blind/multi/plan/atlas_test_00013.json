@@ -1,0 +1,21 @@
+{
+ "item_id": "atlas_test_00013",
+ "facts": {
+  "material": "printed card, possibly with mounted fuses",
+  "function": "fuse identification or replacement",
+  "form": "card",
+  "end_use": "motor vehicle"
+ },
+ "missing_facts": [
+  "cards carry actual fuses or only printed charts",
+  "voltage rating",
+  "use as sold"
+ ],
+ "candidate_headings": [
+  "8536",
+  "4911",
+  "8538",
+  "4901"
+ ],
+ "reasoning": "Printed matter 4911 vs fuses 8536 vs parts 8538."
+}

@@ -1,0 +1,45 @@
+{
+ "item_id": "atlas_test_00193",
+ "classification": {
+  "hts10": "9020.00.60.00",
+  "facts": {
+   "material": "not stated (plastic shell, auto-darkening filter, respirator unit assumed)",
+   "function": "welding face protection combined with respiratory protection",
+   "form": "helmet with respirator (presented together)",
+   "end_use": "welding"
+  },
+  "gri_path": [
+   "GRI 1: heading 9020 breathing appliances and gas masks (other than protective masks with neither mechanical parts nor replaceable filters)",
+   "GRI 3(b): helmet plus respirator combination, respiratory function gives essential character (assumed)",
+   "GRI 6: 9020.00.60 other breathing appliances"
+  ],
+  "deciding_gri": "GRI 3(b)",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "6506.10",
+    "reason": "safety headgear; does not cover the respirator function of the combined unit"
+   },
+   {
+    "code": "6307.90.98.50",
+    "reason": "masks without replaceable filters or mechanical parts; the unit has a respirator with filters"
+   },
+   {
+    "code": "9004.90",
+    "reason": "protective eyewear/goggles; the unit is a full helmet and respirator"
+   }
+  ],
+  "missing_facts": [
+   "Is the respirator a powered (blower) air-purifying unit or a simple filter mask, and is it imported together with the helmet as one unit?"
+  ],
+  "confidence": 0.45,
+  "abstain": false,
+  "rationale": "A welding helmet presented with a respirator (mechanical parts and replaceable filters) is classified as an other breathing appliance in heading 9020, 9020.00.60. Helmet-only importation would instead be 6506. No ruling retrieved on point."
+ },
+ "tool_calls": 5,
+ "tools": [
+  "cross_search",
+  "hts_search",
+  "hts_navigate"
+ ]
+}

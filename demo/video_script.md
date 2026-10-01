@@ -6,8 +6,7 @@ Playwright in replay mode, shows each caption below as an on-screen banner, and 
 Each row is one step. `hold` is how long the caption stays up after the step's action, in
 seconds. Keep the ids: the recorder maps each id to an action.
 
-Everything shown is replayed. The handbag objection rehearing is a scripted placeholder
-until a real objection run is recorded, and the video says so.
+Everything shown is replayed from recorded runs, including the handbag objection rehearing.
 
 How to record (about 3 minutes, needs the built frontend):
 
@@ -21,7 +20,7 @@ How to record (about 3 minutes, needs the built frontend):
 | tree | 7 | Gold dots are candidates. Red crosses were rejected, and hovering shows why. The star is the chosen line. |
 | ruling | 9 | The ruling: the 10-digit code, the path through the General Rules of Interpretation, citations with their status, confidence, and the rejected alternatives. |
 | objection | 6 | Objection. Change one fact: the outer surface is PVC plastic sheeting, not leather. |
-| rehearing | 12 | The court rehears the case. This rehearing is a scripted placeholder until a real objection run is recorded. |
+| rehearing | 12 | The court rehears the case: a fresh recorded run on the changed facts, with the same real tools. |
 | overruled | 9 | The old code is marked overruled on the tree. The new ruling is 4202.22.15.00, handbags with an outer surface of plastic sheeting. |
 | broker | 8 | Beat the Broker. A mystery exhibit from a real CBP ruling: a women's wool coat. The human guesses first. |
 | guess | 5 | Our guess: 6102.10, a knitted wool coat. Locked in before the court hears it. |

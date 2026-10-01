@@ -1,0 +1,54 @@
+{
+ "item_id": "atlas_test_00088",
+ "memos": [
+  {
+   "heading": "8516",
+   "best_code": "8516.80.40.00",
+   "argument": "Electric resistive deicer is an electric heating resistor; 8516.80 has a subheading (8516.80.40) expressly for resistors assembled only with simple insulated former and electrical connections, used for anti-icing or deicing. Section XVII note 2(f) removes electrical machinery of chapter 85 from 'parts' of aircraft, so specific electrical heading wins over 8807. N026077 shows CBP treating electric freeze-protection heating cable/ice prevention heaters in 8516. Caveat: only fits if a bare heating element/mat; a complete system with controls could move elsewhere.",
+   "supporting_rulings": [
+    {
+     "id": "N026077",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "8516.80.40 requires assembly only with simple insulated former and electrical connections; a mat with other components or controls goes to 8516.80.80 or other heading",
+    "Chapter 85 note 1 exclusions (worn heated articles etc.) not applicable"
+   ],
+   "strength": 0.78
+  },
+  {
+   "heading": "8807",
+   "best_code": "8807.30.00.30",
+   "argument": "Deicer is for use on aircraft; 8807 covers parts of aircraft, and chapter 88 note/XVII note 3 allows parts suitable solely or principally for aircraft. Weak: Section XVII note 2(f) expressly excludes electrical machinery or equipment (chapter 85) from parts in section XVII, and 8516.80.40 specifically provides for anti-icing/deicing. G84390 shows aircraft structural parts go to 88, but those are non-electrical.",
+   "supporting_rulings": [
+    {
+     "id": "G84390",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Section XVII note 2(f): electrical machinery or equipment (chapter 85) excluded from parts",
+    "Section XVII note 3: part must be suitable solely or principally for aircraft; 8516.80.40 is more specific by GRI 3(a)"
+   ],
+   "strength": 0.2
+  },
+  {
+   "heading": "8514",
+   "best_code": "8514.90.80.00",
+   "argument": "8514 covers industrial electric furnaces/ovens and heat-treatment equipment by induction or dielectric loss, with parts. Only plausible if the deicer heats by induction/dielectric loss, which the description does not state. N005054 shows microwave heating system in 8514.40 but unrelated to ice protection.",
+   "supporting_rulings": [
+    {
+     "id": "N005054",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Heading is for heat treatment of materials in furnaces/ovens or by induction/dielectric loss; resistive aircraft deicer is neither",
+    "Section XVII/XVI note 1 not an exclusion, but 8516.80.40 more specific for resistive anti-icing elements",
+    "No ruling found linking aircraft deicers to 8514"
+   ],
+   "strength": 0.05
+  }
+ ]
+}

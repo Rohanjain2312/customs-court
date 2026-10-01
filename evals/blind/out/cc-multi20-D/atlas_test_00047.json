@@ -1,0 +1,38 @@
+{
+ "item_id": "atlas_test_00047",
+ "classification": {
+  "hts10": "3002.13.00.90",
+  "facts": {
+   "material": "protein/biological reagent",
+   "function": "cell-related protein",
+   "form": "unspecified",
+   "end_use": "research/therapeutic"
+  },
+  "gri_path": [
+   "GRI 1: heading 3002 immunological products; Ch30 note 2",
+   "GRI 6: 3002.13 unmixed, not in measured doses"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [],
+  "rejected_alternatives": [
+   {
+    "code": "3822.19.00.30",
+    "reason": "no diagnostic or reagent use stated"
+   },
+   {
+    "code": "3504.00.50.50",
+    "reason": "Ch35 note 1 excludes Ch30 products"
+   }
+  ],
+  "missing_facts": [
+   "cells vs protein",
+   "diagnostic reagent vs therapeutic",
+   "measured doses"
+  ],
+  "confidence": 0.3,
+  "abstain": true,
+  "rationale": "Best guess 3002 immunological protein, but the code depends on actual identity and use."
+ },
+ "tool_calls": 0,
+ "tools": []
+}

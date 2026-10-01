@@ -1,0 +1,21 @@
+{
+ "item_id": "atlas_test_00177",
+ "facts": {
+  "material": "steel machinery with rotating classifier, pressurized housing",
+  "function": "separate pulverized coal by particle size in power plant mills",
+  "form": "industrial machine",
+  "end_use": "coal burning power plants"
+ },
+ "missing_facts": [
+  "whether it separates solids by sieving/centrifugal means",
+  "whether it is a mill part or standalone",
+  "rotating mechanism, pressure vessel"
+ ],
+ "candidate_headings": [
+  "8474",
+  "8421",
+  "8416",
+  "8402"
+ ],
+ "reasoning": "Sorting/separating mineral solids 8474 vs centrifugal/filtering separators 8421 vs 8416 pulverized-fuel burner machinery or parts."
+}

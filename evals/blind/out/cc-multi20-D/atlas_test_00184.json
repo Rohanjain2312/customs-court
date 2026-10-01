@@ -1,0 +1,45 @@
+{
+ "item_id": "atlas_test_00184",
+ "classification": {
+  "hts10": "6110.20.20.69",
+  "facts": {
+   "material": "100% cotton jersey knit",
+   "function": "men's pullover",
+   "form": "V-neck, long sleeves, tubular cuffs and hem",
+   "end_use": "apparel"
+  },
+  "gri_path": [
+   "GRI 1: heading 6110 pullovers, knitted",
+   "GRI 6: 6110.20 of cotton; 6110.20.20 other; men's or boys' other (338)"
+  ],
+  "deciding_gri": "GRI 1",
+  "cited_rulings": [
+   {
+    "id": "I83145",
+    "status": "in_force"
+   }
+  ],
+  "rejected_alternatives": [
+   {
+    "code": "6109",
+    "reason": "long sleeves with cuffs; pullover style (I89898 put a long-sleeved pullover in 6110)"
+   },
+   {
+    "code": "6105",
+    "reason": "no collar or placket, not a shirt"
+   }
+  ],
+  "missing_facts": [
+   "whether knit to shape (changes suffix to .67)",
+   "fabric weight/gauge"
+  ],
+  "confidence": 0.5,
+  "abstain": false,
+  "rationale": "Men's cotton knitted pullover goes to 6110.20.20; assumed cut-and-sewn, not knit to shape, so 'Other (338)'. Suffix from tree; the memo's suffix 65 does not exist in current tree."
+ },
+ "tool_calls": 3,
+ "tools": [
+  "hts_navigate",
+  "ruling_status"
+ ]
+}

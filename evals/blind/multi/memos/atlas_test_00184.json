@@ -1,0 +1,83 @@
+{
+ "item_id": "atlas_test_00184",
+ "memos": [
+  {
+   "heading": "6110",
+   "best_code": "6110.20.2065",
+   "argument": "Men's cotton knitted pullover with long sleeves and rib-style cuffs/waist is a classic 6110 jersey/pullover; heading 6110 covers jerseys, pullovers, cardigans, waistcoats and similar articles, knitted. CROSS rulings on men's 100% cotton jersey knit pullovers with ribbed neck, long sleeves and cuffs classify them in 6110.20.2065 (men's, 6110.20.20.65-type statistical suffix). Rulings I83145, I86347, K89051, I80024, I80992 and L86635 describe comparable men's pullovers. Weakness: ruling snippets differ on tubular vs rib cuffs, and 6110 vs 6109 turns on fabric/finish facts not given; the 6110.20.20 stat line listing I saw shows 6110.20.20.41 men's (338) rather than a 65 suffix, so the exact 10-digit should be verified.",
+   "supporting_rulings": [
+    {
+     "id": "I83145",
+     "status": "in_force"
+    },
+    {
+     "id": "I86347",
+     "status": "in_force"
+    },
+    {
+     "id": "K89051",
+     "status": "in_force"
+    },
+    {
+     "id": "I80024",
+     "status": "in_force"
+    },
+    {
+     "id": "I80992",
+     "status": "in_force"
+    },
+    {
+     "id": "L86635",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Chapter 61 notes could not be fully read (parse error in output); no exclusion seen for 6110",
+    "Garments with a T-shirt shape/short sleeves fall in 6109; a V-neck jersey with plain tubular cuffs and hem has no 'rib' trim, favoring a T-shirt reading",
+    "Ruling I89898 shows a pullover split between 6109 and 6110 depending on features"
+   ],
+   "strength": 0.7
+  },
+  {
+   "heading": "6109",
+   "best_code": "6109.10.00.12",
+   "argument": "Heading 6109 covers T-shirts, singlets, tank tops and similar knitted garments; it has subheading 6109.10.00 of cotton, men's 6109.10.0012 in practice for non-white men's T-shirts. A 100% cotton jersey V-neck knit with tubular cuffs and waist resembles a long-sleeved T-shirt; fine jersey of this kind is how CROSS rulings treat T-shirts (e.g. H86566, I83147). Weakness: 6109 rulings concern short-sleeved crew-neck garments with hemmed sleeves; long sleeves with cuffs favor pullover.",
+   "supporting_rulings": [
+    {
+     "id": "H86566",
+     "status": "in_force"
+    },
+    {
+     "id": "I83147",
+     "status": "in_force"
+    },
+    {
+     "id": "I89898",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "6109 rulings cited involve short hemmed sleeves, crew neck; this garment has long sleeves with cuffs",
+    "I89898 classified a long-sleeved boys' pullover with rib bottom in 6110.20, not 6109",
+    "Chapter 61 notes not fully read"
+   ],
+   "strength": 0.3
+  },
+  {
+   "heading": "6105",
+   "best_code": "6105.10.00.10",
+   "argument": "6105 covers men's or boys' shirts, knitted. 6105.10.00.10 is men's, cotton. A cotton jersey long-sleeve V-neck top could be argued as a knit shirt. Honest assessment: knit shirts in CROSS normally have a collar, placket or front opening; a pullover without a opening is not a shirt. J80358 shows one men's pullover split to 6105.10.0010 for a feature set I cannot confirm applies.",
+   "supporting_rulings": [
+    {
+     "id": "J80358",
+     "status": "in_force"
+    }
+   ],
+   "exclusions_against": [
+    "Garment has no placket/collar noted; 6110 pullovers rulings were preferred in CROSS for similar items",
+    "Chapter 61 notes not fully read"
+   ],
+   "strength": 0.1
+  }
+ ]
+}
